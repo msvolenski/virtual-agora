@@ -1,114 +1,91 @@
 ﻿{% extends 'agora/base.html' %}
+{% block content %}
 
-{% block content %}                         
-      <section class="content-header">
-          <h1> Plano Diretor Participativo - UNICAMP
-              <small>Página Inicial</small>                
-          </h1>            
-      </setion>  
-          <ol class="breadcrumb">
-              <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-              <li class="active">Dashboard</li>
-          </ol>                    
-{% endblock content %}                       
+  <section class="content-header">
+    <h1>Plano Diretor Participativo - UNICAMP <small>Página Inicial</small></h1>
+  </section>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Dashboard</li>
+  </ol>
 
-{% block content12 %}                         
-                <section class="content">                     
-                    <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-aqua">
-                                <div class="inner">
-                                    <h3>
-                                        CONHEÇA
-                                    </h3>
-                                     <div>
-                                    {% for AdicionaLink in object_list %}
-                                        <li><a  href="{{ AdicionaLink.url }}">{{ AdicionaLink.titulo }}&nbsp&nbsp&nbsp&nbsp </a> <small> {{ AdicionaLink.data_publicacao }}</small>  </li> 
-                                    
-                                    {% endfor %}
-                                   
+{% endblock content %}
 
-                                    </div>
-
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="agora\pdpu\conheca" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>
-                                        PARTICIPE
-                                    </h3>
-                                     {% for Question in Question %}
-                                        <li>{{ Question.pub_date }} 
-                                               {% for tag in Question.tags.all %}
-                   
-                                                     {{ tag.name }} 
-                  
-                                               {% endfor %}   
-                                        </li> 
-                                    
-                                    {% endfor %}
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="agora\pdpu\participe" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
-                                <div class="inner">
-                                    <h3>
-                                        RESULTADOS
-                                    </h3>
-                                    <p>
-                                        User Registrations
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="agora\pdpu\resultados" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>
-                                        COMUNIDADE
-                                    </h3>
-                                    <p>
-                                        Unique Visitors
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="agora\pdpu\comunidade" class="small-box-footer">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                    </div><!-- /.row -->
-                </section>  
-{% endblock content12 %}                          
-
-
+{% block content12 %}
+  <section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+          <div class="inner">
+            <h3>CONHEÇA</h3>
+            <div>
+              {% for AdicionaLink in object_list %}
+              <li><a  href="{{ AdicionaLink.url }}">{{ AdicionaLink.titulo }}&nbsp&nbsp&nbsp&nbsp </a> <small> {{ AdicionaLink.data_publicacao }}</small>  </li>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="icon">
+              <i class="ion ion-bag"></i>
+          </div>
+          <a href="agora\pdpu\conheca" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3>PARTICIPE</h3>
+            {% for q in Question %}
+             {{ q }}
+              <li>{{ q.pub_date }}
+                {% for tag in q.tags.all %}
+                  {{ tag.name }}
+                {% endfor %}
+              </li>
+            {% endfor %}
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a href="agora\pdpu\participe" class="small-box-footer">
+              More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3>RESULTADOS</h3>
+            <p>User Registrations</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="agora\pdpu\resultados" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3>COMUNIDADE</h3>
+            <p>Unique Visitors</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-pie-graph"></i>
+          </div>
+          <a href="agora\pdpu\comunidade" class="small-box-footer">
+            More info <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+    </div><!-- /.row -->
+  </section>
+{% endblock content12 %}

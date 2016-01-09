@@ -1,47 +1,44 @@
-
 {% extends 'agora/base.html' %}
 {% load set_var %}
 {% block content %}
-      <section class="content-header">
-          <h1> Plano Diretor Participativo - UNICAMP
-              <small>Participe</small>
-          </h1>
-      </setion>
-          <ol class="breadcrumb">
-              <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
-                <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li>
-                <li class="active">Participe</li>
-          </ol>
+
+    <section class="content-header">
+      <h1> Plano Diretor Participativo - UNICAMP <small>Participe</small></h1>
+    </section>
+    <ol class="breadcrumb">
+      <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
+      <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li>
+      <li class="active">Participe</li>
+    </ol>
+
 {% endblock content %}
 
 {% block content12 %}
 
 {# A LÓGICA ABAIXO ESCOLHE AS QUESTÕES QUE O USUÁRIO AINDA NÃO VOTOU E APRESENTA-AS EM SUA TIMELINE #}
 
+  {% set flag1 = 3 %}
+  {% for Question in object_list %}
+    {% for qu in q %}
+      {% if Question.pk|slugify == qu.questao %}
+        {% set flag1 = 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if flag1 != 1 %}
+      {{Question.pub_date}}
+      <br />
+      {# mostra as tags da Question corrente #}
+      {% for tag in Question.tags.all %}
+        {{ tag.name }}
+      {% endfor %}
+
+      <br />
+      <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" width="1000" height="400"></iframe>
+      {# mostra da timeline a página da questão #}
+      <br />
+
+    {% endif %}
     {% set flag1 = 3 %}
-    {% for Question in object_list %}
-
-            {% for q in q %}
-                {% if Question.pk|slugify == q.questao %}
-                     {% set flag1 = 1 %}
-                {% endif %}
-            {% endfor %}
-            {% if flag1 != 1 %}
-                {# mostra as tags da Question corrente #}
-                {% for tag in Question.tags.all %}
-
-                         {{ tag.name }}
-
-                {% endfor %}
-
-                <p> </p>
-                <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" width="1000" height="400"></iframe>   {# mostra da timeline a página da questão #}
-
-                <p> </p>
-
-            {% endif %}
-          {% set flag1 = 3 %}
-{% endfor %}
-
+  {% endfor %}
 
 {% endblock content12 %}
