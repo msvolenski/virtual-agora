@@ -1,0 +1,36 @@
+{% extends 'agora/base.html' %}
+{% load set_var %}
+{% block content %}                         
+      <section class="content-header">
+          <h1> Plano Diretor Participativo - UNICAMP
+              <small>Resultados</small>                
+          </h1>            
+      </setion>  
+          <ol class="breadcrumb">
+              <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
+                <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li> 
+                <li class="active">Resultados</li>
+          </ol>                    
+{% endblock content %}                       
+
+{% block content12 %}                         
+   
+    
+     {% set flag1 = 3 %}    
+    {% for Question in object_list %}
+            
+            {% for q in q %}  
+                {% if Question.pk|slugify == q.questao %}
+                     {% set flag1 = 1 %} 
+                {% endif %}          
+            {% endfor %}                         
+            {% if flag1 == 1 %}
+               
+                <p> </p>                            
+                <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}/results" width="1000" height="400"></iframe>   {# mostra da timeline a página da questão #}
+                <p> </p> 
+
+            {% endif %} 
+            {% set flag1 = 3 %}
+    {% endfor %}              
+{% endblock content12 %}   
