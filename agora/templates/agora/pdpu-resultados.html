@@ -14,7 +14,7 @@
 {% endblock content %}
 
 {% block content12 %}
-
+<div  style="position: absolute; top: 200px;width:100%;left:250px" >
  {% set flag1 = 3 %}
   {% for Question in object_list %}
     {% for q in q %}
@@ -32,5 +32,5 @@
     {% endif %}
     {% set flag1 = 3 %}
   {% endfor %}
-
+</div>
 {% endblock content12 %}
