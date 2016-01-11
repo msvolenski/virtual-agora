@@ -7,6 +7,13 @@ from django.contrib.auth.models import User
 from agora.models import UserProfile
 
 
+def publicar_resultado(Question, request, queryset):
+    queryset.update(resultado='p')
+    queryset.update(permissao = 1)
+ 
+def desfazer_publicacao_do_resultado(Question, request, queryset):
+    queryset.update(resultado='n')
+    queryset.update(permissao = 0)   
 
 #==============================================================================
 # Inclui no Admin a possibilidade de fazer as alternativas de cas Question
@@ -28,10 +35,10 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInline]
     
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
+    list_display = ('question_text', 'pub_date', 'was_published_recently', 'resultado')
     
     search_fields = ['question_text']
-    
+    actions = [publicar_resultado, desfazer_publicacao_do_resultado]
 #==============================================================================
 # Inclui no Admin uma página mostrando os link e uma página para incluir Links
 #==============================================================================
@@ -50,7 +57,7 @@ class AdicionaLinknAdmin(admin.ModelAdmin):
     
     list_display = ('titulo', 'url' , 'data_publicacao' )
     search_fields = ['titulo']
-
+    
 
 # Define an inline admin descriptor for UserProfile model
 # which acts a bit like a singleton
@@ -64,9 +71,6 @@ class UserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
 
 
-
-
-    
 
 
 #Coloca as classes em ação

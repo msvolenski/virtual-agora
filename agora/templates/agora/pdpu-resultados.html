@@ -18,7 +18,7 @@
  {% set flag1 = 3 %}
   {% for Question in object_list %}
     {% for q in q %}
-      {% if Question.pk|slugify == q.questao %}
+      {% if Question.pk|slugify == q.questao and Question.permissao == 1 %}
         {% set flag1 = 1 %}
       {% endif %}
     {% endfor %}

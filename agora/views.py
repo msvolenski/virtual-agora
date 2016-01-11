@@ -119,7 +119,7 @@ class PdpuResultadosView(generic.ListView):
         """
         return Question.objects.filter(
             pub_date__lte=timezone.now()
-        ).order_by('-pub_date')[:5]
+        ).order_by('-pub_date')
         
     def get_context_data(self, **kwargs):
         context = super(PdpuResultadosView, self).get_context_data(**kwargs)
@@ -195,19 +195,18 @@ def vote(request, question_id):
         user_nome = User.objects.get(username = request.user)
         a = QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome, questao__contains=str(question_id)).count()        
         if a != 0:
-            return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
+            #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
+            return HttpResponseRedirect(reverse('agora:posvotacao')) 
         else:                           
             u1 = Usuario(nome=user_nome)         
             u1.save()
             q1 = QuestoesRespondidas(questao=str(question_id))          
             q1.save()  
             q1.usuario.add(u1)
-            return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
-        
+            #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
+            return HttpResponseRedirect(reverse('agora:posvotacao'))
 
+def posvotacao(request):
+    return render(request, 'agora/pos-votacao.html')
 
-
-     
-        
-        
         

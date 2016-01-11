@@ -8,11 +8,16 @@ from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.contrib import admin
 from django.utils.html import format_html
-
+from django.core.urlresolvers import reverse
+from django.forms import CheckboxSelectMultiple
 # Create your models here.
 #Chama a classe "models"
 
-
+STATUS_CHOICES = (
+    ('n', 'Não publicado'),
+    ('p', 'Publicado'),
+    
+)
 
 #==============================================================================
 # Classe que insere novos atributos para a Classe User
@@ -38,6 +43,7 @@ class Usuario(models.Model):
         return str(self.nome)    
 
 class QuestoesRespondidas(models.Model):
+        
     questao = models.CharField(max_length=200)    
     usuario = models.ManyToManyField(Usuario)
 
@@ -51,16 +57,20 @@ class QuestoesRespondidas(models.Model):
 #==============================================================================
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
-        
+    
+    permissao = models.IntegerField(max_length=10, default=0)
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     tags = TaggableManager()
+    resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
     
     def __str__(self):
         return self.question_text
         
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        
+   
 
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
