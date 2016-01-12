@@ -166,9 +166,37 @@ class DetailView(generic.DetailView):
         return Question.objects.filter(pub_date__lte=timezone.now())
 
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+
+
+
+
+
+
+
+
+
+
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'agora/result.html'
+    
+   
+        
+    def get_queryset(self):
+        """
+        Excludes any questions that aren't published yet.
+        """
+        return Question.objects.all()
+     
+    def get_context_data(self, **kwargs):
+        context = super(ResultsView, self).get_context_data(**kwargs)
+        context['usuario'] = Usuario.objects.all()
+        context['q'] = QuestoesRespondidas.objects.all()
+        return context
+
+
+    
+
 
 
 #==================================================================================================
@@ -176,21 +204,22 @@ class ResultsView(generic.DetailView):
 #==================================================================================================
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
+    
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         # Linha abaixo deleta o banco de dados de questões respondidas
         #QuestoesRespondidas.objects.all().delete()  
+        user_nome = User.objects.get(username = request.user)        
         return render(request, 'agora/detail.html', {
             'question': question,
-            'error_message': 'bla',         
-             #'error_message': QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome) , lista, 
+            'error_message': 'bla', 
+                     
+            'error_message': QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome) , 
         })
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        
+       
         #Abaixo são armazenadas as questões que o usuário votou. Os models são QuestoesRespondidas e Usuario 
         user_nome = User.objects.get(username = request.user)
         a = QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome, questao__contains=str(question_id)).count()        
@@ -198,11 +227,27 @@ def vote(request, question_id):
             #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
             return HttpResponseRedirect(reverse('agora:posvotacao')) 
         else:                           
+            
+                         
             u1 = Usuario(nome=user_nome)         
             u1.save()
             q1 = QuestoesRespondidas(questao=str(question_id))          
             q1.save()  
             q1.usuario.add(u1)
+            
+            selected_choice.votes += 1
+            selected_choice.save()
+            
+            text = selected_choice.choice_text
+            u1 = Usuario(nome=user_nome)         
+            u1.save()            
+            q2 = QuestoesRespondidas(voto=text)  
+            q2.save()
+            q2.usuario.add(u1)
+            
+            selected_choice.votes += 1
+            selected_choice.save()
+         
             #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
             return HttpResponseRedirect(reverse('agora:posvotacao'))
 
