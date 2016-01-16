@@ -33,11 +33,12 @@ class UserProfile(models.Model):
    
 
 #==============================================================================
-# As duas classes abaixos armazenam o nome do usuáio e as questões respondidas por ele    
+# As classes abaixo estabelecem uma tabela com o nome do usuário, a questão respondida e o voto 
 #==============================================================================
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=200)    
+    
     
     def __str__(self):              # __unicode__ on Python 2
         return str(self.nome)    
@@ -46,11 +47,19 @@ class QuestoesRespondidas(models.Model):
         
     questao = models.CharField(max_length=200)    
     usuario = models.ManyToManyField(Usuario)
-    voto = models.CharField(max_length=200)
+    
     
     def __str__(self):              # __unicode__ on Python 2
-        return self.voto   
+        return self.questao  
+
+class VotoDoUsuario(models.Model):
         
+    voto = models.CharField(max_length=200) 
+    questao = models.CharField(max_length=200) 
+    user = models.ForeignKey('Usuario',on_delete=models.CASCADE,)
+    
+    def __str__(self):              # __unicode__ on Qython 2
+        return "%s %s" % (self.voto, self.questao)           
    
 
 #==============================================================================
@@ -88,7 +97,7 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
-    usuario_que_votou = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     
     def __str__(self):
         return self.choice_text

@@ -14,7 +14,7 @@ from django.shortcuts import render_to_response,redirect
 from django.views.generic.list import MultipleObjectMixin
 from django.db.models import Max
 from django.utils.decorators import method_decorator
-from .models import Choice, Question, AdicionaLink, QuestoesRespondidas, Usuario
+from .models import Choice, Question, AdicionaLink, QuestoesRespondidas, Usuario, VotoDoUsuario
 from django.contrib.auth.models import User
 from django.db import models
 from taggit.models import Tag
@@ -191,13 +191,11 @@ class ResultsView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super(ResultsView, self).get_context_data(**kwargs)
         context['usuario'] = Usuario.objects.all()
-        context['q'] = QuestoesRespondidas.objects.all()
+        context['questoesrespondidas'] = QuestoesRespondidas.objects.all()
+        context['votodousuario'] = VotoDoUsuario.objects.all()
+               
+         
         return context
-
-
-    
-
-
 
 #==================================================================================================
 # O método a seguir processa o voto do usuário ao clicar em "votar" em questões de múltipla escolha
@@ -214,9 +212,9 @@ def vote(request, question_id):
         user_nome = User.objects.get(username = request.user)        
         return render(request, 'agora/detail.html', {
             'question': question,
-            'error_message': 'bla', 
-                     
-            'error_message': QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome) , 
+            'error_message': 'bla',                      
+            'error_message': VotoDoUsuario.objects.filter(user__nome__startswith=user_nome) ,  
+            
         })
     else:
        
@@ -228,7 +226,7 @@ def vote(request, question_id):
             return HttpResponseRedirect(reverse('agora:posvotacao')) 
         else:                           
             
-                         
+            #salvam o usuário, a questão respondida e o voto no DB            
             u1 = Usuario(nome=user_nome)         
             u1.save()
             q1 = QuestoesRespondidas(questao=str(question_id))          
@@ -239,19 +237,13 @@ def vote(request, question_id):
             selected_choice.save()
             
             text = selected_choice.choice_text
-            u1 = Usuario(nome=user_nome)         
-            u1.save()            
-            q2 = QuestoesRespondidas(voto=text)  
-            q2.save()
-            q2.usuario.add(u1)
-            
-            selected_choice.votes += 1
-            selected_choice.save()
-         
-            #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
+            u2 = Usuario(nome=user_nome)           
+            u2.save()            
+            q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2 )  
+            q2.save()           
+                 
             return HttpResponseRedirect(reverse('agora:posvotacao'))
 
 def posvotacao(request):
     return render(request, 'agora/pos-votacao.html')
-
-        
+      
