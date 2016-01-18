@@ -1,11 +1,13 @@
 from django.contrib import admin
 
-from .models import Choice, Question, AdicionaLink
+from .models import Choice, Question, AdicionaLink, VotoDoUsuario, UserProfile
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-
-from agora.models import UserProfile
-
+from django.http import HttpResponse
+from django.core import serializers
+from django.contrib.contenttypes.models import ContentType
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 def publicar_resultado(Question, request, queryset):
     queryset.update(resultado='p')
@@ -21,6 +23,11 @@ def desfazer_publicacao_do_resultado(Question, request, queryset):
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
+
+
+
+
+
 #==============================================================================
 # Inclui no Admin uma página mostrando as Questions e uma página para fazer Questions
 #==============================================================================
@@ -57,9 +64,20 @@ class AdicionaLinknAdmin(admin.ModelAdmin):
     
     list_display = ('titulo', 'url' , 'data_publicacao' )
     search_fields = ['titulo']
-    
 
-# Define an inline admin descriptor for UserProfile model
+class VotoDoUsuarioAdmin(admin.ModelAdmin):    
+    
+    actions = ['mostrar_resultado']
+    list_display = ('user', 'faculdade','questao' , 'voto' )
+    list_filter = ('faculdade', 'questao')
+    
+    def mostrar_resultado(modeladmin, request, queryset):
+        response = HttpResponse(content_type="application/json")
+        serializers.serialize("json", queryset, stream=response)
+        return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
+    
+   
+
 # which acts a bit like a singleton
 class UserProfileInline(admin.StackedInline):
     model = UserProfile
@@ -80,3 +98,4 @@ admin.site.register(AdicionaLink, AdicionaLinknAdmin )
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
+admin.site.register(VotoDoUsuario, VotoDoUsuarioAdmin)

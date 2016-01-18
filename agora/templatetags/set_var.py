@@ -31,5 +31,13 @@ def set_var(parser, token):
         raise template.TemplateSyntaxError("'set' tag must be of the form:  {% set <var_name>  = <var_value> %}")
     return SetVarNode(parts[1], parts[3])
  
+@register.filter
+def votos_distintos(value):
+    # put your complex unique logic here
+    return value.order_by('voto').values_list('voto',flat=True).distinct()
+
+
+
+
 register.tag('set', set_var)
 

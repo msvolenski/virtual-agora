@@ -1,0 +1,24 @@
+{% extends "admin/base_site.html" %}
+{% load set_var %}
+{% block content %}
+{% load inc %}
+
+
+
+{{ objects.questao }}
+
+ {% for object in objects|votos_distintos %}
+    {% set res = 0 %}    
+    {% set a = object %}
+        {% for object in objects %}
+            {% if a == object.voto %}           
+                {% ++ res %}
+            {% endif %}  
+        {% set b = res %}
+        {% endfor %}
+    {{ a }}
+    {{ b }}
+ {% endfor %}
+
+
+{% endblock %}

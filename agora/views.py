@@ -14,7 +14,7 @@ from django.shortcuts import render_to_response,redirect
 from django.views.generic.list import MultipleObjectMixin
 from django.db.models import Max
 from django.utils.decorators import method_decorator
-from .models import Choice, Question, AdicionaLink, QuestoesRespondidas, Usuario, VotoDoUsuario
+from .models import Choice, Question, AdicionaLink, QuestoesRespondidas, Usuario, VotoDoUsuario, UserProfile
 from django.contrib.auth.models import User
 from django.db import models
 from taggit.models import Tag
@@ -226,9 +226,15 @@ def vote(request, question_id):
             return HttpResponseRedirect(reverse('agora:posvotacao')) 
         else:                           
             
-            #salvam o usuário, a questão respondida e o voto no DB            
-            u1 = Usuario(nome=user_nome)         
+            #salva atributos do usuario
+
+            u = User.objects.get(username = request.user)             
+            faculdade1 = u.userprofile.faculdade          
+                                   
+            #salvam o usuário, a questão respondida e o voto no DB     
+            u1 = Usuario(nome=user_nome)                       
             u1.save()
+           
             q1 = QuestoesRespondidas(questao=str(question_id))          
             q1.save()  
             q1.usuario.add(u1)
@@ -239,7 +245,7 @@ def vote(request, question_id):
             text = selected_choice.choice_text
             u2 = Usuario(nome=user_nome)           
             u2.save()            
-            q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2 )  
+            q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2, faculdade=faculdade1)  
             q2.save()           
                  
             return HttpResponseRedirect(reverse('agora:posvotacao'))

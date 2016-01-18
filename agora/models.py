@@ -24,13 +24,14 @@ STATUS_CHOICES = (
 #==============================================================================
 @python_2_unicode_compatible
 class UserProfile(models.Model):
-    # This field is required.
+   # This field is required.
     user = models.OneToOneField(User)
 
-    # Novos Atributos
-    accepted_eula = models.BooleanField()
-    favorite_animal = models.CharField(max_length=20, default="Dragons.")
-   
+     #Novos Atributos
+    ano_de_ingresso = models.CharField(max_length=20)
+    faculdade = models.CharField(max_length=20, default = 'faculdade') 
+    curso = models.CharField(max_length=20)
+    
 
 #==============================================================================
 # As classes abaixo estabelecem uma tabela com o nome do usuário, a questão respondida e o voto 
@@ -40,10 +41,11 @@ class Usuario(models.Model):
     nome = models.CharField(max_length=200)    
     
     
+
     def __str__(self):              # __unicode__ on Python 2
         return str(self.nome)    
 
-class QuestoesRespondidas(models.Model):
+class QuestoesRespondidas(models.Model): 
         
     questao = models.CharField(max_length=200)    
     usuario = models.ManyToManyField(Usuario)
@@ -53,10 +55,20 @@ class QuestoesRespondidas(models.Model):
         return self.questao  
 
 class VotoDoUsuario(models.Model):
-        
+    
+    faculdade = models.CharField(max_length=20, null=True)     
     voto = models.CharField(max_length=200) 
     questao = models.CharField(max_length=200) 
     user = models.ForeignKey('Usuario',on_delete=models.CASCADE,)
+        
+    
+    
+    
+    
+    
+    
+    
+    
     
     def __str__(self):              # __unicode__ on Qython 2
         return "%s %s" % (self.voto, self.questao)           
