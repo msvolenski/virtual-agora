@@ -10,6 +10,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.core.urlresolvers import reverse
 from django.forms import CheckboxSelectMultiple
+from django.shortcuts import get_object_or_404, render
 # Create your models here.
 #Chama a classe "models"
 
@@ -61,19 +62,9 @@ class VotoDoUsuario(models.Model):
     questao = models.CharField(max_length=200) 
     user = models.ForeignKey('Usuario',on_delete=models.CASCADE,)
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
     def __str__(self):              # __unicode__ on Qython 2
-        return "%s %s" % (self.voto, self.questao)           
-   
-
+        return "%s %s" % (self.voto, self.questao)        
+        
 #==============================================================================
 # OBJETO: QUESTION
 # Define "Question", objeto que modela as perguntas
@@ -81,24 +72,33 @@ class VotoDoUsuario(models.Model):
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
     
+    def define_primary_key():
+        question = Question.objects.latest('id')  
+        a = question.pk
+        a = a + 1        
+        return str('#') + str(a).ljust(3) + str('-').ljust(3)
+ 
+    
     permissao = models.IntegerField(max_length=10, default=0)
-    question_text = models.CharField(max_length=200)
+    question_text = models.CharField(max_length=200, default=define_primary_key)
     pub_date = models.DateTimeField('date published')
     tags = TaggableManager()
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
     
     def __str__(self):
-        return self.question_text
+        return "%s %s" % (self.pk, self.question_text)
         
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-        
+    
+    def contact_default(self):
+         #question = Question.objects.get(id='pk').value()    
+        return self.pk    
    
 
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
-    was_published_recently.short_description = 'Published recently?'
-        
+    was_published_recently.short_description = 'Published recently?'       
 
 #==============================================================================
 # OBJETO: Choice
@@ -113,8 +113,6 @@ class Choice(models.Model):
     
     def __str__(self):
         return self.choice_text
-
-
 
 #==============================================================================
 # OBJETO: ADCIONALINK
