@@ -12,10 +12,4 @@ class Migration(migrations.Migration):
         ('agora', '0057_auto_20160119_1519'),
     ]
 
-    operations = [
-        migrations.AlterField(
-            model_name='question',
-            name='question_text',
-            field=models.CharField(default=agora.models.Question.define_primary_key, max_length=200),
-        ),
-    ]
+   

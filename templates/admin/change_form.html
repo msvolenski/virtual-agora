@@ -1,0 +1,18 @@
+{% extends 'admin/change_form.html' %}
+
+{% block admin_change_form_document_ready %}
+{{ block.super }}
+<script type="text/javascript">
+(function($) {
+    $(document).on('formset:added', function(event, $row, formsetName) {
+        if (formsetName == 'tipo') {
+           
+        }
+    });
+
+    $(document).on('formset:removed', function(event, $row, formsetName) {
+      
+    });
+})(django.jQuery);
+</script>
+{% endblock %}

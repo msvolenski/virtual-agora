@@ -25,9 +25,6 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 
-
-
-
 #==============================================================================
 # Inclui no Admin uma página mostrando as Questions e uma página para fazer Questions
 #==============================================================================
@@ -38,6 +35,7 @@ class QuestionAdmin(admin.ModelAdmin):
         (None,               {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']}),
         ('Tags', {'fields': ['tags']}),
+        ('Tipo', {'fields': ['tipo']}),
         
     ]
     inlines = [ChoiceInline]
@@ -46,6 +44,11 @@ class QuestionAdmin(admin.ModelAdmin):
     
     search_fields = ['question_text']
     actions = [publicar_resultado, desfazer_publicacao_do_resultado]
+    
+    class Media:
+        js = (
+            '/static/agora/admin/pageadmin.js',
+        )
 #==============================================================================
 # Inclui no Admin uma página mostrando os link e uma página para incluir Links
 #==============================================================================

@@ -11,16 +11,4 @@ class Migration(migrations.Migration):
         ('agora', '0052_auto_20160119_1439'),
     ]
 
-    operations = [
-        migrations.AddField(
-            model_name='question',
-            name='ID',
-            field=models.AutoField(default=1, primary_key=True, serialize=False),
-            preserve_default=False,
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='question_text',
-            field=models.CharField(default=models.AutoField(primary_key=True, serialize=False), max_length=200, primary_key=True),
-        ),
-    ]
+   

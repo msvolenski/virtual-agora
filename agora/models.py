@@ -37,11 +37,8 @@ class UserProfile(models.Model):
 #==============================================================================
 # As classes abaixo estabelecem uma tabela com o nome do usuário, a questão respondida e o voto 
 #==============================================================================
-
 class Usuario(models.Model):
     nome = models.CharField(max_length=200)    
-    
-    
 
     def __str__(self):              # __unicode__ on Python 2
         return str(self.nome)    
@@ -72,18 +69,24 @@ class VotoDoUsuario(models.Model):
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
     
-    def define_primary_key():
-        question = Question.objects.latest('id')  
+    def define_next():
+        try:
+            question = Question.objects.latest('id')  
+        except (KeyError, Question.DoesNotExist):
+            return str('#') + str(1).ljust(3) + str('-').ljust(3)            
+           
         a = question.pk
         a = a + 1        
         return str('#') + str(a).ljust(3) + str('-').ljust(3)
- 
+      
+        
     
     permissao = models.IntegerField(max_length=10, default=0)
-    question_text = models.CharField(max_length=200, default=define_primary_key)
+    question_text = models.CharField(max_length=200, default=define_next)
     pub_date = models.DateTimeField('date published')
     tags = TaggableManager()
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
+    tipo = models.CharField(max_length=2, default = 1) 
     
     def __str__(self):
         return "%s %s" % (self.pk, self.question_text)
@@ -91,11 +94,6 @@ class Question(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
     
-    def contact_default(self):
-         #question = Question.objects.get(id='pk').value()    
-        return self.pk    
-   
-
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'       
