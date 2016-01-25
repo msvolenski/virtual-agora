@@ -68,6 +68,15 @@ class VotoDoUsuario(models.Model):
 #==============================================================================
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
+    QUESTION_TYPE = (
+    ('1', 'One choice'),
+    ('2', 'Multipla Escolha'),
+    ('3', 'Texto'),    
+)
+    
+        
+    
+    
     
     def define_next():
         try:
@@ -86,7 +95,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     tags = TaggableManager()
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
-    tipo = models.CharField(max_length=2, default = 1) 
+    question_type = models.CharField(max_length=1, choices = QUESTION_TYPE) 
     
     def __str__(self):
         return "%s %s" % (self.pk, self.question_text)

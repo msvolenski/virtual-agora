@@ -35,7 +35,7 @@ class QuestionAdmin(admin.ModelAdmin):
         (None,               {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']}),
         ('Tags', {'fields': ['tags']}),
-        ('Tipo', {'fields': ['tipo']}),
+        ('Tipo', {'fields': ['question_type']}),
         
     ]
     inlines = [ChoiceInline]
