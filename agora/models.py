@@ -92,7 +92,8 @@ class Question(models.Model):
     
     permissao = models.IntegerField(max_length=10, default=0)
     question_text = models.CharField(max_length=200, default=define_next)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('Data de publicação')
+    expiration_date = models.DateTimeField('Data de expiração')
     tags = TaggableManager()
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
     question_type = models.CharField(max_length=1, choices = QUESTION_TYPE) 
@@ -101,12 +102,12 @@ class Question(models.Model):
         return "%s %s" % (self.pk, self.question_text)
         
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-    
-    was_published_recently.admin_order_field = 'pub_date'
+        return self.expiration_date >= timezone.now()
+   
+    was_published_recently.admin_order_field = 'expiration_date'
     was_published_recently.boolean = True
-    was_published_recently.short_description = 'Published recently?'       
-
+    was_published_recently.short_description = 'Ativa?'       
+    
 #==============================================================================
 # OBJETO: Choice
 # Define "Choice", objeto que adiciona um campo de multipla escolha para as Perguntas 

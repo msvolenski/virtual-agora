@@ -47,7 +47,7 @@ class PdpuView(generic.ListView):
    
     template_name = 'agora/pagina-pdpu.html'
     model = AdicionaLink
-    context_object_name = 'Question_list'
+    #context_object_name = 'Question_list'
     #Configura quantos links serQo mostrados na ordem da data de publicação 
     
     
@@ -58,6 +58,8 @@ class PdpuView(generic.ListView):
             pub_date__lte=timezone.now()
         ).order_by('-pub_date')[:4]
         context['tag'] = Tag.objects.all()   
+        context['user_nome'] = self.request.user
+        context['q'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()        
         #número que define quantas "Questions" vão aparecer       
         return context     
     

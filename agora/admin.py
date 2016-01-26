@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.contrib.admin import SimpleListFilter
 from .models import Choice, Question, AdicionaLink, VotoDoUsuario, UserProfile
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -8,6 +8,10 @@ from django.core import serializers
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
+from datetime import date
+
 
 def publicar_resultado(Question, request, queryset):
     queryset.update(resultado='p')
@@ -30,25 +34,23 @@ class ChoiceInline(admin.TabularInline):
 #==============================================================================
 class QuestionAdmin(admin.ModelAdmin):
     
-    list_filter = ['pub_date']    
+    list_filter = ('pub_date','expiration_date',)   
     fieldsets = [
         (None,               {'fields': ['question_text']}),
-        ('Date information', {'fields': ['pub_date']}),
+        ('Publicado em:', {'fields': ['pub_date']}),
+        ('Expira em:', {'fields': ['expiration_date']}),
         ('Tags', {'fields': ['tags']}),
         ('Tipo', {'fields': ['question_type']}),
         
     ]
     inlines = [ChoiceInline]
     
-    list_display = ('question_text', 'pub_date', 'was_published_recently', 'resultado')
+    list_display = ('question_text', 'pub_date', 'expiration_date', 'was_published_recently', 'resultado')
     
     search_fields = ['question_text']
     actions = [publicar_resultado, desfazer_publicacao_do_resultado]
     
-    class Media:
-        js = (
-            '/static/agora/admin/pageadmin.js',
-        )
+    
 #==============================================================================
 # Inclui no Admin uma página mostrando os link e uma página para incluir Links
 #==============================================================================

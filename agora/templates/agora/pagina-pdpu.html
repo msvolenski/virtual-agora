@@ -1,4 +1,5 @@
 ﻿{% extends 'agora/base.html' %}
+{% load set_var %}
 {% block content %}
 <div class="navbar navbar-static-top" id="overlay" style="top:50px;position:fixed;background:white;width:100%;opacity:1;left:220px;">
   <section class="content-header">
@@ -12,7 +13,7 @@
 {% endblock content %}
 
 {% block content12 %}
- <div  style="position: fixed; top: 200px;width:100%" >  
+ <div  style="position: absolute; top: 200px;width:100%" >  
  <section class="content">
     <!-- Small boxes (Stat box) -->
     <div class="row">
@@ -40,14 +41,51 @@
         <div class="small-box bg-green">
           <div class="inner">
             <h3>PARTICIPE</h3>
-            {% for q in Question %}
-             {{ q }}
-              <li>{{ q.pub_date }}
-                {% for tag in q.tags.all %}
-                  {{ tag.name }}
-                {% endfor %}
-              </li>
-            {% endfor %}
+            
+            {% set flag1 = 3 %}
+            {% for Question in Question %}
+
+                    {% for q in q %}
+                        {% if Question.pk|slugify == q.questao %}
+                             {% set flag1 = 1 %}
+                        {% endif %}
+                    {% endfor %}
+                    {% if flag1 != 1 %}
+                        {# mostra as tags da Question corrente #}
+                        {{Question.pub_date}}                        
+                        {% for tag in Question.tags.all %}
+
+                                  #{{ tag.name }}
+
+                        {% endfor %}
+
+                        <p> </p>
+                        <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" style="position:relative"></iframe>   {# mostra da timeline a página da questão #}
+
+                        <p> </p>
+
+                    {% endif %}
+                  {% set flag1 = 3 %}
+             {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
