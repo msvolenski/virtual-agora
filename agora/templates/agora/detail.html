@@ -4,9 +4,20 @@
 
 <form action="{% url 'agora:vote' question.id %}" method="post">
 {% csrf_token %}
-{% for choice in question.choice_set.all %}
+
+{% if question.question_type|slugify == '3' %}
+  <textarea name="text" id="question_text" value="" rows="4" cols="100" ></textarea><br />
+{% elif question.question_type|slugify == '1' %}
+  {% for choice in question.choice_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-{% endfor %}
+  {% endfor %}
+{% elif question.question_type|slugify == '2' %}
+  {% for choice in question.choice_set.all %}
+    <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+  {% endfor %}
+{% endif %}
+
 <input type="submit" value="Vote" />
 </form>
