@@ -71,20 +71,8 @@ class Question(models.Model):
     ('3', 'Texto'),
 )
 
-    def define_next():
-        try:
-            question = Question.objects.latest('id')
-        except (KeyError, Question.DoesNotExist):
-            return str('#') + str(1).ljust(3) + str('-').ljust(3)
-
-        a = question.pk
-        a = a + 1
-        return str('#') + str(a).ljust(3) + str('-').ljust(3)
-
-
-
     permissao = models.IntegerField(default=0)
-    question_text = models.CharField(max_length=200, default=define_next)
+    question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('Data de publicação')
     expiration_date = models.DateTimeField('Data de expiração')
     tags = TaggableManager()
