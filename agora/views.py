@@ -205,8 +205,15 @@ class ResultsView(generic.DetailView):
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     
+       
     try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        if question.question_type == "1":             
+            selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        #if question.question_type == "2":        
+            #selected_choice = question.choice_set.get(pk=request.POST['choice'])   
+        if question.question_type == "3": 
+            selected_choice = request.POST['text']    
+    
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         # Linha abaixo deleta o banco de dados de questões respondidas
@@ -216,41 +223,55 @@ def vote(request, question_id):
             'question': question,
             'error_message': 'bla',                      
             'error_message': VotoDoUsuario.objects.filter(user__nome__startswith=user_nome) ,  
-            
+                
         })
     else:
-       
-        #Abaixo são armazenadas as questões que o usuário votou. Os models são QuestoesRespondidas e Usuario 
-        user_nome = User.objects.get(username = request.user)
-        a = QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome, questao__contains=str(question_id)).count()        
-        if a != 0:
-            #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
-            return HttpResponseRedirect(reverse('agora:posvotacao')) 
-        else:                           
-            
-            #salva atributos do usuario
-
-            u = User.objects.get(username = request.user)             
-            faculdade1 = u.userprofile.faculdade          
-                                   
-            #salvam o usuário, a questão respondida e o voto no DB     
-            u1 = Usuario(nome=user_nome)                       
-            u1.save()
            
-            q1 = QuestoesRespondidas(questao=str(question_id))          
-            q1.save()  
-            q1.usuario.add(u1)
-            
-            selected_choice.votes += 1
-            selected_choice.save()
-            
-            text = selected_choice.choice_text
-            u2 = Usuario(nome=user_nome)           
-            u2.save()            
-            q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2, faculdade=faculdade1)  
-            q2.save()           
-                 
-            return HttpResponseRedirect(reverse('agora:posvotacao'))
+           #Abaixo são armazenadas as questões que o usuário votou. Os models são QuestoesRespondidas e Usuario 
+            user_nome = User.objects.get(username = request.user)
+            a = QuestoesRespondidas.objects.filter(usuario__nome__startswith=user_nome, questao__contains=str(question_id)).count()        
+            if a != 0:
+                #return HttpResponseRedirect(reverse('agora:results', args=(question.id,)))
+                return HttpResponseRedirect(reverse('agora:posvotacao')) 
+            else:                           
+                
+                #salva atributos do usuario
+    
+                u = User.objects.get(username = request.user)             
+                faculdade1 = u.userprofile.faculdade          
+                                       
+                #salvam o usuário, a questão respondida e o voto no DB     
+                u1 = Usuario(nome=user_nome)                       
+                u1.save()
+               
+                q1 = QuestoesRespondidas(questao=str(question_id))          
+                q1.save()  
+                q1.usuario.add(u1)
+                
+                if question.question_type == "1":
+                    selected_choice.votes += 1
+                    selected_choice.save()    
+                    text = selected_choice.choice_text
+                
+                if question.question_type == "3":
+                    text = selected_choice  
+                
+                #if question.question_type == "2":
+                    #text = selected_choice.choice_text 
+                
+                u2 = Usuario(nome=user_nome)           
+                u2.save()            
+                q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2, faculdade=faculdade1)  
+                q2.save()           
+                     
+                return HttpResponseRedirect(reverse('agora:posvotacao'))
+
+    
+
+
+
+
+
 
 def posvotacao(request):
     return render(request, 'agora/pos-votacao.html')
