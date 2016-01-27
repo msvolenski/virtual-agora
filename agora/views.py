@@ -262,27 +262,20 @@ def vote(request, question_id):
                     u2 = Usuario(nome=user_nome)           
                     u2.save()            
                     q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2, faculdade=faculdade1)  
-                    q2.save() 
-               
-                
-                             
+                    q2.save()                
+                            
                 if question.question_type == "2":
                     for element in selected_choice:                     
                         text = question.choice_set.get(pk=element)                        
                         u2 = Usuario(nome=user_nome)           
                         u2.save()            
                         q2 = VotoDoUsuario(voto=text,questao=str(question_id), user=u2, faculdade=faculdade1)  
-                        q2.save()  
+                        q2.save()               
                 
                 
-                
-                return render(request, 'agora/detail.html', {
-                    'question': question,
-                    'error_message': 'bla',                      
-                    'error_message': selected_choice ,  
-                
-                })   
-               #return HttpResponseRedirect(reverse('agora:posvotacao'), text)
+                              
+                   
+                return HttpResponseRedirect(reverse('agora:posvotacao'), text)
 
     
 
