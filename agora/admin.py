@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import SimpleListFilter
-from .models import Choice, Question, AdicionaLink, VotoDoUsuario, UserProfile
+from .models import Choice, Question, VotoDoUsuario, UserProfile
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from django.http import HttpResponse
@@ -54,21 +54,21 @@ class QuestionAdmin(admin.ModelAdmin):
 #==============================================================================
 # Inclui no Admin uma página mostrando os link e uma página para incluir Links
 #==============================================================================
-class AdicionaLinknAdmin(admin.ModelAdmin):
+#class AdicionaLinknAdmin(admin.ModelAdmin):
     
-    list_filter = ['data_publicacao']    
+ #   list_filter = ['data_publicacao']    
     
     #setam os campos que irão aparecer no "Add adiciona Link"    
-    fieldsets = [
-        (None,               {'fields': ['titulo']}),
-        ('URL:', {'fields': ['url']}),         
-        ('Data de publicação', {'fields': ['data_publicacao']}),
+  #  fieldsets = [
+   #     (None,               {'fields': ['titulo']}),
+    #    ('URL:', {'fields': ['url']}),         
+     #   ('Data de publicação', {'fields': ['data_publicacao']}),
            
-    ]
+    #]
    
     
-    list_display = ('titulo', 'url' , 'data_publicacao' )
-    search_fields = ['titulo']
+    #list_display = ('titulo', 'url' , 'data_publicacao' )
+    #search_fields = ['titulo']
 
 class VotoDoUsuarioAdmin(admin.ModelAdmin):    
     
@@ -99,7 +99,7 @@ class UserAdmin(UserAdmin):
 #Coloca as classes em ação
 admin.site.register(Question, QuestionAdmin)
 
-admin.site.register(AdicionaLink, AdicionaLinknAdmin )
+#admin.site.register(AdicionaLink, AdicionaLinknAdmin )
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)

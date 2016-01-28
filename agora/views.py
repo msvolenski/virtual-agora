@@ -14,11 +14,11 @@ from django.shortcuts import render_to_response,redirect
 from django.views.generic.list import MultipleObjectMixin
 from django.db.models import Max
 from django.utils.decorators import method_decorator
-from .models import Choice, Question, AdicionaLink, QuestoesRespondidas, Usuario, VotoDoUsuario, UserProfile
+from .models import Choice, Question, QuestoesRespondidas, Usuario, VotoDoUsuario, UserProfile
 from django.contrib.auth.models import User
 from django.db import models
 from taggit.models import Tag
-
+from conheca.models import AdicionaLink
 
 #==============================================================================
 # @method_decorator(login_required(login_url='/agora/login/') DEVE SER COLOCADO EM TODAS AS VIEWS NÃO PÚBLICAS!
@@ -75,9 +75,9 @@ class PdpuView(generic.ListView):
         
     
     
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-class TemplatePDPUConhecaView(ListView):
-    model = AdicionaLink
+#@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+#lass TemplatePDPUConhecaView(ListView):
+    #model = AdicionaLink
         
         
 
@@ -275,7 +275,7 @@ def vote(request, question_id):
                 
                               
                    
-                return HttpResponseRedirect(reverse('agora:posvotacao'), text)
+                return HttpResponseRedirect(reverse('agora:posvotacao'))
 
     
 
