@@ -18,7 +18,7 @@ from .models import Choice, Question, QuestoesRespondidas, Usuario, VotoDoUsuari
 from django.contrib.auth.models import User
 from django.db import models
 from taggit.models import Tag
-from conheca.models import AdicionaLink
+from conheca.models import Topic
 
 #==============================================================================
 # @method_decorator(login_required(login_url='/agora/login/') DEVE SER COLOCADO EM TODAS AS VIEWS NÃO PÚBLICAS!
@@ -46,7 +46,7 @@ class HomeView(generic.ListView):
 class PdpuView(generic.ListView):
 
   template_name = 'agora/pagina-pdpu.html'
-  model = AdicionaLink
+  model = Topic
   #context_object_name = 'Question_list'
   #Configura quantos links serQo mostrados na ordem da data de publicação
 
@@ -68,9 +68,9 @@ class PdpuView(generic.ListView):
     Return the last five published questions (not including those set to be
     published in the future).
     """
-    return AdicionaLink.objects.filter(
-      data_publicacao__lte=timezone.now()
-    ).order_by('-data_publicacao')[:4]
+    #return Topic.objects.filter(
+     # data_publicacao__lte=timezone.now()
+    #).order_by('-data_publicacao')[:4]
 
 
 #@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
@@ -150,8 +150,6 @@ class DetailView(generic.DetailView):
     return Question.objects.filter(pub_date__lte=timezone.now())
 
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-
-
 class ResultsView(generic.DetailView):
   model = Question
   template_name = 'agora/result.html'

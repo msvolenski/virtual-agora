@@ -1,23 +1,29 @@
 from django.contrib import admin
-from .models import AdicionaLink, Article
+from .models import Link, Article, Topic
 # Register your models here.
 
-class AdicionaLinknAdmin(admin.ModelAdmin):
+
+class LinkInline(admin.TabularInline):
+    model = Link
+    extra = 3
+
+
+class TopicAdmin(admin.ModelAdmin):
     
-    list_filter = ['data_publicacao']    
+    #list_filter = ['pub_date']    
     
     #setam os campos que irão aparecer no "Add adiciona Link"    
     fieldsets = [
-        (None,               {'fields': ['titulo']}),
-        ('URL:', {'fields': ['url']}),         
-        ('Data de publicação', {'fields': ['data_publicacao']}),
+        (None,               {'fields': ['title']}),
+        ('Sessão:', {'fields': ['session']}),         
+        #('Data de publicação', {'fields': ['pub_date']}),
            
     ]
    
-    
-    list_display = ('titulo', 'url' , 'data_publicacao' )
-    search_fields = ['titulo']
-    
+    inlines = [LinkInline]
+    list_display = ['title']
+    search_fields = ['title']
+
 
 class ArticleAdmin(admin.ModelAdmin):
     
@@ -29,12 +35,13 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Conteúdo', {'fields': ['article']}),
         ('Tags', {'fields': ['tags']}), 
         ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
-        ('Referências', {'fields': ['reference']}),          
+        ('Referências', {'fields': ['reference']}), 
+        ('URL da página do Artigo:', {'fields': ['address']}),   
     ]
    
     
-    list_display = ('title', 'subtitle' , 'article','questao_associada', 'reference','destaque')   
-    
+    list_display = ('title', 'id', 'subtitle' , 'article','questao_associada', 'reference','destaque')   
+     
     
     def destacar_artigo(modeladmin, request, queryset):
         if queryset.count() != 1:
@@ -53,5 +60,5 @@ class ArticleAdmin(admin.ModelAdmin):
     
     #search_fields = ['titulo']    
     
-admin.site.register(AdicionaLink, AdicionaLinknAdmin )
+admin.site.register(Topic, TopicAdmin )
 admin.site.register(Article, ArticleAdmin )
