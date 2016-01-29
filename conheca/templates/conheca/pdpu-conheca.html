@@ -1,5 +1,7 @@
 {% extends 'agora/base.html' %}
-{% block content %}
+{% load set_var %}
+{% block content12 %}
+
 <div class="navbar navbar-static-top" id="overlay" style="top:50px;position:fixed;background:white;width:100%;opacity:1;left:220px;">
   <section class="content-header">
     <h1> Plano Diretor Participativo - UNICAMP <small>Conheça</small></h1>
@@ -10,17 +12,137 @@
     <li class="active">Conheça</li>
   </ol>
 </div>
-{% endblock content %}
 
-{% block content12 %}
-<div  style="position: absolute; top: 200px;width:100%" > 
-  <h2>Publishers</h2>
-  <ul>
-    {% for AdicionaLink in object_list %}
-      <li><a  href="{{ AdicionaLink.url }}">{{ AdicionaLink.titulo }} </a>
-        <small>Conheça</small>
-      </li>
-    {% endfor %}
-  </ul>
+
+
+
+<div style="top:100px">
+<p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
 </div>
+
+<table style="border-spacing: 0; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;">
+    <tbody>
+    <tr>
+    <td style="padding:0 0.5em;"></td>    
+    <td style="vertical-align:top; width:68%;">
+        <div style="border:1px solid #fad67d;">
+                    
+            <div id="mf-artigos-destacados" class="bg-orange" style="background:#fbe2a4; border-bottom:1px solid #fad67d; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em destaque</div>
+            <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
+             
+            {% for Article in object_list %}
+                {% if Article.destaque == 'Sim' %}
+                <font size="15"> {{ Article.title }}</font>
+                <br>
+                <font size="6">{{ Article.subtitle }}</font>
+                <br> 
+                {{ Article.article }}
+               
+                <br>  
+                
+                <div class="plainlinks hlist" style="clear:both; border-top:1px solid #fbde97; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                
+                VOTE! Este artigo te auxilia a responder as questões: 
+                              
+                {% for questao_associada in Article.split_numbers %}
+                    {% set flag = 0 %}  
+                    {% for question in question %} 
+                        {% if question.questao == questao_associada %}  
+                            {% set flag = 1 %}                            
+                        {% endif %}
+                    {% endfor %}
+                    {% if flag == 0 %}
+                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>  
+                     
+                        
+                    {% endif %}   
+                {% endfor %}
+                
+                </div>              
+                
+             {% endif %} 
+            {% endfor %}
+                
+            </div>
+        </div>
+     
+        <p><br></p>
+    
+            {% for Article in object_list %}
+                {% if Article.destaque == 'Não' %}    
+                            
+                <div style="border:1px solid #cef2e0;">
+                    <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo</div>
+                    <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+            
+                   
+                        <font size="15"> {{ Article.title }}</font>
+                        <br>
+                        <font size="6">{{ Article.subtitle }}</font>
+                        <br> 
+                        {{ Article.article }}
+                        <br> 
+                        
+        
+        
+                    <div class="plainlinks hlist" style="clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+        
+                        VOTE! Este artigo te auxilia a responder as questões: 
+                                      
+                        {% for questao_associada in Article.split_numbers %}
+                            {% set flag = 0 %}  
+                            {% for question in question %} 
+                                {% if question.questao == questao_associada %}  
+                                    {% set flag = 1 %}                            
+                                {% endif %}
+                            {% endfor %}
+                            {% if flag == 0 %}
+                                <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>  
+                             
+                                
+                            {% endif %}   
+                        {% endfor %}         
+                 </div>
+                {% endif %}     
+                   
+            {% endfor %}  
+            </div>
+        </div>    
+        <p><br></p>   
+        &nbsp;
+    </td>
+
+    <td style="padding:0 0.5em;"></td>
+    <td style="width:32%; vertical-align:top;">
+        <div style="border:1px solid #abd5f5;">
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#abd5f5; border-bottom:1px solid #abd5f5; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Apresentação</div>
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
+        
+        AQUI SE INSERE O INDICE-LINK
+        
+        </div>
+        </div>
+        
+        <p><br></p>
+
+        <div style="border:1px solid #abd5f5; vertical-align:top;">
+        <div id="mf-participa.C3.A7.C3.A3o" style="background:#abd5f5; border-bottom:1px solid #abd5f5; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Participação</div>
+        <div id="mf-participa.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
+        
+        AQUI SE INSERE OUTROS
+        
+        </div>
+        </div>
+        
+        <p><br></p>
+        <td style="padding:0 0.5em;"></td>
+
+    </td>
+    </tr>
+    </tbody>
+</table>
+</td>
+
+
+
 {% endblock content12 %}

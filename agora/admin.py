@@ -45,7 +45,7 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInline]
     
-    list_display = ('question_text', 'pub_date', 'expiration_date', 'was_published_recently', 'resultado')
+    list_display = ('question_text', 'id', 'pub_date', 'expiration_date', 'was_published_recently', 'resultado')
     
     search_fields = ['question_text']
     actions = [publicar_resultado, desfazer_publicacao_do_resultado]
