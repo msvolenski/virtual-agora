@@ -25,13 +25,14 @@
     <tr>
     <td style="padding:0 0.5em;"></td>    
     <td style="vertical-align:top; width:68%;">
-        <div style="border:1px solid #fad67d;">
-                    
+            
+            {% for Article in object_list %}
+               {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
+            <div style="border:1px solid #fad67d;">                    
             <div id="mf-artigos-destacados" class="bg-orange" style="background:#fbe2a4; border-bottom:1px solid #fad67d; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em destaque</div>
             <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
              
-            {% for Article in object_list %}
-                {% if Article.destaque == 'Sim' %}
+            
                 <font size="15"> {{ Article.title }}</font>
                 <br>
                 <font size="6">{{ Article.subtitle }}</font>
@@ -69,7 +70,7 @@
   
     
             {% for Article in object_list %}
-                {% if Article.destaque == 'Não' %}    
+                {% if Article.destaque == 'Não' and Article.published == 'Sim' %}    
                             
                     <div style="border:1px solid #cef2e0;">
                     <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo</div>
@@ -122,8 +123,8 @@
         {% for topic in topic %}
             {% if topic.session == "1" %}             
                  <font size=5>{{ topic.title }}</font><br>
-                 {% for u in topic.link_set.all %}             
-                    <li><a href="{{ u.url }}">{{ u.url_title }}<br> </a></li>
+                 {% for u in topic.link_set.all %}                     
+                    <li><a href="#" onclick="window.open('{{ u.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ u.url_title }}<br> </a></li>
                  {% endfor %}
                  <br>
             {% endif %}
@@ -142,7 +143,7 @@
             {% if topic.session == "2" %}             
                  <font size=5>{{ topic.title }}</font><br>
                  {% for u in topic.link_set.all %}             
-                    <li> <a href="{{ u.url }}">{{ u.url_title }}<br> </a> </li>
+                    <li><a href="#" onclick="window.open('{{ u.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ u.url_title }}<br> </a></li>
                  {% endfor %}
                  <br>
             {% endif %}

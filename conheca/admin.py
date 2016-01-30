@@ -10,25 +10,40 @@ class LinkInline(admin.TabularInline):
 
 class TopicAdmin(admin.ModelAdmin):
     
-    #list_filter = ['pub_date']    
-    
+    list_filter = ['session']    
+    actions = ['inverter_ordem_de_apresentacao']
     #setam os campos que irão aparecer no "Add adiciona Link"    
     fieldsets = [
         (None,               {'fields': ['title']}),
-        ('Sessão:', {'fields': ['session']}),         
+        ('Sessão:', {'fields': ['session']}),  
+        
         #('Data de publicação', {'fields': ['pub_date']}),
            
     ]
    
     inlines = [LinkInline]
-    list_display = ['title']
+    list_display = ('title','id','session')
     search_fields = ['title']
-
+    
+    def inverter_ordem_de_apresentacao(modeladmin, request, queryset):             
+            if queryset.count() > 2:
+                modeladmin.message_user(request, "Só é possível inverter dois tópicos por vez.")
+                return         
+            else:                        
+                a = queryset.first()
+                a1 = a.position                                
+                b = queryset.last()
+                b1 = b.position                 
+                queryset.filter(id=a.pk).update(position = b1)               
+                queryset.filter(id=b.pk).update(position = a1)
+               
+                
+            return
 
 class ArticleAdmin(admin.ModelAdmin):
     
     #list_filter = ['data_publicacao']    
-    actions = ['destacar_artigo'] 
+    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal'] 
     fieldsets = [
         (None,               {'fields': ['title']}),
         ('Sub-título', {'fields': ['subtitle']}),         
@@ -40,7 +55,7 @@ class ArticleAdmin(admin.ModelAdmin):
     ]
    
     
-    list_display = ('title', 'id', 'subtitle' , 'article','questao_associada', 'reference','destaque')   
+    list_display = ('title', 'id', 'subtitle' , 'article','questao_associada', 'reference','published','destaque')   
      
     
     def destacar_artigo(modeladmin, request, queryset):
@@ -51,9 +66,15 @@ class ArticleAdmin(admin.ModelAdmin):
             Article.objects.all().update(destaque = 'Não')            
             queryset.update(destaque = 'Sim')
             
+            return
+            
+    def publicar_na_pagina_principal(modeladmin, request, queryset):             
+            queryset.update(published = 'Sim')
             return 
     
-    
+    def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):             
+            queryset.update(published = 'Não')
+            return 
     
     
     

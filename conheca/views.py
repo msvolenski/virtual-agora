@@ -4,7 +4,7 @@ from agora.models import QuestoesRespondidas
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from django.views.generic import ListView
+
 # Create your views here.
 
 
@@ -19,7 +19,7 @@ class TemplatePDPUConhecaView(ListView):
         context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)     
         context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
         context['link'] = Link.objects.all()
-        context['topic'] = Topic.objects.all()
+        context['topic'] = Topic.objects.all().order_by('position')
         return context
         
   
