@@ -22,7 +22,7 @@ class TopicAdmin(admin.ModelAdmin):
     ]
    
     inlines = [LinkInline]
-    list_display = ('title','id','session')
+    list_display = ('title','id','position','session')
     search_fields = ['title']
     
     def inverter_ordem_de_apresentacao(modeladmin, request, queryset):             
