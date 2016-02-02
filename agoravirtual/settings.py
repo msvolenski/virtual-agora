@@ -26,7 +26,7 @@ SECRET_KEY = '1w1l8xycen&h5i@89sr9+8*&^0+%yf8jzoviv(u6t1j5ohg6vd'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SITE_URL = 'http://127.0.0.1:8000/'
 
 # Application definition
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'agora.templatetags',
     'taggit',
     'conheca',
+    'tinymce',
+    'ckeditor',
      
     
 ]
@@ -142,3 +144,22 @@ LOGIN_URL = 'Login'
 
 LOGIN_REDIRECT_URL = "../"
 LOGOUT_URL = 'login'
+
+# CK EDITOR
+MEDIA_ROOT = ''
+CKEDITOR_MEDIA_PREFIX = "/media/ckeditor/"
+CKEDITOR_UPLOAD_PATH =  os.path.join( MEDIA_ROOT, 'uploads/ckuploads' )
+CKEDITOR_UPLOAD_PREFIX = "%smedia/uploads/ckuploads/" % (SITE_URL,)
+CKEDITOR_CONFIGS = {
+	'default': {
+		'toolbar': None,
+		
+	},
+	'full': {
+		'toolbar': None,
+		
+	},
+}
+
+
+

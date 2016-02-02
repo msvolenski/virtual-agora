@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from taggit.managers import TaggableManager
+from tinymce.models import HTMLField
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -23,7 +25,7 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
     tags = TaggableManager()
-    article = models.TextField()
+    article = RichTextField(config_name='full', verbose_name=u'Descrição')
     publ_date = models.DateTimeField()
     destaque = models.CharField(max_length=3, default='Não')    
     questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  
