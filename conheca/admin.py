@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Link, Article, Topic
+from django.utils import timezone
 # Register your models here.
 
 
@@ -42,7 +43,7 @@ class TopicAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
     
-    #list_filter = ['data_publicacao']    
+    list_filter = ['tags']    
     actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal'] 
     fieldsets = [
         (None,               {'fields': ['title']}),
@@ -50,12 +51,12 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Conteúdo', {'fields': ['article']}),
         ('Tags', {'fields': ['tags']}), 
         ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
-        ('Referências', {'fields': ['reference']}), 
+        ('Data de Pubicação:', {'fields': ['publ_date']}), 
         ('URL da página do Artigo:', {'fields': ['address']}),   
     ]
    
     
-    list_display = ('title', 'id', 'subtitle' , 'article','questao_associada', 'reference','published','destaque')   
+    list_display = ('title', 'id', 'publ_date', 'subtitle' , 'article','questao_associada', 'published','destaque')   
      
     
     def destacar_artigo(modeladmin, request, queryset):
@@ -70,6 +71,7 @@ class ArticleAdmin(admin.ModelAdmin):
             
     def publicar_na_pagina_principal(modeladmin, request, queryset):             
             queryset.update(published = 'Sim')
+            queryset.update(publ_date = timezone.now())           
             return 
     
     def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):             

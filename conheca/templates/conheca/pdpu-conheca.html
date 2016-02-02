@@ -20,6 +20,13 @@
 <p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
 </div>
 
+
+<form  method="post" style="width:1400px; text-align: left; margin-left: 15px; height: 30px" action="{% url 'conheca:search'%}">
+    <input  id="search_box" name="q"  placeholder="Procure um artigo pelas hashtags" >
+    <button id="search_submit" value="search" >Buscar</button>
+</form>
+
+
 <table style="border-spacing: 0; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;">
     <tbody>
     <tr>
@@ -32,7 +39,12 @@
             <div id="mf-artigos-destacados" class="bg-orange" style="background:#fbe2a4; border-bottom:1px solid #fad67d; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em destaque</div>
             <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
              
-            
+                {% for tag in Article.tags.all %}
+                #{{ tag.name }} &nbsp -
+                {% endfor %}
+                Publicado em: {{ Article.publ_date }}
+                <div class="plainlinks hlist" style="clear:both; border-top:1px solid #fbde97; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
                 <font size="15"> {{ Article.title }}</font>
                 <br>
                 <font size="6">{{ Article.subtitle }}</font>
@@ -66,16 +78,22 @@
                 
             </div>
         </div>
-     
+        <br>
   
-    
+            
             {% for Article in object_list %}
                 {% if Article.destaque == 'Não' and Article.published == 'Sim' %}    
-                            
+                          
                     <div style="border:1px solid #cef2e0;">
                     <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo</div>
                     <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-            
+                    
+                    {% for tag in Article.tags.all %}
+                    #{{ tag.name }} &nbsp -
+                    {% endfor %}
+                    Publicado em: {{ Article.publ_date }}
+                    <div class="plainlinks hlist" style="clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                    </div>    
                    
                         <font size="15"> {{ Article.title }}</font>
                         <br>
@@ -107,7 +125,7 @@
                 {% endif %}     
              </div>
             </div>    
-            <p><br></p>       
+            <p></p>       
             {% endfor %}  
             
           

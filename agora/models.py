@@ -27,9 +27,9 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
 
      #Novos Atributos
-    ano_de_ingresso = models.CharField(max_length=20)
+    ano_de_ingresso = models.CharField(max_length=20, default='ano')
     faculdade = models.CharField(max_length=20, default = 'faculdade')
-    curso = models.CharField(max_length=20)
+    curso = models.CharField(max_length=20, default='curso')
 
 
 #==============================================================================

@@ -24,7 +24,7 @@ class Article(models.Model):
     subtitle = models.CharField(max_length=200)
     tags = TaggableManager()
     article = models.TextField()
-    reference = models.CharField(max_length=200)
+    publ_date = models.DateTimeField()
     destaque = models.CharField(max_length=3, default='Não')    
     questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  
     address = models.CharField(max_length=200, default=get_address)
