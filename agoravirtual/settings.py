@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'agora.templatetags',
     'taggit',
-    'conheca',
-    'tinymce',
+    'conheca',   
     'ckeditor',
+    'ckeditor_uploader',
      
     
 ]
@@ -146,20 +146,38 @@ LOGIN_REDIRECT_URL = "../"
 LOGOUT_URL = 'login'
 
 # CK EDITOR
-MEDIA_ROOT = ''
-CKEDITOR_MEDIA_PREFIX = "/media/ckeditor/"
-CKEDITOR_UPLOAD_PATH =  os.path.join( MEDIA_ROOT, 'uploads/ckuploads' )
-CKEDITOR_UPLOAD_PREFIX = "%smedia/uploads/ckuploads/" % (SITE_URL,)
+
+
+
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+
 CKEDITOR_CONFIGS = {
 	'default': {
-		'toolbar': None,
+		'toolbar': 'Full',
 		
+
+		'width': 'Full',
 	},
 	'full': {
 		'toolbar': None,
-		
+           'width': 'Full',
+		#'width': 640,
 	},
 }
+
 
 
 

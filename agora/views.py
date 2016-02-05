@@ -18,7 +18,7 @@ from .models import Choice, Question, QuestoesRespondidas, Usuario, VotoDoUsuari
 from django.contrib.auth.models import User
 from django.db import models
 from taggit.models import Tag
-from conheca.models import Topic
+from conheca.models import SubTopico
 
 #==============================================================================
 # @method_decorator(login_required(login_url='/agora/login/') DEVE SER COLOCADO EM TODAS AS VIEWS NÃO PÚBLICAS!
@@ -46,7 +46,7 @@ class HomeView(generic.ListView):
 class PdpuView(generic.ListView):
 
   template_name = 'agora/pagina-pdpu.html'
-  model = Topic
+  model = SubTopico
   #context_object_name = 'Question_list'
   #Configura quantos links serQo mostrados na ordem da data de publicação
 

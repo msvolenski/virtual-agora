@@ -1,0 +1,25 @@
+{% load set_var %}
+<!DOCTYPE html>
+<html>
+<head></head>
+   <body > 
+   <style type="text/css"></style>
+   <style>iframe { vertical-align:bottom; } </style>
+   <style> iframe { display:block; } </style>   
+        <div style="border:1px solid #abd5f5;">
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#abd5f5; border-bottom:1px solid #abd5f5; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">{{ topico.topico }}</div>
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">        
+        <p>         {% for u in topico.subtopico_set.all %}                     
+                    <h3><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h3> 
+                    <p>                
+                    {% for x in u.link_set.all %}
+                       <h4><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ x.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ x.url_title }}<br> </a></li><h4>
+                    {% endfor %}
+                    </p>         
+                {% endfor %}
+        </p>   
+        <div class="plainlinks hlist" style="clear:both; border-top:1px solid #abd5f5; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
+        </div>      
+        </div>
+</body>
+</html>

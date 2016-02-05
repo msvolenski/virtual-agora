@@ -2,183 +2,82 @@
 {% load set_var %}
 {% block content12 %}
 
-<div class="navbar navbar-static-top" id="overlay" style="top:50px;position:fixed;background:white;width:100%;opacity:1;left:220px;">
-  <section class="content-header">
-    <h1> Plano Diretor Participativo - UNICAMP <small>Conheça</small></h1>
-  </section>
-  <ol class="breadcrumb">
-    <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
-    <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li>
-    <li class="active">Conheça</li>
-  </ol>
-</div>
+    <div style="filter:alpha(opacity=100);background-color:#7FDBFF;position:fixed;background-attachment:fixed;width:100%;top:40px;z-index:2;">
+      <section class="content-header">
+        <h1> Plano Diretor Participativo - UNICAMP <small>Conheça</small></h1>
+      </section>
+      <ol class="breadcrumb">
+        <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
+        <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li>
+        <li class="active">Conheça</li>
+      </ol>   
+      <form   style="position:relative;left:31px;top:-10px;" method="post"  action="{% url 'conheca:search'%}">
+        <input  size="35" id="search_box" name="q"  placeholder="Procure um artigo pelas hashtags" >
+        <button id="search_submit" value="search" >Buscar</button>
+      </form>         
+    </div>
 
-
-
-
-<div style="top:100px">
-<p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
-</div>
-
-
-<form  method="post" style="width:1400px; text-align: left; margin-left: 15px; height: 30px" action="{% url 'conheca:search'%}">
-    <input  id="search_box" name="q"  placeholder="Procure um artigo pelas hashtags" >
-    <button id="search_submit" value="search" >Buscar</button>
-</form>
-
-
-<table style="border-spacing: 0; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;">
+    
+    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:150px;z-index:1;">
     <tbody>
-    <tr>
-    <td style="padding:0 0.5em;"></td>    
-    <td style="vertical-align:top; width:68%;">
+    <tr> 
+    
+    <td style="padding:0 0.5em;">
+    </td>    
+    
+    <td style="width:68%;">
             
+                
             {% for Article in object_list %}
-               {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
-            <div style="border:1px solid #fad67d;">                    
-            <div id="mf-artigos-destacados" class="bg-orange" style="background:#fbe2a4; border-bottom:1px solid #fad67d; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em destaque</div>
-            <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
-             
-                {% for tag in Article.tags.all %}
-                #{{ tag.name }} &nbsp -
-                {% endfor %}
-                Publicado em: {{ Article.publ_date }}
-                <div class="plainlinks hlist" style="clear:both; border-top:1px solid #fbde97; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
-                <font size="15"> {{ Article.title }}</font>
-                <br>
-                <font size="6">{{ Article.subtitle }}</font>
-                <br> 
-                {{ Article.article }}
-               
-                <br>  
-                
-                <div class="plainlinks hlist" style="clear:both; border-top:1px solid #fbde97; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                
-                VOTE! Este artigo te auxilia a responder as questões: 
-                              
-                {% for questao_associada in Article.split_numbers %}
-                    {% set flag = 0 %}  
-                    {% for question in question %} 
-                        {% if question.questao == questao_associada %}  
-                            {% set flag = 1 %}                            
-                        {% endif %}
-                    {% endfor %}
-                    {% if flag == 0 %}
-                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>  
-                     
-                        
-                    {% endif %}   
-                {% endfor %}
-                
-                </div>              
-                
-             {% endif %} 
-            {% endfor %}
-                
-            </div>
-        </div>
-        <br>
-  
+                {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
             
+             
+            <iframe src="{{ Article.address}}/destaque" hspace="0px" frameborder="0" marginheight="0" marginwidth="0" width="100%" style="display:block;" onload="this.style.height=(this.contentDocument.body.scrollHeight + 20) + 'px'"></iframe><br>                          
+                  
+                {% endif %} 
+            {% endfor %}   
+            <br>
+                      
             {% for Article in object_list %}
                 {% if Article.destaque == 'Não' and Article.published == 'Sim' %}    
-                          
-                    <div style="border:1px solid #cef2e0;">
-                    <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo</div>
-                    <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-                    
-                    {% for tag in Article.tags.all %}
-                    #{{ tag.name }} &nbsp -
-                    {% endfor %}
-                    Publicado em: {{ Article.publ_date }}
-                    <div class="plainlinks hlist" style="clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                    </div>    
-                   
-                        <font size="15"> {{ Article.title }}</font>
-                        <br>
-                        <font size="6">{{ Article.subtitle }}</font>
-                        <br> 
-                        {{ Article.article }}
-                        <br> 
-                        
-        
-        
-                    <div class="plainlinks hlist" style="clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-        
-                        VOTE! Este artigo te auxilia a responder as questões: 
-                                      
-                        {% for questao_associada in Article.split_numbers %}
-                            {% set flag = 0 %}  
-                            {% for question in question %} 
-                                {% if question.questao == questao_associada %}  
-                                    {% set flag = 1 %}                            
-                                {% endif %}
-                            {% endfor %}
-                            {% if flag == 0 %}
-                                <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>  
-                             
-                                
-                            {% endif %}   
-                        {% endfor %}         
-                     </div>
-                {% endif %}     
-             </div>
-            </div>    
-            <p></p>       
-            {% endfor %}  
             
-          
-        &nbsp;
-    </td>
-
+            
+            <iframe src="{{ Article.address}}" hspace="0px"  height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload="this.style.height=(this.contentDocument.body.scrollHeight + 20) + 'px'"></iframe><br>        
+                 
+             
+                {% endif %}     
+            {% endfor %}        
+              
+            
+     </td>
+     
+     <td style="padding:0 0.5em;height:1000px">
+     </td>
+     
+     <td style="width:32%; vertical-align:top;">
+        
+        
+         {% for topico in topico %}
+                       <iframe src="{{ topico.address_topico}}" style="font-size: 0px;vertical-align:bottom;display:block;" frameborder="0" marginheight="0" marginwidth="0" width="100%" onload="this.style.height=(this.contentDocument.body.scrollHeight + 10) + 'px'"></iframe><br>        
+         {% endfor %}
+     </td>
+      
+    
+    
+    
+    
+    
+    
+       
+       
     <td style="padding:0 0.5em;"></td>
-    <td style="width:32%; vertical-align:top;">
-        <div style="border:1px solid #abd5f5;">
-        <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#abd5f5; border-bottom:1px solid #abd5f5; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Sobre o PDPU</div>
-        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
+    
         
-        {% for topic in topic %}
-            {% if topic.session == "1" %}             
-                 <font size=5>{{ topic.title }}</font><br>
-                 {% for u in topic.link_set.all %}                     
-                    <li><a href="#" onclick="window.open('{{ u.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ u.url_title }}<br> </a></li>
-                 {% endfor %}
-                 <br>
-            {% endif %}
-        {% endfor %}
-        
-        </div>
-        </div>
-        
-        <p><br></p>
-
-        <div style="border:1px solid #abd5f5; vertical-align:top;">
-        <div id="mf-participa.C3.A7.C3.A3o" style="background:#abd5f5; border-bottom:1px solid #abd5f5; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Outras informações</div>
-        <div id="mf-participa.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
-        
-        {% for topic in topic %}
-            {% if topic.session == "2" %}             
-                 <font size=5>{{ topic.title }}</font><br>
-                 {% for u in topic.link_set.all %}             
-                    <li><a href="#" onclick="window.open('{{ u.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ u.url_title }}<br> </a></li>
-                 {% endfor %}
-                 <br>
-            {% endif %}
-        {% endfor %}
-        
-        </div>
-        </div>
-        
-        <p><br></p>
-        <td style="padding:0 0.5em;"></td>
-
-    </td>
     </tr>
     </tbody>
-</table>
-</td>
-
-
-
-{% endblock content12 %}
+    </table>
+  
+    </td>
+    
+    
+    {% endblock content12 %}

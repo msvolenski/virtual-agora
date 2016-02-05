@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from .models import Topic, Article, Link
+from .models import SubTopico, Article, Link, Topico
 from agora.models import QuestoesRespondidas
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -26,7 +26,7 @@ class TemplatePDPUConhecaView(ListView):
         context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)     
         context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
         context['link'] = Link.objects.all()
-        context['topic'] = Topic.objects.all().order_by('position')
+        context['topico'] = Topico.objects.all().order_by('position')
         return context
         
     def get_queryset(self):
@@ -46,6 +46,29 @@ class ArticlePageView(generic.DetailView):
         context = super(ArticlePageView, self).get_context_data(**kwargs)     
         context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
         return context
+        
+@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')        
+class ArticleDestaquePageView(generic.DetailView):
+    model = Article       
+    template_name = 'conheca/article_destaque_page.html'
+    
+    def get_queryset(self):
+        return Article.objects.all()    
+        
+    def get_context_data(self, **kwargs):
+        context = super(ArticleDestaquePageView, self).get_context_data(**kwargs)     
+        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
+        return context
+        
+        
+class TopicoPageView(generic.DetailView):
+    model = Topico       
+    template_name = 'conheca/topico_page.html'
+    
+    def get_queryset(self):
+        return Topico.objects.all()    
+        
+   
 
 
 def search(request):

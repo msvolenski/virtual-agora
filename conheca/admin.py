@@ -1,53 +1,69 @@
 from django.contrib import admin
-from .models import Link, Article, Topic
+from .models import Link, Article, Topico, SubTopico
 from django.utils import timezone
+from django.http import HttpResponseRedirect
+from django.core import serializers
+from django.contrib.contenttypes.models import ContentType
+
 # Register your models here.
 
 
 class LinkInline(admin.TabularInline):
     model = Link
-    extra = 3
-
-
-class TopicAdmin(admin.ModelAdmin):
+    extra = 1
     
-    list_filter = ['session']    
-    actions = ['inverter_ordem_de_apresentacao']
+
+class SubTopicoInline(admin.TabularInline):
+    model = SubTopico
+    extra = 1
+
+
+class SubTopicoAdmin(admin.ModelAdmin):
+
+    fieldsets = [
+        (None,               {'fields': ['subtopico']}),
+    
+    ]
+    
+    inlines = [LinkInline]
+                
+class TopicoAdmin(admin.ModelAdmin):
+    
+    actions = ['posicionar_topico']    
+    #actions = ['inverter_ordem_de_apresentacao']
     #setam os campos que irão aparecer no "Add adiciona Link"    
     fieldsets = [
-        (None,               {'fields': ['title']}),
-        ('Sessão:', {'fields': ['session']}),  
+        (None,               {'fields': ['topico']}),
+        ('URL da página do Tópico:', {'fields': ['address_topico']}), 
         
         #('Data de publicação', {'fields': ['pub_date']}),
            
     ]
    
-    inlines = [LinkInline]
-    list_display = ('title','id','position','session')
-    search_fields = ['title']
-    
-    def inverter_ordem_de_apresentacao(modeladmin, request, queryset):             
-            if queryset.count() > 2:
-                modeladmin.message_user(request, "Só é possível inverter dois tópicos por vez.")
-                return         
-            else:                        
-                a = queryset.first()
-                a1 = a.position                                
-                b = queryset.last()
-                b1 = b.position                 
-                queryset.filter(id=a.pk).update(position = b1)               
-                queryset.filter(id=b.pk).update(position = a1)
-               
-                
+    inlines = [SubTopicoInline]
+    list_display = ['topico','position','id']
+    search_fields = ['topico']
+  
+    def posicionar_topico(modeladmin, request, queryset):
+        if queryset.count() != 2:
+            modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
+            return         
+        else:                        
+            a = queryset.first()
+            a1 = a.position                                
+            b = queryset.last()
+            b1 = b.position                 
+            queryset.filter(id=a.pk).update(position = b1)               
+            queryset.filter(id=b.pk).update(position = a1)                
             return
 
 class ArticleAdmin(admin.ModelAdmin):
     
     list_filter = ['tags']    
-    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal'] 
+    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo'] 
     fieldsets = [
         (None,               {'fields': ['title']}),
-        ('Sub-título', {'fields': ['subtitle']}),         
+              
         ('Conteúdo', {'fields': ['article']}),
         ('Tags', {'fields': ['tags']}), 
         ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
@@ -56,7 +72,7 @@ class ArticleAdmin(admin.ModelAdmin):
     ]
    
     
-    list_display = ('title', 'id', 'publ_date', 'subtitle' , 'article','questao_associada', 'published','destaque')   
+    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque')   
      
     
     def destacar_artigo(modeladmin, request, queryset):
@@ -76,12 +92,35 @@ class ArticleAdmin(admin.ModelAdmin):
     
     def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):             
             queryset.update(published = 'Não')
-            return 
+            return
+            
+    def mostrar_o_artigo(modeladmin, request, queryset):             
+         if queryset.count() != 1:
+            modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
+            return         
+         else:                      
+             selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME) 
+             ct = ContentType.objects.get_for_model(queryset.model)            
+             return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s%s" % ( "", ",".join(selected)) )         
+            #return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s&ids=%s")
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          # a = queryset.values('address')   
+            #response = HttpResponse(content_type="www.uol.com.br")
+            
+            #return response
     
-    
-    
+        
     
     #search_fields = ['titulo']    
     
-admin.site.register(Topic, TopicAdmin )
+admin.site.register(Topico, TopicoAdmin )
+admin.site.register(SubTopico, SubTopicoAdmin )
 admin.site.register(Article, ArticleAdmin )
