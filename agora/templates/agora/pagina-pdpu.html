@@ -1,131 +1,90 @@
 ﻿{% extends 'agora/base.html' %}
 {% load set_var %}
+
 {% block content %}
-<div class="navbar navbar-static-top" id="overlay" style="top:50px;position:fixed;background:white;width:100%;opacity:1;left:220px;">
-  <section class="content-header">
-    <h1>Plano Diretor Participativo - UNICAMP <small>Página Inicial</small></h1>
-  </section>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
-    <li class="active">PDPU</li>
-  </ol>
-</div>
+  <div>
+    <div class="page-header">
+      <section class="content-header">
+        <h1>Plano Diretor Participativo - UNICAMP</h1>
+        <h5>
+          <ol class="breadcrumb">
+            <li><a href="{% url 'agora:home' %}"><i class="fa fa-home"></i> Página Inicial</a></li>
+            <li class="active">Plano Diretor Participativo - UNICAMP</li>
+          </ol>
+        </h5>
+      </section>
+    </div>
+  </div>
 {% endblock content %}
 
 {% block content12 %}
- <div  style="position: relative; top: 100px;width:100%" >  
- <section class="content">
-    <!-- Small boxes (Stat box) -->
-    <div class="row">
-      <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-aqua">
-          <div class="inner">
-            <h3>CONHEÇA</h3>
-            <div>
-              <!--{% for AdicionaLink in object_list %}
-              <li><a  href="{{ AdicionaLink.url }}">{{ AdicionaLink.titulo }}&nbsp&nbsp&nbsp&nbsp </a> <small> {{ AdicionaLink.data_publicacao }}</small>  </li>
-              {% endfor %} -->
+  <div>
+    <section class="content">
+      <div class="row">
+
+        <!-- .small-box -->
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>CONHEÇA</h3>
+              <div>
+              </div>
             </div>
+            <div class="icon">
+                <i class="ion ion-bag"></i>
+            </div>
+            <a href="agora\pdpu\conheca" class="small-box-footer">
+              Mais informações <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <div class="icon">
-              <i class="ion ion-bag"></i>
+        </div><!-- /.small-box -->
+
+        <!-- .small-box -->
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>PARTICIPE</h3>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="agora\pdpu\participe" class="small-box-footer">
+                Mais informações <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <a href="agora\pdpu\conheca" class="small-box-footer">
-            More info <i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div><!-- ./col -->
-      <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-green">
-          <div class="inner">
-            <h3>PARTICIPE</h3>
-            
-            {% set flag1 = 3 %}
-            {% for Question in Question %}
+        </div><!-- /.small-box -->
 
-                    {% for q in q %}
-                        {% if Question.pk|slugify == q.questao %}
-                             {% set flag1 = 1 %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if flag1 != 1 %}
-                        {# mostra as tags da Question corrente #}
-                        {{Question.pub_date}}                        
-                        {% for tag in Question.tags.all %}
-
-                                  #{{ tag.name }}
-
-                        {% endfor %}
-
-                        <p> </p>
-                        <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" style="position:relative"></iframe>   {# mostra da timeline a página da questão #}
-
-                        <p> </p>
-
-                    {% endif %}
-                  {% set flag1 = 3 %}
-             {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <!-- .small-box -->
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>RESULTADOS</h3>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="agora\pdpu\resultados" class="small-box-footer">
+              Mais informações <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <div class="icon">
-            <i class="ion ion-stats-bars"></i>
+        </div><!-- /.small-box -->
+
+        <!-- .small-box -->
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>COMUNIDADE</h3>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="agora\pdpu\comunidade" class="small-box-footer">
+              Mais informações <i class="fa fa-arrow-circle-right"></i>
+            </a>
           </div>
-          <a href="agora\pdpu\participe" class="small-box-footer">
-              More info <i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div><!-- ./col -->
-      <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-yellow">
-          <div class="inner">
-            <h3>RESULTADOS</h3>
-            <p>User Registrations</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-person-add"></i>
-          </div>
-          <a href="agora\pdpu\resultados" class="small-box-footer">
-            More info <i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div><!-- ./col -->
-      <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-red">
-          <div class="inner">
-            <h3>COMUNIDADE</h3>
-            <p>Unique Visitors</p>
-          </div>
-          <div class="icon">
-            <i class="ion ion-pie-graph"></i>
-          </div>
-          <a href="agora\pdpu\comunidade" class="small-box-footer">
-            More info <i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div><!-- ./col -->
-    </div><!-- /.row -->
-  </section>
-</div>
+        </div><!-- /.small-box -->
+
+      </div><!-- /.row -->
+    </section>
+  </div>
 {% endblock content12 %}

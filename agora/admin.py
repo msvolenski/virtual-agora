@@ -1,106 +1,90 @@
+from .models import Choice, Question, Answer, User
 from django.contrib import admin
-from django.contrib.admin import SimpleListFilter
-from .models import Choice, Question, VotoDoUsuario, UserProfile
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.contrib.auth.models import User as AuthUser
 from django.core import serializers
-from django.contrib.contenttypes.models import ContentType
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
-from datetime import date
 
 
-def publicar_resultado(Question, request, queryset):
-    queryset.update(resultado='p')
-    queryset.update(permissao = 1)
- 
-def desfazer_publicacao_do_resultado(Question, request, queryset):
-    queryset.update(resultado='n')
-    queryset.update(permissao = 0)   
 
-#==============================================================================
-# Inclui no Admin a possibilidade de fazer as alternativas de cas Question
-#==============================================================================
 class ChoiceInline(admin.TabularInline):
-    model = Choice
-    extra = 3
+  model = Choice
+  extra = 0
 
 
-#==============================================================================
-# Inclui no Admin uma página mostrando as Questions e uma página para fazer Questions
-#==============================================================================
 class QuestionAdmin(admin.ModelAdmin):
-    
-    list_filter = ('pub_date','expiration_date',)   
-    fieldsets = [
-        (None,               {'fields': ['question_text']}),
-        ('Publicado em:', {'fields': ['pub_date']}),
-        ('Expira em:', {'fields': ['expiration_date']}),
-        ('Tags', {'fields': ['tags']}),
-        ('Tipo', {'fields': ['question_type']}),
-        
-    ]
-    inlines = [ChoiceInline]
-    
-    list_display = ('question_text', 'id', 'pub_date', 'expiration_date', 'was_published_recently', 'resultado')
-    
-    search_fields = ['question_text']
-    actions = [publicar_resultado, desfazer_publicacao_do_resultado]
-    
-    
-#==============================================================================
-# Inclui no Admin uma página mostrando os link e uma página para incluir Links
-#==============================================================================
-#class AdicionaLinknAdmin(admin.ModelAdmin):
-    
- #   list_filter = ['data_publicacao']    
-    
-    #setam os campos que irão aparecer no "Add adiciona Link"    
-  #  fieldsets = [
-   #     (None,               {'fields': ['titulo']}),
-    #    ('URL:', {'fields': ['url']}),         
-     #   ('Data de publicação', {'fields': ['data_publicacao']}),
-           
-    #]
-   
-    
-    #list_display = ('titulo', 'url' , 'data_publicacao' )
-    #search_fields = ['titulo']
+  fields = ['question_text', 'image', ('question_type', 'days'), ('tags', 'question_status', 'answer_status')]
 
-class VotoDoUsuarioAdmin(admin.ModelAdmin):    
-    
-    actions = ['mostrar_resultado']
-    list_display = ('user', 'faculdade','questao' , 'voto' )
-    list_filter = ('faculdade', 'questao')
-    
-    def mostrar_resultado(modeladmin, request, queryset):
-        response = HttpResponse(content_type="application/json")
-        serializers.serialize("json", queryset, stream=response)
-        return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
-    
-   
+  inlines = [ChoiceInline]
 
-# which acts a bit like a singleton
+  list_filter = ('pub_date', 'exp_date', 'question_type')
+  search_fields = ['question_text']
+  list_display = ['question_text', 'id', 'pub_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published']
+  actions = ['publish_question', 'unpublish_question', 'publish_result', 'unpublish_result']
+
+  def publish_question(self, request, queryset):
+    rows_updated = queryset.update(question_status='p')
+    if rows_updated == 1:
+      message_bit = "1 questão foi publicada"
+    else:
+      message_bit = "%s questões foram publicadas" % rows_updated
+    self.message_user(request, "%s com sucesso." % message_bit)
+  publish_question.short_description = "Publicar questões"
+
+  def unpublish_question(self, request, queryset):
+    rows_updated = queryset.update(question_status='u')
+    if rows_updated == 1:
+      message_bit = "1 questão foi despublicada"
+    else:
+      message_bit = "%s questões foram despublicadas" % rows_updated
+    self.message_user(request, "%s com sucesso." % message_bit)
+  unpublish_question.short_description = "Despublicar questões"
+
+  def publish_result(self, request, queryset):
+    rows_updated = queryset.update(answer_status='p')
+    if rows_updated == 1:
+      message_bit = "1 questão"
+    else:
+      message_bit = "%s questões" % rows_updated
+    self.message_user(request, "Os resultados de %s  foram publicados com sucesso." % message_bit)
+  publish_result.short_description = "Publicar resultado das questões"
+
+  def unpublish_result(self, request, queryset):
+    rows_updated = queryset.update(answer_status='u')
+    if rows_updated == 1:
+      message_bit = "1 questão"
+    else:
+      message_bit = "%s questões" % rows_updated
+    self.message_user(request, "Os resultados de %s foram despublicados com sucesso." % message_bit)
+  unpublish_result.short_description = "Despublicar resultado das questões"
+
+
 class UserProfileInline(admin.StackedInline):
-    model = UserProfile
-    can_delete = False
-    verbose_name_plural = 'profile'
+  model = User
+  can_delete = False
+  verbose_name_plural = 'profile'
 
-# Define a new User admin
+
+# Define a new UserAdmin
 class UserAdmin(UserAdmin):
-    inlines = (UserProfileInline, )
+  inlines = [UserProfileInline]
 
 
+class AnswerAdmin(admin.ModelAdmin):
+  actions = ['show_results']
+  list_display = ['user', 'user_dept', 'question', '__str__']
+  list_filter = ['question', 'choice']
+
+  def show_results(self, request, queryset):
+    response = HttpResponse(content_type="application/json")
+    serializers.serialize("json", queryset, stream=response)
+    return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
 
 
-#Coloca as classes em ação
+# Remove default User page and activate the new version
+admin.site.unregister(AuthUser)
+admin.site.register(AuthUser, UserAdmin)
+
 admin.site.register(Question, QuestionAdmin)
-
-#admin.site.register(AdicionaLink, AdicionaLinknAdmin )
-
-admin.site.unregister(User)
-admin.site.register(User, UserAdmin)
-admin.site.register(VotoDoUsuario, VotoDoUsuarioAdmin)
+admin.site.register(Answer, AnswerAdmin)

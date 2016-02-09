@@ -3,9 +3,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^agora/', include('agora.urls')),
-    url(r'^agora/', include('conheca.urls')),
+    # url(r'^agora/', include('conheca.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    
+
 ]

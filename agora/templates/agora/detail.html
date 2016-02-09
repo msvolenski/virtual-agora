@@ -1,23 +1,28 @@
-﻿<h1>#{{ question.id }} - {{ question.question_text }}</h1>
+﻿  <h1>{{ question }}</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+  {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'agora:vote' question.id %}" method="post">
-{% csrf_token %}
+  {% if question.image %}
+    <img src="{{ question.image.url }}" width="700px" height="500px" />
+  {% endif %}
 
-{% if question.question_type|slugify == '3' %}
-  <textarea name="text" id="question_text" value="" rows="4" cols="100" ></textarea><br />
-{% elif question.question_type|slugify == '1' %}
-  {% for choice in question.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-  {% endfor %}
-{% elif question.question_type|slugify == '2' %}
-  {% for choice in question.choice_set.all %}
-    <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-  {% endfor %}
-{% endif %}
+  <form action="{% url 'agora:vote' question.id %}" method="post">
 
-<input type="submit" value="Vote" />
-</form>
+  {% csrf_token %}
+
+  {% if question.question_type == 't' %}
+    <textarea name="text" id="question_text" value="" rows="4" cols="100" ></textarea><br />
+  {% elif question.question_type == 'o' %}
+    {% for choice in question.choice_set.all %}
+      <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+      <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+    {% endfor %}
+  {% elif question.question_type == 'm' %}
+    {% for choice in question.choice_set.all %}
+      <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+      <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+    {% endfor %}
+  {% endif %}
+
+  <input type="submit" value="Vote" />
+  </form>

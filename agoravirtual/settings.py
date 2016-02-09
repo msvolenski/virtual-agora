@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -40,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'agora.templatetags',
     'taggit',
-    'conheca',
+    # 'conheca',
     'tinymce',
     'ckeditor',
-     
-    
+
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -136,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # ESQUEMA DE LOGIN
 
@@ -146,18 +147,18 @@ LOGIN_REDIRECT_URL = "../"
 LOGOUT_URL = 'login'
 
 # CK EDITOR
-MEDIA_ROOT = ''
+# MEDIA_ROOT = ''
 CKEDITOR_MEDIA_PREFIX = "/media/ckeditor/"
 CKEDITOR_UPLOAD_PATH =  os.path.join( MEDIA_ROOT, 'uploads/ckuploads' )
 CKEDITOR_UPLOAD_PREFIX = "%smedia/uploads/ckuploads/" % (SITE_URL,)
 CKEDITOR_CONFIGS = {
 	'default': {
 		'toolbar': None,
-		
+
 	},
 	'full': {
 		'toolbar': None,
-		
+
 	},
 }
 
