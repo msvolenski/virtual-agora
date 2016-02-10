@@ -21,16 +21,25 @@
 
 {% block content12 %}
   <div>
+
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{ message }}
+      </div>
+    {% endfor %}
+
     {% for question in not_answered %}
       <div style="border:1px dashed black; padding:25px; margin:10px 50px 0px 50px">
+
         <h1>{{ question }}</h1>
-        <ul style="list-style-type:none; margin-left:-40px">
-          Categorias:
+
+        <p>
+          <strong>Categorias:</strong>
           {% for tag in question.tags.all %}
-            <li style="background-color:#7ea4b3; display:inline; margin-right: 10px;">#{{ tag.name }}</li>
+            <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
           {% endfor %}
-        </ul>
-        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        </p>
 
         {% if question.image %}
           <img src="{{ question.image.url }}" width="350px" height="250px" />
@@ -43,7 +52,7 @@
               {% for choice in question.choice_set.all %}
                 <li class="list-group-item">
                   <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label><br />
+                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
                 </li>
               {% endfor %}
             </ul>
@@ -52,14 +61,14 @@
               {% for choice in question.choice_set.all %}
                 <li class="list-group-item">
                   <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label><br />
+                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
                 </li>
               {% endfor %}
             </ul>
           {% elif question.question_type == 't' %}
-            <textarea name="text" id="question_text" value="" rows="4" cols="100" ></textarea><br />
+            <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br />
           {% endif %}
-          <input type="submit" value="Enviar" />
+          <input class="btn btn-default btn-info" type="submit" value="Enviar" />
         </form>
       </div>
       <br />
