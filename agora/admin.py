@@ -13,13 +13,13 @@ from django.utils.translation import ugettext_lazy as _
 from datetime import date
 
 
-def publicar_resultado(Question, request, queryset):
-    queryset.update(resultado='p')
-    queryset.update(permissao = 1)
- 
-def desfazer_publicacao_do_resultado(Question, request, queryset):
-    queryset.update(resultado='n')
-    queryset.update(permissao = 0)   
+#def publicar_resultado(Question, request, queryset):
+#    queryset.update(resultado='p')
+#    queryset.update(permissao = 1)
+# 
+#def desfazer_publicacao_do_resultado(Question, request, queryset):
+#    queryset.update(resultado='n')
+#    queryset.update(permissao = 0)   
 
 #==============================================================================
 # Inclui no Admin a possibilidade de fazer as alternativas de cas Question
@@ -48,7 +48,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'id', 'pub_date', 'expiration_date', 'was_published_recently', 'resultado')
     
     search_fields = ['question_text']
-    actions = [publicar_resultado, desfazer_publicacao_do_resultado]
+    #actions = [publicar_resultado, desfazer_publicacao_do_resultado]
     
     
 #==============================================================================

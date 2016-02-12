@@ -1,0 +1,17 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+{% block related-widget-wrapper-link.add-related %}
+
+    <form class="form-horizontal" method="POST" action="/auth/gen_new_aero_license/">
+        {% csrf_token %}
+
+        <div class="control-group">
+            <div class="controls controls-row">
+                <button type="submit" class="btn btn-primary">
+                    Generate new license
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

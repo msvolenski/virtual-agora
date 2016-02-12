@@ -86,7 +86,7 @@ class ArticleAdmin(admin.ModelAdmin):
             return
             
     def publicar_na_pagina_principal(modeladmin, request, queryset):             
-            queryset.update(published = 'Sim')
+            queryset.update(published = 'Sim')            
             queryset.update(publ_date = timezone.now())           
             return 
     

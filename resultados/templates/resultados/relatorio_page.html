@@ -1,0 +1,59 @@
+{% load set_var %}
+<body style="height:100%;" >
+<table style="border-spacing: 0; border-collapse: collapse; margin:0; background:transparent; width:100%;">
+<tbody>
+<tr> 
+<td style="vertical-align:top; width:100%;">
+<div style="border:1px solid #cef2e0;">
+                    
+            <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
+            {% if relatorio.questao == None %}
+            Resultado Geral
+            {% endif %}
+             
+            {% if relatorio.questao != None %}
+            Resultado {{ relatorio.questao }}
+            {% endif %}
+                        
+
+
+            </div>
+            <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+        
+                {% for tag in relatorio.tags.all %}
+                #{{ tag.name }} &nbsp -
+                {% endfor %}
+                Publicado em: {{ relatorio.publ_date }}
+                
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                </div>
+                    
+                    {{ relatorio.conteudo|safe }}
+                    <br>  
+             
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
+                
+                VOTE! Este artigo te auxilia a responder as questões: 
+                              
+                {% for questao_associada in article.split_numbers %}
+                    {% set flag = 0 %}  
+                    {% for question in question %} 
+                        {% if question.questao == questao_associada %}  
+                            {% set flag = 1 %}                            
+                        {% endif %}
+                    {% endfor %}
+                    {% if flag == 0 %}
+                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>  
+                     
+                        
+                    {% endif %}
+                {% endfor %}
+                
+            </div>             
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</body>

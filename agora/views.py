@@ -103,26 +103,26 @@ class PdpuParticipeView(generic.ListView):
 
     return context
 
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-class PdpuResultadosView(generic.ListView):
-  template_name = 'agora/pdpu-resultados.html'
-  model = Question
-
-  def get_queryset(self):
-    """
-    Return the last five published questions (not including those set to be
-    published in the future).
-    """
-    return Question.objects.filter(
-      pub_date__lte=timezone.now()
-    ).order_by('-pub_date')
-
-  def get_context_data(self, **kwargs):
-    context = super(PdpuResultadosView, self).get_context_data(**kwargs)
-    context['user_nome'] = self.request.user
-    context['q'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-
-    return context
+#@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+#class PdpuResultadosView(generic.ListView):
+#  template_name = 'agora/pdpu-resultados.html'
+#  model = Question
+#
+#  def get_queryset(self):
+#    """
+#    Return the last five published questions (not including those set to be
+#    published in the future).
+#    """
+#    return Question.objects.filter(
+#      pub_date__lte=timezone.now()
+#    ).order_by('-pub_date')
+#
+#  def get_context_data(self, **kwargs):
+#    context = super(PdpuResultadosView, self).get_context_data(**kwargs)
+#    context['user_nome'] = self.request.user
+#    context['q'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
+#
+#    return context
 
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
 class PdpuComunidadeView(generic.ListView):
