@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from .models import Relatorio
+from .models import Relatorio, Likedislike
 from agora.models import QuestoesRespondidas
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -79,8 +79,83 @@ class RelatorioPageView(generic.DetailView):
 #    def get_queryset(self):
 #        return Topico.objects.all()    
 #        
-#   
-#
+
+def like(request, relatorio_id):
+    relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
+    try:
+        obj = Likedislike.objects.get(user=request.user, relatorio=relatorio_id)
+    except Likedislike.DoesNotExist:
+            obj = Likedislike(user=request.user, relatorio=relatorio_id)
+            obj.save()    
+            relatorio.like += 1
+            relatorio.save()
+            return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,))) 
+    return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,)))
+  
+def dislike(request, relatorio_id):   
+    relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
+    try:
+        obj = Likedislike.objects.get(user=request.user, relatorio=relatorio_id)
+    except Likedislike.DoesNotExist:
+            obj = Likedislike(user=request.user, relatorio=relatorio_id)
+            obj.save()    
+            relatorio.dislike += 1
+            relatorio.save()
+            return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,))) 
+    return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,)))
+    
+    
+                    
+        
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#def likedislike(request, relatorio_id):
+#    relatorio = get_object_or_404(Relatorio, pk=relatorio_id)
+#    username = User.objects.get(username=request.user)    
+#    
+#    
+#    new_like, created = LikeDislike.objects.get_or_create(user=request.user, relatorio_id=relatorio_id) 
+#    if not created:
+#        return
+#    else:
+#        new_like.save()            
+#        selected_like = request.POST['like']         
+#        selected_dislike = request.POST['dislike']
+#        
+#        if selected_like == "1":
+#            add = LikeDislike.get(pk=relatorio_id)
+#            add.like += 1
+#            add.save()
+#        if selected_dislike == "1":
+#            add = LikeDislike.get(pk=relatorio_id)
+#            add.dislike += 1
+#            add.save()
+#        return
+
+
+ # Save the user
+     
+
+
+
+
 #
 #def search(request):
 #  

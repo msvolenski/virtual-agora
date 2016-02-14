@@ -6,6 +6,7 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from agora.models import Question
 from smart_selects.db_fields import ChainedForeignKey 
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -48,16 +49,7 @@ class Relatorio(models.Model):
         ('2', 'Questão'),
     )  
 
-#def get_address():
-#        try:
-#            art = Article.objects.latest('id') 
-#        except (KeyError, Article.DoesNotExist):
-#            return str('http://127.0.0.1:8000/agora/pdpu/conheca/artigos/') + str(1)            
-#        a = art.pk
-#        a = a + 1        
-#        return str('http://127.0.0.1:8000/agora/pdpu/conheca/artigos/') + str(a)     
-#        #return 'http://127.0.0.1:8000/agora/pdpu/conheca/artigos/7/' (page)   
-#    
+  
     def get_address():
         try:
             art = Relatorio.objects.latest('id') 
@@ -70,12 +62,6 @@ class Relatorio(models.Model):
     
     
     questao = models.ForeignKey(Question,blank=True, null=True)
-    #questao =#   Question,
-       # chained_field="tipo",
-       # chained_model_field="Geral",
-       # show_all=False,
-       # auto_choose=True
-    #)
     tags = TaggableManager()    
     tipo = destaque = models.CharField(max_length=10, choices=TIPOS, default='1')         
     #questao = models.CharField(max_length=200, choices=QUESTOES, default=' ')#    
@@ -86,7 +72,10 @@ class Relatorio(models.Model):
 #    questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  
     address = models.CharField(max_length=200, default=get_address)
     published = models.CharField(max_length=3, default='Não') 
-    publhistorico = models.CharField(max_length=3, default='Não')     
+    publhistorico = models.CharField(max_length=3, default='Não')
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
+     
 #    
     def __int__(self):
         return self.questao.id
@@ -94,8 +83,10 @@ class Relatorio(models.Model):
 #    def split_numbers(self):
 #        return self.questao_associada.split(',')
 
-
-
+class Likedislike(models.Model):
+    user = models.CharField(max_length=30)
+    relatorio = models.IntegerField()
+    
 
 
 
