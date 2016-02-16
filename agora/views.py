@@ -27,7 +27,7 @@ from conheca.models import SubTopico
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
 class HomeView(generic.ListView):
   template_name = 'agora/home.html'
-
+  model= User
 
   def get_queryset(self):
     """
