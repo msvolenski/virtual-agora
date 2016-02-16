@@ -18,42 +18,49 @@
     </div>
 
     
-    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:150px;z-index:1;">
+    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:150px;z-index:1;margin-bottom:300px;">
     <tbody>
     <tr> 
     
     <td style="padding:0 0.5em;">
     </td>    
     
-    <td style="width:68%;">
+    <td style="width:68%;vertical-align:top;">
             
                 
             {% for Article in object_list %}
-                {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
+            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
             
-             
-            <iframe src="{{ Article.address}}/destaque" hspace="0px" frameborder="0" marginheight="0" marginwidth="0" width="100%" style="display:block;" onload="this.style.height=(this.contentDocument.body.scrollHeight + 20) + 'px'"></iframe><br>                          
-                  
-                {% endif %} 
+            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;"> 
+            <iframe src="{{ Article.address}}/destaque" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);' ></iframe><br>                          
+            </div>     
+            
+            {% endif %} 
             {% endfor %}   
-            <br>
-                      
+      
+                  
             {% for Article in object_list %}
-                {% if Article.destaque == 'Não' and Article.published == 'Sim' %}    
+            {% if Article.destaque == 'Não' and Article.published == 'Sim' %}    
             
-            
-            <iframe src="{{ Article.address}}" hspace="0px"  height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload="this.style.height=(this.contentDocument.body.scrollHeight + 20) + 'px'"></iframe><br>        
-                 
+            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
+            <iframe src="{{ Article.address}}" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);'  ></iframe><br>        
+            </div>            
+                       
              
-                {% endif %}     
-            {% endfor %}        
-              
+            {% endif %}  
+            {% endfor %}     
+
             
-     </td>
-     
+
+            <script language="javascript" type="text/javascript">
+            function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            }
+            </script>       
+            
+     </td>     
      <td style="padding:0 0.5em;height:1000px">
-     </td>
-     
+     </td>     
      <td style="width:32%; vertical-align:top;">
         
         

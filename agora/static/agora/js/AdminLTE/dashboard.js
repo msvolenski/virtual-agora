@@ -5,6 +5,7 @@
  *      This is a demo file used only for the main dashboard (index.html)
  **/
 
+jQuery.ready(function(){
 $(function() {
     "use strict";
 
@@ -303,4 +304,5 @@ $(function() {
         }
     });
 
+});
 });

@@ -12,5 +12,7 @@ urlpatterns = [
     #url(r'^pdpu/conheca/vote/$', views.search, name='search'),
     url(r'^pdpu/resultados/relatorio/like/(?P<relatorio_id>[0-9]+)$', views.like, name='like'),
     url(r'^pdpu/resultados/relatorio/dislike/(?P<relatorio_id>[0-9]+)$', views.dislike, name='dislike'),
+    url(r'^pdpu/resultados/search/$', views.search_res, name='search_res'),
+                                              
      
 ]

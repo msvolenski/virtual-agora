@@ -1,6 +1,6 @@
 {% load staticfiles %}
 {% load set_var %}
-<body style="height:100%;" >
+<body>
 <table style="border-spacing: 0; border-collapse: collapse; margin:0; background:transparent; width:100%;">
 <tbody>
 <tr> 
@@ -52,14 +52,7 @@
                 {% csrf_token %}                
                 <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{relatorio.dislike}}
                 </form>
-
-
-
-
-
-
-
-            </div>             
+            </div>            
 </div>
 </td>
 </tr>

@@ -105,7 +105,17 @@ def dislike(request, relatorio_id):
     return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,)))
     
     
-                    
+def search_res(request):
+  
+    tags_user = request.POST['q'].split(' ')
+    relatorio = Relatorio.objects.filter(tags__name__in=tags_user).distinct()
+    tags_total=len(tags_user)   
+    return render(request, 'resultados/search_result_res.html', 
+      {
+        'relatorio': relatorio,
+        'tags_user': tags_user,
+        'tags_total': tags_total
+      })                    
         
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
