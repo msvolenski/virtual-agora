@@ -33,11 +33,22 @@ def set_var(parser, token):
  
 @register.filter
 def votos_distintos(value):
-    # put your complex unique logic here
-    return value.order_by('voto').values_list('voto',flat=True).distinct()
-
-
-
+    
+    a = value.first() 
+    if a.question.question_type   == '1':   
+        question = a.question
+        choices = question.choice_set.all()  
+        return choices
+        
+    if a.question.question_type   == '2':   
+        question = a.question
+        choices = question.choice_set.all()  
+        return choices
+        
+    if a.question.question_type   == '3':       
+        return value.order_by('text').values_list('text',flat=True).distinct()
+   
+    
 
 register.tag('set', set_var)
 
