@@ -1,4 +1,3 @@
-# from conheca.models import Topic
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -15,6 +14,7 @@ from taggit.models import Tag
 
 from .models import Choice, Question, Answer, User
 
+
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class HomeView(generic.ListView):
   """Homepage of the website"""
@@ -24,14 +24,15 @@ class HomeView(generic.ListView):
   def get_queryset(self):
     return
 
+
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuView(generic.ListView):
   """PDPU home with it's subpages"""
-
   template_name = 'agora/pagina-pdpu.html'
 
   def get_queryset(self):
     return
+
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuParticipeView(generic.ListView):
@@ -48,6 +49,7 @@ class PdpuParticipeView(generic.ListView):
 
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now())
+
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
 
@@ -63,8 +65,12 @@ class DetailView(generic.DetailView):
 
   def get_queryset(self):
     """Excludes any questions that aren't published yet."""
-    return Question.objects.filter(pub_date__lte=timezone.now())
+    return Question.objects.all()
 
+  def get_context_data(self, **kwargs):
+    context = super(ResultsView, self).get_context_data(**kwargs)
+    context['user'] = User.objects.all()
+    context['answered'] = Answer.objects.all()
 
 def vote(request, question_id):
   question = get_object_or_404(Question, pk=question_id)

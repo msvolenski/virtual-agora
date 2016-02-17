@@ -21,7 +21,6 @@
 
 {% block content12 %}
   <div>
-
     {% for message in messages %}
       <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -30,22 +29,30 @@
     {% endfor %}
 
     {% for question in not_answered %}
-      <div style="border:1px dashed black; padding:25px; margin:10px 50px 0px 50px">
+      </br>
+      <div style="border:1px solid #67dca1;">
+        <div id="mf-eventos-atuais" style="background:#67dca1; border-bottom:1px solid #67dca1; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
+        </div>
+        <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+          <p>
+            <strong>Categorias:</strong>
+            {% for tag in question.tags.all %}
+              <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+            {% endfor %}
+            &nbsp;&nbsp;&nbsp;
+            <strong>Publicado em:</strong> {{ question.pub_date }}
+            &nbsp;&nbsp;&nbsp;
+            <strong>Expira em:</strong> {{ question.exp_date }}
 
-        <h1>{{ question }}</h1>
+          </p>
+          <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+          </div>
+          <h1>{{ question }}</h1>
+          {% if question.image %}
+            <img src="{{ question.image.url }}" width="350px" height="250px" />
+          {% endif %}
 
-        <p>
-          <strong>Categorias:</strong>
-          {% for tag in question.tags.all %}
-            <a class="label label-info" href="#" role="button">#{{ tag.name }}</a>
-          {% endfor %}
-        </p>
-
-        {% if question.image %}
-          <img src="{{ question.image.url }}" width="350px" height="250px" />
-        {% endif %}
-
-        <form action="{% url 'agora:vote' question.id %}" method="post">
+          <form action="{% url 'agora:vote' question.id %}" method="post">
           {% csrf_token %}
           {% if question.question_type == 'o' %}
             <ul class="list-group">
@@ -70,8 +77,9 @@
           {% endif %}
           <input class="btn btn-default btn-info" type="submit" value="Enviar" />
         </form>
+        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
       </div>
-      <br />
-    {% endfor %}
+    <br />
+   {% endfor %}
   </div>
 {% endblock content12 %}

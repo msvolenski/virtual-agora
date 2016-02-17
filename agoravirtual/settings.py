@@ -32,21 +32,21 @@ SITE_URL = 'http://127.0.0.1:8000/'
 # Application definition
 
 INSTALLED_APPS = [
-  'agora.apps.AgoraConfig',
-  'django.contrib.admin',
-  'django.contrib.auth',
-  'django.contrib.contenttypes',
-  'django.contrib.sessions',
-  'django.contrib.messages',
-  'django.contrib.staticfiles',
-  'agora.templatetags',
-  'taggit',
-  # 'conheca',
-  'forum',
-  'tinymce',
-  'ckeditor',
-
-
+    'agora.apps.AgoraConfig',
+    'agora.templatetags',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'forum',
+    'taggit',
+    'conheca',
+    'ckeditor',
+    'ckeditor_uploader',
+    'resultados',
+    'smart_selects',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -61,7 +61,6 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'agoravirtual.urls'
-
 
 TEMPLATES = [
   {
@@ -142,18 +141,21 @@ LOGIN_REDIRECT_URL = "../"
 LOGOUT_URL = 'login'
 
 # CK EDITOR
-# MEDIA_ROOT = ''
-CKEDITOR_MEDIA_PREFIX = "/media/ckeditor/"
-CKEDITOR_UPLOAD_PATH =  os.path.join( MEDIA_ROOT, 'uploads/ckuploads' )
-CKEDITOR_UPLOAD_PREFIX = "%smedia/uploads/ckuploads/" % (SITE_URL,)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_CONFIGS = {
   'default': {
-    'toolbar': None,
-
+    'toolbar': 'Full',
+    'width': 'Full',
   },
   'full': {
     'toolbar': None,
-
+    'width': 'Full',
+    #'width': 640,
   },
 }
 

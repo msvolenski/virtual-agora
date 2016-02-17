@@ -153,7 +153,6 @@ class Answer(models.Model):
 
   def user_dept(self):
     return self.user.department
-
   user_dept.short_description = 'Faculdade'
 
   class Meta:
