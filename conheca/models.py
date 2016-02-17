@@ -14,7 +14,6 @@ class Article(models.Model):
   publ_date = models.DateTimeField()
   destaque = models.CharField(max_length=3, default='Não')
   questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)
-  address = models.CharField(max_length=200, default=get_address)
   published = models.CharField(max_length=3, default='Não')
 
   def get_address():
@@ -27,6 +26,8 @@ class Article(models.Model):
     return str('http://127.0.0.1:8000/agora/pdpu/conheca/artigos/') + str(a)
     #return 'http://127.0.0.1:8000/agora/pdpu/conheca/artigos/7/' (page)
 
+  address = models.CharField(max_length=200, default=get_address)
+
   def __str__(self):
     return self.title
 
@@ -35,8 +36,6 @@ class Article(models.Model):
 
 class Topico(models.Model):
   topico = models.CharField(max_length=200)
-  address_topico = models.CharField(max_length=200, default=get_address_topico)
-  position = models.IntegerField(default=position_det)
 
   def get_address_topico():
     try:
@@ -55,6 +54,9 @@ class Topico(models.Model):
     a = tpc.position
     a = a + 1
     return a
+
+  address_topico = models.CharField(max_length=200, default=get_address_topico)
+  position = models.IntegerField(default=position_det)
 
   def __str__(self):
     return self.topico
