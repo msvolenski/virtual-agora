@@ -37,7 +37,7 @@
         <p>
           <strong>Categorias:</strong>
           {% for tag in question.tags.all %}
-            <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+            <a class="label label-info" href="#" role="button">#{{ tag.name }}</a>
           {% endfor %}
         </p>
 
@@ -51,7 +51,7 @@
             <ul class="list-group">
               {% for choice in question.choice_set.all %}
                 <li class="list-group-item">
-                  <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                  <input class="btn btn-default" type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
                   <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
                 </li>
               {% endfor %}
@@ -60,7 +60,7 @@
             <ul class="list-group">
               {% for choice in question.choice_set.all %}
                 <li class="list-group-item">
-                  <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                  <input class="btn btn-default" type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
                   <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
                 </li>
               {% endfor %}

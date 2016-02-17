@@ -77,10 +77,10 @@
 
             <!-- .search-form -->
             <form action="#" class="navbar-form navbar-left" role="search" method="get">
-              <div class="input-group">
+              <div class="input-group" style="width:700px;">
                 <input type="text" name="q" class="form-control" placeholder="Search..." />
                 <span class="input-group-btn">
-                  <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                  <button type='submit' name='search' id='search-btn' class="btn btn-default btn-flat"><i class="fa fa-search"></i></button>
                 </span>
               </div>
             </form> <!-- /.search-form -->
@@ -104,6 +104,7 @@
     </header>
 
     <div class="wrapper row-offcanvas row-offcanvas-left">
+
       {% block content %}
         <div style="background-color:#f9f9f9; z-index:0; position:fixed; width:100%">
           <div class="page-header" id="overflow">

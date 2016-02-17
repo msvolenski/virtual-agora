@@ -42,6 +42,7 @@ INSTALLED_APPS = [
   'agora.templatetags',
   'taggit',
   # 'conheca',
+  'forum',
   'tinymce',
   'ckeditor',
 
@@ -61,14 +62,6 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'agoravirtual.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-  'django.template.context_processors.debug',
-  'django.template.context_processors.request',
-  'django.contrib.auth.context_processors.auth',
-  'django.contrib.messages.context_processors.messages',
-
-)
-
 
 TEMPLATES = [
   {
@@ -85,6 +78,7 @@ TEMPLATES = [
     },
   },
 ]
+
 
 WSGI_APPLICATION = 'agoravirtual.wsgi.application'
 

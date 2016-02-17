@@ -101,7 +101,11 @@ class Choice(models.Model):
 class User(models.Model):
   """Information about the registered user"""
 
-  user = models.OneToOneField(AuthUser)
+  user = models.OneToOneField(
+    AuthUser,
+    primary_key=True,
+    parent_link=True,
+  )
 
   year_of_start = models.IntegerField(blank=True)
   department = models.CharField(max_length=40, blank=True)
@@ -111,11 +115,11 @@ class User(models.Model):
   last_name = models.CharField(max_length=50)
   academic_registry = models.IntegerField(default=0)
 
-  answers = models.ManyToManyField(
+  question_answer = models.ManyToManyField(
     Question,
     through='Answer',
     through_fields=('user', 'question'),
-    related_name='+',
+    related_name='question_answer',
   )
 
   def __str__(self):
@@ -127,7 +131,7 @@ class User(models.Model):
 
 
 class Answer(models.Model):
-  """Answer to all the questions """
+  """Answer to a question"""
 
   user = models.ForeignKey(User)
   question = models.ForeignKey(Question)

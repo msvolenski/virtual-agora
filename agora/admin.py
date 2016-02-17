@@ -1,4 +1,3 @@
-from .models import Choice, Question, Answer, User
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User as AuthUser
@@ -6,7 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
+from .models import Choice, Question, Answer, User
 
 class ChoiceInline(admin.TabularInline):
   model = Choice
@@ -18,7 +17,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
   inlines = [ChoiceInline]
 
-  list_filter = ('pub_date', 'exp_date', 'question_type')
+  list_filter = ['pub_date', 'exp_date', 'question_type']
   search_fields = ['question_text']
   list_display = ['question_text', 'id', 'pub_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published']
   actions = ['publish_question', 'unpublish_question', 'publish_result', 'unpublish_result']
@@ -63,7 +62,7 @@ class QuestionAdmin(admin.ModelAdmin):
 class UserProfileInline(admin.StackedInline):
   model = User
   can_delete = False
-  verbose_name_plural = 'profile'
+  verbose_name_plural = 'perfil'
 
 
 # Define a new UserAdmin
@@ -74,13 +73,13 @@ class UserAdmin(UserAdmin):
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
   list_display = ['user', 'user_dept', 'question', '__str__']
-  list_filter = ['question', 'choice']
+  list_filter = ['question']
 
   def show_results(self, request, queryset):
     response = HttpResponse(content_type="application/json")
     serializers.serialize("json", queryset, stream=response)
     return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
-
+  show_results.short_description = "Mostrar resultados"
 
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)

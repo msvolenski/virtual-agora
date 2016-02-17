@@ -15,123 +15,55 @@ from taggit.models import Tag
 
 from .models import Choice, Question, Answer, User
 
-
-#============================================================================
-# @method_decorator(login_required(login_url='/agora/login/')
-# DEVE SER COLOCADO EM TODAS AS VIEWS NÃO PÚBLICAS!
-#============================================================================
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class HomeView(generic.ListView):
+  """Homepage of the website"""
+
   template_name = 'agora/home.html'
 
   def get_queryset(self):
-    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:2]
+    return
 
-#============================================================================
-# VIEW DA PÁGINA PRINCIPAL DO PLANO DIRETOR PARTICIPATIVO DA UNICAMP
-# Basicamente atualiza as timelines das quatros partes: Conheça, Participe, Resultados e Comunidade
-#============================================================================
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuView(generic.ListView):
+  """PDPU home with it's subpages"""
 
   template_name = 'agora/pagina-pdpu.html'
-  # model = Topic
 
   def get_queryset(self):
-    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+    return
 
-  #context_object_name = 'Question_list'
-  #Configura quantos links serQo mostrados na ordem da data de publicação
-
-  #Contém os outros objetos além de "AdicionaLink": Question, ...
-  # def get_context_data(self, **kwargs):
-    # context = super(PdpuView, self).get_context_data(**kwargs)
-    # context['Question'] = Question.objects.filter( #Label 'Question" deve ser usada no template
-    #   pub_date__lte=timezone.now()
-    # ).order_by('-pub_date')[:4]
-    # context['tag'] = Tag.objects.all()
-    # context['user_nome'] = self.request.user
-    # context['q'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-    #número que define quantas "Questions" vão aparecer
-    # return context
-
-#=========================================================================
-# A classe abaixo cria a "timeline" de questões na Página PDPU - PARTICIPE
-#=========================================================================
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuParticipeView(generic.ListView):
+  """View with questions' timeline presented to the users"""
+
   template_name = 'agora/pdpu-participe.html'
   model = Question
 
   def get_queryset(self):
-    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
 
   def get_context_data(self, **kwargs):
     context = super(PdpuParticipeView, self).get_context_data(**kwargs)
 
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now())
-    answered =  Answer.objects.filter(user_id=user.id)
+    answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
 
     context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['not_answered'].reverse()
     return context
 
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-class PdpuResultadosView(generic.ListView):
-  template_name = 'agora/pdpu-resultados.html'
-  model = Question
 
-  def get_queryset(self):
-    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')
-
-  # def get_context_data(self, **kwargs):
-  #   context = super(PdpuResultadosView, self).get_context_data(**kwargs)
-  #   context['user_nome'] = self.request.user
-  #   context['q'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-  #   return context
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-class PdpuComunidadeView(generic.ListView):
-  template_name = 'agora/pdpu-comunidade.html'
-  context_object_name = 'latest_question_list'
-
-  def get_queryset(self):
-    return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class DetailView(generic.DetailView):
-  model = Question
   template_name = 'agora/detail.html'
+  model = Question
 
   def get_queryset(self):
     """Excludes any questions that aren't published yet."""
     return Question.objects.filter(pub_date__lte=timezone.now())
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
-class ResultsView(generic.DetailView):
-  model = Question
-  template_name = 'agora/result.html'
-
-  def get_queryset(self):
-    """Excludes any questions that aren't published yet."""
-    return Question.objects.all()
-
-  def get_context_data(self, **kwargs):
-    context = super(ResultsView, self).get_context_data(**kwargs)
-    context['user'] = User.objects.all()
-    context['answered'] = Answer.objects.all()
-    # context['votodousuario'] = VotoDoUsuario.objects.all()
-
-    return context
-
-
-def vote(request, question_id):
-  question = get_object_or_404(Question, pk=question_id)
-  username = AuthUser.objects.get(username=request.user)
-  user = username.user
-  question_type = question.question_type
 
 
 def vote(request, question_id):
