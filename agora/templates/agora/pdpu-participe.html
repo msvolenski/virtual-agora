@@ -1,51 +1,94 @@
-
 {% extends 'agora/base.html' %}
 {% load set_var %}
 {% block content %}
-      <div class="navbar navbar-static-top" id="overlay" style="top:50px;position:fixed;background:white;width:100%;opacity:1;left:220px;">
-          <section class="content-header" >
-              <h1> Plano Diretor Participativo - UNICAMP
-                  <small>Participe</small>
-              </h1>
-          </section>
-              <ol class="breadcrumb">
-                  <li><a href="\agora"><i class="fa fa-dashboard"></i> Página Inicial</a></li>
-                    <li><a href="\agora\pdpu"><i class="fa fa-dashboard"></i> PDPU</a></li>
-                    <li class="active">Participe</li>
-              </ol>
-       </div> 
+      <div style="filter:alpha(opacity=100);background-color:#67DCA1;position:fixed;background-attachment:fixed;width:100%;top:40px;z-index:2;">
+      <section class="content-header">
+        <h1> Plano Diretor Participativo - UNICAMP <small>Resultados</small></h1>
+      </section>
+      <ol class="breadcrumb">
+        <li><a href="\agora"> Página Inicial</a></li>
+        <li><a href="\agora\pdpu"></i> PDPU</a></li>
+        <li class="active">Participe</li>
+      </ol>   
+      <form   style="position:relative;left:31px;top:-10px;" method="post"  action="{% url 'resultados:search_res'%}">
+        <input  size="35" id="search_box" name="q"  placeholder="Procure um resultado pelas hashtags" >
+        <button id="search_submit" value="search_res" >Buscar</button>
+      </form>         
+ </div>
         
         
         {% endblock content %}
 
         {% block content12 %}
+
       <div  style="position: absolute; top: 200px; left: 250px"  > 
-        {# A LÓGICA ABAIXO ESCOLHE AS QUESTÕES QUE O USUÁRIO AINDA NÃO VOTOU E APRESENTA-AS EM SUA TIMELINE #}
-
-            {% set flag1 = 3 %}
-            {% for Question in object_list %}
-
-                    {% for q in q %}
-                        {% if Question.pk|slugify == q.questao %}
-                             {% set flag1 = 1 %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if flag1 != 1 %}
-                        {# mostra as tags da Question corrente #}
-                        {% for tag in Question.tags.all %}
-
-                                 {{ tag.name }}
-
-                        {% endfor %}
-
-                        <p> </p>
-                        <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" width="1000" height="400"></iframe>   {# mostra da timeline a página da questão #}
-
-                        <p> </p>
-
-                    {% endif %}
-                  {% set flag1 = 3 %}
-             {% endfor %}
-
+        {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        {{ message }}
       </div>
-        {% endblock content12 %}
+    {% endfor %}
+
+    {% for question in not_answered %}
+</br>
+     <div style="border:1px solid #67dca1;">
+                    
+        <div id="mf-eventos-atuais" style="background:#67dca1; border-bottom:1px solid #67dca1; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
+        </div>
+        <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+
+             <p>
+              
+              <strong>Categorias:</strong>
+              {% for tag in question.tags.all %}
+                <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+              {% endfor %}
+              &nbsp;&nbsp;&nbsp;
+              <strong>Publicado em:</strong> {{ question.pub_date }}&nbsp;&nbsp;&nbsp;
+              <strong>Expira em:</strong> {{ question.exp_date }}
+              
+             </p>
+              <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+              </div>
+              <h1>{{ question }}</h1>       
+
+                {% if question.image %}
+                <img src="{{ question.image.url }}" width="350px" height="250px" />
+                {% endif %}
+
+            <form action="{% url 'agora:vote' question.id %}" method="post">
+                  {% csrf_token %}
+                  {% if question.question_type == '1' %}
+              <ul class="list-group">
+                  {% for choice in question.choice_set.all %}
+                <div class="list-group-item">
+                  <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+                </div>
+                 {% endfor %}
+               </ul>
+                  {% elif question.question_type == '2' %}
+             <ul class="list-group">
+              {% for choice in question.choice_set.all %}
+                <div class="list-group-item">
+                  <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+                </div>
+              {% endfor %}
+             </ul>
+             {% elif question.question_type == '3' %}
+              <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
+             {% endif %}
+             <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+            </form>
+
+
+
+            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+           
+        </div>
+</div>
+      <br />
+    {% endfor %}
+  </div>
+{% endblock content12 %}

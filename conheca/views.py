@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 from .models import SubTopico, Article, Link, Topico
-from agora.models import QuestoesRespondidas
+from agora.models import Answer, User, Question
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import generic
@@ -10,6 +10,8 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render_to_response,redirect
 from django.template import RequestContext, Context, loader
+from django.contrib.auth.models import User as AuthUser
+from django.utils import timezone
 
 
 # Create your views here.
@@ -24,7 +26,7 @@ class TemplatePDPUConhecaView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)     
-        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
+        #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
         context['link'] = Link.objects.all()
         context['topico'] = Topico.objects.all().order_by('position')
         return context
@@ -44,8 +46,14 @@ class ArticlePageView(generic.DetailView):
         
     def get_context_data(self, **kwargs):
         context = super(ArticlePageView, self).get_context_data(**kwargs)     
-        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-        return context
+        #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
+        user = User.objects.get(user=self.request.user)
+        questions = Question.objects.filter(exp_date__gt=timezone.now())
+        answered =  Answer.objects.filter(user_id=user.id)
+        answered_questions = [a.question for a in answered]
+        context['not_answered'] = list(set(questions) - set(answered_questions))       
+        return context        
+        
         
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')        
 class ArticleDestaquePageView(generic.DetailView):
@@ -57,8 +65,13 @@ class ArticleDestaquePageView(generic.DetailView):
         
     def get_context_data(self, **kwargs):
         context = super(ArticleDestaquePageView, self).get_context_data(**kwargs)     
-        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-        return context
+        #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
+        user = User.objects.get(user=self.request.user)
+        questions = Question.objects.filter(exp_date__gt=timezone.now())
+        answered =  Answer.objects.filter(user_id=user.id)
+        answered_questions = [a.question for a in answered]
+        context['not_answered'] = list(set(questions) - set(answered_questions))       
+        return context  
         
         
 class TopicoPageView(generic.DetailView):

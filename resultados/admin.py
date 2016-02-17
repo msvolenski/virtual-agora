@@ -146,34 +146,28 @@ class RelatorioAdmin(admin.ModelAdmin):
                 queryset.update(publhistorico = 'Sim')
                           
                 for object in queryset:
-                    if object.tipo == 'Questão':                  
+                    if object.tipo == '2':                  
                         ids=object.questao.id
-                        t=object.tipo
-                        if t == '1':
-                            return
-                            a = Question.objects.get(id=ids) 
-                            a.resultado = 'p' #atualiza variaivel de question que indica se foi publicado
-                            a.save()           
-                            return 
+                        a = Question.objects.get(id=ids) 
+                        a.answer_status = 'p' #atualiza variaivel de question que indica se foi publicado
+                        a.save()           
+                        return 
 #    
     def desfazer_publicacao(modeladmin, request, queryset):  
 
 
         if queryset.count() != 1:
-                modeladmin.message_user(request, "Não é possível publicar mais de um relatório por vez.")
+                modeladmin.message_user(request, "Não é possível desfazer a publicação de mais de um relatório por vez.")
                 return         
         else:             
             queryset.update(published = 'Não')
             for object in queryset:
-                if object.tipo == 'Questão':  
-                    ids=object.questao.id 
-                    t=object.tipo
-                    if t == '1':
-                        return
-                        a = Question.objects.get(id=ids) 
-                        a.resultado = 'n' #atualiza variaivel de question que indica se foi publicado
-                        a.save()            
-                        return
+                if object.tipo == '2':  
+                    ids=object.questao.id               
+                    a = Question.objects.get(id=ids) 
+                    a.answer_status = 'n' #atualiza variaivel de question que indica se foi publicado
+                    a.save()            
+                    return
                 
     
 #            
