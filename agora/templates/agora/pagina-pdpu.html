@@ -1,20 +1,24 @@
 ﻿{% extends 'agora/base.html' %}
 {% load set_var %}
-{% block content12 %}
 
-  <div style="filter:alpha(opacity=100);background-color:#E2E2E2;position:fixed;background-attachment:fixed;width:100%;top:40px;z-index:2;">
-          <section class="content-header">
-            <h1> Plano Diretor Participativo - UNICAMP <small>Página Inicial</small></h1>
-          </section>
+{% block content %}
+  <div>
+    <div class="page-header">
+      <section class="content-header">
+        <h1>Plano Diretor Participativo - UNICAMP</h1>
+        <h5>
           <ol class="breadcrumb">
-            <li><a href="\agora"> Página Inicial</a></li>
-            <li class="active">PDPU</li>
-          </ol>         
+            <li><a href="{% url 'agora:home' %}"><i class="fa fa-home"></i> Página Inicial</a></li>
+            <li class="active">Plano Diretor Participativo - UNICAMP</li>
+          </ol>
+        </h5>
+      </section>
     </div>
+  </div>
+{% endblock content %}
 
-
-
- <div  style="position: relative; top: 100px;width:100%" >  
+{% block content12 %}
+  <div
     <section class="content">
       <div class="row">
 
@@ -29,7 +33,7 @@
             <div class="icon">
                 <i class="ion ion-bag"></i>
             </div>
-            <a href="agora\pdpu\conheca" class="small-box-footer">
+            <a href="#" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -40,45 +44,11 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3>PARTICIPE</h3>
-            
-   {% set flag1 = 3 %}
-            {% for Question in Question %}
-
-                    {% for q in q %}
-                        {% if Question.pk|slugify == q.questao %}
-                             {% set flag1 = 1 %}
-                        {% endif %}
-                    {% endfor %}
-                    {% if flag1 != 1 %}
-                        {# mostra as tags da Question corrente #}
-                        {{Question.pub_date}}                        
-                        {% for tag in Question.tags.all %}
-
-                                  #{{ tag.name }}
-
-                        {% endfor %}
-
-                        <p> </p>
-                        <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}" style="position:relative"></iframe>   {# mostra da timeline a página da questão #}
-
-                        <p> </p>
-
-                    {% endif %}
-                  {% set flag1 = 3 %}
-             {% endfor %}
-
-
-
-
-
-
-
-
-</div>
+            </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="agora\pdpu\participe" class="small-box-footer">
+            <a href="{% url 'agora:pdpu-participe' %}" class="small-box-footer">
                 Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -93,7 +63,7 @@
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="agora\pdpu\resultados" class="small-box-footer">
+            <a href="#" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -108,7 +78,7 @@
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="agora\pdpu\comunidade" class="small-box-footer">
+            <a href="{% url 'forum:home' %}" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -118,24 +88,3 @@
     </section>
   </div>
 {% endblock content12 %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-         
-
-
-
-
-

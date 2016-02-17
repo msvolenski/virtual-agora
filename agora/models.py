@@ -1,130 +1,111 @@
-import datetime
+from datetime import timedelta
+
+from django.contrib.auth.models import User as AuthUser
 from django.db import models
 from django.utils import timezone
-from django import forms
-from django.core.validators import MaxLengthValidator
-from django.contrib.auth.models import User as AuthUser
+
 from taggit.managers import TaggableManager
-from django.contrib import admin
-from django.utils.html import format_html
-from django.core.urlresolvers import reverse
-from django.forms import CheckboxSelectMultiple
-from django.shortcuts import get_object_or_404, render
-from datetime import timedelta
-# Create your models here.
-#Chama a classe "models"
-
-
-
-#==============================================================================
-# Classe que insere novos atributos para a Classe User
-#==============================================================================
-
-
-#==============================================================================
-# As classes abaixo estabelecem uma tabela com o nome do usuário, a questão respondida e o voto
-#==============================================================================
-
 
 
 class Question(models.Model):
-    STATUS_CHOICES = (
-        ('n', 'Não publicado'), # unpublished
-        ('p', 'Publicado'),     # published
-    )    
+  """Model for questions"""
 
-    EXP_TIME = (
-        (1, '1 dia'),           # a day
-        (7, '1 semana'),        # a week
-        (30, '1 mês'),          # a month
-        (365, '1 ano'),         # a year
-        (3650, 'Indeterminado') # undetermined
-    )
-        
-    QUESTION_TYPE = (
-        ('1', 'One choice'),
-        ('2', 'Multipla Escolha'),
-        ('3', 'Texto'),
-    )
-    
-    question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
-    question_text = models.CharField(max_length=200)    
-    pub_date = models.DateTimeField('Data de publicação')
-    exp_date = models.DateTimeField('Data de expiração')
-    days = models.IntegerField('Tempo para expirar', choices=EXP_TIME, default=3650)
-    question_status = models.CharField('Estado da questão', max_length=1, choices=STATUS_CHOICES, default = 'p')
-    answer_status = models.CharField('Estado da resposta', max_length=1, choices=STATUS_CHOICES, default = 'n')
-    image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
-    tags = TaggableManager()
-    
-    
-    
-    permissao = models.IntegerField(default=0)    
-    resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'u')
-    
-    def __str__(self):
-        if self.id:
-            return "#{id} - {question}".format(id=self.id, question=self.question_text)
-        else:
-            return self.question_text
-            
-    def save(self, *args, **kwargs):
-        """On save, update timestamps"""
-        if not self.id:
-            self.pub_date = timezone.now()
-        self.update_expiration_time()
-        return super(Question, self).save(*args, **kwargs)
-        
-    def update_expiration_time(self):
-        self.exp_date = self.pub_date + timedelta(days=self.days)        
-        
-    def is_question_expired(self):
-        return self.exp_date <= timezone.now()
+  STATUS_CHOICES = (
+    ('u', 'Não publicado'), # unpublished
+    ('p', 'Publicado'),     # published
+  )
 
-    def is_question_published(self):
-        if self.is_question_expired():
-            self.question_status = 'n'
-        if self.question_status == 'p':
-            return True
-        else:
-            return False
+  EXP_TIME = (
+    (1, '1 dia'),           # a day
+    (7, '1 semana'),        # a week
+    (30, '1 mês'),          # a month
+    (365, '1 ano'),         # a year
+    (3650, 'Indeterminado') # undetermined
+  )
 
-    is_question_published.boolean = True
-    is_question_published.short_description = 'Publicada?'
-    
-    def is_answer_published(self):
-        if self.answer_status == 'p':
-            return True
-        else:
-            return False
+  QUESTION_TYPE = (
+    ('o', 'Única'),     # one
+    ('m', 'Múltipla'),  # multiple
+    ('t', 'Texto'),     # text
+  )
 
-    is_answer_published.boolean = True
-    is_answer_published.short_description = 'Respostas publicadas?'
+  question_type = models.CharField('Tipo', max_length=1, choices=QUESTION_TYPE)
+  question_text = models.CharField('Questão', max_length=200)
+  pub_date = models.DateTimeField('Data de publicação')
+  exp_date = models.DateTimeField('Data de expiração')
+  days = models.IntegerField('Tempo para expirar', choices=EXP_TIME, default=3650)
+  question_status = models.CharField('Estado da questão', max_length=1, choices=STATUS_CHOICES, default = 'p')
+  answer_status = models.CharField('Estado da resposta', max_length=1, choices=STATUS_CHOICES, default = 'u')
+  image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
+  tags = TaggableManager()
 
-    class Meta:
-        verbose_name = 'questão'
-        verbose_name_plural = 'questões'   
-   
-   
-##################################################################################
+  def __str__(self):
+    if self.id:
+      return "#{id} - {question}".format(id=self.id, question=self.question_text)
+    else:
+      return self.question_text
+
+  def save(self, *args, **kwargs):
+    """On save, update timestamps"""
+
+    if not self.id:
+      self.pub_date = timezone.now()
+    self.update_expiration_time()
+    return super(Question, self).save(*args, **kwargs)
+
+  def update_expiration_time(self):
+    self.exp_date = self.pub_date + timedelta(days=self.days)
+
+  def is_question_expired(self):
+    return self.exp_date <= timezone.now()
+
+  def is_question_published(self):
+    if self.is_question_expired():
+      self.question_status = 'u'
+    if self.question_status == 'p':
+      return True
+    else:
+      return False
+
+  is_question_published.boolean = True
+  is_question_published.short_description = 'Publicada?'
+
+  def is_answer_published(self):
+    if self.answer_status == 'p':
+      return True
+    else:
+      return False
+
+  is_answer_published.boolean = True
+  is_answer_published.short_description = 'Respostas publicadas?'
+
+  class Meta:
+    verbose_name = 'questão'
+    verbose_name_plural = 'questões'
+
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
+  """Model for choices of a question"""
 
-    def __str__(self):
-        return self.choice_text
-        
-    class Meta:
-        verbose_name = 'escolha'
-        verbose_name_plural = 'escolhas'
+  question = models.ForeignKey(Question, on_delete=models.CASCADE)
+  choice_text = models.CharField(max_length=200)
 
-######################################################################################
+  def __str__(self):
+    return self.choice_text
+
+  class Meta:
+    verbose_name = 'escolha'
+    verbose_name_plural = 'escolhas'
+
 
 class User(models.Model):
   """Information about the registered user"""
 
-  user = models.OneToOneField(AuthUser)
+  user = models.OneToOneField(
+    AuthUser,
+    primary_key=True,
+    parent_link=True,
+  )
 
   year_of_start = models.IntegerField(blank=True)
   department = models.CharField(max_length=40, blank=True)
@@ -134,11 +115,11 @@ class User(models.Model):
   last_name = models.CharField(max_length=50)
   academic_registry = models.IntegerField(default=0)
 
-  answers = models.ManyToManyField(
+  question_answer = models.ManyToManyField(
     Question,
     through='Answer',
     through_fields=('user', 'question'),
-    related_name='+',
+    related_name='question_answer',
   )
 
   def __str__(self):
@@ -148,10 +129,9 @@ class User(models.Model):
     verbose_name = 'usuário'
     verbose_name_plural = 'usuários'
 
-###################################################################################
 
 class Answer(models.Model):
-  """Answer to all the questions """
+  """Answer to a question"""
 
   user = models.ForeignKey(User)
   question = models.ForeignKey(Question)
@@ -173,13 +153,8 @@ class Answer(models.Model):
 
   def user_dept(self):
     return self.user.department
-
   user_dept.short_description = 'Faculdade'
 
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
-
-########################################################################################
-
-
