@@ -12,7 +12,7 @@ from django.views import generic
 from django.views.generic import ListView
 
 from .models import SubTopico, Article, Link, Topico
-from agora.models import Answer, User, Question
+from agora.models import Answer, Question, User
 
 
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
@@ -41,9 +41,9 @@ class ArticlePageView(generic.DetailView):
   def get_context_data(self, **kwargs):
     context = super(ArticlePageView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-    user = User.objects.get(user=self.request.user)
+
     questions = Question.objects.filter(exp_date__gt=timezone.now())
-    answered =  Answer.objects.filter(user_id=user.id)
+    answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
     return context
@@ -60,9 +60,9 @@ class ArticleDestaquePageView(generic.DetailView):
   def get_context_data(self, **kwargs):
     context = super(ArticleDestaquePageView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-    user = User.objects.get(user=self.request.user)
+    
     questions = Question.objects.filter(exp_date__gt=timezone.now())
-    answered =  Answer.objects.filter(user_id=user.id)
+    answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
     return context
