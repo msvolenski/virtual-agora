@@ -1,30 +1,10 @@
-import datetime
+﻿from datetime import timedelta
+
+from django.contrib.auth.models import User as AuthUser
 from django.db import models
 from django.utils import timezone
-from django import forms
-from django.core.validators import MaxLengthValidator
-from django.contrib.auth.models import User as AuthUser
+
 from taggit.managers import TaggableManager
-from django.contrib import admin
-from django.utils.html import format_html
-from django.core.urlresolvers import reverse
-from django.forms import CheckboxSelectMultiple
-from django.shortcuts import get_object_or_404, render
-from datetime import timedelta
-# Create your models here.
-#Chama a classe "models"
-
-
-
-#==============================================================================
-# Classe que insere novos atributos para a Classe User
-#==============================================================================
-
-
-#==============================================================================
-# As classes abaixo estabelecem uma tabela com o nome do usuário, a questão respondida e o voto
-#==============================================================================
-
 
 
 class Question(models.Model):
@@ -111,23 +91,29 @@ class Question(models.Model):
    
 ##################################################################################
 
+
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
+  """Model for choices of a question"""
 
-    def __str__(self):
-        return self.choice_text
-        
-    class Meta:
-        verbose_name = 'escolha'
-        verbose_name_plural = 'escolhas'
+  question = models.ForeignKey(Question, on_delete=models.CASCADE)
+  choice_text = models.CharField(max_length=200)
 
-######################################################################################
+  def __str__(self):
+    return self.choice_text
+
+  class Meta:
+    verbose_name = 'escolha'
+    verbose_name_plural = 'escolhas'
+
 
 class User(models.Model):
   """Information about the registered user"""
 
-  user = models.OneToOneField(AuthUser)
+  user = models.OneToOneField(
+    AuthUser,
+    primary_key=True,
+    parent_link=True,
+  )
 
   year_of_start = models.IntegerField(blank=True)
   department = models.CharField(max_length=40, blank=True)
@@ -137,11 +123,11 @@ class User(models.Model):
   last_name = models.CharField(max_length=50)
   academic_registry = models.IntegerField(default=0)
 
-  answers = models.ManyToManyField(
+  question_answer = models.ManyToManyField(
     Question,
     through='Answer',
     through_fields=('user', 'question'),
-    related_name='+',
+    related_name='question_answer',
   )
 
   def __str__(self):
@@ -151,10 +137,9 @@ class User(models.Model):
     verbose_name = 'usuário'
     verbose_name_plural = 'usuários'
 
-###################################################################################
 
 class Answer(models.Model):
-  """Answer to all the questions """
+  """Answer to a question"""
 
   user = models.ForeignKey(User)
   question = models.ForeignKey(Question)
@@ -176,13 +161,8 @@ class Answer(models.Model):
 
   def user_dept(self):
     return self.user.department
-
   user_dept.short_description = 'Faculdade'
 
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
-
-########################################################################################
-
-

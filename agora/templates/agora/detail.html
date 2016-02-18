@@ -1,108 +1,97 @@
-﻿{% load staticfiles %}
+{% load staticfiles %}
 {% load set_var %}
 
 <html>
-<head>
-        <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <!-- bootstrap 3.0.2 -->
-        <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
-        <!-- font Awesome -->
-        <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"   />
-        <!-- Ionicons -->
-        <link href="{% static "agora/css/ionicons.min.css" %}" rel="stylesheet" type="text/css" />
-        <!-- Morris chart -->
-        <link href="{% static "agora/css/morris/morris.css" %}" rel="stylesheet" type="text/css" />
-        <!-- jvectormap -->
-        <link href="{% static "agora/css/jvectormap/jquery-jvectormap-1.2.2.css" %}" rel="stylesheet" type="text/css" />
-        <!-- fullCalendar -->
-        <link href="{% static "agora/css/fullcalendar/fullcalendar.css" %}" rel="stylesheet" type="text/css" />
-        <!-- Daterange picker -->
-        <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css" />
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
-        <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
+  <head>
+    <meta charset="UTF-8">
+    <title>Ágora Virtual</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- bootstrap 3.0.2 -->
+    <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+    <!-- font Awesome -->
+    <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"   />
+    <!-- Ionicons -->
+    <link href="{% static "agora/css/ionicons.min.css" %}" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="{% static "agora/css/morris/morris.css" %}" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="{% static "agora/css/jvectormap/jquery-jvectormap-1.2.2.css" %}" rel="stylesheet" type="text/css" />
+    <!-- fullCalendar -->
+    <link href="{% static "agora/css/fullcalendar/fullcalendar.css" %}" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker -->
+    <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
+  </head>
 
-</head>
-<body class="skin-blue pace-done fixed" style="font-family:'Source Sans Pro', sans-serif;background:#f9f9f9">
-<table style="border-spacing: 5; border-collapse: collapse; margin:5; width:99%;">
-<tbody>
-<tr> 
-<td style="vertical-align:top; width:100%;">
-    <div  style="top: 200px; left: 250px"> 
-        {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        {{ message }}
-      </div>
-    {% endfor %}
-
-<div style="border:1px solid #67dca1;">
-                    
-        <div id="mf-eventos-atuais" style="background:#67dca1; border-bottom:1px solid #67dca1; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
-        </div>
-        <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-
-             <p>
-              
-              <strong>Categorias:</strong>
-              {% for tag in question.tags.all %}
-                <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+  <body class="skin-blue pace-done fixed" style="font-family:'Source Sans Pro', sans-serif;background:#f9f9f9">
+    <table style="border-spacing: 5; border-collapse: collapse; margin:5; width:99%;">
+      <tbody>
+        <tr>
+          <td style="vertical-align:top; width:100%;">
+            <div  style="top: 200px; left: 250px">
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  {{ message }}
+                </div>
               {% endfor %}
-              &nbsp;&nbsp;&nbsp;
-              <strong>Publicado em:</strong> {{ question.pub_date }}&nbsp;&nbsp;&nbsp;
-              <strong>Expira em:</strong> {{ question.exp_date }}
-              
-             </p>
-              <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+              <div style="border:1px solid #67dca1;">
+                <div id="mf-eventos-atuais" style="background:#67dca1; border-bottom:1px solid #67dca1; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
+                  Questão {{question.id}}
+                </div>
+                <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+                  <p>
+                  <strong>Categorias:</strong>
+                    {% for tag in question.tags.all %}
+                      <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+                    {% endfor %}
+                    &nbsp;&nbsp;&nbsp;
+                    <strong>Publicado em:</strong> {{ question.pub_date }}
+                    &nbsp;&nbsp;&nbsp;
+                    <strong>Expira em:</strong> {{ question.exp_date }}
+                  </p>
+                </div>
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+                  <h1>{{ question }}</h1>
+                  {% if question.image %}
+                    <img src="{{ question.image.url }}" width="350px" height="250px" />
+                  {% endif %}
+
+                  <form action="{% url 'agora:vote' question.id %}" method="post">
+                    {% csrf_token %}
+                    {% if question.question_type == 'o' %}
+                      <ul class="list-group">
+                        {% for choice in question.choice_set.all %}
+                          <li class="list-group-item">
+                            <input class="btn btn-default" type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                            <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% elif question.question_type == 'm' %}
+                      <ul class="list-group">
+                        {% for choice in question.choice_set.all %}
+                          <li class="list-group-item">
+                            <input class="btn btn-default" type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                            <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br />
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% elif question.question_type == 't' %}
+                      <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br />
+                    {% endif %}
+                    <input class="btn btn-default btn-info" type="submit" value="Enviar" />
+                  </form>
+                  <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+                </div>
               </div>
-              <h1>{{ question }}</h1>       
-
-                {% if question.image %}
-                <img src="{{ question.image.url }}" width="350px" height="250px" />
-                {% endif %}
-
-            <form action="{% url 'agora:vote' question.id %}" method="post">
-                  {% csrf_token %}
-                  {% if question.question_type == '1' %}
-              <ul class="list-group">
-                  {% for choice in question.choice_set.all %}
-                <div class="list-group-item">
-                  <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                </div>
-                 {% endfor %}
-               </ul>
-                  {% elif question.question_type == '2' %}
-             <ul class="list-group">
-              {% for choice in question.choice_set.all %}
-                <div class="list-group-item">
-                  <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                </div>
-              {% endfor %}
-             </ul>
-             {% elif question.question_type == '3' %}
-              <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
-             {% endif %}
-             <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-            </form>
-            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
-    </div>
-
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</body>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
-
-
-
-
-
-
-

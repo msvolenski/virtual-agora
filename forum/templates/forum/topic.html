@@ -1,0 +1,36 @@
+{% extends 'agora/base.html' %}
+
+{% block content %}
+  <div>
+    <div class="page-header" id="overflow">
+      <section class="content-header">
+        <h1> Plano Diretor Participativo - UNICAMP
+          <small>Fórum</small>
+        </h1>
+        <h5>
+          <ol class="breadcrumb">
+            <li><a href="{% url 'agora:home' %}"><i class="fa fa-home"></i> Página Inicial</a></li>
+            <li><a href="{% url 'agora:pdpu' %}">Plano Diretor Participativo - UNICAMP</a></li>
+            <li><a href="{% url 'forum:home' %}">Fórum</a></li>
+            <li><a href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a></li>
+            <li class="active">{{ topic }}</li>
+          </ol>
+        </h5>
+      </section>
+     </div>
+   </div>
+{% endblock %}
+
+{% block content12 %}
+  <div style="padding:30px">
+    <center><h1>{{ category }} - {{ topic }}</h1></center>
+    {% if topic %}
+      {{ topic.text }}
+      {% for answer in topicAnwer %}
+        {{ answer }}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock content12 %}
+
+

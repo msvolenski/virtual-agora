@@ -1,0 +1,103 @@
+from django.db import models
+from django.contrib.auth.models import User as AuthUser
+from django.utils import timezone
+
+from taggit.managers import TaggableManager
+
+
+class Category(models.Model):
+  """Model for types of subjects"""
+
+  title = models.CharField(max_length=50)
+  tags = TaggableManager()
+
+  def __str__(self):
+    return self.title
+
+  class Meta:
+    verbose_name = 'categoria'
+    verbose_name_plural = 'categorias'
+
+
+class Topic(models.Model):
+  """Model for topics of a theme"""
+
+  category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+  title = models.CharField('Título', max_length=50)
+  text = models.TextField('Texto', max_length=1000)
+  pub_date = models.DateTimeField('Data de publicação')
+  image = models.ImageField('Imagem', upload_to='forum_images', blank=True, null=True)
+  tags = TaggableManager()
+
+  def __str__(self):
+    return self.title
+
+  def save(self, *args, **kwargs):
+    """On save, update timestamps"""
+
+    if not self.id:
+      self.pub_date = timezone.now()
+    return super(Topic, self).save(*args, **kwargs)
+
+  class Meta:
+    verbose_name = 'tópico'
+    verbose_name_plural = 'tópicos'
+
+
+class User(models.Model):
+  """Extends User model from Authentication app"""
+
+  topic_user = models.OneToOneField(
+    AuthUser,
+    primary_key=True,
+    parent_link=True,
+    related_name='topic_user',
+  )
+  topic_answer = models.ManyToManyField(
+    Topic,
+    through='TopicAnswer',
+    through_fields=('user', 'topic'),
+    related_name='topic_answer',
+  )
+  topic_answer_like = models.ManyToManyField(
+    'TopicAnswer',
+    through='Like',
+    through_fields=('user', 'answer'),
+    related_name='topic_answer_like',
+  )
+
+
+class TopicAnswer(models.Model):
+  """Answer to a topic"""
+
+  user = models.ForeignKey(User)
+  topic = models.ForeignKey(Topic)
+  text = models.TextField(max_length=1000)
+  answer_date = models.DateTimeField(editable=False)
+
+  def __str__(self):
+    return self.text
+
+  def save(self, *args, **kwargs):
+    """On save, update timestamps"""
+
+    if not self.id:
+      self.answer_date = timezone.now()
+    return super(TopicAnswer, self).save(*args, **kwargs)
+
+  class Meta:
+    verbose_name = 'resposta'
+    verbose_name_plural = 'respostas'
+
+
+class Like(models.Model):
+  "Like to an answer"
+
+  user = models.ForeignKey(User)
+  answer = models.ForeignKey(TopicAnswer)
+
+  class Meta:
+    verbose_name = 'curtir'
+    verbose_name_plural = 'curtires'
+

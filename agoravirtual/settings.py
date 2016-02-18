@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.contrib import messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
@@ -32,61 +33,51 @@ SITE_URL = 'http://127.0.0.1:8000/'
 
 INSTALLED_APPS = [
     'agora.apps.AgoraConfig',
+    'agora.templatetags',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'agora.templatetags',
+    'forum',
     'taggit',
-    'conheca',   
+    'conheca',
     'ckeditor',
     'ckeditor_uploader',
     'resultados',
     'smart_selects',
-     
-    
 ]
 
 MIDDLEWARE_CLASSES = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.security.SecurityMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  #'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'agoravirtual.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-                'django.core.context_processors.request',                
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-
-)
-
-
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+  {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [os.path.join(BASE_DIR, 'templates')],
+    'APP_DIRS': True,
+    'OPTIONS': {
+      'context_processors': [
+        'django.template.context_processors.debug',
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+      ],
     },
+  },
 ]
+
 
 WSGI_APPLICATION = 'agoravirtual.wsgi.application'
 
@@ -95,10 +86,10 @@ WSGI_APPLICATION = 'agoravirtual.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+  }
 }
 
 
@@ -106,18 +97,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+  {
+    'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+  },
 ]
 
 
@@ -139,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # ESQUEMA DE LOGIN
 
@@ -149,38 +141,24 @@ LOGIN_REDIRECT_URL = "../"
 LOGOUT_URL = 'login'
 
 # CK EDITOR
-
-
-
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
 CKEDITOR_IMAGE_BACKEND = "pillow"
-
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-
-
 CKEDITOR_CONFIGS = {
-	'default': {
-		'toolbar': 'Full',
-		
-
-		'width': 'Full',
-	},
-	'full': {
-		'toolbar': None,
-           'width': 'Full',
-		#'width': 640,
-	},
+  'default': {
+    'toolbar': 'Full',
+    'width': 'Full',
+  },
+  'full': {
+    'toolbar': None,
+    'width': 'Full',
+    #'width': 640,
+  },
 }
 
-
-
-
+MESSAGE_TAGS = {
+  messages.ERROR: 'danger',
+}
