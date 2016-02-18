@@ -48,40 +48,29 @@ class Relatorio(models.Model):
         ('1', 'Geral'),
         ('2', 'Questão'),
     )  
-
   
-    def get_address():
-        try:
-            art = Relatorio.objects.latest('id') 
-        except (KeyError, Relatorio.DoesNotExist):
-            return str('http://127.0.0.1:8000/agora/pdpu/resultados/relatorio/') + str(1)            
-        a = art.pk
-        a = a + 1        
-        return str('http://127.0.0.1:8000/agora/pdpu/resultados/relatorio/') + str(a)     
-        #return 'http://127.0.0.1:8000/agora/pdpu/conheca/artigos/7/' (page)   
-    
-    
     questao = models.ForeignKey(Question,blank=True, null=True)
     tags = TaggableManager()    
     tipo = destaque = models.CharField(max_length=10, choices=TIPOS, default='1')         
-    #questao = models.CharField(max_length=200, choices=QUESTOES, default=' ')#    
     titulo =  models.CharField(max_length=100)         
     conteudo = RichTextUploadingField(config_name='full', verbose_name=u'Resultado e Análise')
     publ_date = models.DateTimeField(null=True)
     destaque = models.CharField(max_length=3, default='Não')    
-#    questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  
-    address = models.CharField(max_length=200, default=get_address)
+    address = models.CharField(max_length=200)
     published = models.CharField(max_length=3, default='Não') 
     publhistorico = models.CharField(max_length=3, default='Não')
     like = models.IntegerField(default=0)
     dislike = models.IntegerField(default=0)
-     
-#    
+      
     def __int__(self):
-        return self.questao.id
+        return self.questao.id       
 #        
-#    def split_numbers(self):
-#        return self.questao_associada.split(',')
+    def save(self, *args, **kwargs): 
+        super(Relatorio, self).save(*args, **kwargs)                     
+        self.address = "http://127.0.0.1:8000/agora/pdpu/resultados/relatorio/{id}".format(id=self.id)     
+        return super(Relatorio, self).save(*args, **kwargs)
+#        
+
 
 class Likedislike(models.Model):
     user = models.CharField(max_length=30)

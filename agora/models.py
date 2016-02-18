@@ -56,6 +56,7 @@ class Question(models.Model):
     answer_status = models.CharField('Estado da resposta', max_length=1, choices=STATUS_CHOICES, default = 'n')
     image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
     tags = TaggableManager()
+    address = models.CharField(max_length=200)
     
     
     
@@ -73,6 +74,8 @@ class Question(models.Model):
         if not self.id:
             self.pub_date = timezone.now()
         self.update_expiration_time()
+        super(Question, self).save(*args, **kwargs)
+        self.address = "http://127.0.0.1:8000/agora/pdpu/participe/{id}".format(id=self.id)     
         return super(Question, self).save(*args, **kwargs)
         
     def update_expiration_time(self):

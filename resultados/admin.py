@@ -120,11 +120,11 @@ class RelatorioAdmin(admin.ModelAdmin):
         
 #        ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
        
-        ('URL da página do Resultado:', {'fields': ['address']}),   
+        #('URL da página do Resultado:', {'fields': ['address']}),   
     ]
 #   
 #    
-    list_display = ['titulo','questao','id','publ_date', 'published']   
+    list_display = ['titulo','questao','id','publ_date', 'published','address']   
 #     
 #    def destacar_artigo(modeladmin, request, queryset):
 #        if queryset.count() != 1:

@@ -12,25 +12,14 @@ from ckeditor_uploader.fields import RichTextUploadingField
         
 class Article(models.Model):
     
-    def get_address():
-        try:
-            art = Article.objects.latest('id') 
-        except (KeyError, Article.DoesNotExist):
-            return str('http://127.0.0.1:8000/agora/pdpu/conheca/artigos/') + str(1)            
-        a = art.pk
-        a = a + 1        
-        return str('http://127.0.0.1:8000/agora/pdpu/conheca/artigos/') + str(a)     
-        #return 'http://127.0.0.1:8000/agora/pdpu/conheca/artigos/7/' (page)   
     
-
-    title = models.CharField(max_length=200)
-    
+    title = models.CharField(max_length=200)    
     tags = TaggableManager()
     article = RichTextUploadingField(config_name='full', verbose_name=u'Descrição')
     publ_date = models.DateTimeField()
     destaque = models.CharField(max_length=3, default='Não')    
     questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  
-    address = models.CharField(max_length=200, default=get_address)
+    address = models.CharField(max_length=200)
     published = models.CharField(max_length=3, default='Não')     
     
     def __str__(self):
@@ -38,6 +27,11 @@ class Article(models.Model):
         
     def split_numbers(self):
         return self.questao_associada.split(',')
+        
+    def save(self, *args, **kwargs): 
+        super(Article, self).save(*args, **kwargs)                     
+        self.address = "http://127.0.0.1:8000/agora/pdpu/conheca/artigos/{id}".format(id=self.id)     
+        return super(Article, self).save(*args, **kwargs)
         
 class Topico(models.Model):
     

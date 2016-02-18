@@ -68,11 +68,11 @@ class ArticleAdmin(admin.ModelAdmin):
         ('Tags', {'fields': ['tags']}), 
         ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
         ('Data de Pubicação:', {'fields': ['publ_date']}), 
-        ('URL da página do Artigo:', {'fields': ['address']}),   
+         
     ]
    
     
-    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque')   
+    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')   
      
     
     def destacar_artigo(modeladmin, request, queryset):

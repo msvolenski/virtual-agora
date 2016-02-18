@@ -28,7 +28,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
   list_filter = ('pub_date', 'exp_date', 'question_type')
   search_fields = ['question_text']
-  list_display = ['question_text', 'id', 'pub_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published']
+  list_display = ['question_text', 'id', 'pub_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
   actions = ['publish_question', 'unpublish_question']
 
   def publish_question(self, request, queryset):
