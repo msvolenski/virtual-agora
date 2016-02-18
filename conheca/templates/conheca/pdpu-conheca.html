@@ -1,0 +1,90 @@
+{% extends 'agora/base.html' %}
+{% load set_var %}
+{% block content12 %}
+
+    <div style="filter:alpha(opacity=100);background-color:#DFF6FF;position:fixed;background-attachment:fixed;width:100%;top:40px;z-index:2;">
+      <section class="content-header">
+        <h1> Plano Diretor Participativo - UNICAMP <small>Conheça</small></h1>
+      </section>
+      <ol class="breadcrumb">
+        <li><a href="\agora"> Página Inicial</a></li>
+        <li><a href="\agora\pdpu"></i> PDPU</a></li>
+        <li class="active">Conheça</li>
+      </ol>
+      <form   style="position:relative;left:31px;top:-10px;" method="post"  action="{% url 'conheca:search'%}">
+        <input  size="35" id="search_box" name="q"  placeholder="Procure um artigo pelas hashtags" >
+        <button id="search_submit" value="search" >Buscar</button>
+      </form>
+    </div>
+
+
+    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:150px;z-index:1;margin-bottom:300px;">
+    <tbody>
+    <tr>
+
+    <td style="padding:0 0.5em;">
+    </td>
+
+    <td style="width:68%;vertical-align:top;">
+
+
+            {% for Article in object_list %}
+            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
+
+            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
+            <iframe src="{{ Article.address}}/destaque" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);' ></iframe><br>
+            </div>
+
+            {% endif %}
+            {% endfor %}
+
+
+            {% for Article in object_list %}
+            {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
+
+            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
+            <iframe src="{{ Article.address}}" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);'  ></iframe><br>
+            </div>
+
+
+            {% endif %}
+            {% endfor %}
+
+
+
+            <script language="javascript" type="text/javascript">
+            function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+            }
+            </script>
+
+     </td>
+     <td style="padding:0 0.5em;height:1000px">
+     </td>
+     <td style="width:32%; vertical-align:top;">
+
+
+         {% for topico in topico %}
+                       <iframe src="{{ topico.address_topico}}" style="font-size: 0px;vertical-align:bottom;display:block;" frameborder="0" marginheight="0" marginwidth="0" width="100%" onload="this.style.height=(this.contentDocument.body.scrollHeight + 10) + 'px'"></iframe><br>
+         {% endfor %}
+     </td>
+
+
+
+
+
+
+
+
+
+    <td style="padding:0 0.5em;"></td>
+
+
+    </tr>
+    </tbody>
+    </table>
+
+    </td>
+
+
+    {% endblock content12 %}

@@ -1,0 +1,50 @@
+{% load staticfiles %}
+{% load set_var %}
+
+
+<body class="skin-blue pace-done fixed" style="font-family:'Source Sans Pro', sans-serif;">
+
+<table style="border-spacing: 0; border-collapse: collapse; margin:0; background:transparent; width:100%;">
+<tbody>
+<tr>
+<td style="vertical-align:top; width:100%;">
+<div style="border:1px solid #cef2e0;">
+
+            <div id="mf-eventos-atuais" style="background:#cef2e0; border-bottom:1px solid #cef2e0; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
+            </div>
+            <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+
+                {% for tag in article.tags.all %}
+                #{{ tag.name }} &nbsp -
+                {% endfor %}
+                Publicado em: {{ article.publ_date }}
+
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
+                    <font size=15> {{ article.title|safe  }}</font>
+                    <br>
+                    {{ article.article|safe }}
+                    <br>
+
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
+
+                VOTE! Este artigo te auxilia a responder as questões:
+
+                {% for questao_associada in article.split_numbers %}
+                    {% for question in not_answered %}
+                        {% if questao_associada == question.id|slugify %}
+
+                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>
+
+
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</body>

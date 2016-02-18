@@ -200,15 +200,3 @@ captures/
 
 ### Android Patch ###
 gen-external-apklibs
-
-conheca/templates/conheca/article_page.html
-
-conheca/templates/conheca/pdpu-conheca.html
-
-conheca/templates/conheca/search_result.html
-
-conheca/urls.py
-
-conheca/views.py
-
-conheca/migrations/0001_initial.py
