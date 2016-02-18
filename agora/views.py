@@ -9,7 +9,8 @@ from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
-
+from conheca.models import Article
+from resultados.models import Relatorio
 from taggit.models import Tag
 
 from .models import Choice, Question, Answer, User
@@ -29,9 +30,30 @@ class HomeView(generic.ListView):
 class PdpuView(generic.ListView):
   """PDPU home with it's subpages"""
   template_name = 'agora/pagina-pdpu.html'
-
+  
   def get_queryset(self):
     return
+
+  def get_context_data(self, **kwargs):
+    context = super(PdpuView, self).get_context_data(**kwargs)
+
+    user = User.objects.get(user=self.request.user)      
+    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    answered = Answer.objects.filter(user=user)
+    answered_questions = [a.question for a in answered]
+    context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')     
+    context['question'] = Question.objects.all() 
+    context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['not_answered'].reverse()
+    return context
+
+
+
+
+
+
+
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -58,21 +80,16 @@ class PdpuParticipeView(generic.ListView):
     return context
 
 
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+
+
+@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
 class DetailView(generic.DetailView):
-  template_name = 'agora/detail.html'
   model = Question
+  template_name = 'agora/detail.html'
 
-  def get_queryset(self):
-    """Excludes any questions that aren't published yet."""
-    return Question.objects.all()
-
-  def get_context_data(self, **kwargs):
-    context = super(ResultsView, self).get_context_data(**kwargs)
-    context['user'] = User.objects.all()
-    context['answered'] = Answer.objects.all()
 
 def vote(request, question_id):
+  
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -87,7 +104,7 @@ def vote(request, question_id):
 
   try:
     # Save the answer
-    if question_type == 'o':
+    if question_type == '1':
       answer = question.choice_set.get(pk=request.POST['choice'])
       if answer:
         answer_model = Answer(user=user, question=question, choice=answer)
@@ -95,7 +112,7 @@ def vote(request, question_id):
         success = True
       else:
         error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == 'm':
+    elif question_type == '2':
       answer = request.POST.getlist('choice')
       if answer:
         for choice_id in answer:
@@ -105,7 +122,7 @@ def vote(request, question_id):
         success = True
       else:
         error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == 't':
+    elif question_type == '3':
       answer = request.POST['text']
       if answer:
         answer_model = Answer(user=user, question=question, text=answer)

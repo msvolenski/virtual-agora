@@ -30,7 +30,7 @@ class QuestionAdmin(admin.ModelAdmin):
   publish_question.short_description = "Publicar questões"
 
   def unpublish_question(self, request, queryset):
-    rows_updated = queryset.update(question_status='u')
+    rows_updated = queryset.update(question_status='n')
     if rows_updated == 1:
       message_bit = "1 questão foi despublicada"
     else:

@@ -41,7 +41,7 @@ class Question(models.Model):
     
     
     permissao = models.IntegerField(default=0)    
-    resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'u')
+    resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
     
     def __str__(self):
         if self.id:

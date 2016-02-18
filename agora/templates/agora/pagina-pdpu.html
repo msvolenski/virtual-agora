@@ -28,11 +28,24 @@
             <div class="inner">
               <h3>CONHEÇA</h3>
               <div>
+              {% for article in article %}
+              
+                   
+                    <li><a style="color:#ffffff" href="#" onclick="window.open('{{article.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ article.title }}</font></li> </a>
+                    {{ article.publ_date}}
+                    {% for tag in article.tags.all %}
+                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+                    {% endfor %}
+                   
+              
+             
+              <br/><br/>
+              {% endfor %}  
+
+
+
               </div>
-            </div>
-            <div class="icon">
-                <i class="ion ion-bag"></i>
-            </div>
+            </div>            
             <a href="{% url 'conheca:pdpu-conheca' %}" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
@@ -44,24 +57,61 @@
           <div class="small-box bg-green">
             <div class="inner">
               <h3>PARTICIPE</h3>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+                <div>
+            
+            
+               {% for question in not_answered %}             
+                   
+                   <li><a style="color:#ffffff" href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ question }}</font></li> </a>
+                    
+                    Expira em: {{ question.exp_date }}                    
+                    {{ question.publ_date}}
+                    {% for tag in question.tags.all %}
+                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+                    {% endfor %}          
+
+
+                    
+             
+              <br/><br/>
+              {% endfor %}  
+
+
+
+
+
+
+
+                </div>  
             </div>
             <a href="{% url 'agora:pdpu-participe' %}" class="small-box-footer">
-                Mais informações <i class="fa fa-arrow-circle-right"></i>
-            </a>
+            Mais informações <i class="fa fa-arrow-circle-right"></i> </a>       
           </div>
         </div><!-- /.small-box -->
-
+       
         <!-- .small-box -->
         <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-yellow">
             <div class="inner">
               <h3>RESULTADOS</h3>
+                <div>
+                    {% for relatorio in relatorio %}
+              
+                   
+                    <li><a style="color:#ffffff" href="#" onclick="window.open('{{relatorio.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ relatorio.titulo }}</font></li> </a>
+                    {{ relatorio.publ_date}}
+                    {% for tag in relatorio.tags.all %}
+                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+                    {% endfor %}
+                   
+              
+             
+              <br/><br/>
+              {% endfor %}              
+
+
+
             </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
             </div>
             <a href="{% url 'resultados:pdpu-resultados' %}" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
