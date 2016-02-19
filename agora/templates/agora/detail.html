@@ -64,7 +64,7 @@
                 <img src="{{ question.image.url }}" width="350px" height="250px" />
                 {% endif %}
 
-            <form action="{% url 'agora:vote' question.id %}" method="post">
+            <form action="{% url 'agora:vote_iframe' question.id %}" method="post">
                   {% csrf_token %}
                   {% if question.question_type == '1' %}
               <ul class="list-group">

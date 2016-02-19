@@ -5,7 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Choice, Question, Answer, User
+from .models import Choice, Question, Answer, User, InitialListQuestion
 
 
 class ChoiceInline(admin.TabularInline):
@@ -61,6 +61,39 @@ class AnswerAdmin(admin.ModelAdmin):
     return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
   show_results.short_description = "Mostrar resultados"
 
+class InitialListQuestionAdmin(admin.ModelAdmin):
+    actions = ['ativar_lista','desativar_lista']
+    list_display = ['name','get_tags','is_list_active']       
+    fields = ['name', 'questions',]
+    
+    def get_tags(self, post):
+        tags = []
+        for tag in InitialListQuestion.questions.all():
+            tags.append(str(tag))
+        return ', '.join(tags)
+        
+        
+    def ativar_lista(modeladmin, request, queryset):
+        if queryset.count() != 1:
+            modeladmin.message_user(request, "Selecione apenas uma lista")
+            return         
+        else:               
+            InitialListQuestion.objects.all().update(select=0)               
+            queryset.update(select = 1)
+            return
+      
+    def desativar_lista(modeladmin, request, queryset):
+        if queryset.count() != 1:
+            modeladmin.message_user(request, "Selecione apenas uma lista")
+            return         
+        else:               
+                         
+            queryset.update(select = 0)
+            return
+      
+     
+    
+    
 
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)
@@ -68,3 +101,4 @@ admin.site.register(AuthUser, UserAdmin)
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
+admin.site.register(InitialListQuestion, InitialListQuestionAdmin)

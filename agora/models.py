@@ -166,3 +166,31 @@ class Answer(models.Model):
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
+    
+class InitialListQuestion(models.Model):
+    
+    name = models.CharField(max_length=50)
+    questions = TaggableManager()
+    select = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return self.name
+  
+    def __int__(self):
+        return self.select  
+        
+    def is_list_active(self):
+        if self.select == 1:
+            return True
+        else:
+            return False
+            
+    def split_questions(self):
+        return self.questions.split(',')
+
+    is_list_active.boolean = True
+    is_list_active.short_description = 'Lista ativa?'
+
+        
+        
+        
