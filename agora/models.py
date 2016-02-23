@@ -29,7 +29,7 @@ class Question(models.Model):
     
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
     question_text = models.CharField(max_length=200)    
-    pub_date = models.DateTimeField('Data de publicação')
+    publ_date = models.DateTimeField('Data de publicação')
     exp_date = models.DateTimeField('Data de expiração')
     days = models.IntegerField('Tempo para expirar', choices=EXP_TIME, default=3650)
     question_status = models.CharField('Estado da questão', max_length=1, choices=STATUS_CHOICES, default = 'p')
@@ -52,14 +52,14 @@ class Question(models.Model):
     def save(self, *args, **kwargs):
         """On save, update timestamps"""
         if not self.id:
-            self.pub_date = timezone.now()
+            self.publ_date = timezone.now()
         self.update_expiration_time()
         super(Question, self).save(*args, **kwargs)
         self.address = "http://127.0.0.1:8000/agora/pdpu/participe/{id}".format(id=self.id)     
         return super(Question, self).save(*args, **kwargs)
         
     def update_expiration_time(self):
-        self.exp_date = self.pub_date + timedelta(days=self.days)        
+        self.exp_date = self.publ_date + timedelta(days=self.days)        
         
     def is_question_expired(self):
         return self.exp_date <= timezone.now()

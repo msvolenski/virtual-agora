@@ -15,9 +15,9 @@ class ChoiceInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
   fields = ['question_text', 'image', ('question_type', 'days'), ('tags', 'question_status', 'answer_status')]
   inlines = [ChoiceInline]
-  list_filter = ['pub_date', 'exp_date', 'question_type']
+  list_filter = ['publ_date', 'exp_date', 'question_type']
   search_fields = ['question_text']
-  list_display = ['question_text', 'id', 'pub_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
+  list_display = ['question_text', 'id', 'publ_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
   actions = ['publish_question', 'unpublish_question']
 
   def publish_question(self, request, queryset):

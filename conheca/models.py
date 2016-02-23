@@ -28,7 +28,8 @@ class Article(models.Model):
         
     def save(self, *args, **kwargs): 
         super(Article, self).save(*args, **kwargs)                     
-        self.address = "http://127.0.0.1:8000/agora/pdpu/conheca/artigos/{id}".format(id=self.id)     
+        self.address = "http://127.0.0.1:8000/agora/pdpu/conheca/artigos/{id}".format(id=self.id)
+       
         return super(Article, self).save(*args, **kwargs)
         
 

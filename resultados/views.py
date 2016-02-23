@@ -40,46 +40,6 @@ class RelatorioPageView(generic.DetailView):
     def get_queryset(self):
         return Relatorio.objects.all()    
         
-    #def get_context_data(self, **kwargs):
-     #   context = super(ArticlePageView, self).get_context_data(**kwargs)     
-      #  context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-       # return context 
-        
-##@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')        
-##class ArticlePageView(generic.DetailView):
-#    model = Article       
-#    template_name = 'conheca/article_page.html'
-#    
-#    def get_queryset(self):
-#        return Article.objects.all()    
-#        
-#    def get_context_data(self, **kwargs):
-#        context = super(ArticlePageView, self).get_context_data(**kwargs)     
-#        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-#        return context
-#        
-#@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')        
-#class ArticleDestaquePageView(generic.DetailView):
-#    model = Article       
-#    template_name = 'conheca/article_destaque_page.html'
-#    
-#    def get_queryset(self):
-#        return Article.objects.all()    
-#        
-#    def get_context_data(self, **kwargs):
-#        context = super(ArticleDestaquePageView, self).get_context_data(**kwargs)     
-#        context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-#        return context
-#        
-#        
-#class TopicoPageView(generic.DetailView):
-#    model = Topico       
-#    template_name = 'conheca/topico_page.html'
-#    
-#    def get_queryset(self):
-#        return Topico.objects.all()    
-#        
-
 def like(request, relatorio_id):
     relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
     try:
@@ -104,7 +64,31 @@ def dislike(request, relatorio_id):
             return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,))) 
     return HttpResponseRedirect(reverse('resultados:relatorio_page', args=(relatorio.id,)))
     
+def like_timeline(request, relatorio_id):
+    relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
+    try:
+        obj = Likedislike.objects.get(user=request.user, relatorio=relatorio_id)
+    except Likedislike.DoesNotExist:
+            obj = Likedislike(user=request.user, relatorio=relatorio_id)
+            obj.save()    
+            relatorio.like += 1
+            relatorio.save()
+            return HttpResponseRedirect(reverse('agora:pdpu')) 
+    return HttpResponseRedirect(reverse('agora:pdpu'))
+  
+def dislike_timeline(request, relatorio_id):   
+    relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
+    try:
+        obj = Likedislike.objects.get(user=request.user, relatorio=relatorio_id)
+    except Likedislike.DoesNotExist:
+            obj = Likedislike(user=request.user, relatorio=relatorio_id)
+            obj.save()    
+            relatorio.dislike += 1
+            relatorio.save()
+            return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id)) 
+    return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id))
     
+
 def search_res(request):
   
     tags_user = request.POST['q'].split(' ')

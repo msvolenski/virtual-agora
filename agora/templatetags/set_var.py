@@ -52,3 +52,7 @@ def votos_distintos(value):
 
 register.tag('set', set_var)
 
+@register.filter
+def to_class_name(value):
+    return value.__class__.__name__
+

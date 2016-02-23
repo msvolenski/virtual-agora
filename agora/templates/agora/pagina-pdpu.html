@@ -1,4 +1,5 @@
 {% extends 'agora/base.html' %}
+{% load staticfiles %}
 {% load set_var %}
 {% block content12 %}
 
@@ -18,109 +19,190 @@
 
 
 <section class="content" style="background:#ffffff">
-<div class="row" style="position:relative;margin-top:80px;z-index:3">
-<!-- .small-box -->
+            <div style="height:100px"></div>
+            {% for t in timeline %}          
+                {%if t|to_class_name == 'Article' %}
+                            <div style="border-spacing: 0; border-collapse: collapse; margin:0; background:transparent; width:70%;margin:0 auto;">                               
+                                <div style="border:1px solid #00c0ef;">                                
+                                            <div id="mf-eventos-atuais" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
+                                            </div>
+                                            <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+                                
+                                                {% for tag in t.tags.all %}
+                                                #{{ tag.name }} &nbsp -
+                                                {% endfor %}
+                                                Publicado em: {{ t.publ_date }}
+                                
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                                                </div>
+                                                    <font size=15> {{ t.title|safe  }}</font>
+                                                    <br>
+                                                    {{ t.article|safe }}
+                                                    <br>
+                                
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                                                </div>
+                                
+                                                VOTE! Este artigo te auxilia a responder as questões:
+                                
+                                                {% for questao_associada in t.split_numbers %}
+                                                    {% for question in not_answered %}
+                                                        {% if questao_associada == question.id|slugify %}
+                                
+                                                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>
+                                
+                                
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endfor %}
+                                            </div>
+                                </div>                             
+                            </div> 
+                            </br>         
+                {% endif %}
 
-            <div class="col-lg-3 col-xs-6">
-            <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>CONHEÇA</h3>
-              <div>
-              {% for article in article %}
+
+
+
+
+                {%if t|to_class_name == 'Question' %}                    
+                              <div  style="width:70%;margin: 0 auto;"  > 
+                                {% for message in messages %}
+                              <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                {{ message }}
+                              </div>
+                                {% endfor %}      
               
-                   
-                    <li><a style="color:#ffffff" href="#" onclick="window.open('{{article.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ article.title }}</font></li> </a>
-                    {{ article.publ_date}}
-                    {% for tag in article.tags.all %}
-                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
-                    {% endfor %}
-                   
-              
-             
-              <br/><br/>
-              {% endfor %}  
-              </div>
-          </div>            
-              <a href="{% url 'conheca:pdpu-conheca' %}" class="small-box-footer">
-                  Mais informações <i class="fa fa-arrow-circle-right"></i>
-              </a>
-          </div>
-          </div><!-- /.small-box -->
+                                        </br>
+                                     <div style="border:1px solid #67dca1;background:#f9f9f9">
+                                                    
+                                        <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
+                                        </div>
+                                        <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
+                                
+                                             <p>
+                                              
+                                              <strong>Categorias:</strong>
+                                              {% for tag in t.tags.all %}
+                                                <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
+                                              {% endfor %}
+                                              &nbsp;&nbsp;&nbsp;
+                                              <strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
+                                              <strong>Expira em:</strong> {{ t.exp_date }}
+                                              
+                                             </p>
+                                              <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                                              </div>
+                                              <h1>{{ t }}</h1>       
+                                
+                                                {% if t.image %}
+                                                <img src="{{ t.image.url }}" width="350px" height="250px" />
+                                                {% endif %}
+                                
+                                            <form action="{% url 'agora:vote_timeline' t.id %}" method="post">
+                                                  {% csrf_token %}
+                                                  {% if t.question_type == '1' %}
+                                              <ul class="list-group">
+                                                  {% for choice in t.choice_set.all %}
+                                                <div class="list-group-item">
+                                                  <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                                                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+                                                </div>
+                                                 {% endfor %}
+                                               </ul>
+                                                  {% elif t.question_type == '2' %}
+                                             <ul class="list-group">
+                                              {% for choice in t.choice_set.all %}
+                                                <div class="list-group-item">
+                                                  <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+                                                  <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+                                                </div>
+                                              {% endfor %}
+                                             </ul>
+                                             {% elif t.question_type == '3' %}
+                                              <textarea class="form-control" name="text" id="question_text{{ t.id }}" value="" rows="3"></textarea><br/>
+                                             {% endif %}
+                                             <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+                                            </form>                                
+                                            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+                                          </div>
+                                    </div>
+                                    </div></br>
+                {% endif %}
 
-          <!-- .small-box -->
-          <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-green">
-          <div class="inner">
-              <h3>PARTICIPE</h3>
-                <div>
-            
-            
-               {% for question in not_answered %}             
-                   
-                   <li><a style="color:#ffffff" href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ question }}</font></li> </a>
-                    
-                    Expira em: {{ question.exp_date }}                    
-                    {{ question.publ_date}}
-                    {% for tag in question.tags.all %}
-                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
-                    {% endfor %}          
+                {%if t|to_class_name == 'Relatorio' %}
+                                
+                                <div style="border:1px solid #f39c12;width:70%;margin:0 auto;">
+                                                    
+                                            <div id="mf-eventos-atuais" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
+                                            {% if t.questao == None %}
+                                            Resultado Geral
+                                            {% endif %}
+                                             
+                                            {% if t.questao != None %}
+                                            Resultado {{ t.questao }}
+                                            {% endif %}
+                                                        
+                                
+                                
+                                            </div>
+                                            <div id="relatorio{{t.id}}" style="padding:0.4em 1em 0.3em;">
+                                        
+                                                {% for tag in t.tags.all %}
+                                                #{{ tag.name }} &nbsp -
+                                                {% endfor %}
+                                                Publicado em: {{ t.publ_date }}
+                                                
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                                                </div>
+                                                    
+                                                    {{ t.conteudo|safe }}
+                                                    <br>  
+                                             
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                                                </div>
+                                                
+                                               
+                                                
+                                                <!-- <button class="btn btn-primary" type="submit" name="like" id="like" value="1"bmit Review</button>{{relatorio.like}} -->
+                                         
+                                               
+                                                    
+                                                &nbsp;&nbsp; 
+                                                <form  style="display:inline-block;" action="{% url 'resultados:like_timeline' t.id %}" method="post">
+                                                {% csrf_token %}
+                                                <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
+                                                </form>
+                                
+                                                &nbsp;
+                                                <form style="display:inline-block;" action="{% url 'resultados:dislike_timeline' t.id %}" method="post">
+                                                {% csrf_token %}                
+                                                <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{t.dislike}}
+                                                </form>
+                                            </div>            
+                                </div>
+                                </br>
+                {% endif %}       
+            {% endfor %}
 
 
-                    
-             
-              <br/><br/>
-              {% endfor %}  
-                </div>  
-          </div>
-            <a href="{% url 'agora:pdpu-participe' %}" class="small-box-footer">
-            Mais informações <i class="fa fa-arrow-circle-right"></i> </a>       
-          </div>
-          </div><!-- /.small-box -->
-       
-        <!-- .small-box -->
-          <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-yellow">
-          <div class="inner">
-              <h3>RESULTADOS</h3>
-                <div>
-                    {% for relatorio in relatorio %}
-              
-                   
-                    <li><a style="color:#ffffff" href="#" onclick="window.open('{{relatorio.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><font size="5">{{ relatorio.titulo }}</font></li> </a>
-                    {{ relatorio.publ_date}}
-                    {% for tag in relatorio.tags.all %}
-                        <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
-                    {% endfor %}
-                   
-              
-             
-              <br/><br/>
-              {% endfor %}              
+
+          
 
 
 
-                </div>
-            </div>
-            <a href="{% url 'resultados:pdpu-resultados' %}" class="small-box-footer">
-              Mais informações <i class="fa fa-arrow-circle-right"></i>
-            </a>
-          </div>
-        </div><!-- /.small-box -->
 
-        <!-- .small-box -->
-        <div class="col-lg-3 col-xs-6">
-        <div class="small-box bg-red">
-        <div class="inner">
-              <h3>COMUNIDADE</h3>
-        </div>
-           
-            <a href="{% url 'forum:home' %}" class="small-box-footer">
-              Mais informações <i class="fa fa-arrow-circle-right"></i>
-            </a>
-        </div>
-        </div><!-- /.small-box -->
-</div><!-- /.row -->
+
+
+
+
+
+
+
 </section>
+
+
 
 
     {% endblock content12 %}
