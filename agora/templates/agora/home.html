@@ -3,13 +3,13 @@
 
 
 {% block content12 %}
-  <section class="content">
 
+<section style="margin-top:60px;margin-bottom:50px">
     <div style="font-size:50px;text-align:center;">Bem-vindo à AGORA VIRTUAL</div>
     <div style="font-size:20px;text-align:center;">Seu espaço de co-participação política</div>
     </br>
     </br>
-    </br>   
+   
   
         {% set none = 0 %}
         {% set first = 0 %}
@@ -21,22 +21,20 @@
                           
                             {% if question.id|slugify == list|slugify %}                    
                             {% set none = 1 %}    
-                              <div style="font-size:20px;text-align:center;">Vote! Queremos a sua participação:</div></br>
+                              <div style="font-size:20px;text-align:center;">Vote! Queremos a sua participação:</div>
                     
-                                <div  style="position:relative;width:40%;margin: 0 auto;"  > 
+                              <div  style="position:relative;width:40%;margin: 0 auto;"  > 
                                 {% for message in messages %}
                               <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 {{ message }}
                               </div>
-                                {% endfor %}
-            
-            
+                                {% endfor %}      
               
                                         </br>
-                                     <div style="border:1px solid #67dca1;">
+                                     <div style="border:1px solid #67dca1;background:#f9f9f9">
                                                     
-                                        <div id="mf-eventos-atuais" style="background:#67dca1; border-bottom:1px solid #67dca1; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
+                                        <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
                                         </div>
                                         <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
                                 
@@ -87,7 +85,7 @@
                                 
                                 
                                 
-                                            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #cef2e0; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+                                            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
                                           </div>
                                     </div>
                                       <br/>
@@ -115,7 +113,6 @@
 
 
 </section>
-<div class="plainlinks hlist" style="background:#f9f9f9;position:relative;width:100%;clear:both; border-top:1px solid #000000; padding-top:0.4em; margin-top:150px; font-size:95%; font-weight:bold;bottom:20px;">Sobre o Projeto - Quem somos - Duvidas - Sugestoões - etc -</div>
 
 
 

@@ -1,30 +1,28 @@
-﻿{% extends 'agora/base.html' %}
+{% extends 'agora/base.html' %}
 {% load set_var %}
-
-{% block content %}
-  <div>
-    <div class="page-header">
-      <section class="content-header">
-        <h1>Plano Diretor Participativo - UNICAMP</h1>
-        <h5>
-          <ol class="breadcrumb">
-            <li><a href="{% url 'agora:home' %}"><i class="fa fa-home"></i> Página Inicial</a></li>
-            <li class="active">Plano Diretor Participativo - UNICAMP</li>
-          </ol>
-        </h5>
-      </section>
-    </div>
-  </div>
-{% endblock content %}
-
 {% block content12 %}
-  <div
-    <section class="content">
-      <div class="row">
 
-        <!-- .small-box -->
-        <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-aqua">
+    <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
+        <div style="background:#f7f7f7;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>
+        
+      
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:home' %}"><div style="text-color:#e2e0e0;text-align:center;padding:10px;position:relative;height:40px;background:#e2e0e0;width:175px;float:left;">Home Ágora</div></a> 
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f7f7f7;width:175px;float:left">Página Inicial</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'conheca:pdpu-conheca' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#00c0ef;width:175px;float:left">Conheça</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu-participe' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#12d673;width:175px;float:left">Participe</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'resultados:pdpu-resultados' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f39c12;width:175px;float:left">Resultados</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
+ </div>
+
+
+
+
+<section class="content" style="background:#ffffff">
+<div class="row" style="position:relative;margin-top:80px;z-index:3">
+<!-- .small-box -->
+
+            <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-aqua">
             <div class="inner">
               <h3>CONHEÇA</h3>
               <div>
@@ -41,21 +39,18 @@
              
               <br/><br/>
               {% endfor %}  
-
-
-
               </div>
-            </div>            
-            <a href="{% url 'conheca:pdpu-conheca' %}" class="small-box-footer">
-              Mais informações <i class="fa fa-arrow-circle-right"></i>
-            </a>
+          </div>            
+              <a href="{% url 'conheca:pdpu-conheca' %}" class="small-box-footer">
+                  Mais informações <i class="fa fa-arrow-circle-right"></i>
+              </a>
           </div>
-        </div><!-- /.small-box -->
+          </div><!-- /.small-box -->
 
-        <!-- .small-box -->
-        <div class="col-lg-3 col-xs-6">
+          <!-- .small-box -->
+          <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-green">
-            <div class="inner">
+          <div class="inner">
               <h3>PARTICIPE</h3>
                 <div>
             
@@ -75,24 +70,17 @@
              
               <br/><br/>
               {% endfor %}  
-
-
-
-
-
-
-
                 </div>  
-            </div>
+          </div>
             <a href="{% url 'agora:pdpu-participe' %}" class="small-box-footer">
             Mais informações <i class="fa fa-arrow-circle-right"></i> </a>       
           </div>
-        </div><!-- /.small-box -->
+          </div><!-- /.small-box -->
        
         <!-- .small-box -->
-        <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-yellow">
-            <div class="inner">
+          <div class="inner">
               <h3>RESULTADOS</h3>
                 <div>
                     {% for relatorio in relatorio %}
@@ -111,7 +99,7 @@
 
 
 
-            </div>
+                </div>
             </div>
             <a href="{% url 'resultados:pdpu-resultados' %}" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
@@ -121,20 +109,18 @@
 
         <!-- .small-box -->
         <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-red">
-            <div class="inner">
+        <div class="small-box bg-red">
+        <div class="inner">
               <h3>COMUNIDADE</h3>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
+        </div>
+           
             <a href="{% url 'forum:home' %}" class="small-box-footer">
               Mais informações <i class="fa fa-arrow-circle-right"></i>
             </a>
-          </div>
+        </div>
         </div><!-- /.small-box -->
+</div><!-- /.row -->
+</section>
 
-      </div><!-- /.row -->
-    </section>
-  </div>
-{% endblock content12 %}
+
+    {% endblock content12 %}

@@ -2,23 +2,19 @@
 {% load set_var %}
 {% block content12 %}
 
-    <div style="filter:alpha(opacity=100);background-color:#DFF6FF;position:fixed;background-attachment:fixed;width:100%;top:40px;z-index:2;">
-      <section class="content-header">
-        <h1> Plano Diretor Participativo - UNICAMP <small>Conheça</small></h1>
-      </section>
-      <ol class="breadcrumb">
-        <li><a href="\agora"> Página Inicial</a></li>
-        <li><a href="\agora\pdpu"></i> PDPU</a></li>
-        <li class="active">Conheça</li>
-      </ol>
-      <form   style="position:relative;left:31px;top:-10px;" method="post"  action="{% url 'conheca:search'%}">
-        <input  size="35" id="search_box" name="q"  placeholder="Procure um artigo pelas hashtags" >
-        <button id="search_submit" value="search" >Buscar</button>
-      </form>
+    <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
+        <div style="background:#00c0ef;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>
+        
+      
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:home' %}"><div style="text-color:#e2e0e0;text-align:center;padding:10px;position:relative;height:40px;background:#e2e0e0;width:175px;float:left;">Home Ágora</div></a> 
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f7f7f7;width:175px;float:left">Página Inicial</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'conheca:pdpu-conheca' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#00c0ef;width:175px;float:left">Conheça</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu-participe' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#12d673;width:175px;float:left">Participe</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'resultados:pdpu-resultados' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f39c12;width:175px;float:left">Resultados</div></a>  
+        <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
     </div>
 
-
-    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:150px;z-index:1;margin-bottom:300px;">
+    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:100px;z-index:1;margin-bottom:300px;">
     <tbody>
     <tr>
 

@@ -58,7 +58,7 @@ body > .header {
 /*right side - contins main content*/
 .right-side {
   background-color: #ffffff;
-  margin-left: 220px;
+  #margin-left: 220px;
 }
 /*left side - contains sidebar*/
 .left-side {
@@ -201,7 +201,7 @@ img {
   background-color: #3c8dbc !important;
 }
 .bg-green {
-  background-color: #00a65a !important;
+  background-color: #12d673 !important;
 }
 .bg-navy {
   background-color: #001f3f !important;
@@ -338,7 +338,7 @@ body > .header {
 body > .header .navbar {
   height: 50px;
   margin-bottom: 0;
-  margin-left: 220px;
+  #margin-left: 220px;
 }
 body > .header .navbar .sidebar-toggle {
   float: left;
@@ -2416,7 +2416,7 @@ Component: timeline
 */
 /* skin-blue navbar */
 .skin-blue .navbar {
-  background-color: #3c8dbc;
+  background-color: #b80000;
 }
 .skin-blue .navbar .nav a {
   color: rgba(255, 255, 255, 0.8);
