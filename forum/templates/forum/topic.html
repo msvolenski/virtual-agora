@@ -12,7 +12,7 @@
             <li><a href="{% url 'agora:home' %}"><i class="fa fa-home"></i> Página Inicial</a></li>
             <li><a href="{% url 'agora:pdpu' %}">Plano Diretor Participativo - UNICAMP</a></li>
             <li><a href="{% url 'forum:home' %}">Fórum</a></li>
-            <li><a href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a></li>
+            {# <li><a href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a></li> #}
             <li class="active">{{ topic }}</li>
           </ol>
         </h5>
@@ -23,13 +23,42 @@
 
 {% block content12 %}
   <div style="padding:30px">
-    <center><h1>{{ category }} - {{ topic }}</h1></center>
-    {% if topic %}
-      {{ topic.text }}
-      {% for answer in topicAnwer %}
-        {{ answer }}
-      {% endfor %}
-    {% endif %}
+    <div>
+      {% if topic %}
+        <center><h1>{{ topic }}</h1> <span>Publicado em: {{ topic.pub_date }} </span></center>
+        <div style="border:dashed;padding:30px">
+          <p>{{ topic.text|safe }}</p>
+        </div>
+        {% for answer in answers %}
+        <div style="border:dashed;padding:30px">
+          <p>{{ answer.text|safe }}</p>
+          <p>Publicado em: {{answer.answer_date}}</p>
+        </div>
+        {% endfor %}
+      {% endif %}
+      <br /><br />
+      {% if not user_answered %}
+        <center><form action="{% url 'forum:answer' topic.id %}" method="post">
+          {{ answer_form.media }}
+          {{ answer_form }}
+          <br/><input class="btn btn-default btn-info" type="submit" value="Responder" />
+        </form></center>
+      {% endif %}
+
+      <br /><br />
+      Username = {{ username }}<br />
+      User = {{ user }}<br />
+      TopicUser = {{ topic_user }}<br />
+      QuestionUser = {{ question_user }}<br />
+      AuthUserId = {{ auth_user_id }}<br />
+      UserId = {{ user_id }}<br />
+      TopicUserId = {{ topic_user_id }}<br />
+      QuestionUserId = {{ question_user_id }}<br />
+      AllAuth = {{ all_auth }}<br />
+      AllTopic = {{ all_topic }}<br />
+      AllQuestion = {{ all_question }}<br />
+
+    </div>
   </div>
 {% endblock content12 %}
 

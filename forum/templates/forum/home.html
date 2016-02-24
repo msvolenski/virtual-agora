@@ -20,13 +20,14 @@
 {% endblock %}
 
 {% block content12 %}
+  <center><h1>Fórum</h1></center>
   <div style="padding:30px">
-    {% if categories_list %}
-      <ul class="list-group">
+    <div class="list-group">
+      {% if categories_list %}
         {% for category in categories_list %}
-          <li class="list-group-item btn btn-default"><a href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a></li>
+          <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a>
         {% endfor %}
-      </ul>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 {% endblock %}

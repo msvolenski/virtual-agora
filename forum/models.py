@@ -1,8 +1,11 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User as AuthUser
 from django.utils import timezone
 
 from taggit.managers import TaggableManager
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Category(models.Model):
@@ -25,7 +28,8 @@ class Topic(models.Model):
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
   title = models.CharField('Título', max_length=50)
-  text = models.TextField('Texto', max_length=1000)
+  text = RichTextUploadingField(config_name='full', verbose_name=u'Texto')
+  # text = models.TextField('Texto', max_length=1000)
   pub_date = models.DateTimeField('Data de publicação')
   image = models.ImageField('Imagem', upload_to='forum_images', blank=True, null=True)
   tags = TaggableManager()
@@ -48,7 +52,8 @@ class Topic(models.Model):
 class User(models.Model):
   """Extends User model from Authentication app"""
 
-  topic_user = models.OneToOneField(
+  username = models.CharField(max_length=50, default="username")
+  user = models.OneToOneField(
     AuthUser,
     primary_key=True,
     parent_link=True,
@@ -67,13 +72,21 @@ class User(models.Model):
     related_name='topic_answer_like',
   )
 
+  def __str__(self):
+    return self.username
+
+  class Meta:
+    verbose_name = 'usuário'
+    verbose_name_plural = 'usuários'
+
 
 class TopicAnswer(models.Model):
   """Answer to a topic"""
 
   user = models.ForeignKey(User)
   topic = models.ForeignKey(Topic)
-  text = models.TextField(max_length=1000)
+  text = RichTextUploadingField(config_name='full', verbose_name='')
+  # text = models.TextField(max_length=1000)
   answer_date = models.DateTimeField(editable=False)
 
   def __str__(self):
@@ -89,6 +102,12 @@ class TopicAnswer(models.Model):
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
+
+
+class TopicAnswerForm(forms.ModelForm):
+  class Meta:
+    model = TopicAnswer
+    fields = ['text']
 
 
 class Like(models.Model):
