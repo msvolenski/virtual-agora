@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Choice, Question, Answer, User, InitialListQuestion
-
+from forum.models import User as ForumUser
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
@@ -42,12 +42,18 @@ class QuestionAdmin(admin.ModelAdmin):
 class UserProfileInline(admin.StackedInline):
   model = User
   can_delete = False
-  verbose_name_plural = 'perfil'
+  verbose_name_plural = 'perfil das questões'
+
+
+class UserProfileInline2(admin.StackedInline):
+  model = ForumUser
+  can_delete = False
+  verbose_name_plural = 'perfil do fórum'
 
 
 class UserAdmin(UserAdmin):
     """Define a new UserAdmin"""
-    inlines = [UserProfileInline]
+    inlines = [UserProfileInline, UserProfileInline2]
 
 
 class AnswerAdmin(admin.ModelAdmin):
@@ -63,37 +69,37 @@ class AnswerAdmin(admin.ModelAdmin):
 
 class InitialListQuestionAdmin(admin.ModelAdmin):
     actions = ['ativar_lista','desativar_lista']
-    list_display = ['name','get_tags','is_list_active']       
+    list_display = ['name','get_tags','is_list_active']
     fields = ['name', 'questions',]
-    
+
     def get_tags(self, post):
         tags = []
         for tag in InitialListQuestion.questions.all():
             tags.append(str(tag))
         return ', '.join(tags)
-        
-        
+
+
     def ativar_lista(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Selecione apenas uma lista")
-            return         
-        else:               
-            InitialListQuestion.objects.all().update(select=0)               
+            return
+        else:
+            InitialListQuestion.objects.all().update(select=0)
             queryset.update(select = 1)
             return
-      
+
     def desativar_lista(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Selecione apenas uma lista")
-            return         
-        else:               
-                         
+            return
+        else:
+
             queryset.update(select = 0)
             return
-      
-     
-    
-    
+
+
+
+
 
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)

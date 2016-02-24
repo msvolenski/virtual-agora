@@ -24,12 +24,11 @@
   <div style="padding:30px">
     <center><h1>{{ category }}</h1></center>
     {% if topics_list %}
-      <ul class="list-group">
+      <div class="list-group">
         {% for topic in topics_list %}
-          <li class="list-group-item btn btn-default">{{ topic }}</li>
-          {# <a href="{% url 'forum:topic' topic.id %}"></a> #}
+          <a class="list-group-item" href="{% url 'forum:topic' topic.id %}"><strong>{{ topic }}</strong> - <span>Publicado em {{ topic.pub_date }}</span></a></li>
         {% endfor %}
-      </ul>
+      </div>
     {% else %}
       Não há tópicos neste fórum.
     {% endif %}

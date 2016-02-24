@@ -11,7 +11,7 @@ class Question(models.Model):
     STATUS_CHOICES = (
         ('n', 'Não publicado'), # unpublished
         ('p', 'Publicado'),     # published
-    )    
+    )
 
     EXP_TIME = (
         (1, '1 dia'),           # a day
@@ -20,14 +20,15 @@ class Question(models.Model):
         (365, '1 ano'),         # a year
         (3650, 'Indeterminado') # undetermined
     )
-        
+
     QUESTION_TYPE = (
         ('1', 'One choice'),
         ('2', 'Multipla Escolha'),
         ('3', 'Texto'),
     )
-    
+
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
+
     question_text = models.CharField(max_length=200)    
     publ_date = models.DateTimeField('Data de publicação')
     exp_date = models.DateTimeField('Data de expiração')
@@ -37,30 +38,32 @@ class Question(models.Model):
     image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
     tags = TaggableManager()
     address = models.CharField(max_length=200)
-    
-    
-    
-    permissao = models.IntegerField(default=0)    
+
+
+
+    permissao = models.IntegerField(default=0)
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
-    
+
     def __str__(self):
         if self.id:
             return "#{id} - {question}".format(id=self.id, question=self.question_text)
         else:
             return self.question_text
-            
+
     def save(self, *args, **kwargs):
         """On save, update timestamps"""
         if not self.id:
             self.publ_date = timezone.now()
         self.update_expiration_time()
         super(Question, self).save(*args, **kwargs)
-        self.address = "http://127.0.0.1:8000/agora/pdpu/participe/{id}".format(id=self.id)     
+        self.address = "http://127.0.0.1:8000/agora/pdpu/participe/{id}".format(id=self.id)
         return super(Question, self).save(*args, **kwargs)
-        
+
     def update_expiration_time(self):
+
         self.exp_date = self.publ_date + timedelta(days=self.days)        
         
+
     def is_question_expired(self):
         return self.exp_date <= timezone.now()
 
@@ -74,7 +77,7 @@ class Question(models.Model):
 
     is_question_published.boolean = True
     is_question_published.short_description = 'Publicada?'
-    
+
     def is_answer_published(self):
         if self.answer_status == 'p':
             return True
@@ -86,9 +89,9 @@ class Question(models.Model):
 
     class Meta:
         verbose_name = 'questão'
-        verbose_name_plural = 'questões'   
-   
-   
+        verbose_name_plural = 'questões'
+
+
 ##################################################################################
 
 
@@ -166,31 +169,31 @@ class Answer(models.Model):
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
-    
+
 class InitialListQuestion(models.Model):
-    
+
     name = models.CharField(max_length=50)
     questions = TaggableManager()
     select = models.IntegerField(default=0)
-    
+
     def __str__(self):
         return self.name
-  
+
     def __int__(self):
-        return self.select  
-        
+        return self.select
+
     def is_list_active(self):
         if self.select == 1:
             return True
         else:
             return False
-            
+
     def split_questions(self):
         return self.questions.split(',')
 
     is_list_active.boolean = True
     is_list_active.short_description = 'Lista ativa?'
 
-        
-        
-        
+
+
+

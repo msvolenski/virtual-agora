@@ -10,7 +10,7 @@ class TopicAdmin(admin.ModelAdmin):
 
 
 class TopicAnswerAdmin(admin.ModelAdmin):
-  fields = ['topic', 'text']
+  # fields = ['topic', 'text']
   list_filter = ['answer_date']
   list_display = ['user', 'topic', 'text', 'answer_date']
 
