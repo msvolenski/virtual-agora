@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-
+from django.utils.html import escape, conditional_escape
+from django.utils.safestring import mark_safe
 from django import template
+import re 
 register = template.Library()
- 
+
 
 
 
@@ -55,4 +57,41 @@ register.tag('set', set_var)
 @register.filter
 def to_class_name(value):
     return value.__class__.__name__
+    
+    
+    
+
+
+readmore_showscript = ''.join([
+"this.parentNode.style.display='none';",
+"this.parentNode.parentNode.getElementsByClassName('more')[0].style.display='inline';",
+"return false;",
+]);
+
+@register.filter
+def readmore(txt, showwords=15):
+    global readmore_showscript
+    words = txt.split(' ')
+
+    if len(words) <= showwords:
+        return mark_safe(txt)
+
+    # wrap the more part
+    words.insert(showwords, '<span class="more" style="display:none;">')
+    words.append('</span>')
+
+    # insert the readmore part
+    words.insert(showwords, '<span class="readmore">... <a href="#" onclick="')
+    words.insert(showwords+1, readmore_showscript)
+    words.insert(showwords+2, '">read more</a>')
+    words.insert(showwords+3, '</span>')
+
+    # Wrap with <p>
+    words.insert(0, '<p>')
+    words.append('</p>')
+
+    return mark_safe(' '.join(words))
+
+
+
 

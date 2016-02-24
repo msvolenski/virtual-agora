@@ -37,7 +37,17 @@
                                                 </div>
                                                     <font size=15> {{ t.title|safe  }}</font>
                                                     <br>
-                                                    {{ t.article|safe }}
+
+  
+                                                {% if t.article|linebreaks|length > 600 %}                                                
+                                                {{t.article|truncatechars_html:590|safe}}
+                                                <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
+                                             
+                                                {% else %}
+                                                {{t.article|safe}}
+                                                {% endif %}                                  
+
+
                                                     <br>
                                 
                                                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
@@ -156,8 +166,13 @@
                                                 
                                                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
                                                 </div>
-                                                    
-                                                    {{ t.conteudo|safe }}
+                                                {% if t.conteudo|linebreaks|length > 600 %}                                                
+                                                {{t.conteudo|truncatechars_html:590|safe}}
+                                                <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
+                                             
+                                                {% else %}
+                                                {{t.conteudo|safe}}
+                                                {% endif %}    
                                                     <br>  
                                              
                                                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
