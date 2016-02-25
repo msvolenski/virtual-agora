@@ -1,30 +1,27 @@
-﻿{% extends 'agora/base.html' %}
+{% extends 'agora/base.html' %}
+{% load set_var %}
+{% block content12 %}
 
-{% block content %}
-  <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
-        <div style="background:#f56954;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>
-        
-      
+
+    <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
+        <div style="background:#f56954;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>    
         <a style="color:#000000;font-weight: bold;" href="{% url 'agora:home' %}"><div style="text-color:#e2e0e0;text-align:center;padding:10px;position:relative;height:40px;background:#e2e0e0;width:175px;float:left;">Home Ágora</div></a> 
         <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f7f7f7;width:175px;float:left">Página Inicial</div></a>  
         <a style="color:#000000;font-weight: bold;" href="{% url 'conheca:pdpu-conheca' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#00c0ef;width:175px;float:left">Conheça</div></a>  
         <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu-participe' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#12d673;width:175px;float:left">Participe</div></a>  
         <a style="color:#000000;font-weight: bold;" href="{% url 'resultados:pdpu-resultados' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f39c12;width:175px;float:left">Resultados</div></a>  
         <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
-      </div>
-{% endblock %}
+    </div>
 
-{% block content12 %}
-
+  
   <center><h1>Fórum</h1></center>
   <div style="padding:30px">
     <div class="list-group">
       {% if categories_list %}
->>>>>>> origin/master
+
         {% for category in categories_list %}
           <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}">{{ category }}</a>
         {% endfor %}
       {% endif %}
-    </div>
-  </div>
-{% endblock %}
+    </div>  
+{% endblock content12 %}
