@@ -11,17 +11,25 @@
     </div>
 
 
-  <div style="padding:100px">
-    <div>
+  <div style="padding:160px;">
+    <div style="background:#f6f7f8">
       {% if topic %}
-        <center><h1>{{ topic }}</h1> <span>Publicado em: {{ topic.pub_date }} </span></center>
-        <div style="border:dashed;padding:30px">
-          <p>{{ topic.text|safe }}</p>
-        </div>
-        {% for answer in answers %}
-        <div style="border:dashed;padding:30px">
-          <p>{{ answer.text|safe }}</p>
-          <p>Publicado em: {{answer.answer_date}}</p>
+        
+        <div style="background:#efefef;padding:30px">
+        <div style="font-weight: bold;font-size:25px;">{{ topic }}</div> <span> Publicado em: {{ topic.pub_date }} </span>
+        </br></br>
+        <p>{{ topic.text|safe }}</p>
+       
+          
+       </div>
+       <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #888888; padding-top:0.4em;font-size:95%; font-weight:bold;">
+       </div>
+       
+    
+      {% for answer in answers %}
+        <div style="padding:10px;line-height:90%">
+          <div style="font-weight:bold;float:left">{{ answer.user}}&nbsp;&nbsp;</div><div style="float;">{{ answer.text|safe }}</div>
+          <div style="color:#9197a3">{{answer.answer_date}}</div>
         </div>
         {% endfor %}
       {% endif %}
