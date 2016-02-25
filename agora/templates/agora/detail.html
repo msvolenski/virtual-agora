@@ -61,7 +61,7 @@
               <h1>{{ question }}</h1>       
 
                 {% if question.image %}
-                <img src="{{ question.image.url }}" width="350px" height="250px" />
+                <img src="{{ question.image.url }}" width="350px" height="250px" /></br></br>
                 {% endif %}
 
             <form action="{% url 'agora:vote_iframe' question.id %}" method="post">

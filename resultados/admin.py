@@ -152,12 +152,7 @@ class RelatorioAdmin(admin.ModelAdmin):
                         a.answer_status = 'p' #atualiza variaivel de question que indica se foi publicado
                         a.save()           
                         return 
-                    if object.tipo == '1':                  
-                        ids=object.questao.id
-                        a = Question.objects.get(id=ids) 
-                        a.answer_status = 'p' #atualiza variaivel de question que indica se foi publicado
-                        a.save()           
-                        return 
+                    
 #    
     def desfazer_publicacao(modeladmin, request, queryset):  
 
@@ -174,12 +169,7 @@ class RelatorioAdmin(admin.ModelAdmin):
                     a.answer_status = 'n' #atualiza variaivel de question que indica se foi publicado
                     a.save()            
                     return
-                if object.tipo == '1':  
-                    ids=object.questao.id               
-                    a = Question.objects.get(id=ids) 
-                    a.answer_status = 'n' #atualiza variaivel de question que indica se foi publicado
-                    a.save()            
-                    return
+               
                 
     
 #            

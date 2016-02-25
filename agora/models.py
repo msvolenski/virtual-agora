@@ -29,7 +29,7 @@ class Question(models.Model):
 
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
 
-    question_text = models.CharField(max_length=200)    
+    question_text = models.CharField('Título da Questão',max_length=200)    
     publ_date = models.DateTimeField('Data de publicação')
     exp_date = models.DateTimeField('Data de expiração')
     days = models.IntegerField('Tempo para expirar', choices=EXP_TIME, default=3650)
@@ -37,7 +37,7 @@ class Question(models.Model):
     answer_status = models.CharField('Estado da resposta', max_length=1, choices=STATUS_CHOICES, default = 'n')
     image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
     tags = TaggableManager()
-    address = models.CharField(max_length=200)
+    address = models.CharField('Endereço',max_length=200)
 
 
 
@@ -76,7 +76,7 @@ class Question(models.Model):
             return False
 
     is_question_published.boolean = True
-    is_question_published.short_description = 'Publicada?'
+    is_question_published.short_description = 'Questão publicada?'
 
     def is_answer_published(self):
         if self.answer_status == 'p':
@@ -85,7 +85,7 @@ class Question(models.Model):
             return False
 
     is_answer_published.boolean = True
-    is_answer_published.short_description = 'Respostas publicadas?'
+    is_answer_published.short_description = 'Resposta publicada?'
 
     class Meta:
         verbose_name = 'questão'
@@ -172,8 +172,8 @@ class Answer(models.Model):
 
 class InitialListQuestion(models.Model):
 
-    name = models.CharField(max_length=50)
-    questions = TaggableManager()
+    name = models.CharField('Nome da lista', max_length=50)
+    questions = TaggableManager('Questões')
     select = models.IntegerField(default=0)
 
     def __str__(self):
@@ -194,6 +194,10 @@ class InitialListQuestion(models.Model):
     is_list_active.boolean = True
     is_list_active.short_description = 'Lista ativa?'
 
-
+    class Meta:
+        verbose_name = 'Lista de Questões para o Home'
+        verbose_name_plural = 'Lista de Questões para o Home'
+        
+       
 
 
