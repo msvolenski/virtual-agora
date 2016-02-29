@@ -31,12 +31,12 @@ class TopicoAdmin(admin.ModelAdmin):
   #setam os campos que irão aparecer no "Add adiciona Link"
   fieldsets = [
     (None,               {'fields': ['topico']}),
-    ('URL da página do Tópico:', {'fields': ['address_topico']}),
+    
     #('Data de publicação', {'fields': ['pub_date']}),
   ]
 
   inlines = [SubTopicoInline]
-  list_display = ['topico','position','id']
+  list_display = ['topico','position','id','address_topico',]
   search_fields = ['topico']
 
   def posicionar_topico(modeladmin, request, queryset):

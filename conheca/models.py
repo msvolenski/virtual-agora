@@ -26,8 +26,7 @@ class Article(models.Model):
         
     def save(self, *args, **kwargs): 
         super(Article, self).save(*args, **kwargs)                     
-        self.address = "http://127.0.0.1:8000/agora/pdpu/conheca/artigos/{id}".format(id=self.id)
-       
+        self.address = "http://127.0.0.1:8000/agora/pdpu/conheca/artigos/{id}".format(id=self.id)       
         return super(Article, self).save(*args, **kwargs)
         
     class Meta:
@@ -36,16 +35,7 @@ class Article(models.Model):
         
 
 class Topico(models.Model):
-  topico = models.CharField(max_length=200)
-
-  def get_address_topico():
-    try:
-      tpc = Topico.objects.latest('id')
-    except (KeyError, Topico.DoesNotExist):
-      return str('http://127.0.0.1:8000/agora/pdpu/conheca/topicos/') + str(1)
-    a = tpc.pk
-    a = a + 1
-    return str('http://127.0.0.1:8000/agora/pdpu/conheca/topicos/') + str(a)
+ 
 
   def position_det():
     try:
@@ -55,9 +45,11 @@ class Topico(models.Model):
     a = tpc.position
     a = a + 1
     return a
-
-  address_topico = models.CharField(max_length=200, default=get_address_topico)
-  position = models.IntegerField(default=position_det)
+    
+  
+  topico = models.CharField(max_length=200)
+  address_topico = models.CharField(max_length=200)
+  position = models.IntegerField(default=position_det) 
 
   def __str__(self):
     return self.topico
@@ -68,6 +60,11 @@ class Topico(models.Model):
   class Meta:
       verbose_name = 'Tópico'
       verbose_name_plural = 'Tópicos'
+      
+  def save(self, *args, **kwargs): 
+      super(Topico, self).save(*args, **kwargs)                     
+      self.address_topico = "http://127.0.0.1:8000/agora/pdpu/conheca/topicos/{id}".format(id=self.id)
+      return super(Topico, self).save(*args, **kwargs)
 
 class SubTopico(models.Model):
   subtopico = models.ForeignKey(Topico, on_delete=models.CASCADE)

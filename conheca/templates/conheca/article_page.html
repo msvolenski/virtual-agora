@@ -35,7 +35,7 @@
                     {% for question in not_answered %}
                         {% if questao_associada == question.id|slugify %}
 
-                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ questao_associada }}</a>
+                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
 
 
                         {% endif %}
