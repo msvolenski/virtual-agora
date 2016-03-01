@@ -14,73 +14,130 @@
         <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
     </div>
 
-    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:100px;z-index:1;margin-bottom:300px;">
-    <tbody>
-    <tr>
-
-    <td style="padding:0 0.5em;">
-    </td>
-
-    <td style="width:68%;vertical-align:top;">
-
-
+    <div style="position:relative;width:60%;float:left;margin-left:15px;top:100px;margin-bottom:200px;">
+    
             {% for Article in object_list %}
-            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
+            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}            
 
-            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
-            <iframe src="{{ Article.address}}/destaque" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);' ></iframe><br>
-            </div>
+            <div style="border:1px solid #00c0ef;">
+                    
+                <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em Destaque
+                </div>
+                <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
+        
+                {% for tag in Article.tags.all %}
+                #{{ tag.name }} &nbsp -
+                {% endfor %}
+                Publicado em: {{ Article.publ_date }}
+                
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                </div>
+                    <h2>{{ Article.title|safe  }}</h2>
+                    <br>
+                    {{ Article.article|safe }}
+                    <br>  
+             
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
+                
+               
+                {% for questao_associada in Article.split_numbers %}
+                    {% for question in not_answered %}
+                        {% set x == 0 %}                        
+                        {% if questao_associada == question.id|slugify %}  
+                            {% set x = 1 %}   
+                                {% if x == 1 %}                        
+                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>  
+                                {%endif%}                         
+                        {% endif %}
+                    {% endfor %} 
+                {% endfor %}    
+                
+                </div>            
+                </div> </br>
+               {% endif %}
+               {% endfor %}
 
-            {% endif %}
-            {% endfor %}
 
 
-            {% for Article in object_list %}
-            {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
+               {% for Article in object_list %}
+               {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
 
-            <div id="artigo{{Article.id}}" class="artigo" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
-            <iframe src="{{ Article.address}}" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" onload='javascript:resizeIframe(this);'  ></iframe><br>
-            </div>
+                <div style="border:1px solid #00c0ef;">
+                    
+                <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
+                </div>
+                <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
+        
+                {% for tag in Article.tags.all %}
+                #{{ tag.name }} &nbsp -
+                {% endfor %}
+                Publicado em: {{ Article.publ_date }}
+                
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                </div>
+                    <h2>{{ Article.title|safe  }}</h2>
+                    <br>
+                    {{ Article.article|safe }}
+                    <br>  
+             
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                </div>
+                
+                {% for questao_associada in Article.split_numbers %}
+                    {% for question in not_answered %}
+                        {% set x == 0 %}                        
+                        {% if questao_associada == question.id|slugify %}  
+                            {% set x = 1 %}   
+                                {% if x == 1 %}                        
+                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>  
+                                {%endif%}                         
+                        {% endif %}
+                    {% endfor %} 
+                {% endfor %}   
+                
+                </div>            
+                </div>
 
 
-            {% endif %}
-            {% endfor %}
 
 
 
-            <script language="javascript" type="text/javascript">
-            function resizeIframe(obj) {
-            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-            }
-            </script>
 
-     </td>
-     <td style="padding:0 0.5em;height:1000px">
-     </td>
-     <td style="width:32%; vertical-align:top;">
 
+
+               {%endif %}
+               {% endfor %}
+
+     </div>
+     
+     <div style="position:relative;float:right;top:100px;margin-right:15px;width:35%"">
+     
 
          {% for topico in topico %}
-                       <iframe src="{{ topico.address_topico}}" style="font-size: 0px;vertical-align:bottom;display:block;" frameborder="0" marginheight="0" marginwidth="0" width="100%" onload="this.style.height=(this.contentDocument.body.scrollHeight + 10) + 'px'"></iframe><br>
+                      <div style="border:1px solid #00c0ef;">
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">{{ topico.topico }}</div>
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">        
+        <p>         {% for u in topico.subtopico_set.all %}                     
+                    <h3><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h3> 
+                    <p>                
+                    {% for x in u.link_set.all %}
+                       <h4><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ x.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ x.url_title }}<br> </a></li><h4>
+                    {% endfor %}
+                    </p>         
+                {% endfor %}
+        </p>   
+        <div class="plainlinks hlist" style="clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
+        </div>      
+        </div></br>
          {% endfor %}
-     </td>
+
+    
+     </div>
 
 
 
 
-
-
-
-
-
-    <td style="padding:0 0.5em;"></td>
-
-
-    </tr>
-    </tbody>
-    </table>
-
-    </td>
 
 
     {% endblock content12 %}

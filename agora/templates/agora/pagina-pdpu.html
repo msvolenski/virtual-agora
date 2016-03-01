@@ -52,19 +52,17 @@
                                 
                                                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
                                                 </div>
-                                
-                                                VOTE! Este artigo te auxilia a responder as questões:
-                                
-                                                {% for questao_associada in t.split_numbers %}
-                                                    {% for question in not_answered %}
-                                                        {% if questao_associada == question.id|slugify %}
-                                
-                                                        <a href="#" onclick="window.open('http://127.0.0.1:8000/agora/pdpu/participe/{{ questao_associada|add:"0" }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
-                                
-                                
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                {% endfor %}
+                                 {% for questao_associada in Article.split_numbers %}
+                    {% for question in not_answered %}
+                        {% set x == 0 %}                        
+                        {% if questao_associada == question.id|slugify %}  
+                            {% set x = 1 %}   
+                                {% if x == 1 %}                        
+                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>  
+                                {%endif%}                         
+                        {% endif %}
+                    {% endfor %} 
+                {% endfor %}   
                                             </div>
                                 </div>                             
                             </div> 

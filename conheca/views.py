@@ -11,7 +11,7 @@ from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic import ListView
 
-from .models import SubTopico, Article, Link, Topico
+from .models import SubTopico, Article, Topico
 from agora.models import Answer, Question, User
 
 
@@ -22,8 +22,12 @@ class TemplatePDPUConhecaView(ListView):
   def get_context_data(self, **kwargs):
     context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-    context['link'] = Link.objects.all()
+   
     context['topico'] = Topico.objects.all().order_by('position')
+    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    answered =  Answer.objects.filter(user_id=self.request.user.id)
+    answered_questions = [a.question for a in answered]
+    context['not_answered'] = list(set(questions) - set(answered_questions))
     return context
 
   def get_queryset(self):

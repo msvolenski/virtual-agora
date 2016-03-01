@@ -15,14 +15,9 @@
         <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
     </div>
 
-    <table style="border-spacing:0 ; border-collapse: collapse; margin:1em 0; background:transparent; width:100%;position:relative;top:100px;z-index:1;margin-bottom:300px;">
-    <tbody>
-    <tr> 
-    <td style="padding:0 0.5em;">
-    </td>    
-    <td style="width:68%;">
+  
             
-                
+    <div style="position:relative;width:60%;float:left;margin-left:15px;top:100px;margin-bottom:200px;">            
             {% for Relatorio in object_list %}               
             {% if Relatorio.published == 'Sim' %}
             
@@ -43,16 +38,18 @@
             {% endif %}     
             {% endfor %}        
             
-     </td>
-     
-     <td style="padding:0 0.5em;height:1000px">
-     </td>
-     
-     <td style="width:32%; vertical-align:top;">
+    
         
-        
-        
-  
+  </div> 
+   {% set x = 0 %}
+   {% for Relatorio in object_list %}               
+   {% if Relatorio.publhistorico == 'Sim' and Relatorio.tipo == "1" %}  
+       {% set x = 1 %} 
+   {% endif %}
+   {% endfor %}     
+    <div style="position:relative;float:right;top:100px;margin-right:15px;width:35%""> 
+  {% if x = 1 %} 
+ 
         <div style="border:1px solid #f39c12;">
         <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Resultados - Geral</div>
         <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">        
@@ -60,6 +57,7 @@
                     
                     {% for Relatorio in object_list %}               
                     {% if Relatorio.publhistorico == 'Sim' and Relatorio.tipo == "1" %}               
+                            
                     <p>               
                        <h4><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ Relatorio.address }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{Relatorio.titulo }}<br> </a></li><h4>
                     {% endif %}
@@ -69,7 +67,16 @@
         <div class="plainlinks hlist" style="clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
         </div>      
         </div><br>
+   {% endif %}
 
+   {% set x = 3 %}
+   {% for Relatorio in object_list %}               
+   {% if Relatorio.publhistorico == 'Sim' and Relatorio.tipo == "2" %}  
+       {% set x = 4 %} 
+   {% endif %}
+   {% endfor %}     
+
+   {% if x == 4 %}
         <div style="border:1px solid #f39c12;">
         <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Resultados - Questões</div>
         <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">        
@@ -84,50 +91,8 @@
         <div class="plainlinks hlist" style="clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
         </div>      
         </div>
-     </td>
-      
-    
-    
-    
-    
-    
-    
-       
-       
-    <td style="padding:0 0.5em;"></td>
-    
-        
-    </tr>
-    </tbody>
-    </table>
-  
-    </td>
-
-
-
-
-
-
-
-
-
-<div  style="position: absolute; top: 200px;width:100%;left:250px" >
- {% set flag1 = 3 %}
-  {% for Question in object_list %}
-    {% for q in q %}
-      {% if Question.pk|slugify == q.questao and Question.permissao == 1 %}
-        {% set flag1 = 1 %}
-      {% endif %}
-    {% endfor %}
-    {% if flag1 == 1 %}
-
-      <br />
-      <iframe src="http://127.0.0.1:8000/agora/pdpu/participe/{{ Question.pk }}/results" width="1000" height="400"></iframe>
-      {# mostra da timeline a página da questão #}
-      <br />
-
     {% endif %}
-    {% set flag1 = 3 %}
-  {% endfor %}
 </div>
-{% endblock content12 %}
+        
+
+{% endblock %}
