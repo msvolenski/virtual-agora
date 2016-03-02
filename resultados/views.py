@@ -73,8 +73,8 @@ def like_timeline(request, relatorio_id):
             obj.save()    
             relatorio.like += 1
             relatorio.save()
-            return HttpResponseRedirect(reverse('agora:pdpu')) 
-    return HttpResponseRedirect(reverse('agora:pdpu'))
+            return redirect(request.META['HTTP_REFERER'])   
+    return redirect(request.META['HTTP_REFERER'])   
   
 def dislike_timeline(request, relatorio_id):   
     relatorio = get_object_or_404(Relatorio, pk=relatorio_id)    
@@ -85,8 +85,10 @@ def dislike_timeline(request, relatorio_id):
             obj.save()    
             relatorio.dislike += 1
             relatorio.save()
-            return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id)) 
-    return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id))
+            return redirect(request.META['HTTP_REFERER']+"#relatorio%s"%(relatorio_id))            
+            #return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id)) 
+    return redirect(request.META['HTTP_REFERER']+"#relatorio%s"%(relatorio_id))        
+    #return HttpResponseRedirect(reverse('agora:pdpu')+"#relatorio%s"%(relatorio_id))
     
 
 def search_res(request):

@@ -53,7 +53,7 @@ class PdpuView(generic.ListView):
     context = super(PdpuView, self).get_context_data(**kwargs)
 
     user = User.objects.get(user=self.request.user)      
-    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
@@ -87,7 +87,7 @@ class PdpuParticipeView(generic.ListView):
     context = super(PdpuParticipeView, self).get_context_data(**kwargs)
 
     user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
 
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]

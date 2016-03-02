@@ -1,5 +1,6 @@
 {% extends 'agora/base.html' %}
 {% load set_var %}
+{% load staticfiles %}
 {% block content12 %}
 
 
@@ -21,25 +22,65 @@
             {% for Relatorio in object_list %}               
             {% if Relatorio.published == 'Sim' %}
             
-            <div id="relatorio{{Relatorio.id}}" class="relatorio" style="margin-bottom: 20px; padding:0px; overflow:hidden;">
-            <iframe src="{{ Relatorio.address}}" style="overflow:hidden;height:100%;width:100%;" height="100%" width="100%" frameborder="0" marginheight="0" marginwidth="0" width="100%" hspace="0" vspace="0" ></iframe><br>          
-            </div>   
-            
-            <script>
-            $(".relatorio").each(function() {
-                var iframe =  $(this).find("iframe");
-                iframe.load(function () {
-                    var altura = iframe.contents().find("html").height();
-                    $(this).css("height", altura);
-                });
-            });
-            </script>
-             
-            {% endif %}     
-            {% endfor %}        
+            <div style="border:1px solid #f39c12;width:100%;margin:0 auto;">
+                                                    
+                                            <div id="mf-eventos-atuais" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
+                                            {% if Relatorio.questao == None %}
+                                            Resultado Geral
+                                            {% endif %}
+                                             
+                                            {% if Relatorio.questao != None %}
+                                            Resultado {{ Relatorio.questao }}
+                                            {% endif %}
+                                                        
+                                
+                                
+                                            </div>
+                                            <div id="relatorio{{Relatorio.id}}" style="padding:0.4em 1em 0.3em;">
+                                                
+                                                <p>
+                                                {% for tag in Relatorio.tags.all %}                                                                                              
+                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+                                                </form>
+                                                {% endfor %}     
+                                                <strong>Publicado em:</strong> {{ Relatorio.publ_date }}
+                                                </p>
+                                                
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                                                </div>
+                                                
+                                                {{Relatorio.conteudo|safe}}
+                                              
+                                                    <br>  
+                                             
+                                                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+                                                </div>
+                                                
+                                               
+                                                
+                                                <!-- <button class="btn btn-primary" type="submit" name="like" id="like" value="1"bmit Review</button>{{relatorio.like}} -->
+                                         
+                                               
+                                                    
+                                                &nbsp;&nbsp; 
+                                                <form  style="display:inline-block;" action="{% url 'resultados:like_timeline' Relatorio.id %}" method="post">
+                                                {% csrf_token %}
+                                                <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{Relatorio.like}}
+                                                </form>
+                                
+                                                &nbsp;
+                                                <form style="display:inline-block;" action="{% url 'resultados:dislike_timeline' Relatorio.id %}" method="post">
+                                                {% csrf_token %}                
+                                                <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{Relatorio.dislike}}
+                                                </form>
+                                            </div>            
+                                </div>
+                                </br>
             
     
-        
+        {%endif%}
+        {%endfor%}
   </div> 
    {% set x = 0 %}
    {% for Relatorio in object_list %}               
