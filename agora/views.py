@@ -322,11 +322,49 @@ def vote_timeline(request, question_id):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
     return HttpResponseRedirect(reverse('agora:pdpu'))
 
+def tag_search(request, tag_name):
+  answered_questions_tag = []  
+  username = AuthUser.objects.get(username=request.user)
+  user = username.user  
+  questions = Question.objects.filter(exp_date__gt=timezone.now())
+  answered = Answer.objects.filter(user=user)
+  answered_questions = [a.question for a in answered]  
+  questions_tag = Question.objects.filter(tags__name__in=[tag_name]).distinct()  
+  article = Article.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct() 
+  not_answered = list(set(questions) - set(answered_questions))  
+  not_answered_tag = list(set(questions_tag) - set(answered_questions))    
+  result_list = sorted(
+        chain(relatorio, article, not_answered_tag),
+        key=lambda instance: instance.publ_date, reverse=True)
+  return render(request, 'agora/pagina-pdpu-search.html',
+    { 'article' : Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),
+      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),     
+      'question' : Question.objects.all(),         
+      'not_answered': not_answered,
+      'not_answered_tag': answered_questions_tag,
+      'timeline': result_list,
+           
+    })
 
 
 
-
-
+#    user = User.objects.get(user=self.request.user)      
+#    questions = Question.objects.filter(exp_date__gt=timezone.now())
+#    answered = Answer.objects.filter(user=user)
+#    answered_questions = [a.question for a in answered]
+#    article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+#    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date') 
+#    not_answered = list(set(questions) - set(answered_questions))    
+#    result_list = sorted(
+#        chain(relatorio, article, not_answered),
+#        key=lambda instance: instance.publ_date, reverse=True)
+#    context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+#    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')     
+#    context['question'] = Question.objects.all() 
+#    context['not_answered'] = list(set(questions) - set(answered_questions))    
+#    context['not_answered'].reverse()
+#    context['timeline'] = result_list
 
 
 

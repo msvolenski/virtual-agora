@@ -33,16 +33,20 @@
             <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
             </div>
             <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">    
-                 <p>                  
-                  <strong>Categorias:</strong>
-                  {% for tag in question.tags.all %}
-                    <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
-                  {% endfor %}
-                  &nbsp;&nbsp;&nbsp;
-                  <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
-                  <strong>Expira em:</strong> {{ question.exp_date }}
-                  
-                 </p>
+               
+
+
+                                                <p>                                               
+                                                {% for tag in question.tags.all %}                                                                                             
+                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+                                                </form>
+                                                {% endfor %} 
+                                                <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
+                                                <strong>Expira em:</strong> {{ question.exp_date }}                                           
+                                                </p>
+
+
                   <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
                   </div>
                   <h3>{{ question }}</h3>       

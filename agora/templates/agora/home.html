@@ -40,13 +40,15 @@
                                 
                                              <p>
                                               
-                                              <strong>Categorias:</strong>
-                                              {% for tag in question.tags.all %}
-                                                <a class="btn-xs btn-default btn-info" href="#" role="button">#{{ tag.name }}</a>
-                                              {% endfor %}
-                                              &nbsp;&nbsp;&nbsp;
-                                              <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
-                                              <strong>Expira em:</strong> {{ question.exp_date }}
+                                                <p>                                               
+                                                {% for tag in question.tags.all %}                                                                                              
+                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+                                                </form>
+                                                {% endfor %} 
+                                                <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
+                                                <strong>Expira em:</strong> {{ question.exp_date }}                                           
+                                                </p>
                                               
                                              </p>
                                               <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
