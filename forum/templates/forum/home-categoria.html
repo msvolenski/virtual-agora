@@ -24,12 +24,12 @@
 
   <div style="padding:20px">
     <div class="list-group">
-      {% if categories_list %}
+      {% if object_list %}
 
-        {% for category in categories_list %}
+        {% for category in object_list %}
           <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}"><strong>{{ category }}</strong></a>
             {% for topic in category.topic_set.all %}
-                <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topic.id %}">{{ topic}}</a></div></li>            
+                <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:forum' category|slugify category.id %}">{{ topic}}</a></div></li>            
             {% endfor %}
         {% endfor %}
       {% endif %}
@@ -40,8 +40,7 @@
   <div style="float:right;width:70%;margin-top:100px;background:#e8e8e8;margin-left:5px;margin-bottom:10px;margin-right:10px;">
    
 
- {% if categories_list %}
- {% for category in categories_list %}   
+
  {% for topic in category.topic_set.all %}
 
 
@@ -137,8 +136,6 @@ function Mudarestado(el) {
               
 
 {% endfor %}
-{% endfor %}
-{% endif %}
 
 
    </div>

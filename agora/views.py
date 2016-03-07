@@ -344,6 +344,7 @@ def tag_search(request, tag_name):
       'not_answered': not_answered,
       'not_answered_tag': answered_questions_tag,
       'timeline': result_list,
+      'tag' : tag_name,
            
     })
 
