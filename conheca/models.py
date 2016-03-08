@@ -11,7 +11,7 @@ class Article(models.Model):
     
     title = models.CharField('Título do artigo',max_length=200)    
     tags = TaggableManager()
-    article = RichTextUploadingField(config_name='full', verbose_name=u'Descrição')
+    article = RichTextUploadingField(config_name='default', verbose_name=u'Descrição')
     publ_date = models.DateTimeField('Data de publicação')
     destaque = models.CharField('Destacado?',max_length=3, default='Não')    
     questao_associada = models.CommaSeparatedIntegerField(max_length=100, blank=True)  

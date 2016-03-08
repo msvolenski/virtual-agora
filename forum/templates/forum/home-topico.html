@@ -29,7 +29,7 @@
         {% for category in category %}
           <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}"><strong>{{ category }}</strong></a>
             {% for topics in category.topic_set.all %}
-                <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topics.id %}">{{ topics}}</a></div></li>            
+                <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topics.id %}">{{ topics }}</a></div></li>             
             {% endfor %}
         {% endfor %}
       {% endif %}

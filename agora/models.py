@@ -118,13 +118,10 @@ class User(models.Model):
     parent_link=True,
   )
 
-  year_of_start = models.IntegerField(blank=True)
-  department = models.CharField(max_length=40, blank=True)
-  course = models.CharField(max_length=40, blank=True)
-
-  first_name = models.CharField(max_length=50)
-  last_name = models.CharField(max_length=50)
-  academic_registry = models.IntegerField(default=0)
+  year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')  
+  course = models.CharField('Curso', max_length=40, blank=True , default='curso') 
+  institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')  
+  academic_registry = models.IntegerField('Registro acadêmico',default='9999')
 
   question_answer = models.ManyToManyField(
     Question,
@@ -132,9 +129,6 @@ class User(models.Model):
     through_fields=('user', 'question'),
     related_name='question_answer',
   )
-
-  def __str__(self):
-    return self.first_name + ' ' + self.last_name
 
   class Meta:
     verbose_name = 'usuário'
