@@ -1,14 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
 
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
-/*! 
- *   AdminLTE v1.2
- *   Author: AlmsaeedStudio.com
- *   License: Open source - MIT
- *           Please visit http://opensource.org/licenses/MIT for more information
+/*!
+*   AdminLTE v1.2
+*   Author: AlmsaeedStudio.com
+*   License: Open source - MIT
+*           Please visit http://opensource.org/licenses/MIT for more information
 !*/
 /*
-    Core: General style
+Core: General style
 ----------------------------
 */
 html,
@@ -89,8 +89,8 @@ body > .header {
   }
 }
 /*
-    By default the layout is not fixed but if you add the class .fixed to the body element
-    the sidebar and the navbar will automatically become poisitioned fixed
+By default the layout is not fixed but if you add the class .fixed to the body element
+the sidebar and the navbar will automatically become poisitioned fixed
 */
 body.fixed > .header,
 body.fixed .left-side,
@@ -327,7 +327,7 @@ table.text-center th {
   height: auto!important;
 }
 /*
-    Components: navbar, logo and content header
+Components: navbar, logo and content header
 -------------------------------------------------
 */
 body > .header {
@@ -435,7 +435,7 @@ body > .header .logo .icon {
   right: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  
+
 }
 .right-side > .content-header > .breadcrumb > li > a {
   color: #444;
@@ -498,7 +498,7 @@ body > .header .logo .icon {
   }
 }
 /*
-    Component: Sidebar
+Component: Sidebar
 --------------------------
 */
 .sidebar {
@@ -585,10 +585,10 @@ body > .header .logo .icon {
   margin-right: 3px;
 }
 /*
- * Off Canvas
- * --------------------------------------------------
- *  Gives us the push menu effect
- */
+* Off Canvas
+* --------------------------------------------------
+*  Gives us the push menu effect
+*/
 @media screen and (max-width: 992px) {
   .relative {
     position: relative;
@@ -620,8 +620,8 @@ body > .header .logo .icon {
     left: 0px;
   }
 }
-/* 
-    Dropdown menus
+/*
+Dropdown menus
 ----------------------------
 */
 /*Dropdowns in general*/
@@ -645,7 +645,7 @@ body > .header .logo .icon {
   color: #444444;
 }
 /*
-    Navbar custom dropdown menu
+Navbar custom dropdown menu
 ------------------------------------
 */
 .navbar-nav > .notifications-menu > .dropdown-menu,
@@ -1001,8 +1001,8 @@ body > .header .logo .icon {
     left: auto;
   }
 }
-/* 
-   All form elements including input, select, textarea etc.
+/*
+All form elements including input, select, textarea etc.
 -----------------------------------------------------------------
 */
 .form-control {
@@ -1051,8 +1051,8 @@ body > .header .logo .icon {
 .radio {
   padding-left: 0;
 }
-/* 
-    Compenent: Progress bars
+/*
+Compenent: Progress bars
 --------------------------------
 */
 /* size variation */
@@ -1141,7 +1141,7 @@ body > .header .logo .icon {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 /*
-    Component: Small boxes
+Component: Small boxes
 */
 .small-box {
   position: relative;
@@ -1248,7 +1248,7 @@ body > .header .logo .icon {
   }
 }
 /*
-    component: Boxes
+component: Boxes
 -------------------------
 */
 .box {
@@ -1738,7 +1738,7 @@ Component: timeline
   top: 0;
 }
 /*
-    Component: Buttons
+Component: Buttons
 -------------------------
 */
 .btn {
@@ -1913,8 +1913,8 @@ Component: timeline
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-/* 
-    Component: callout
+/*
+Component: callout
 ------------------------
 */
 .callout {
@@ -1953,8 +1953,8 @@ Component: timeline
 .callout.callout-info h4 {
   color: #3A87AD;
 }
-/* 
-    Component: alert
+/*
+Component: alert
 ------------------------
 */
 .alert {
@@ -1978,7 +1978,7 @@ Component: timeline
   border: inherit;
 }
 /*
-    Component: Navs
+Component: Navs
 */
 /* NAV PILLS */
 .nav.nav-pills > li > a {
@@ -2119,7 +2119,7 @@ Component: timeline
   border-radius: 0;
 }
 /*
-    Component: Mailbox
+Component: Mailbox
 */
 .mailbox .table-mailbox {
   border-left: 1px solid #ddd;
@@ -2168,7 +2168,7 @@ Component: timeline
   }
 }
 /*
-    Page: locked screen
+Page: locked screen
 */
 /* ADD THIS CLASS TO THE <HTML> TAG */
 .lockscreen {
@@ -2258,8 +2258,8 @@ Component: timeline
   margin-top: 30px;
   text-align: center;
 }
-/* 
-    Page: register and login
+/*
+Page: register and login
 */
 .form-box {
   width: 360px;
@@ -2323,8 +2323,8 @@ Component: timeline
     width: 90%;
   }
 }
-/* 
-    Page: 404 and 500 error pages
+/*
+Page: 404 and 500 error pages
 ------------------------------------
 */
 .error-page {
@@ -2373,8 +2373,8 @@ Component: timeline
 .error-page:after {
   clear: both;
 }
-/* 
-    Page: Invoice
+/*
+Page: Invoice
 */
 .invoice {
   position: relative;
@@ -2406,13 +2406,13 @@ Component: timeline
     white-space: normal!important;
   }
 }
-/* 
-    Skins
-    -----
+/*
+Skins
+-----
 */
-/* 
-    Skin Blue 
-    ---------
+/*
+Skin Blue
+---------
 */
 /* skin-blue navbar */
 .skin-blue .navbar {
@@ -2561,8 +2561,8 @@ Component: timeline
   border-bottom-left-radius: 0 !important;
 }
 /*
-    Skin Black
-    --------
+Skin Black
+--------
 */
 /* skin-black navbar */
 .skin-black .navbar {
@@ -2711,13 +2711,13 @@ Component: timeline
   border-left: 0;
 }
 /*!
- * iCheck v1.0.1, http://git.io/arlzeA
- * =================================
- * Powerful jQuery and Zepto plugin for checkboxes and radio buttons customization
- *
- * (c) 2013 Damir Sultanov, http://fronteed.com
- * MIT Licensed
- */
+* iCheck v1.0.1, http://git.io/arlzeA
+* =================================
+* Powerful jQuery and Zepto plugin for checkboxes and radio buttons customization
+*
+* (c) 2013 Damir Sultanov, http://fronteed.com
+* MIT Licensed
+*/
 /* iCheck plugin Minimal skin, black
 ----------------------------------- */
 .icheckbox_minimal,
@@ -2790,15 +2790,15 @@ Component: timeline
   display: none;
 }
 /*
- * Social Buttons for Bootstrap
- *
- * Copyright 2013-2014 Panayiotis Lipiridis
- * Licensed under the MIT License
- *
- * https://github.com/lipis/bootstrap-social
- *
- * Note: this file has been altered to work correctly with AdminLTE
- */
+* Social Buttons for Bootstrap
+*
+* Copyright 2013-2014 Panayiotis Lipiridis
+* Licensed under the MIT License
+*
+* https://github.com/lipis/bootstrap-social
+*
+* Note: this file has been altered to work correctly with AdminLTE
+*/
 .btn-social {
   position: relative;
   padding-left: 44px !important;
@@ -3402,4 +3402,234 @@ fieldset[disabled] .btn-vk.active {
 .btn-vk .badge {
   color: #587ea3;
   background-color: #ffffff;
+}
+
+#form-errors {
+  background: #f9f9f9;
+  color: #f90000;
+  padding: 2em;
+  text-align: center;
+}
+
+.project-header {
+  position:relative;
+  background: #f7f7f7;
+  width: 100%;
+  top: 50px;
+}
+
+.project-header h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: 25px;
+  padding-bottom: 15px;
+}
+
+.project-header .nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.project-header li {
+  display: inline-block;
+  font-weight: bold;
+  float: left;
+  width: 17%;
+}
+
+.project-header a {
+  color:#000000;
+}
+
+.project-header li:first-child {
+  width: 15%;
+}
+
+#toogle-menu-check, .toogle-menu {
+  display: none;
+}
+
+.hamburger {
+  position: relative;
+  display: none;
+  width: 1.75em;
+  height: 0.8em;
+  margin-right: 0.3em;
+  border-top: 0.3em solid #0ea227;
+  border-bottom: 0.3em solid #f37f08;
+}
+
+.hamburger:before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0px;
+  width: 100%;
+  border-top: 0.3em solid #f10303;
+}
+
+.response-area{
+  background:#f6f7f8;
+}
+
+.response-textarea{
+  width:95%;
+  overflow:hidden;
+  margin:0px auto;
+  display:block;
+  border-radius:2px;
+  border:1px solid #556677;
+  line-height: normal;
+}
+
+.render-response{
+  padding:10px;
+  line-height:120%;
+
+}
+
+#button-forum{
+  margin:5px;
+  background:#f56954;
+  border-color: #f56954;
+  color:black;
+}
+
+.forum-menu{
+  float:left;
+  width:25%;
+  margin-top:100px;
+  background:#e8e8e8;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.forum-section{
+  float:right;
+  width:70%;
+  margin-top:100px;
+  background:#e8e8e8;
+  margin-left:5px;
+  margin-bottom:10px;
+  margin-right:10px;
+}
+
+.forum-topic{
+  position:relative;
+  width:100%;
+  background:#f6f7f8;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #a5a5a5;
+}
+
+.header-topic{
+  background:#ffffff;
+  padding:25px;
+}
+
+.title-name{
+  font-weight:bold;
+  font-size:25px;
+}
+
+.sub-title-name{
+  color:#9197a3;
+}
+
+.topic-position{
+  padding:30px;
+}
+
+.forum-username{
+  font-weight:bold;
+  float:left
+}
+
+@media (max-width: 765px) {
+
+  .forum-username{
+    font-weight:bold;
+    font-size:12px;
+  }
+
+  .topic-position{
+    padding:20px;
+  }
+  .menu-user{
+    background:#f9f9f9;
+    width:65%;
+  }
+
+  .header-topic{
+    padding:10px;
+  }
+
+  .title-name{
+    font-weight:bold;
+    font-size:20px;
+  }
+
+  .sub-title-name{
+    font-size:12px;
+  }
+  
+  .subtitle-name-topic{
+    font-size: 12px;
+  }
+
+  .forum-menu{
+    display:none;
+  }
+
+.forum-section{
+  width: 94%;
+  margin-top:60px;
+  float:none;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+  .project-header {
+    min-height: 3.25em;
+    padding-top: 0.5em;
+
+
+  }
+
+  .toogle-menu {
+    display: inline-block;
+    width: 3em;
+    padding: 0.5em;
+    float: left;
+  }
+
+  #toogle-menu-check + ul {
+    display: none;
+    clear: both;
+  }
+
+  #toogle-menu-check:checked + ul {
+    display: block;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .project-header li, .project-header li:first-child {
+    float: none;
+    width: 100%;
+  }
+
+  .project-header h1 {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0;
+    padding-top: 1em;
+    float: left;
+
+  }
 }

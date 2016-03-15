@@ -150,14 +150,18 @@ CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.j
 CKEDITOR_CONFIGS = {
   'default': {
     'toolbar': 'Full',
-    'width': 'Full',
+    'width': '500pxFull',
+    'extraPlugins': 'image2',
   },
   'full': {
     'toolbar': [[]],
-    'width': '600px',
-    'height': '100px',
+    'width': '',
+ 
+    
     #'width': 640,
   },
+  
+  
 }
 
 MESSAGE_TAGS = {

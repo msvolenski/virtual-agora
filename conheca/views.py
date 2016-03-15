@@ -10,7 +10,6 @@ from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic import ListView
-
 from .models import SubTopico, Article, Topico
 from agora.models import Answer, Question, User
 
@@ -22,7 +21,7 @@ class TemplatePDPUConhecaView(ListView):
   def get_context_data(self, **kwargs):
     context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-   
+
     context['topico'] = Topico.objects.all().order_by('position')
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered =  Answer.objects.filter(user_id=self.request.user.id)
@@ -64,14 +63,14 @@ class ArticleDestaquePageView(generic.DetailView):
   def get_context_data(self, **kwargs):
     context = super(ArticleDestaquePageView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-    
+
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
     return context
 
-
+@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
 class TopicoPageView(generic.DetailView):
   model = Topico
   template_name = 'conheca/topico_page.html'
@@ -89,6 +88,3 @@ def search(request):
       'tags_user': tags_user,
       'tags_total': tags_total
     })
-
-
-

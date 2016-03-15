@@ -2,144 +2,85 @@
 {% load set_var %}
 {% block content12 %}
 
+<div style="background: #f56954" class="project-header">
+  <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
+  <h1 style="background: #f56954">Plano Diretor Participativo - UNICAMP</h1>
+  <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
+  <ul class="nav">
+    <li style="background: #e2e0e0"><a href="{% url 'agora:home' %}">Home</a></li>
+    <li style="background: #f7f7f7"><a href="{% url 'agora:pdpu' %}">Página Inicial</a></li>
+    <li style="background: #00c0ef"><a href="{% url 'conheca:pdpu-conheca' %}">Conheça</a></li>
+    <li style="background: #12d673"><a href="{% url 'agora:pdpu-participe' %}">Participe</a></li>
+    <li style="background: #f39c12"><a href="{% url 'resultados:pdpu-resultados' %}">Resultados</a></li>
+    <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
+  </ul>
+</div>
 
-
-
-
-
-
-    <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
-        <div style="background:#f56954;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>    
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:home' %}"><div style="text-color:#e2e0e0;text-align:center;padding:10px;position:relative;height:40px;background:#e2e0e0;width:175px;float:left;">Home Ágora</div></a> 
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f7f7f7;width:175px;float:left">Página Inicial</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'conheca:pdpu-conheca' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#00c0ef;width:175px;float:left">Conheça</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu-participe' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#12d673;width:175px;float:left">Participe</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'resultados:pdpu-resultados' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f39c12;width:175px;float:left">Resultados</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
-    </div>
-
-  
-
-  <div style="float:left;width:25%;margin-top:100px;background:#e8e8e8;margin-left:10px;margin-bottom:10px">
-
+<div class="forum-menu">
   <div style="padding:20px">
     <div class="list-group">
       {% if object_list %}
-
-        {% for category in object_list %}
-          <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}"><strong>{{ category }}</strong></a>
-            {% for topic in category.topic_set.all %}
-                <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topic.id %}">{{ topic }}</a></div></li>             
-            {% endfor %}
-        {% endfor %}
+      {% for category in object_list %}
+      <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}"><strong>{{ category }}</strong></a>
+      {% for topic in category.topic_set.all %}
+      <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topic.id %}">{{ topic }}</a></div></li>
+      {% endfor %}
+      {% endfor %}
       {% endif %}
-    </div>  
-   </div>
-   </div>
-   
-  <div style="float:right;width:70%;margin-top:100px;background:#e8e8e8;margin-left:5px;margin-bottom:10px;margin-right:10px;">
-   
-
-
- {% for topic in category.topic_set.all %}
-
-
-                <div style="padding:40px;">
-                    <div style="position:relative;width:100%;background:#f6f7f8;border:black;border-style: solid;border-color: #000000">
-                              {% if topic %}                                
-                        <div style="background:#ffffff;padding:30px;">
-                                                            
-                            <div id="f{{topic.id}}" style="font-weight: bold;font-size:25px;">{{ topic }}
-                            </div>  <span style="color:#9197a3"> Categoria: {{ category }} - Publicado em: {{ topic.pub_date }} </span>
-                            </br></br>
-                              
-                                <p>{{ topic.text|safe }}</p>
-                        </div>
-                               
-                        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #888888; padding-top:0.4em;font-size:95%; font-weight:bold;">
-                        </div>
-                               
-                            
-                      {% for answer in topic.topicanswer_set.all %}
-                        <div style="padding:10px;line-height:90%">
-                            <div style="font-weight:bold;float:left">{{ answer.user}}&nbsp;&nbsp;
-                            </div>
-                            <div style="float;">{{ answer.text|safe }}
-                            </div>
-                            <div style="color:#9197a3">{{answer.answer_date}}
-                            </div>
-                        </div>
-                        {% endfor %}
-                      {% endif %}
-                      <br /><br />
-                              
-                              {% set flag = 0 %}
-                              {% for t in topic_users %}
-                                  {% if t.topic == topic %}                                    
-                                            {% if t.user = topic_user %}
-                                                {% set flag = 1 %} 
-                                            {% endif %}
-                                  {% endif %}
-                              {% endfor %}
-     
-                              {% if flag = 0 %}
-<script>
-function Mudarestado(el) {
-    var display = document.getElementById(el).style.display;
-   
-    if(display == "none")
-        document.getElementById(el).style.display = 'block';
-       
-    else
-        document.getElementById(el).style.display = 'none';
-       
-}
-</script>
-
-
-
-                             <div id="minhaDiv{{topic.id}}" style="background:#eeeeee;"><center>
-                             <form id="form{{topic.id}}" name="{{topic.id}}" action="{% url 'forum:answer_home' topic.id %}" method="post">
-                                 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/ckeditor/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="/static/ckeditor/ckeditor-init.js"></script>
-                                  <tr><th></th><td><div class="django-ckeditor-widget" data-field-id="id_text" style="display: inline-block;">
-<textarea cols="40" id="id_text{{topic.id}}" name="text" rows="10" data-processed="0" data-config='{"toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"], ["Image", "Flash", "Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]], "filebrowserWindowHeight": 725, "skin": "moono", "width": "600px", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]], "filebrowserUploadUrl": "/ckeditor/upload/", "toolbar": [[]], "height": "100px", "filebrowserBrowseUrl": "/ckeditor/browse/", "filebrowserWindowWidth": 940, "language": "en-us"}' data-external-plugin-resources='[]' data-id="id_text" data-type="ckeditortype"></textarea>
+    </div>
+  </div>
 </div>
-</td></tr>
-                                  <br/><input id="in{{topic.id}}" style="margin:10px;color:black;border-color:#f56954;background:#f56954;padding:5px" class="btn btn-default btn-info" type="submit" value="Responder" />                            
-                             </form></center> 
-                             </div>                        
-                            <!--<button id="b" style="visibility:visible;margin:5px" type="button" onclick="Mudarestado('minhaDiv{{topic.id}}')">Comentar</button>-->
-                            
-<script>
-function Mudarestado(el) {
-    var display = document.getElementById(el).style.display;
-   
-    if(display == "none")
-        document.getElementById(el).style.display = 'block';
-        document.getElementById(b).style.visibility = 'hidden';
-    else
-        document.getElementById(el).style.display = 'none';
-         document.getElementById(b).style.visibility = 'visible';
-}
-</script>
+
+<div class="forum-section">
+  {% for topic in category.topic_set.all %}
+  <div style="padding:30px;">
+    <div class="forum-topic">
+      {% if topic %}
+      <div id="area{{topic.id}}" class="header-topic">
+        <div style="font-weight:bold;font-size:25px;">{{ topic }}
+        </div>
+        <span style="color:#9197a3"> Categoria: {{category }} - Publicado em: {{ topic.pub_date }} </span></br>
+        <p>{{ topic.text|safe }}</p>
+      </div>
+      <div class="plainlinks hlist">
+      </div>
 
 
+    {% for answer in topic.topicanswer_set.all %}
+    <div class="render-response">
+      <div style="font-weight:bold;float:left">{{ answer.user}}&nbsp;&nbsp;
+      </div>
+      <div>{{ answer.text|safe|linebreaks }}
+      </div>
+      <div style="color:#9197a3">{{answer.answer_date}}
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br /><br />
 
+    {% set flag = 0 %}
+    {% for t in topic_users %}
+    {% if t.topic == topic %}
+    {% if t.user = topic_user %}
+    {% set flag = 1 %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
 
-                            
-                              {% endif %}
-                        </div>
-                    </div>
-              
-
+    {% if flag = 0 %}
+    <div id="area{{topic.id}}" class="response-area">
+      <form action="{% url 'forum:answer_home' topic.id %}" method="post">
+        <textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
+        <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
+      </form>
+    </div>
+    {% endif %}
+  </div>
+</div>
 {% endfor %}
+</div>
 
 
-   </div>
-
-        
 
 {% endblock content12 %}

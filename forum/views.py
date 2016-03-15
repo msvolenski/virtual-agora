@@ -23,7 +23,7 @@ class ForumHomeView(generic.ListView):
   template_name = 'forum/home.html'
   model = Category
   context_object_name = 'categories_list'
-  
+
   def get_context_data(self, **kwargs):
     context = super(ForumHomeView, self).get_context_data(**kwargs)
     context['topic'] = Topic.objects.all()
@@ -39,7 +39,7 @@ class ForumHomeView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
 
-    
+
 
     return context
 
@@ -120,7 +120,7 @@ def save_topic_answer(request, topic_id):
       messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
 
   return HttpResponseRedirect(reverse('forum:topic', kwargs={'pk': topic_id}))
-  
+
 def save_topic_answer_home(request, topic_id):
   """Save the answer of the user"""
 
@@ -144,13 +144,6 @@ def save_topic_answer_home(request, topic_id):
     else:
       messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
 
-    return redirect(request.META['HTTP_REFERER']+"#f%s"%(topic_id)) 
-  
-  
-  
-  
-  
-  
-  
-  
+    return redirect(request.META['HTTP_REFERER']+"#area%s"%(topic_id))
+
   

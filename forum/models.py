@@ -28,7 +28,7 @@ class Topic(models.Model):
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
   title = models.CharField('Título', max_length=50)
-  text = RichTextUploadingField(config_name='full', verbose_name=u'Texto')
+  text = RichTextUploadingField(config_name='default', verbose_name=u'Texto')
   # text = models.TextField('Texto', max_length=1000)
   pub_date = models.DateTimeField('Data de publicação')
   image = models.ImageField('Imagem', upload_to='forum_images', blank=True, null=True)

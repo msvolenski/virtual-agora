@@ -2,67 +2,70 @@
 {% load set_var %}
 {% block content12 %}
 
-    <div style="position:relative;background:#ffffff;width:1050px;z-index:2;top:40px">    
-        <div style="background:#00c0ef;font-size:40px;padding:20px">Plano Diretor Participativo - UNICAMP</div>
-        
-      
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:home' %}"><div style="text-color:#e2e0e0;text-align:center;padding:10px;position:relative;height:40px;background:#e2e0e0;width:175px;float:left;">Home Ágora</div></a> 
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f7f7f7;width:175px;float:left">Página Inicial</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'conheca:pdpu-conheca' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#00c0ef;width:175px;float:left">Conheça</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'agora:pdpu-participe' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#12d673;width:175px;float:left">Participe</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'resultados:pdpu-resultados' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f39c12;width:175px;float:left">Resultados</div></a>  
-        <a style="color:#000000;font-weight: bold;" href="{% url 'forum:home' %}"><div style="text-align:center;padding:10px;position:relative;height:40px;background:#f56954;width:175px;float:left">Comunidade</div></a>  
-    </div>
+<div style="background: #00c0ef" class="project-header">
+  <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
+  <h1 style="background: #00c0ef">Plano Diretor Participativo - UNICAMP</h1>
+  <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
+  <ul class="nav">
+    <li style="background: #e2e0e0"><a href="{% url 'agora:home' %}">Home</a></li>
+    <li style="background: #f7f7f7"><a href="{% url 'agora:pdpu' %}">Página Inicial</a></li>
+    <li style="background: #00c0ef"><a href="{% url 'conheca:pdpu-conheca' %}">Conheça</a></li>
+    <li style="background: #12d673"><a href="{% url 'agora:pdpu-participe' %}">Participe</a></li>
+    <li style="background: #f39c12"><a href="{% url 'resultados:pdpu-resultados' %}">Resultados</a></li>
+    <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
+  </ul>
+</div>
+
 
     <div style="position:relative;width:60%;float:left;margin-left:15px;top:100px;margin-bottom:200px;">
-    
+
             {% for Article in object_list %}
-            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}            
+            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
 
             <div style="border:1px solid #00c0ef;">
-                    
+
                 <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em Destaque
                 </div>
                 <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
-    
-                
+
+
                                                 <p>
-                                                {% for tag in Article.tags.all %}                                                                                              
+                                                {% for tag in Article.tags.all %}
                                                 <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
                                                 <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
                                                 </form>
-                                                {% endfor %}    
+                                                {% endfor %}
                                                 <strong>Publicado em:</strong> {{ Article.publ_date }}
-                                                </form>                                                
-                                                </p> 
-                
+                                                </form>
+                                                </p>
 
 
 
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
                 </div>
                     <h2>{{ Article.title|safe  }}</h2>
                     <br>
                     {{ Article.article|safe }}
-                    <br>  
-             
+                    <br>
+
                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
                 </div>
-                
-               
+
+
                 {% for questao_associada in Article.split_numbers %}
                     {% for question in not_answered %}
-                        {% set x == 0 %}                        
-                        {% if questao_associada == question.id|slugify %}  
-                            {% set x = 1 %}   
-                                {% if x == 1 %}                        
-                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>  
-                                {%endif%}                         
+                        {% set x == 0 %}
+                        {% if questao_associada == question.id|slugify %}
+                            {% set x = 1 %}
+                                {% if x == 1 %}
+                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+                                {%endif%}
                         {% endif %}
-                    {% endfor %} 
-                {% endfor %}    
-                
-                </div>            
+                    {% endfor %}
+                {% endfor %}
+
+                </div>
                 </div> </br>
                {% endif %}
                {% endfor %}
@@ -73,45 +76,45 @@
                {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
 
                 <div style="border:1px solid #00c0ef;">
-                    
+
                 <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
                 </div>
                 <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
-        
-              
+
+
                                                 <p>
-                                                {% for tag in Article.tags.all %}                                                                                              
+                                                {% for tag in Article.tags.all %}
                                                 <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
                                                 <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
                                                 </form>
-                                                {% endfor %}    
+                                                {% endfor %}
                                                 <strong>Publicado em:</strong> {{ Article.publ_date }}
-                                                </form>                                                
-                                                </p> 
-                
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
+                                                </form>
+                                                </p>
+
+                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
                 </div>
                     <h2>{{ Article.title|safe  }}</h2>
                     <br>
                     {{ Article.article|safe }}
-                    <br>  
-             
+                    <br>
+
                 <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
                 </div>
-                
+
                 {% for questao_associada in Article.split_numbers %}
                     {% for question in not_answered %}
-                        {% set x == 0 %}                        
-                        {% if questao_associada == question.id|slugify %}  
-                            {% set x = 1 %}   
-                                {% if x == 1 %}                        
-                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>  
-                                {%endif%}                         
+                        {% set x == 0 %}
+                        {% if questao_associada == question.id|slugify %}
+                            {% set x = 1 %}
+                                {% if x == 1 %}
+                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+                                {%endif%}
                         {% endif %}
-                    {% endfor %} 
-                {% endfor %}   
-                
-                </div>            
+                    {% endfor %}
+                {% endfor %}
+
+                </div>
                 </div></br>
 
 
@@ -125,29 +128,29 @@
                {% endfor %}
 
      </div>
-     
+
      <div style="position:relative;float:right;top:100px;margin-right:15px;width:35%"">
-     
+
 
          {% for topico in topico %}
                       <div style="border:1px solid #00c0ef;">
         <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">{{ topico.topico }}</div>
-        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">        
-        <p>         {% for u in topico.subtopico_set.all %}                     
-                    <h5><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h5> 
-                    <p>                
+        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
+        <p>         {% for u in topico.subtopico_set.all %}
+                    <h5><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h5>
+                    <p>
                     {% for x in u.link_set.all %}
                        <h5><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ x.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ x.url_title }}<br> </a></li></h5>
                     {% endfor %}
-                    </p>         
+                    </p>
                 {% endfor %}
-        </p>   
+        </p>
         <div class="plainlinks hlist" style="clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
-        </div>      
+        </div>
         </div></br>
          {% endfor %}
 
-    
+
      </div>
 
 
