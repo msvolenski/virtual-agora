@@ -163,10 +163,15 @@
     </script>
 
     <script type="text/javascript">
-    if (screen.width < 765){
-      var myElement = document.querySelector("#imagem");
-      myElement.style.width = "100%";
-    }
+    jQuery(function($) {
+      function resizeImage() {
+        if ($(window).width() < 765) {
+          $(".imagem").css("width", "95%");
+        }
+      }
+      $(window).resize(resizeImage);
+      resizeImage();
+    });
     </script>
 
   </div>
