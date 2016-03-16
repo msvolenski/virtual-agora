@@ -151,17 +151,17 @@ CKEDITOR_CONFIGS = {
   'default': {
     'toolbar': 'Full',
     'width': '500pxFull',
-    'extraPlugins': 'image2',
+    
   },
   'full': {
-    'toolbar': [[]],
+    'toolbar': 'Full',
     'width': '',
- 
-    
+
+
     #'width': 640,
   },
-  
-  
+
+
 }
 
 MESSAGE_TAGS = {

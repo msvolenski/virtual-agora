@@ -16,146 +16,129 @@
   </ul>
 </div>
 
+<div class="left-side-articles">
 
-    <div style="position:relative;width:60%;float:left;margin-left:15px;top:100px;margin-bottom:200px;">
+  {% for Article in object_list %}
+  {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
 
-            {% for Article in object_list %}
-            {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
-
-            <div style="border:1px solid #00c0ef;">
-
-                <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo em Destaque
-                </div>
-                <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
-
-
-                                                <p>
-                                                {% for tag in Article.tags.all %}
-                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
-                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-                                                </form>
-                                                {% endfor %}
-                                                <strong>Publicado em:</strong> {{ Article.publ_date }}
-                                                </form>
-                                                </p>
-
-
-
-
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
-                    <h2>{{ Article.title|safe  }}</h2>
-                    <br>
-                    {{ Article.article|safe }}
-                    <br>
-
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
+  <div class="box-article">
+    <div class="box-header-article">Artigo em Destaque
+    </div>
+    <div class="box-article-content">
+      <p>
+        {% for tag in Article.tags.all %}
+        <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+          <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+        </form>
+        {% endfor %}
+        <div class="pub-style"><strong>Publicado em:</strong>{{ Article.publ_date }}</div>
+      </form>
+    </p>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    <div class="box-article-title">{{ Article.title|safe  }}</div>
+    <div class="article">{{ Article.article|safe }}</div>
+    <br>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+    </div>
 
 
-                {% for questao_associada in Article.split_numbers %}
-                    {% for question in not_answered %}
-                        {% set x == 0 %}
-                        {% if questao_associada == question.id|slugify %}
-                            {% set x = 1 %}
-                                {% if x == 1 %}
-                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
-                                {%endif%}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
+    {% for questao_associada in Article.split_numbers %}
+    {% for question in not_answered %}
+    {% set x == 0 %}
+    {% if questao_associada == question.id|slugify %}
+    {% set x = 1 %}
+    {% if x == 1 %}
+    Leu o artigo? Talvez possa se interessar em responder: <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+    {%endif%}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
 
-                </div>
-                </div> </br>
-               {% endif %}
-               {% endfor %}
+  </div>
+</div> </br>
 
+{% endif %}
+{% endfor %}
+{% for Article in object_list %}
+{% if Article.destaque == 'Não' and Article.published == 'Sim' %}
 
+<div class="box-article">
+  <div class="box-header-article">Artigo
+  </div>
+  <div class="box-article-content">
+    <p>
+      {% for tag in Article.tags.all %}
+      <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+        <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+      </form>
+      {% endfor %}
+      <div class="pub-style"><strong>Publicado em:</strong>{{ Article.publ_date }}</div>
+    </form>
+  </p>
+  <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+  </div>
+  <div class="box-article-title">{{ Article.title|safe  }}</div>
+  <div id="article">{{ Article.article|safe }}</div>
+  <br>
 
-               {% for Article in object_list %}
-               {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
+  <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+  </div>
 
-                <div style="border:1px solid #00c0ef;">
+  {% for questao_associada in Article.split_numbers %}
+  {% for question in not_answered %}
+  {% set x == 0 %}
+  {% if questao_associada == question.id|slugify %}
+  {% set x = 1 %}
+  {% if x == 1 %}
+  Leu o artigo? Talvez possa se interessar em responder: <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+  {%endif%}
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
 
-                <div id="mf-artigos-destacados" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
-                </div>
-                <div id="mf-artigos-destacados" style="padding:0.4em 1em 0.3em;">
+</div>
+</div></br>
 
+{%endif %}
+{% endfor %}
 
-                                                <p>
-                                                {% for tag in Article.tags.all %}
-                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
-                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-                                                </form>
-                                                {% endfor %}
-                                                <strong>Publicado em:</strong> {{ Article.publ_date }}
-                                                </form>
-                                                </p>
+</div>
 
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
-                    <h2>{{ Article.title|safe  }}</h2>
-                    <br>
-                    {{ Article.article|safe }}
-                    <br>
-
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
-
-                {% for questao_associada in Article.split_numbers %}
-                    {% for question in not_answered %}
-                        {% set x == 0 %}
-                        {% if questao_associada == question.id|slugify %}
-                            {% set x = 1 %}
-                                {% if x == 1 %}
-                                 VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
-                                {%endif%}
-                        {% endif %}
-                    {% endfor %}
-                {% endfor %}
-
-                </div>
-                </div></br>
-
-
-
-
-
-
-
-
-               {%endif %}
-               {% endfor %}
-
-     </div>
-
-     <div style="position:relative;float:right;top:100px;margin-right:15px;width:35%"">
-
-
-         {% for topico in topico %}
-                      <div style="border:1px solid #00c0ef;">
-        <div id="mf-apresenta.C3.A7.C3.A3o" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">{{ topico.topico }}</div>
-        <div id="mf-apresenta.C3.A7.C3.A3o" style="padding:0.4em 1em 0.3em;">
-        <p>         {% for u in topico.subtopico_set.all %}
-                    <h5><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h5>
-                    <p>
-                    {% for x in u.link_set.all %}
-                       <h5><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ x.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ x.url_title }}<br> </a></li></h5>
-                    {% endfor %}
-                    </p>
-                {% endfor %}
+<div class="right-side-articles">
+  {% for topico in topico %}
+  <div class="box-article">
+    <div class="box-header-article">{{ topico.topico }}</div>
+    <div class="box-article-content">
+      <p>
+        {% for u in topico.subtopico_set.all %}
+        <h5><font style="bold"><b>{{ u.subtopico_nome }}:</b></font></h5>
+        <p>
+          {% for x in u.link_set.all %}
+          <h5><li style="margin:20px;" type="disc"><a href="#" onclick="window.open('{{ x.url }}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ x.url_title }}<br> </a></li></h5>
+          {% endfor %}
         </p>
-        <div class="plainlinks hlist" style="clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
-        </div>
-        </div></br>
-         {% endfor %}
+        {% endfor %}
+      </p>
+      <div class="plainlinks hlist" style="clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; text-align:end; font-size:95%; font-weight:bold;"><span style="white-space:nowrap;"> </a></span></div>
+    </div>
+  </div></br>
+  {% endfor %}
+</div>
 
 
-     </div>
+<script type="text/javascript">
+if (screen.width < 765){
+  var myElement = document.querySelector("#imagem");
+  myElement.style.width = "100%";
+}
+</script>
 
 
 
 
 
 
-    {% endblock content12 %}
+
+
+{% endblock content12 %}

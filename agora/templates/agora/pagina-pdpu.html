@@ -17,52 +17,34 @@
   </ul>
 </div>
 
-
-
-
-
-
-
-<section class="content" style="background:#ffffff">
-  <div style="height:100px"></div>
+<div class="time-line-page">
   {% for t in timeline %}
   {%if t|to_class_name == 'Article' %}
-  <div style="border-spacing: 0; border-collapse: collapse; margin:0; background:transparent; width:70%;margin:0 auto;">
-    <div style="border:1px solid #00c0ef;">
-      <div id="mf-eventos-atuais" style="background:#00c0ef; border-bottom:1px solid #00c0ef; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Artigo
+  <div class="header-tm-article">
+    <div class="box-article">
+      <div class="box-header-article">Artigo
       </div>
-      <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-
-
+      <div class="box-article-content">
         <p>
           {% for tag in t.tags.all %}
           <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
-            <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+            <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
           </form>
           {% endfor %}
-          <strong>Publicado em:</strong> {{ t.publ_date }}
+          <div class="pub-style"><strong>Publicado em:</strong>{{ t.publ_date }}</div>
         </form>
       </p>
-
-
-
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
       </div>
-      <h3>{{ t.title|safe  }}</h3>
-      <br>
-
+      <div class="box-article-title">{{ t.title|safe  }}</div>
 
       {% if t.article|linebreaks|length > 600 %}
-      {{t.article|truncatechars_html:590|safe}}
-      <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
-
+      <div class="article">{{t.article|truncatechars_html:590|safe}}
+      <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a></div>
       {% else %}
-      {{t.article|safe}}
+      <div class="article">{{t.article|safe}}</div>
       {% endif %}
-
-
       <br>
-
       <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
       </div>
       {% for questao_associada in Article.split_numbers %}
@@ -71,7 +53,7 @@
       {% if questao_associada == question.id|slugify %}
       {% set x = 1 %}
       {% if x == 1 %}
-      VOTE! Este artigo te auxilia a responder as questões:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+      Leu o artigo? Talvez possa se interessar em responder:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
       {%endif%}
       {% endif %}
       {% endfor %}
@@ -84,24 +66,19 @@
 
 
 
-
-
 {%if t|to_class_name == 'Question' %}
-<div  style="width:70%;margin: 0 auto;"  >
+<div class="header-tm-article">
   {% for message in messages %}
   <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{ message }}
   </div>
   {% endfor %}
-
 </br>
-<div style="border:1px solid #67dca1;background:#f9f9f9">
-
-  <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
+<div class="box-question-tm">
+  <div class="box-question-title">Questão {{question.id}}
   </div>
-  <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-
+  <div class="box-question-header">
     <p>
       {% for tag in t.tags.all %}
       <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
@@ -111,15 +88,12 @@
       <strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
       <strong>Expira em:</strong> {{ t.exp_date }}
     </p>
-
-    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em;">
     </div>
-    <h3>{{ t }}</h3>
-
+    <div class="question-title">{{ t }}</div>
     {% if t.image %}
     <img src="{{ t.image.url }}" width="350px" height="250px" /></br></br>
     {% endif %}
-
     <form action="{% url 'agora:vote_timeline' t.id %}" method="post">
       {% csrf_token %}
       {% if t.question_type == '1' %}
@@ -145,30 +119,27 @@
       {% endif %}
       <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
     </form>
-    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
   </div>
 </div>
 </div></br>
 {% endif %}
 
+
 {%if t|to_class_name == 'Relatorio' %}
 
-<div style="border:1px solid #f39c12;width:70%;margin:0 auto;">
-
-  <div id="mf-eventos-atuais" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
-    {% if t.questao == None %}
+<div class="box-result-tm">
+  <div class="box-result-title">
+    {% if Relatorio.questao == None %}
     Resultado Geral
     {% endif %}
 
-    {% if t.questao != None %}
+    {% if Relatorio.questao != None %}
     Resultado {{ t.questao }}
     {% endif %}
 
-
-
   </div>
-  <div id="relatorio{{t.id}}" style="padding:0.4em 1em 0.3em;">
-
+  <div id="relatorio{{t.id}}" class="box-result-content">
     <p>
       {% for tag in t.tags.all %}
       <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
@@ -177,33 +148,22 @@
       {% endfor %}
       <strong>Publicado em:</strong> {{ t.publ_date }}
     </p>
-
-    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
     </div>
     {% if t.conteudo|linebreaks|length > 600 %}
     {{t.conteudo|truncatechars_html:590|safe}}
     <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
-
     {% else %}
     {{t.conteudo|safe}}
     {% endif %}
     <br>
-
-    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
     </div>
-
-
-
-    <!-- <button class="btn btn-primary" type="submit" name="like" id="like" value="1"bmit Review</button>{{relatorio.like}} -->
-
-
-
     &nbsp;&nbsp;
     <form  style="display:inline-block;" action="{% url 'resultados:like_timeline' t.id %}" method="post">
       {% csrf_token %}
       <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
     </form>
-
     &nbsp;
     <form style="display:inline-block;" action="{% url 'resultados:dislike_timeline' t.id %}" method="post">
       {% csrf_token %}
@@ -215,23 +175,5 @@
 {% endif %}
 {% endfor %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-
-
-
-
+</div>
 {% endblock content12 %}

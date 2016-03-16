@@ -17,83 +17,64 @@
   </ul>
 </div>
 
-<section class="content" style="background:#ffffff">
-<div style="margin-top:120px">
 
-
-
-        {% for message in messages %}
-              <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                {{ message }}
-              </div>
+  <div style="margin-top:100px">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{ message }}
+    </div>
     {% endfor %}
-
     {% for question in not_answered %}
-
-
-
-        <div style="border:1px solid #67dca1;width:60%;background:#f9f9f9;margin: 0 auto;">
-            <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
-            </div>
-            <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-
-
-
-                                                <p>
-                                                {% for tag in question.tags.all %}
-                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
-                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-                                                </form>
-                                                {% endfor %}
-                                                <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
-                                                <strong>Expira em:</strong> {{ question.exp_date }}
-                                                </p>
-
-
-                  <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                  </div>
-                  <h3>{{ question }}</h3>
-
-                    {% if question.image %}
-                    <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
-                    {% endif %}
-
-                <form action="{% url 'agora:vote' question.id %}" method="post">
-                      {% csrf_token %}
-                      {% if question.question_type == '1' %}
-                  <ul class="list-group">
-                      {% for choice in question.choice_set.all %}
-                    <div class="list-group-item">
-                      <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                      <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                    </div>
-                     {% endfor %}
-                   </ul>
-                      {% elif question.question_type == '2' %}
-                 <ul class="list-group">
-                  {% for choice in question.choice_set.all %}
-                    <div class="list-group-item">
-                      <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                      <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                    </div>
-                  {% endfor %}
-                 </ul>
-                 {% elif question.question_type == '3' %}
-                  <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
-                 {% endif %}
-                 <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-                </form>
-
-
-
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
-
-            </div>
+    <div class="box-question">
+      <div class="box-question-title">Questão {{question.id}}
       </div>
-      <br />
-
+      <div class="box-question-header">
+        <p>
+          {% for tag in question.tags.all %}
+          <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+            <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+          </form>
+          {% endfor %}
+          <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
+          <strong>Expira em:</strong> {{ question.exp_date }}
+        </p>
+        <div class="plainlinks hlist" style="width:100%;border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;">
+        </div>
+        <div class="question-title">{{ question }}</div>
+        {% if question.image %}
+        <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
+        {% endif %}
+        <form action="{% url 'agora:vote' question.id %}" method="post">
+          {% csrf_token %}
+          {% if question.question_type == '1' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '2' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '3' %}
+          <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
+          {% endif %}
+          <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+        </form>
+        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
+      </div>
+    </div>
+    <br />
     {% endfor %}
-</div>
-</section>
+  </div>
+
 {% endblock content12 %}
