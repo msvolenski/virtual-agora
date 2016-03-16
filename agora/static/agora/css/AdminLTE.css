@@ -3691,7 +3691,49 @@ fieldset[disabled] .btn-vk.active {
   margin-bottom:200px;
 }
 
+.search-title{
+  float:left;
+  font-weight:bold;
+}
+
+#login-page{
+  margin-top:200px;
+  margin-bottom:200px;
+}
+
 @media (max-width: 765px) {
+  #login-page{
+    margin-top:80px;
+    margin-bottom:80px;
+  }
+
+  .login-title-p{
+    font-size:120%;
+    width:100%;
+    line-height: 20px;
+  }
+  .login-title{
+    font-size:90%;
+    width:100%;
+    line-height: 18px;
+  }
+
+  .header-search{
+    margin-left:15px;
+  }
+
+  .time-line-page-search{
+      margin-top:70px;
+      margin-left:0px;
+
+  }
+
+  .search-title{
+    float:left;
+    font-weight:bold;
+    font-size:12px;
+  }
+
   .box-result-tm{
     width:90%;
     margin:0 16px;
