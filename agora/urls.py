@@ -5,10 +5,11 @@ from . import views
 
 app_name = 'agora'
 urlpatterns = [
-  url(r'^$', views.HomeView.as_view(), name='home'),
-  url(r'^pdpu/$', views.PdpuView.as_view(), name='pdpu'),
+  url(r'^$', views.AgoraView.as_view(), name='agora'),
+  url(r'^pdpu/home/$', views.HomeView.as_view(), name='home'),
+  url(r'^pdpu/paginainicial/$', views.PdpuView.as_view(), name='pdpu'),
   url(r'^login/$', auth_views.login, name='login'),
-  url(r'^logout/$', auth_views.logout, name='logout'),
+  url(r'^logout/$', auth_views.logout, {'next_page': '/login/'}, name='logout'),
   url(r'^pdpu/participe/$', views.PdpuParticipeView.as_view(), name='pdpu-participe'),
   url(r'^pdpu/participe/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
   url(r'^pdpu/participe/(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),

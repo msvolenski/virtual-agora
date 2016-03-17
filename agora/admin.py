@@ -4,13 +4,28 @@ from django.contrib.auth.models import User as AuthUser
 from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.utils import timezone
 
-from .models import Choice, Question, Answer, User, InitialListQuestion
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message
 from forum.models import User as ForumUser
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 0
+
+class MessageAdmin(admin.ModelAdmin):
+    actions=['publicar_no_mural','desfazer_publicacao_no_mural']
+    fields = ['kind','message','publ_date']
+    list_display = ['kind','message','published','publ_date']
+
+    def publicar_no_mural(modeladmin, request, queryset):
+            queryset.update(published = 'Sim')
+            queryset.update(publ_date = timezone.now())
+            return
+
+    def desfazer_publicacao_no_mural(modeladmin, request, queryset):
+            queryset.update(published = 'Não')
+            return
 
 class QuestionAdmin(admin.ModelAdmin):
   fields = ['question_text', 'image', ('question_type', 'days'), ('tags', 'question_status', 'answer_status')]
@@ -72,8 +87,8 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
     list_display = ['name','questões','is_list_active']
     fields = ['name','questions',]
 
-    
- 
+
+
 
 
 
@@ -113,7 +128,7 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)
 admin.site.register(AuthUser, UserAdmin)
-
+admin.site.register(Message, MessageAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(InitialListQuestion, InitialListQuestionAdmin)

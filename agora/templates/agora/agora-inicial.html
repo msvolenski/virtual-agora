@@ -1,0 +1,29 @@
+{% extends 'agora/base.html' %}
+{% load staticfiles %}
+{% load set_var %}
+{% block content12 %}
+
+
+  <div class="my-div" style="height:100%;">
+    <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto</div>
+    <div class="agora-title" style=""> Ágora Virtual Unicamp </div>
+    <div class="agora-subtitle"> Um espaço de debate, consulta e participação política da comunidade. </div>
+    <div class="agora-subtitle"> Escolha um projeto, conheça, debata, vote e decida: </div>
+    <ul class="nav">
+      <li class="box-project"><a style="color:black;" href="{% url 'agora:home' %}">Plano Direitor Participativo- Unicamp</a></li>
+    </ul>
+  </div>
+
+
+<script type="text/javascript">
+jQuery(function($) {
+  function resizeImage() {
+    var x = $(window).height();
+    $(".my-div").css("height", x * 0.75);
+    }
+  $(window).resize(resizeImage);
+  resizeImage();
+});
+</script>
+
+{% endblock content12 %}

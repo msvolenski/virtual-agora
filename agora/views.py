@@ -13,29 +13,35 @@ from conheca.models import Article
 from resultados.models import Relatorio
 from taggit.models import Tag
 from itertools import chain
-from .models import Choice, Question, Answer, User, InitialListQuestion
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message
 
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+class AgoraView(generic.ListView):
+  template_name = 'agora/agora-inicial.html'
+  def get_queryset(self):
+    return Question.objects.all()
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class HomeView(generic.ListView):
-  """Homepage of the website"""
-
   template_name = 'agora/home.html'
-  
+
   def get_context_data(self, **kwargs):
     context = super(HomeView, self).get_context_data(**kwargs)
-    
-    user = User.objects.get(user=self.request.user)      
+    user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now())
     answered = Answer.objects.filter(user=user)
-    answered_questions = [a.question for a in answered] 
-    b = InitialListQuestion.objects.filter(select=1).first() 
-    context['question'] = Question.objects.all() 
+    answered_questions = [a.question for a in answered]
+    b = InitialListQuestion.objects.filter(select=1).first()
+    context['question'] = Question.objects.all()
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['initial_questions'] = b
+    context['message_participe'] =  Message.objects.filter(published='Sim',kind='4').order_by('-publ_date')
+    context['message_conheça'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
+    context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
+    context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3').order_by('-publ_date')
     return context
-  
+
   def get_queryset(self):
     return Question.objects.all()
 
@@ -44,31 +50,31 @@ class HomeView(generic.ListView):
 class PdpuView(generic.ListView):
   """PDPU home with it's subpages"""
   template_name = 'agora/pagina-pdpu.html'
-  
+
   def get_queryset(self):
-    
+
     return
 
   def get_context_data(self, **kwargs):
     context = super(PdpuView, self).get_context_data(**kwargs)
 
-    user = User.objects.get(user=self.request.user)      
+    user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date') 
-    not_answered = list(set(questions) - set(answered_questions))    
+    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    not_answered = list(set(questions) - set(answered_questions))
     result_list = sorted(
         chain(relatorio, article, not_answered),
         key=lambda instance: instance.publ_date, reverse=True)
     context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')     
-    context['question'] = Question.objects.all() 
-    context['not_answered'] = list(set(questions) - set(answered_questions))    
+    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    context['question'] = Question.objects.all()
+    context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['timeline'] = result_list
-   
+
     return context
 
 
@@ -106,7 +112,7 @@ class DetailView(generic.DetailView):
 
 
 def vote(request, question_id):
-  
+
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -158,9 +164,9 @@ def vote(request, question_id):
   except (KeyError, Choice.DoesNotExist):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
     return HttpResponseRedirect(reverse('agora:pdpu-participe'))
-    
+
 def vote_iframe(request, question_id):
-  
+
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -215,7 +221,7 @@ def vote_iframe(request, question_id):
 
 
 def vote_initial(request, question_id):
-  
+
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -269,7 +275,7 @@ def vote_initial(request, question_id):
     return HttpResponseRedirect(reverse('agora:home'))
 
 def vote_timeline(request, question_id):
-  
+
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -323,47 +329,47 @@ def vote_timeline(request, question_id):
     return HttpResponseRedirect(reverse('agora:pdpu'))
 
 def tag_search(request, tag_name):
-  answered_questions_tag = []  
+  answered_questions_tag = []
   username = AuthUser.objects.get(username=request.user)
-  user = username.user  
+  user = username.user
   questions = Question.objects.filter(exp_date__gt=timezone.now())
   answered = Answer.objects.filter(user=user)
-  answered_questions = [a.question for a in answered]  
-  questions_tag = Question.objects.filter(tags__name__in=[tag_name]).distinct()  
+  answered_questions = [a.question for a in answered]
+  questions_tag = Question.objects.filter(tags__name__in=[tag_name]).distinct()
   article = Article.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct()
-  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct() 
-  not_answered = list(set(questions) - set(answered_questions))  
-  not_answered_tag = list(set(questions_tag) - set(answered_questions))    
+  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  not_answered = list(set(questions) - set(answered_questions))
+  not_answered_tag = list(set(questions_tag) - set(answered_questions))
   result_list = sorted(
         chain(relatorio, article, not_answered_tag),
         key=lambda instance: instance.publ_date, reverse=True)
   return render(request, 'agora/pagina-pdpu-search.html',
     { 'article' : Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),
-      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),     
-      'question' : Question.objects.all(),         
+      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),
+      'question' : Question.objects.all(),
       'not_answered': not_answered,
       'not_answered_tag': answered_questions_tag,
       'timeline': result_list,
       'tag' : tag_name,
-           
+
     })
 
 
 
-#    user = User.objects.get(user=self.request.user)      
+#    user = User.objects.get(user=self.request.user)
 #    questions = Question.objects.filter(exp_date__gt=timezone.now())
 #    answered = Answer.objects.filter(user=user)
 #    answered_questions = [a.question for a in answered]
 #    article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date') 
-#    not_answered = list(set(questions) - set(answered_questions))    
+#    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+#    not_answered = list(set(questions) - set(answered_questions))
 #    result_list = sorted(
 #        chain(relatorio, article, not_answered),
 #        key=lambda instance: instance.publ_date, reverse=True)
 #    context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')     
-#    context['question'] = Question.objects.all() 
-#    context['not_answered'] = list(set(questions) - set(answered_questions))    
+#    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+#    context['question'] = Question.objects.all()
+#    context['not_answered'] = list(set(questions) - set(answered_questions))
 #    context['not_answered'].reverse()
 #    context['timeline'] = result_list
 

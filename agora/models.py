@@ -29,7 +29,7 @@ class Question(models.Model):
 
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
 
-    question_text = models.CharField('Título da Questão',max_length=200)    
+    question_text = models.CharField('Título da Questão',max_length=200)
     publ_date = models.DateTimeField('Data de publicação')
     exp_date = models.DateTimeField('Data de expiração')
     days = models.IntegerField('Tempo para expirar', choices=EXP_TIME, default=3650)
@@ -61,8 +61,8 @@ class Question(models.Model):
 
     def update_expiration_time(self):
 
-        self.exp_date = self.publ_date + timedelta(days=self.days)        
-        
+        self.exp_date = self.publ_date + timedelta(days=self.days)
+
 
     def is_question_expired(self):
         return self.exp_date <= timezone.now()
@@ -118,9 +118,9 @@ class User(models.Model):
     parent_link=True,
   )
 
-  year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')  
-  course = models.CharField('Curso', max_length=40, blank=True , default='curso') 
-  institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')  
+  year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')
+  course = models.CharField('Curso', max_length=40, blank=True , default='curso')
+  institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')
   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
 
   question_answer = models.ManyToManyField(
@@ -191,7 +191,15 @@ class InitialListQuestion(models.Model):
     class Meta:
         verbose_name = 'Lista de Questões para o Home'
         verbose_name_plural = 'Lista de Questões para o Home'
-        
-       
 
-
+class Message(models.Model):
+        MESSAGE_TYPE = (
+            ('1', 'Conheça'),
+            ('2', 'Resultados'),
+            ('3', 'Comunidade'),
+            ('4', 'Participe'),
+        )
+        published = models.CharField('Publicado?',max_length=3, default='Não') 
+        kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
+        publ_date = models.DateTimeField('Data de publicação')
+        message = models.CharField('Recado', max_length=500)
