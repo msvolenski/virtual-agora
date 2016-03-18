@@ -5,7 +5,7 @@ from django.contrib.auth.models import User as AuthUser
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.utils import timezone
 from django.utils.decorators import method_decorator
 from django.views import generic
@@ -14,6 +14,7 @@ from resultados.models import Relatorio
 from taggit.models import Tag
 from itertools import chain
 from .models import Choice, Question, Answer, User, InitialListQuestion, Message
+
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class AgoraView(generic.ListView):
@@ -31,11 +32,27 @@ class HomeView(generic.ListView):
     questions = Question.objects.filter(exp_date__gt=timezone.now())
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
-    b = InitialListQuestion.objects.filter(select=1).first()
+    not_answered = list(set(questions) - set(answered_questions))
+
+    initial = InitialListQuestion.objects.filter(select=1).first() #pega a lista
+    initial_list = [c.name for c in initial.questions.all()]
+    not_answered_list=[str(f.id) for f in not_answered]
+    initial_list_user = list(set(initial_list).intersection(not_answered_list))
+    if not initial_list_user:
+        first_question = 'none'
+    else:
+        first_question = initial_list_user[0]
+
+
+    context['initial_list'] = initial_list
+    context['not_answered_list'] = not_answered_list
+    context['initial_list_user'] = initial_list_user
+    context['first_question'] = first_question
+
     context['question'] = Question.objects.all()
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
-    context['initial_questions'] = b
+
     context['message_participe'] =  Message.objects.filter(published='Sim',kind='4').order_by('-publ_date')
     context['message_conheça'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
     context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
@@ -221,12 +238,10 @@ def vote_iframe(request, question_id):
 
 
 def vote_initial(request, question_id):
-
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
   question_type = question.question_type
-
   success = False
 
   # Query over the voted questions
@@ -234,7 +249,7 @@ def vote_initial(request, question_id):
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:home'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
 
   try:
     # Save the answer
@@ -266,13 +281,15 @@ def vote_initial(request, question_id):
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
 
     if success == True:
-      return HttpResponseRedirect(reverse('agora:home'))
+      messages.success(request, "Obrigado por participar!")
     else:
       messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:home'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
   except (KeyError, Choice.DoesNotExist):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return HttpResponseRedirect(reverse('agora:home'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+
+
 
 def vote_timeline(request, question_id):
 
@@ -353,29 +370,6 @@ def tag_search(request, tag_name):
       'tag' : tag_name,
 
     })
-
-
-
-#    user = User.objects.get(user=self.request.user)
-#    questions = Question.objects.filter(exp_date__gt=timezone.now())
-#    answered = Answer.objects.filter(user=user)
-#    answered_questions = [a.question for a in answered]
-#    article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    not_answered = list(set(questions) - set(answered_questions))
-#    result_list = sorted(
-#        chain(relatorio, article, not_answered),
-#        key=lambda instance: instance.publ_date, reverse=True)
-#    context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
-#    context['question'] = Question.objects.all()
-#    context['not_answered'] = list(set(questions) - set(answered_questions))
-#    context['not_answered'].reverse()
-#    context['timeline'] = result_list
-
-
-
-
 
 
 

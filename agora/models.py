@@ -160,6 +160,9 @@ class Answer(models.Model):
     return self.user.department
   user_dept.short_description = 'Faculdade'
 
+  def userd(self):
+    return self.user.user
+
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
@@ -199,7 +202,7 @@ class Message(models.Model):
             ('3', 'Comunidade'),
             ('4', 'Participe'),
         )
-        published = models.CharField('Publicado?',max_length=3, default='Não') 
+        published = models.CharField('Publicado?',max_length=3, default='Não')
         kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
         publ_date = models.DateTimeField('Data de publicação')
         message = models.CharField('Recado', max_length=500)

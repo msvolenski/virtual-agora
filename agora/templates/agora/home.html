@@ -1,7 +1,5 @@
 {% extends 'agora/base.html' %}
 {% load set_var %}
-
-
 {% block content12 %}
 
 <div style="background:#e2e0e0" class="project-header">
@@ -19,7 +17,7 @@
 </div>
 
 <div class="home-page" style="margin-top:60px">
-  <div class="mural-pad"> Mural 
+  <div class="mural-pad"> Mural
   </div>
   <div class="mural-box-section" style="background:#00c0ef;">
     {% for msg in message_conheça %}
@@ -28,43 +26,35 @@
   </div>
   <div class="mural-box-section" style="background:#12d673;">
     {% for msg in message_participe %}
-    {{msg.message}}
+    <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
     {% endfor %}
   </div>
   <div class="mural-box-section" style="background:#f39c12;">
     {% for msg in message_resultados %}
-    {{msg.message}}
+    <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
     {% endfor %}
   </div>
   <div class="mural-box-section" style="background:#f56954;">
-    {% for tag in message_comunidade %}
-    {{msg.message}}
+    {% for msg in message_comunidade %}
+    <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
     {% endfor %}
   </div>
   <div class="mural-pad" style="float:left;"> Não deixe de participar! Vote!
   </div>
 
-  {% set none = 0 %}
-  {% set first = 0 %}
-  {% for question in not_answered %}
-  {% if first = 0 %}
-  {%for list in initial_questions.questions.all %}
-  {% if question.id|slugify == list|slugify %}
-  {% set none = 1 %}
-
-  <div style="position:relative;width:70%;margin: 0 auto;margin-top:260px;">
+  <div class="home-question">
     {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+      <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       {{ message }}
-    </div>
+    </div></br>
     {% endfor %}
-  </br>
-  <div style="border:1px solid #67dca1;background:#f9f9f9">
-    <div id="mf-eventos-atuais" style="background:#12d673; border-bottom:1px solid #12d673; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">Questão {{question.id}}
-    </div>
-    <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-      <p>
+    {% for question in not_answered %}
+    {% if question.id|slugify == first_question %}
+    <div class="box-question">
+      <div class="box-question-title">Questão {{question.id}}
+      </div>
+      <div class="box-question-header">
         <p>
           {% for tag in question.tags.all %}
           <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
@@ -74,49 +64,44 @@
           <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
           <strong>Expira em:</strong> {{ question.exp_date }}
         </p>
-      </p>
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-      </div>
-      <h3>{{ question }}</h3>
-      {% if question.image %}
-      <img src="{{ question.image.url }}" width="350px" height="250px" /></br></br>
-      {% endif %}
-      <form action="{% url 'agora:vote_initial' question.id %}" method="post">
-        {% csrf_token %}
-        {% if question.question_type == '1' %}
-        <ul class="list-group">
-          {% for choice in question.choice_set.all %}
-          <div class="list-group-item">
-            <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-            <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-          </div>
-          {% endfor %}
-        </ul>
-        {% elif question.question_type == '2' %}
-        <ul class="list-group">
-          {% for choice in question.choice_set.all %}
-          <div class="list-group-item">
-            <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-            <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-          </div>
-          {% endfor %}
-        </ul>
-        {% elif question.question_type == '3' %}
-        <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
+        <div class="plainlinks hlist" style="width:100%;border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;">
+        </div>
+        <div class="question-title">{{ question }}</div>
+        {% if question.image %}
+        <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
         {% endif %}
-        <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-      </form>
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;"></div>
+        <form action="{% url 'agora:vote_initial' question.id %}" method="post">
+          {% csrf_token %}
+          {% if question.question_type == '1' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '2' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '3' %}
+          <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
+          {% endif %}
+          <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+        </form>
+        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
+      </div>
     </div>
+    <br />
+    {% endif %}
+    {% endfor %}
   </div>
-  <br/>
-  {% endif %}
-  {% endfor %}
-  {% set first = 1 %}
-  {% endif %}
-  {% endfor %}
-  {% if none = 0 %}
-  {% endif %}
-</div>
+
 </div>
 {% endblock content12 %}

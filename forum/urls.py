@@ -10,6 +10,7 @@ urlpatterns = [
   url(r'^pdpu/forum/(?P<pk>[0-9]+)/$', views.TopicView.as_view(), name='topic'),
   url(r'^pdpu/forum/(?P<topic_id>[0-9]+)/answer/$', views.save_topic_answer, name='answer'),
   url(r'^pdpu/forum/(?P<topic_id>[0-9]+)/answerhome/$', views.save_topic_answer_home, name='answer_home'),
+  url(r'^pdpu/forum/(?P<topic_id>[0-9]+)/answerhomeedit/$', views.save_topic_answer_home_edit, name='answer_home_edit'),
   # url(r'^pdpu/forum/categories/(?P<slug>[-\w\d]+)&(?P<pk>[0-9]+)/$', views.TopicView.as_view(), name='topic'),
   # url(r'pdpu/participe/$', views.PdpuParticipeView.as_view(), name='pdpu-participe'),
   # url(r'pdpu/resultados/$', views.PdpuResultadosView.as_view(), name='pdpu-resultados'),

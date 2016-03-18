@@ -73,7 +73,7 @@ class UserAdmin(UserAdmin):
 
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
-  list_display = ['user', 'user_dept', 'question', '__str__']
+  list_display = ['userd', 'question', '__str__']
   list_filter = ['question', 'choice']
 
   def show_results(self, request, queryset):
@@ -86,14 +86,6 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
     actions = ['ativar_lista','desativar_lista']
     list_display = ['name','questões','is_list_active']
     fields = ['name','questions',]
-
-
-
-
-
-
-
-
 
 
     def questões(self, post):

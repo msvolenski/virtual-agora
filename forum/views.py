@@ -115,10 +115,8 @@ def save_topic_answer(request, topic_id):
     if answer:
       answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
       answer_model.save()
-      messages.success(request, "Obrigado por participar!")
     else:
       messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
-
   return HttpResponseRedirect(reverse('forum:topic', kwargs={'pk': topic_id}))
 
 def save_topic_answer_home(request, topic_id):
@@ -140,10 +138,25 @@ def save_topic_answer_home(request, topic_id):
     if answer:
       answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
       answer_model.save()
-      messages.success(request, "Obrigado por participar!")
+
     else:
       messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
 
     return redirect(request.META['HTTP_REFERER']+"#area%s"%(topic_id))
 
-  
+def save_topic_answer_home_edit(request, topic_id):
+  """Save the answer of the user"""
+
+  topic = get_object_or_404(Topic, pk=topic_id)
+  auth_user = AuthUser.objects.get(username=request.user)
+  topic_user = User.objects.get(user=auth_user)
+  # Query over the voted questions
+  answered_topic = TopicAnswer.objects.filter(user=topic_user, topic=topic).delete()
+  answer = request.POST['text']
+  if answer:
+      answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
+      answer_model.save()
+  else:
+      messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
+
+  return redirect(request.META['HTTP_REFERER']+"#area%s"%(topic_id))
