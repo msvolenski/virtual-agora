@@ -54,6 +54,38 @@
         </div>
         <div style="color:#9197a3">{{answer.answer_date}}
         </div>
+
+        {% if answer.user == topic_user %}
+        <div style="float:right">
+          <input id="botao" name="div{{answer.text}}{{answer.answer_date}}" type="button" style="display:visible"  value="editar" onClick="ativa(this.name)" />
+        </div>
+        <div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
+          <form action="{% url 'forum:answer_home_edit' topic.id  %}" method="post">
+            <textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
+            </textarea>
+            <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
+          </form>
+        </div>
+
+        <script>
+        function ativa(x){
+          var div = document.getElementById(x);
+          /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
+          if (div.style.display == 'none') {
+
+            div.style.display = "inline"
+          } else {
+            /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
+            div.style.display = 'none'
+            document.getElementById("botao").value='editar'
+          }
+        }
+        </script>
+
+        {% endif %}
+
+
+
       </div>
 
       {% endfor %}

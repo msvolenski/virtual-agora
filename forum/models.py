@@ -2,7 +2,6 @@ from django.db import models
 from django import forms
 from django.contrib.auth.models import User as AuthUser
 from django.utils import timezone
-
 from taggit.managers import TaggableManager
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -26,12 +25,9 @@ class Topic(models.Model):
   """Model for topics of a theme"""
 
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
-
   title = models.CharField('Título', max_length=50)
   text = RichTextUploadingField(config_name='default', verbose_name=u'Texto')
-  # text = models.TextField('Texto', max_length=1000)
   pub_date = models.DateTimeField('Data de publicação')
-  image = models.ImageField('Imagem', upload_to='forum_images', blank=True, null=True)
   tags = TaggableManager()
 
   def __str__(self):
@@ -48,10 +44,8 @@ class Topic(models.Model):
     verbose_name = 'tópico'
     verbose_name_plural = 'tópicos'
 
-
 class User(models.Model):
   """Extends User model from Authentication app"""
-
   username = models.CharField(max_length=50, default="username")
   user = models.OneToOneField(
     AuthUser,
@@ -86,7 +80,6 @@ class TopicAnswer(models.Model):
   user = models.ForeignKey(User)
   topic = models.ForeignKey(Topic)
   text = RichTextUploadingField(config_name='full', verbose_name='')
-  # text = models.TextField(max_length=1000)
   answer_date = models.DateTimeField(editable=False)
 
   def __str__(self):
@@ -119,4 +112,3 @@ class Like(models.Model):
   class Meta:
     verbose_name = 'curtir'
     verbose_name_plural = 'curtires'
-

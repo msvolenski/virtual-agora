@@ -30,8 +30,6 @@
   <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
   <link rel="stylesheet" href="{% static "agora/assets/font-awesome/css/font-awesome.min.css" %}">
   <link rel="stylesheet" href="{% static "agora/assets/css/form-elements.css" %}">
-
-  <!-- Favicon and touch icons -->
   <link rel="shortcut icon" href="{% static "agora/assets/ico/favicon.png" %}">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "agora/assets/ico/apple-touch-icon-144-precomposed.png" %}">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "agora/assets/ico/apple-touch-icon-114-precomposed.png" %}">
@@ -47,24 +45,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
   <![endif]-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-
   <!-- jQuery UI 1.10.3 -->
   <script src="{% static "agora/js/jquery-ui-1.10.3.min.js" %}" type="text/javascript"></script>
-
   <script src="{% static "agora/js/FitText.js" %}" type="text/javascript">
   window.fitText( document.getElementById("responsive_headline") );
   </script>
-
   <script src="{% static "agora/bower_components/jquery.boxfit/dist/jquery.boxfit.min.js"  %}" type="text/javascript"></script>
-
 </head>
-<!-- AQUI COMEÇA O LAYOUT VISÍVEL AO USUÁRIO -->
-
-
 <body style="margin:0;padding:0;height:100%;">
   <div class="skin-blue pace-done fixed" style="width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);z-index:10">
     <header class="header">
@@ -82,29 +71,15 @@
     </header>
 
     <div style="background:#ffffff;overflow:hidden;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);height:100%;">
-      <!-- Right side column. Contains the navbar and content of the page -->
-
       {% block content %}
       {% endblock %}
 
-
-
-
       {% block content12 %}
       {% endblock %}
-
-
-    </div><!-- /.right-side -->
-
-
-
-
-    <!-- add new calendar event modal -->
-
-
+    </div>
     <!-- jQuery 2.0.2 -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <!-- jQuery UI 1.10.3 -->
     <script src="{% static "agora/js/jquery-ui-1.10.3.min.js" %}" type="text/javascript"></script>
     <!-- Bootstrap -->
@@ -125,12 +100,7 @@
     <script src="{% static "agora/js/plugins/daterangepicker/daterangepicker.js" %}" type="text/javascript"></script>
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{% static "agora/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" %}" type="text/javascript"></script>
-    <!-- iCheck
-    <script src="{% static "agora/js/plugins/iCheck/icheck.min.js" %}" type="text/javascript"></script>-->
-
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{% static "agora/js/AdminLTE/dashboard.js" %}" type="text/javascript"></script>
-
     <script>
     var autoSizeText;
     autoSizeText = function() {
@@ -161,7 +131,6 @@
     };
     autoSizeText(); // here is where we call the function.
     </script>
-
     <script type="text/javascript">
     jQuery(function($) {
       function resizeImage() {
@@ -177,8 +146,8 @@
   </div>
 </br>
 <div id="footer" style="background:#ffffff;width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:  0px 0px 7px 2px rgba(0, 0, 0, 0.2);min-height:10px;padding:20px">
-  <div class="plainlinks hlist" style=";position:relative;width:100%;clear:both; border-top:1px solid #000000; padding-top:0.4em;font-size:95%; font-weight:bold;">Sobre o Projeto - Quem somos - Duvidas - Sugestões - etc -</div>
-
+  <div class="plainlinks hlist" style=";position:relative;width:100%;clear:both; border-top:1px solid #000000; padding-top:0.4em;font-size:95%; font-weight:bold;">Sobre o Projeto - Quem somos - Duvidas - Sugestões - etc -
+  </div>
 </div>
 </br>
 </body>

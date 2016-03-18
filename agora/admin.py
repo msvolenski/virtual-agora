@@ -5,7 +5,6 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
-
 from .models import Choice, Question, Answer, User, InitialListQuestion, Message
 from forum.models import User as ForumUser
 
@@ -109,13 +108,8 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
             modeladmin.message_user(request, "Selecione apenas uma lista")
             return
         else:
-
             queryset.update(select = 0)
             return
-
-
-
-
 
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)

@@ -4,7 +4,7 @@ from .models import Category, Topic, TopicAnswer, Like
 
 
 class TopicAdmin(admin.ModelAdmin):
-  fields = ['category', 'title', 'text', 'image', 'tags']
+  fields = ['category', 'title', 'text', 'tags']
   list_filter = ['pub_date']
   list_display = ['category', 'title', 'text', 'pub_date']
 

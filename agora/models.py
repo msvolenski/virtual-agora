@@ -28,7 +28,6 @@ class Question(models.Model):
     )
 
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
-
     question_text = models.CharField('Título da Questão',max_length=200)
     publ_date = models.DateTimeField('Data de publicação')
     exp_date = models.DateTimeField('Data de expiração')
@@ -38,9 +37,6 @@ class Question(models.Model):
     image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
     tags = TaggableManager()
     address = models.CharField('Endereço',max_length=200)
-
-
-
     permissao = models.IntegerField(default=0)
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
 
@@ -60,9 +56,7 @@ class Question(models.Model):
         return super(Question, self).save(*args, **kwargs)
 
     def update_expiration_time(self):
-
         self.exp_date = self.publ_date + timedelta(days=self.days)
-
 
     def is_question_expired(self):
         return self.exp_date <= timezone.now()
@@ -92,12 +86,7 @@ class Question(models.Model):
         verbose_name_plural = 'questões'
 
 
-##################################################################################
-
-
 class Choice(models.Model):
-  """Model for choices of a question"""
-
   question = models.ForeignKey(Question, on_delete=models.CASCADE)
   choice_text = models.CharField(max_length=200)
 
@@ -110,8 +99,6 @@ class Choice(models.Model):
 
 
 class User(models.Model):
-  """Information about the registered user"""
-
   user = models.OneToOneField(
     AuthUser,
     primary_key=True,
@@ -122,7 +109,6 @@ class User(models.Model):
   course = models.CharField('Curso', max_length=40, blank=True , default='curso')
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')
   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
-
   question_answer = models.ManyToManyField(
     Question,
     through='Answer',
@@ -136,8 +122,6 @@ class User(models.Model):
 
 
 class Answer(models.Model):
-  """Answer to a question"""
-
   user = models.ForeignKey(User)
   question = models.ForeignKey(Question)
   choice = models.ForeignKey(Choice, blank=True, null=True)
@@ -168,7 +152,6 @@ class Answer(models.Model):
     verbose_name_plural = 'respostas'
 
 class InitialListQuestion(models.Model):
-
     name = models.CharField('Nome da lista', max_length=50)
     questions = TaggableManager('Questões')
     select = models.IntegerField(default=0)

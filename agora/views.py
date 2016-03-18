@@ -33,7 +33,6 @@ class HomeView(generic.ListView):
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     not_answered = list(set(questions) - set(answered_questions))
-
     initial = InitialListQuestion.objects.filter(select=1).first() #pega a lista
     initial_list = [c.name for c in initial.questions.all()]
     not_answered_list=[str(f.id) for f in not_answered]
@@ -42,17 +41,13 @@ class HomeView(generic.ListView):
         first_question = 'none'
     else:
         first_question = initial_list_user[0]
-
-
     context['initial_list'] = initial_list
     context['not_answered_list'] = not_answered_list
     context['initial_list_user'] = initial_list_user
     context['first_question'] = first_question
-
     context['question'] = Question.objects.all()
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
-
     context['message_participe'] =  Message.objects.filter(published='Sim',kind='4').order_by('-publ_date')
     context['message_conheça'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
     context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
@@ -62,19 +57,16 @@ class HomeView(generic.ListView):
   def get_queryset(self):
     return Question.objects.all()
 
-
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuView(generic.ListView):
   """PDPU home with it's subpages"""
   template_name = 'agora/pagina-pdpu.html'
 
   def get_queryset(self):
-
     return
 
   def get_context_data(self, **kwargs):
     context = super(PdpuView, self).get_context_data(**kwargs)
-
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
@@ -91,15 +83,10 @@ class PdpuView(generic.ListView):
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['timeline'] = result_list
-
     return context
-
-
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 class PdpuParticipeView(generic.ListView):
-  """View with questions' timeline presented to the users"""
-
   template_name = 'agora/pdpu-participe.html'
   model = Question
 
@@ -108,25 +95,18 @@ class PdpuParticipeView(generic.ListView):
 
   def get_context_data(self, **kwargs):
     context = super(PdpuParticipeView, self).get_context_data(**kwargs)
-
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
-
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
-
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     return context
-
-
-
 
 @method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
 class DetailView(generic.DetailView):
   model = Question
   template_name = 'agora/detail.html'
-
 
 def vote(request, question_id):
 
@@ -134,16 +114,13 @@ def vote(request, question_id):
   username = AuthUser.objects.get(username=request.user)
   user = username.user
   question_type = question.question_type
-
   success = False
-
   # Query over the voted questions
   answered_question = Answer.objects.filter(user=user, question=question).count()
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
     return HttpResponseRedirect(reverse('agora:pdpu-participe'))
-
   try:
     # Save the answer
     if question_type == '1':
@@ -172,7 +149,6 @@ def vote(request, question_id):
         success = True
       else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-
     if success == True:
       messages.success(request, "Obrigado por participar!")
     else:
@@ -188,16 +164,13 @@ def vote_iframe(request, question_id):
   username = AuthUser.objects.get(username=request.user)
   user = username.user
   question_type = question.question_type
-
   success = False
-
   # Query over the voted questions
   answered_question = Answer.objects.filter(user=user, question=question).count()
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
     return HttpResponseRedirect(reverse('agora:home'))
-
   try:
     # Save the answer
     if question_type == '1':
@@ -226,7 +199,6 @@ def vote_iframe(request, question_id):
         success = True
       else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-
     if success == True:
       messages.success(request, "Obrigado por participar!")
     else:
@@ -235,7 +207,6 @@ def vote_iframe(request, question_id):
   except (KeyError, Choice.DoesNotExist):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
     return HttpResponseRedirect(reverse('agora:home'))
-
 
 def vote_initial(request, question_id):
   question = get_object_or_404(Question, pk=question_id)
@@ -243,14 +214,12 @@ def vote_initial(request, question_id):
   user = username.user
   question_type = question.question_type
   success = False
-
   # Query over the voted questions
   answered_question = Answer.objects.filter(user=user, question=question).count()
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
     return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
-
   try:
     # Save the answer
     if question_type == '1':
@@ -279,7 +248,6 @@ def vote_initial(request, question_id):
         success = True
       else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-
     if success == True:
       messages.success(request, "Obrigado por participar!")
     else:
@@ -289,24 +257,19 @@ def vote_initial(request, question_id):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
     return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
 
-
-
 def vote_timeline(request, question_id):
 
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
   question_type = question.question_type
-
   success = False
-
   # Query over the voted questions
   answered_question = Answer.objects.filter(user=user, question=question).count()
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
     return HttpResponseRedirect(reverse('agora:pdpu'))
-
   try:
     # Save the answer
     if question_type == '1':
@@ -335,7 +298,6 @@ def vote_timeline(request, question_id):
         success = True
       else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-
     if success == True:
       messages.success(request, "Obrigado por participar!")
     else:
@@ -370,8 +332,3 @@ def tag_search(request, tag_name):
       'tag' : tag_name,
 
     })
-
-
-
-def posvotacao(request):
-  return render(request, 'agora/pos-votacao.html')
