@@ -165,12 +165,12 @@
     <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
     </div>
     &nbsp;&nbsp;
-    <form  style="display:inline-block;" action="{% url 'resultados:like_timeline' t.id %}" method="post">
+    <form  style="display:inline-block;" action="{% url 'resultados:like' t.id %}" method="post">
       {% csrf_token %}
       <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
     </form>
     &nbsp;
-    <form style="display:inline-block;" action="{% url 'resultados:dislike_timeline' t.id %}" method="post">
+    <form style="display:inline-block;" action="{% url 'resultados:dislike' t.id %}" method="post">
       {% csrf_token %}
       <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{t.dislike}}
     </form>

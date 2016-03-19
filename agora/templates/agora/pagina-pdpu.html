@@ -29,7 +29,7 @@
   {%if t|to_class_name == 'Article' %}
   <div class="header-tm-article">
     <div class="box-article">
-      <div class="box-header-article">Artigo
+      <div class="box-header-article"><a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Artigo</a>
       </div>
       <div class="box-article-content">
         <p>
@@ -76,7 +76,7 @@
 {%if t|to_class_name == 'Question' %}
 <div class="header-tm-article">
 <div class="box-question-tm">
-  <div class="box-question-title">Questão {{question.id}}
+  <div class="box-question-title"><a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Questão {{t.id}}</a>
   </div>
   <div class="box-question-header">
     <p>
@@ -130,12 +130,12 @@
 
 <div class="box-result-tm">
   <div class="box-result-title">
-    {% if Relatorio.questao == None %}
-    Resultado Geral
+    {% if t.questao == None %}
+    <a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Resultado Geral</a>
     {% endif %}
 
-    {% if Relatorio.questao != None %}
-    Resultado {{ t.questao }}
+    {% if t.questao != None %}
+    <a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Resultado {{ t.questao }}</a>
     {% endif %}
 
   </div>
@@ -160,12 +160,12 @@
     <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
     </div>
     &nbsp;&nbsp;
-    <form  style="display:inline-block;" action="{% url 'resultados:like_timeline' t.id %}" method="post">
+    <form  style="display:inline-block;" action="{% url 'resultados:like' t.id %}" method="post">
       {% csrf_token %}
       <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
     </form>
     &nbsp;
-    <form style="display:inline-block;" action="{% url 'resultados:dislike_timeline' t.id %}" method="post">
+    <form style="display:inline-block;" action="{% url 'resultados:dislike' t.id %}" method="post">
       {% csrf_token %}
       <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{t.dislike}}
     </form>

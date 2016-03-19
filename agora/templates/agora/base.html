@@ -5,8 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Ágora Virtual - Unicamp</title>
-  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 
   <!-- bootstrap 3.0.2 -->
   <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
@@ -59,6 +60,7 @@
     <header class="header">
       <nav class="navbar navbar-static-top" role="navigation" style="position:fixed;top:0;width:100%;max-width:1000px;max-height:55px" >
         <a href="http://www.unicamp.br"><img src="{% static "agora/images/unicamp.png" %}" alt="Smiley face" height="52" width="52" style="margin-left:10px;float:left"></a>
+        <div class="agora-address"> <a style="color:black;"  href="{% url 'agora:agora' %}">Ágora</a></div>
         <ul class="nav navbar-nav navbar-user navbar-right">
           <li style="margin-right:10px" class="dropdown  user-dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Olá, {{user.username}}{{username}} <b class="caret"></b></a>

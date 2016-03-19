@@ -52,7 +52,7 @@ class Question(models.Model):
             self.publ_date = timezone.now()
         self.update_expiration_time()
         super(Question, self).save(*args, **kwargs)
-        self.address = "http://127.0.0.1:8000/agora/pdpu/participe/{id}".format(id=self.id)
+        self.address = "{SITE_URL}agora/pdpu/participe/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
         return super(Question, self).save(*args, **kwargs)
 
     def update_expiration_time(self):

@@ -3566,7 +3566,7 @@ fieldset[disabled] .btn-vk.active {
   background:#12d673;
   border-bottom:1px solid #12d673;
   padding:0.2em 0.5em;
-  font-size:125%;
+  font-size:15px;
   font-weight:bold;
 }
 
@@ -3592,7 +3592,7 @@ fieldset[disabled] .btn-vk.active {
 }
 
 .left-side-result{
-    position:relative;
+
     width:60%;
     float:left;
     margin-left:15px;
@@ -3602,7 +3602,7 @@ fieldset[disabled] .btn-vk.active {
 }
 
 .right-side-result{
-  position:relative;
+
   float:right;
   top:100px;
   margin-right:15px;
@@ -3772,6 +3772,14 @@ fieldset[disabled] .btn-vk.active {
   margin-top:290px;
 }
 
+.agora-address{
+  position:absolute;
+  color:black;
+  font-size: 20px;
+  padding: 12px;
+  margin-left:60px;
+
+}
 @media (max-width: 765px) {
   .home-question{
     margin-top:230px;

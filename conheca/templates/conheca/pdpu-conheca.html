@@ -22,7 +22,7 @@
   {% if Article.destaque == 'Sim' and Article.published == 'Sim' %}
 
   <div class="box-article">
-    <div class="box-header-article">Artigo em Destaque
+    <div class="box-header-article"><a href="#" style="color:black;" onclick="window.open('{{Article.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Artigo em Destaque</a>
     </div>
     <div class="box-article-content">
       <p>
@@ -64,7 +64,7 @@
 {% if Article.destaque == 'Não' and Article.published == 'Sim' %}
 
 <div class="box-article">
-  <div class="box-header-article">Artigo
+  <div class="box-header-article"><a href="#" style="color:black;" onclick="window.open('{{Article.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Artigo</a>
   </div>
   <div class="box-article-content">
     <p>

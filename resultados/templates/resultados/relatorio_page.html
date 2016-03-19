@@ -1,93 +1,44 @@
+{% extends 'agora/base.html' %}
 {% load staticfiles %}
 {% load set_var %}
+{% block content12 %}
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>AdminLTE | Dashboard</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <!-- bootstrap 3.0.2 -->
-        
-        <!-- bootstrap wysihtml5 - text editor -->
-       
-        <!-- Theme style -->
-      
-       
-        <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
+<div class="box-question" style="border:1px solid #f39c12;width:100%;margin-top:53px">
+  <div class="box-result-title">
+    {% if relatorio.questao == None %}
+    Resultado Geral
+    {% endif %}
 
-       
-        <!-- Favicon and touch icons -->
-       
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-       
-
-      
-
-        
-         
-
-
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        
-        <!-- jQuery UI 1.10.3 -->
-        <script src="{% static "agora/js/jquery-ui-1.10.3.min.js" %}" type="text/javascript"></script>  
-    </head>
-
-<body>
-
-<div style="border:1px solid #f39c12;margin:20px">
-                    
-            <div id="mf-eventos-atuais" style="background:#f39c12; border-bottom:1px solid #f39c12; padding:0.2em 0.5em; font-size:125%; font-weight:bold;">
-            {% if relatorio.questao == None %}
-            Resultado Geral
-            {% endif %}
-             
-            {% if relatorio.questao != None %}
-            Resultado {{ relatorio.questao }}
-            {% endif %}
-                        
-
-
-            </div>
-            <div id="mf-eventos-atuais" style="padding:0.4em 1em 0.3em;">
-        <p>
-                                                {% for tag in relatorio.tags.all %}                                                                                              
-                                                <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
-                                                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-                                                </form>
-                                                {% endfor %}     
-                                                <strong>Publicado em:</strong> {{ relatorio.publ_date }}
-                                                </p>
-                
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">               
-                </div>
-                    
-                    {{ relatorio.conteudo|safe }}
-                    <br>  
-             
-                <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-                </div>
-                
-               
-                   
-               
-                    
-                &nbsp;&nbsp; 
-                <form style="display:inline-block;" action="{% url 'resultados:like' relatorio.id %}" method="post">
-                {% csrf_token %}
-                <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{relatorio.like}}
-                </form>
-
-                &nbsp;
-                <form style="display:inline-block;" action="{% url 'resultados:dislike' relatorio.id %}" method="post">
-                {% csrf_token %}                
-                <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{relatorio.dislike}}
-                </form>
-            </div>            
+    {% if relatorio.questao != None %}
+    Resultado {{ relatorio.questao }}
+    {% endif %}
+  </div>
+  <div class="box-result-content">
+    <p>
+      {% for tag in Relatorio.tags.all %}
+      <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+        <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+      </form>
+      {% endfor %}
+      <strong>Publicado em:</strong> {{ relatorio.publ_date }}
+    </p>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    {{relatorio.conteudo|safe}}
+    <br>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    &nbsp;&nbsp;
+    <form  style="display:inline-block;" action="{% url 'resultados:like' relatorio.id %}" method="post">
+      {% csrf_token %}
+      <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{relatorio.like}}
+    </form>
+    &nbsp;
+    <form style="display:inline-block;" action="{% url 'resultados:dislike' relatorio.id %}" method="post">
+      {% csrf_token %}
+      <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{relatorio.dislike}}
+    </form>
+  </div>
 </div>
 
-</body>
-</html>
+  {% endblock %}

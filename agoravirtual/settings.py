@@ -28,9 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 SITE_URL = 'http://127.0.0.1:8000/'
+#SITE_URL = 'http://177.220.35.146:12456/'
 
 # Application definition
-
 INSTALLED_APPS = [
     'agora.apps.AgoraConfig',
     'agora.templatetags',

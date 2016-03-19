@@ -7,6 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from agora.models import Question
 from smart_selects.db_fields import ChainedForeignKey
 from django.contrib.auth.models import User
+from django.conf import settings
 
 class Relatorio(models.Model):
 
@@ -32,7 +33,7 @@ class Relatorio(models.Model):
 
     def save(self, *args, **kwargs):
         super(Relatorio, self).save(*args, **kwargs)
-        self.address = "http://127.0.0.1:8000/agora/pdpu/resultados/relatorio/{id}".format(id=self.id)
+        self.address = "{SITE_URL}agora/pdpu/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
         return super(Relatorio, self).save(*args, **kwargs)
 
 class Likedislike(models.Model):
