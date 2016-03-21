@@ -82,11 +82,11 @@ class AnswerAdmin(admin.ModelAdmin):
 
 class InitialListQuestionAdmin(admin.ModelAdmin):
     actions = ['ativar_lista','desativar_lista']
-    list_display = ['name','questões','is_list_active']
+    list_display = ['name','questoes','is_list_active']
     fields = ['name','questions',]
 
 
-    def questões(self, post):
+    def questoes(self, post):
         tags = []
         for tag in InitialListQuestion.questions.all():
             tags.append(str(tag))
