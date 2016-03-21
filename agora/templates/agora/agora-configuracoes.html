@@ -3,50 +3,53 @@
 {% load set_var %}
 {% block content12 %}
 
-<div style="background:#ffffff" class="project-header-config">
-  <h1 style="background: #ffffff">Ágora Virtual - Configurações</h1>
-  <ul class="nav">
-    <div class="caixa" style="background: #e2e0e0" style="width:100%;"><a class="caixa" style="" href="{% url 'agora:agora' %}">Voltar para página inicial - Ágora Virtual</a></div>
-  </ul>
+<div style="background:#ffffff" class="project-header-config"> Ágora Virtual - Configurações
 </div>
 
-<div class="my-div" style="height:100%;">
-  <div class="welcome-user" id="wu-config"> Olá,
+<div class="plainlinks hlist" style="width:95%;border-top:1px solid black; padding-top:0.4em; margin:0 auto;"></div>
+
+<div style="height:100%;margin-bottom:200px;">
+  <div class="config-welcome"> Olá,
     {% if nickname %}
     {{nickname}}
     {% else %}
     {{user.primeiro_nome}}
     {% endif %}
-    ! Gostaria de alterar alguma configuração do seu perfil?
-  </div></br></br></br>
+    ! Gostaria de alterar o seu perfil?
+  </div>
 
   {% for message in messages %}
-  <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+  <div id="config-message" class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
     <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{ message }}
   </div></br>
   {% endfor %}
 
-  <form style="margin:0px;padding:0px;float:left;" action="{% url 'agora:apelido-config' %}" method="post" class="form-inline" role="form" style="float:left;">
-    <div class="form-group" id="agora-config">
-      <label class="item-config">Inclua um apelido (opcional):</label>
-      <input id="apelido" type="textarea" class="form-control" value="" name="text-apelido">
+  <div class="form-inline-config">
+    <div class="item-config">Inclua um apelido (opcional):
     </div>
-    <button type="submit" class="btn btn-default">Enviar</button>
-  </form>
+    <form class="form-config" action="{% url 'agora:apelido-config' %}" method="post" role="form">
+      <input id="apelido" type="textarea" value="" name="text-apelido" placeholder="{{user.nickname}}" class="textarea-size-apelido">
+      <button class="button-margin" type="submit">Enviar</button>
+    </form>
+    <form action="{% url 'agora:apelido-remove' %}" method="post" role="form" style="float:left;">
+      <button class="button-margin" type="submit">Remover apelido</button>
+    </form>
+  </div>
 
-  <form action="{% url 'agora:apelido-remove' %}" method="post" role="form" style="float:left;padding-left:5px;">
-    <button type="submit" class="btn btn-default">Remover apelido</button>
+  <div class="form-inline-config">
+  <form action="{% url 'agora:email-config' %}" method="post" role="form">
+    <label class="item-config" for="email">Inclua um novo endereço de Email:</label>
+    <input class="textarea-size-email" placeholder="{{user.email}}" type="email" name="text-email">
+    <button class="button-margin" type="submit">Enviar</button>
   </form>
-  </br></br>
+  </div>
 
-  <form action="{% url 'agora:email-config' %}" method="post" class="form-inline" role="form" style="padding-top:30px">
-    <div class="form-group" id="agora-config">
-      <label class="item-config" for="email">Inclua um novo endereço de Email:</label>
-      <input placeholder="{{user.email}}" type="email" class="form-control" id="email" name="text-email">
-    </div>
-    <button type="submit" class="btn btn-default">Enviar</button>
-  </form>
+  <ul class="nav">
+    <li>
+      <span class="back-agora"><a style="color:black;" href={% url 'agora:agora' %}>Voltar - Ágora</span>  
+    </li>
+  </ul>
 
 </div>
 

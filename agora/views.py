@@ -25,6 +25,13 @@ class AgoraView(generic.ListView):
   def get_queryset(self):
     return Question.objects.all()
 
+  def get_context_data(self, **kwargs):
+    context = super(AgoraView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    return context
+
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class AgoraConfiguracaoView(generic.ListView):
