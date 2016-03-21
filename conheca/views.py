@@ -12,28 +12,30 @@ from django.views import generic
 from django.views.generic import ListView
 from .models import SubTopico, Article, Topico
 from agora.models import Answer, Question, User
+from agora.decorators import term_required
 
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class TemplatePDPUConhecaView(ListView):
   model = Article
 
   def get_context_data(self, **kwargs):
     context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-
+    user = User.objects.get(user=self.request.user)
     context['topico'] = Topico.objects.all().order_by('position')
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['nickname'] = user.nickname
     return context
 
   def get_queryset(self):
     return Article.objects.all().order_by('-publ_date')
 
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class ArticlePageView(generic.DetailView):
   model = Article
   template_name = 'conheca/article_page.html'
@@ -44,9 +46,10 @@ class ArticlePageView(generic.DetailView):
   def get_context_data(self, **kwargs):
     context = super(ArticlePageView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
-
+    user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['nickname'] = user.nickname
     return context

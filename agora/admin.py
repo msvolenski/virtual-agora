@@ -5,7 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
 from forum.models import User as ForumUser
 
 class ChoiceInline(admin.TabularInline):
@@ -56,7 +56,7 @@ class QuestionAdmin(admin.ModelAdmin):
 class UserProfileInline(admin.StackedInline):
   model = User
   can_delete = False
-  verbose_name_plural = 'perfil das questões'
+  verbose_name_plural = 'perfil pessoal'
 
 
 class UserProfileInline2(admin.StackedInline):
@@ -68,7 +68,6 @@ class UserProfileInline2(admin.StackedInline):
 class UserAdmin(UserAdmin):
     """Define a new UserAdmin"""
     inlines = [UserProfileInline, UserProfileInline2]
-
 
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
@@ -111,10 +110,15 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
             queryset.update(select = 0)
             return
 
+class TermoAdmin(admin.ModelAdmin):
+  list_display = ['userd', 'condition']
+
+
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)
 admin.site.register(AuthUser, UserAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
+admin.site.register(Termo, TermoAdmin)
 admin.site.register(InitialListQuestion, InitialListQuestionAdmin)

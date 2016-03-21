@@ -1,0 +1,65 @@
+{% extends 'agora/base.html' %}
+{% load staticfiles %}
+{% load set_var %}
+{% block content12 %}
+
+<div style="background:#ffffff" class="project-header-config">
+  <h1 style="background: #ffffff">Ágora Virtual - Configurações</h1>
+  <ul class="nav">
+    <div class="caixa" style="background: #e2e0e0" style="width:100%;"><a class="caixa" style="" href="{% url 'agora:agora' %}">Voltar para página inicial - Ágora Virtual</a></div>
+  </ul>
+</div>
+
+<div class="my-div" style="height:100%;">
+  <div class="welcome-user" id="wu-config"> Olá,
+    {% if nickname %}
+    {{nickname}}
+    {% else %}
+    {{user.primeiro_nome}}
+    {% endif %}
+    ! Gostaria de alterar alguma configuração do seu perfil?
+  </div></br></br></br>
+
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+    <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ message }}
+  </div></br>
+  {% endfor %}
+
+  <form style="margin:0px;padding:0px;float:left;" action="{% url 'agora:apelido-config' %}" method="post" class="form-inline" role="form" style="float:left;">
+    <div class="form-group" id="agora-config">
+      <label class="item-config">Inclua um apelido (opcional):</label>
+      <input id="apelido" type="textarea" class="form-control" value="" name="text-apelido">
+    </div>
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+
+  <form action="{% url 'agora:apelido-remove' %}" method="post" role="form" style="float:left;padding-left:5px;">
+    <button type="submit" class="btn btn-default">Remover apelido</button>
+  </form>
+  </br></br>
+
+  <form action="{% url 'agora:email-config' %}" method="post" class="form-inline" role="form" style="padding-top:30px">
+    <div class="form-group" id="agora-config">
+      <label class="item-config" for="email">Inclua um novo endereço de Email:</label>
+      <input placeholder="{{user.email}}" type="email" class="form-control" id="email" name="text-email">
+    </div>
+    <button type="submit" class="btn btn-default">Enviar</button>
+  </form>
+
+</div>
+
+
+<script type="text/javascript">
+jQuery(function($) {
+  function resizeImage() {
+    var x = $(window).height();
+    $(".my-div").css("height", x * 0.75);
+  }
+  $(window).resize(resizeImage);
+  resizeImage();
+});
+</script>
+
+{% endblock content12 %}

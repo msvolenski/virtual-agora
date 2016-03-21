@@ -1,0 +1,20 @@
+{% extends 'agora/base.html' %}
+{% load staticfiles %}
+{% load set_var %}
+{% block content12 %}
+
+
+  <div class="my-div" style="height:100%;">
+    <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto</div>
+    <div class="agora-title" style="">Termo</div>
+    <div class="agora-subtitle"> Bla bla bla Bla bla blaBla bla blaBla bla bla </div>
+
+    <ul class="nav">
+      <form action="{% url 'agora:term_accepted' %}" method="post">
+        <input id="button-forum" class="btn btn-default btn-info" type="submit" value="Aceito" /></center>
+      </form>
+      <form action="{% url 'agora:term_not_accepted' %}" method="post">
+        <input id="button-forum" class="btn btn-default btn-info" type="submit" value="Não Aceito" /></center>
+      </form>
+
+{% endblock content12 %}

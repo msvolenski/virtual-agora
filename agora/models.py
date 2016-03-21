@@ -1,10 +1,12 @@
 ﻿from datetime import timedelta
-
 from django.contrib.auth.models import User as AuthUser
 from django.db import models
 from django.utils import timezone
-
 from taggit.managers import TaggableManager
+from forum.models import User as Userf
+from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist
+
 
 
 class Question(models.Model):
@@ -39,6 +41,7 @@ class Question(models.Model):
     address = models.CharField('Endereço',max_length=200)
     permissao = models.IntegerField(default=0)
     resultado = models.CharField(max_length=1, choices=STATUS_CHOICES , default = 'n')
+
 
     def __str__(self):
         if self.id:
@@ -105,10 +108,22 @@ class User(models.Model):
     parent_link=True,
   )
 
+  STAFF_TYPE = (
+      ('1', 'Professor'),
+      ('2', 'Funcionário'),
+      ('3', 'Aluno'),
+      ('4', 'Outro'),
+  )
+
+  primeiro_nome =  models.CharField('Primeiro nome', max_length=40, blank=True)
+  ultimo_nome =  models.CharField('Sobrenome', max_length=100, blank=True)
+  staff = models.CharField('Staff', max_length=1, blank=True, choices = STAFF_TYPE)
   year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')
   course = models.CharField('Curso', max_length=40, blank=True , default='curso')
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')
   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
+  email = models.EmailField('Email', blank=True)
+  nickname = models.CharField('Apelido',max_length=40, blank=True)
   question_answer = models.ManyToManyField(
     Question,
     through='Answer',
@@ -119,6 +134,22 @@ class User(models.Model):
   class Meta:
     verbose_name = 'usuário'
     verbose_name_plural = 'usuários'
+
+  def save(self, *args, **kwargs):
+      super(User, self).save(*args, **kwargs)
+      nome = self.user.user
+      try:
+         Termo.objects.get(user=nome)
+      except:
+         Termo.objects.create(user=self)
+         Userf.objects.create(user=self.user)
+         a = Userf.objects.get(user=self.user)
+         a.username="{A} {B}".format(A=self.primeiro_nome,B=self.ultimo_nome)
+         a.save()
+         return super(User, self).save(*args, **kwargs)
+      return super(User, self).save(*args, **kwargs)
+
+
 
 
 class Answer(models.Model):
@@ -189,3 +220,13 @@ class Message(models.Model):
         kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
         publ_date = models.DateTimeField('Data de publicação')
         message = models.CharField('Recado', max_length=500)
+
+class Termo(models.Model):
+    user = models.ForeignKey(User)
+    condition = models.CharField('Condição', max_length=3, default='Não')
+
+    def __str__(self):
+        return self.condition
+
+    def userd(self):
+        return self.user.user

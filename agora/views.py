@@ -13,16 +13,44 @@ from conheca.models import Article
 from resultados.models import Relatorio
 from taggit.models import Tag
 from itertools import chain
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
+from django.views.decorators.http import condition
+from .decorators import term_required
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class AgoraView(generic.ListView):
   template_name = 'agora/agora-inicial.html'
   def get_queryset(self):
     return Question.objects.all()
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+class AgoraConfiguracaoView(generic.ListView):
+  template_name = 'agora/agora-configuracoes.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(AgoraConfiguracaoView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+class TermoView(generic.ListView):
+  template_name = 'agora/termo.html'
+
+  def get_queryset(self):
+    return
+
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class HomeView(generic.ListView):
   template_name = 'agora/home.html'
 
@@ -33,8 +61,11 @@ class HomeView(generic.ListView):
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     not_answered = list(set(questions) - set(answered_questions))
-    initial = InitialListQuestion.objects.filter(select=1).first() #pega a lista
-    initial_list = [c.name for c in initial.questions.all()]
+    try:
+        initial = InitialListQuestion.objects.filter(select=1).first() #pega a lista
+        initial_list = [c.name for c in initial.questions.all()]
+    except:
+        initial_list=[0]
     not_answered_list=[str(f.id) for f in not_answered]
     initial_list_user = list(set(initial_list).intersection(not_answered_list))
     if not initial_list_user:
@@ -52,12 +83,15 @@ class HomeView(generic.ListView):
     context['message_conheça'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
     context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
     context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3').order_by('-publ_date')
+    context['nickname'] = user.nickname
     return context
 
   def get_queryset(self):
     return Question.objects.all()
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+#@term_required
 class PdpuView(generic.ListView):
   """PDPU home with it's subpages"""
   template_name = 'agora/pagina-pdpu.html'
@@ -83,9 +117,11 @@ class PdpuView(generic.ListView):
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['timeline'] = result_list
+    context['nickname'] = user.nickname
     return context
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class PdpuParticipeView(generic.ListView):
   template_name = 'agora/pdpu-participe.html'
   model = Question
@@ -101,15 +137,23 @@ class PdpuParticipeView(generic.ListView):
     answered_questions = [a.question for a in answered]
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
+    context['nickname'] = user.nickname
     return context
 
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class DetailView(generic.DetailView):
   model = Question
   template_name = 'agora/detail.html'
 
-def vote(request, question_id):
+  def get_context_data(self, **kwargs):
+    context = super(DetailView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    return context
 
+def vote(request, question_id):
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -258,7 +302,6 @@ def vote_initial(request, question_id):
     return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
 
 def vote_timeline(request, question_id):
-
   question = get_object_or_404(Question, pk=question_id)
   username = AuthUser.objects.get(username=request.user)
   user = username.user
@@ -332,3 +375,68 @@ def tag_search(request, tag_name):
       'tag' : tag_name,
 
     })
+
+def term_accepted(request):
+    username = AuthUser.objects.get(username=request.user)
+    user = username.user
+    cond = Termo.objects.get(user=user)
+    cond.delete()
+    cond1 = Termo(user=user,condition='Sim')
+    cond1.save()
+    return HttpResponseRedirect(reverse('agora:home'))
+
+def term_not_accepted(request):
+    return HttpResponseRedirect(reverse('agora:login'))
+
+def agoraconfiguracaoapelido(request):
+    username = AuthUser.objects.get(username=request.user)
+    user = username.user
+    apelido = request.POST['text-apelido']
+    if apelido:
+        apelido_user = User.objects.get(user=user)
+        apelido_user.nickname = apelido
+        apelido_user.save()
+        success = True
+    else:
+        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+        return redirect(request.META['HTTP_REFERER'])
+    if success == True:
+        messages.success(request, "Inclusão de apelido com sucesso")
+        return redirect(request.META['HTTP_REFERER'])
+    else:
+        messages.error(request, error_message)
+        return redirect(request.META['HTTP_REFERER'])
+
+def agoraconfiguracaoemail(request):
+    us = User.objects.get(user=request.user)
+    user = us.user
+    email = request.POST['text-email']
+    if email:
+        email_user = User.objects.get(user=user)
+        email_user.email = email
+        email_user.save()
+        success = True
+    else:
+        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+        return redirect(request.META['HTTP_REFERER'])
+    if success == True:
+        messages.success(request, "Inclusão de email com sucesso")
+        return redirect(request.META['HTTP_REFERER'])
+    else:
+        messages.error(request, error_message)
+        return redirect(request.META['HTTP_REFERER'])
+
+def agoraconfiguracaoapelidoremove(request):
+    us = User.objects.get(user=request.user)
+    user = us.user
+    apelido_user = User.objects.get(user=user)
+    apelido_user.nickname = user.user.primeiro_nome
+    apelido_user.save()
+
+    success = True
+    if success == True:
+        messages.success(request, "Apelido excluido com sucesso")
+        return redirect(request.META['HTTP_REFERER'])
+    else:
+        messages.error(request, error_message)
+        return redirect(request.META['HTTP_REFERER'])

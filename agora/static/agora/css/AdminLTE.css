@@ -3703,7 +3703,7 @@ fieldset[disabled] .btn-vk.active {
 
 .welcome-user{
   margin-top:10%;
-  width:50%;
+  width:100%;
   margin-left:5%;
   font-size: 20px;
 }
@@ -3754,7 +3754,7 @@ fieldset[disabled] .btn-vk.active {
   float:left;
   width:50%;
   padding:5px;
-  height:120px;
+  height:320px;
   overflow:auto;
 }
 
@@ -3780,7 +3780,77 @@ fieldset[disabled] .btn-vk.active {
   margin-left:60px;
 
 }
+
+#modal-dialog-mob{
+  margin-top: 150px;
+}
+
+#agora-config{
+  margin-left:100px;
+  font-size:16px;
+}
+
+.project-header-config{
+  margin-top: 50px;
+  width=100%;
+  font-size: 2em;
+  padding: 25px;
+  padding-bottom: 15px;
+}
+
+#wu-config{
+  margin-top: 5px;
+}
+
+.caixa{
+  font-size:16px;
+  color:black;
+  margin-left:10px;
+}
+
 @media (max-width: 765px) {
+
+.item-config{
+  font-size:12px;
+  margin: 0 ;
+
+}
+
+.project-header-config{
+    margin-top: 50px;
+    width=100%;
+    font-size: 10px;
+    margin: 0;
+    padding: 25px;
+    padding-bottom: 10px;
+  }
+
+  #wu-config{
+    margin:0 auto;
+    text-align: center;
+  }
+
+  .caixa{
+    text-align: center;
+    font-size:12px;
+    color:black;
+    margin-left:10px;
+    padding:5px;
+  }
+
+.project-header-config h1{
+      text-align: center;
+      margin-top: 50px;
+      width=100%;
+      font-size: 18px;
+      margin-top: 40px;
+      padding: px;
+      padding-bottom: 15px;
+    }
+
+  #modal-dialog-mob{
+    margin-top: 15px;
+  }
   .home-question{
     margin-top:230px;
   }

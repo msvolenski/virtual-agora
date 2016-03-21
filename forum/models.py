@@ -69,9 +69,12 @@ class User(models.Model):
   def __str__(self):
     return self.username
 
+
   class Meta:
     verbose_name = 'usuário'
     verbose_name_plural = 'usuários'
+
+
 
 
 class TopicAnswer(models.Model):

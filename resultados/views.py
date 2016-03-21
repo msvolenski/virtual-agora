@@ -10,8 +10,11 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render_to_response,redirect
 from django.template import RequestContext, Context, loader
+from agora.decorators import term_required
+from agora.models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
 
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class TemplatePDPUResultadosView(ListView):
     model = Relatorio
 
@@ -20,15 +23,23 @@ class TemplatePDPUResultadosView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(TemplatePDPUResultadosView, self).get_context_data(**kwargs)
+        user = User.objects.get(user=self.request.user)
         context['relatorio_hist_1'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='1').order_by('-publ_date')
         context['relatorio_hist_2'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='2').order_by('-publ_date')
+        context['nickname'] = user.nickname
         return context
 
-
-@method_decorator(login_required(login_url='/agora/login/'), name='dispatch')
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class RelatorioPageView(generic.DetailView):
     model = Relatorio
     template_name = 'resultados/relatorio_page.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RelatorioPageView, self).get_context_data(**kwargs)
+        user = User.objects.get(user=self.request.user)
+        context['nickname'] = user.nickname
+        return context
 
     def get_queryset(self):
         return Relatorio.objects.all()

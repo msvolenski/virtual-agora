@@ -11,8 +11,10 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User as AuthUser
 from agora.models import User as QuestionUser
 from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
+from agora.decorators import term_required
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class ForumHomeView(generic.ListView):
   template_name = 'forum/home.html'
   model = Category
@@ -30,10 +32,11 @@ class ForumHomeView(generic.ListView):
     context['user'] = user
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
+    context['nickname'] = user.nickname
     return context
 
-
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class ForumView(generic.ListView):
   template_name = 'forum/home-categoria.html'
   model = Category
@@ -49,10 +52,11 @@ class ForumView(generic.ListView):
     context['user'] = user
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
+    context['nickname'] = user.nickname
     return context
 
-
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class TopicView(generic.ListView):
   template_name = 'forum/home-topico.html'
   model = Topic
@@ -70,6 +74,7 @@ class TopicView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['category'] = Category.objects.all()
     context['topic_users'] = TopicAnswer.objects.all()
+    context['nickname'] = user.nickname
 
     if TopicAnswer.objects.filter(user=context['topic_user'], topic=context['topic']).count():
       context['user_answered'] = True

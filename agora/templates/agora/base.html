@@ -7,8 +7,6 @@
   <title>Ágora Virtual - Unicamp</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-
   <!-- bootstrap 3.0.2 -->
   <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
   <!-- font Awesome -->
@@ -55,17 +53,25 @@
   </script>
   <script src="{% static "agora/bower_components/jquery.boxfit/dist/jquery.boxfit.min.js"  %}" type="text/javascript"></script>
 </head>
+
 <body style="margin:0;padding:0;height:100%;">
   <div class="skin-blue pace-done fixed" style="width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);z-index:10">
     <header class="header">
-      <nav class="navbar navbar-static-top" role="navigation" style="position:fixed;top:0;width:100%;max-width:1000px;max-height:55px" >
-        <a href="http://www.unicamp.br"><img src="{% static "agora/images/unicamp.png" %}" alt="Smiley face" height="52" width="52" style="margin-left:10px;float:left"></a>
+      <nav class="navbar navbar-static-top" role="navigation" style="position:fixed;top:0;width:100%;max-width:1000px;max-height:55px">
+        <a href="http://www.unicamp.br"><img id="unicamp" src="{% static "agora/images/unicamp.png" %}" alt="Smiley face" height="52" width="52" style="margin-left:10px;float:left"></a>
         <div class="agora-address"> <a style="color:black;"  href="{% url 'agora:agora' %}">Ágora</a></div>
         <ul class="nav navbar-nav navbar-user navbar-right">
           <li style="margin-right:10px" class="dropdown  user-dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Olá, {{user.username}}{{username}} <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Olá,
+              {% if nickname %}
+              {{nickname}}
+              {% else %}
+              {{user.user.primeiro_nome}}{{user.primeiro_nome}}
+              {% endif %}
+              <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li class="menu-user"><a href="{% url 'agora:logout' %}">Sair</a></li>
+              <li class="menu-user"><a href="{% url 'agora:configuracoes' %}">Configurações</a></li>
             </ul>
           </li>
         </ul>
@@ -103,6 +109,11 @@
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{% static "agora/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" %}" type="text/javascript"></script>
     <script src="{% static "agora/js/AdminLTE/dashboard.js" %}" type="text/javascript"></script>
+
+    <script>
+    $( "img" ).addClass( "imagem" );
+    </script>
+
     <script>
     var autoSizeText;
     autoSizeText = function() {
@@ -133,9 +144,16 @@
     };
     autoSizeText(); // here is where we call the function.
     </script>
+
+    <script>
+    $("#unicamp").attr('class', 'newClass');
+    </script>
+
+
     <script type="text/javascript">
     jQuery(function($) {
       function resizeImage() {
+
         if ($(window).width() < 765) {
           $(".imagem").css("width", "95%");
         }
@@ -145,6 +163,8 @@
     });
     </script>
 
+
+
   </div>
 </br>
 <div id="footer" style="background:#ffffff;width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:  0px 0px 7px 2px rgba(0, 0, 0, 0.2);min-height:10px;padding:20px">
@@ -152,5 +172,10 @@
   </div>
 </div>
 </br>
+
+<script>
+$('#myModal').modal('show')
+</script>
+
 </body>
 </html>

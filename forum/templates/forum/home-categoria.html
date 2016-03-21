@@ -48,7 +48,11 @@
 
       {% for answer in topic.topicanswer_set.all %}
       <div class="render-response">
-        <div style="font-weight:bold;float:left">{{ answer.user}}&nbsp;&nbsp;
+        <div style="font-weight:bold;float:left">{{ answer.user}}
+          {% if nickname %}
+          ({{nickname}})
+          {% endif %}
+          &nbsp;&nbsp;
         </div>
         <div>{{ answer.text|safe|linebreaks }}
         </div>
