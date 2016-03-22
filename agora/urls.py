@@ -6,6 +6,7 @@ app_name = 'agora'
 urlpatterns = [
 
   url(r'^$', views.AgoraView.as_view(), name='agora'),
+  url(r'^meuespaco/(?P<section_name>\w+)/$', views.MeuEspacoView.as_view(), name='meu-espaco'),
   url(r'^configuracao/$', views.AgoraConfiguracaoView.as_view(), name='configuracoes'),
   url(r'^configuracao/apelido/$', views.agoraconfiguracaoapelido, name='apelido-config'),
   url(r'^configuracao/apelido/remover/$', views.agoraconfiguracaoapelidoremove, name='apelido-remove'),

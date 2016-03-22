@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
-
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
 /*!
 *   AdminLTE v1.2
@@ -918,44 +917,6 @@ Navbar custom dropdown menu
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-footer .btn-default {
   color: #666666;
-}
-/* Add fade animation to dropdown menus */
-.open > .dropdown-menu {
-  animation-name: fadeAnimation;
-  animation-duration: .7s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  -webkit-animation-name: fadeAnimation;
-  -webkit-animation-duration: .7s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-name: fadeAnimation;
-  -moz-animation-duration: .7s;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: forwards;
-}
-@keyframes fadeAnimation {
-  from {
-    opacity: 0;
-    top: 120%;
-  }
-  to {
-    opacity: 1;
-    top: 100%;
-  }
-}
-@-webkit-keyframes fadeAnimation {
-  from {
-    opacity: 0;
-    top: 120%;
-  }
-  to {
-    opacity: 1;
-    top: 100%;
-  }
 }
 /* Fix dropdown menu for small screens to display correctly on small screens */
 @media screen and (max-width: 767px) {
@@ -3859,7 +3820,26 @@ fieldset[disabled] .btn-vk.active {
   margin-right:50px
 }
 
+.agora-icone-barra{
+  margin-left:10px;
+  float:left;
+  margin-top:4px;
+  width:50px;
+  height:50px;
+}
+
+.username{
+  line-height: 55px;
+  padding:15px;
+  font-weight: bold;
+
+}
+
 @media (max-width: 765px) {
+  .username{
+  font-size:12px;
+  }
+
   .back-agora{
     background:#c5c5c5;
     padding:5px;

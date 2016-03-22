@@ -20,6 +20,23 @@ from .decorators import term_required
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
+class MeuEspacoView(generic.ListView):
+  template_name = 'agora/meu-espaco.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(MeuEspacoView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class AgoraView(generic.ListView):
   template_name = 'agora/agora-inicial.html'
   def get_queryset(self):
@@ -87,7 +104,7 @@ class HomeView(generic.ListView):
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['message_participe'] =  Message.objects.filter(published='Sim',kind='4').order_by('-publ_date')
-    context['message_conheça'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
+    context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
     context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
     context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3').order_by('-publ_date')
     context['nickname'] = user.nickname
