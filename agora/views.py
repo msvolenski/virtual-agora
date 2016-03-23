@@ -13,21 +13,24 @@ from conheca.models import Article
 from resultados.models import Relatorio
 from taggit.models import Tag
 from itertools import chain
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo, MeuEspacoArtigo
 from django.views.decorators.http import condition
 from .decorators import term_required
+from django.core.validators import URLValidator
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
-class MeuEspacoView(generic.ListView):
+class MeuEspacoArtigoView(generic.ListView):
   template_name = 'agora/meu-espaco.html'
 
   def get_context_data(self, **kwargs):
-    context = super(MeuEspacoView, self).get_context_data(**kwargs)
+    context = super(MeuEspacoArtigoView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
+    tags = Tag.objects.all().distinct()
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
+    context['tags'] = tags
     return context
 
   def get_queryset(self):
@@ -458,6 +461,29 @@ def agoraconfiguracaoapelidoremove(request):
     apelido_user.save()
 
     success = True
+    if success == True:
+        messages.success(request, "Apelido excluido com sucesso")
+        return redirect(request.META['HTTP_REFERER'])
+    else:
+        messages.error(request, error_message)
+        return redirect(request.META['HTTP_REFERER'])
+
+def enviaDadosMeuEspaco(request):
+    us = User.objects.get(user=request.user)
+    user = us.user
+
+    categoria = request.POST['categoriatag']
+    comentario = request.POST['comentario']
+    arquivo = request.FILES['arquivo']
+    link = request.POST['link']
+    u = URLValidator()
+    u.__call__(link)
+
+    x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo=arquivo)
+    x.save()
+
+    success = True
+
     if success == True:
         messages.success(request, "Apelido excluido com sucesso")
         return redirect(request.META['HTTP_REFERER'])

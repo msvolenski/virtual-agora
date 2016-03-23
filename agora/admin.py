@@ -5,7 +5,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
+from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo, MeuEspacoArtigo
 from forum.models import User as ForumUser
 
 class ChoiceInline(admin.TabularInline):
@@ -113,10 +113,14 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
 class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
 
+class MeuEspacoArtigoAdmin(admin.ModelAdmin):
+  list_display = ['user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
+
 
 # Remove default User page and activate the new version
 admin.site.unregister(AuthUser)
 admin.site.register(AuthUser, UserAdmin)
+admin.site.register(MeuEspacoArtigo, MeuEspacoArtigoAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)

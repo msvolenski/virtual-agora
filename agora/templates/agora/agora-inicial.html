@@ -4,23 +4,28 @@
 {% block content12 %}
 
 
-  <div class="my-div" style="margin-bottom:80px;">
-    <div class="welcome-user"> Olá, {{user.user.primeiro_nome}}! Seja bem-vindx ao projeto</div>
-    <div class="agora-title"><img id="unicamp2" src="{% static "agora/images/agora-unicamp-logo.png" %}" alt="logo agora" style="width:50%;margin-left:10px;margin:0 auto;"/></div>
-    <div class="agora-subtitle"> Um espaço de debate, consulta e participação política da comunidade. </div>
-    <div class="agora-subtitle"> Escolha um projeto, conheça, debata, vote e decida: </div>
-    <ul class="nav">
-      <li class="box-project"><a style="color:black;" href="{% url 'agora:home' %}">Plano Direitor Participativo- Unicamp</a></li>
-    </ul>
+<div class="my-div" style="margin-bottom:100px;">
+  <div class="welcome-user"> Olá,
+    {% if nickname %}
+    {{nickname}}.
+    {% else %}
+    {{user.user.primeiro_nome}}{{user.primeiro_nome}}.
+    {% endif %} Seja bem-vindx ao projeto
   </div>
-
+  <div class="agora-title"><img id="unicamp6" class="agora-image" src="{% static "agora/images/agora-unicamp-logo.png" %}" alt="logo agora"/></div>
+  <div class="agora-subtitle"> Um espaço de debate, consulta e participação política da comunidade. </div>
+  <div class="agora-subtitle"> Escolha um projeto, conheça, debata, vote e decida: </div>
+  <ul class="nav">
+    <li class="box-project"><a style="color:black;" href="{% url 'agora:home' %}">Plano Direitor Participativo- Unicamp</a></li>
+  </ul>
+</div>
 
 <script type="text/javascript">
 jQuery(function($) {
   function resizeImage() {
     var x = $(window).height();
     $(".my-div").css("height", x * 0.75);
-    }
+  }
   $(window).resize(resizeImage);
   resizeImage();
 });

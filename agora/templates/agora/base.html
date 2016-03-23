@@ -10,11 +10,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
-  <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"   />
-  <link href="{% static "agora/css/ionicons.min.css" %}" rel="stylesheet" type="text/css" />
-  <link href="{% static "agora/css/morris/morris.css" %}" rel="stylesheet" type="text/css" />
-  <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css" />
-  <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css" />
+  <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css"/>
   <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
   <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
@@ -29,7 +27,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-
 
 <body style="margin:0;padding:0;height:100%;">
   <div class="skin-blue pace-done fixed" style="width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);z-index:10">
@@ -47,12 +44,9 @@
           </span>
           <a href="{% url 'agora:logout' %}" style="color:black"><span class="glyphicon glyphicon-log-out" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
           <a href="{% url 'agora:configuracoes' %}" style="color:black"><span class="glyphicon glyphicon-wrench" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
-
         </div>
       </nav>
-
     </header>
-
 
     <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;">
       <div class="container">
@@ -62,7 +56,7 @@
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
             <li role="presentation"><center>Meu Espaço</center></li>
             <li role="presentation" class="divider"></li>
-            <li role="presentation"><a href="{% url 'agora:meu-espaco' 'artigo' %}" style="color:#00c0ef" role="menuitem" tabindex="-1"><center>Sugira artigos</center></a></li>
+            <li role="presentation"><a href="#myModal1" style="color:#00c0ef" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal1"><center>Sugira artigos</center></a></li>
             <li role="presentation"><a style="color:#f56954" role="menuitem" tabindex="-1" href="#"><center>Sugira debates</center></a></li>
             <li role="presentation"><a style="color:#12d673"role="menuitem" tabindex="-1" href="#"><center>Sugira questões</center></a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><center>Outras sugestões</center></a></li>
@@ -71,6 +65,25 @@
       </div>
     </div>
 
+    <!-- Modal -->
+      <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+
+
+
     <div style="background:#ffffff;overflow:hidden;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);height:100%;">
       {% block content %}
       {% endblock %}
@@ -78,7 +91,6 @@
       {% block content12 %}
       {% endblock %}
     </div>
-
 
   </br>
   <div id="footer" style="background:#ffffff;width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:  0px 0px 7px 2px rgba(0, 0, 0, 0.2);min-height:10px;padding:20px;margin-bottom:20px">
@@ -138,6 +150,9 @@
   $("#unicamp4").attr('class', 'newClass');
   </script>
 
+  <script>
+  $("#unicamp6").attr('class', 'agora-image');
+  </script>
 
   <script type="text/javascript">
   jQuery(function($) {

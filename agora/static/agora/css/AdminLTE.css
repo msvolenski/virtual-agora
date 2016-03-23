@@ -3832,10 +3832,19 @@ fieldset[disabled] .btn-vk.active {
   line-height: 55px;
   padding:15px;
   font-weight: bold;
+}
 
+.agora-image{
+  width:200px;
+  margin-left:10px;
+  margin:0 auto;
 }
 
 @media (max-width: 765px) {
+  .agora-image{
+    width:100px;
+  }
+
   .username{
   font-size:12px;
   }
@@ -3971,7 +3980,7 @@ fieldset[disabled] .btn-vk.active {
     font-weight: bold;
   }
   .welcome-user{
-    margin-top:20%;
+    margin-top:65px;
     width:100%;
     font-size:12px;
   }
