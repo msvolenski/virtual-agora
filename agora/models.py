@@ -233,14 +233,10 @@ class Termo(models.Model):
 
 class MeuEspacoArtigo(models.Model):
 
-    def validate_file_extension(value):
-        if not value.name.endswith('.pdf'):
-            raise ValidationError(u'Error message')
-
     user = models.CharField('Usuario',max_length=200, blank=True)
     categoria = models.CharField('Categoria',max_length=20, blank=True)
     publ_date = models.DateTimeField('Data de publicação')
     link =  models.URLField(max_length=1000, blank=True)
     comentario =  models.CharField('Comentário',max_length=200, blank=True)
     secao = models.CharField('Seção',max_length=30, blank=True)
-    arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=20000, validators=[validate_file_extension], blank=True)
+    arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=20000, blank=True)
