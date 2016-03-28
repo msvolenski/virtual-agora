@@ -38,7 +38,7 @@
     gostaria de sugerir artigos para leitura? Envie-nos através de um link ou faça upload de um arquivo pdf. Selecione também a categoria que o artigo se refere:
   </div>
 
-  <form action="{% url 'agora:envia-espaco-artigo' %}" method="POST" role="form">
+  <form action="{% url 'agora:envia-espaco-artigo' %}" method="POST" role="form" enctype="multipart/form-data">
     <div>Selecione a categoria do artigo:
     </div>
     <select id="categoria" name="categoriatag">
@@ -67,14 +67,26 @@
       <textarea style="border-color:black;width:50%;" class="form-control" rows="1" id="link" name="link"></textarea>
     </div>
   </div>
-  <div>
+  
+  {% csrf_token %}
+  <p>{{ form.non_field_errors }}</p>
+  <p>{{ form.arquivo.label_tag }} </p>
+  <p>
+    {{ form.arquivo.errors }}
+    {{ form.arquivo }}
+  </p>
+  <p><input type="submit" value="Upload" /></p>
+</form>
 
-  <button class="button-margin" type="submit">Enviar</button>
-</form>
-<form action="{% url 'agora:envia-espaco-artigo' %}" method="FILES" role="form">
-<input id="id_image" type="file" class="" name="arquivo">
-  <button class="button-margin" type="submit">Enviar</button>
-</form>
+
+
+
+
+
+
+
+
+
 
 
 

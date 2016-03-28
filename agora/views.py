@@ -1,4 +1,5 @@
-﻿from django.contrib import messages
+# -*- coding: utf-8 -*-
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User as AuthUser
@@ -17,6 +18,7 @@ from .models import Choice, Question, Answer, User, InitialListQuestion, Message
 from django.views.decorators.http import condition
 from .decorators import term_required
 from django.core.validators import URLValidator
+from .forms import DocumentForm
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -31,6 +33,7 @@ class MeuEspacoArtigoView(generic.ListView):
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['tags'] = tags
+    context['form'] = DocumentForm
     return context
 
   def get_queryset(self):
@@ -472,21 +475,23 @@ def enviaDadosMeuEspaco(request):
     us = User.objects.get(user=request.user)
     user = us.user
 
-    categoria = request.POST['categoriatag']
-    comentario = request.POST['comentario']
-    arquivo = request.FILES['arquivo']
-    link = request.POST['link']
-    u = URLValidator()
-    u.__call__(link)
-
-    x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo=arquivo)
-    x.save()
-
-    success = True
-
-    if success == True:
-        messages.success(request, "Apelido excluido com sucesso")
-        return redirect(request.META['HTTP_REFERER'])
+    if request.method == 'POST':
+        categoria = request.POST['categoriatag']
+        comentario = request.POST['comentario']
+        link = request.POST['link']
+        if link != '':
+            u = URLValidator()
+            u.__call__(link)
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'])
+            x.save()
+            success = True
+            if success == True:
+                messages.success(request, "Apelido excluido com sucesso")
+                return redirect(request.META['HTTP_REFERER'])
+        else:
+            form = DocumentForm() # A empty, unbound form
+            raise Http404
     else:
-        messages.error(request, error_message)
         return redirect(request.META['HTTP_REFERER'])
