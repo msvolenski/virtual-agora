@@ -1,7 +1,7 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils import timezone
 from taggit.managers import TaggableManager
-from tinymce.models import HTMLField
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from agora.models import Question

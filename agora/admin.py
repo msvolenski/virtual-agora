@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User as AuthUser
@@ -7,6 +8,7 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo, MeuEspacoArtigo
 from forum.models import User as ForumUser
+
 
 class ChoiceInline(admin.TabularInline):
     model = Choice

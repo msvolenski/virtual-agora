@@ -4,7 +4,7 @@ from django.conf import settings
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
-from tinymce.models import HTMLField
+
 
 
 class Article(models.Model):

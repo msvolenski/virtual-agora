@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import messages
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
