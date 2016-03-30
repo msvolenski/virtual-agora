@@ -19,6 +19,7 @@ from django.views.decorators.http import condition
 from .decorators import term_required
 from django.core.validators import URLValidator
 from .forms import DocumentForm
+from django.core.exceptions import ValidationError
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -474,24 +475,37 @@ def agoraconfiguracaoapelidoremove(request):
 def enviaDadosMeuEspaco(request):
     us = User.objects.get(user=request.user)
     user = us.user
-
     if request.method == 'POST':
         categoria = request.POST['categoriatag']
         comentario = request.POST['comentario']
         link = request.POST['link']
         if link != '':
-            u = URLValidator()
-            u.__call__(link)
+            validate = URLValidator()
+            try:
+                validate(link)
+            except:
+                messages.error(request, "URL incorreta. Envie novamente.")
+                return redirect(request.META['HTTP_REFERER'])
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'])
-            x.save()
-            success = True
-            if success == True:
-                messages.success(request, "Apelido excluido com sucesso")
+            if request.FILES['arquivo'].name.endswith('.pdf'):
+                x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'])
+                x.save()
+                success = True
+                if success == True:
+                    messages.success(request, "Arquivo enviado com sucesso")
+                    return redirect(request.META['HTTP_REFERER'])
+            else:
+                messages.error(request, "Arquivo não enviado. Apenas arquivos PDF são aceitos.")
                 return redirect(request.META['HTTP_REFERER'])
+        if link !='':
+            form = DocumentForm() #A empty, unbound form
+            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo')
+            x.save()
+            messages.success(request, "Link enviado com sucesso")
+            return redirect(request.META['HTTP_REFERER'])
         else:
-            form = DocumentForm() # A empty, unbound form
-            raise Http404
+            messages.error(request, "Você não enviou nenhum artigo. Caso queira enviar apenas um comentário vá em outras sugestões")
+            return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])

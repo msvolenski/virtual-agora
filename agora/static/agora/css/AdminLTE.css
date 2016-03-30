@@ -3840,6 +3840,17 @@ fieldset[disabled] .btn-vk.active {
   margin:0 auto;
 }
 
+.header-meu-espaco{
+    padding:20px;
+    font-size:14px;
+}
+
+.text-form-meu-espaco{
+    padding:20px;
+    font-size:14px;
+    font-weight: bold;
+}
+
 @media (max-width: 765px) {
   .agora-image{
     width:100px;

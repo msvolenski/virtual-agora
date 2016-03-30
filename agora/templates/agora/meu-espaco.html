@@ -14,7 +14,7 @@
   <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css"/>
   <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css"/>
   <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
   <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
   <link rel="stylesheet" href="{% static "agora/assets/font-awesome/css/font-awesome.min.css" %}">
   <link rel="stylesheet" href="{% static "agora/assets/css/form-elements.css" %}">
@@ -23,13 +23,13 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "agora/assets/ico/apple-touch-icon-114-precomposed.png" %}">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "agora/assets/ico/apple-touch-icon-72-precomposed.png" %}">
   <link rel="apple-touch-icon-precomposed" href="{% static "agora/assets/ico/apple-touch-icon-57-precomposed.png" %}">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
 <body style="margin:0;padding:0;height:100%;">
-  <div>
+  <div class="header-meu-espaco">
     {% if nickname %}
     {{nickname}},
     {% else %}
@@ -38,65 +38,48 @@
     gostaria de sugerir artigos para leitura? Envie-nos através de um link ou faça upload de um arquivo pdf. Selecione também a categoria que o artigo se refere:
   </div>
 
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+    <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ message }}
+  </div></br>
+  {% endfor %}
+
   <form action="{% url 'agora:envia-espaco-artigo' %}" method="POST" role="form" enctype="multipart/form-data">
-    <div>Selecione a categoria do artigo:
-    </div>
-    <select id="categoria" name="categoriatag">
-      {% for tag in tags %}
-      <option value="{{tag}}"
-      {% if tag == categoriatag %}
-      selected
-      {% endif %}>
-      {{tag}}
-    </option>
-    {% endfor %}
-  </select>
-  <div class="container">
-    <h2>Form control: textarea</h2>
-    <p>The form below contains a textarea for comments:</p>
-    <div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea style="border-color:black;width:50%;" class="form-control" rows="3" id="comment" name="comentario"></textarea>
-    </div>
+    <div class="text-form-meu-espaco"> Selecione a categoria do artigo:
+      <select id="categoria" name="categoriatag">
+        {% for tag in tags %}
+        <option value="{{tag}}"
+        {% if tag == categoriatag %}
+        selected
+        {% endif %}>
+        {{tag}}
+      </option>
+      {% endfor %}
+      <option value="outra">outra</option>
+    </select>
   </div>
-  <div class="container">
-    <h2>Form control: textarea</h2>
-    <p>The form below contains a textarea for comments:</p>
-    <div class="form-group">
-      <label for="link">Link:</label>
-      <textarea style="border-color:black;width:50%;" class="form-control" rows="1" id="link" name="link"></textarea>
-    </div>
+
+  <div class="text-form-meu-espaco">
+    <label for="comment"> Comentário sobre o artigo:</label>
+    <textarea style="border-color:black;width:500px;border-width:1px;" class="form-control" rows="3" id="comment" name="comentario"></textarea>
   </div>
-  
-  {% csrf_token %}
-  <p>{{ form.non_field_errors }}</p>
-  <p>{{ form.arquivo.label_tag }} </p>
-  <p>
+
+  <div class="text-form-meu-espaco">
+    <label for="link">Link:</label>
+    <textarea style="border-color:black;width:500px;border-width:1px;" class="form-control" rows="1" id="link" name="link"></textarea>
+  </div>
+
+  <div class="text-form-meu-espaco">
+    {% csrf_token %}
+    {{ form.arquivo.label_tag }}
     {{ form.arquivo.errors }}
     {{ form.arquivo }}
-  </p>
-  <p><input type="submit" value="Upload" /></p>
+  </div>
+
+  <div class="text-form-meu-espaco">
+    <input style="float:right;" type="submit" value="Enviar dados" />
+  </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
