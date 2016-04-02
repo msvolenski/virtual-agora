@@ -3,6 +3,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.http import HttpResponseRedirect
 from django.utils import timezone
+from agora.models import Message
 
 from .models import Link, Article, Topico, SubTopico
 
@@ -31,7 +32,7 @@ class TopicoAdmin(admin.ModelAdmin):
   #setam os campos que irão aparecer no "Add adiciona Link"
   fieldsets = [
     (None,               {'fields': ['topico']}),
-    
+
     #('Data de publicação', {'fields': ['pub_date']}),
   ]
 
@@ -53,69 +54,75 @@ class TopicoAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
 
-    
-    list_filter = ['tags']    
-    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo'] 
+
+    list_filter = ['tags']
+    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo']
     fieldsets = [
         (None,               {'fields': ['title']}),
-              
+
         ('Conteúdo', {'fields': ['article']}),
-        ('Tags', {'fields': ['tags']}), 
-        ('Questões associada a este Artigo', {'fields': ['questao_associada']}),          
-        ('Data de Pubicação:', {'fields': ['publ_date']}), 
-         
+        ('Tags', {'fields': ['tags']}),
+        ('Questões associada a este Artigo', {'fields': ['questao_associada']}),
+        ('Data de Pubicação:', {'fields': ['publ_date']}),
+
     ]
-   
-    
-    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')   
-     
-    
+
+
+    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')
+
+
     def destacar_artigo(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
-            return         
-        else:
-            Article.objects.all().update(destaque = 'Não')            
-            queryset.update(destaque = 'Sim')
-            
             return
-            
-    def publicar_na_pagina_principal(modeladmin, request, queryset):             
-            queryset.update(published = 'Sim')            
-            queryset.update(publ_date = timezone.now())           
-            return 
-    
-    def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):             
+        else:
+            Article.objects.all().update(destaque = 'Não')
+            queryset.update(destaque = 'Sim')
+
+            return
+
+    def publicar_na_pagina_principal(modeladmin, request, queryset):
+            queryset.update(published = 'Sim')
+            queryset.update(publ_date = timezone.now())
+            x = Message(kind='1',message="Novo artigo inserido:{id}", published='Sim', publ_date=timezone.now())
+            for title in queryset:
+                t = title.title
+            x.message="Novo artigo inserido: {id}".format(id=t)
+            x.save()
+
+            return
+
+    def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):
             queryset.update(published = 'Não')
             return
-            
-    def mostrar_o_artigo(modeladmin, request, queryset):             
+
+    def mostrar_o_artigo(modeladmin, request, queryset):
          if queryset.count() != 1:
             modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
-            return         
-         else:                      
-             selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME) 
-             ct = ContentType.objects.get_for_model(queryset.model)            
-             return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s%s" % ( "", ",".join(selected)) )         
+            return
+         else:
+             selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
+             ct = ContentType.objects.get_for_model(queryset.model)
+             return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s%s" % ( "", ",".join(selected)) )
             #return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s&ids=%s")
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          # a = queryset.values('address')   
+
+
+
+
+
+
+
+
+
+          # a = queryset.values('address')
             #response = HttpResponse(content_type="www.uol.com.br")
-            
+
             #return response
-    
-        
-    
-    #search_fields = ['titulo']    
-    
+
+
+
+    #search_fields = ['titulo']
+
 
 admin.site.register(Topico, TopicoAdmin )
 admin.site.register(SubTopico, SubTopicoAdmin )

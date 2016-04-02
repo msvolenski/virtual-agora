@@ -35,7 +35,7 @@
     {% else %}
     <strong>{{user.user.primeiro_nome}}{{user.primeiro_nome}}</strong>,
     {% endif %}
-    gostaria de sugerir artigos para leitura? Envie-nos através de um link ou faça upload de um arquivo pdf. Selecione também a categoria que o artigo se refere:
+    gostaria de nos enviar outras sugestões?
   </div>
 
   {% for message in messages %}
@@ -45,8 +45,8 @@
   </div></br>
   {% endfor %}
 
-  <form action="{% url 'agora:envia-espaco-artigo' %}" method="POST" role="form" enctype="multipart/form-data">
-    <div class="text-form-meu-espaco"> Selecione a categoria do artigo:
+  <form action="{% url 'agora:envia-espaco-outros' %}" method="POST" role="form" enctype="multipart/form-data">
+    <div class="text-form-meu-espaco"> A qual categoria sua sugestão pertence?
       <select id="categoria" name="categoriatag">
         {% for tag in tags %}
         <option value="{{tag}}"
@@ -61,7 +61,7 @@
   </div>
 
   <div class="text-form-meu-espaco">
-    <label for="comment"> Comentário sobre o artigo:</label>
+    <label for="comment"> Comente: </label>
     <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="3" id="comment" name="comentario"></textarea>
   </div>
 

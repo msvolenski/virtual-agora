@@ -24,11 +24,65 @@ from django.core.exceptions import ValidationError
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
+class MeuEspacoOutrosView(generic.ListView):
+  template_name = 'agora/meu-espaco-outros.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(MeuEspacoOutrosView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    tags = Tag.objects.all().distinct()
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    context['tags'] = tags
+    context['form'] = DocumentForm
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+class MeuEspacoQuestaoView(generic.ListView):
+  template_name = 'agora/meu-espaco-questao.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(MeuEspacoQuestaoView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    tags = Tag.objects.all().distinct()
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    context['tags'] = tags
+    context['form'] = DocumentForm
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
 class MeuEspacoArtigoView(generic.ListView):
   template_name = 'agora/meu-espaco.html'
 
   def get_context_data(self, **kwargs):
     context = super(MeuEspacoArtigoView, self).get_context_data(**kwargs)
+    u = User.objects.get(user=self.request.user)
+    tags = Tag.objects.all().distinct()
+    context['user'] = User.objects.get(user=self.request.user)
+    context['nickname'] = u.nickname
+    context['tags'] = tags
+    context['form'] = DocumentForm
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+class MeuEspacoDebateView(generic.ListView):
+  template_name = 'agora/meu-espaco-debate.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(MeuEspacoDebateView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
     tags = Tag.objects.all().distinct()
     context['user'] = User.objects.get(user=self.request.user)
@@ -487,6 +541,7 @@ def enviaDadosMeuEspaco(request):
                 messages.error(request, "URL incorreta. Envie novamente.")
                 return redirect(request.META['HTTP_REFERER'])
         form = DocumentForm(request.POST, request.FILES)
+
         if form.is_valid():
             if request.FILES['arquivo'].name.endswith('.pdf'):
                 x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'])
@@ -506,6 +561,91 @@ def enviaDadosMeuEspaco(request):
             return redirect(request.META['HTTP_REFERER'])
         else:
             messages.error(request, "Você não enviou nenhum artigo. Caso queira enviar apenas um comentário vá em outras sugestões")
+            return redirect(request.META['HTTP_REFERER'])
+    else:
+        return redirect(request.META['HTTP_REFERER'])
+
+
+def enviaDadosMeuEspacoDebate(request):
+        us = User.objects.get(user=request.user)
+        user = us.user
+        if request.method == 'POST':
+            categoria = request.POST['categoriatag']
+            comentario = request.POST['comentario']
+            link = request.POST['link']
+            if link != '':
+                validate = URLValidator()
+                try:
+                    validate(link)
+                except:
+                    messages.error(request, "URL incorreta. Envie novamente.")
+                    return redirect(request.META['HTTP_REFERER'])
+            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Debate')
+            x.save()
+            success = True
+            if success == True and comentario !='' or link !='':
+                messages.success(request, "Dados enviados com sucesso")
+                return redirect(request.META['HTTP_REFERER'])
+            else:
+                messages.error(request, "Nenhum dado foi enviado")
+                return redirect(request.META['HTTP_REFERER'])
+        else:
+            return redirect(request.META['HTTP_REFERER'])
+
+def enviaDadosMeuEspacoQuestao(request):
+        us = User.objects.get(user=request.user)
+        user = us.user
+        if request.method == 'POST':
+            categoria = request.POST['categoriatag']
+            comentario = request.POST['comentario']
+            link = request.POST['link']
+            if link != '':
+                validate = URLValidator()
+                try:
+                    validate(link)
+                except:
+                    messages.error(request, "URL incorreta. Envie novamente.")
+                    return redirect(request.META['HTTP_REFERER'])
+            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Questão')
+            x.save()
+            success = True
+            if success == True and comentario !='' or link !='':
+                messages.success(request, "Dados enviados com sucesso")
+                return redirect(request.META['HTTP_REFERER'])
+            else:
+                messages.error(request, "Nenhum dado foi enviado")
+                return redirect(request.META['HTTP_REFERER'])
+        else:
+            return redirect(request.META['HTTP_REFERER'])
+
+def enviaDadosMeuEspacoOutros(request):
+    us = User.objects.get(user=request.user)
+    user = us.user
+    if request.method == 'POST':
+        categoria = request.POST['categoriatag']
+        comentario = request.POST['comentario']
+        link = request.POST['link']
+        if link != '':
+            validate = URLValidator()
+            try:
+                validate(link)
+            except:
+                messages.error(request, "URL incorreta. Envie novamente.")
+                return redirect(request.META['HTTP_REFERER'])
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            if request.FILES['arquivo'].name.endswith('.pdf'):
+                x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'])
+                x.save()
+                success = True
+                if success == True:
+                    messages.success(request, "Dados enviados com sucesso.")
+                    return redirect(request.META['HTTP_REFERER'])
+
+        else:
+            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros')
+            x.save()
+            messages.success(request, "Dados enviados com sucesso.")
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])

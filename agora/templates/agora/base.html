@@ -51,15 +51,15 @@
     <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;">
       <div class="container">
         <div class="dropup">
-          <a id="menu1" data-toggle="dropdown"><img id="unicamp4" src="{% static "agora/images/agora-icone-menu.png" %}" height="40" width="40"></img>
+          <a id="menu1" data-toggle="dropdown"><img id="unicamp4" src="{% static "agora/images/agora-icone-menu.png" %}" height="50" width="50"></img>
           </a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
             <li role="presentation"><center>Meu Espaço</center></li>
             <li role="presentation" class="divider"></li>
             <li role="presentation"><a href="#myModal1" style="color:#00c0ef" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal1"><center>Sugira artigos</center></a></li>
-            <li role="presentation"><a style="color:#f56954" role="menuitem" tabindex="-1" href="#"><center>Sugira debates</center></a></li>
-            <li role="presentation"><a style="color:#12d673"role="menuitem" tabindex="-1" href="#"><center>Sugira questões</center></a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><center>Outras sugestões</center></a></li>
+            <li role="presentation"><a style="color:#f56954" href="#myModal2" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal2"><center>Sugira debates</center></a></li>
+            <li role="presentation"><a style="color:#12d673" href="#myModal3" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal3"><center>Sugira questões</center></a></li>
+            <li role="presentation"><a href="#myModal4" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal4"><center>Outras sugestões</center></a></li>
           </ul>
         </div>
       </div>
@@ -71,7 +71,49 @@
           <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <iframe margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="580px"src="{% url 'agora:meu-espaco-artigo' %}"></iframe>
+          <iframe margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="590px"src="{% url 'agora:meu-espaco-artigo' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="510px"src="{% url 'agora:meu-espaco-debate' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal3" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="510px"src="{% url 'agora:meu-espaco-questao' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal4" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="590px"src="{% url 'agora:meu-espaco-outros' %}"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
@@ -168,6 +210,18 @@
 
   <script>
   $('#myModal').modal('show')
+  </script>
+
+  <script>
+  $('#myModa12').modal('show')
+  </script>
+
+  <script>
+  $('#myModa13').modal('show')
+  </script>
+
+  <script>
+  $('#myModa14').modal('show')
   </script>
 
 </body>

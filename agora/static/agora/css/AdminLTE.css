@@ -3703,11 +3703,14 @@ fieldset[disabled] .btn-vk.active {
   margin:0 auto;
   padding:5px;
   font-weight:bold;
+  
+
 }
 
 .mural-box{
   margin:0 auto;
   width:100%;
+
 }
 
 .mural-box-section{
@@ -3715,7 +3718,7 @@ fieldset[disabled] .btn-vk.active {
   float:left;
   width:50%;
   padding:5px;
-  height:320px;
+  height:220px;
   overflow:auto;
 }
 

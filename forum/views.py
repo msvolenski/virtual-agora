@@ -34,6 +34,7 @@ class ForumHomeView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
+    context['cat'] = Category.objects.all()
     return context
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
