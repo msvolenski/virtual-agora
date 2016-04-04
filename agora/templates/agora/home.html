@@ -22,7 +22,7 @@
     </div>
     <div class="mural-box-section" style="background:#00c0ef;">
       {% for msg in message_conheca %}
-      <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
+      <p><a href="#" style="color:black;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></a></p>
       {% endfor %}
     </div>
     <div class="mural-box-section" style="background:#12d673;">

@@ -17,7 +17,7 @@ class ChoiceInline(admin.TabularInline):
 class MessageAdmin(admin.ModelAdmin):
     actions=['publicar_no_mural','desfazer_publicacao_no_mural']
     fields = ['kind','message','publ_date']
-    list_display = ['kind','message','published','publ_date']
+    list_display = ['kind','message','published','publ_date','address']
 
     def publicar_no_mural(modeladmin, request, queryset):
             queryset.update(published = 'Sim')

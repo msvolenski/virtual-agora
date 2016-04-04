@@ -1,11 +1,10 @@
-﻿from django.db import models
+# -*- coding: utf-8 -*-
+from django.db import models
 from django.utils import timezone
 from django.conf import settings
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
-
-
 
 class Article(models.Model):
 
@@ -36,20 +35,9 @@ class Article(models.Model):
 
 class Topico(models.Model):
 
-
-  def position_det():
-    try:
-      tpc = Topico.objects.latest('position')
-    except (KeyError, Topico.DoesNotExist):
-      return 1
-    a = tpc.position
-    a = a + 1
-    return a
-
-
   topico = models.CharField(max_length=200)
   address_topico = models.CharField(max_length=200)
-  position = models.IntegerField(default=position_det)
+  position = models.IntegerField(default=1)
 
   def __str__(self):
     return self.topico
