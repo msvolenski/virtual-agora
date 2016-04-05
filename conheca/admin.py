@@ -92,7 +92,6 @@ class ArticleAdmin(admin.ModelAdmin):
             x.message="Novo artigo inserido: {id}".format(id=t)
             x.address = a
             x.save()
-
             return
 
     def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):

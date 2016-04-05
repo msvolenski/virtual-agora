@@ -37,13 +37,25 @@ class QuestionAdmin(admin.ModelAdmin):
   actions = ['publish_question', 'unpublish_question']
 
   def publish_question(self, request, queryset):
-    rows_updated = queryset.update(question_status='p')
-    if rows_updated == 1:
-      message_bit = "1 questão foi publicada"
+    if queryset.count() != 1:
+        message_bit = "Não é possível publicar mais de uma questão por vez."
+        self.message_user(request, message_bit)
+        return
     else:
-      message_bit = "%s questões foram publicadas" % rows_updated
-    self.message_user(request, "%s com sucesso." % message_bit)
-  publish_question.short_description = "Publicar questões"
+        queryset.update(question_status='p')
+        message_bit = "Questão publicada"
+        queryset.update(publ_date = timezone.now())
+        x = Message(kind='4', published='Sim', publ_date=timezone.now())
+        for title in queryset:
+            t = title.question_text
+            a = title.address
+        x.message="Nova questão inserida: {id}".format(id=t)
+        x.address = a
+        x.save()
+        self.message_user(request, message_bit)
+        return
+  publish_question.short_description = "Publicar questão"
+
 
   def unpublish_question(self, request, queryset):
     rows_updated = queryset.update(question_status='n')

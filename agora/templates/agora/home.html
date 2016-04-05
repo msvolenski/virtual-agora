@@ -27,24 +27,32 @@
     </div>
     <div class="mural-box-section" style="background:#12d673;">
       {% for msg in message_participe %}
-      <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
+      <p><a href="#" style="color:black;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></a></p>
       {% endfor %}
     </div>
     <div class="mural-box-section" style="background:#f39c12;">
       {% for msg in message_resultados %}
-      <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
+      <p><a href="#" style="color:black;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></a></p>
       {% endfor %}
     </div>
     <div class="mural-box-section" style="background:#f56954;">
       {% for msg in message_comunidade %}
-      <p><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></p>
+      <p><a href="#" style="color:black;" onclick="window.open('{% url 'forum:topic' msg.address %}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><li class="mural-msg-font">{{msg.message}}<font class="mural-date-font">{{msg.publ_date|date:'d-m-Y H:i'}}</font></li></a></p>
       {% endfor %}
     </div>
     <div class="mural-pad" style="float:left;margin-bottom:20px;"> Não deixe de participar! Vote!
     </div>
   </div>
 
+  {% set x = 0 %}
+  {% for question in not_answered %}
+  {% if question.id|slugify == first_question %}
+    {% set x = 1 %}
+  {% endif %}
+  {% endfor %}
+
   {% if not_answered %}
+  {% if x == 1 %}
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="modal-dialog-mob">
@@ -115,6 +123,7 @@
       </div>
     </div>
   </div>
+  {%endif%}
   {%endif%}
   <script>
   $('#myModal').modal('show')

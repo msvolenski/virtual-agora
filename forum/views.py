@@ -21,6 +21,9 @@ class ForumHomeView(generic.ListView):
   model = Category
   context_object_name = 'categories_list'
 
+  def get_queryset(self):
+    return Category.objects.filter(topic__published='Sim')
+
   def get_context_data(self, **kwargs):
     context = super(ForumHomeView, self).get_context_data(**kwargs)
     context['topic'] = Topic.objects.all()
@@ -34,8 +37,10 @@ class ForumHomeView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
-    context['cat'] = Category.objects.all()
+    context['cat'] = Category.objects.filter(topic__published='Sim')
     return context
+
+
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')

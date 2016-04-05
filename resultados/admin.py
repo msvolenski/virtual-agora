@@ -5,7 +5,8 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.core import serializers
 from django.contrib.contenttypes.models import ContentType
-from agora.models import Question
+from agora.models import Question, Message
+
 
 class Relatorio_geralAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -38,7 +39,15 @@ class RelatorioAdmin(admin.ModelAdmin):
                 queryset.update(published = 'Sim')
                 queryset.update(publ_date = timezone.now())
                 queryset.update(publhistorico = 'Sim')
-
+                x = Message(kind='2', published='Sim', publ_date=timezone.now())
+                for title in queryset:
+                    t = title.titulo
+                    a = title.address
+                x.message="Novo relatório inserido: {id}".format(id=t)
+                x.address = a
+                x.save()
+                message_bit = "Relatório publicado" 
+                modeladmin.message_user(request, message_bit)
                 for object in queryset:
                     if object.tipo == '2':
                         ids=object.questao.id
@@ -46,6 +55,10 @@ class RelatorioAdmin(admin.ModelAdmin):
                         a.answer_status = 'p' #atualiza variaivel de question que indica se foi publicado
                         a.save()
                         return
+                return
+    publicar.short_description = "Publicar relatório"
+
+
 
     def desfazer_publicacao(modeladmin, request, queryset):
         if queryset.count() != 1:

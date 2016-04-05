@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from django.db import models
 from django import forms
 from django.contrib.auth.models import User as AuthUser
@@ -7,6 +6,7 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+
 
 
 class Category(models.Model):
@@ -31,13 +31,13 @@ class Topic(models.Model):
   text = RichTextUploadingField(config_name='default', verbose_name=u'Texto')
   pub_date = models.DateTimeField('Data de publicação')
   tags = TaggableManager()
+  published = models.CharField('Publicado?',max_length=3, default='Não')
 
   def __str__(self):
     return self.title
 
   def save(self, *args, **kwargs):
     """On save, update timestamps"""
-
     if not self.id:
       self.pub_date = timezone.now()
     return super(Topic, self).save(*args, **kwargs)
@@ -45,6 +45,7 @@ class Topic(models.Model):
   class Meta:
     verbose_name = 'tópico'
     verbose_name_plural = 'tópicos'
+
 
 class User(models.Model):
   """Extends User model from Authentication app"""
