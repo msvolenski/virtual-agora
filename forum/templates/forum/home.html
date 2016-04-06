@@ -52,8 +52,8 @@
 
       {% for answer in topic.topicanswer_set.all %}
       <div class="render-response">
-        <div class="forum-username">{{ answer.user}}{% if nickname %}
-        ({{nickname}})
+        <div class="forum-username">{{ answer.user}}{% if answer.user.user.user.nickname %}
+        ({{answer.user.user.user.nickname}})
         {% endif %}&nbsp;&nbsp;
         </div>
         <div contenteditable="true" class="sub-title-topic" id="test">{{ answer.text|safe|linebreaks }}

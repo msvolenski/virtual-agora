@@ -3703,7 +3703,7 @@ fieldset[disabled] .btn-vk.active {
   margin:0 auto;
   padding:5px;
   font-weight:bold;
-  
+
 
 }
 
@@ -3854,7 +3854,36 @@ fieldset[disabled] .btn-vk.active {
     font-weight: bold;
 }
 
+.iframe-height{
+  height:590px;
+}
+
+.iframe-height2{
+    height:510px;
+}
+
 @media (max-width: 765px) {
+  .iframe-height2{
+      height:410px;
+  }
+
+  .iframe-height{
+    height:490px;
+  }
+
+  .header-meu-espaco{
+      padding:5px;
+      font-size:12px;
+  }
+
+  .text-form-meu-espaco{
+      padding:5px;
+      font-size:12px;
+      font-weight: bold;
+      padding-top:10px;
+      padding-bottom:10px;
+  }
+
   .agora-image{
     width:100px;
   }
@@ -3955,9 +3984,9 @@ fieldset[disabled] .btn-vk.active {
 
   .mural-box-section{
     float:left;
-    width:50%;
+    width:100%;
     padding:3px;
-    height:100px;
+    height:90px;
     overflow:auto;
     font-size:12px;
   }

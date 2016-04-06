@@ -4,17 +4,20 @@
 {% block content12 %}
 
 
-  <div class="my-div" style="height:100%;">
-    <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto</div>
-    <div class="agora-title" style="">Termo</div>
-    <div class="agora-subtitle"> Bla bla bla Bla bla blaBla bla blaBla bla bla </div>
+<div class="my-div" style="height:100%;">
+  <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto Ágora Virtual - Unicamp. </div>
+  <div class="agora-title" style="">Termo de Consentimento Livre e Esclarecido</div>
+  <div class="agora-subtitle"> termo </div>
 
-    <ul class="nav">
-      <form action="{% url 'agora:term_accepted' %}" method="post">
-        <input id="button-forum" class="btn btn-default btn-info" type="submit" value="Aceito" /></center>
-      </form>
-      <form action="{% url 'agora:term_not_accepted' %}" method="post">
-        <input id="button-forum" class="btn btn-default btn-info" type="submit" value="Não Aceito" /></center>
-      </form>
+
+
+    <form action="{% url 'agora:term_accepted' %}" method="post" >
+      <input style="margin:1 auto;float:left" id="button-forum" class="btn btn-default btn-info" type="submit" value="Aceito" /></center>
+    </form>
+    <form action="{% url 'agora:term_not_accepted' %}" method="post">
+      <input style="margin:1 auto;float:left" id="button-forum" class="btn btn-default btn-info" type="submit" value="Não Aceito" /></center>
+    </form>
+
+</div>
 
 {% endblock content12 %}
