@@ -12,9 +12,7 @@ urlpatterns = [
   url(r'^meuespacodebate/envia/$', views.enviaDadosMeuEspacoDebate, name='envia-espaco-debate'),
   url(r'^meuespacoquestao/envia/$', views.enviaDadosMeuEspacoQuestao, name='envia-espaco-questao'),
   url(r'^meuespacooutros/envia/$', views.enviaDadosMeuEspacoOutros, name='envia-espaco-outros'),
-  url(r'^termo/$', views.TermoView.as_view(), name='termo'),
-  url(r'^termo/accepted/$', views.term_accepted, name='term_accepted'),
-  url(r'^termo/notaccepted/$', views.term_not_accepted, name='term_not_accepted'),
+ 
   url(r'^pdpu/home/$', views.HomeView.as_view(), name='home'),
   url(r'^pdpu/paginainicial/$', views.PdpuView.as_view(), name='pdpu'),
   url(r'^pdpu/participe/$', views.PdpuParticipeView.as_view(), name='pdpu-participe'),

@@ -6,9 +6,13 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
 from django.contrib.auth.models import User as AuthUser
-from agora.models import Choice, Question, User, InitialListQuestion, Message, MeuEspacoArtigo
+from agora.models import Choice, Question, InitialListQuestion, Message, MeuEspacoArtigo
 from .decorators import term_required
 from django.views import generic
+from .models import Termo, User, Answer
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render,render_to_response,redirect
+from django.core.urlresolvers import reverse
 
 
 
@@ -43,6 +47,18 @@ class AgoraView(generic.ListView):
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     return context
+
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+class TermoView(generic.ListView):
+  template_name = 'agoraunicamp/termo.html'
+
+  def get_queryset(self):
+    return
+
+
+
+
+
 
 def agoraconfiguracaoapelido(request):
     username = AuthUser.objects.get(username=request.user)
@@ -96,3 +112,16 @@ def agoraconfiguracaoapelidoremove(request):
     else:
         messages.error(request, error_message)
         return redirect(request.META['HTTP_REFERER'])
+
+
+def term_accepted(request):
+    username = AuthUser.objects.get(username=request.user)
+    user = username.user
+    cond = Termo.objects.get(user=user)
+    cond.delete()
+    cond1 = Termo(user=user,condition='Sim')
+    cond1.save()
+    return HttpResponseRedirect(reverse('agora:home'))
+
+def term_not_accepted(request):
+    return HttpResponseRedirect(reverse('agoraunicamp:login'))

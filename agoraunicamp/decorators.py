@@ -14,7 +14,7 @@ def term_required(function):
         if cond.condition == 'Sim':
             return function(request, *args, **kwargs)
         else:
-            return HttpResponseRedirect(reverse('agora:termo'))
+            return HttpResponseRedirect(reverse('agoraunicamp:termo'))
     wrap.__doc__ = function.__doc__
     wrap.__name__ = function.__name__
     return wrap

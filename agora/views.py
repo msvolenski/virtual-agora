@@ -96,13 +96,6 @@ class MeuEspacoDebateView(generic.ListView):
     return Question.objects.all()
 
 
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
-class TermoView(generic.ListView):
-  template_name = 'agora/termo.html'
-
-  def get_queryset(self):
-    return
-
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
