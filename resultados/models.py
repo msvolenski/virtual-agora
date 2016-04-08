@@ -33,7 +33,7 @@ class Relatorio(models.Model):
 
     def save(self, *args, **kwargs):
         super(Relatorio, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/pdpu/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
         return super(Relatorio, self).save(*args, **kwargs)
 
 class Likedislike(models.Model):

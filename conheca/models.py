@@ -25,7 +25,7 @@ class Article(models.Model):
 
     def save(self, *args, **kwargs):
         super(Article, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/pdpu/conheca/artigos/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/conheca/artigos/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
         return super(Article, self).save(*args, **kwargs)
 
     class Meta:
@@ -51,7 +51,7 @@ class Topico(models.Model):
 
   def save(self, *args, **kwargs):
       super(Topico, self).save(*args, **kwargs)
-      self.address_topico = "{SITE_URL}agora/pdpu/conheca/topicos/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
+      self.address_topico = "{SITE_URL}agora/conheca/topicos/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
       return super(Topico, self).save(*args, **kwargs)
 
 class SubTopico(models.Model):

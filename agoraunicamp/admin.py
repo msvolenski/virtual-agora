@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import User, Answer, Termo, MeuEspaco
+from .models import User, Answer, Termo, MeuEspaco, Message
 from django.http import HttpResponse
 from django.core import serializers
 from django.shortcuts import render
@@ -24,6 +24,22 @@ class TermoAdmin(admin.ModelAdmin):
 class MeuEspacoAdmin(admin.ModelAdmin):
   list_display = ['user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
 
+class MessageAdmin(admin.ModelAdmin):
+    actions=['publicar_no_mural','desfazer_publicacao_no_mural']
+    fields = ['kind','message','publ_date']
+    list_display = ['kind','message','published','publ_date','address']
+
+    def publicar_no_mural(modeladmin, request, queryset):
+            queryset.update(published = 'Sim')
+            queryset.update(publ_date = timezone.now())
+            return
+
+    def desfazer_publicacao_no_mural(modeladmin, request, queryset):
+            queryset.update(published = 'Não')
+            return
+
+
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Termo, TermoAdmin)
 admin.site.register(MeuEspaco, MeuEspacoAdmin)
+admin.site.register(Message, MessageAdmin)

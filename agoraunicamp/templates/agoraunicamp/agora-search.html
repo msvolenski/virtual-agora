@@ -1,0 +1,187 @@
+{% extends 'agoraunicamp/base.html' %}
+{% load staticfiles %}
+{% load set_var %}
+{% block content12 %}
+
+<div class="project-header" style="background:#ffffff">
+  <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
+  <h1>Plano Diretor Participativo - UNICAMP</h1>
+  <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
+  <ul class="nav">
+    <li style="background: #e2e0e0"><a href="{% url 'agoraunicamp:mural' %}">Home</a></li>
+    <li style="background: #f7f7f7"><a href="{% url 'agoraunicamp:paginainicial' %}">Página Inicial</a></li>
+    <li style="background: #00c0ef"><a href="{% url 'conheca:conheca' %}">Conheça</a></li>
+    <li style="background: #12d673"><a href="{% url 'agora:participe' %}">Participe</a></li>
+    <li style="background: #f39c12"><a href="{% url 'resultados:resultados' %}">Resultados</a></li>
+    <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
+  </ul>
+</div>
+
+<div class="time-line-page-search">
+<div class="header-search">
+  <div class="search-title">Busca por categoria: &nbsp</div>
+  <div style="float:left;" id="tags" class="btn-xs btn-default btn-info" />{{ tag }}</div>
+</div>
+</br></br>
+{% for t in timeline %}
+{%if t|to_class_name == 'Article' %}
+<div class="header-tm-article">
+  <div class="box-article">
+    <div class="box-header-article">Artigo
+    </div>
+    <div class="box-article-content">
+      <p>
+        {% for tag in t.tags.all %}
+        <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+          <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+        </form>
+        {% endfor %}
+        <div class="pub-style"><strong>Publicado em:</strong>{{ t.publ_date }}</div>
+      </form>
+    </p>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    <div class="box-article-title">{{ t.title|safe  }}</div>
+
+    {% if t.article|linebreaks|length > 600 %}
+    <div class="article">{{t.article|truncatechars_html:590|safe}}
+      <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a></div>
+      {% else %}
+      <div class="article">{{t.article|safe}}</div>
+      {% endif %}
+      <br>
+      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+      </div>
+      {% for questao_associada in Article.split_numbers %}
+      {% for question in not_answered %}
+      {% set x == 0 %}
+      {% if questao_associada == question.id|slugify %}
+      {% set x = 1 %}
+      {% if x == 1 %}
+      Leu o artigo? Talvez possa se interessar em responder:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+      {%endif%}
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</br>
+{% endif %}
+
+
+
+{%if t|to_class_name == 'Question' %}
+<div class="header-tm-article">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ message }}
+  </div>
+  {% endfor %}
+</br>
+<div class="box-question-tm">
+  <div class="box-question-title">Questão {{question.id}}
+  </div>
+  <div class="box-question-header">
+    <p>
+      {% for tag in t.tags.all %}
+      <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+        <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+      </form>
+      {% endfor %}
+      <strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
+      <strong>Expira em:</strong> {{ t.exp_date }}
+    </p>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    <div class="question-title">{{ t }}</div>
+    {% if t.image %}
+    <img src="{{ t.image.url }}" width="350px" height="250px" /></br></br>
+    {% endif %}
+    <form action="{% url 'agora:vote_timeline' t.id %}" method="post">
+      {% csrf_token %}
+      {% if t.question_type == '1' %}
+      <ul class="list-group">
+        {% for choice in t.choice_set.all %}
+        <div class="list-group-item">
+          <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+          <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+        </div>
+        {% endfor %}
+      </ul>
+      {% elif t.question_type == '2' %}
+      <ul class="list-group">
+        {% for choice in t.choice_set.all %}
+        <div class="list-group-item">
+          <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+          <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+        </div>
+        {% endfor %}
+      </ul>
+      {% elif t.question_type == '3' %}
+      <textarea class="form-control" name="text" id="question_text{{ t.id }}" value="" rows="3"></textarea><br/>
+      {% endif %}
+      <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+    </form>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
+  </div>
+</div>
+</div></br>
+{% endif %}
+
+
+{%if t|to_class_name == 'Relatorio' %}
+
+<div class="box-result-tm">
+  <div class="box-result-title">
+    {% if Relatorio.questao == None %}
+    Resultado Geral
+    {% endif %}
+
+    {% if Relatorio.questao != None %}
+    Resultado {{ t.questao }}
+    {% endif %}
+
+  </div>
+  <div id="relatorio{{t.id}}" class="box-result-content">
+    <p>
+      {% for tag in t.tags.all %}
+      <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+        <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+      </form>
+      {% endfor %}
+      <strong>Publicado em:</strong> {{ t.publ_date }}
+    </p>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    {% if t.conteudo|linebreaks|length > 600 %}
+    {{t.conteudo|truncatechars_html:590|safe}}
+    <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
+    {% else %}
+    {{t.conteudo|safe}}
+    {% endif %}
+    <br>
+    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+    </div>
+    &nbsp;&nbsp;
+    <form  style="display:inline-block;" action="{% url 'resultados:like' t.id %}" method="post">
+      {% csrf_token %}
+      <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
+    </form>
+    &nbsp;
+    <form style="display:inline-block;" action="{% url 'resultados:dislike' t.id %}" method="post">
+      {% csrf_token %}
+      <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{t.dislike}}
+    </form>
+  </div>
+</div>
+</br>
+{% endif %}
+{% endfor %}
+</div>
+
+
+
+
+{% endblock content12 %}

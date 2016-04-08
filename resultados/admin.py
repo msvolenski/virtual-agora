@@ -5,7 +5,8 @@ from django.utils import timezone
 from django.http import HttpResponseRedirect
 from django.core import serializers
 from django.contrib.contenttypes.models import ContentType
-from agora.models import Question, Message
+from agora.models import Question
+from agoraunicamp.models import Message
 
 
 class Relatorio_geralAdmin(admin.ModelAdmin):
@@ -46,7 +47,7 @@ class RelatorioAdmin(admin.ModelAdmin):
                 x.message="Novo relatório inserido: {id}".format(id=t)
                 x.address = a
                 x.save()
-                message_bit = "Relatório publicado" 
+                message_bit = "Relatório publicado"
                 modeladmin.message_user(request, message_bit)
                 for object in queryset:
                     if object.tipo == '2':

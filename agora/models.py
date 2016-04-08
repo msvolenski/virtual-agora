@@ -7,7 +7,7 @@ from taggit.managers import TaggableManager
 from forum.models import User as Userf
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from agoraunicamp.models import User
+from agoraunicamp.models import User, Message
 
 
 
@@ -57,7 +57,7 @@ class Question(models.Model):
             self.publ_date = timezone.now()
         self.update_expiration_time()
         super(Question, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/pdpu/participe/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/participe/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
         return super(Question, self).save(*args, **kwargs)
 
     def update_expiration_time(self):
@@ -132,16 +132,3 @@ class InitialListQuestion(models.Model):
     class Meta:
         verbose_name = 'Lista de Questões para o Home'
         verbose_name_plural = 'Lista de Questões para o Home'
-
-class Message(models.Model):
-        MESSAGE_TYPE = (
-            ('1', 'Conheça'),
-            ('2', 'Resultados'),
-            ('3', 'Comunidade'),
-            ('4', 'Participe'),
-        )
-        published = models.CharField('Publicado?',max_length=3, default='Não')
-        kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
-        publ_date = models.DateTimeField('Data de publicação')
-        message = models.CharField('Recado', max_length=500)
-        address = models.CharField('Endereço',max_length=200, blank=True)

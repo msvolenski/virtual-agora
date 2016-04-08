@@ -116,3 +116,16 @@ class MeuEspaco(models.Model):
     comentario =  models.CharField('Comentário',max_length=200, blank=True)
     secao = models.CharField('Seção',max_length=30, blank=True)
     arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)
+
+class Message(models.Model):
+        MESSAGE_TYPE = (
+            ('1', 'Conheça'),
+            ('2', 'Resultados'),
+            ('3', 'Comunidade'),
+            ('4', 'Participe'),
+        )
+        published = models.CharField('Publicado?',max_length=3, default='Não')
+        kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
+        publ_date = models.DateTimeField('Data de publicação')
+        message = models.CharField('Recado', max_length=500)
+        address = models.CharField('Endereço',max_length=200, blank=True)

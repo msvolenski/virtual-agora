@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from django.utils import timezone
-from agora.models import Message
+from agoraunicamp.models import Message
 
 from .models import Category, Topic, TopicAnswer, Like
 

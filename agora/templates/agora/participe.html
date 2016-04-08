@@ -1,0 +1,80 @@
+{% extends 'agoraunicamp/base.html' %}
+{% load set_var %}
+{% block content12 %}
+
+
+<div style="background: #12d673" class="project-header">
+  <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
+  <h1 style="background: #12d673">Plano Diretor Participativo - UNICAMP</h1>
+  <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
+  <ul class="nav">
+    <li style="background: #e2e0e0"><a href="{% url 'agoraunicamp:mural' %}">Home</a></li>
+    <li style="background: #f7f7f7"><a href="{% url 'agoraunicamp:paginainicial' %}">Página Inicial</a></li>
+    <li style="background: #00c0ef"><a href="{% url 'conheca:conheca' %}">Conheça</a></li>
+    <li style="background: #12d673"><a href="{% url 'agora:participe' %}">Participe</a></li>
+    <li style="background: #f39c12"><a href="{% url 'resultados:resultados' %}">Resultados</a></li>
+    <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
+  </ul>
+</div>
+  <div style="margin-top:100px">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+      <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{ message }}
+    </div></br>
+    {% endfor %}
+    {% for question in not_answered %}
+    <div class="box-question">
+      <div class="box-question-title"><a href="#" style="color:black;" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Questão {{question.id}}</a>
+      </div>
+      <div class="box-question-header">
+        <p>
+          {% for tag in question.tags.all %}
+          <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+            <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+          </form>
+          {% endfor %}
+          <div class="pub-style">
+          <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
+          <strong>Expira em:</strong> {{ question.exp_date }}
+        </div>
+        </p>
+        <div class="plainlinks hlist" style="width:100%;border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;">
+        </div>
+        <div class="question-title">{{ question }}</div>
+        {% if question.image %}
+        <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
+        {% endif %}
+        <form action="{% url 'agora:vote' question.id %}" method="post">
+          {% csrf_token %}
+          {% if question.question_type == '1' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '2' %}
+          <ul class="list-group">
+            {% for choice in question.choice_set.all %}
+            <div class="list-group-item">
+              <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+              <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+            </div>
+            {% endfor %}
+          </ul>
+          {% elif question.question_type == '3' %}
+          <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
+          {% endif %}
+          <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+        </form>
+        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
+      </div>
+    </div>
+    <br />
+    {% endfor %}
+  </div>
+
+{% endblock content12 %}

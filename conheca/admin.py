@@ -4,7 +4,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.http import HttpResponseRedirect
 from django.utils import timezone
-from agora.models import Message
+from agoraunicamp.models import Message
 
 from .models import Link, Article, Topico, SubTopico
 

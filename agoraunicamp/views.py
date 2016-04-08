@@ -6,10 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
 from django.contrib.auth.models import User as AuthUser
-from agora.models import Choice, Question, InitialListQuestion, Message
+from agora.models import Choice, Question, InitialListQuestion
 from .decorators import term_required
 from django.views import generic
-from .models import Termo, User, Answer, MeuEspaco
+from .models import Termo, User, Answer, MeuEspaco, Message
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.core.urlresolvers import reverse
@@ -18,6 +18,55 @@ from .forms import DocumentForm
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from conheca.models import Article
+from resultados.models import Relatorio
+from itertools import chain
+from agora.models import Choice, Question, InitialListQuestion
+
+
+@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+class MuralView(generic.ListView):
+  template_name = 'agoraunicamp/agora-mural.html'
+
+  def get_context_data(self, **kwargs):
+    context = super(MuralView, self).get_context_data(**kwargs)
+    user = User.objects.get(user=self.request.user)
+    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    answered = Answer.objects.filter(user=user)
+    answered_questions = [a.question for a in answered]
+    not_answered = list(set(questions) - set(answered_questions))
+    try:
+        initial = InitialListQuestion.objects.filter(select=1).first() #pega a lista
+        initial_list = [c.name for c in initial.questions.all()]
+    except:
+        initial_list=[0]
+    not_answered_list=[str(f.id) for f in not_answered]
+    initial_list_user = list(set(initial_list).intersection(not_answered_list))
+    if not initial_list_user:
+        first_question = 'none'
+    else:
+        first_question = initial_list_user[0]
+    context['initial_list'] = initial_list
+    context['not_answered_list'] = not_answered_list
+    context['initial_list_user'] = initial_list_user
+    context['first_question'] = first_question
+    context['question'] = Question.objects.all()
+    context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['not_answered'].reverse()
+    context['message_participe'] =  Message.objects.filter(published='Sim',kind='4').order_by('-publ_date')
+    context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1').order_by('-publ_date')
+    context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2').order_by('-publ_date')
+    context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3').order_by('-publ_date')
+    context['nickname'] = user.nickname
+    return context
+
+  def get_queryset(self):
+    return Question.objects.all()
+
+
+
+
 
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -112,7 +161,7 @@ class AgoraConfiguracaoView(generic.ListView):
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class AgoraView(generic.ListView):
-  template_name = 'agoraunicamp/agora-inicial.html'
+  template_name = 'agoraunicamp/agora-projetos.html'
 
   def get_queryset(self):
     return
@@ -131,9 +180,36 @@ class TermoView(generic.ListView):
   def get_queryset(self):
     return
 
+@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(term_required, name='dispatch')
+#@term_required
+class PaginaInicialView(generic.ListView):
+  """PDPU home with it's subpages"""
+  template_name = 'agoraunicamp/agora-pagina-inicial.html'
 
+  def get_queryset(self):
+    return
 
-
+  def get_context_data(self, **kwargs):
+    context = super(PaginaInicialView, self).get_context_data(**kwargs)
+    user = User.objects.get(user=self.request.user)
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
+    answered = Answer.objects.filter(user=user)
+    answered_questions = [a.question for a in answered]
+    article = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    not_answered = list(set(questions) - set(answered_questions))
+    result_list = sorted(
+        chain(relatorio, article, not_answered),
+        key=lambda instance: instance.publ_date, reverse=True)
+    context['article'] = Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    context['question'] = Question.objects.all()
+    context['not_answered'] = list(set(questions) - set(answered_questions))
+    context['not_answered'].reverse()
+    context['timeline'] = result_list
+    context['nickname'] = user.nickname
+    return context
 
 
 def agoraconfiguracaoapelido(request):
@@ -327,3 +403,30 @@ def enviaDadosMeuEspacoOutros(request):
             return redirect(request.META['HTTP_REFERER'])
     else:
         return redirect(request.META['HTTP_REFERER'])
+
+
+def tag_search(request, tag_name):
+  answered_questions_tag = []
+  username = AuthUser.objects.get(username=request.user)
+  user = username.user
+  questions = Question.objects.filter(exp_date__gt=timezone.now())
+  answered = Answer.objects.filter(user=user)
+  answered_questions = [a.question for a in answered]
+  questions_tag = Question.objects.filter(tags__name__in=[tag_name]).distinct()
+  article = Article.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  not_answered = list(set(questions) - set(answered_questions))
+  not_answered_tag = list(set(questions_tag) - set(answered_questions))
+  result_list = sorted(
+        chain(relatorio, article, not_answered_tag),
+        key=lambda instance: instance.publ_date, reverse=True)
+  return render(request, 'agoraunicamp/agora-search.html',
+    { 'article' : Article.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),
+      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date'),
+      'question' : Question.objects.all(),
+      'not_answered': not_answered,
+      'not_answered_tag': answered_questions_tag,
+      'timeline': result_list,
+      'tag' : tag_name,
+
+    })

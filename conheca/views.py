@@ -17,11 +17,11 @@ from agoraunicamp.models import User, Answer
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
-class TemplatePDPUConhecaView(ListView):
+class ConhecaView(ListView):
   model = Article
 
   def get_context_data(self, **kwargs):
-    context = super(TemplatePDPUConhecaView, self).get_context_data(**kwargs)
+    context = super(ConhecaView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
     user = User.objects.get(user=self.request.user)
     context['topico'] = Topico.objects.all().order_by('position')

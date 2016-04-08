@@ -5,8 +5,10 @@ from . import views
 app_name = 'agoraunicamp'
 urlpatterns = [
   url(r'^$', views.AgoraView.as_view(), name='agora'),
+  url(r'^mural/$', views.MuralView.as_view(), name='mural'),
   url(r'^login/$', auth_views.login, name='login'),
   url(r'^logout/$', auth_views.logout, {'next_page':'/login/'}, name='logout'),
+  url(r'^search/(?P<tag_name>\w+)/$', views.tag_search, name='search'),
   url(r'^termo/$', views.TermoView.as_view(), name='termo'),
   url(r'^termo/accepted/$', views.term_accepted, name='term_accepted'),
   url(r'^termo/notaccepted/$', views.term_not_accepted, name='term_not_accepted'),
@@ -22,6 +24,7 @@ urlpatterns = [
   url(r'^meuespacodebate/envia/$', views.enviaDadosMeuEspacoDebate, name='envia-espaco-debate'),
   url(r'^meuespacoquestao/envia/$', views.enviaDadosMeuEspacoQuestao, name='envia-espaco-questao'),
   url(r'^meuespacooutros/envia/$', views.enviaDadosMeuEspacoOutros, name='envia-espaco-outros'),
+   url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
   #url(r'pdpu/conheca/$', views.TemplatePDPUConhecaView.as_view(template_name="conheca/pdpu-conheca.html"), name='pdpu-conheca'),
   #url(r'^pdpu/conheca/artigos/(?P<pk>[0-9]+)/$', views.ArticlePageView.as_view(), name='article_page'),
 ]
