@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import User, Answer, Termo
+from .models import User, Answer, Termo, MeuEspaco
 from django.http import HttpResponse
 from django.core import serializers
 from django.shortcuts import render
@@ -21,5 +21,9 @@ class AnswerAdmin(admin.ModelAdmin):
 class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
 
+class MeuEspacoAdmin(admin.ModelAdmin):
+  list_display = ['user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
+
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Termo, TermoAdmin)
+admin.site.register(MeuEspaco, MeuEspacoAdmin)

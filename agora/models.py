@@ -86,7 +86,7 @@ class Question(models.Model):
     is_answer_published.boolean = True
     is_answer_published.short_description = 'Resposta publicada?'
 
-    
+
 
     class Meta:
         verbose_name = 'questão'
@@ -194,15 +194,3 @@ class Message(models.Model):
         publ_date = models.DateTimeField('Data de publicação')
         message = models.CharField('Recado', max_length=500)
         address = models.CharField('Endereço',max_length=200, blank=True)
-
-
-
-class MeuEspacoArtigo(models.Model):
-
-    user = models.CharField('Usuario',max_length=200, blank=True)
-    categoria = models.CharField('Categoria',max_length=20, blank=True)
-    publ_date = models.DateTimeField('Data de publicação')
-    link =  models.URLField(max_length=1000, blank=True)
-    comentario =  models.CharField('Comentário',max_length=200, blank=True)
-    secao = models.CharField('Seção',max_length=30, blank=True)
-    arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)

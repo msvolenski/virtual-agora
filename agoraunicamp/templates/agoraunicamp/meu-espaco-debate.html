@@ -45,7 +45,7 @@
   </div></br>
   {% endfor %}
 
-  <form action="{% url 'agora:envia-espaco-debate' %}" method="POST" role="form" enctype="multipart/form-data">
+  <form action="{% url 'agoraunicamp:envia-espaco-debate' %}" method="POST" role="form" enctype="multipart/form-data">
     <div class="text-form-meu-espaco"> A qual categoria o debate se refere?
       <select id="categoria" name="categoriatag">
         {% for tag in tags %}
