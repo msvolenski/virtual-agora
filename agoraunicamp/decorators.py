@@ -1,7 +1,7 @@
 from functools import wraps
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.models import User
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
+from .models import User, Termo
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 

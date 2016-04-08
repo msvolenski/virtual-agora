@@ -1,6 +1,5 @@
 from django.views.generic import ListView
 from .models import Relatorio, Likedislike
-#from agora.models import QuestoesRespondidas
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import generic
@@ -10,8 +9,9 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render_to_response,redirect
 from django.template import RequestContext, Context, loader
-from agora.decorators import term_required
-from agora.models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo
+from agoraunicamp.decorators import term_required
+from agora.models import Choice, Question, InitialListQuestion, Message
+from agoraunicamp.models import User, Answer, Termo
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')

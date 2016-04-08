@@ -77,7 +77,7 @@
         </div>
         {% endif %}
         <div class="form-bottom">
-          <form role="form" action="{% url 'agora:login' %}" method="post" class="login-form">
+          <form role="form" action="{% url 'agoraunicamp:login' %}" method="post" class="login-form">
             {% csrf_token %}
             {% if next %}
             <input type="hidden" name="next" value=" " />

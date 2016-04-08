@@ -33,7 +33,7 @@
     <header class="header">
       <nav class="navbar navbar-static-top" role="navigation" style="position:fixed;top:0;width:100%;max-width:1000px;max-height:55px">
         <a href="http://www.unicamp.br"><img id="unicamp" src="{% static "agora/images/unicamp.png" %}" alt="logo unicamp" height="40" width="40" style="margin-left:10px;float:left;margin-top:7px;"></a>
-        <a href="{% url 'agora:agora' %}"><img id="unicamp2" src="{% static "agora/images/agora-icone-t.png" %}" alt="logo agora" height="35" width="35" style="margin-left:10px;float:left;margin-top:4px;margin-top:9px;"/></a>
+        <a href="{% url 'agoraunicamp:agora' %}"><img id="unicamp2" src="{% static "agora/images/agora-icone-t.png" %}" alt="logo agora" height="35" width="35" style="margin-left:10px;float:left;margin-top:4px;margin-top:9px;"/></a>
         <div style="float:right;">
           <span class="username">
             {% if nickname %}
@@ -42,8 +42,8 @@
             {{user.user.primeiro_nome}}{{user.primeiro_nome}}
             {% endif %}
           </span>
-          <a href="{% url 'agora:logout' %}" style="color:black"><span class="glyphicon glyphicon-log-out" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
-          <a href="{% url 'agora:configuracoes' %}" style="color:black"><span class="glyphicon glyphicon-wrench" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
+          <a href="{% url 'agoraunicamp:logout' %}" style="color:black"><span class="glyphicon glyphicon-log-out" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
+          <a href="{% url 'agoraunicamp:configuracoes' %}" style="color:black"><span class="glyphicon glyphicon-wrench" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
         </div>
       </nav>
     </header>

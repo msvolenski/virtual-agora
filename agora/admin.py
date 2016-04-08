@@ -6,7 +6,8 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Choice, Question, Answer, User, InitialListQuestion, Message, Termo, MeuEspacoArtigo
+from .models import Choice, Question, InitialListQuestion, Message, MeuEspacoArtigo
+from agoraunicamp.models import User
 from forum.models import User as ForumUser
 
 
@@ -83,16 +84,6 @@ class UserAdmin(UserAdmin):
     """Define a new UserAdmin"""
     inlines = [UserProfileInline, UserProfileInline2]
 
-class AnswerAdmin(admin.ModelAdmin):
-  actions = ['show_results']
-  list_display = ['userd', 'question', '__str__']
-  list_filter = ['question', 'choice']
-
-  def show_results(self, request, queryset):
-    response = HttpResponse(content_type="application/json")
-    serializers.serialize("json", queryset, stream=response)
-    return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
-  show_results.short_description = "Mostrar resultados"
 
 class InitialListQuestionAdmin(admin.ModelAdmin):
     actions = ['ativar_lista','desativar_lista']
@@ -124,8 +115,7 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
             queryset.update(select = 0)
             return
 
-class TermoAdmin(admin.ModelAdmin):
-  list_display = ['userd', 'condition']
+
 
 class MeuEspacoArtigoAdmin(admin.ModelAdmin):
   list_display = ['user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
@@ -137,6 +127,4 @@ admin.site.register(AuthUser, UserAdmin)
 admin.site.register(MeuEspacoArtigo, MeuEspacoArtigoAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Question, QuestionAdmin)
-admin.site.register(Answer, AnswerAdmin)
-admin.site.register(Termo, TermoAdmin)
 admin.site.register(InitialListQuestion, InitialListQuestionAdmin)

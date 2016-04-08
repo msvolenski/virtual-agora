@@ -33,7 +33,7 @@ SITE_URL = 'http://127.0.0.1:8000/'
 # Application definition
 INSTALLED_APPS = [
     'agora.apps.AgoraConfig',
-    'agora.templatetags',    
+    'agora.templatetags',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'resultados',
     'smart_selects',
+    'agoraunicamp',
+
 ]
 
 

@@ -11,8 +11,9 @@ from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic import ListView
 from .models import SubTopico, Article, Topico
-from agora.models import Answer, Question, User
-from agora.decorators import term_required
+from agora.models import Question
+from agoraunicamp.decorators import term_required
+from agoraunicamp.models import User, Answer
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')

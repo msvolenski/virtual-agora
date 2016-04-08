@@ -10,9 +10,9 @@ from django.http import HttpResponseRedirect
 from django.forms import modelformset_factory
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User as AuthUser
-from agora.models import User as QuestionUser
+from agoraunicamp.models import User as QuestionUser
 from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
-from agora.decorators import term_required
+from agoraunicamp.decorators import term_required
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
