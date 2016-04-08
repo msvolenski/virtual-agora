@@ -1,0 +1,226 @@
+{% load staticfiles %}
+{% load set_var %}
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+  <meta charset="UTF-8">
+  <title>Ágora Virtual - Unicamp</title>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+  <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "agora/assets/font-awesome/css/font-awesome.min.css" %}">
+  <link rel="stylesheet" href="{% static "agora/assets/css/form-elements.css" %}">
+  <link rel="shortcut icon" href="{% static "agora/assets/ico/favicon.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "agora/assets/ico/apple-touch-icon-144-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "agora/assets/ico/apple-touch-icon-114-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "agora/assets/ico/apple-touch-icon-72-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" href="{% static "agora/assets/ico/apple-touch-icon-57-precomposed.png" %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin:0;padding:0;height:100%;">
+  <div class="skin-blue pace-done fixed" style="width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);z-index:10">
+    <header class="header">
+      <nav class="navbar navbar-static-top" role="navigation" style="position:fixed;top:0;width:100%;max-width:1000px;max-height:55px">
+        <a href="http://www.unicamp.br"><img id="unicamp" src="{% static "agora/images/unicamp.png" %}" alt="logo unicamp" height="40" width="40" style="margin-left:10px;float:left;margin-top:7px;"></a>
+        <a href="{% url 'agoraunicamp:agora' %}"><img id="unicamp2" src="{% static "agora/images/agora-icone-t.png" %}" alt="logo agora" height="35" width="35" style="margin-left:10px;float:left;margin-top:4px;margin-top:9px;"/></a>
+        <div style="float:right;">
+          <span class="username">
+            {% if nickname %}
+            {{nickname}}
+            {% else %}
+            {{user.user.primeiro_nome}}{{user.primeiro_nome}}
+            {% endif %}
+          </span>
+          <a href="{% url 'agoraunicamp:logout' %}" style="color:black"><span class="glyphicon glyphicon-log-out" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
+          <a href="{% url 'agoraunicamp:configuracoes' %}" style="color:black"><span class="glyphicon glyphicon-wrench" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
+        </div>
+      </nav>
+    </header>
+
+    <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;">
+      <div class="container">
+        <div class="dropup">
+          <a id="menu1" data-toggle="dropdown"><img id="unicamp4" src="{% static "agora/images/agora-icone-menu.png" %}" height="50" width="50"></img>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><center>Meu Espaço</center></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a href="#myModal1" style="color:#00c0ef" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal1"><center>Sugira artigos</center></a></li>
+            <li role="presentation"><a style="color:#f56954" href="#myModal2" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal2"><center>Sugira debates</center></a></li>
+            <li role="presentation"><a style="color:#12d673" href="#myModal3" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal3"><center>Sugira questões</center></a></li>
+            <li role="presentation"><a href="#myModal4" role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal4"><center>Outras sugestões</center></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+      <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="100%" src="{% url 'agora:meu-espaco-artigo' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agora:meu-espaco-debate' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal3" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agora:meu-espaco-questao' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal4" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agora:meu-espaco-outros' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+
+    <div style="background:#ffffff;overflow:hidden;-webkit-box-shadow:0px 0px 7px 2px rgba(0, 0, 0, 0.2);height:100%;">
+      {% block content %}
+      {% endblock %}
+
+      {% block content12 %}
+      {% endblock %}
+    </div>
+
+  </br>
+  <div id="footer" style="background:#ffffff;width:100%;max-width:1000px;margin:0 auto;-webkit-box-shadow:  0px 0px 7px 2px rgba(0, 0, 0, 0.2);min-height:10px;padding:20px;margin-bottom:20px">
+    <div class="plainlinks hlist" style=";position:relative;width:100%;clear:both; border-top:1px solid #000000; padding-top:0.4em;font-size:95%; font-weight:bold;">Sobre o Projeto - Quem somos - Duvidas - Sugestões - etc -
+    </div>
+  </div>
+
+
+  <script>
+  $( "img" ).addClass( "imagem" );
+  </script>
+
+  <script>
+  var autoSizeText;
+  autoSizeText = function() {
+    var el, elements, _i, _len, _results;
+    elements = $('.resize');
+    console.log(elements);
+    if (elements.length < 0) {
+      return;
+    }
+    _results = [];
+    for (_i = 0, _len = elements.length; _i < _len; _i++) {
+      el = elements[_i];
+      _results.push((function(el) {
+        var resizeText, _results1;
+        resizeText = function() {
+          var elNewFontSize;
+          elNewFontSize = (parseInt($(el).css('font-size').slice(0, -2)) - 1) + 'px';
+          return $(el).css('font-size', elNewFontSize);
+        };
+        _results1 = [];
+        while (el.scrollHeight > el.offsetHeight) {
+          _results1.push(resizeText());
+        }
+        return _results1;
+      })(el));
+    }
+    return _results;
+  };
+  autoSizeText(); // here is where we call the function.
+  </script>
+
+  <script>
+  $("#unicamp").attr('class', 'newClass');
+  </script>
+
+  <script>
+  $("#unicamp2").attr('class', 'newClass');
+  </script>
+
+  <script>
+  $("#unicamp3").attr('class', 'newClass');
+  </script>
+
+  <script>
+  $("#unicamp4").attr('class', 'newClass');
+  </script>
+
+  <script>
+  $("#unicamp6").attr('class', 'agora-image');
+  </script>
+
+  <script type="text/javascript">
+  jQuery(function($) {
+    function resizeImage() {
+
+      if ($(window).width() < 765) {
+        $(".imagem").css("width", "95%");
+      }
+    }
+    $(window).resize(resizeImage);
+    resizeImage();
+  });
+  </script>
+
+  <script>
+  $('#myModal').modal('show')
+  </script>
+
+  <script>
+  $('#myModa12').modal('show')
+  </script>
+
+  <script>
+  $('#myModa13').modal('show')
+  </script>
+
+  <script>
+  $('#myModa14').modal('show')
+  </script>
+
+</body>
+</html>
