@@ -105,55 +105,6 @@ class Choice(models.Model):
     verbose_name_plural = 'escolhas'
 
 
-# class User(models.Model):
-#   user = models.OneToOneField(
-#     AuthUser,
-#     primary_key=True,
-#     parent_link=True,
-#   )
-#
-#   STAFF_TYPE = (
-#       ('1', 'Professor'),
-#       ('2', 'Funcionário'),
-#       ('3', 'Aluno'),
-#       ('4', 'Outro'),
-#   )
-#
-#   primeiro_nome =  models.CharField('Primeiro nome', max_length=40, blank=True)
-#   ultimo_nome =  models.CharField('Sobrenome', max_length=100, blank=True)
-#   staff = models.CharField('Staff', max_length=1, blank=True, choices = STAFF_TYPE)
-#   year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')
-#   course = models.CharField('Curso', max_length=40, blank=True , default='curso')
-#   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')
-#   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
-#   email = models.EmailField('Email', blank=True)
-#   nickname = models.CharField('Apelido',max_length=40, blank=True)
-#   question_answer = models.ManyToManyField(
-#     Question,
-#     through='Answer',
-#     through_fields=('user', 'question'),
-#     related_name='question_answer',
-#   )
-#
-#   class Meta:
-#     verbose_name = 'usuário'
-#     verbose_name_plural = 'usuários'
-#
-#   def save(self, *args, **kwargs):
-#       super(User, self).save(*args, **kwargs)
-#       nome = self.user.user
-#       try:
-#          Termo.objects.get(user=nome)
-#       except:
-#          Termo.objects.create(user=self)
-#          Userf.objects.create(user=self.user)
-#          a = Userf.objects.get(user=self.user)
-#          a.username="{A} {B}".format(A=self.primeiro_nome,B=self.ultimo_nome)
-#          a.save()
-#          return super(User, self).save(*args, **kwargs)
-#       return super(User, self).save(*args, **kwargs)
-
-
 
 class InitialListQuestion(models.Model):
     name = models.CharField('Nome da lista', max_length=50)
