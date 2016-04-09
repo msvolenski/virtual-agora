@@ -9,7 +9,7 @@ from django.contrib.auth.models import User as AuthUser
 from agora.models import Choice, Question, InitialListQuestion
 from .decorators import term_required
 from django.views import generic
-from .models import Termo, User, Answer, MeuEspaco, Message
+from .models import Termo, User, Answer, MeuEspaco, Message, Projeto
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.core.urlresolvers import reverse
@@ -63,9 +63,6 @@ class MuralView(generic.ListView):
 
   def get_queryset(self):
     return Question.objects.all()
-
-
-
 
 
 
@@ -171,6 +168,7 @@ class AgoraView(generic.ListView):
     u = User.objects.get(user=self.request.user)
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
+    context['projetos'] = Projeto.objects.all()
     return context
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -430,3 +428,10 @@ def tag_search(request, tag_name):
       'tag' : tag_name,
 
     })
+
+def atualizaProjeto(request, projeto_nome):
+    #us = User.objects.get(user=request.user)
+    #user = us.user
+    #user.set(projeto=projeto_nome)
+    User.objects.filter(user=request.user).update(projeto=projeto_nome)
+    return redirect('agoraunicamp:mural')

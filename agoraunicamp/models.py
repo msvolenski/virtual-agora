@@ -37,6 +37,7 @@ class User(models.Model):
   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
   email = models.EmailField('Email', blank=True)
   nickname = models.CharField('Apelido',max_length=40, blank=True)
+  projeto = models.CharField('Projeto',max_length=100,blank=True)
   question_answer = models.ManyToManyField(
     'agora.question',
     #Question,   #verificar
@@ -129,3 +130,7 @@ class Message(models.Model):
         publ_date = models.DateTimeField('Data de publicação')
         message = models.CharField('Recado', max_length=500)
         address = models.CharField('Endereço',max_length=200, blank=True)
+
+class Projeto(models.Model):
+    projeto = models.CharField('Projeto',max_length=100,blank=True)
+    sigla = models.CharField('Sigla',max_length=50,blank=True)

@@ -24,7 +24,9 @@ urlpatterns = [
   url(r'^meuespacodebate/envia/$', views.enviaDadosMeuEspacoDebate, name='envia-espaco-debate'),
   url(r'^meuespacoquestao/envia/$', views.enviaDadosMeuEspacoQuestao, name='envia-espaco-questao'),
   url(r'^meuespacooutros/envia/$', views.enviaDadosMeuEspacoOutros, name='envia-espaco-outros'),
-   url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
+  url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
+  url(r'^atprojeto/(?P<projeto_nome>[-\w]+)/$', views.atualizaProjeto, name='atualiza-projeto'),
+
   #url(r'pdpu/conheca/$', views.TemplatePDPUConhecaView.as_view(template_name="conheca/pdpu-conheca.html"), name='pdpu-conheca'),
   #url(r'^pdpu/conheca/artigos/(?P<pk>[0-9]+)/$', views.ArticlePageView.as_view(), name='article_page'),
 ]
