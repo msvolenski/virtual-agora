@@ -17,11 +17,11 @@ class ChoiceInline(admin.TabularInline):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-  fields = ['question_text', 'image', ('question_type', 'days'), ('tags', 'question_status', 'answer_status')]
+  fields = ['projeto','question_text', 'question_type', 'tags', 'days']
   inlines = [ChoiceInline]
   list_filter = ['publ_date', 'exp_date', 'question_type']
   search_fields = ['question_text']
-  list_display = ['question_text', 'id', 'publ_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
+  list_display = ['projeto', 'question_text', 'id', 'publ_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
   actions = ['publish_question', 'unpublish_question']
 
   def publish_question(self, request, queryset):
@@ -37,8 +37,10 @@ class QuestionAdmin(admin.ModelAdmin):
         for title in queryset:
             t = title.question_text
             a = title.address
+            p = title.projeto
         x.message="Nova questão inserida: {id}".format(id=t)
         x.address = a
+        x.projeto = p
         x.save()
         self.message_user(request, message_bit)
         return
@@ -74,8 +76,8 @@ class UserAdmin(UserAdmin):
 
 class InitialListQuestionAdmin(admin.ModelAdmin):
     actions = ['ativar_lista','desativar_lista']
-    list_display = ['name','questoes','is_list_active']
-    fields = ['name','questions',]
+    list_display = ['projeto','name','questoes','is_list_active']
+    fields = ['projeto','name','questions',]
 
 
     def questoes(self, post):

@@ -6,7 +6,7 @@
 
 <div style="background: #f39c12" class="project-header">
   <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
-  <h1 style="background: #f39c12">Plano Diretor Participativo - UNICAMP</h1>
+  <h1 style="background: #f39c12">{{projeto}} - {{sigla}}</h1>
   <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
   <ul class="nav">
     <li style="background: #e2e0e0"><a href="{% url 'agoraunicamp:mural' %}">Home</a></li>
@@ -32,7 +32,7 @@
       <div class="box-result-content">
         <p>
           {% for tag in Relatorio.tags.all %}
-          <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+          <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
             <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
           </form>
           {% endfor %}

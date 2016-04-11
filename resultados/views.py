@@ -11,23 +11,30 @@ from django.shortcuts import render_to_response,redirect
 from django.template import RequestContext, Context, loader
 from agoraunicamp.decorators import term_required
 from agora.models import Choice, Question, InitialListQuestion
-from agoraunicamp.models import User, Answer, Termo
+from agoraunicamp.models import User, Answer, Termo, Projeto
 
+
+#PROJETO
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class ResultadosView(ListView):
     model = Relatorio
 
     def get_queryset(self):
-        return Relatorio.objects.filter(published='Sim').order_by('-publ_date')
+        u = User.objects.get(user=self.request.user)
+        return Relatorio.objects.filter(published='Sim',projeto=u.projeto).order_by('-publ_date')
 
     def get_context_data(self, **kwargs):
         context = super(ResultadosView, self).get_context_data(**kwargs)
         user = User.objects.get(user=self.request.user)
-        context['relatorio_hist_1'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='1').order_by('-publ_date')
-        context['relatorio_hist_2'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='2').order_by('-publ_date')
+        projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
+        context['projeto'] = projeto_nome.projeto
+        context['sigla'] = user.projeto
+        context['relatorio_hist_1'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='1',projeto=user.projeto).order_by('-publ_date')
+        context['relatorio_hist_2'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='2',projeto=user.projeto).order_by('-publ_date')
         context['nickname'] = user.nickname
         return context
+
 
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')

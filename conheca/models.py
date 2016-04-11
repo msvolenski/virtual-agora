@@ -5,9 +5,13 @@ from django.conf import settings
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
+from agoraunicamp.models import Projeto
 
+
+#projeto
 class Article(models.Model):
 
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
     title = models.CharField('Título do artigo',max_length=200)
     tags = TaggableManager()
     article = RichTextUploadingField(config_name='default', verbose_name=u'Descrição')
@@ -33,8 +37,9 @@ class Article(models.Model):
         verbose_name_plural = 'Artigos'
 
 
+#projeto
 class Topico(models.Model):
-
+  projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
   topico = models.CharField(max_length=200)
   address_topico = models.CharField(max_length=200)
   position = models.IntegerField(default=1)
@@ -54,6 +59,7 @@ class Topico(models.Model):
       self.address_topico = "{SITE_URL}agora/conheca/topicos/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
       return super(Topico, self).save(*args, **kwargs)
 
+#projeto-forignekey
 class SubTopico(models.Model):
   subtopico = models.ForeignKey(Topico, on_delete=models.CASCADE)
   subtopico_nome = models.CharField(max_length=200)

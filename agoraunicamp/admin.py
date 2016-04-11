@@ -4,6 +4,7 @@ from .models import User, Answer, Termo, MeuEspaco, Message, Projeto
 from django.http import HttpResponse
 from django.core import serializers
 from django.shortcuts import render
+from django.utils import timezone
 # Register your models here.
 
 
@@ -11,9 +12,6 @@ class ProjetoAdmin(admin.ModelAdmin):
   #actions = ['show_results']
   list_display = ['projeto', 'sigla']
   #list_filter = ['question', 'choice']
-
-
-
 
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
@@ -35,9 +33,9 @@ class MeuEspacoAdmin(admin.ModelAdmin):
 
 class MessageAdmin(admin.ModelAdmin):
     actions=['publicar_no_mural','desfazer_publicacao_no_mural']
-    fields = ['kind','message','publ_date']
-    list_display = ['kind','message','published','publ_date','address']
-
+    fields = ['projeto','kind','message','publ_date']
+    list_display = ['projeto','kind','message','published','publ_date','address']
+    list_filter = ['projeto']
     def publicar_no_mural(modeladmin, request, queryset):
             queryset.update(published = 'Sim')
             queryset.update(publ_date = timezone.now())

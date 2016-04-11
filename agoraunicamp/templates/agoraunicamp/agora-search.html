@@ -32,7 +32,7 @@
     <div class="box-article-content">
       <p>
         {% for tag in t.tags.all %}
-        <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+        <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
           <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
         </form>
         {% endfor %}
@@ -147,7 +147,7 @@
   <div id="relatorio{{t.id}}" class="box-result-content">
     <p>
       {% for tag in t.tags.all %}
-      <form style="float:left;" action="{% url 'agora:search' tag.name %}" method="post">
+      <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
         <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
       </form>
       {% endfor %}

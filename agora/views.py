@@ -19,10 +19,10 @@ from django.views.decorators.http import condition
 from agoraunicamp.decorators import term_required
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
-from agoraunicamp.models import User, Termo, Answer
+from agoraunicamp.models import User, Termo, Answer, Projeto
 
 
-
+#PROJETO
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class ParticipeView(generic.ListView):
@@ -30,18 +30,23 @@ class ParticipeView(generic.ListView):
   model = Question
 
   def get_queryset(self):
-    return Question.objects.filter(publ_date__lte=timezone.now()).order_by('-publ_date')
+    u = User.objects.get(user=self.request.user)
+    return Question.objects.filter(publ_date__lte=timezone.now(),projeto=u.projeto).order_by('-publ_date')
 
   def get_context_data(self, **kwargs):
     context = super(ParticipeView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p',projeto=user.projeto)
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
+    projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['nickname'] = user.nickname
+    context['projeto'] = projeto_nome.projeto
+    context['sigla'] = user.projeto
     return context
+
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
@@ -55,6 +60,7 @@ class DetailView(generic.DetailView):
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     return context
+
 
 def vote(request, question_id):
   question = get_object_or_404(Question, pk=question_id)

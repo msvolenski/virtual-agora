@@ -107,16 +107,12 @@ class Termo(models.Model):
     def userd(self):
         return self.user.user
 
+class Projeto(models.Model):
+    projeto = models.CharField('Projeto',max_length=100,blank=True)
+    sigla = models.CharField('Sigla',max_length=50,blank=True)
 
-class MeuEspaco(models.Model):
-
-    user = models.CharField('Usuario',max_length=200, blank=True)
-    categoria = models.CharField('Categoria',max_length=20, blank=True)
-    publ_date = models.DateTimeField('Data de publicação')
-    link =  models.URLField(max_length=1000, blank=True)
-    comentario =  models.CharField('Comentário',max_length=200, blank=True)
-    secao = models.CharField('Seção',max_length=30, blank=True)
-    arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)
+    def __str__(self):
+        return self.sigla
 
 class Message(models.Model):
         MESSAGE_TYPE = (
@@ -125,12 +121,19 @@ class Message(models.Model):
             ('3', 'Comunidade'),
             ('4', 'Participe'),
         )
+        projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
         published = models.CharField('Publicado?',max_length=3, default='Não')
         kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
         publ_date = models.DateTimeField('Data de publicação')
         message = models.CharField('Recado', max_length=500)
         address = models.CharField('Endereço',max_length=200, blank=True)
 
-class Projeto(models.Model):
-    projeto = models.CharField('Projeto',max_length=100,blank=True)
-    sigla = models.CharField('Sigla',max_length=50,blank=True)
+class MeuEspaco(models.Model):
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])    
+    user = models.CharField('Usuario',max_length=200, blank=True)
+    categoria = models.CharField('Categoria',max_length=20, blank=True)
+    publ_date = models.DateTimeField('Data de publicação')
+    link =  models.URLField(max_length=1000, blank=True)
+    comentario =  models.CharField('Comentário',max_length=200, blank=True)
+    secao = models.CharField('Seção',max_length=30, blank=True)
+    arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)

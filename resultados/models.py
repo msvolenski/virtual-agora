@@ -8,13 +8,17 @@ from agora.models import Question
 from smart_selects.db_fields import ChainedForeignKey
 from django.contrib.auth.models import User
 from django.conf import settings
+from agoraunicamp.models import Projeto
 
+
+#PROJETO
 class Relatorio(models.Model):
 
     TIPOS = (
         ('1', 'Geral'),
         ('2', 'Questão'),
     )
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
     questao = models.ForeignKey(Question,blank=True, null=True)
     tags = TaggableManager()
     tipo = destaque = models.CharField(max_length=10, choices=TIPOS, default='1')
@@ -36,6 +40,7 @@ class Relatorio(models.Model):
         self.address = "{SITE_URL}agora/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
         return super(Relatorio, self).save(*args, **kwargs)
 
+#PROJETO
 class Likedislike(models.Model):
     user = models.CharField(max_length=30)
     relatorio = models.IntegerField()

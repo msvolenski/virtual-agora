@@ -13,6 +13,7 @@ from django.contrib.auth.models import User as AuthUser
 from agoraunicamp.models import User as QuestionUser
 from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
 from agoraunicamp.decorators import term_required
+from agoraunicamp.models import Projeto
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
@@ -22,15 +23,18 @@ class ForumHomeView(generic.ListView):
   context_object_name = 'categories_list'
 
   def get_queryset(self):
-    return Category.objects.filter(topic__published='Sim')
+    u = User.objects.get(user=self.request.user)
+    return Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto)
 
   def get_context_data(self, **kwargs):
     context = super(ForumHomeView, self).get_context_data(**kwargs)
+
     context['topic'] = Topic.objects.all()
     context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
     context['answer_form'] = TopicAnswerForm()
     auth_user = self.request.user
     user = auth_user.user
+    projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
     context['req_user'] = self.request.user
     context['username'] = auth_user
     context['user'] = user
@@ -38,6 +42,8 @@ class ForumHomeView(generic.ListView):
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
     context['cat'] = Category.objects.filter(topic__published='Sim')
+    context['projeto'] = projeto_nome.projeto
+    context['sigla'] = user.projeto
     return context
 
 
@@ -54,12 +60,15 @@ class ForumView(generic.ListView):
     context['topics_list'] = Topic.objects.filter(category=context['category'])
     auth_user = self.request.user
     user = auth_user.user
+    projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
     context['req_user'] = self.request.user
     context['username'] = auth_user
     context['user'] = user
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
+    context['projeto'] = projeto_nome.projeto
+    context['sigla'] = user.projeto
     return context
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
@@ -75,6 +84,7 @@ class TopicView(generic.ListView):
     context['answer_form'] = TopicAnswerForm()
     auth_user = self.request.user
     user = auth_user.user
+    projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
     context['req_user'] = self.request.user
     context['username'] = auth_user
     context['user'] = user
@@ -82,6 +92,8 @@ class TopicView(generic.ListView):
     context['category'] = Category.objects.all()
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
+    context['projeto'] = projeto_nome.projeto
+    context['sigla'] = user.projeto
 
     if TopicAnswer.objects.filter(user=context['topic_user'], topic=context['topic']).count():
       context['user_answered'] = True

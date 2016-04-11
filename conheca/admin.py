@@ -32,6 +32,7 @@ class TopicoAdmin(admin.ModelAdmin):
   #actions = ['inverter_ordem_de_apresentacao']
   #setam os campos que irão aparecer no "Add adiciona Link"
   fieldsets = [
+    ('Selecione o Projeto',               {'fields': ['projeto']}),
     (None,               {'fields': ['topico']}),
 
     #('Data de publicação', {'fields': ['pub_date']}),
@@ -56,9 +57,11 @@ class TopicoAdmin(admin.ModelAdmin):
 class ArticleAdmin(admin.ModelAdmin):
 
 
-    list_filter = ['tags']
+    list_filter = ['projeto','tags']
     actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo']
     fieldsets = [
+
+        ('Selecione o Projeto',               {'fields': ['projeto']}),
         (None,               {'fields': ['title']}),
 
         ('Conteúdo', {'fields': ['article']}),
@@ -69,7 +72,7 @@ class ArticleAdmin(admin.ModelAdmin):
     ]
 
 
-    list_display = ('title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')
+    list_display = ('projeto', 'title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')
 
 
     def destacar_artigo(modeladmin, request, queryset):
@@ -89,7 +92,9 @@ class ArticleAdmin(admin.ModelAdmin):
             for title in queryset:
                 t = title.title
                 a = title.address
+                p = title.projeto
             x.message="Novo artigo inserido: {id}".format(id=t)
+            x.projeto = p
             x.address = a
             x.save()
             return

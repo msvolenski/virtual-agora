@@ -9,18 +9,21 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 
+#PROJETO
 class Category(models.Model):
   """Model for types of subjects"""
-
+  projeto = models.ForeignKey('agoraunicamp.Projeto', max_length=50, blank=False)
   title = models.CharField(max_length=50)
   tags = TaggableManager()
 
   def __str__(self):
-    return self.title
+    return '%s %s' % (self.title, self.projeto)
 
   class Meta:
     verbose_name = 'categoria'
     verbose_name_plural = 'categorias'
+
+  
 
 
 class Topic(models.Model):

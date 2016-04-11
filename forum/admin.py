@@ -10,7 +10,7 @@ class TopicAdmin(admin.ModelAdmin):
   actions = ['publicar_topico']
   fields = ['category', 'title', 'text', 'tags']
   list_filter = ['pub_date']
-  list_display = ['category', 'title','published','text', 'pub_date']
+  list_display = ['get_project', 'title','text', 'published','pub_date']
 
   def publicar_topico(modeladmin, request, queryset):
           queryset.update(published = 'Sim')
@@ -19,10 +19,17 @@ class TopicAdmin(admin.ModelAdmin):
           for title in queryset:
               t = title.title
               a = title.id
+              p = title.projeto
           x.message="Novo tópico inserido: {id}".format(id=t)
           x.address = a
+          x.projeto = p
           x.save()
           return
+
+  def get_project(self, obj):
+      return obj.category.projeto.sigla
+  get_project.short_description = 'Projeto'
+
 
 
 class TopicAnswerAdmin(admin.ModelAdmin):
@@ -34,8 +41,10 @@ class TopicAnswerAdmin(admin.ModelAdmin):
 class LikeAdmin(admin.ModelAdmin):
   list_display = ['user', 'answer']
 
+class CategoryAdmin(admin.ModelAdmin):
+  list_display = ['projeto', 'title']
 
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopicAnswer, TopicAnswerAdmin)
 admin.site.register(Like, LikeAdmin)

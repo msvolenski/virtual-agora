@@ -11,6 +11,7 @@ from agoraunicamp.models import Message
 
 class Relatorio_geralAdmin(admin.ModelAdmin):
     fieldsets = [
+        ('Selecione o projeto',               {'fields': ['projeto']}),
         (None,               {'fields': ['title']}),
         ('Conteúdo', {'fields': ['conteudo']}),
         ('Tags', {'fields': ['tags']}),
@@ -18,11 +19,13 @@ class Relatorio_geralAdmin(admin.ModelAdmin):
         ('URL da página do Relatório:', {'fields': ['address']}),
     ]
 
-    list_display = ['title', 'id', 'publ_date', 'published']
+    list_display = ['projeto','title', 'id', 'publ_date', 'published']
 
 class RelatorioAdmin(admin.ModelAdmin):
+    list_filter = ['projeto']
     actions = ['publicar','desfazer_publicacao']
     fieldsets = [
+        ('Selecione o projeto',               {'fields': ['projeto']}),
         ('Tipo',               {'fields': ['tipo']}),
         (None,               {'fields': ['questao']}),
         ('Tags', {'fields': ['tags']}),
@@ -30,7 +33,7 @@ class RelatorioAdmin(admin.ModelAdmin):
         ('Conteúdo', {'fields': ['conteudo']}),
     ]
 
-    list_display = ['titulo','questao','id','publ_date', 'published','address']
+    list_display = ['projeto', 'titulo','questao','id','publ_date', 'published','address']
 
     def publicar(modeladmin, request, queryset):
             if queryset.count() != 1:
@@ -44,8 +47,10 @@ class RelatorioAdmin(admin.ModelAdmin):
                 for title in queryset:
                     t = title.titulo
                     a = title.address
+                    p = title.projeto
                 x.message="Novo relatório inserido: {id}".format(id=t)
                 x.address = a
+                x.projeto = p
                 x.save()
                 message_bit = "Relatório publicado"
                 modeladmin.message_user(request, message_bit)
