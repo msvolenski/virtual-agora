@@ -46,6 +46,24 @@
   {% endfor %}
 
   <form action="{% url 'agoraunicamp:envia-espaco-questao' %}" method="POST" role="form" enctype="multipart/form-data">
+
+    <div class="text-form-meu-espaco"> Selecione o projeto:
+      <select id="categoria" name="categoriaproj">
+        {% for tag in projetos %}
+        <option value="{{tag}}"
+        {% if tag == categoriaproj %}
+        selected
+        {% endif %}>
+        {{tag}}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+
+
+
+
     <div class="text-form-meu-espaco"> A qual categoria sua questão se refere?
       <select id="categoria" name="categoriatag">
         {% for tag in tags %}

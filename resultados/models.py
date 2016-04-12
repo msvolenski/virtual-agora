@@ -10,6 +10,13 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from agoraunicamp.models import Projeto
 
+def getProject():
+    try:
+        choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()]
+    except:
+        choices = [("Default", "Default")]
+    return choices
+
 
 #PROJETO
 class Relatorio(models.Model):
@@ -18,7 +25,7 @@ class Relatorio(models.Model):
         ('1', 'Geral'),
         ('2', 'Questão'),
     )
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
     questao = models.ForeignKey(Question,blank=True, null=True)
     tags = TaggableManager()
     tipo = destaque = models.CharField(max_length=10, choices=TIPOS, default='1')

@@ -13,6 +13,13 @@ from django.core.exceptions import ObjectDoesNotExist
 
 # Create your models here.
 
+def getProject():
+    try:
+        choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()]
+    except:
+        choices = [("Default", "Default")]
+    return choices
+
 class User(models.Model):
   user = models.OneToOneField(
     AuthUser,
@@ -99,7 +106,7 @@ class Answer(models.Model):
 
 class Termo(models.Model):
     user = models.ForeignKey(User, related_name='user_termo')
-    condition = models.CharField('Condição', max_length=3, default='Não')
+    condition = models.CharField('Condição', max_length=10, default='Nao')
 
     def __str__(self):
         return self.condition
@@ -114,22 +121,23 @@ class Projeto(models.Model):
     def __str__(self):
         return self.sigla
 
+
 class Message(models.Model):
-        MESSAGE_TYPE = (
-            ('1', 'Conheça'),
-            ('2', 'Resultados'),
-            ('3', 'Comunidade'),
-            ('4', 'Participe'),
-        )
-        projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
-        published = models.CharField('Publicado?',max_length=3, default='Não')
-        kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
-        publ_date = models.DateTimeField('Data de publicação')
-        message = models.CharField('Recado', max_length=500)
-        address = models.CharField('Endereço',max_length=200, blank=True)
+    MESSAGE_TYPE = (
+        ('1', 'Conheça'),
+        ('2', 'Resultados'),
+        ('3', 'Comunidade'),
+        ('4', 'Participe'),
+    )
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
+    published = models.CharField('Publicado?',max_length=3, default='Nao')
+    kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
+    publ_date = models.DateTimeField('Data de publicação')
+    message = models.CharField('Recado', max_length=500)
+    address = models.CharField('Endereço',max_length=200, blank=True)
 
 class MeuEspaco(models.Model):
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])    
+    projeto = models.CharField('Projeto',max_length=20, blank=False)
     user = models.CharField('Usuario',max_length=200, blank=True)
     categoria = models.CharField('Categoria',max_length=20, blank=True)
     publ_date = models.DateTimeField('Data de publicação')

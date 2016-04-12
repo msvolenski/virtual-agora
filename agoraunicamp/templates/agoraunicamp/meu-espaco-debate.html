@@ -46,6 +46,22 @@
   {% endfor %}
 
   <form action="{% url 'agoraunicamp:envia-espaco-debate' %}" method="POST" role="form" enctype="multipart/form-data">
+    <div class="text-form-meu-espaco"> Selecione o projeto:
+      <select id="categoria" name="categoriaproj">
+        {% for tag in projetos %}
+        <option value="{{tag}}"
+        {% if tag == categoriaproj %}
+        selected
+        {% endif %}>
+        {{tag}}
+      </option>
+      {% endfor %}
+    </select>
+  </div>
+
+
+
+
     <div class="text-form-meu-espaco"> A qual categoria o debate se refere?
       <select id="categoria" name="categoriatag">
         {% for tag in tags %}
@@ -66,7 +82,7 @@
   </div>
 
   <div class="text-form-meu-espaco">
-    <label for="link">Se desejar, enrvir um link de referência:</label>
+    <label for="link">Se desejar, envie um link de referência:</label>
     <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="1" id="link" name="link"></textarea>
   </div>
 

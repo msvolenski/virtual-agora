@@ -29,7 +29,8 @@ class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
 
 class MeuEspacoAdmin(admin.ModelAdmin):
-  list_display = ['user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
+  list_filter = ['projeto']
+  list_display = ['projeto','user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
 
 class MessageAdmin(admin.ModelAdmin):
     actions=['publicar_no_mural','desfazer_publicacao_no_mural']
@@ -42,7 +43,7 @@ class MessageAdmin(admin.ModelAdmin):
             return
 
     def desfazer_publicacao_no_mural(modeladmin, request, queryset):
-            queryset.update(published = 'Não')
+            queryset.update(published = 'Nao')
             return
 
 

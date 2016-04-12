@@ -9,8 +9,14 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from agoraunicamp.models import User, Message, Projeto
 
-
 #projeto
+def getProject():
+    try:
+        choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()]
+    except:
+        choices = [("Default", "Default")]
+    return choices
+
 class Question(models.Model):
     STATUS_CHOICES = (
         ('n', 'Não publicado'), # unpublished
@@ -31,7 +37,7 @@ class Question(models.Model):
         ('3', 'Texto'),
     )
 
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
     question_text = models.CharField('Título da Questão',max_length=200)
     publ_date = models.DateTimeField('Data de publicação')
@@ -105,10 +111,8 @@ class Choice(models.Model):
     verbose_name = 'escolha'
     verbose_name_plural = 'escolhas'
 
-
-
 class InitialListQuestion(models.Model):
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
     name = models.CharField('Nome da lista', max_length=50)
     questions = TaggableManager('Questões')
     select = models.IntegerField(default=0)

@@ -7,11 +7,18 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 from agoraunicamp.models import Projeto
 
+def getProject():
+    try:
+        choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()]
+    except:
+        choices = [("Default", "Default")]
+    return choices
+
 
 #projeto
 class Article(models.Model):
 
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
+    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
     title = models.CharField('Título do artigo',max_length=200)
     tags = TaggableManager()
     article = RichTextUploadingField(config_name='default', verbose_name=u'Descrição')
@@ -39,7 +46,7 @@ class Article(models.Model):
 
 #projeto
 class Topico(models.Model):
-  projeto = models.CharField('Projeto', max_length=50, blank=False, choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()])
+  projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
   topico = models.CharField(max_length=200)
   address_topico = models.CharField(max_length=200)
   position = models.IntegerField(default=1)

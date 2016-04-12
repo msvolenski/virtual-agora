@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from functools import wraps
 from django.core.exceptions import PermissionDenied
 from django.contrib.auth.models import User

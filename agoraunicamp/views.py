@@ -70,7 +70,7 @@ class MuralView(generic.ListView):
 
 
 
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class MeuEspacoOutrosView(generic.ListView):
   template_name = 'agoraunicamp/meu-espaco-outros.html'
@@ -79,6 +79,8 @@ class MeuEspacoOutrosView(generic.ListView):
     context = super(MeuEspacoOutrosView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
     tags = Tag.objects.all().distinct()
+    projetos = Projeto.objects.all().distinct()
+    context['projetos'] = projetos
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['tags'] = tags
@@ -97,6 +99,8 @@ class MeuEspacoQuestaoView(generic.ListView):
     context = super(MeuEspacoQuestaoView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
     tags = Tag.objects.all().distinct()
+    projetos = Projeto.objects.all().distinct()
+    context['projetos'] = projetos
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['tags'] = tags
@@ -115,6 +119,8 @@ class MeuEspacoArtigoView(generic.ListView):
     context = super(MeuEspacoArtigoView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
     tags = Tag.objects.all().distinct()
+    projetos = Projeto.objects.all().distinct()
+    context['projetos'] = projetos
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['tags'] = tags
@@ -124,7 +130,7 @@ class MeuEspacoArtigoView(generic.ListView):
   def get_queryset(self):
     return
 
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class MeuEspacoDebateView(generic.ListView):
   template_name = 'agoraunicamp/meu-espaco-debate.html'
@@ -133,6 +139,8 @@ class MeuEspacoDebateView(generic.ListView):
     context = super(MeuEspacoDebateView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
     tags = Tag.objects.all().distinct()
+    projetos = Projeto.objects.all().distinct()
+    context['projetos'] = projetos
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['tags'] = tags
@@ -175,7 +183,7 @@ class AgoraView(generic.ListView):
     context['projetos'] = Projeto.objects.all()
     return context
 
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 class TermoView(generic.ListView):
   template_name = 'agoraunicamp/termo.html'
 
@@ -184,10 +192,10 @@ class TermoView(generic.ListView):
 
 
 #PROJETO
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
+@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
 class PaginaInicialView(generic.ListView):
-  """PDPU home with it's subpages"""
+  #"""PDPU home with it's subpages"""
   template_name = 'agoraunicamp/agora-pagina-inicial.html'
 
   def get_queryset(self):
@@ -282,7 +290,7 @@ def term_accepted(request):
     cond.delete()
     cond1 = Termo(user=user,condition='Sim')
     cond1.save()
-    return HttpResponseRedirect(reverse('agora:home'))
+    return HttpResponseRedirect(reverse('agoraunicamp:agora'))
 
 def term_not_accepted(request):
     return HttpResponseRedirect(reverse('agoraunicamp:login'))
@@ -293,6 +301,7 @@ def enviaDadosMeuEspaco(request):
     us = User.objects.get(user=request.user)
     user = us.user
     if request.method == 'POST':
+        projeto = request.POST['categoriaproj']
         categoria = request.POST['categoriatag']
         comentario = request.POST['comentario']
         link = request.POST['link']
@@ -307,7 +316,7 @@ def enviaDadosMeuEspaco(request):
 
         if form.is_valid():
             if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'])
+                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'], projeto=projeto)
                 x.save()
                 success = True
                 if success == True:
@@ -318,7 +327,7 @@ def enviaDadosMeuEspaco(request):
                 return redirect(request.META['HTTP_REFERER'])
         if link !='':
             form = DocumentForm() #A empty, unbound form
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo')
+            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo',projeto=projeto)
             x.save()
             messages.success(request, "Link enviado com sucesso")
             return redirect(request.META['HTTP_REFERER'])
@@ -333,6 +342,7 @@ def enviaDadosMeuEspacoDebate(request):
         us = User.objects.get(user=request.user)
         user = us.user
         if request.method == 'POST':
+            projeto = request.POST['categoriaproj']
             categoria = request.POST['categoriatag']
             comentario = request.POST['comentario']
             link = request.POST['link']
@@ -343,7 +353,7 @@ def enviaDadosMeuEspacoDebate(request):
                 except:
                     messages.error(request, "URL incorreta. Envie novamente.")
                     return redirect(request.META['HTTP_REFERER'])
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Debate')
+            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Debate', projeto=projeto)
             x.save()
             success = True
             if success == True and comentario !='' or link !='':
@@ -359,6 +369,7 @@ def enviaDadosMeuEspacoQuestao(request):
         us = User.objects.get(user=request.user)
         user = us.user
         if request.method == 'POST':
+            projeto = request.POST['categoriaproj']
             categoria = request.POST['categoriatag']
             comentario = request.POST['comentario']
             link = request.POST['link']
@@ -369,7 +380,7 @@ def enviaDadosMeuEspacoQuestao(request):
                 except:
                     messages.error(request, "URL incorreta. Envie novamente.")
                     return redirect(request.META['HTTP_REFERER'])
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Questão')
+            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Questão',projeto=projeto)
             x.save()
             success = True
             if success == True and comentario !='' or link !='':
@@ -385,6 +396,7 @@ def enviaDadosMeuEspacoOutros(request):
     us = User.objects.get(user=request.user)
     user = us.user
     if request.method == 'POST':
+        projeto = request.POST['categoriaproj']
         categoria = request.POST['categoriatag']
         comentario = request.POST['comentario']
         link = request.POST['link']
@@ -398,7 +410,7 @@ def enviaDadosMeuEspacoOutros(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'])
+                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'], projeto=projeto)
                 x.save()
                 success = True
                 if success == True:
@@ -406,7 +418,7 @@ def enviaDadosMeuEspacoOutros(request):
                     return redirect(request.META['HTTP_REFERER'])
 
         else:
-            x = MeuEspacoArtigo(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros')
+            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', projeto=projeto)
             x.save()
             messages.success(request, "Dados enviados com sucesso.")
             return redirect(request.META['HTTP_REFERER'])

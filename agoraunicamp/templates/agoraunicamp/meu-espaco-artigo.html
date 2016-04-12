@@ -46,40 +46,54 @@
   {% endfor %}
 
   <form action="{% url 'agoraunicamp:envia-espaco-artigo' %}" method="POST" role="form" enctype="multipart/form-data">
-    <div class="text-form-meu-espaco"> Selecione a categoria do artigo:
-      <select id="categoria" name="categoriatag">
-        {% for tag in tags %}
+
+    <div class="text-form-meu-espaco"> Selecione o projeto:
+      <select id="categoria" name="categoriaproj">
+        {% for tag in projetos %}
         <option value="{{tag}}"
-        {% if tag == categoriatag %}
+        {% if tag == categoriaproj %}
         selected
         {% endif %}>
         {{tag}}
       </option>
       {% endfor %}
-      <option value="outra">outra</option>
     </select>
   </div>
 
-  <div class="text-form-meu-espaco">
-    <label for="comment"> Comentário sobre o artigo:</label>
-    <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="3" id="comment" name="comentario"></textarea>
-  </div>
+  <div class="text-form-meu-espaco"> Selecione a categoria do artigo:
+    <select id="categoria" name="categoriatag">
+      {% for tag in tags %}
+      <option value="{{tag}}"
+      {% if tag == categoriatag %}
+      selected
+      {% endif %}>
+      {{tag}}
+    </option>
+    {% endfor %}
+    <option value="outra">outra</option>
+  </select>
+</div>
 
-  <div class="text-form-meu-espaco">
-    <label for="link">Link:</label>
-    <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="1" id="link" name="link"></textarea>
-  </div>
+<div class="text-form-meu-espaco">
+  <label for="comment"> Comentário sobre o artigo:</label>
+  <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="3" id="comment" name="comentario"></textarea>
+</div>
 
-  <div class="text-form-meu-espaco">
-    {% csrf_token %}
-    {{ form.arquivo.label_tag }}
-    {{ form.arquivo.errors }}
-    {{ form.arquivo }}
-  </div>
+<div class="text-form-meu-espaco">
+  <label for="link">Link:</label>
+  <textarea style="border-color:black;width:100%;border-width:1px;" class="form-control" rows="1" id="link" name="link"></textarea>
+</div>
 
-  <div class="text-form-meu-espaco">
-    <input style="float:right;" type="submit" value="Enviar dados" />
-  </div>
+<div class="text-form-meu-espaco">
+  {% csrf_token %}
+  {{ form.arquivo.label_tag }}
+  {{ form.arquivo.errors }}
+  {{ form.arquivo }}
+</div>
+
+<div class="text-form-meu-espaco">
+  <input style="float:right;" type="submit" value="Enviar dados" />
+</div>
 </form>
 </body>
 </html>
