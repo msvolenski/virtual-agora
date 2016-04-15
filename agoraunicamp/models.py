@@ -8,17 +8,7 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 from forum.models import User as Userf
 from django.core.exceptions import ObjectDoesNotExist
-#from agora.models import Choice
 
-
-# Create your models here.
-
-def getProject():
-    try:
-        choices =[ (o.sigla, o.sigla) for o in Projeto.objects.all()]
-    except:
-        choices = [("Default", "Default")]
-    return choices
 
 class User(models.Model):
   user = models.OneToOneField(
@@ -44,7 +34,7 @@ class User(models.Model):
   academic_registry = models.IntegerField('Registro acadêmico',default='9999')
   email = models.EmailField('Email', blank=True)
   nickname = models.CharField('Apelido',max_length=40, blank=True)
-  projeto = models.CharField('Projeto',max_length=100,blank=True)
+  projeto = models.CharField('Projeto',max_length=40, blank=True)
   question_answer = models.ManyToManyField(
     'agora.question',
     #Question,   #verificar
@@ -114,13 +104,6 @@ class Termo(models.Model):
     def userd(self):
         return self.user.user
 
-class Projeto(models.Model):
-    projeto = models.CharField('Projeto',max_length=100,blank=True)
-    sigla = models.CharField('Sigla',max_length=50,blank=True)
-
-    def __str__(self):
-        return self.sigla
-
 
 class Message(models.Model):
     MESSAGE_TYPE = (
@@ -129,7 +112,7 @@ class Message(models.Model):
         ('3', 'Comunidade'),
         ('4', 'Participe'),
     )
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
+    projeto = models.ForeignKey('projetos.Projeto')
     published = models.CharField('Publicado?',max_length=3, default='Nao')
     kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
     publ_date = models.DateTimeField('Data de publicação')

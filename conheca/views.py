@@ -13,7 +13,8 @@ from django.views.generic import ListView
 from .models import SubTopico, Article, Topico
 from agora.models import Question
 from agoraunicamp.decorators import term_required
-from agoraunicamp.models import User, Answer, Projeto
+from agoraunicamp.models import User, Answer
+from projetos.models import Projeto
 
 #PROJETO
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
@@ -25,7 +26,7 @@ class ConhecaView(ListView):
     context = super(ConhecaView, self).get_context_data(**kwargs)
     #context['question'] = QuestoesRespondidas.objects.filter(usuario__nome__startswith=self.request.user).values()
     user = User.objects.get(user=self.request.user)
-    context['topico'] = Topico.objects.filter(projeto=user.projeto).order_by('position')
+    context['topico'] = Topico.objects.filter(projeto__sigla=user.projeto).order_by('position')
     questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
@@ -39,14 +40,7 @@ class ConhecaView(ListView):
 
   def get_queryset(self):
     u = User.objects.get(user=self.request.user)
-    return Article.objects.filter(projeto=u.projeto).order_by('-publ_date')
-
-
-
-
-
-
-
+    return Article.objects.filter(projeto__sigla=u.projeto).order_by('-publ_date')
 
 
 

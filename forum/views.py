@@ -13,7 +13,7 @@ from django.contrib.auth.models import User as AuthUser
 from agoraunicamp.models import User as QuestionUser
 from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
 from agoraunicamp.decorators import term_required
-from agoraunicamp.models import Projeto
+from projetos.models import Projeto
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')

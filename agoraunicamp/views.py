@@ -9,7 +9,8 @@ from django.contrib.auth.models import User as AuthUser
 from agora.models import Choice, Question, InitialListQuestion
 from .decorators import term_required
 from django.views import generic
-from .models import Termo, User, Answer, MeuEspaco, Message, Projeto
+from .models import Termo, User, Answer, MeuEspaco, Message
+from projetos.models import Projeto
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.core.urlresolvers import reverse
@@ -37,7 +38,7 @@ class MuralView(generic.ListView):
     answered_questions = [a.question for a in answered]
     not_answered = list(set(questions) - set(answered_questions))
     try:
-        initial = InitialListQuestion.objects.filter(select=1,projeto=user.projeto).first() #pega a lista
+        initial = InitialListQuestion.objects.filter(select=1,projeto__sigla=user.projeto).first() #pega a lista
         initial_list = [c.name for c in initial.questions.all()]
     except:
         initial_list=[0]
@@ -55,10 +56,10 @@ class MuralView(generic.ListView):
     context['question'] = Question.objects.all()
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
-    context['message_participe'] =  Message.objects.filter(published='Sim',kind='4',projeto=user.projeto).order_by('-publ_date')
-    context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1',projeto=user.projeto).order_by('-publ_date')
-    context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2',projeto=user.projeto).order_by('-publ_date')
-    context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3',projeto=user.projeto).order_by('-publ_date')
+    context['message_participe'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3',projeto__sigla=user.projeto).order_by('-publ_date')
     context['nickname'] = user.nickname
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
@@ -204,11 +205,11 @@ class PaginaInicialView(generic.ListView):
   def get_context_data(self, **kwargs):
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(projeto=user.projeto, exp_date__gt=timezone.now(),question_status='p')
+    questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
-    article = Article.objects.filter(projeto=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
-    relatorio = Relatorio.objects.filter(projeto=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
+    article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
+    relatorio = Relatorio.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
     not_answered = list(set(questions) - set(answered_questions))
     result_list = sorted(
         chain(relatorio, article, not_answered),
@@ -216,9 +217,9 @@ class PaginaInicialView(generic.ListView):
 
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
 
-    context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto=user.projeto).order_by('-publ_date')
-    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto=user.projeto).order_by('-publ_date')
-    context['question'] = Question.objects.filter(projeto=user.projeto)
+    context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
+    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
+    context['question'] = Question.objects.filter(projeto__sigla=user.projeto)
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['timeline'] = result_list
@@ -433,18 +434,18 @@ def tag_search(request, tag_name):
   questions = Question.objects.filter(exp_date__gt=timezone.now())
   answered = Answer.objects.filter(user=user)
   answered_questions = [a.question for a in answered]
-  questions_tag = Question.objects.filter(tags__name__in=[tag_name],projeto=user.projeto).distinct()
-  article = Article.objects.filter(publ_date__lte=timezone.now(),projeto=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
-  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  questions_tag = Question.objects.filter(tags__name__in=[tag_name],projeto__sigla=user.projeto).distinct()
+  article = Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
+  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
   not_answered = list(set(questions) - set(answered_questions))
   not_answered_tag = list(set(questions_tag) - set(answered_questions))
   result_list = sorted(
         chain(relatorio, article, not_answered_tag),
         key=lambda instance: instance.publ_date, reverse=True)
   return render(request, 'agoraunicamp/agora-search.html',
-    { 'article' : Article.objects.filter(publ_date__lte=timezone.now(),projeto=user.projeto).order_by('-publ_date'),
-      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto=user.projeto).order_by('-publ_date'),
-      'question' : Question.objects.filter(projeto=user.projeto),
+    { 'article' : Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date'),
+      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date'),
+      'question' : Question.objects.filter(projeto__sigla=user.projeto),
       'not_answered': not_answered,
       'not_answered_tag': answered_questions_tag,
       'timeline': result_list,

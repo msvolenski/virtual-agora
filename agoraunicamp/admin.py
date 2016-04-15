@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import User, Answer, Termo, MeuEspaco, Message, Projeto
+from .models import User, Answer, Termo, MeuEspaco, Message
 from django.http import HttpResponse
 from django.core import serializers
 from django.shortcuts import render
@@ -8,10 +8,7 @@ from django.utils import timezone
 # Register your models here.
 
 
-class ProjetoAdmin(admin.ModelAdmin):
-  #actions = ['show_results']
-  list_display = ['projeto', 'sigla']
-  #list_filter = ['question', 'choice']
+
 
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
@@ -51,4 +48,3 @@ admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Termo, TermoAdmin)
 admin.site.register(MeuEspaco, MeuEspacoAdmin)
 admin.site.register(Message, MessageAdmin)
-admin.site.register(Projeto, ProjetoAdmin)

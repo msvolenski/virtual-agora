@@ -5,7 +5,7 @@ from django.conf import settings
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
-from agoraunicamp.models import Projeto
+#from agoraunicamp.models import Projeto
 
 def getProject():
     try:
@@ -18,7 +18,7 @@ def getProject():
 #projeto
 class Article(models.Model):
 
-    projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
+    projeto = models.ForeignKey('projetos.Projeto')
     title = models.CharField('Título do artigo',max_length=200)
     tags = TaggableManager()
     article = RichTextUploadingField(config_name='default', verbose_name=u'Descrição')
@@ -46,7 +46,7 @@ class Article(models.Model):
 
 #projeto
 class Topico(models.Model):
-  projeto = models.CharField('Projeto', max_length=50, blank=False, choices = getProject())
+  projeto = models.ForeignKey('projetos.Projeto')
   topico = models.CharField(max_length=200)
   address_topico = models.CharField(max_length=200)
   position = models.IntegerField(default=1)

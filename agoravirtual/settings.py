@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'resultados',
     'smart_selects',
     'agoraunicamp',
-
+    'projetos',
 ]
 
 

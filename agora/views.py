@@ -19,7 +19,8 @@ from django.views.decorators.http import condition
 from agoraunicamp.decorators import term_required
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
-from agoraunicamp.models import User, Termo, Answer, Projeto
+from agoraunicamp.models import User, Termo, Answer
+from projetos.models import Projeto
 
 
 #PROJETO
@@ -31,12 +32,12 @@ class ParticipeView(generic.ListView):
 
   def get_queryset(self):
     u = User.objects.get(user=self.request.user)
-    return Question.objects.filter(publ_date__lte=timezone.now(),projeto=u.projeto).order_by('-publ_date')
+    return Question.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=u.projeto).order_by('-publ_date')
 
   def get_context_data(self, **kwargs):
     context = super(ParticipeView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p',projeto=user.projeto)
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p',projeto__sigla=user.projeto)
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
