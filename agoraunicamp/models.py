@@ -117,7 +117,7 @@ class Message(models.Model):
     kind = models.CharField('Tipo', max_length=1, choices = MESSAGE_TYPE)
     publ_date = models.DateTimeField('Data de publicação')
     message = models.CharField('Recado', max_length=500)
-    address = models.CharField('Endereço',max_length=200, blank=True)
+    address = models.CharField('Endereço',max_length=200, blank=True, default='opcional')
 
 class MeuEspaco(models.Model):
     projeto = models.CharField('Projeto',max_length=20, blank=False)

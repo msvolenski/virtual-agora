@@ -31,7 +31,7 @@ class MeuEspacoAdmin(admin.ModelAdmin):
 
 class MessageAdmin(admin.ModelAdmin):
     actions=['publicar_no_mural','desfazer_publicacao_no_mural']
-    fields = ['projeto','kind','message','publ_date']
+    fields = ['projeto','kind','message','address','publ_date']
     list_display = ['projeto','kind','message','published','publ_date','address']
     list_filter = ['projeto']
     def publicar_no_mural(modeladmin, request, queryset):
