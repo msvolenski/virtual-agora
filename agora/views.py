@@ -74,7 +74,7 @@ def vote(request, question_id):
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:pdpu-participe'))
+    return HttpResponseRedirect(reverse('agora:participe'))
   try:
     # Save the answer
     if question_type == '1':
@@ -107,10 +107,10 @@ def vote(request, question_id):
       messages.success(request, "Obrigado por participar!")
     else:
       messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:pdpu-participe'))
+    return HttpResponseRedirect(reverse('agora:participe'))
   except (KeyError, Choice.DoesNotExist):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return HttpResponseRedirect(reverse('agora:pdpu-participe'))
+    return HttpResponseRedirect(reverse('agora:participe'))
 
 def vote_iframe(request, question_id):
 
@@ -222,7 +222,7 @@ def vote_timeline(request, question_id):
   if answered_question:
     error_message = 'Você já votou nesta questão.'
     messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:pdpu'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
   try:
     # Save the answer
     if question_type == '1':
@@ -255,7 +255,7 @@ def vote_timeline(request, question_id):
       messages.success(request, "Obrigado por participar!")
     else:
       messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:pdpu'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
   except (KeyError, Choice.DoesNotExist):
     messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return HttpResponseRedirect(reverse('agora:pdpu'))
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))

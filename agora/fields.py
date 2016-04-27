@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 from abc import abstractproperty
 from django.db import models

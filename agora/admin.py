@@ -35,7 +35,7 @@ class QuestionAdmin(admin.ModelAdmin):
         queryset.update(publ_date = timezone.now())
         x = Message(kind='4', published='Sim', publ_date=timezone.now())
         for title in queryset:
-            t = title.question_text
+            t = title.question_text.encode('utf8')
             a = title.address
             p = title.projeto
         x.message="Nova questão inserida: {id}".format(id=t)

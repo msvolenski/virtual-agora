@@ -49,9 +49,9 @@ class Question(models.Model):
 
     def __str__(self):
         if self.id:
-            return "#{id} - {question}".format(id=self.id, question=self.question_text)
+            return "#{id} - {question}".format(id=self.id, question=self.question_text.encode('utf8'))
         else:
-            return self.question_text
+            return self.question_text.encode('utf8')
 
     def save(self, *args, **kwargs):
         """On save, update timestamps"""
@@ -100,7 +100,7 @@ class Choice(models.Model):
   choice_text = models.CharField(max_length=200)
 
   def __str__(self):
-    return self.choice_text
+    return self.choice_text.encode('utf8')
 
   class Meta:
     verbose_name = 'escolha'
