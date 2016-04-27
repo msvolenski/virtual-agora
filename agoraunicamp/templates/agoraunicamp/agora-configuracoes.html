@@ -3,7 +3,7 @@
 {% load set_var %}
 {% block content12 %}
 
-<div style="background:#ffffff" class="project-header-config"> Ágora Virtual - Configurações
+<div style="background:#ffffff" class="project-header-config"> Ágora Unicamp - Configurações
 </div>
 
 <div class="plainlinks hlist" style="width:95%;border-top:1px solid black; padding-top:0.4em; margin:0 auto;"></div>
@@ -26,20 +26,20 @@
   {% endfor %}
 
   <div class="form-inline-config">
-    <div class="item-config">Inclua um apelido (opcional):
+    <div class="item-config">Como gostaria de ser chamado?
     </div>
     <form class="form-config" action="{% url 'agoraunicamp:apelido-config' %}" method="post" role="form">
       <input id="apelido" type="textarea" value="" name="text-apelido" placeholder="{{user.nickname}}" class="textarea-size-apelido">
       <button class="button-margin" type="submit">Enviar</button>
     </form>
     <form action="{% url 'agoraunicamp:apelido-remove' %}" method="post" role="form" style="float:left;">
-      <button class="button-margin" type="submit">Remover apelido</button>
+      <button class="button-margin" type="submit">Remover nome</button>
     </form>
   </div>
 
   <div class="form-inline-config">
   <form action="{% url 'agoraunicamp:email-config' %}" method="post" role="form">
-    <label class="item-config" for="email">Inclua um novo endereço de Email:</label>
+    <label class="item-config" for="email">Gostaria de incluir um novo endereço de Email?</label>
     <input class="textarea-size-email" placeholder="{{user.email}}" type="email" name="text-email">
     <button class="button-margin" type="submit">Enviar</button>
   </form>
