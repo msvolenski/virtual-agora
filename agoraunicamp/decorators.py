@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 def term_required(function):
+
     def wrap(request, *args, **kwargs):
         try:
             us = User.objects.get(user=request.user)

@@ -3862,6 +3862,12 @@ fieldset[disabled] .btn-vk.active {
     height:410px;
 }
 
+.login-access{
+  width:140%;
+  font-size:15px;
+  color:black;
+}
+
 @media (max-width: 765px) {
   .iframe-height2{
       height:410px;
@@ -3885,7 +3891,7 @@ fieldset[disabled] .btn-vk.active {
   }
 
   .agora-image{
-    width:100px;
+    width:10px;
   }
 
   .username{
@@ -4038,6 +4044,15 @@ fieldset[disabled] .btn-vk.active {
     width:100%;
     line-height: 20px;
   }
+
+  .login-access{
+    width:140%;
+    font-size:12px;
+    color:#FFFFFF;
+    line-height:16px;
+    
+  }
+
   .login-title{
     font-size:90%;
     width:100%;
