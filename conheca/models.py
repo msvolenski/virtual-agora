@@ -52,7 +52,7 @@ class Topico(models.Model):
   position = models.IntegerField(default=1)
 
   def __str__(self):
-    return self.topico
+    return self.topico.encode('utf8')
 
   def __int__(self):
     return self.position
@@ -72,7 +72,7 @@ class SubTopico(models.Model):
   subtopico_nome = models.CharField(max_length=200)
 
   def __str__(self):
-    return "%s %s" % (self.subtopico, self.subtopico_nome)
+    return "%s %s" % (self.subtopico.encode('utf8'), self.subtopico_nome.encode('utf8'))
 
   class Meta:
       verbose_name = 'Sub-topico'
