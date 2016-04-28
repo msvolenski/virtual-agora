@@ -29,7 +29,7 @@ class Article(models.Model):
     published = models.CharField('Publicado?',max_length=3, default='Não')
 
     def __str__(self):
-        return self.title
+        return self.title.encode('utf8')
 
     def split_numbers(self):
         return self.questao_associada.split(',')
