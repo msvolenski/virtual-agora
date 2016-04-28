@@ -110,7 +110,9 @@ class ArticleAdmin(admin.ModelAdmin):
          else:
              selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
              ct = ContentType.objects.get_for_model(queryset.model)
-             return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s%s" % ( "", ",".join(selected)) )
+             for article in queryset:
+                 t = article.address
+             return HttpResponseRedirect(t)
             #return HttpResponseRedirect("http://127.0.0.1:8000/agora/pdpu/conheca/artigos/%s&ids=%s")
 
 
