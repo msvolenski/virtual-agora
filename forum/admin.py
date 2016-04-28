@@ -8,7 +8,7 @@ from .models import Category, Topic, TopicAnswer, Like
 
 class TopicAdmin(admin.ModelAdmin):
   actions = ['publicar_topico']
-  fields = ['category', 'title', 'text', 'tags']
+  fields = ['projeto', 'category', 'title', 'text', 'tags']
   list_filter = ['pub_date']
   list_display = ['get_project', 'title','text', 'published','pub_date']
 

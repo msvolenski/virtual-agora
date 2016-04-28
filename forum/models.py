@@ -35,6 +35,7 @@ class Topic(models.Model):
   pub_date = models.DateTimeField('Data de publicação')
   tags = TaggableManager()
   published = models.CharField('Publicado?',max_length=3, default='Não')
+  projeto = models.ForeignKey('projetos.Projeto', max_length=50, blank=False)
 
   def __str__(self):
     return self.title.encode('utf8')
