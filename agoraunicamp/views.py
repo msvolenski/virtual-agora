@@ -33,7 +33,7 @@ class MuralView(generic.ListView):
   def get_context_data(self, **kwargs):
     context = super(MuralView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(exp_date__gt=timezone.now())
+    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     not_answered = list(set(questions) - set(answered_questions))
@@ -53,7 +53,7 @@ class MuralView(generic.ListView):
     context['not_answered_list'] = not_answered_list
     context['initial_list_user'] = initial_list_user
     context['first_question'] = first_question
-    context['question'] = Question.objects.all()
+    context['question'] = Question.objects.filter(question_status='p')
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['message_participe'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).order_by('-publ_date')
@@ -67,7 +67,7 @@ class MuralView(generic.ListView):
 
 
   def get_queryset(self):
-    return Question.objects.all()
+    return Question.objects.filter(question_status='p')
 
 
 

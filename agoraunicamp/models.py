@@ -82,13 +82,17 @@ class Answer(models.Model):
       self.answer_date = timezone.now()
     return super(Answer, self).save(*args, **kwargs)
 
-  def user_dept(self):
-    return self.user.department
-  user_dept.short_description = 'Faculdade'
+  def user_inst(self):
+    return self.user.institute
+  user_inst.short_description = 'Instituto'
+
+  def user_stf(self):
+    return self.user.staff
+  user_stf.short_description = 'Staff'
 
   def userd(self):
     return self.user.user
-
+  userd.short_description = 'Usuario'
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'

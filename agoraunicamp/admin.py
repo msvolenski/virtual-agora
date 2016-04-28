@@ -12,8 +12,8 @@ from django.utils import timezone
 
 class AnswerAdmin(admin.ModelAdmin):
   actions = ['show_results']
-  list_display = ['userd', 'question', '__str__']
-  list_filter = ['question', 'choice']
+  list_display = ['userd','user_stf','user_inst','question', '__str__']
+  list_filter = ['question','user__institute','user__staff' ]
 
   def show_results(self, request, queryset):
     response = HttpResponse(content_type="application/json")
