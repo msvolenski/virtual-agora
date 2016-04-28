@@ -84,4 +84,4 @@ class Link(models.Model):
   url_title = models.CharField(max_length=1000)
 
   def __str__(self):
-    return self.url
+    return self.url.encode('utf8')

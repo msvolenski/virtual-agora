@@ -17,7 +17,7 @@ class Category(models.Model):
   tags = TaggableManager()
 
   def __str__(self):
-    return '%s %s' % (self.title, self.projeto)
+    return '%s %s' % (self.title.encode('utf8'), self.projeto)
 
   class Meta:
     verbose_name = 'categoria'
@@ -37,7 +37,7 @@ class Topic(models.Model):
   published = models.CharField('Publicado?',max_length=3, default='Não')
 
   def __str__(self):
-    return self.title
+    return self.title.encode('utf8')
 
   def save(self, *args, **kwargs):
     """On save, update timestamps"""
