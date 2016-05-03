@@ -20,15 +20,23 @@ class SubTopicoInline(admin.TabularInline):
 
 
 class SubTopicoAdmin(admin.ModelAdmin):
-
+  actions = ['remover_subtopico']
   fieldsets = [
     (None, {'fields': ['subtopico']}),
   ]
   inlines = [LinkInline]
 
+  def remover_subtopico(modeladmin, request, queryset):
+      if queryset.count() != 1:
+          modeladmin.message_user(request, "Não é possível remover mais de um tópico por vez.")
+          return
+      else:
+          queryset.delete()
+      return
+
 
 class TopicoAdmin(admin.ModelAdmin):
-  actions = ['posicionar_topico']
+  actions = ['posicionar_topico', 'remover_topico']
   #actions = ['inverter_ordem_de_apresentacao']
   #setam os campos que irão aparecer no "Add adiciona Link"
   fieldsets = [
@@ -41,6 +49,15 @@ class TopicoAdmin(admin.ModelAdmin):
   inlines = [SubTopicoInline]
   list_display = ['topico','position','id','address_topico',]
   search_fields = ['topico']
+
+  def remover_topico(modeladmin, request, queryset):
+      if queryset.count() != 1:
+          modeladmin.message_user(request, "Não é possível remover mais de um tópico por vez.")
+          return
+      else:
+          queryset.delete()
+      return
+
 
   def posicionar_topico(modeladmin, request, queryset):
     if queryset.count() != 2:

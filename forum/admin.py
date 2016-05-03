@@ -59,6 +59,14 @@ class LikeAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
   list_display = ['projeto', 'title']
+  actions = ['remover_categoria']
+  def remover_categoria(modeladmin, request, queryset):
+      if queryset.count() != 1:
+          modeladmin.message_user(request, "Não é possível remover mais de uma categoria por vez.")
+          return
+      else:
+          queryset.delete()
+      return
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Topic, TopicAdmin)

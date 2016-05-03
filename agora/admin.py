@@ -10,7 +10,7 @@ from .models import Choice, Question, InitialListQuestion
 from agoraunicamp.models import User, Message
 from forum.models import User as ForumUser
 
-
+admin.site.disable_action('delete_selected')
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 0
@@ -22,7 +22,7 @@ class QuestionAdmin(admin.ModelAdmin):
   list_filter = ['publ_date', 'exp_date', 'question_type']
   search_fields = ['question_text']
   list_display = ['projeto', 'question_text', 'id', 'publ_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
-  actions = ['publish_question', 'unpublish_question']
+  actions = ['publish_question', 'unpublish_question','remover_questao']
 
   def publish_question(self, request, queryset):
     if queryset.count() != 1:
@@ -45,6 +45,22 @@ class QuestionAdmin(admin.ModelAdmin):
         self.message_user(request, message_bit)
         return
   publish_question.short_description = "Publicar questão"
+
+  def remover_questao(modeladmin, request, queryset):
+      if queryset.count() != 1:
+          modeladmin.message_user(request, "Não é possível remover mais de uma questão por vez.")
+          return
+      else:
+          for title in queryset:
+              e = title.address
+          objs = Message.objects.filter(kind = '4')
+          for obj in objs:
+              if obj.address == e:
+                  queryset.delete()
+                  obj.delete()
+                  modeladmin.message_user(request, "Questão removida com sucesso.")
+                  return
+      return
 
 
   def unpublish_question(modeladmin, request, queryset):
@@ -85,7 +101,7 @@ class UserAdmin(UserAdmin):
 
 
 class InitialListQuestionAdmin(admin.ModelAdmin):
-    actions = ['ativar_lista','desativar_lista']
+    actions = ['ativar_lista','desativar_lista','remover_lista']
     list_display = ['projeto','name','questoes','is_list_active']
     fields = ['projeto','name','questions',]
 
@@ -113,6 +129,15 @@ class InitialListQuestionAdmin(admin.ModelAdmin):
         else:
             queryset.update(select = 0)
             return
+
+    def remover_lista(modeladmin, request, queryset):
+        if queryset.count() != 1:
+            modeladmin.message_user(request, "Não é possível remover mais de uma lista por vez.")
+            return
+        else:
+            queryset.delete()
+
+        return
 
 
 
