@@ -126,6 +126,9 @@ class Message(models.Model):
     message = models.CharField('Recado', max_length=500)
     address = models.CharField('Endereço',max_length=200, blank=True, default='opcional')
 
+    def __str__(self):
+        return self.message.encode('utf8')
+
 class MeuEspaco(models.Model):
     projeto = models.CharField('Projeto',max_length=20, blank=False)
     user = models.CharField('Usuario',max_length=200, blank=True)
