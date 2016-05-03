@@ -47,14 +47,24 @@ class QuestionAdmin(admin.ModelAdmin):
   publish_question.short_description = "Publicar questão"
 
 
-  def unpublish_question(self, request, queryset):
+  def unpublish_question(modeladmin, request, queryset):
     rows_updated = queryset.update(question_status='n')
-    if rows_updated == 1:
-      message_bit = "1 questão foi despublicada"
+    if queryset.count() != 1:
+        modeladmin.message_user(request, "Não é possível remover mais de uma questão por vez.")
+        return
     else:
-      message_bit = "%s questões foram despublicadas" % rows_updated
-    self.message_user(request, "%s com sucesso." % message_bit)
-  unpublish_question.short_description = "Despublicar questões"
+        for title in queryset:
+            e = title.address
+        objs = Message.objects.filter(kind = '4')
+        for obj in objs:
+            if obj.address == e:
+                obj.delete()
+                modeladmin.message_user(request, "Questão despublicada com sucesso.")
+                return
+    return
+
+
+  unpublish_question.short_description = "Despublicar questão"
 
 
 class UserProfileInline(admin.StackedInline):

@@ -56,9 +56,11 @@ class TopicoAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
 
+    def delete_selected(self, request):
+        return False
 
     list_filter = ['projeto','tags']
-    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo']
+    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo','remover_artigo']
     fieldsets = [
 
         ('Selecione o Projeto',               {'fields': ['projeto']}),
@@ -73,6 +75,26 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
     list_display = ('projeto', 'title', 'id', 'publ_date', 'questao_associada', 'published','destaque', 'address')
+
+
+    def remover_artigo(modeladmin, request, queryset):
+        if queryset.count() != 1:
+            modeladmin.message_user(request, "Não é possível remover mais de um artigo por vez.")
+            return
+        else:
+            for title in queryset:
+                e = title.address
+            objs = Message.objects.filter(kind = '1')
+            for obj in objs:
+                if obj.address == e:
+                    queryset.delete()
+                    obj.delete()
+                    modeladmin.message_user(request, "Artigo removido com sucesso.")
+                    return
+        return
+
+
+
 
 
     def destacar_artigo(modeladmin, request, queryset):

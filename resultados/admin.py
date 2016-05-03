@@ -23,7 +23,7 @@ class Relatorio_geralAdmin(admin.ModelAdmin):
 
 class RelatorioAdmin(admin.ModelAdmin):
     list_filter = ['projeto']
-    actions = ['publicar','desfazer_publicacao']
+    actions = ['publicar','desfazer_publicacao','remover_relatorio']
     fieldsets = [
         ('Selecione o projeto',               {'fields': ['projeto']}),
         ('Tipo',               {'fields': ['tipo']}),
@@ -34,6 +34,22 @@ class RelatorioAdmin(admin.ModelAdmin):
     ]
 
     list_display = ['projeto', 'titulo','questao','id','publ_date', 'published','address']
+
+    def remover_relatorio(modeladmin, request, queryset):
+        if queryset.count() != 1:
+            modeladmin.message_user(request, "Não é possível remover mais de um relatório por vez.")
+            return
+        else:
+            for title in queryset:
+                e = title.address
+            objs = Message.objects.filter(kind = '2')
+            for obj in objs:
+                if obj.address == e:
+                    queryset.delete()
+                    obj.delete()
+                    modeladmin.message_user(request, "Relatório removido com sucesso.")
+                    return
+        return
 
     def publicar(modeladmin, request, queryset):
             if queryset.count() != 1:
@@ -78,7 +94,15 @@ class RelatorioAdmin(admin.ModelAdmin):
                     a = Question.objects.get(id=ids)
                     a.answer_status = 'n' #atualiza variaivel de question que indica se foi publicado
                     a.save()
+            for title in queryset:
+                e = title.address
+            objs = Message.objects.filter(kind = '2')
+            for obj in objs:
+                if obj.address == e:
+                    obj.delete()
+                    modeladmin.message_user(request, "Relatório despublicado com sucesso.")
                     return
+            return
 
 
 admin.site.register(Relatorio, RelatorioAdmin )
