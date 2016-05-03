@@ -33,7 +33,7 @@ class TopicAdmin(admin.ModelAdmin):
           queryset.update(pub_date = timezone.now())
           x = Message(kind='3', published='Sim', publ_date=timezone.now())
           for title in queryset:
-              t = title.title
+              t = title.title.encode('utf8')
               a = title.id
               p = title.projeto
           x.message="Novo tópico inserido: {id}".format(id=t)
@@ -60,6 +60,7 @@ class LikeAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
   list_display = ['projeto', 'title']
   actions = ['remover_categoria']
+
   def remover_categoria(modeladmin, request, queryset):
       if queryset.count() != 1:
           modeladmin.message_user(request, "Não é possível remover mais de uma categoria por vez.")
