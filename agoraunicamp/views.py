@@ -57,9 +57,13 @@ class MuralView(generic.ListView):
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['message_participe'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_participe_count'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).count()
     context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_conheca_count'] =  Message.objects.filter(published='Sim',kind='1',projeto__sigla=user.projeto).count()
     context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_resultados_count'] =  Message.objects.filter(published='Sim',kind='2',projeto__sigla=user.projeto).count()
     context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3',projeto__sigla=user.projeto).order_by('-publ_date')
+    context['message_comunidade_count'] =  Message.objects.filter(published='Sim',kind='3',projeto__sigla=user.projeto).count()
     context['nickname'] = user.nickname
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto

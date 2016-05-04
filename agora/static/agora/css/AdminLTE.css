@@ -3717,7 +3717,7 @@ fieldset[disabled] .btn-vk.active {
   opacity: 0.9;
   float:left;
   width:50%;
-  padding:5px;
+  padding:15px;
   height:220px;
   overflow:auto;
 }
