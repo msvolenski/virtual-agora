@@ -21,17 +21,22 @@ class User(models.Model):
   STAFF_TYPE = (
       ('1', 'Professor'),
       ('2', 'Funcionário'),
-      ('3', 'Aluno'),
-      ('4', 'Outro'),
+      ('3', 'Aluno-Graduacao'),
+      ('4', 'Aluno-Mestrado'),
+      ('5', 'Aluno-Doutorado'),
+      ('6', 'Aluno-Especial'),
+      ('7', 'Aluno-Lato'),
+      ('8', 'outro'),
+
   )
 
   primeiro_nome =  models.CharField('Primeiro nome', max_length=40, blank=True)
   ultimo_nome =  models.CharField('Sobrenome', max_length=100, blank=True)
   staff = models.CharField('Staff', max_length=1, blank=True, choices = STAFF_TYPE)
-  year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')
-  course = models.CharField('Curso', max_length=40, blank=True , default='curso')
+  #year_of_start = models.IntegerField('Ano de ingresso',blank=True, default='9999')
+  #course = models.CharField('Curso', max_length=40, blank=True , default='curso')
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto')
-  academic_registry = models.IntegerField('Registro acadêmico',default='9999')
+  #academic_registry = models.IntegerField('Registro acadêmico',default='9999')
   email = models.EmailField('Email', blank=True)
   nickname = models.CharField('Apelido',max_length=40, blank=True)
   projeto = models.CharField('Projeto',max_length=40, blank=True)
@@ -42,7 +47,6 @@ class User(models.Model):
     through_fields=('user', 'question'),
     related_name='question_answer',
   )
-
   def __str__(self):
     return self.get_staff_display()
 
@@ -96,6 +100,7 @@ class Answer(models.Model):
   def userd(self):
     return self.user.user
   userd.short_description = 'Usuario'
+
   class Meta:
     verbose_name = 'resposta'
     verbose_name_plural = 'respostas'
@@ -126,15 +131,12 @@ class Message(models.Model):
     message = models.CharField('Recado', max_length=500)
     address = models.CharField('Endereço',max_length=200, blank=True, default='opcional')
 
-    def __str__(self):
-        return self.message.encode('utf8')
-
 class MeuEspaco(models.Model):
-    projeto = models.CharField('Projeto',max_length=20, blank=False)
+    projeto = models.CharField('Projeto',max_length=100, blank=False)
     user = models.CharField('Usuario',max_length=200, blank=True)
-    categoria = models.CharField('Categoria',max_length=20, blank=True)
+    categoria = models.CharField('Categoria',max_length=50, blank=True)
     publ_date = models.DateTimeField('Data de publicação')
     link =  models.URLField(max_length=1000, blank=True)
-    comentario =  models.CharField('Comentário',max_length=200, blank=True)
+    comentario =  models.CharField('Comentário',max_length=1000, blank=True)
     secao = models.CharField('Seção',max_length=30, blank=True)
     arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)
