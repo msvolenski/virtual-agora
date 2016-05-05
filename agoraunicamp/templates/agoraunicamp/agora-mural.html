@@ -27,14 +27,14 @@
     {% if message_conheca_count > 3 %}
     <div id="x1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_conheca|slice:"3" %}
-      <p><a href="#" style="font-size:170%;color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
-      <div style="float:right;"><input style="background:#00c0ef;color:#ffffff;font-size:90%;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa1()" /></div>
+      <div style="float:right;"><input id="button-mural" style="background:#00c0ef;color:#ffffff;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa1()" /></div>
     </div>
     {% else %}
     <div  id="x2" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_conheca %}
-      <p><a href="#" style="font-size:170%;color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
     {% endif %}
@@ -42,7 +42,7 @@
 
     <div  id="x3" class="mural-box-section" style="display:none;background:#ffffff;">
       {% for msg in message_conheca %}
-      <p><a href="#" style="font-size:170%;color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
 
@@ -64,21 +64,21 @@
     {% if message_participe_count > 3 %}
     <div id="xx1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_participe|slice:"3" %}
-      <p><a href="#" style="font-size:170%;color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
-      <div style="float:right;"><input style="border-color:#12d673;font-size:90%;background:#12d673;color:#ffffff;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa()" /></div>
+      <div style="float:right;"><input id="button-mural" style="border-color:#12d673;background:#12d673;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa()" /></div>
     </div>
     {% else %}
     <div  id="xx2" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_participe %}
-      <p><a href="#" style="font-size:170%;color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
     {% endif %}
 
     <div  id="xx3" class="mural-box-section" style="display:none;background:#ffffff;">
       {% for msg in message_participe %}
-      <p><a href="#" style="font-size:170%;color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#12d673;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
 
@@ -94,21 +94,21 @@
     {% if message_resultados_count > 3 %}
     <div id="xxy1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_resultados|slice:"3" %}
-      <p><a href="#" style="font-size:170%;color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
-      <div style="float:right;"><input style="font-size:90%;border-color:#f39c12;background:#f39c12;color:#ffffff;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa2()" /></div>
+      <div style="float:right;"><input id="button-mural" style="border-color:#f39c12;background:#f39c12;color:#ffffff;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa2()" /></div>
     </div>
     {% else %}
     <div  id="xxy2" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_resultados %}
-      <p><a href="#" style="font-size:170%;color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
     {% endif %}
 
     <div  id="xxy3" class="mural-box-section" style="display:none;background:#ffffff;">
       {% for msg in message_resultados %}
-      <p><a href="#" style="font-size:170%;color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f39c12;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
 
@@ -126,21 +126,21 @@
     {% if message_comunidade_count > 3 %}
     <div id="xxyy1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_comunidade|slice:"3" %}
-      <p><a href="#" style="font-size:170%;color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
-      <div style="float:right;margin-bottom:0px;"><input style="font-size:90%;border-color:#f56954;background:#f56954;color:#ffffff;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa3()" /></div>
+      <div style="float:right;margin-bottom:0px;"><input id="button-mural" style="border-color:#f56954;background:#f56954;" class="btn btn-default btn-info" type="submit" value="Mais recados" onClick="ativa3()" /></div>
     </div>
     {% else %}
     <div  id="xxyy2" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_comunidade %}
-      <p><a href="#" style="font-size:170%;color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
     {% endif %}
 
     <div  id="xxyy3" class="mural-box-section" style="display:none;background:#ffffff;">
       {% for msg in message_comunidade %}
-      <p><a href="#" style="font-size:170%;color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
+      <p><a href="#" class="mural-content" style="color:#f56954;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
 

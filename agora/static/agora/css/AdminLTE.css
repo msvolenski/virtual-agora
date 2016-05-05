@@ -3718,8 +3718,12 @@ fieldset[disabled] .btn-vk.active {
   float:left;
   width:50%;
   padding:15px;
-  height:220px;
+  height:280px;
   overflow:auto;
+}
+
+.mural-content{
+  font-size:170%;
 }
 
 .mural-msg-font{
@@ -3868,7 +3872,16 @@ fieldset[disabled] .btn-vk.active {
   color:black;
 }
 
+#button-mural{
+  font-size: 90%;
+  color:#ffffff
+}
+
 @media (max-width: 765px) {
+  .mural-content{
+    font-size:100%;
+  }
+
   .iframe-height2{
       height:410px;
   }
@@ -3984,6 +3997,11 @@ fieldset[disabled] .btn-vk.active {
   #modal-dialog-mob{
     margin-top: 15px;
   }
+
+  #button-mural{
+    font-size: 60%;
+    color:#ffffff;
+  }
   .home-question{
     margin-top:230px;
   }
@@ -3992,7 +4010,7 @@ fieldset[disabled] .btn-vk.active {
     float:left;
     width:100%;
     padding:3px;
-    height:90px;
+    height:150px;
     overflow:auto;
     font-size:12px;
   }
