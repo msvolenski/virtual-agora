@@ -24,11 +24,11 @@ class ForumHomeView(generic.ListView):
 
   def get_queryset(self):
     u = User.objects.get(user=self.request.user)
-    return Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto)
+    return Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto).distinct()
 
   def get_context_data(self, **kwargs):
     context = super(ForumHomeView, self).get_context_data(**kwargs)
-
+    u = User.objects.get(user=self.request.user)
     context['topic'] = Topic.objects.all()
     context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
     context['answer_form'] = TopicAnswerForm()
@@ -41,7 +41,7 @@ class ForumHomeView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
-    context['cat'] = Category.objects.filter(topic__published='Sim')
+    context['cat'] = Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto).distinct()
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
     return context

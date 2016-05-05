@@ -17,7 +17,7 @@ class Category(models.Model):
   tags = TaggableManager()
 
   def __str__(self):
-    return '%s %s' % (self.title.encode('utf8'), self.projeto)
+    return self.title.encode('utf8')
 
   class Meta:
     verbose_name = 'categoria'

@@ -10,7 +10,7 @@ class TopicAdmin(admin.ModelAdmin):
   actions = ['publicar_topico','remover_topico']
   fields = ['projeto', 'category', 'title', 'text', 'tags']
   list_filter = ['pub_date']
-  list_display = ['get_project', 'title','text', 'published','pub_date']
+  list_display = ['projeto','category', 'title','text', 'published','pub_date']
 
   def remover_topico(modeladmin, request, queryset):
       if queryset.count() != 1:
@@ -58,6 +58,7 @@ class LikeAdmin(admin.ModelAdmin):
   list_display = ['user', 'answer']
 
 class CategoryAdmin(admin.ModelAdmin):
+  list_filter = ['projeto']
   list_display = ['projeto', 'title']
   actions = ['remover_categoria']
 
