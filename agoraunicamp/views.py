@@ -462,4 +462,4 @@ def atualizaProjeto(request, projeto_nome):
     #user = us.user
     #user.set(projeto=projeto_nome)
     User.objects.filter(user=request.user).update(projeto=projeto_nome)
-    return redirect('agoraunicamp:mural')
+    return redirect('agoraunicamp:paginainicial')
