@@ -8,7 +8,7 @@
 <div id="tutorial2" class="modal fade" role="dialog">
   <div class="modal-dialog" id="modal-dialog-mob">
     <div style="  text-align: center;" >
-    <img id="tutorial2img" class="tutorial-image" src="{% static "agora/images/tutorial/9.png" %}" alt="tutorial 1"/>
+      <img id="tutorial2img" class="tutorial-image" src="{% static "agora/images/tutorial/9.png" %}" alt="tutorial 1"/>
     </div>
     <div class="modal-footer" style="border-top:0px;">
       <button style="display:block;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal">Navegar pela sessão e continuar</button>
@@ -62,27 +62,37 @@ $('#tutorial2').modal('show')
       {% if topic %}
       <div id="area{{topic.id}}" class="header-topic">
         <div class="title-name">{{ topic }}</div>
-        <span class="sub-title-name"> Categoria: {{ category }} - Publicado em: {{ topic.pub_date }} </span></br></br>
+        <p>
+          {% for tag in topic.tags.all %}
+          <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+            <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+          </form>
+          {% endfor %}
+          <div class="pub-style"><strong>Publicado em:</strong>{{ topic.publ_date }}</div>
+        </form>
+        </p>
         <span class="subtitle-name-topic">{{ topic.text|safe }}</span>
       </div>
       <div class="plainlinks hlist">
       </div>
 
 
+
+
+
+
+
+
       {% for answer in topic.topicanswer_set.all %}
       <div class="render-response">
         <div class="forum-username">{{ answer.user}}{% if answer.user.user.user.nickname %}
-        ({{answer.user.user.user.nickname}})
-        {% endif %}&nbsp;&nbsp;
+          ({{answer.user.user.user.nickname}})
+          {% endif %}&nbsp;&nbsp;
         </div>
         <div contenteditable="true" class="sub-title-topic" id="test">{{ answer.text|safe|linebreaks }}
         </div>
         <div style="float:left" class="sub-title-name">{{answer.answer_date}}
         </div>
-
-
-
-
 
         {% if answer.user == topic_user %}
         <div style="float:right">
@@ -98,22 +108,20 @@ $('#tutorial2').modal('show')
 
         <script>
         function ativa(x){
-        var div = document.getElementById(x);
-        /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
-        if (div.style.display == 'none') {
+          var div = document.getElementById(x);
+          /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
+          if (div.style.display == 'none') {
 
-        div.style.display = "inline"
-        } else {
-        /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
-        div.style.display = 'none'
-        document.getElementById("botao").value='editar'
-        }
+            div.style.display = "inline"
+          } else {
+            /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
+            div.style.display = 'none'
+            document.getElementById("botao").value='editar'
+          }
         }
         </script>
 
         {% endif %}
-
-
 
 
 
@@ -169,9 +177,6 @@ $('#tutorial2').modal('show')
   {% endfor %}
   {% endif %}
 </div>
-
-
-
 
 
 {% endblock content12 %}

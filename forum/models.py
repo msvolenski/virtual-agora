@@ -32,7 +32,7 @@ class Topic(models.Model):
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
   title = models.CharField('Título', max_length=50)
   text = RichTextUploadingField(config_name='default', verbose_name=u'Texto')
-  pub_date = models.DateTimeField('Data de publicação')
+  publ_date = models.DateTimeField('Data de publicação')
   tags = TaggableManager()
   published = models.CharField('Publicado?',max_length=3, default='Não')
   projeto = models.ForeignKey('projetos.Projeto', max_length=50, blank=False)
@@ -43,7 +43,7 @@ class Topic(models.Model):
   def save(self, *args, **kwargs):
     """On save, update timestamps"""
     if not self.id:
-      self.pub_date = timezone.now()
+      self.publ_date = timezone.now()
     return super(Topic, self).save(*args, **kwargs)
 
   class Meta:

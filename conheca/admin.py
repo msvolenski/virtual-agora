@@ -129,7 +129,7 @@ class ArticleAdmin(admin.ModelAdmin):
             queryset.update(publ_date = timezone.now())
             x = Message(kind='1',message="Novo artigo inserido:{id}", published='Sim', publ_date=timezone.now())
             for title in queryset:
-                t = title.title
+                t = title.title.encode('utf8')
                 a = title.address
                 p = title.projeto
             x.message="Novo artigo inserido: {id}".format(id=t)

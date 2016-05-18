@@ -47,8 +47,9 @@ class User(models.Model):
     through_fields=('user', 'question'),
     related_name='question_answer',
   )
+
   def __str__(self):
-    return self.get_staff_display()
+    return self.user.username
 
   class Meta:
     verbose_name = 'usuário'
@@ -131,6 +132,9 @@ class Message(models.Model):
     publ_date = models.DateTimeField('Data de publicação')
     message = models.CharField('Recado', max_length=500)
     address = models.CharField('Endereço',max_length=200, blank=True, default='opcional')
+
+    def __str__(self):
+        return self.message.encode('utf8')
 
 class MeuEspaco(models.Model):
     projeto = models.CharField('Projeto',max_length=100, blank=False)

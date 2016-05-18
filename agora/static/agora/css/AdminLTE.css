@@ -3486,6 +3486,26 @@ fieldset[disabled] .btn-vk.active {
   border-color: #a5a5a5;
 }
 
+.forum-topic-tm{
+  position:relative;
+  width:70%;
+  background:#f6f7f8;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f56954;
+  margin: 0 auto;
+}
+
+.forum-topic-tm{
+  position:relative;
+  width:70%;
+  background:#f6f7f8;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f56954;
+  margin: 0 auto;
+}
+
 .header-topic{
   background:#ffffff;
   padding:25px;
@@ -3638,6 +3658,11 @@ fieldset[disabled] .btn-vk.active {
   border-spacing: 0;
   border-collapse: collapse; margin:0;
   background:transparent;
+  width:70%;
+  margin:0 auto;
+}
+
+.header-tm-forum{
   width:70%;
   margin:0 auto;
 }

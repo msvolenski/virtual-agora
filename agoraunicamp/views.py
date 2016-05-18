@@ -23,6 +23,8 @@ from conheca.models import Article
 from resultados.models import Relatorio
 from itertools import chain
 from agora.models import Choice, Question, InitialListQuestion
+from forum.models import Category, Topic, TopicAnswer
+from forum.models import User as Userf
 
 
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
@@ -219,11 +221,15 @@ class PaginaInicialView(generic.ListView):
     questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
+    #categories_forum = Category.objects.filter(projeto__sigla=user.projeto)
+    #topics = [a.topic for a in categories_forum]
+    auth_user = self.request.user
+    topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
     article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
     relatorio = Relatorio.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
     not_answered = list(set(questions) - set(answered_questions))
     result_list = sorted(
-        chain(relatorio, article, not_answered),
+        chain(relatorio, article, not_answered, topics),
         key=lambda instance: instance.publ_date, reverse=True)
 
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
@@ -236,9 +242,12 @@ class PaginaInicialView(generic.ListView):
     context['not_answered'].reverse()
     context['timeline'] = result_list
     context['nickname'] = user.nickname
-
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
+
+    context['categories'] = Topic.objects.filter(projeto__sigla=user.projeto)
+    context['topic_user'] = Userf.objects.get(user=auth_user)
+    context['topic_users'] = TopicAnswer.objects.all()
     return context
 
 
@@ -446,13 +455,16 @@ def tag_search(request, tag_name):
   questions = Question.objects.filter(exp_date__gt=timezone.now())
   answered = Answer.objects.filter(user=user)
   answered_questions = [a.question for a in answered]
+  auth_user = request.user
+  topics = Topic.objects.filter(projeto__sigla=user.projeto, tags__name__in=[tag_name]).order_by('-publ_date')
   questions_tag = Question.objects.filter(tags__name__in=[tag_name],projeto__sigla=user.projeto).distinct()
   article = Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
   relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
   not_answered = list(set(questions) - set(answered_questions))
   not_answered_tag = list(set(questions_tag) - set(answered_questions))
+  projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
   result_list = sorted(
-        chain(relatorio, article, not_answered_tag),
+        chain(relatorio, article, not_answered_tag, topics),
         key=lambda instance: instance.publ_date, reverse=True)
   return render(request, 'agoraunicamp/agora-search.html',
     { 'article' : Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date'),
@@ -462,6 +474,10 @@ def tag_search(request, tag_name):
       'not_answered_tag': answered_questions_tag,
       'timeline': result_list,
       'tag' : tag_name,
+      'topic_user' : Userf.objects.get(user=auth_user),
+      'topic_users' : TopicAnswer.objects.all(),
+      'projeto' : projeto_nome.projeto,
+      'sigla' : user.projeto,
 
     })
 

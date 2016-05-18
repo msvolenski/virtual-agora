@@ -9,8 +9,8 @@ from .models import Category, Topic, TopicAnswer, Like
 class TopicAdmin(admin.ModelAdmin):
   actions = ['publicar_topico','remover_topico']
   fields = ['projeto', 'category', 'title', 'text', 'tags']
-  list_filter = ['pub_date']
-  list_display = ['projeto','category', 'title','text', 'published','pub_date']
+  list_filter = ['publ_date']
+  list_display = ['projeto','category', 'title','text', 'published','publ_date']
 
   def remover_topico(modeladmin, request, queryset):
       if queryset.count() != 1:
@@ -30,7 +30,7 @@ class TopicAdmin(admin.ModelAdmin):
 
   def publicar_topico(modeladmin, request, queryset):
           queryset.update(published = 'Sim')
-          queryset.update(pub_date = timezone.now())
+          queryset.update(publ_date = timezone.now())
           x = Message(kind='3', published='Sim', publ_date=timezone.now())
           for title in queryset:
               t = title.title.encode('utf8')

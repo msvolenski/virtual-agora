@@ -39,7 +39,15 @@
       <div id="area{{topic.id}}" class="header-topic">
         <div style="font-weight:bold;font-size:25px;">{{ topic }}
         </div>
-        <span style="color:#9197a3"> Categoria: {{ topic.category }} - Publicado em: {{ topic.pub_date }} </span></br>
+        <p>
+          {% for tag in topic.tags.all %}
+          <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+            <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+          </form>
+          {% endfor %}
+          <div class="pub-style"><strong>Publicado em:</strong>{{ topic.publ_date }}</div>
+        </form>
+        </p>
         <p>{{ topic.text|safe }}</p>
       </div>
       <div class="plainlinks hlist">
@@ -126,18 +134,9 @@
       }
       </script>
 
-
-
-
-
       {% endif %}
     </div>
   </div>
-
-
-
-
-
 </div>
 
 

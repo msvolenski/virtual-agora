@@ -5,7 +5,7 @@
 
 <div class="project-header" style="background:#ffffff">
   <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
-  <h1>Plano Diretor Participativo - UNICAMP</h1>
+  <h1 style="background: #e2e0e0">{{projeto}} - {{sigla}}</h1>
   <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
   <ul class="nav">
     <li style="background: #e2e0e0"><a href="{% url 'agoraunicamp:mural' %}">Home</a></li>
@@ -65,6 +65,109 @@
       {% endfor %}
     </div>
   </div>
+</div>
+</br>
+{% endif %}
+
+{% if t|to_class_name == 'Topic' %}
+
+<div class="forum-topic-tm">
+  {% if t %}
+  <div id="area{{t.id}}" class="header-topic">
+    <div style="font-weight:bold;font-size:25px;">{{ t }}
+    </div>
+    {% for tag in t.tags.all %}
+    <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+      <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+    </form>
+    {% endfor %}
+    <div class="pub-style"><strong>Publicado em: </strong>{{ t.publ_date }}</div></br>
+    <p>{{ t.text|safe }}</p>
+  </div>
+  <div class="plainlinks hlist">
+  </div>
+
+
+  {% for answer in t.topicanswer_set.all %}
+  <div class="render-response">
+    <div class="forum-username">{{ answer.user}}{% if answer.user.user.user.nickname %}
+      ({{answer.user.user.user.nickname}})
+      {% endif %}&nbsp;&nbsp;
+    </div>
+    <div>{{ answer.text|safe|linebreaks }}
+    </div>
+    <div style="color:#9197a3">{{answer.answer_date}}
+    </div>
+
+    {% if answer.user == topic_user %}
+    <div style="float:right">
+      <input id="botao" name="div{{answer.text}}{{answer.answer_date}}" type="button" style="display:visible"  value="editar" onClick="ativa(this.name)" />
+    </div>
+    <div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
+      <form action="{% url 'forum:answer_home_edit' t.id  %}" method="post">
+        <textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
+        </textarea>
+        <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
+      </form>
+    </div>
+
+    <script>
+    function ativa(x){
+      var div = document.getElementById(x);
+      /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
+      if (div.style.display == 'none') {
+
+        div.style.display = "inline"
+      } else {
+        /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
+        div.style.display = 'none'
+        document.getElementById("botao").value='editar'
+      }
+    }
+    </script>
+
+    {% endif %}
+  </div>
+
+  {% endfor %}
+  {% endif %}
+  <br/><br/>
+
+  {% set flag = 0 %}
+  {% for ti in topic_users %}
+    {% if ti.topic == t %}
+      {% if ti.user = topic_user %}
+        {% set flag = 1 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+
+
+  {% if flag = 0 %}
+
+  <div id="area{{t.id}}" class="response-area">
+    <form action="{% url 'forum:answer_home' t.id %}" method="post">
+      <textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
+      <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
+    </form>
+  </div>
+  <!--<button id="b" style="visibility:visible;margin:5px" type="button" onclick="Mudarestado('minhaDiv{{topic.id}}')">Comentar</button>-->
+
+  <script>
+  function Mudarestado(el) {
+    var display = document.getElementById(el).style.display;
+    if(display == "none")
+    document.getElementById(el).style.display = 'block';
+    document.getElementById(b).style.visibility = 'hidden';
+    else
+    document.getElementById(el).style.display = 'none';
+    document.getElementById(b).style.visibility = 'visible';
+  }
+  </script>
+
+  {% endif %}
+
 </div>
 </br>
 {% endif %}
