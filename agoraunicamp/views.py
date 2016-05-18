@@ -9,7 +9,7 @@ from django.contrib.auth.models import User as AuthUser
 from agora.models import Choice, Question, InitialListQuestion
 from .decorators import term_required
 from django.views import generic
-from .models import Termo, User, Answer, MeuEspaco, Message
+from .models import Termo, User, Answer, MeuEspaco, Message, Tutorial
 from projetos.models import Projeto
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
@@ -49,6 +49,8 @@ class MuralView(generic.ListView):
     else:
         first_question = initial_list_user[0]
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
+    t = Tutorial.objects.get(user=user)
+    context['tutorial'] = t.status
     context['initial_list'] = initial_list
     context['not_answered_list'] = not_answered_list
     context['initial_list_user'] = initial_list_user
@@ -164,6 +166,8 @@ class AgoraConfiguracaoView(generic.ListView):
   def get_context_data(self, **kwargs):
     context = super(AgoraConfiguracaoView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
+    t = Tutorial.objects.get(user=u)
+    context['tutorial'] = t.status
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     return context
@@ -183,9 +187,12 @@ class AgoraView(generic.ListView):
   def get_context_data(self, **kwargs):
     context = super(AgoraView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
+    t = Tutorial.objects.get(user=u)
+    context['tutorial'] = t.status
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['projetos'] = Projeto.objects.all()
+
     return context
 
 @method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
@@ -220,7 +227,8 @@ class PaginaInicialView(generic.ListView):
         key=lambda instance: instance.publ_date, reverse=True)
 
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
-
+    t = Tutorial.objects.get(user=user)
+    context['tutorial'] = t.status
     context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
     context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
     context['question'] = Question.objects.filter(projeto__sigla=user.projeto)
@@ -463,3 +471,14 @@ def atualizaProjeto(request, projeto_nome):
     #user.set(projeto=projeto_nome)
     User.objects.filter(user=request.user).update(projeto=projeto_nome)
     return redirect('agoraunicamp:paginainicial')
+
+
+def encerraTutorial(request):
+    us = User.objects.get(user=request.user)
+    Tutorial.objects.filter(user=us).update(status='sim')
+    return redirect('agoraunicamp:agora')
+
+def refazerTutorial(request):
+    us = User.objects.get(user=request.user)
+    Tutorial.objects.filter(user=us).update(status='nao')
+    return redirect('agoraunicamp:agora')

@@ -11,6 +11,7 @@ from django.forms import modelformset_factory
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User as AuthUser
 from agoraunicamp.models import User as QuestionUser
+from agoraunicamp.models import Tutorial
 from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
 from agoraunicamp.decorators import term_required
 from projetos.models import Projeto
@@ -35,6 +36,8 @@ class ForumHomeView(generic.ListView):
     auth_user = self.request.user
     user = auth_user.user
     projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
+    t = Tutorial.objects.get(user=user)
+    context['tutorial'] = t.status
     context['req_user'] = self.request.user
     context['username'] = auth_user
     context['user'] = user

@@ -3,6 +3,25 @@
 {% load staticfiles %}
 {% block content12 %}
 
+
+{% if tutorial == 'nao' %}
+<div id="tutorial2" class="modal fade" role="dialog">
+  <div class="modal-dialog" id="modal-dialog-mob">
+    <div style="  text-align: center;" >
+    <img id="tutorial2img" class="tutorial-image" src="{% static "agora/images/tutorial/9.png" %}" alt="tutorial 1"/>
+    </div>
+    <div class="modal-footer" style="border-top:0px;">
+      <button style="display:block;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal">Navegar pela sessão e continuar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+$('#tutorial2').modal('show')
+</script>
+
+{% endif %}
+
 <div style="background: #f56954" class="project-header">
   <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
   <h1 style="background: #f56954">{{projeto}} - {{sigla}}</h1>
@@ -150,6 +169,9 @@
   {% endfor %}
   {% endif %}
 </div>
+
+
+
 
 
 {% endblock content12 %}

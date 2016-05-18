@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from .models import User, Answer, Termo, MeuEspaco, Message
+from .models import User, Answer, Termo, MeuEspaco, Message, Tutorial
 from django.http import HttpResponse
 from django.core import serializers
 from django.shortcuts import render
@@ -24,6 +24,9 @@ class AnswerAdmin(admin.ModelAdmin):
 
 class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
+
+class TutorialAdmin(admin.ModelAdmin):
+  list_display = ['userd', 'status']
 
 class MeuEspacoAdmin(admin.ModelAdmin):
   list_filter = ['projeto']
@@ -55,5 +58,6 @@ class MessageAdmin(admin.ModelAdmin):
 
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Termo, TermoAdmin)
+admin.site.register(Tutorial, TutorialAdmin)
 admin.site.register(MeuEspaco, MeuEspacoAdmin)
 admin.site.register(Message, MessageAdmin)

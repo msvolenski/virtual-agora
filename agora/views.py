@@ -19,7 +19,7 @@ from django.views.decorators.http import condition
 from agoraunicamp.decorators import term_required
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
-from agoraunicamp.models import User, Termo, Answer
+from agoraunicamp.models import User, Termo, Answer, Tutorial
 from projetos.models import Projeto
 
 
@@ -41,6 +41,8 @@ class ParticipeView(generic.ListView):
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
+    t = Tutorial.objects.get(user=user)
+    context['tutorial'] = t.status
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
     context['nickname'] = user.nickname

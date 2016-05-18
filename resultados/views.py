@@ -11,7 +11,7 @@ from django.shortcuts import render_to_response,redirect
 from django.template import RequestContext, Context, loader
 from agoraunicamp.decorators import term_required
 from agora.models import Choice, Question, InitialListQuestion
-from agoraunicamp.models import User, Answer, Termo
+from agoraunicamp.models import User, Answer, Termo, Tutorial
 from projetos.models import Projeto
 
 
@@ -29,6 +29,8 @@ class ResultadosView(ListView):
         context = super(ResultadosView, self).get_context_data(**kwargs)
         user = User.objects.get(user=self.request.user)
         projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
+        t = Tutorial.objects.get(user=user)
+        context['tutorial'] = t.status
         context['projeto'] = projeto_nome.projeto
         context['sigla'] = user.projeto
         context['relatorio_hist_1'] =  Relatorio.objects.filter(publhistorico='Sim',tipo='1',projeto__sigla=user.projeto).order_by('-publ_date')

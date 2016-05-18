@@ -1,6 +1,7 @@
 {% extends 'agoraunicamp/base.html' %}
 {% load set_var %}
 {% block content12 %}
+{% load staticfiles %}
 
 
 <div style="background: #12d673" class="project-header">
@@ -77,4 +78,21 @@
     {% endfor %}
   </div>
 
+
+{% if tutorial == 'nao' %}
+  <div id="tutorial2" class="modal fade" role="dialog">
+    <div class="modal-dialog" id="modal-dialog-mob">
+      <div style="  text-align: center;" >
+      <img id="tutorial2img" class="tutorial-image" src="{% static "agora/images/tutorial/10.png" %}" alt="tutorial 1"/>
+      </div>
+      <div class="modal-footer" style="border-top:0px;">
+        <button style="display:block;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal">Navegar pela sessão e continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $('#tutorial2').modal('show')
+  </script>
+{% endif %}
 {% endblock content12 %}

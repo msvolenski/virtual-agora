@@ -26,5 +26,43 @@
 </div>
 
 
+{% if tutorial == 'nao' %}
+
+<div id="tutorial1" class="modal fade" role="dialog">
+  <div class="modal-dialog" id="modal-dialog-mob">
+    <div style="  text-align: center;" >
+    <img id="tutorial1img" class="tutorial-image" src="{% static "agora/images/tutorial/1.png" %}" alt="tutorial 1"/>
+    </div>
+    <div class="modal-footer" style="border-top:0px;">
+      <button style="display:block;float:right;" id="tutorial1-button" type="button" class="btn-sm btn-default" onclick="proximo()">Próximo</button>
+      <button style="display:none;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal" >Escolha um projeto</button>
+    </div>
+  </div>
+</div>
+
+<script>
+$('#tutorial1').modal('show')
+</script>
+
+<script type="text/javascript">
+var i = 2;
+function proximo(){
+  var endp = '/static/agora/images/tutorial/' + i + '.png';
+  document.getElementById('tutorial1img').src=endp ;
+  if (i == 5) {
+    document.getElementById('tutorial1-button').style.display='none';
+    document.getElementById('tutorial2-button').style.display='block';
+  }
+  i++;
+}
+</script>
+
+{% endif %}
+
+
+
+
+
+
 
 {% endblock content12 %}

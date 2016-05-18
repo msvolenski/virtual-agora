@@ -13,7 +13,7 @@ from django.views.generic import ListView
 from .models import SubTopico, Article, Topico
 from agora.models import Question
 from agoraunicamp.decorators import term_required
-from agoraunicamp.models import User, Answer
+from agoraunicamp.models import User, Answer, Tutorial
 from projetos.models import Projeto
 
 #PROJETO
@@ -31,6 +31,8 @@ class ConhecaView(ListView):
     answered =  Answer.objects.filter(user_id=self.request.user.id)
     answered_questions = [a.question for a in answered]
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
+    t = Tutorial.objects.get(user=user)
+    context['tutorial'] = t.status
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
     context['not_answered'] = list(set(questions) - set(answered_questions))

@@ -3877,7 +3877,20 @@ fieldset[disabled] .btn-vk.active {
   color:#ffffff
 }
 
+.tutorial-image{
+  width:400px;
+  margin:0 auto;
+
+}
+
 @media (max-width: 765px) {
+
+  .tutorial-image{
+    width:200px;
+    margin-left:10px;
+    margin:0 auto;
+  }
+
   .mural-content{
     font-size:100%;
   }

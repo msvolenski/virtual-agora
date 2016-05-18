@@ -3,6 +3,40 @@
 {% load set_var %}
 {% block content12 %}
 
+
+{% if tutorial == 'nao' %}
+<div id="tutorial1" class="modal fade" role="dialog">
+  <div class="modal-dialog" id="modal-dialog-mob">
+    <div style="  text-align: center;" >
+      <img id="tutorial1img" class="tutorial-image" src="{% static "agora/images/tutorial/13.png" %}" alt="tutorial 1"/>
+    </div>
+    <div class="modal-footer" style="border-top:0px;">
+      <button style="display:block;float:right;" id="tutorial1-button" type="button" class="btn-sm btn-default" onclick="proximo()">Próximo</button>
+      <a href="{% url 'agoraunicamp:encerra_tutorial' %}"><button style="display:none;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" href="{% url 'agoraunicamp:encerra_tutorial' %}" >Encerrar o Tutorial</button></a>
+    </div>
+  </div>
+</div>
+
+<script>
+$('#tutorial1').modal('show')
+</script>
+
+<script type="text/javascript">
+var i = 14;
+function proximo(){
+  var endp = '/static/agora/images/tutorial/' + i + '.png';
+  document.getElementById('tutorial1img').src=endp ;
+  if (i == 15) {
+    document.getElementById('tutorial1-button').style.display='none';
+    document.getElementById('tutorial2-button').style.display='block';
+  }
+  i++;
+}
+</script>
+
+{% endif %}
+
+
 <div style="background:#ffffff" class="project-header-config"> Ágora Unicamp - Configurações
 </div>
 
@@ -38,31 +72,43 @@
   </div>
 
   <div class="form-inline-config">
-  <form action="{% url 'agoraunicamp:email-config' %}" method="post" role="form">
-    <label class="item-config" for="email">Gostaria de incluir um novo endereço de Email?</label>
-    <input class="textarea-size-email" placeholder="{{user.email}}" type="email" name="text-email">
-    <button class="button-margin" type="submit">Enviar</button>
-  </form>
+    <form action="{% url 'agoraunicamp:email-config' %}" method="post" role="form">
+      <label class="item-config" for="email">Gostaria de incluir um novo endereço de Email?</label>
+      <input class="textarea-size-email" placeholder="{{user.email}}" type="email" name="text-email">
+      <button class="button-margin" type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div class="form-inline-config">
+    <form action="{% url 'agoraunicamp:re_tutorial' %}" method="post" role="form">
+      <label class="item-config" for="email">Gostaria de refazer o tutorial? </label>
+      <button class="button-margin" type="submit">Refazer tutorial</button>
+    </form>
   </div>
 
 
-    <li>
-      <span class="back-agora"><a style="text-decoration:none;color:black;" href={% url 'agoraunicamp:agora' %}>Voltar</span>
-    </li>
+
+  <span class="back-agora"><a style="text-decoration:none;color:black;" href={% url 'agoraunicamp:agora' %}>Voltar</span>
 
 
-</div>
+
+  </div>
 
 
-<script type="text/javascript">
-jQuery(function($) {
-  function resizeImage() {
-    var x = $(window).height();
-    $(".my-div").css("height", x * 0.75);
-  }
-  $(window).resize(resizeImage);
-  resizeImage();
-});
-</script>
+  <script type="text/javascript">
+  jQuery(function($) {
+    function resizeImage() {
+      var x = $(window).height();
+      $(".my-div").css("height", x * 0.75);
+    }
+    $(window).resize(resizeImage);
+    resizeImage();
+  });
+  </script>
 
-{% endblock content12 %}
+
+
+
+
+
+  {% endblock content12 %}

@@ -20,7 +20,7 @@ class User(models.Model):
 
   STAFF_TYPE = (
       ('1', 'Professor'),
-      ('2', 'Funcionário'),
+      ('2', 'Funcionario'),
       ('3', 'Aluno-Graduacao'),
       ('4', 'Aluno-Mestrado'),
       ('5', 'Aluno-Doutorado'),
@@ -61,6 +61,7 @@ class User(models.Model):
          Termo.objects.get(user=nome)
       except:
          Termo.objects.create(user=self)
+         Tutorial.objects.create(user=self)
          Userf.objects.create(user=self.user)
          a = Userf.objects.get(user=self.user)
          a.username="{A} {B}".format(A=self.primeiro_nome,B=self.ultimo_nome)
@@ -140,3 +141,13 @@ class MeuEspaco(models.Model):
     comentario =  models.CharField('Comentário',max_length=1000, blank=True)
     secao = models.CharField('Seção',max_length=30, blank=True)
     arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)
+
+class Tutorial(models.Model):
+    user = models.ForeignKey(User)
+    status = models.CharField('Status', max_length=10, default='nao')
+
+    def __str__(self):
+        return self.status
+
+    def userd(self):
+        return self.user.user
