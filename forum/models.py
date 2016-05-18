@@ -9,27 +9,10 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 
-#PROJETO
-class Category(models.Model):
-  """Model for types of subjects"""
-  projeto = models.ForeignKey('projetos.Projeto', max_length=50, blank=False)
-  title = models.CharField(max_length=50)
-  tags = TaggableManager()
-
-  def __str__(self):
-    return self.title.encode('utf8')
-
-  class Meta:
-    verbose_name = 'categoria'
-    verbose_name_plural = 'categorias'
-
-
-
-
 class Topic(models.Model):
   """Model for topics of a theme"""
 
-  category = models.ForeignKey(Category, on_delete=models.CASCADE)
+  #category = models.ForeignKey(Category, on_delete=models.CASCADE)
   title = models.CharField('Título', max_length=50)
   text = RichTextUploadingField(config_name='default', verbose_name=u'Texto')
   publ_date = models.DateTimeField('Data de publicação')
@@ -47,8 +30,8 @@ class Topic(models.Model):
     return super(Topic, self).save(*args, **kwargs)
 
   class Meta:
-    verbose_name = 'tópico'
-    verbose_name_plural = 'tópicos'
+    verbose_name = 'debate'
+    verbose_name_plural = 'debates'
 
 
 class User(models.Model):

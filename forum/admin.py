@@ -3,14 +3,14 @@ from django.contrib import admin
 from django.utils import timezone
 from agoraunicamp.models import Message
 
-from .models import Category, Topic, TopicAnswer, Like
+from .models import Topic, TopicAnswer, Like
 
 
 class TopicAdmin(admin.ModelAdmin):
   actions = ['publicar_topico','remover_topico']
-  fields = ['projeto', 'category', 'title', 'text', 'tags']
-  list_filter = ['publ_date']
-  list_display = ['projeto','category', 'title','text', 'published','publ_date']
+  fields = ['projeto', 'title', 'text', 'tags']
+  list_filter = ['projeto','publ_date']
+  list_display = ['projeto', 'title','text', 'published','publ_date']
 
   def remover_topico(modeladmin, request, queryset):
       if queryset.count() != 1:
@@ -57,20 +57,9 @@ class TopicAnswerAdmin(admin.ModelAdmin):
 class LikeAdmin(admin.ModelAdmin):
   list_display = ['user', 'answer']
 
-class CategoryAdmin(admin.ModelAdmin):
-  list_filter = ['projeto']
-  list_display = ['projeto', 'title']
-  actions = ['remover_categoria']
 
-  def remover_categoria(modeladmin, request, queryset):
-      if queryset.count() != 1:
-          modeladmin.message_user(request, "Não é possível remover mais de uma categoria por vez.")
-          return
-      else:
-          queryset.delete()
-      return
 
-admin.site.register(Category, CategoryAdmin)
+
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopicAnswer, TopicAnswerAdmin)
 admin.site.register(Like, LikeAdmin)

@@ -36,27 +36,8 @@ $('#tutorial2').modal('show')
   </ul>
 </div>
 
-{% if cat %}
-<div class="forum-menu">
-  <div style="padding:20px">
-    <div class="list-group">
-      {% if categories_list %}
-      {% for category in categories_list %}
-      <a class="list-group-item" href="{% url 'forum:forum' category|slugify category.id %}"><strong>{{ category }}</strong></a>
-      {% for topic in category.topic_set.all %}
-      <li><div style="padding:10px"><a style="color:black" href="{% url 'forum:topic' topic.id %}">{{ topic}}</a></div></li>
-      {% endfor %}
-      {% endfor %}
-      {% endif %}
-    </div>
-  </div>
-</div>
-{% endif %}
-
 <div class="forum-section">
-  {% if categories_list %}
-  {% for category in categories_list %}
-  {% for topic in category.topic_set.all %}
+  {% for topic in topic %}
   <div class="topic-position">
     <div class="forum-topic">
       {% if topic %}
@@ -174,8 +155,8 @@ $('#tutorial2').modal('show')
     </div>
   </div>
   {% endfor %}
-  {% endfor %}
-  {% endif %}
+
+
 </div>
 
 

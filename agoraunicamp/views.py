@@ -23,7 +23,7 @@ from conheca.models import Article
 from resultados.models import Relatorio
 from itertools import chain
 from agora.models import Choice, Question, InitialListQuestion
-from forum.models import Category, Topic, TopicAnswer
+from forum.models import Topic, TopicAnswer
 from forum.models import User as Userf
 
 
@@ -220,9 +220,7 @@ class PaginaInicialView(generic.ListView):
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
-    answered_questions = [a.question for a in answered]
-    #categories_forum = Category.objects.filter(projeto__sigla=user.projeto)
-    #topics = [a.topic for a in categories_forum]
+    answered_questions = [a.question for a in answered]        
     auth_user = self.request.user
     topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
     article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')

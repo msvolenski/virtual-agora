@@ -12,7 +12,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User as AuthUser
 from agoraunicamp.models import User as QuestionUser
 from agoraunicamp.models import Tutorial
-from .models import Category, Topic, TopicAnswer, User, TopicAnswerForm
+from .models import Topic, TopicAnswer, User, TopicAnswerForm
 from agoraunicamp.decorators import term_required
 from projetos.models import Projeto
 
@@ -20,17 +20,16 @@ from projetos.models import Projeto
 @method_decorator(term_required, name='dispatch')
 class ForumHomeView(generic.ListView):
   template_name = 'forum/home.html'
-  model = Category
-  context_object_name = 'categories_list'
+  model = Topic
 
   def get_queryset(self):
     u = User.objects.get(user=self.request.user)
-    return Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto).distinct()
+    return Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto).distinct()
 
   def get_context_data(self, **kwargs):
     context = super(ForumHomeView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
-    context['topic'] = Topic.objects.all()
+    context['topic'] = Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto)
     context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
     context['answer_form'] = TopicAnswerForm()
     auth_user = self.request.user
@@ -44,35 +43,10 @@ class ForumHomeView(generic.ListView):
     context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['nickname'] = user.nickname
-    context['cat'] = Category.objects.filter(topic__published='Sim',projeto__sigla=u.user.user.projeto).distinct()
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
     return context
 
-
-
-@method_decorator(login_required(login_url='agora:login'), name='dispatch')
-@method_decorator(term_required, name='dispatch')
-class ForumView(generic.ListView):
-  template_name = 'forum/home-categoria.html'
-  model = Category
-
-  def get_context_data(self, **kwargs):
-    context = super(ForumView, self).get_context_data(**kwargs)
-    context['category'] = Category.objects.get(id=self.kwargs['pk'])
-    context['topics_list'] = Topic.objects.filter(category=context['category'])
-    auth_user = self.request.user
-    user = auth_user.user
-    projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
-    context['req_user'] = self.request.user
-    context['username'] = auth_user
-    context['user'] = user
-    context['topic_user'] = User.objects.get(user=auth_user)
-    context['topic_users'] = TopicAnswer.objects.all()
-    context['nickname'] = user.nickname
-    context['projeto'] = projeto_nome.projeto
-    context['sigla'] = user.projeto
-    return context
 
 @method_decorator(login_required(login_url='agora:login'), name='dispatch')
 @method_decorator(term_required, name='dispatch')
