@@ -3908,6 +3908,16 @@ fieldset[disabled] .btn-vk.active {
 
 @media (max-width: 765px) {
 
+  .forum-topic-tm{
+    position:relative;
+    width:90%;
+    background:#f6f7f8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f56954;
+    margin: 0 auto;
+  }
+
   .tutorial-image{
     width:200px;
     margin-left:10px;
