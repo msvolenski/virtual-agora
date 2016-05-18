@@ -22,9 +22,6 @@
     <div class="mural-pad"> Mural
     </div>
 
-
-
-
     {% if message_conheca_count > 3 %}
     <div id="x1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_conheca|slice:"3" %}
@@ -40,13 +37,11 @@
     </div>
     {% endif %}
 
-
     <div  id="x3" class="mural-box-section" style="display:none;background:#ffffff;">
       {% for msg in message_conheca %}
       <p><a href="#" class="mural-content" style="color:#00c0ef;" onclick="window.open('{{msg.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="mural-msg-font">{{msg.message}}<font style="font-size:60%" class="mural-date-font">[{{msg.publ_date|date:'d-m-Y'}}]</font></span></a></p>
       {% endfor %}
     </div>
-
 
     <script>
     function ativa1(){
@@ -54,13 +49,6 @@
       document.getElementById("x3").style.display = "inline";
     }
     </script>
-
-
-
-
-
-
-
 
     {% if message_participe_count > 3 %}
     <div id="xx1" class="mural-box-section" style="display:visible;background:#ffffff;">
@@ -90,8 +78,6 @@
     }
     </script>
 
-
-
     {% if message_resultados_count > 3 %}
     <div id="xxy1" class="mural-box-section" style="display:visible;background:#ffffff;">
       {% for msg in message_resultados|slice:"3" %}
@@ -119,10 +105,6 @@
       document.getElementById("xxy3").style.display = "inline";
     }
     </script>
-
-
-
-
 
     {% if message_comunidade_count > 3 %}
     <div id="xxyy1" class="mural-box-section" style="display:visible;background:#ffffff;">
@@ -152,102 +134,11 @@
     }
     </script>
 
-
-
-
-
-
-
-
-
     <div class="mural-pad" style="float:left;margin-bottom:20px;"> Não deixe de participar! Vote!
     </div>
   </div>
 
-  {% set x = 0 %}
-  {% for question in not_answered %}
-  {% if question.id|slugify == first_question %}
-    {% set x = 1 %}
-  {% endif %}
-  {% endfor %}
-
-  {% if not_answered %}
-  {% if x == 1 %}
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog" id="modal-dialog-mob">
-      <div class="modal-content">
-        <div style="color:black;padding:15px;font-size:16px;">Decida! Precisamos muito da sua participação:</div>
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
-          <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          {{ message }}
-        </div></br>
-        {% endfor %}
-        {% for question in not_answered %}
-        {% if question.id|slugify == first_question %}
-        <div class="box-question" style="width:95%;">
-          <div class="box-question-title">Questão {{question.id}}
-          </div>
-          <div class="box-question-header">
-            <p>
-              {% for tag in question.tags.all %}
-              <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-                <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-              </form>
-              {% endfor %}
-              <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
-              <strong>Expira em:</strong> {{ question.exp_date }}
-            </p>
-            <div class="plainlinks hlist" style="width:100%;border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;">
-            </div>
-            <div class="question-title">{{ question }}</div>
-            {% if question.image %}
-            <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
-            {% endif %}
-            <form action="{% url 'agora:vote_initial' question.id %}" method="post">
-              {% csrf_token %}
-              {% if question.question_type == '1' %}
-              <ul class="list-group">
-                {% for choice in question.choice_set.all %}
-                <div class="list-group-item">
-                  <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                </div>
-                {% endfor %}
-              </ul>
-              {% elif question.question_type == '2' %}
-              <ul class="list-group">
-                {% for choice in question.choice_set.all %}
-                <div class="list-group-item">
-                  <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                  <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-                </div>
-                {% endfor %}
-              </ul>
-              {% elif question.question_type == '3' %}
-              <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
-              {% endif %}
-              <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-            </form>
-            <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
-          </div>
-        </div>
-        <br />
-        {% endif %}
-        {% endfor %}
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ir para o Home</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  {%endif%}
-  {%endif%}
-  <script>
-  $('#myModal').modal('show')
-  </script>
+  
 </div>
 
 

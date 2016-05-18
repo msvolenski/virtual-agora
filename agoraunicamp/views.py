@@ -53,10 +53,6 @@ class MuralView(generic.ListView):
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
     t = Tutorial.objects.get(user=user)
     context['tutorial'] = t.status
-    context['initial_list'] = initial_list
-    context['not_answered_list'] = not_answered_list
-    context['initial_list_user'] = initial_list_user
-    context['first_question'] = first_question
     context['question'] = Question.objects.filter(question_status='p')
     context['not_answered'] = list(set(questions) - set(answered_questions))
     context['not_answered'].reverse()
@@ -72,7 +68,6 @@ class MuralView(generic.ListView):
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
     return context
-
 
   def get_queryset(self):
     return Question.objects.filter(question_status='p')
@@ -216,11 +211,21 @@ class PaginaInicialView(generic.ListView):
     return
 
   def get_context_data(self, **kwargs):
+
+
+
+
+
+
+
+
+
+
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
-    answered_questions = [a.question for a in answered]        
+    answered_questions = [a.question for a in answered]
     auth_user = self.request.user
     topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
     article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
@@ -232,6 +237,17 @@ class PaginaInicialView(generic.ListView):
 
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
     t = Tutorial.objects.get(user=user)
+    try:
+        initial = InitialListQuestion.objects.filter(select=1,projeto__sigla=user.projeto).first() #pega a lista
+        initial_list = [c.name for c in initial.questions.all()]
+    except:
+        initial_list=[0]
+    not_answered_list=[str(f.id) for f in not_answered]
+    initial_list_user = list(set(initial_list).intersection(not_answered_list))
+    if not initial_list_user:
+        first_question = 'none'
+    else:
+        first_question = initial_list_user[0]
     context['tutorial'] = t.status
     context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
     context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
@@ -242,10 +258,14 @@ class PaginaInicialView(generic.ListView):
     context['nickname'] = user.nickname
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
-
     context['categories'] = Topic.objects.filter(projeto__sigla=user.projeto)
     context['topic_user'] = Userf.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
+    context['initial_list'] = initial_list
+    context['not_answered_list'] = not_answered_list
+    context['initial_list_user'] = initial_list_user
+    context['first_question'] = first_question
+
     return context
 
 
