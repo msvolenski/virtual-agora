@@ -26,8 +26,7 @@
     {% endfor %}
     {% for question in not_answered %}
     <div class="box-question">
-      <div class="box-question-title"><a href="#" style="color:black;" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Questão {{question.id}}</a>
-      </div>
+      
       <div class="box-question-header">
         <p>
           {% for tag in question.tags.all %}

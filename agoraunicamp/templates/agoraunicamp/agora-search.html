@@ -27,8 +27,7 @@
 {%if t|to_class_name == 'Article' %}
 <div class="header-tm-article">
   <div class="box-article">
-    <div class="box-header-article">Artigo
-    </div>
+
     <div class="box-article-content">
       <p>
         {% for tag in t.tags.all %}
@@ -184,8 +183,7 @@
   {% endfor %}
 </br>
 <div class="box-question-tm">
-  <div class="box-question-title">Questão {{question.id}}
-  </div>
+
   <div class="box-question-header">
     <p>
       {% for tag in t.tags.all %}
@@ -237,16 +235,7 @@
 {%if t|to_class_name == 'Relatorio' %}
 
 <div class="box-result-tm">
-  <div class="box-result-title">
-    {% if Relatorio.questao == None %}
-    Resultado Geral
-    {% endif %}
 
-    {% if Relatorio.questao != None %}
-    Resultado {{ t.questao }}
-    {% endif %}
-
-  </div>
   <div id="relatorio{{t.id}}" class="box-result-content">
     <p>
       {% for tag in t.tags.all %}

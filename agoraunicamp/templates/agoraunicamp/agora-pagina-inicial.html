@@ -153,8 +153,7 @@
 {%if t|to_class_name == 'Article' %}
 <div class="header-tm-article">
   <div class="box-article">
-    <div class="box-header-article"><a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Artigo</a>
-    </div>
+
     <div class="box-article-content">
       <p>
         {% for tag in t.tags.all %}
@@ -200,8 +199,7 @@
 {%if t|to_class_name == 'Question' %}
 <div class="header-tm-article">
   <div class="box-question-tm">
-    <div class="box-question-title"><a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Questão {{t.id}}</a>
-    </div>
+
     <div class="box-question-header">
       <p>
         {% for tag in t.tags.all %}
@@ -210,7 +208,7 @@
         </form>
         {% endfor %}
         <div class="pub-style"><strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
-          <strong>Expira em:</strong> {{ t.exp_date }}}</div>
+          <strong>Expira em:</strong> {{ t.exp_date }}</div>
         </p>
         <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em;">
         </div>
@@ -253,16 +251,7 @@
   {%if t|to_class_name == 'Relatorio' %}
 
   <div class="box-result-tm">
-    <div class="box-result-title">
-      {% if t.questao == None %}
-      <a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Resultado Geral</a>
-      {% endif %}
 
-      {% if t.questao != None %}
-      <a href="#" style="color:black;" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Resultado {{ t.questao }}</a>
-      {% endif %}
-
-    </div>
     <div id="relatorio{{t.id}}" class="box-result-content">
       <p>
         {% for tag in t.tags.all %}
@@ -344,8 +333,7 @@ $('#tutorial2').modal('show')
       {% for question in not_answered %}
       {% if question.id|slugify == first_question %}
       <div class="box-question" style="width:95%;">
-        <div class="box-question-title">Questão {{question.id}}
-        </div>
+
         <div class="box-question-header">
           <p>
             {% for tag in question.tags.all %}
