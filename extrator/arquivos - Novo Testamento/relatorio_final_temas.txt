@@ -1,0 +1,54 @@
+RELATÓRIO FINAL - TEMAS
+
+
+ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
+
+- Métrica: 0.3% graus; 0.3% betwenness; 0.4% closeness;
+- Parâmetros: delta: 2%; f: 10% dos nós totais (0.0 nós)
+- Temas pré-selecionados(10):
+
+dilma
+lula
+mail
+sobre
+santana
+processo
+peça-chave
+chapa
+uso
+golpe
+
+
+ETAPA 2: SELEÇÃO FINAL DOS TEMAS
+
+- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
+- Parâmetro: fb(frequência mínima de bigramas): 50% do total de bigramas
+- Resultados: 
+
+Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
+
+dilma -> lula - 1/17 - 5.88235294118%
+lula -> dilma - 7/81 - 8.64197530864%
+mail -> dilma - 7/81 - 8.64197530864%
+mail -> santana - 1/10 - 10.0%
+sobre -> dilma - 7/81 - 8.64197530864%
+processo -> dilma - 4/81 - 4.93827160494%
+chapa -> dilma - 3/81 - 3.7037037037%
+uso -> mail - 7/12 - 58.3333333333%
+
+- Temas selecionados(9):
+
+dilma
+lula
+sobre
+santana
+processo
+peça-chave
+chapa
+uso
+golpe
+
+
+- Temas excluídos(1):
+
+mail

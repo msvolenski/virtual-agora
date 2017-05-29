@@ -106,7 +106,7 @@
       {% set flag = 0 %}
       {% for ti in topic_users %}
       {% if ti.topic == t %}
-      {% if ti.user = topic_user %}
+      {% if ti.user == topic_user %}
       {% set flag = 1 %}
       {% endif %}
       {% endif %}
@@ -114,7 +114,7 @@
 
 
 
-      {% if flag = 0 %}
+      {% if flag == 0 %}
 
       <div id="area{{t.id}}" class="response-area" >
         <form action="{% url 'forum:answer_home' t.id %}" method="post">

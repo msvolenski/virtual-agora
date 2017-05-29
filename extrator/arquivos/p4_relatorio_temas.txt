@@ -1,0 +1,95 @@
+RELATÓRIO FINAL - TEMAS
+
+
+ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
+
+- Métrica: 0.5% graus; 0.1% betwenness; 0.4% closeness;
+- Parâmetros: delta: 2%; f: 10% dos nós totais (609.0 nós)
+- Temas pré-selecionados(8):
+
+deus
+dizer
+homem
+coisa
+cristo
+ver
+dia
+pai
+
+
+ETAPA 2: SELEÇÃO FINAL DOS TEMAS
+
+- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
+- Parâmetro: fb(frequência mínima de bigramas): 50% do total de bigramas
+- Resultados: 
+
+Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
+
+deus -> deus - 14/1255 - 1.11553784861%
+deus -> dizer - 15/1303 - 1.15118956255%
+deus -> homem - 7/623 - 1.12359550562%
+deus -> cristo - 10/505 - 1.9801980198%
+deus -> dia - 1/372 - 0.268817204301%
+deus -> pai - 46/379 - 12.1372031662%
+dizer -> deus - 3/1255 - 0.239043824701%
+dizer -> dizer - 3/1303 - 0.23023791251%
+dizer -> homem - 6/623 - 0.963081861958%
+dizer -> coisa - 10/466 - 2.14592274678%
+dizer -> cristo - 5/505 - 0.990099009901%
+dizer -> ver - 3/373 - 0.804289544236%
+dizer -> dia - 1/372 - 0.268817204301%
+dizer -> pai - 5/379 - 1.31926121372%
+homem -> deus - 13/1255 - 1.03585657371%
+homem -> dizer - 10/1303 - 0.767459708365%
+homem -> homem - 5/623 - 0.802568218299%
+homem -> coisa - 1/466 - 0.214592274678%
+homem -> cristo - 2/505 - 0.39603960396%
+homem -> ver - 3/373 - 0.804289544236%
+homem -> dia - 1/372 - 0.268817204301%
+homem -> pai - 4/379 - 1.05540897098%
+coisa -> deus - 8/1255 - 0.637450199203%
+coisa -> dizer - 16/1303 - 1.22793553338%
+coisa -> homem - 1/623 - 0.16051364366%
+coisa -> coisa - 1/466 - 0.214592274678%
+coisa -> ver - 7/373 - 1.87667560322%
+coisa -> pai - 1/379 - 0.263852242744%
+cristo -> deus - 9/1255 - 0.717131474104%
+cristo -> dizer - 4/1303 - 0.306983883346%
+cristo -> cristo - 2/505 - 0.39603960396%
+cristo -> pai - 2/379 - 0.527704485488%
+ver -> deus - 3/1255 - 0.239043824701%
+ver -> dizer - 3/1303 - 0.23023791251%
+ver -> homem - 8/623 - 1.28410914928%
+ver -> coisa - 4/466 - 0.858369098712%
+ver -> cristo - 1/505 - 0.19801980198%
+ver -> ver - 11/373 - 2.9490616622%
+ver -> dia - 4/372 - 1.0752688172%
+dia -> deus - 3/1255 - 0.239043824701%
+dia -> dizer - 6/1303 - 0.460475825019%
+dia -> homem - 1/623 - 0.16051364366%
+dia -> coisa - 1/466 - 0.214592274678%
+dia -> cristo - 3/505 - 0.594059405941%
+dia -> ver - 3/373 - 0.804289544236%
+dia -> dia - 7/372 - 1.88172043011%
+dia -> pai - 1/379 - 0.263852242744%
+pai -> deus - 5/1255 - 0.398406374502%
+pai -> dizer - 3/1303 - 0.23023791251%
+pai -> cristo - 3/505 - 0.594059405941%
+pai -> ver - 3/373 - 0.804289544236%
+pai -> dia - 1/372 - 0.268817204301%
+pai -> pai - 4/379 - 1.05540897098%
+
+- Temas selecionados(8):
+
+deus
+dizer
+homem
+coisa
+cristo
+ver
+dia
+pai
+
+
+- Temas excluídos(0):
+

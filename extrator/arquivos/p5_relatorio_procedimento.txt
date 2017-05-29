@@ -1,0 +1,787 @@
+TEMA: deus
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus     /     1200    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo     /     169    /    nao
+       deus homem     /     116    /    nao
+       deus nó     /     72    /    nao
+       deus espírito     /     86    /    nao
+       deus coisa     /     81    /    nao
+       deus poder     /     77    /    nao
+       deus graça     /     97    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo graça     /     44    /    nao
+       deus cristo fé     /     27    /    nao
+       deus homem cristo     /     17    /    nao
+       deus homem coisa     /     11    /    nao
+       deus homem coração     /     8    /    nao
+       deus homem verdade     /     8    /    nao
+       deus nó cristo     /     17    /    nao
+       deus nó amor     /     12    /    nao
+       deus espírito cristo     /     20    /    nao
+       deus espírito carne     /     10    /    nao
+       deus espírito poder     /     10    /    nao
+       deus espírito coração     /     11    /    nao
+       deus espírito homem     /     8    /    nao
+       deus espírito amor     /     10    /    nao
+       deus espírito graça     /     11    /    nao
+       deus espírito nó     /     6    /    nao
+       deus coisa cristo     /     15    /    nao
+       deus poder glória     /     8    /    nao
+       deus graça cristo     /     44    /    nao
+       deus graça fé     /     16    /    nao
+       deus graça paulo     /     15    /    nao
+       deus graça nó     /     11    /    nao
+       deus graça amor     /     14    /    nao
+       deus graça espírito     /     11    /    nao
+       deus graça glória     /     9    /    nao
+       deus graça poder     /     10    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo graça fé     /     13    /    nao
+       deus cristo graça paulo     /     13    /    nao
+       deus cristo fé amor     /     10    /    nao
+       deus cristo fé graça     /     13    /    nao
+       deus cristo fé poder     /     8    /    nao
+       deus cristo fé glória     /     5    /    nao
+       deus cristo fé esperança     /     6    /    nao
+       deus cristo fé evangelho     /     6    /    nao
+       deus cristo fé tempo     /     4    /    nao
+       deus cristo fé espírito     /     5    /    nao
+       deus cristo fé pai     /     8    /    nao
+       deus cristo fé paulo     /     3    /    nao
+       deus cristo fé apóstolo     /     5    /    nao
+       deus cristo fé fim     /     4    /    nao
+       deus cristo fé saber     /     4    /    nao
+       deus cristo fé paz     /     5    /    nao
+       deus cristo fé justiça     /     4    /    nao
+       deus homem cristo coração     /     3    /    nao
+       deus homem cristo graça     /     4    /    nao
+       deus homem cristo cabeça     /     1    /    nao
+       deus homem cristo povo     /     2    /    nao
+       deus homem cristo pedra     /     2    /    nao
+       deus homem cristo nome     /     2    /    nao
+       deus homem cristo si     /     2    /    nullll
+       deus homem cristo carne     /     2    /    nao
+       deus homem coisa terra     /     2    /    nullll
+       deus homem coisa espírito     /     2    /    nao
+       deus homem coisa pecado     /     2    /    nullll
+       deus homem coração cristo     /     3    /    nao
+       deus homem coração espírito     /     3    /    nao
+       deus homem coração carne     /     2    /    nao
+       deus homem coração carta     /     1    /    nao
+       deus homem coração tábua     /     1    /    nao
+       deus homem coração evangelho     /     2    /    nullll
+       deus homem coração letra     /     1    /    nao
+       deus homem verdade palavra     /     1    /    nao
+       deus homem verdade glória     /     1    /    nao
+       deus homem verdade céu     /     2    /    nullll
+       deus homem verdade entendimento     /     1    /    nao
+       deus nó cristo graça     /     7    /    nao
+       deus nó cristo amor     /     7    /    nao
+       deus nó cristo glória     /     3    /    nao
+       deus nó cristo verdade     /     1    /    nao
+       deus nó cristo fim     /     3    /    nao
+       deus nó cristo misericórdia     /     3    /    nao
+       deus nó cristo si     /     2    /    nullll
+       deus nó cristo conhecimento     /     3    /    nao
+       deus nó cristo pai     /     2    /    nao
+       deus nó amor cristo     /     7    /    nao
+       deus nó amor graça     /     6    /    nao
+       deus nó amor verdade     /     1    /    nao
+       deus nó amor fé     /     2    /    nao
+       deus nó amor misericórdia     /     3    /    nao
+       deus nó amor pai     /     2    /    nao
+       deus nó amor fim     /     2    /    nao
+       deus espírito cristo graça     /     9    /    nao
+       deus espírito cristo carne     /     6    /    nullll
+       deus espírito cristo amor     /     7    /    nao
+       deus espírito cristo fé     /     5    /    nao
+       deus espírito cristo coração     /     4    /    nao
+       deus espírito cristo glória     /     3    /    nao
+       deus espírito cristo nó     /     2    /    nullll
+       deus espírito cristo saber     /     4    /    nao
+       deus espírito cristo evangelho     /     4    /    nao
+       deus espírito cristo poder     /     3    /    nao
+       deus espírito cristo sobre     /     3    /    nao
+       deus espírito cristo nome     /     4    /    nao
+       deus espírito cristo sangue     /     2    /    nullll
+       deus espírito cristo homem     /     2    /    nao
+       deus espírito cristo pai     /     4    /    nao
+       deus espírito cristo esperança     /     3    /    nao
+       deus espírito cristo oração     /     3    /    nao
+       deus espírito cristo verdade     /     2    /    nao
+       deus espírito carne cristo     /     6    /    nullll
+       deus espírito carne nó     /     2    /    nullll
+       deus espírito poder amor     /     5    /    nao
+       deus espírito poder palavra     /     5    /    nao
+       deus espírito poder esperança     /     3    /    nao
+       deus espírito poder saber     /     4    /    nao
+       deus espírito poder fé     /     4    /    nao
+       deus espírito poder sabedoria     /     2    /    nao
+       deus espírito poder graça     /     3    /    nao
+       deus espírito poder cristo     /     3    /    nao
+       deus espírito poder oração     /     2    /    nao
+       deus espírito coração cristo     /     4    /    nao
+       deus espírito coração homem     /     3    /    nao
+       deus espírito coração amor     /     2    /    nao
+       deus espírito homem coração     /     3    /    nao
+       deus espírito homem fala     /     1    /    nao
+       deus espírito homem cristo     /     2    /    nao
+       deus espírito homem carne     /     2    /    nao
+       deus espírito homem carta     /     1    /    nao
+       deus espírito homem tábua     /     1    /    nao
+       deus espírito homem coisa     /     2    /    nao
+       deus espírito homem verdade     /     1    /    nao
+       deus espírito homem letra     /     1    /    nao
+       deus espírito amor poder     /     5    /    nao
+       deus espírito amor graça     /     5    /    nao
+       deus espírito amor cristo     /     7    /    nao
+       deus espírito amor saber     /     4    /    nao
+       deus espírito amor esperança     /     4    /    nao
+       deus espírito amor fé     /     4    /    nao
+       deus espírito amor oração     /     3    /    nao
+       deus espírito amor paulo     /     1    /    nao
+       deus espírito graça cristo     /     9    /    nao
+       deus espírito graça amor     /     5    /    nao
+       deus espírito graça fé     /     5    /    nao
+       deus espírito graça poder     /     3    /    nao
+       deus espírito graça evangelho     /     4    /    nao
+       deus espírito graça glória     /     2    /    nao
+       deus espírito graça saber     /     3    /    nao
+       deus espírito graça pai     /     4    /    nao
+       deus espírito graça esperança     /     3    /    nao
+       deus espírito graça oração     /     2    /    nao
+       deus espírito nó carne     /     2    /    nullll
+       deus espírito nó cristo     /     2    /    nullll
+       deus espírito nó fim     /     2    /    nao
+       deus coisa cristo tempo     /     3    /    nao
+       deus coisa cristo fé     /     3    /    nao
+       deus coisa cristo amor     /     5    /    nao
+       deus coisa cristo glória     /     4    /    nao
+       deus coisa cristo vida     /     3    /    nao
+       deus coisa cristo sangue     /     2    /    nao
+       deus coisa cristo graça     /     2    /    nao
+       deus coisa cristo justiça     /     2    /    nao
+       deus coisa cristo nele     /     3    /    nao
+       deus coisa cristo século     /     2    /    nao
+       deus poder glória honra     /     3    /    nao
+       deus poder glória vaso     /     1    /    nao
+       deus graça cristo fé     /     13    /    nao
+       deus graça cristo paulo     /     13    /    nao
+       deus graça fé cristo     /     13    /    nao
+       deus graça fé amor     /     6    /    nao
+       deus graça fé poder     /     6    /    nao
+       deus graça fé espírito     /     5    /    nao
+       deus graça fé paulo     /     3    /    nao
+       deus graça fé glória     /     3    /    nao
+       deus graça fé evangelho     /     4    /    nao
+       deus graça fé esperança     /     4    /    nao
+       deus graça fé apóstolo     /     4    /    nao
+       deus graça fé oração     /     3    /    nao
+       deus graça fé epístola     /     4    /    nao
+       deus graça fé tempo     /     2    /    nao
+       deus graça fé saber     /     3    /    nao
+       deus graça fé pai     /     5    /    nao
+       deus graça fé verdade     /     3    /    nao
+       deus graça fé conhecimento     /     4    /    nao
+       deus graça paulo cristo     /     13    /    nao
+       deus graça paulo timóteo     /     8    /    nao
+       deus graça paulo epístola     /     12    /    nao
+       deus graça paulo fé     /     3    /    nao
+       deus graça paulo igreja     /     5    /    nao
+       deus graça paulo apóstolo     /     8    /    nao
+       deus graça paulo parte     /     10    /    nao
+       deus graça paulo paz     /     11    /    nao
+       deus graça paulo vida     /     2    /    nao
+       deus graça nó cristo     /     7    /    nao
+       deus graça nó amor     /     6    /    nao
+       deus graça nó verdade     /     1    /    nao
+       deus graça nó fé     /     2    /    nao
+       deus graça nó misericórdia     /     3    /    nao
+       deus graça nó vida     /     2    /    nao
+       deus graça amor cristo     /     11    /    nao
+       deus graça amor nó     /     6    /    nao
+       deus graça amor fé     /     6    /    nao
+       deus graça amor glória     /     3    /    nao
+       deus graça amor verdade     /     1    /    nao
+       deus graça amor espírito     /     5    /    nao
+       deus graça amor pai     /     4    /    nao
+       deus graça amor poder     /     3    /    nao
+       deus graça amor oração     /     3    /    nao
+       deus graça amor esperança     /     3    /    nao
+       deus graça amor misericórdia     /     3    /    nao
+       deus graça amor saber     /     3    /    nao
+       deus graça amor paulo     /     2    /    nao
+       deus graça amor causa     /     3    /    nao
+       deus graça amor riqueza     /     2    /    nao
+       deus graça espírito cristo     /     9    /    nao
+       deus graça espírito amor     /     5    /    nao
+       deus graça espírito fé     /     5    /    nao
+       deus graça espírito poder     /     3    /    nao
+       deus graça espírito evangelho     /     4    /    nao
+       deus graça espírito glória     /     2    /    nao
+       deus graça espírito saber     /     3    /    nao
+       deus graça espírito pai     /     4    /    nao
+       deus graça espírito esperança     /     3    /    nao
+       deus graça espírito oração     /     2    /    nao
+       deus graça glória cristo     /     6    /    nao
+       deus graça glória fé     /     3    /    nao
+       deus graça glória sabedoria     /     3    /    nao
+       deus graça glória século     /     2    /    nao
+       deus graça glória amor     /     3    /    nao
+       deus graça glória poder     /     2    /    nao
+       deus graça poder fé     /     6    /    nao
+       deus graça poder cristo     /     5    /    nao
+       deus graça poder amor     /     3    /    nao
+       deus graça poder paulo     /     2    /    nao
+       deus graça poder glória     /     2    /    nao
+       deus graça poder força     /     3    /    nao
+       deus graça poder espírito     /     3    /    nao
+       deus graça poder saber     /     3    /    nao
+       deus graça poder esperança     /     3    /    nao
+       deus graça poder pai     /     3    /    nao
+       deus graça poder oração     /     2    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo graça fé amor     /     5    /    nao
+       deus cristo graça fé poder     /     5    /    nao
+       deus cristo graça fé paulo     /     3    /    nao
+       deus cristo graça fé glória     /     3    /    nao
+       deus cristo graça fé espírito     /     4    /    nao
+       deus cristo graça fé evangelho     /     4    /    nao
+       deus cristo graça fé esperança     /     4    /    nao
+       deus cristo graça fé apóstolo     /     4    /    nao
+       deus cristo graça fé oração     /     3    /    nao
+       deus cristo graça fé epístola     /     4    /    nao
+       deus cristo graça fé saber     /     3    /    nao
+       deus cristo graça fé pai     /     5    /    nao
+       deus cristo graça fé conhecimento     /     4    /    nao
+       deus cristo graça paulo timóteo     /     8    /    nao
+       deus cristo graça paulo epístola     /     12    /    nao
+       deus cristo graça paulo fé     /     3    /    nao
+       deus cristo graça paulo igreja     /     5    /    nao
+       deus cristo graça paulo apóstolo     /     8    /    nao
+       deus cristo graça paulo parte     /     10    /    nao
+       deus cristo graça paulo paz     /     11    /    nao
+       deus cristo graça paulo vida     /     2    /    nao
+       deus cristo fé amor poder     /     4    /    nao
+       deus cristo fé amor pai     /     5    /    nao
+       deus cristo fé amor espírito     /     4    /    nao
+       deus cristo fé amor saber     /     4    /    nao
+       deus cristo fé amor oração     /     3    /    nao
+       deus cristo fé amor glória     /     2    /    nao
+       deus cristo fé amor graça     /     5    /    nao
+       deus cristo fé amor esperança     /     3    /    nao
+       deus cristo fé amor paulo     /     1    /    nao
+       deus cristo fé graça amor     /     5    /    nao
+       deus cristo fé graça poder     /     5    /    nao
+       deus cristo fé graça paulo     /     3    /    nao
+       deus cristo fé graça glória     /     3    /    nao
+       deus cristo fé graça espírito     /     4    /    nao
+       deus cristo fé graça evangelho     /     4    /    nao
+       deus cristo fé graça esperança     /     4    /    nao
+       deus cristo fé graça apóstolo     /     4    /    nao
+       deus cristo fé graça oração     /     3    /    nao
+       deus cristo fé graça epístola     /     4    /    nao
+       deus cristo fé graça saber     /     3    /    nao
+       deus cristo fé graça pai     /     5    /    nao
+       deus cristo fé graça conhecimento     /     4    /    nao
+       deus cristo fé poder amor     /     4    /    nao
+       deus cristo fé poder graça     /     5    /    nao
+       deus cristo fé poder esperança     /     4    /    nao
+       deus cristo fé poder paulo     /     2    /    nao
+       deus cristo fé poder espírito     /     3    /    nao
+       deus cristo fé poder saber     /     3    /    nao
+       deus cristo fé poder pai     /     4    /    nao
+       deus cristo fé poder tempo     /     2    /    nao
+       deus cristo fé poder carne     /     2    /    nao
+       deus cristo fé glória tempo     /     2    /    nao
+       deus cristo fé glória sangue     /     2    /    nao
+       deus cristo fé glória pai     /     2    /    nao
+       deus cristo fé glória graça     /     3    /    nao
+       deus cristo fé glória amor     /     2    /    nao
+       deus cristo fé glória esperança     /     2    /    nao
+       deus cristo fé glória espírito     /     2    /    nao
+       deus cristo fé glória revelação     /     2    /    nao
+       deus cristo fé glória saber     /     2    /    nao
+       deus cristo fé glória evangelho     /     2    /    nao
+       deus cristo fé glória século     /     1    /    nao
+       deus cristo fé glória poder     /     1    /    nao
+       deus cristo fé esperança pai     /     6    /    nao
+       deus cristo fé esperança tempo     /     3    /    nao
+       deus cristo fé esperança poder     /     4    /    nao
+       deus cristo fé esperança graça     /     4    /    nao
+       deus cristo fé esperança paulo     /     2    /    nao
+       deus cristo fé esperança amor     /     3    /    nao
+       deus cristo fé esperança glória     /     2    /    nao
+       deus cristo fé esperança saber     /     3    /    nao
+       deus cristo fé esperança oração     /     2    /    nao
+       deus cristo fé evangelho graça     /     4    /    nao
+       deus cristo fé evangelho amor     /     2    /    nullll
+       deus cristo fé evangelho espírito     /     3    /    nao
+       deus cristo fé evangelho século     /     2    /    nao
+       deus cristo fé evangelho mistério     /     2    /    nao
+       deus cristo fé tempo pai     /     3    /    nao
+       deus cristo fé tempo esperança     /     3    /    nao
+       deus cristo fé espírito amor     /     4    /    nao
+       deus cristo fé espírito poder     /     3    /    nao
+       deus cristo fé espírito glória     /     2    /    nao
+       deus cristo fé espírito saber     /     3    /    nao
+       deus cristo fé espírito evangelho     /     3    /    nao
+       deus cristo fé espírito graça     /     4    /    nao
+       deus cristo fé espírito oração     /     2    /    nao
+       deus cristo fé pai esperança     /     6    /    nao
+       deus cristo fé pai amor     /     5    /    nao
+       deus cristo fé pai tempo     /     3    /    nao
+       deus cristo fé pai poder     /     4    /    nao
+       deus cristo fé pai graça     /     5    /    nao
+       deus cristo fé pai paulo     /     2    /    nao
+       deus cristo fé pai glória     /     2    /    nao
+       deus cristo fé pai saber     /     3    /    nao
+       deus cristo fé pai oração     /     2    /    nao
+       deus cristo fé paulo apóstolo     /     3    /    nao
+       deus cristo fé paulo graça     /     3    /    nao
+       deus cristo fé paulo esperança     /     2    /    nao
+       deus cristo fé paulo epístola     /     3    /    nao
+       deus cristo fé paulo tito     /     1    /    nao
+       deus cristo fé paulo timóteo     /     1    /    nao
+       deus cristo fé paulo tempo     /     1    /    nao
+       deus cristo fé paulo paz     /     2    /    nao
+       deus cristo fé paulo mandato     /     2    /    nao
+       deus cristo fé paulo poder     /     2    /    nao
+       deus cristo fé apóstolo paulo     /     3    /    nao
+       deus cristo fé apóstolo graça     /     4    /    nao
+       deus cristo fé apóstolo epístola     /     4    /    nao
+       deus cristo fé fim amor     /     2    /    nao
+       deus cristo fé fim tempo     /     1    /    nao
+       deus cristo fé fim obra     /     2    /    nao
+       deus cristo fé fim poder     /     2    /    nao
+       deus cristo fé fim sangue     /     1    /    nao
+       deus cristo fé fim pai     /     1    /    nao
+       deus cristo fé fim entendimento     /     1    /    nao
+       deus cristo fé saber amor     /     4    /    nao
+       deus cristo fé saber pai     /     3    /    nao
+       deus cristo fé saber poder     /     3    /    nao
+       deus cristo fé saber glória     /     2    /    nao
+       deus cristo fé saber esperança     /     3    /    nao
+       deus cristo fé saber espírito     /     3    /    nao
+       deus cristo fé saber graça     /     3    /    nao
+       deus cristo fé saber oração     /     2    /    nao
+       deus cristo fé paz paulo     /     2    /    nao
+       deus cristo fé paz epístola     /     3    /    nao
+       deus cristo fé paz apóstolo     /     3    /    nao
+       deus cristo fé paz graça     /     3    /    nao
+       deus cristo fé paz esperança     /     2    /    nao
+       deus cristo fé paz timóteo     /     1    /    nao
+       deus cristo fé paz tempo     /     1    /    nao
+       deus cristo fé paz tito     /     1    /    nao
+       deus cristo fé paz conhecimento     /     2    /    nao
+       deus cristo fé paz pai     /     3    /    nao
+       deus cristo fé paz mandato     /     2    /    nao
+       deus cristo fé paz parte     /     3    /    nao
+       deus cristo fé paz simão     /     1    /    nao
+       deus cristo fé justiça proceder     /     1    /    nao
+       deus cristo fé justiça graça     /     2    /    nao
+       deus homem cristo coração carne     /     2    /    nao
+       deus homem cristo coração carta     /     1    /    nao
+       deus homem cristo coração tábua     /     1    /    nao
+       deus homem cristo graça paulo     /     1    /    nao
+       deus homem cristo graça parte     /     1    /    nao
+       deus homem cristo graça si     /     1    /    nao
+       deus homem cristo povo nome     /     1    /    nao
+       deus homem cristo povo si     /     1    /    nao
+       deus homem cristo pedra carta     /     1    /    nao
+       deus homem cristo pedra tábua     /     1    /    nao
+       deus homem cristo pedra coração     /     1    /    nao
+       deus homem cristo pedra viver     /     1    /    nao
+       deus homem cristo nome povo     /     1    /    nao
+       deus homem cristo carne coração     /     2    /    nao
+       deus homem cristo carne carta     /     1    /    nao
+       deus homem cristo carne tábua     /     1    /    nao
+       deus homem coisa espírito dessarte     /     1    /    nao
+       deus homem coração cristo carne     /     2    /    nao
+       deus homem coração cristo carta     /     1    /    nao
+       deus homem coração cristo tábua     /     1    /    nao
+       deus homem coração espírito carta     /     1    /    nao
+       deus homem coração espírito tábua     /     1    /    nao
+       deus homem coração espírito letra     /     1    /    nao
+       deus homem coração carne cristo     /     2    /    nao
+       deus homem coração carne carta     /     1    /    nao
+       deus homem coração carne tábua     /     1    /    nao
+       deus nó cristo graça amor     /     5    /    nao
+       deus nó cristo graça verdade     /     1    /    nao
+       deus nó cristo graça misericórdia     /     3    /    nao
+       deus nó cristo graça vida     /     2    /    nao
+       deus nó cristo amor graça     /     5    /    nao
+       deus nó cristo amor verdade     /     1    /    nao
+       deus nó cristo amor misericórdia     /     3    /    nao
+       deus nó cristo amor vida     /     2    /    nao
+       deus nó cristo glória graça     /     2    /    nao
+       deus nó cristo glória vontade     /     1    /    nao
+       deus nó cristo glória si     /     1    /    nao
+       deus nó cristo glória beneplácito     /     1    /    nao
+       deus nó cristo glória adoção     /     1    /    nao
+       deus nó cristo fim graça     /     2    /    nao
+       deus nó cristo fim si     /     1    /    nao
+       deus nó cristo fim esperança     /     2    /    nao
+       deus nó cristo fim obra     /     2    /    nao
+       deus nó cristo misericórdia verdade     /     1    /    nao
+       deus nó cristo misericórdia graça     /     3    /    nao
+       deus nó cristo misericórdia amor     /     3    /    nao
+       deus nó cristo misericórdia pai     /     1    /    nao
+       deus nó cristo misericórdia vida     /     2    /    nao
+       deus nó cristo misericórdia causa     /     2    /    nao
+       deus nó cristo conhecimento fé     /     1    /    nao
+       deus nó cristo conhecimento graça     /     2    /    nao
+       deus nó cristo conhecimento lugar     /     1    /    nao
+       deus nó cristo pai verdade     /     1    /    nao
+       deus nó cristo pai glória     /     1    /    nao
+       deus nó cristo pai parte     /     2    /    nao
+       deus nó cristo pai demo     /     1    /    nao
+       deus nó amor cristo graça     /     5    /    nao
+       deus nó amor cristo verdade     /     1    /    nao
+       deus nó amor cristo misericórdia     /     3    /    nao
+       deus nó amor cristo vida     /     2    /    nao
+       deus nó amor graça cristo     /     5    /    nao
+       deus nó amor graça verdade     /     1    /    nao
+       deus nó amor graça fé     /     2    /    nullll
+       deus nó amor graça misericórdia     /     3    /    nao
+       deus nó amor graça vida     /     2    /    nao
+       deus nó amor fé graça     /     2    /    nullll
+       deus nó amor misericórdia verdade     /     1    /    nao
+       deus nó amor misericórdia cristo     /     3    /    nao
+       deus nó amor misericórdia graça     /     3    /    nao
+       deus nó amor misericórdia pai     /     1    /    nao
+       deus nó amor misericórdia vida     /     2    /    nao
+       deus nó amor misericórdia causa     /     2    /    nao
+       deus nó amor pai verdade     /     1    /    nao
+       deus nó amor fim pai     /     1    /    nao
+       deus espírito cristo graça amor     /     5    /    nao
+       deus espírito cristo graça fé     /     4    /    nao
+       deus espírito cristo graça poder     /     3    /    nao
+       deus espírito cristo graça evangelho     /     4    /    nao
+       deus espírito cristo graça glória     /     2    /    nao
+       deus espírito cristo graça saber     /     3    /    nao
+       deus espírito cristo graça pai     /     4    /    nao
+       deus espírito cristo graça esperança     /     3    /    nao
+       deus espírito cristo graça oração     /     2    /    nao
+       deus espírito cristo amor graça     /     5    /    nao
+       deus espírito cristo amor fé     /     4    /    nao
+       deus espírito cristo amor poder     /     3    /    nao
+       deus espírito cristo amor saber     /     3    /    nao
+       deus espírito cristo amor esperança     /     3    /    nao
+       deus espírito cristo amor oração     /     3    /    nao
+       deus espírito cristo amor paulo     /     1    /    nao
+       deus espírito cristo fé amor     /     4    /    nao
+       deus espírito cristo fé poder     /     3    /    nao
+       deus espírito cristo fé glória     /     2    /    nao
+       deus espírito cristo fé saber     /     3    /    nao
+       deus espírito cristo fé evangelho     /     3    /    nao
+       deus espírito cristo fé graça     /     4    /    nao
+       deus espírito cristo fé oração     /     2    /    nao
+       deus espírito cristo coração pai     /     2    /    nao
+       deus espírito cristo coração carta     /     1    /    nao
+       deus espírito cristo coração glória     /     1    /    nao
+       deus espírito cristo coração graça     /     2    /    nao
+       deus espírito cristo coração tábua     /     1    /    nao
+       deus espírito cristo coração poder     /     1    /    nao
+       deus espírito cristo coração grandeza     /     1    /    nao
+       deus espírito cristo glória fé     /     2    /    nao
+       deus espírito cristo glória poder     /     1    /    nao
+       deus espírito cristo glória graça     /     2    /    nao
+       deus espírito cristo glória grandeza     /     1    /    nao
+       deus espírito cristo saber amor     /     3    /    nao
+       deus espírito cristo saber poder     /     3    /    nao
+       deus espírito cristo saber carne     /     2    /    nao
+       deus espírito cristo saber fé     /     3    /    nao
+       deus espírito cristo saber graça     /     3    /    nao
+       deus espírito cristo evangelho graça     /     4    /    nao
+       deus espírito cristo evangelho amor     /     2    /    nullll
+       deus espírito cristo evangelho fé     /     3    /    nao
+       deus espírito cristo poder amor     /     3    /    nao
+       deus espírito cristo poder fé     /     3    /    nao
+       deus espírito cristo poder saber     /     3    /    nao
+       deus espírito cristo poder graça     /     3    /    nao
+       deus espírito cristo poder oração     /     2    /    nao
+       deus espírito cristo sobre sangue     /     1    /    nao
+       deus espírito cristo sobre nó     /     1    /    nao
+       deus espírito cristo sobre obra     /     2    /    nao
+       deus espírito cristo nome paulo     /     1    /    nao
+       deus espírito cristo nome graça     /     2    /    nao
+       deus espírito cristo nome salmo     /     1    /    nao
+       deus espírito cristo homem carta     /     1    /    nao
+       deus espírito cristo homem tábua     /     1    /    nao
+       deus espírito cristo homem coração     /     1    /    nao
+       deus espírito cristo homem verdade     /     1    /    nao
+       deus espírito cristo homem entendimento     /     1    /    nao
+       deus espírito cristo pai graça     /     4    /    nao
+       deus espírito cristo pai amor     /     2    /    nao
+       deus espírito cristo pai poder     /     2    /    nao
+       deus espírito cristo pai oração     /     2    /    nao
+       deus espírito cristo esperança amor     /     3    /    nao
+       deus espírito cristo esperança graça     /     3    /    nao
+       deus espírito cristo esperança poder     /     2    /    nao
+       deus espírito cristo oração amor     /     3    /    nao
+       deus espírito cristo oração poder     /     2    /    nao
+       deus espírito cristo verdade homem     /     1    /    nao
+       deus espírito cristo verdade entendimento     /     1    /    nao
+       deus espírito poder amor saber     /     4    /    nao
+       deus espírito poder amor fé     /     3    /    nao
+       deus espírito poder amor graça     /     3    /    nao
+       deus espírito poder amor cristo     /     3    /    nao
+       deus espírito poder amor oração     /     2    /    nullll
+       deus espírito poder palavra amor     /     2    /    nao
+       deus espírito poder palavra vez     /     1    /    nao
+       deus espírito poder palavra sabedoria     /     1    /    nao
+       deus espírito poder palavra saber     /     2    /    nao
+       deus espírito poder palavra fé     /     2    /    nao
+       deus espírito poder palavra cristo     /     1    /    nao
+       deus espírito poder esperança amor     /     2    /    nao
+       deus espírito poder esperança oração     /     2    /    nao
+       deus espírito poder saber amor     /     4    /    nao
+       deus espírito poder saber fé     /     3    /    nao
+       deus espírito poder saber graça     /     3    /    nao
+       deus espírito poder saber cristo     /     3    /    nao
+       deus espírito poder saber oração     /     2    /    nao
+       deus espírito poder fé amor     /     3    /    nao
+       deus espírito poder fé sabedoria     /     2    /    nao
+       deus espírito poder fé saber     /     3    /    nao
+       deus espírito poder fé graça     /     3    /    nao
+       deus espírito poder fé cristo     /     3    /    nao
+       deus espírito poder fé oração     /     2    /    nao
+       deus espírito poder sabedoria glória     /     1    /    nao
+       deus espírito poder sabedoria fé     /     2    /    nao
+       deus espírito poder sabedoria grandeza     /     1    /    nao
+       deus espírito poder graça amor     /     3    /    nao
+       deus espírito poder graça fé     /     3    /    nao
+       deus espírito poder graça saber     /     3    /    nao
+       deus espírito poder graça cristo     /     3    /    nao
+       deus espírito poder graça oração     /     2    /    nao
+       deus espírito poder cristo amor     /     3    /    nao
+       deus espírito poder cristo fé     /     3    /    nao
+       deus espírito poder cristo saber     /     3    /    nao
+       deus espírito poder cristo graça     /     3    /    nao
+       deus espírito poder cristo oração     /     2    /    nao
+       deus espírito poder oração amor     /     2    /    nullll
+       deus espírito coração cristo pai     /     2    /    nao
+       deus espírito coração cristo carta     /     1    /    nao
+       deus espírito coração cristo glória     /     1    /    nao
+       deus espírito coração cristo graça     /     2    /    nao
+       deus espírito coração cristo tábua     /     1    /    nao
+       deus espírito coração cristo poder     /     1    /    nao
+       deus espírito coração cristo grandeza     /     1    /    nao
+       deus espírito coração homem carta     /     1    /    nao
+       deus espírito coração homem tábua     /     1    /    nao
+       deus espírito coração homem letra     /     1    /    nao
+       deus espírito coração amor glória     /     1    /    nao
+       deus espírito coração amor esperança     /     2    /    nao
+       deus espírito coração amor poder     /     1    /    nao
+       deus espírito coração amor grandeza     /     1    /    nao
+       deus espírito homem coração carta     /     1    /    nao
+       deus espírito homem coração tábua     /     1    /    nao
+       deus espírito homem coração letra     /     1    /    nao
+       deus espírito homem cristo carta     /     1    /    nao
+       deus espírito homem cristo tábua     /     1    /    nao
+       deus espírito homem cristo coração     /     1    /    nao
+       deus espírito homem cristo verdade     /     1    /    nao
+       deus espírito homem cristo entendimento     /     1    /    nao
+       deus espírito homem carne carta     /     1    /    nao
+       deus espírito homem carne tábua     /     1    /    nao
+       deus espírito homem carne coração     /     1    /    nao
+       deus espírito homem carne cristo     /     1    /    nao
+       deus espírito homem coisa dessarte     /     1    /    nao
+       deus espírito amor poder saber     /     4    /    nao
+       deus espírito amor poder fé     /     3    /    nao
+       deus espírito amor poder graça     /     3    /    nao
+       deus espírito amor poder cristo     /     3    /    nao
+       deus espírito amor poder oração     /     2    /    nullll
+       deus espírito amor graça cristo     /     5    /    nao
+       deus espírito amor graça poder     /     3    /    nao
+       deus espírito amor graça fé     /     3    /    nao
+       deus espírito amor graça saber     /     3    /    nao
+       deus espírito amor graça esperança     /     3    /    nao
+       deus espírito amor graça oração     /     2    /    nao
+       deus espírito amor cristo graça     /     5    /    nao
+       deus espírito amor cristo fé     /     4    /    nao
+       deus espírito amor cristo poder     /     3    /    nao
+       deus espírito amor cristo saber     /     3    /    nao
+       deus espírito amor cristo esperança     /     3    /    nao
+       deus espírito amor cristo oração     /     3    /    nao
+       deus espírito amor cristo paulo     /     1    /    nao
+       deus espírito amor saber poder     /     4    /    nao
+       deus espírito amor saber fé     /     3    /    nao
+       deus espírito amor saber graça     /     3    /    nao
+       deus espírito amor saber cristo     /     3    /    nao
+       deus espírito amor saber oração     /     2    /    nao
+       deus espírito amor esperança graça     /     3    /    nao
+       deus espírito amor esperança poder     /     2    /    nao
+       deus espírito amor esperança cristo     /     3    /    nao
+       deus espírito amor fé poder     /     3    /    nao
+       deus espírito amor fé cristo     /     4    /    nao
+       deus espírito amor fé saber     /     3    /    nao
+       deus espírito amor fé graça     /     3    /    nao
+       deus espírito amor fé oração     /     2    /    nao
+       deus espírito amor oração poder     /     2    /    nullll
+       deus espírito amor oração cristo     /     3    /    nao
+       deus espírito graça cristo amor     /     5    /    nao
+       deus espírito graça cristo fé     /     4    /    nao
+       deus espírito graça cristo poder     /     3    /    nao
+       deus espírito graça cristo evangelho     /     4    /    nao
+       deus espírito graça cristo glória     /     2    /    nao
+       deus espírito graça cristo saber     /     3    /    nao
+       deus espírito graça cristo pai     /     4    /    nao
+       deus espírito graça cristo esperança     /     3    /    nao
+       deus espírito graça cristo oração     /     2    /    nao
+       deus espírito graça amor cristo     /     5    /    nao
+       deus espírito graça amor poder     /     3    /    nao
+       deus espírito graça amor fé     /     3    /    nao
+       deus espírito graça amor saber     /     3    /    nao
+       deus espírito graça amor esperança     /     3    /    nao
+       deus espírito graça amor oração     /     2    /    nao
+       deus espírito graça fé amor     /     3    /    nao
+       deus espírito graça fé poder     /     3    /    nao
+       deus espírito graça fé glória     /     2    /    nao
+       deus espírito graça fé saber     /     3    /    nao
+       deus espírito graça fé evangelho     /     3    /    nao
+       deus espírito graça fé cristo     /     4    /    nao
+       deus espírito graça fé oração     /     2    /    nao
+       deus espírito graça poder amor     /     3    /    nao
+       deus espírito graça poder fé     /     3    /    nao
+       deus espírito graça poder saber     /     3    /    nao
+       deus espírito graça poder cristo     /     3    /    nao
+       deus espírito graça poder oração     /     2    /    nao
+       deus espírito graça evangelho cristo     /     4    /    nao
+       deus espírito graça evangelho amor     /     2    /    nao
+       deus espírito graça evangelho fé     /     3    /    nao
+       deus espírito graça glória fé     /     2    /    nao
+       deus espírito graça glória poder     /     1    /    nao
+       deus espírito graça glória grandeza     /     1    /    nao
+       deus espírito graça saber amor     /     3    /    nao
+       deus espírito graça saber poder     /     3    /    nao
+       deus espírito graça saber fé     /     3    /    nao
+       deus espírito graça saber cristo     /     3    /    nao
+       deus espírito graça saber oração     /     2    /    nao
+       deus espírito graça pai cristo     /     4    /    nao
+       deus espírito graça pai amor     /     2    /    nao
+       deus espírito graça pai poder     /     2    /    nao
+       deus espírito graça pai oração     /     2    /    nao
+       deus espírito graça esperança amor     /     3    /    nao
+       deus espírito graça esperança poder     /     2    /    nao
+       deus espírito graça esperança cristo     /     3    /    nao
+       deus espírito graça oração amor     /     2    /    nao
+       deus espírito graça oração poder     /     2    /    nao
+       deus espírito nó fim carne     /     1    /    nao
+       deus espírito nó fim cristo     /     1    /    nao
+       deus coisa cristo tempo sangue     /     2    /    nao
+       deus coisa cristo tempo fim     /     2    /    nao
+       deus coisa cristo tempo pecado     /     2    /    nao
+       deus coisa cristo tempo glória     /     2    /    nao
+       deus coisa cristo tempo céu     /     2    /    nao
+       deus coisa cristo tempo vontade     /     1    /    nao
+       deus coisa cristo tempo fé     /     1    /    nao
+       deus coisa cristo tempo pai     /     1    /    nao
+       deus coisa cristo tempo graça     /     1    /    nao
+       deus coisa cristo tempo amor     /     2    /    nao
+       deus coisa cristo tempo beneplácito     /     1    /    nao
+       deus coisa cristo tempo adoção     /     1    /    nao
+       deus coisa cristo fé proceder     /     1    /    nao
+       deus coisa cristo fé tempo     /     1    /    nao
+       deus coisa cristo fé sangue     /     1    /    nao
+       deus coisa cristo fé pai     /     1    /    nao
+       deus coisa cristo fé justiça     /     1    /    nao
+       deus coisa cristo fé nele     /     2    /    nao
+       deus coisa cristo fé amor     /     2    /    nao
+       deus coisa cristo amor fé     /     2    /    nao
+       deus coisa cristo amor tempo     /     2    /    nao
+       deus coisa cristo amor glória     /     3    /    nao
+       deus coisa cristo amor sangue     /     2    /    nao
+       deus coisa cristo amor justiça     /     2    /    nao
+       deus coisa cristo amor nele     /     2    /    nao
+       deus coisa cristo amor louvor     /     2    /    nao
+       deus coisa cristo amor proceder     /     1    /    nao
+       deus coisa cristo amor poder     /     1    /    nao
+       deus coisa cristo amor vontade     /     1    /    nao
+       deus coisa cristo amor pai     /     1    /    nao
+       deus coisa cristo amor graça     /     1    /    nao
+       deus coisa cristo amor beneplácito     /     1    /    nao
+       deus coisa cristo amor adoção     /     1    /    nao
+       deus coisa cristo glória tempo     /     2    /    nao
+       deus coisa cristo glória sangue     /     2    /    nao
+       deus coisa cristo glória amor     /     3    /    nao
+       deus coisa cristo glória louvor     /     2    /    nao
+       deus coisa cristo glória vontade     /     1    /    nao
+       deus coisa cristo glória fé     /     1    /    nao
+       deus coisa cristo glória pai     /     1    /    nao
+       deus coisa cristo glória graça     /     1    /    nao
+       deus coisa cristo glória século     /     1    /    nao
+       deus coisa cristo glória beneplácito     /     1    /    nao
+       deus coisa cristo glória adoção     /     1    /    nao
+       deus coisa cristo vida morte     /     2    /    nao
+       deus coisa cristo vida poder     /     1    /    nao
+       deus coisa cristo sangue tempo     /     2    /    nao
+       deus coisa cristo sangue pai     /     1    /    nao
+       deus coisa cristo sangue glória     /     2    /    nao
+       deus coisa cristo sangue fé     /     1    /    nao
+       deus coisa cristo sangue vontade     /     1    /    nao
+       deus coisa cristo sangue graça     /     1    /    nao
+       deus coisa cristo sangue beneplácito     /     1    /    nao
+       deus coisa cristo sangue amor     /     2    /    nao
+       deus coisa cristo sangue adoção     /     1    /    nao
+       deus coisa cristo graça riqueza     /     2    /    nao
+       deus coisa cristo graça dispensação     /     2    /    nao
+       deus coisa cristo graça mistério     /     2    /    nao
+       deus coisa cristo graça sabedoria     /     2    /    nao
+       deus coisa cristo graça vontade     /     1    /    nao
+       deus coisa cristo graça nele     /     2    /    nao
+       deus coisa cristo graça beneplácito     /     1    /    nao
+       deus coisa cristo graça adoção     /     1    /    nao
+       deus coisa cristo justiça proceder     /     1    /    nao
+       deus coisa cristo justiça fé     /     1    /    nao
+       deus coisa cristo justiça amor     /     2    /    nao
+       deus coisa cristo nele graça     /     2    /    nao
+       deus coisa cristo nele vontade     /     1    /    nao
+       deus coisa cristo nele riqueza     /     2    /    nao
+       deus coisa cristo nele fé     /     2    /    nao
+       deus coisa cristo nele dispensação     /     2    /    nao
+       deus coisa cristo nele proceder     /     1    /    nao
+       deus coisa cristo nele mistério     /     2    /    nao
+       deus coisa cristo nele justiça     /     1    /    nao
+       deus coisa cristo nele sabedoria     /     2    /    nao
+       deus coisa cristo nele beneplácito     /     1    /    nao
+       deus coisa cristo nele adoção     /     1    /    nao
+       deus coisa cristo século lugar     /     1    /    nao
+       deus poder glória honra século     /     1    /    nao
+       deus graça cristo fé amor     /     5    /    nao
+       deus graça cristo fé poder     /     5    /    nao
+       deus graça cristo fé paulo     /     3    /    nao
+       deus graça cristo fé glória     /     3    /    nao
+       deus graça cristo fé espírito     /     4    /    nao
+       deus graça cristo fé evangelho     /     4    /    nao
+       deus graça cristo fé esperança     /     4    /    nao
+       deus graça cristo fé apóstolo     /     4    /    nao
+       deus graça cristo fé oração     /     3    /    nao
+       deus graça cristo fé epístola     /     4    /    nao
+       deus graça cristo fé saber     /     3    /    nao
+       deus graça cristo fé pai     /     5    /    nao
+       deus graça cristo fé conhecimento     /     4    /    nao
+       deus graça cristo paulo timóteo     /     8    /    nao
+       deus graça cristo paulo epístola     /     12    /    nao
+       deus graça cristo paulo fé     /     3    /    nao
+     

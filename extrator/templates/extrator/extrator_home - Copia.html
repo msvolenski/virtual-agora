@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+  <div>
+    <h1>Extrato de Conhecimento Coletivo</h1>
+    {% for message in messages %}
+    <div id="config-message" class="alert alert-{{ message.tags }} alert-dismissible fade in" role="alert">
+      <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+
+
+
+
+
+  <div><h2> 1. Inserir dados de entrada</h2>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;" action="{% url 'extrator:dados' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">inserir dados</button>
+      </form>
+    </div>
+  </div></br>
+
+  <DIV><h2> 2. Pré-processamento </h2></div>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;" action="{% url 'extrator:preproc_comp' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Executar as cinco etapas abaixo</button>
+      </form>
+    </div>
+
+
+    <div style="margin-left:50px;"><h2> 2.1. Preparar dados de entrada (elimina espaços brancos e parágrafos)</h2>
+
+
+
+      <div class="form-inline-config" style="margin-left:10px;">
+        <form style="display:inline-block;float:left;" action="{% url 'extrator:preproc' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Preparar dados de entrada (pré-processamento)</button>
+        </form>
+      </div>
+
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_preproc' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver arquivo</button>
+        </form>
+      </div>
+
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_vet_preproc' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver arquivo vetorizado</button>
+        </form>
+      </div>
+    </div></br></br>
+
+  </div></br>
+
+
+  <div style="margin-left:50px;"><h2>2.2. Lematizar</h2>
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:lematizador' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Lematizar</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_lematizado_csw' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver arquivo</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_vet_lematizado_csw' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver arquivo vetorizado</button>
+      </form>
+    </div>
+  </div></br></br></br>
+
+
+
+  <div style="margin-left:50px;"><h2>2.3. Eliminar Stopwords</h2>
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'stopwords' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver/Editar lista de StopWords</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:preprocsw' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Preparar lista de StopWords</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:stopwords' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Eliminar StopWords</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_preproc_ssw' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver arquivo</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'doc_vet_preproc_ssw' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver arquivo vetorizado</button>
+      </form>
+    </div>
+  </div></br></br></br>
+
+  <div style="margin-left:50px;"><h2>2.4. Salvar resultado no Banco de Dados</h2>
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:salvar' %}" method="post" role="form">
+        <button class="btn btn-primary" type="submit">Salvar</button>
+      </form>
+    </div>
+  </div></br></br></br>
+
+
+  <div style="margin-left:50px;"><h2>2.5. Relatório da etapa de Pré-Processamento</h2>
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:relatorio' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Gerar relatório</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;float:left;">
+      <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'relatorio_preproc' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver Relatório</button>
+      </form>
+    </div>
+  </div></br></br>
+
+
+
+</div></br>
+
+
+<DIV><h2> 3. Rede complexa </h2></div>
+  <div class="form-inline-config" style="margin-left:10px;">
+    <form style="display:inline-block;" action="{% url 'extrator:redecomplexa_comp' %}" method="post" role="form">
+
+      <button class="btn btn-primary" type="submit">Executar as três etapas abaixo</button>
+    </form>
+  </div>
+  <div style="margin-left:50px;"><h2> 3.1. Definição dos Vértices</h2>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;float:left;" action="{% url 'extrator:lista_vertices' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Formar lista de vértices</button>
+      </form>
+    </div>
+
+  </div></br></br>
+
+  <div style="margin-left:50px;"><h2> 3.2. Mapear Texto-Vértices</h2>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;float:left;" action="{% url 'extrator:mapear' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Mapear</button>
+      </form>
+    </div>
+  </div></br></br>
+
+  <div style="margin-left:50px;"><h2> 3.3. Gerar Matriz e Visualizar Rede Complexa</h2>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;float:left;" action="{% url 'extrator:matriz' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Gerar Matriz</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;float:left;margin-left:10px;" action="{% url 'extrator:ver_arquivo' 'matriz_de_adjacencias' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Ver Matriz</button>
+      </form>
+    </div>
+
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;float:left;margin-left:10px;" action="{% url 'extrator:rede_complexa'%}" method="post" role="form">
+        <button class="btn btn-primary" type="submit">Ver Rede</button>
+      </form>
+    </div>
+  </div>
+
+</br></br></br>
+
+
+  <div><h2> 4. Métricas e Ranking </h2></div>
+    <div class="form-inline-config" style="margin-left:10px;">
+      <form style="display:inline-block;" action="{% url 'extrator:metricas_e_ranking_comp' %}" method="post" role="form">
+
+        <button class="btn btn-primary" type="submit">Executar as duas etapas abaixo</button>
+      </form>
+    </div>
+    <div style="margin-left:50px;"><h2> 3.1. Métricas </h2>
+      <div class="form-inline-config" style="margin-left:10px;">
+        <form style="display:inline-block;float:left;" action="{% url 'extrator:logmetricas' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">calcular métricas</button>
+        </form>
+      </div>
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'metricas_completas' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver métricas</button>
+        </form>
+      </div>
+
+    </div></br></br>
+
+    <div style="margin-left:50px;"><h2> 3.2. Tabelas Ranking</h2>
+      <div class="form-inline-config" style="margin-left:10px;">
+        <form style="display:inline-block;float:left;" action="{% url 'extrator:gerartabelas' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">gerar tabelas Graus</button>
+        </form>
+      </div>
+
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'tabela_graus' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver Tabela Graus</button>
+        </form>
+      </div>
+
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'tabela_betweenness' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver Tabela Betweenness</button>
+        </form>
+      </div>
+
+      <div class="form-inline-config" style="margin-left:10px;float:left;">
+        <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'tabela_closeness' %}" method="post" role="form">
+
+          <button class="btn btn-primary" type="submit">Ver Tabela Closeness</button>
+        </form>
+      </div>
+
+    </div></br></br>
+
+    </br></br>
+
+    <div><h2> 5. Proto-Frases </h2></div>
+
+
+
+
+<form action="{% url 'extrator:salva_vertice_inicial' %}" method="POST" role="form" enctype="multipart/form-data">
+      <div style="margin-left:50px;"><h2> 5.1. Escolha a palavra e quantidade de proto-frases: </h2>
+
+
+
+        <div style="float:left;margin-right:5px;margin-left:10px;">Palavra</div>
+        <select id="categoria" name="verticeinicial">
+            {% for vertice in vertices %}
+            <option value="{{vertice.node}}"
+            {% if vertice == categoriatag %}
+            selected
+            {% endif %}>
+            {{vertice.node}}
+          </option>
+          {% endfor %}
+
+        </select>
+        <br><br>
+
+        <div style="margin-left:10px;float:left;margin-right:5px;"> Quantidade de proto-frases: </div>
+        <input type="number" name="num_protofrases" min="1" max="10000">
+
+        <br><br>
+        <div>
+        <div class="form-inline-config" style="margin-left:0px;float:left;">
+            <input class="btn btn-primary" type="submit"></input>
+        </div>
+
+      </div>
+
+
+
+        </div>
+</form>
+
+<div class="form-inline-config" style="margin-left:10px;float:left;">
+  <form style="display:inline-block;" action="{% url 'extrator:removerpfs'%}" method="post" role="form">
+
+    <button class="btn btn-primary" type="submit">Remover Proto-Frases (limpar banco de dados)</button>
+  </form>
+</div>
+</br></br>
+
+      <div style="margin-left:50px;"><h2> 5.2. Proto-frases</h2>
+        <div class="form-inline-config" style="margin-left:10px;">
+          <form style="display:inline-block;float:left;" action="{% url 'extrator:gerarpfs' %}" method="post" role="form">
+
+            <button class="btn btn-primary" type="submit">Gerar proto-frases</button>
+          </form>
+        </div>
+
+        <div class="form-inline-config" style="margin-left:10px;float:left;">
+          <form style="display:inline-block;" action="{% url 'extrator:dados_protofrases' %}" method="post" role="form">
+
+            <button class="btn btn-primary" type="submit">Gerar Relatório de Dados</button>
+          </form>
+        </div>
+
+        <div class="form-inline-config" style="margin-left:10px;float:left;">
+          <form style="display:inline-block;" action="{% url 'extrator:ver_arquivo' 'excessao' %}" method="post" role="form">
+
+            <button class="btn btn-primary" type="submit">Ver ultimo relatório gerado</button>
+          </form>
+        </div>
+
+
+      </div></br></br>
+
+
+      <div><h2> 6. Mapeamento e Extração dos Parágrafos </h2></div>
+        <div class="form-inline-config" style="margin-left:10px;">
+          <form style="display:inline-block;" action="{% url 'extrator:metricas_e_ranking_comp' %}" method="post" role="form">
+
+            <button class="btn btn-primary" type="submit">Executar as duas etapas abaixo</button>
+          </form>
+        </div>
+
+
+
+          <form action="{% url 'extrator:salva_arquivo' %}" method="POST" role="form" enctype="multipart/form-data">
+                <div style="margin-left:50px;"><h2> 6.1. Escolha o arquivo: </h2>
+                  <div style="float:left;margin-right:5px;margin-left:10px;padding:5px;">Arquivo</div>
+                  <select id="categoria" name="arquivo_selecionado" style="float:left;padding:5px;">
+                      {% for arquivo in arquivos %}
+                      <option value="{{arquivo}}"
+                      {% if vertice == categoriatag %}
+                      selected
+                      {% endif %}>
+                      {{arquivo}}
+                    </option>
+                    {% endfor %}
+                  </select>
+                  <div class="form-inline-config" style="margin-left:10px;float:left;">
+                      <input class="btn btn-primary" type="submit"></input>
+                  </div>
+                  </div>
+          </form>
+        </br></br>
+
+          <form action="{% url 'extrator:salva_protofrase' %}" method="POST" role="form" enctype="multipart/form-data">
+                <div style="margin-left:50px;"><h2> 6.2. Escolha a proto-frase: </h2>
+                  <div style="float:left;margin-right:5px;margin-left:10px;padding:5px;">Proto-frase</div>
+                  <select id="pf_select" name="protofrase_selecionada" style="float:left;padding:5px;">
+                      {% for pf in proto_frases %}
+
+                      <option value="{{pf}}"
+                      {% if vertice == categoriatag %}
+                      selected
+                      {% endif %}>
+                      {{pf}}
+                    </option>
+                    {% endfor %}
+                  </select>
+                  <div class="form-inline-config" style="margin-left:10px;float:left;">
+                      <input class="btn btn-primary" type="submit"></input>
+                  </div>
+                  </div>
+          </form>
+        </br></br>
+          <div style="margin-left:50px;"><h2> 6.3. Mapeamento</h2>
+            <div class="form-inline-config" style="margin-left:10px;float:left;">
+              <form style="display:inline-block;float:left;" action="{% url 'extrator:map_prepararTextos' %}" method="post" role="form">
+
+                <button class="btn btn-primary" type="submit">Preparar textos</button>
+              </form>
+            </div>
+
+            <div class="form-inline-config" style="margin-left:10px;float:left;">
+              <form style="display:inline-block;float:left;" action="{% url 'extrator:map_mapearprotofrase' %}" method="post" role="form">
+
+                <button class="btn btn-primary" type="submit">Extrair parágrafos</button>
+              </form>
+            </div>
+
+            <div class="form-inline-config" style="margin-left:10px;float:left;">
+              <form style="display:inline-block;float:left;" action="{% url 'extrator:rel_paragrafos' %}" method="post" role="form">
+
+                <button class="btn btn-primary" type="submit">Gerar Relatório</button>
+              </form>
+            </div>
+
+            <div class="form-inline-config" style="margin-left:10px;float:left;">
+              <form style="display:inline-block;float:left;" action="{% url 'extrator:ver_arquivo' 'excessao2' %}" method="post" role="form">
+
+                <button class="btn btn-primary" type="submit">Ver Relatório</button>
+              </form>
+            </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -116,13 +116,13 @@ $('#tutorial2').modal('show')
       {% set flag = 0 %}
       {% for t in topic_users %}
       {% if t.topic == topic %}
-      {% if t.user = topic_user %}
+      {% if t.user == topic_user %}
       {% set flag = 1 %}
       {% endif %}
       {% endif %}
       {% endfor %}
 
-      {% if flag = 0 %}
+      {% if flag == 0 %}
 
       <div class="response-area">
         <form action="{% url 'forum:answer_home' topic.id %}" method="post">
