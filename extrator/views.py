@@ -1311,6 +1311,23 @@ def processarProtofrases(request):
             arq_subdocumento.write(token.vertice)
             arq_subdocumento.write(' ')
     arq_subdocumento.close()
+
+    #determina a % de nós que será selecionada na sub rede segundo a % de nós selecionados na rede completa
+    #tabela_graus = OrderedDict()
+    #lista_graus = TabelaRanking.objects.all().order_by('-grau')
+    #for linha in lista_graus:
+    #    tabela_graus[linha.vertice_nome] = linha.grau
+        
+    #print len(tabela_graus)
+    #nos_selecionados = SelecionaSubTemas(tabela_graus)
+    #print len(nos_selecionados)
+    #per = float(int(len(nos_selecionados))/int(len(tabela_graus)))*100
+    #print per
+
+
+
+
+    #subtemas_selecionados = SelecionaSubTemas(tgo)
     
     #inicia analise de cada tema
     for tema in temas:        
@@ -1329,11 +1346,11 @@ def processarProtofrases(request):
         flag = 'on'
         iteracao = 0
         convergiu_tema = 'nao'
-        extracao = []
+        extracao = []      
         
         while flag == 'on': 
             
-            print 'carregando protofrases não extraídas...'
+            #print 'carregando protofrases não extraídas...'
             #testa se todas as PFs já extrairam frases
             protofrases = ProtoFrasesNew.objects.filter(extracao = 'nao')
             if not protofrases:
@@ -1346,72 +1363,73 @@ def processarProtofrases(request):
                 
             #avalia as protofrases que ainda nao obtiveram extracao
             buffer_pfs = []
+            pfn = 0
+            memoria_pf = []
+            memoria_st = []
+            indx = 0
+            
             for protofrase in protofrases:
-                #separa palavras da protofrase e armazena em uma lista
+                
+                print ('protofrase ' + str(pfn))                
+                
+                #separa palavras da protofrase e armazena em uma lista e atualiza subtenas
                 palavras = protofrase.protofrase.split(' ')
+                subtemas_selecionados = []
                 
                 #gera sub-documento e recebe o numero de sentencas
                 numero_de_sentencas, seten = GeraSubDocumento(palavras)                
                 
                 #relatorio
-                arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                 
+                arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                  
                 
-                
-                print 'armazena protofrases e extração...'
-                #verifica o numero de sentencas do novo documento para saber se houve extraçao
+                #print 'armazena protofrases e extração...'
                 if numero_de_sentencas == 1:
                     convergiu_tema = 'sim'
                     frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
-                    #f = ExtracaoNew(tema = tema.tema, protofrase = protofrase.protofrase, frase = frase[0].strip())
-                    #f.save()
-                    
                     extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
-                    
                     arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')
+                    arq_procedimento.write('sim' + '\n')
+                    pfn += 1
+                else:                  
+                    #Se o conjunto de palavras da pf já foi executado, pega o resultado
+                    if set(palavras) in memoria_pf:
+                        ind = memoria_pf.index(set(palavras))
+                        print palavras
+                        print memoria_pf[ind]                        
+                        subtemas_selecionados = memoria_pf[ind] 
+                    #senão, chama algoritmo de seleção de temas  
+                    else:                                
+                        #gera nova rede
+                        tgo = GeraRede(request)
                     
-                    #protofrase.extracao = 'sim'
-                   # protofrase.save()
-                   # lista_protofrase.append((protofrase.protofrase),(protofrase.extracao))
-                    
-                    arq_procedimento.write(protofrase.extracao + '\n')
-                    
-                else:
-                    #Nao havendo extracao, define os sbutemas:
-                    #gera rede e retorna a tabela de graus ordenado
-                    tgo = GeraRede(request)
+                        #seleciona os subtemas
+                        subtemas_selecionados = SelecionaSubTemas(tgo)
 
-                    #seleciona os subtemas
-                    subtemas_selecionados = SelecionaSubTemas(tgo)
+                        #atualiza memória de execuções   
+                        memoria_pf.append(set(palavras))
+                        memoria_st.append(set(subtemas_selecionados))
                     
                     #adiciona novas protofrases no buffer 
-                    convergiu = 'nao'
-                    if subtemas_selecionados:
-                        for subtema in subtemas_selecionados:
-                            if subtema not in palavras:
-                                convergiu = 'sim'
-                                pf_i = ' '.join(palavras)
-                                pf = pf_i + ' ' + subtema
-                                buffer_pfs.append(pf)                               
-                        if convergiu == 'nao':
-                            #protofrase.extracao = 'nullll'
-                            #protofrase.save()
-                            #lista_protofrase.append((protofrase.protofrase),(protofrase.extracao))
-
-                            arq_procedimento.write('nullll' + '\n')
-                        else:
-                            arq_procedimento.write(protofrase.extracao + '\n')                       
+                    convergiu = 'nao'                   
+                    for subtema in subtemas_selecionados:
+                        if subtema not in palavras:
+                            convergiu = 'sim'
+                            pf_i = ' '.join(palavras)
+                            pf = pf_i + ' ' + subtema
+                            buffer_pfs.append(pf)                               
+                    if convergiu == 'nao':
+                        arq_procedimento.write('nullll' + '\n')
                     else:
-                        #protofrase.extracao = 'nao convergiu'
-                        #protofrase.save()
-                        #lista_protofrase.append((protofrase.protofrase),(protofrase.extracao))
+                        arq_procedimento.write(protofrase.extracao + '\n')                       
+                   
+                    pfn += 1     
 
-                        arq_procedimento.write(protofrase.extracao + '\n')      
-
-            print 'atualizando banvo de dados...'
+            print 'atualizando banco de dados...'
+           
             #atualiza protofrases no BD
             arq_procedimento.write('\n\n\n')
             iteracao +=1
-            print iteracao
+            print ('Iteração ' + str(iteracao) )
             if buffer_pfs:
                 ProtoFrasesNew.objects.all().delete()
                 aList = [ProtoFrasesNew(protofrase=pf, extracao='nao',frase='null') for pf in buffer_pfs]    
@@ -1424,7 +1442,6 @@ def processarProtofrases(request):
         else:           
             aList = [ExtracaoNew(tema = linha[0], protofrase = linha[1] , frase = linha[2] ) for linha in extracao]    
             ExtracaoNew.objects.bulk_create(aList)
-
         
         arq_procedimento.write('\n\n\n')
         arq_extracao.write('\n\n\n')      
@@ -1503,7 +1520,7 @@ def mapearEextrair(request):
 
 def GeraSubDocumento(palavras):
     
-    print 'gerando subdocumento...'
+    #print 'gerando subdocumento...'
     #inicializa arquivo do subdocumento
     arq_subtema = codecs.open('extrator/arquivos/p5_texto_tema.txt','w','utf-8')
 
@@ -1522,7 +1539,7 @@ def GeraSubDocumento(palavras):
     return numero_de_sentencas, seten 
 
 def GeraRede(request):
-    print 'gerando rede e calculando métrica...'
+   #print 'gerando rede e calculando métrica...'
     
     sentencas = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').read().splitlines()
 
@@ -1559,7 +1576,7 @@ def GeraRede(request):
     return tabela_graus_ordenada
 
 def SelecionaSubTemas(tabela_graus_ordenada):
-    print 'selecionando os subtemas...'
+    #print 'selecionando os subtemas...'
 
     #calculo das distancias relativas 
     distancias_relativas_novo = OrderedDict()
