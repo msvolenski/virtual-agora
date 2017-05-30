@@ -274,7 +274,6 @@ comigo
 despertado
 josé
 sono
-fez
 ordenar
 anjo
 senhor
@@ -1017,7 +1016,6 @@ dizer
 vir
 após
 mim
-fazer
 pescador
 homem
 .
@@ -1380,7 +1378,6 @@ irmão
 .
 então
 voltar
-fazer
 oferta
 .
 entrar
@@ -1426,7 +1423,6 @@ adulterar
 .
 olho
 direito
-fazer
 tropeçar
 arranca
 lança
@@ -1443,7 +1439,6 @@ inferno
 .
 mão
 direito
-fazer
 tropeçar
 corta
 lança
@@ -1561,7 +1556,6 @@ outro
 quer
 demandar
 comigo
-tirar
 túnica
 deixa
 capa
@@ -1604,7 +1598,6 @@ vosso
 pai
 celeste
 porque
-fazer
 nascer
 sol
 sobre
@@ -1621,16 +1614,13 @@ amar
 amar
 recompensa
 .
-fazer
 publicano
 .
 saudar
 somente
 vosso
 irmão
-fazer
 .
-fazer
 gentio
 .
 portanto
@@ -1666,7 +1656,6 @@ toque
 trombeta
 diante
 ti
-fazer
 hipócrita
 sinagoga
 rua
@@ -1685,7 +1674,6 @@ esmola
 ignorar
 mão
 esquerdo
-fazer
 mão
 direito
 .
@@ -1769,7 +1757,6 @@ nome
 vir
 reino
 .
-fazer
 vontade
 assim
 terra
@@ -2111,21 +2098,18 @@ dizer
 irmão
 .
 deixa
-tirar
 argueiro
 olho
 trave
 .
 hipócrita
 .
-tira
 primeiro
 trave
 olho
 então
 ver
 claramente
-tirar
 argueiro
 olho
 irmão
@@ -2204,9 +2188,7 @@ quantum
 pois
 querer
 homem
-fazer
 assim
-fazer
 vós
 .
 porque
@@ -2307,7 +2289,6 @@ senhor
 entrar
 reino
 céu
-fazer
 vontade
 pai
 estar
@@ -2328,7 +2309,6 @@ nome
 expelir
 demônio
 nome
-fazer
 milagre
 .
 então
@@ -2444,7 +2424,7 @@ ficar
 limpo
 lepra
 .
-dizer
+disselhe
 então
 jesus
 .
@@ -2453,7 +2433,6 @@ dizer
 ninguém
 mostrar
 sacerdote
-fazer
 oferta
 moisés
 ordenar
@@ -2480,7 +2459,8 @@ horrivelmente
 jesus
 dizer
 .
-curá-lo
+curar
+-
 .
 centurião
 responder
@@ -2512,8 +2492,6 @@ vir
 .
 servo
 .
-fazer
-fazer
 .
 ouvir
 admirar
@@ -2711,7 +2689,6 @@ repreender
 vento
 mar
 .
-fez
 grande
 bonança
 .
@@ -3023,7 +3000,6 @@ velho
 .
 porque
 remendo
-tira
 parte
 veste
 ficar
@@ -3173,7 +3149,6 @@ perguntar
 .
 crer
 poder
-fazer
 .
 responder
 .
@@ -3185,7 +3160,6 @@ tocar
 olho
 dizer
 .
-fazer
 conforme
 vosso
 fé
@@ -3595,7 +3569,6 @@ almo
 temer
 antes
 poder
-fazer
 perecer
 inferno
 tanto
@@ -3991,7 +3964,6 @@ sidom
 operado
 milagre
 vós
-fazer
 arrependido
 pano
 saco
@@ -4025,7 +3997,6 @@ operado
 milagre
 ti
 15
-fazer
 permanecer
 dia
 hoje
@@ -4137,9 +4108,7 @@ dizer
 .
 eis
 discípulo
-fazer
 lícito
-fazer
 dia
 sábado
 .
@@ -4147,7 +4116,6 @@ jesus
 dizer
 .
 leste
-fez
 davi
 companheiro
 fome
@@ -4228,10 +4196,8 @@ ovelha
 sábado
 cair
 covo
-fazer
 todo
 esforço
-tirar
 de+ali
 .
 ora
@@ -4243,7 +4209,6 @@ ovelha
 logo
 lícito
 sábado
-fazer
 bem
 .
 então
@@ -4263,7 +4228,6 @@ fariseu
 conspirar
 contra
 sobre
-tirar
 vida
 .
 jesus
@@ -4292,7 +4256,6 @@ amado
 almo
 comprazer
 .
-fazer
 repousar
 sobre
 espírito
@@ -4313,7 +4276,6 @@ quebrado
 apagar
 torcida
 fumegar
-fazer
 vencedor
 juízo
 .
@@ -4464,7 +4426,6 @@ perdoado
 mundo
 porvir
 .
-fazer
 árvore
 bom
 fruto
@@ -4496,7 +4457,6 @@ coração
 .
 homem
 bom
-tira
 tesouro
 bom
 coisa
@@ -4506,7 +4466,6 @@ homem
 mau
 mau
 tesouro
-tira
 coisa
 mau
 .
@@ -4705,7 +4664,6 @@ irmão
 .
 porque
 qualquer
-fazer
 vontade
 pai
 celeste
@@ -5033,7 +4991,6 @@ porém
 responder
 .
 inimigo
-fez
 .
 servo
 perguntar
@@ -5091,7 +5048,6 @@ semente
 crescido
 maior
 hortaliça
-fazer
 árvore
 modo
 ave
@@ -5332,7 +5288,6 @@ céu
 semelhante
 pai
 família
-tira
 depósito
 coisa
 novo
@@ -5395,7 +5350,6 @@ senão
 terra
 casa
 .
-fez
 ali
 milagre
 causa
@@ -6085,7 +6039,6 @@ mulher
 grande
 fé
 .
-fazer
 comigo
 querer
 .
@@ -6375,7 +6328,7 @@ saduceu
 indo
 jesus
 lado
-cesareia
+cesaréia
 filipe
 perguntar
 discípulo
@@ -6632,7 +6585,6 @@ estar
 aqui
 .
 querer
-fazer
 aqui
 três
 tenda
@@ -6726,7 +6678,6 @@ veio
 reconhecer
 .
 antes
-fazer
 tudo
 quantum
 querer
@@ -6927,14 +6878,13 @@ anzol
 primeiro
 peixe
 fisgar
-tira
 .
 abrir
 boca
 achar
 estáter
 .
-toma
+tomão
 entrega
 mim
 ti
@@ -6986,7 +6936,6 @@ receber
 .
 qualquer
 porém
-fazer
 tropeçar
 pequenino
 crer
@@ -7019,7 +6968,6 @@ escândalo
 portanto
 mão
 pé
-fazer
 tropeçar
 corta
 lança
@@ -7040,7 +6988,6 @@ fogo
 eterno
 .
 olho
-fazer
 tropeçar
 arranca
 lança
@@ -7355,7 +7302,6 @@ dívida
 assim
 pai
 celeste
-fazer
 íntimo
 perdoar
 cada
@@ -7397,7 +7343,6 @@ lido
 criador
 desde
 princípio
-fez
 homem
 mulher
 dizer
@@ -7499,12 +7444,10 @@ nascença
 .
 outro
 homem
-fazer
 tal
 .
 outro
 si
-fazer
 eunuco
 causa
 reino
@@ -7550,7 +7493,6 @@ aproximar
 perguntar
 .
 mestre
-fazer
 bom
 alcançar
 vida
@@ -7866,7 +7808,6 @@ responder
 dizer
 .
 amigo
-fazer
 injustiça
 .
 combinar
@@ -7885,7 +7826,6 @@ ti
 .
 porventura
 lícito
-fazer
 querer
 .
 mau
@@ -8090,7 +8030,6 @@ chamar
 perguntar
 .
 querer
-fazer
 .
 responder
 .
@@ -8276,7 +8215,6 @@ sacerdote
 escriba
 maravilha
 jesus
-fazer
 menino
 clamar
 .
@@ -8303,7 +8241,6 @@ boca
 pequenino
 criança
 peito
-tirar
 perfeito
 louvor
 .
@@ -8358,7 +8295,6 @@ dizer
 fé
 duvidar
 somente
-fazer
 feito
 figueira
 27
@@ -8391,7 +8327,6 @@ povo
 perguntar
 .
 autoridade
-fazer
 coisa
 .
 dar
@@ -8400,13 +8335,11 @@ autoridade
 jesus
 responder
 .
-fazer
 pergunta
 .
 responder
 dizer
 autoridade
-fazer
 coisa
 .
 onde
@@ -8448,7 +8381,6 @@ vez
 .
 dizer
 autoridade
-fazer
 coisa
 .
 parecer
@@ -8485,7 +8417,6 @@ querer
 arrependido
 .
 dois
-fez
 vontade
 pai
 .
@@ -8610,12 +8541,10 @@ pois
 vir
 senhor
 vinha
-fazer
 lavrador
 .
 responder
 .
-fazer
 perecer
 horrivelmente
 malvado
@@ -9019,7 +8948,6 @@ doutrina
 entretanto
 fariseu
 saber
-fazer
 calar
 saduceu
 reunir
@@ -9117,7 +9045,6 @@ ousar
 alguém
 partir
 dia
-fazer
 pergunta
 .
 então
@@ -9132,7 +9059,6 @@ assentar
 escriba
 fariseu
 .
-fazer
 guardar
 pois
 tudo
@@ -9144,7 +9070,6 @@ obra
 .
 porque
 dizer
-fazer
 .
 atar
 fardo
@@ -9266,7 +9191,6 @@ devorar
 casa
 viúvo
 justificar
-fazer
 longo
 oração
 .
@@ -9284,7 +9208,6 @@ porque
 rodear
 mar
 terra
-fazer
 prosélito
 .
 vez
@@ -9397,7 +9320,6 @@ fé
 .
 dever
 porém
-fazer
 coisa
 omitir
 .
@@ -9761,7 +9683,6 @@ estar
 sobre
 eirado
 descer
-tirar
 casa
 algum
 coisa
@@ -10077,7 +9998,6 @@ servo
 senhor
 vir
 achar
-fazer
 assim
 .
 verdade
@@ -10408,7 +10328,6 @@ voltar
 receber
 juro
 .
-tirar
 pois
 talento
 dar
@@ -10534,11 +10453,9 @@ dizer
 verdade
 afirmar
 sempre
-fazer
 pequenino
 irmão
 mim
-fazer
 .
 então
 rei
@@ -10593,11 +10510,9 @@ verdade
 dizer
 sempre
 deixar
-fazer
 pequenino
 mim
 deixar
-fazer
 .
 castigo
 eterno
@@ -10712,7 +10627,6 @@ derramar
 perfume
 sobre
 corpo
-fez
 sepultamento
 .
 verdade
@@ -10724,7 +10638,6 @@ todo
 mundo
 evangelho
 contado
-fez
 memória
 .
 então
@@ -10765,7 +10678,6 @@ perguntar
 .
 onde
 querer
-fazer
 preparativo
 comer
 páscoa
@@ -10790,7 +10702,6 @@ celebrar
 páscoa
 discípulo
 .
-fazer
 jesus
 ordenar
 preparar
@@ -11078,7 +10989,6 @@ passar
 mim
 cálice
 beber
-fazer
 vontade
 .
 voltar
@@ -11638,7 +11548,6 @@ pilatos
 ouvir
 quanto
 acusação
-fazer
 .
 jesus
 responder
@@ -11706,7 +11615,6 @@ persuadir
 povo
 pedir
 barrabás
-fazer
 morrer
 jesus
 .
@@ -11725,7 +11633,6 @@ barrabás
 replicar
 pilatos
 .
-fazer
 então
 jesus
 chamado
@@ -11737,7 +11644,6 @@ responder
 todo
 .
 mal
-fez
 .
 perguntar
 pilatos
@@ -11883,7 +11789,6 @@ crucificar
 repartir
 si
 veste
-tirar
 sorte
 .
 assentado
@@ -12148,7 +12053,6 @@ linho
 depositar
 túmulo
 novo
-fazer
 abrir
 rocha
 .
@@ -12394,7 +12298,6 @@ segurança
 .
 receber
 dinheiro
-fazer
 estar
 instruído
 .
@@ -12430,7 +12333,6 @@ céu
 terra
 .
 portanto
-fazer
 discípulo
 todo
 nação
@@ -12638,7 +12540,6 @@ jesus
 vir
 após
 mim
-fazer
 pescador
 homem
 .
@@ -12883,7 +12784,6 @@ lepra
 ficar
 limpo
 .
-fazer
 então
 veemente
 advertência
@@ -12964,7 +12864,6 @@ eirado
 ponto
 correspondente
 estar
-fazer
 abertura
 baixar
 leito
@@ -13204,7 +13103,6 @@ velho
 porque
 remendo
 novo
-tira
 parte
 veste
 velho
@@ -13252,7 +13150,6 @@ fariseu
 .
 vê
 .
-fazer
 lícito
 sábado
 .
@@ -13260,7 +13157,6 @@ responder
 .
 nunca
 leste
-fez
 davi
 ver
 necessidade
@@ -13334,9 +13230,7 @@ perguntar
 .
 lícito
 sábado
-fazer
 bem
-fazer
 mal
 .
 salvar
@@ -13368,7 +13262,6 @@ conspirar
 logo
 herodiano
 contra
-tirar
 vida
 .
 retirar
@@ -13396,7 +13289,6 @@ saber
 quanto
 coisa
 jesus
-fazer
 veio
 .
 então
@@ -13663,7 +13555,6 @@ irmão
 .
 portanto
 qualquer
-fazer
 vontade
 deus
 irmão
@@ -13830,7 +13721,6 @@ ouvir
 logo
 vir
 satanás
-tira
 palavra
 semeado
 .
@@ -13910,7 +13800,6 @@ senão
 manifesto
 .
 nado
-fazer
 escondido
 senão
 revelado
@@ -14092,7 +13981,6 @@ emudecer
 .
 vento
 aquietar
-fez
 grande
 bonança
 .
@@ -14305,7 +14193,6 @@ casa
 anunciar
 tudo
 senhor
-fez
 compaixão
 ti
 .
@@ -14315,7 +14202,6 @@ proclamar
 decápolis
 tudo
 jesus
-fazer
 .
 todo
 admirar
@@ -14441,7 +14327,6 @@ porém
 olhar
 redor
 ver
-fazer
 .
 então
 mulher
@@ -14609,7 +14494,6 @@ coisa
 sabedoria
 dado
 .
-fazer
 tal
 maravilha
 mão
@@ -14643,7 +14527,6 @@ parente
 casa
 .
 poder
-fazer
 ali
 nenhum
 milagre
@@ -15048,7 +14931,6 @@ sobre
 relva
 verde
 .
-fazer
 repartir
 grupo
 cem
@@ -15375,7 +15257,6 @@ oferta
 senhor
 então
 dispensar
-fazer
 qualquer
 coisa
 favor
@@ -15390,7 +15271,6 @@ tradição
 vós
 transmitir
 .
-fazer
 outro
 coisa
 semelhante
@@ -15603,7 +15483,6 @@ mão
 sobre
 .
 jesus
-tirar
 multidão
 parte
 pôr
@@ -15655,7 +15534,6 @@ esplendidamente
 bem
 .
 somente
-fazer
 ouvir
 surdo
 falar
@@ -16170,7 +16048,6 @@ mestre
 bom
 estar
 aqui
-fazer
 três
 tenda
 .
@@ -16259,7 +16136,6 @@ porém
 dizer
 elias
 veio
-fazer
 tudo
 querer
 respeito
@@ -16561,7 +16437,6 @@ proibir
 .
 porque
 ninguém
-fazer
 milagre
 nome
 logo
@@ -16591,7 +16466,6 @@ algum
 perder
 galardão
 .
-fazer
 tropeçar
 pequenino
 crente
@@ -16606,7 +16480,6 @@ lançado
 mar
 .
 mão
-fazer
 tropeçar
 corta
 .
@@ -16630,7 +16503,6 @@ apaga
 .
 .
 pé
-fazer
 tropeçar
 corta
 .
@@ -16652,7 +16524,6 @@ apaga
 .
 .
 olho
-fazer
 tropeçar
 arranca
 .
@@ -16750,7 +16621,6 @@ desde
 princípio
 criação
 deus
-fez
 homem
 mulher
 .
@@ -16856,7 +16726,6 @@ perguntar
 .
 bom
 mestre
-fazer
 herdar
 vida
 eterno
@@ -17112,7 +16981,6 @@ pedir
 perguntar
 .
 querer
-fazer
 .
 responder
 .
@@ -17285,7 +17153,6 @@ perguntar
 jesus
 .
 querer
-fazer
 .
 responder
 cego
@@ -17341,7 +17208,6 @@ trazer
 alguém
 perguntar
 .
-fazer
 .
 responder
 .
@@ -17367,7 +17233,6 @@ ali
 estar
 reclamar
 .
-fazer
 soltar
 jumentinho
 .
@@ -17523,7 +17388,6 @@ ouvir
 coisa
 procurar
 modo
-tirar
 vida
 .
 pois
@@ -17577,7 +17441,6 @@ mar
 duvidar
 coração
 crer
-fazer
 dizer
 assim
 .
@@ -17630,24 +17493,20 @@ ancião
 perguntar
 .
 autoridade
-fazer
 coisa
 .
 dar
 tal
 autoridade
-fazer
 .
 jesus
 responder
 .
-fazer
 pergunta
 .
 responder
 dizer
 autoridade
-fazer
 coisa
 .
 batismo
@@ -17695,7 +17554,6 @@ dizer
 tampouco
 dizer
 autoridade
-fazer
 coisa
 .
 entrar
@@ -17779,7 +17637,6 @@ matar
 atirar
 vinha
 .
-fazer
 pois
 dono
 vinha
@@ -18167,7 +18024,6 @@ devorar
 casa
 viúvo
 justificar
-fazer
 longo
 oração
 .
@@ -18213,7 +18069,6 @@ viúvo
 pobre
 depositar
 gazofilácio
-fazer
 todo
 ofertante
 .
@@ -18336,7 +18191,6 @@ tribunal
 sinagoga
 .
 açoitado
-fazer
 comparecer
 presença
 governador
@@ -18415,7 +18269,6 @@ estar
 cima
 eirado
 descer
-tirar
 casa
 algum
 coisa
@@ -18729,12 +18582,10 @@ sempre
 comigo
 querer
 poder
-fazer
 bem
 mim
 sempre
 .
-fez
 poder
 .
 antecipar
@@ -18750,7 +18601,6 @@ todo
 mundo
 evangelho
 contado
-fez
 memória
 .
 judas
@@ -18778,7 +18628,6 @@ dia
 festa
 pão
 asmos
-fazer
 sacrifício
 cordeiro
 pascal
@@ -18787,7 +18636,6 @@ discípulo
 .
 onde
 querer
-fazer
 preparativo
 comer
 páscoa
@@ -18829,7 +18677,6 @@ mobilar
 pronto
 .
 ali
-fazer
 preparativo
 .
 sair
@@ -19526,7 +19373,6 @@ responder
 vê
 quanto
 acusação
-fazer
 .
 jesus
 porém
@@ -19560,7 +19406,6 @@ vindo
 multidão
 começar
 pedir
-fazer
 costume
 .
 pilatos
@@ -19591,7 +19436,6 @@ barrabás
 pilatos
 perguntar
 .
-fazer
 então
 dar
 chamar
@@ -19607,7 +19451,6 @@ pilatos
 dizer
 .
 mal
-fez
 .
 gritar
 cada
@@ -20161,7 +20004,6 @@ algum
 coisa
 mortífero
 beberar
-fazer
 mal
 .
 impor
@@ -20457,7 +20299,6 @@ mês
 dizer
 .
 assim
-fez
 senhor
 contemplar
 anular
@@ -20711,7 +20552,6 @@ bem
 aventurar
 porque
 poderoso
-fez
 grande
 coisa
 .
@@ -20912,7 +20752,6 @@ lembrar
 santo
 aliança
 juramento
-fez
 abraão
 pai
 conceder
@@ -21251,7 +21090,6 @@ pai
 trazer
 menino
 jesus
-fazer
 lei
 ordenar
 simeão
@@ -21455,7 +21293,6 @@ mãe
 dizer
 .
 filho
-fazer
 assim
 comigo
 .
@@ -21639,7 +21476,6 @@ dizer
 .
 haver
 pois
-fazer
 .
 responder
 .
@@ -21648,7 +21484,6 @@ túnica
 repartir
 .
 comido
-fazer
 .
 publicano
 batizado
@@ -21656,7 +21491,6 @@ perguntar
 .
 mestre
 haver
-fazer
 .
 responder
 .
@@ -21667,7 +21501,6 @@ soldado
 perguntar
 .
 nó
-fazer
 .
 dizer
 .
@@ -22249,7 +22082,6 @@ tudo
 ouvir
 dado
 cafarnaum
-fazer
 aqui
 terra
 .
@@ -22382,7 +22214,6 @@ terra
 meio
 todo
 sair
-fazer
 mal
 .
 todo
@@ -22531,7 +22362,6 @@ falar
 dizer
 simão
 .
-fazer
 largo
 lançar
 vosso
@@ -22553,7 +22383,6 @@ palavra
 lançar
 rede
 .
-fazer
 apanhar
 grande
 quantidade
@@ -22564,7 +22393,6 @@ rede
 .
 então
 68
-fazer
 sinais
 companheiro
 outro
@@ -22597,7 +22425,6 @@ pecador
 pois
 visto
 pesca
-fazer
 admiração
 apoderar
 todo
@@ -22904,7 +22731,6 @@ assim
 fariseu
 freqüentemente
 jejuar
-fazer
 oração
 .
 entretanto
@@ -22916,7 +22742,6 @@ porém
 dizer
 .
 poder
-fazer
 jejuar
 convidado
 casamento
@@ -22938,7 +22763,6 @@ dizer
 parábola
 .
 ninguém
-tira
 69
 pedaço
 veste
@@ -23014,7 +22838,6 @@ algum
 fariseu
 dizer
 .
-fazer
 lícito
 sábado
 .
@@ -23023,7 +22846,6 @@ jesus
 .
 menos
 lido
-fez
 davi
 fome
 companheiro
@@ -23072,7 +22894,6 @@ fariseu
 observar
 procurar
 ver
-fazer
 cura
 sábado
 fim
@@ -23102,7 +22923,6 @@ parecer
 .
 lícito
 sábado
-fazer
 bem
 mal
 .
@@ -23121,7 +22941,6 @@ estender
 mão
 .
 assim
-fez
 mão
 restaurado
 .
@@ -23130,7 +22949,6 @@ furor
 discutir
 si
 quantum
-fazer
 jesus
 .
 dia
@@ -23331,7 +23149,6 @@ ouvir
 amar
 vosso
 inimigo
-fazer
 bem
 odiar
 .
@@ -23346,7 +23163,6 @@ face
 oferecer
 outro
 .
-tirar
 capa
 deixa
 levar
@@ -23363,9 +23179,7 @@ demanda
 .
 querer
 homem
-fazer
 assim
-fazer
 vós
 .
 amar
@@ -23378,15 +23192,12 @@ pecador
 amar
 amar
 .
-fazer
 bem
-fazer
 bem
 vosso
 recompensa
 .
 pecador
-fazer
 .
 emprestar
 esperar
@@ -23405,7 +23216,6 @@ amar
 porém
 vosso
 inimigo
-fazer
 bem
 emprestar
 esperar
@@ -23496,7 +23306,6 @@ irmão
 .
 deixa
 irmão
-tirar
 argueiro
 olho
 ver
@@ -23504,14 +23313,12 @@ trave
 estar
 .
 hipócrita
-tira
 primeiro
 trave
 olho
 então
 ver
 claramente
-tirar
 argueiro
 estar
 olho
@@ -23550,12 +23357,10 @@ bom
 bom
 tesouro
 coração
-tira
 bem
 mau
 mau
 tesouro
-tira
 mal
 .
 porque
@@ -23568,7 +23373,6 @@ coração
 chamar
 senhor
 senhor
-fazer
 mando
 .
 todo
@@ -23662,7 +23466,6 @@ suplicar
 dizer
 .
 digno
-fazer
 .
 porque
 amigo
@@ -23713,8 +23516,6 @@ vir
 .
 servo
 .
-fazer
-fazer
 .
 ouvido
 palavra
@@ -24732,7 +24533,6 @@ casa
 conta
 tudo
 deus
-fez
 ti
 .
 então
@@ -25148,7 +24948,6 @@ então
 dizer
 discípulo
 .
-fazer
 sentar
 grupo
 cinqüenta
@@ -25379,7 +25178,6 @@ estar
 aqui
 .
 então
-fazer
 três
 tenda
 .
@@ -25511,7 +25309,6 @@ todo
 maravilhar
 quantum
 jesus
-fazer
 dizer
 discípulo
 .
@@ -25759,7 +25556,6 @@ lugar
 onde
 estar
 .
-fez
 seguinte
 advertência
 .
@@ -25898,7 +25694,6 @@ sidom
 operado
 milagre
 vós
-fazer
 arrependido
 assentado
 pano
@@ -26075,7 +25870,6 @@ prova
 dizer
 .
 mestre
-fazer
 herdar
 vida
 eterno
@@ -26116,7 +25910,6 @@ dizer
 responder
 corretamente
 .
-fazer
 viver
 .
 porém
@@ -26190,7 +25983,6 @@ tratar
 .
 dia
 seguinte
-tirar
 dois
 denário
 entregar
@@ -26395,7 +26187,6 @@ levantar
 dar
 amigo
 todavia
-fazer
 causa
 importunação
 dar
@@ -26570,7 +26361,6 @@ porém
 valente
 79
 vencer
-tira
 armadura
 confiar
 dividir
@@ -26811,9 +26601,7 @@ perversidade
 .
 insensato
 .
-fez
 exterior
-fez
 interior
 .
 antes
@@ -26840,7 +26628,6 @@ deus
 .
 dever
 porém
-fazer
 coisa
 omitir
 .
@@ -26990,7 +26777,6 @@ confundi-lo
 respeito
 assunto
 intuito
-tirar
 próprio
 palavra
 motivo
@@ -27048,7 +26834,6 @@ matar
 corpo
 nado
 poder
-fazer
 .
 porém
 mostrar
@@ -27206,7 +26991,6 @@ arrazoar
 comigo
 dizer
 .
-fazer
 pois
 onde
 recolher
@@ -27214,7 +26998,6 @@ fruto
 .
 dizer
 .
-fazer
 .
 destruir
 celeiro
@@ -27310,7 +27093,6 @@ vida
 portanto
 nado
 poder
-fazer
 quantum
 coisa
 mínimo
@@ -27397,7 +27179,6 @@ bem
 dar
 esmola
 .
-fazer
 vós
 outro
 bolsa
@@ -27529,7 +27310,6 @@ servo
 senhor
 vir
 achar
-fazer
 assim
 .
 verdadeiramente
@@ -27570,7 +27350,6 @@ conhecer
 vontade
 senhor
 aprontar
-fez
 segundo
 vontade
 punido
@@ -27580,7 +27359,6 @@ porém
 saber
 vontade
 senhor
-fez
 coisa
 digno
 reprovação
@@ -27963,7 +27741,6 @@ plantar
 horta
 .
 crescer
-fez
 árvore
 .
 ave
@@ -28215,7 +27992,6 @@ filho
 boi
 cair
 poço
-tirar
 logo
 dia
 sábado
@@ -28967,10 +28743,8 @@ dizer
 administrador
 comigo
 .
-fazer
 pois
 senhor
-tira
 administração
 .
 trabalhar
@@ -28981,7 +28755,6 @@ mendigar
 vergonha
 .
 saber
-fazer
 demitido
 administração
 receber
@@ -29054,7 +28827,6 @@ recomer
 riqueza
 origem
 iníquo
-fazer
 amigo
 .
 faltar
@@ -29369,7 +29141,6 @@ moinho
 fossar
 atirado
 mar
-fazer
 tropeçar
 pequenino
 .
@@ -29454,7 +29225,6 @@ porventura
 agradecer
 servo
 porque
-fez
 haver
 ordenado
 .
@@ -29469,10 +29239,8 @@ dizer
 servo
 inútil
 porque
-fazer
 apenas
 dever
-fazer
 .
 caminho
 jerusalém
@@ -29816,7 +29584,6 @@ dizer
 juiz
 iníquo
 .
-fazer
 deus
 justiça
 escolhido
@@ -29830,7 +29597,6 @@ defendê-los
 .
 dizer
 depressa
-fazer
 justiça
 .
 contudo
@@ -29972,7 +29738,6 @@ perguntar
 .
 bom
 mestre
-fazer
 herdar
 vida
 eterno
@@ -30132,7 +29897,6 @@ ultrajado
 cuspir
 .
 açoitar
-tirar
 lhe-ão
 vida
 .
@@ -30208,7 +29972,6 @@ chegado
 perguntar
 .
 querer
-fazer
 .
 responder
 .
@@ -30476,7 +30239,6 @@ ti
 homem
 rigoroso
 .
-tira
 pôr
 ceifa
 semear
@@ -30509,7 +30271,6 @@ juro
 dizer
 assistir
 .
-tirar
 mina
 dar
 dez
@@ -30780,7 +30541,6 @@ termo
 dizer
 .
 autoridade
-fazer
 coisa
 .
 dar
@@ -30788,7 +30548,6 @@ autoridade
 .
 responder
 .
-fazer
 pergunta
 .
 dizer
@@ -30834,7 +30593,6 @@ replicar
 pois
 dizer
 autoridade
-fazer
 coisa
 .
 seguir
@@ -30892,7 +30650,6 @@ dizer
 dono
 vinha
 .
-fazer
 .
 enviar
 filho
@@ -30918,7 +30675,6 @@ lançar
 vinha
 matar
 .
-fazer
 pois
 dono
 vinha
@@ -31258,7 +31014,6 @@ devorar
 casa
 viúvo
 justificar
-fazer
 longo
 oração
 .
@@ -31707,7 +31462,6 @@ preocupar
 principal
 sacerdote
 escriba
-tirar
 vida
 jesus
 .
@@ -31807,7 +31561,6 @@ cenáculo
 mobilar
 .
 ali
-fazer
 preparativo
 .
 indo
@@ -31877,7 +31630,6 @@ corpo
 oferecido
 vós
 .
-fazer
 memória
 mim
 .
@@ -31919,7 +31671,6 @@ começar
 indagar
 si
 estar
-fazer
 .
 suscitar
 si
@@ -32128,7 +31879,6 @@ mim
 cálice
 .
 contudo
-fazer
 vontade
 sim
 .
@@ -32418,7 +32168,8 @@ sentado
 filho
 homem
 direito
-todo-poderoso
+todo
+poderoso
 deus
 .
 então
@@ -32540,7 +32291,6 @@ respeito
 .
 esperar
 vê-lo
-fazer
 algum
 sinal
 .
@@ -32671,7 +32421,6 @@ vez
 perguntar
 .
 mal
-fez
 .
 fato
 nado
@@ -32779,7 +32528,6 @@ cobrir
 porque
 lenho
 verde
-fazer
 lenho
 seco
 .
@@ -32809,7 +32557,6 @@ pai
 perdoar
 porque
 saber
-fazer
 .
 então
 repartir
@@ -32901,7 +32648,6 @@ merecer
 .
 nenhum
 mal
-fez
 .
 acrescentar
 .
@@ -33018,7 +32764,6 @@ pilatos
 pedir
 corpo
 jesus
-tirar
 madeiro
 envolver
 lençol
@@ -33342,7 +33087,6 @@ escritura
 aproximar
 aldeia
 onde
-fez
 menção
 passar
 adiante
@@ -33604,7 +33348,6 @@ feito
 intermédio
 nado
 feito
-fez
 .
 vida
 estar
@@ -33685,7 +33428,6 @@ homem
 deus
 .
 verbo
-fez
 carne
 habitar
 nó
@@ -33860,7 +33602,6 @@ dizer
 eis
 cordeiro
 deus
-tira
 pecado
 mundo
 .
@@ -34189,7 +33930,6 @@ então
 falar
 servente
 .
-fazer
 tudo
 dizer
 .
@@ -34220,12 +33960,10 @@ totalmente
 então
 determinar
 .
-tirar
 agora
 levar
 mestre-sala
 .
-fazer
 .
 mestre-sala
 provado
@@ -34324,11 +34062,9 @@ dizer
 vender
 pombo
 .
-tirar
 aqui
 coisa
 .
-fazer
 casa
 pai
 casa
@@ -34349,7 +34085,6 @@ judeu
 .
 sinal
 mostra
-fazer
 coisa
 .
 jesus
@@ -34398,7 +34133,6 @@ festa
 páscoa
 ver
 sinais
-fazer
 crer
 nome
 .
@@ -34441,9 +34175,7 @@ deus
 porque
 ninguém
 poder
-fazer
 sinais
-fazer
 deus
 estar
 .
@@ -34845,7 +34577,6 @@ fariseu
 ouvido
 dizer
 jesus
-fazer
 batizar
 discípulo
 joão
@@ -34899,7 +34630,6 @@ sexto
 veio
 mulher
 samaritano
-tirar
 água
 .
 dizer
@@ -34950,7 +34680,6 @@ vivo
 responder
 .
 senhor
-tirar
 poço
 fundo
 .
@@ -35187,7 +34916,6 @@ então
 discípulo
 outro
 .
-lhe-ia
 porventura
 alguém
 trazido
@@ -35198,7 +34926,6 @@ jesus
 .
 comido
 consistir
-fazer
 vontade
 enviar
 realizar
@@ -35327,7 +35054,6 @@ porque
 ver
 todo
 coisa
-fazer
 jerusalém
 ocasião
 festa
@@ -35339,7 +35065,6 @@ caná
 galiléia
 onde
 água
-fazer
 vinho
 .
 ora
@@ -35438,7 +35163,6 @@ casa
 .
 segundo
 sinal
-fez
 jesus
 vir
 judéia
@@ -35620,7 +35344,6 @@ judeu
 perseguir
 jesus
 porque
-fazer
 coisa
 sábado
 .
@@ -35644,7 +35367,6 @@ dizer
 deus
 próprio
 pai
-fazer
 igual
 deus
 .
@@ -35658,20 +35380,16 @@ dizer
 filho
 nado
 poder
-fazer
 si
 senão
 somente
 vir
-fazer
 pai
 .
 porque
 tudo
-fazer
 filho
 semelhantemente
-fazer
 .
 porque
 pai
@@ -35679,7 +35397,6 @@ amo
 filho
 mostra
 tudo
-fazer
 maior
 obra
 mostrar
@@ -35788,7 +35505,6 @@ juízo
 .
 nado
 poder
-fazer
 mim
 .
 forma
@@ -35856,7 +35572,6 @@ obra
 pai
 confiar
 realizar
-fazer
 testemunhar
 respeito
 pai
@@ -35974,7 +35689,6 @@ multidão
 porque
 visto
 sinais
-fazer
 cura
 enfermo
 .
@@ -36017,7 +35731,6 @@ porque
 bem
 saber
 estar
-fazer
 .
 responder
 filipe
@@ -36054,7 +35767,6 @@ gente
 dizer
 jesus
 .
-fazer
 povo
 assentar
 .
@@ -36098,7 +35810,6 @@ perca
 .
 assim
 pois
-fazer
 encher
 doze
 cesto
@@ -36115,7 +35826,6 @@ pois
 homem
 sinal
 jesus
-fazer
 dizer
 .
 verdadeiramente
@@ -36151,7 +35861,6 @@ lado
 rumo
 cafarnaum
 .
-fazer
 escuro
 jesus
 ainda
@@ -36292,7 +36001,6 @@ dirigir
 pois
 perguntar
 .
-fazer
 realizar
 obra
 deus
@@ -36310,7 +36018,6 @@ então
 dizer
 .
 sinal
-fazer
 ver
 creiamos
 ti
@@ -36402,7 +36109,6 @@ lançar
 porque
 descer
 céu
-fazer
 próprio
 vontade
 sim
@@ -36800,7 +36506,6 @@ judéia
 discípulo
 ver
 obra
-fazer
 .
 porque
 ninguém
@@ -36812,7 +36517,6 @@ realizar
 feito
 oculto
 .
-fazer
 coisa
 manifesto
 mundo
@@ -36931,7 +36635,6 @@ enviar
 .
 alguém
 querer
-fazer
 vontade
 conhecer
 respeito
@@ -37101,7 +36804,6 @@ dizer
 .
 vir
 cristo
-fazer
 porventura
 maior
 sinais
@@ -37311,7 +37013,6 @@ homem
 primeiro
 ouvi-lo
 saber
-fez
 .
 responder
 .
@@ -37353,7 +37054,6 @@ presença
 mulher
 surpreendido
 adultério
-fazer
 ficar
 pé
 meio
@@ -37661,7 +37361,6 @@ homem
 então
 saber
 nado
-fazer
 mim
 .
 falo
@@ -37673,7 +37372,6 @@ estar
 comigo
 deixar
 porque
-fazer
 sempre
 agradar
 .
@@ -37764,7 +37462,6 @@ pai
 .
 vós
 porém
-fazer
 ver
 vosso
 pai
@@ -37798,7 +37495,6 @@ proceder
 abraão
 .
 vós
-fazer
 obra
 vosso
 pai
@@ -37963,7 +37659,6 @@ profeta
 morrer
 .
 pois
-fazer
 .
 responder
 jesus
@@ -38066,7 +37761,6 @@ obra
 deus
 .
 necessário
-fazer
 obra
 enviar
 enquanto
@@ -38144,7 +37838,6 @@ homem
 chamado
 111
 jesus
-fez
 lodo
 untar
 olho
@@ -38178,7 +37871,6 @@ cego
 sábado
 dia
 jesus
-fez
 lodo
 abrir
 olho
@@ -38215,7 +37907,6 @@ outro
 poder
 homem
 pecador
-fazer
 tamanho
 sinais
 .
@@ -38334,7 +38025,6 @@ ver
 perguntar
 pois
 .
-fez
 .
 abrir
 olho
@@ -38527,7 +38217,6 @@ próprio
 ovelha
 conduzir
 .
-fazer
 sair
 todo
 pertencer
@@ -38679,7 +38368,6 @@ vida
 reassumir
 .
 ninguém
-tira
 mim
 .
 contrário
@@ -38755,7 +38443,6 @@ dizer
 crer
 .
 obra
-fazer
 nome
 pai
 testificar
@@ -38824,7 +38511,6 @@ causa
 blasfêmia
 pois
 homem
-fazer
 deus
 ti
 .
@@ -38863,12 +38549,10 @@ declarar
 filho
 deus
 .
-fazer
 obra
 pai
 acreditar
 .
-fazer
 crer
 crer
 obra
@@ -38909,7 +38593,6 @@ dizer
 .
 realmente
 joão
-fez
 nenhum
 sinal
 porém
@@ -39291,7 +38974,6 @@ poder
 abrir
 olho
 cego
-fazer
 morrer
 .
 jesus
@@ -39311,7 +38993,6 @@ então
 ordenar
 jesus
 .
-tirar
 114
 pedra
 .
@@ -39336,7 +39017,6 @@ ver
 glória
 deus
 .
-tirar
 então
 pedra
 .
@@ -39396,7 +39076,6 @@ vindo
 visitar
 maria
 ver
-fazer
 jesus
 crer
 nele
@@ -39419,7 +39098,6 @@ sinédrio
 dizer
 .
 estar
-fazer
 vez
 homem
 operar
@@ -39607,7 +39285,6 @@ pobre
 porque
 ladrão
 bolsa
-tirar
 em+ela
 lançar
 .
@@ -39715,7 +39392,6 @@ coisa
 estar
 escrito
 respeito
-fazer
 .
 dar
 pois
@@ -39734,7 +39410,6 @@ sair
 encontro
 pois
 ouvir
-fazer
 sinal
 .
 sorte
@@ -40136,7 +39811,6 @@ voltar
 deus
 levantar
 ceia
-tirar
 vestimenta
 cima
 tomar
@@ -40169,7 +39843,6 @@ mim
 responder
 jesus
 .
-fazer
 saber
 agora
 .
@@ -40238,7 +39911,6 @@ mesa
 perguntar
 .
 compreender
-fazer
 .
 vós
 chamar
@@ -40263,8 +39935,6 @@ outro
 porque
 dar
 exemplo
-fazer
-fazer
 vós
 .
 verdade
@@ -40351,7 +40021,6 @@ jesus
 discípulo
 amar
 .
-fez
 simão
 pedrar
 sinal
@@ -40402,8 +40071,6 @@ dizer
 jesus
 .
 pretender
-fazer
-fazer
 depressa
 .
 nenhum
@@ -40661,7 +40328,6 @@ mim
 pai
 permanecer
 mim
-fazer
 obra
 .
 crer
@@ -40680,12 +40346,9 @@ verdade
 dizer
 crer
 mim
-fazer
 obra
-fazer
 outro
 maior
-fazer
 porque
 junto
 pai
@@ -40694,7 +40357,6 @@ tudo
 quantum
 pedir
 nome
-fazer
 fim
 pai
 glorificar
@@ -40704,7 +40366,6 @@ pedir
 algum
 coisa
 nome
-fazer
 .
 amar
 guardar
@@ -40799,7 +40460,6 @@ palavra
 pai
 amar
 vir
-fazer
 nele
 morado
 .
@@ -40827,7 +40487,6 @@ nome
 ensinar
 todo
 coisa
-fazer
 lembrar
 tudo
 dito
@@ -40888,7 +40547,6 @@ mundo
 saber
 amo
 pai
-fazer
 pai
 ordenar
 .
@@ -40955,7 +40613,6 @@ porque
 mim
 nado
 poder
-fazer
 .
 alguém
 permanecer
@@ -41036,7 +40693,6 @@ amigo
 .
 vós
 amigo
-fazer
 mando
 .
 chamar
@@ -41044,7 +40700,6 @@ servo
 porque
 servo
 saber
-fazer
 senhor
 .
 chamado
@@ -41127,7 +40782,6 @@ vosso
 .
 tudo
 porém
-fazer
 causa
 nome
 porquanto
@@ -41153,7 +40807,6 @@ tal
 obra
 nenhum
 outro
-fez
 pecado
 .
 agora
@@ -41210,7 +40863,6 @@ tributar
 culto
 deus
 .
-fazer
 porque
 conhecer
 pai
@@ -41435,7 +41087,6 @@ vosso
 alegria
 ninguém
 poder
-tirar
 .
 dia
 nado
@@ -41616,7 +41267,6 @@ terra
 consumar
 obra
 confiar
-fazer
 .
 agora
 glorificar
@@ -41715,7 +41365,6 @@ porque
 mundo
 .
 pedir
-tirar
 mundo
 sim
 guardar
@@ -41803,11 +41452,9 @@ conhecer
 compreender
 enviar
 .
-fazer
 conhecer
 nome
 ainda
-fazer
 conhecer
 fim
 amor
@@ -42254,7 +41901,6 @@ sacerdote
 entregar
 mim
 .
-fazer
 .
 responder
 jesus
@@ -42430,7 +42076,6 @@ deve
 morrer
 porque
 si
-fez
 filho
 deus
 .
@@ -42494,7 +42139,6 @@ amigo
 césar
 .
 todo
-fazer
 rei
 contra
 césar
@@ -42635,7 +42279,6 @@ crucificar
 jesus
 tomar
 veste
-fazer
 quatro
 parte
 cada
@@ -42677,7 +42320,6 @@ sorte
 .
 assim
 pois
-fazer
 soldado
 .
 junto
@@ -42840,7 +42482,6 @@ judeu
 rogar
 pilatos
 permitir
-tirar
 corpo
 jesus
 .
@@ -42927,7 +42568,6 @@ jesus
 amar
 dizer
 .
-tirar
 sepulcro
 senhor
 saber
@@ -43072,7 +42712,6 @@ jardineiro
 responder
 .
 senhor
-tirar
 dizer
 onde
 pôr
@@ -43286,7 +42925,6 @@ ver
 crer
 .
 verdade
-fez
 jesus
 diante
 discípulo
@@ -43385,7 +43023,6 @@ barco
 achar
 .
 assim
-fazer
 poder
 puxar
 rede
@@ -43692,7 +43329,6 @@ ainda
 outro
 coisa
 jesus
-fez
 .
 todo
 fossar
@@ -43717,7 +43353,6 @@ todo
 coisa
 jesus
 começar
-fazer
 ensinar
 dia
 haver
@@ -44101,7 +43736,6 @@ debaixo
 céu
 .
 pois
-fez
 ouvir
 voz
 afluir
@@ -44366,7 +44000,6 @@ santo
 ver
 corrupção
 .
-fazer
 conhecer
 caminho
 vida
@@ -44456,7 +44089,6 @@ jesus
 vós
 crucificar
 deus
-fez
 senhor
 cristo
 .
@@ -44469,7 +44101,6 @@ pedrar
 demais
 apóstolo
 .
-fazer
 irmão
 .
 responder
@@ -44738,7 +44369,7 @@ perante
 pilatos
 haver
 decidido
-soltá-los
+solto
 .
 vós
 porém
@@ -44784,7 +44415,6 @@ vós
 agora
 irmão
 saber
-fazer
 ignorância
 vosso
 autoridade
@@ -44960,7 +44590,6 @@ argüir
 .
 poder
 nome
-fazer
 .
 então
 pedrar
@@ -45060,7 +44689,6 @@ consultar
 si
 dizer
 .
-fazer
 homem
 .
 pois
@@ -45157,7 +44785,6 @@ dizer
 .
 soberano
 senhor
-fazer
 céu
 terra
 mar
@@ -45204,7 +44831,6 @@ pilatos
 gentio
 gente
 israel
-fazer
 tudo
 mão
 propósito
@@ -45223,7 +44849,6 @@ palavra
 enquanto
 estender
 mão
-fazer
 cura
 sinais
 prodígio
@@ -45735,7 +45360,6 @@ dizer
 israelita
 atentar
 bem
-fazer
 homem
 .
 porque
@@ -45925,7 +45549,6 @@ estêvão
 cheio
 graça
 poder
-fazer
 prodígio
 grande
 sinais
@@ -46172,7 +45795,6 @@ pai
 segundo
 vez
 josé
-fez
 reconhecer
 irmão
 tornar
@@ -46336,7 +45958,6 @@ nó
 acaso
 querer
 matar
-fazer
 ontem
 egípcio
 .
@@ -46392,7 +46013,6 @@ contemplá-la
 dizer
 senhor
 .
-tira
 sandália
 pé
 porque
@@ -46435,8 +46055,6 @@ aparecer
 134
 sarça
 .
-tirar
-fazer
 prodígio
 sinais
 terra
@@ -46489,7 +46107,6 @@ egito
 dizer
 arão
 .
-fazer
 deus
 vão
 adiante
@@ -46498,14 +46115,12 @@ nó
 porque
 quantum
 moisés
-tirar
 terra
 egito
 saber
 acontecer
 .
 dia
-fazer
 bezerro
 oferecer
 sacrifício
@@ -46544,7 +46159,6 @@ estrelo
 deus
 renfã
 figura
-fazer
 adorar
 .
 desterrar
@@ -46559,7 +46173,6 @@ deserto
 determinar
 dizer
 moisés
-fazer
 segundo
 modelo
 visto
@@ -46618,7 +46231,6 @@ repouso
 .
 porventura
 mão
-fez
 todo
 coisa
 .
@@ -46635,11 +46247,9 @@ espírito
 santo
 .
 assim
-fazer
 vosso
 pai
 vós
-fazer
 .
 profeta
 vosso
@@ -46766,7 +46376,6 @@ piedoso
 135
 sepultar
 estêvão
-fazer
 grande
 pranto
 sobre
@@ -47297,7 +46906,6 @@ cidade
 onde
 dizer
 convir
-fazer
 .
 companheiro
 viagem
@@ -47523,7 +47131,6 @@ dia
 judeu
 deliberar
 si
-tirar
 vida
 .
 porém
@@ -47590,7 +47197,6 @@ discutir
 helenista
 .
 procurar
-tirar
 vida
 .
 porém
@@ -47681,7 +47287,6 @@ notável
 bom
 obra
 esmola
-fazer
 .
 ora
 acontecer
@@ -47726,7 +47331,6 @@ mostrar
 túnica
 vestido
 dorcas
-fazer
 enquanto
 estar
 .
@@ -47792,7 +47396,6 @@ temente
 deus
 todo
 casa
-fazer
 esmola
 povo
 contínuo
@@ -48140,7 +47743,6 @@ chamar
 responder
 cornélio
 .
-fazer
 hoje
 quatro
 dia
@@ -48190,7 +47792,6 @@ portanto
 demora
 mandar
 chamar
-fazer
 bem
 vir
 .
@@ -48216,7 +47817,6 @@ dizer
 reconhecer
 verdade
 deus
-fazer
 acepção
 pessoa
 .
@@ -48224,7 +47824,6 @@ contrário
 qualquer
 nação
 temer
-fazer
 justo
 aceitável
 .
@@ -48265,7 +47864,6 @@ poder
 andar
 todo
 parte
-fazer
 bem
 curar
 todo
@@ -48277,12 +47875,10 @@ deus
 nó
 testemunha
 tudo
-fez
 terra
 judeu
 jerusalém
 .
-tirar
 vida
 pendurar
 madeiro
@@ -48419,7 +48015,6 @@ comer
 então
 pedrar
 passar
-fazer
 exposição
 ordem
 dizer
@@ -48732,7 +48327,6 @@ morar
 judéia
 .
 efeito
-fazer
 enviar
 presbítero
 intermédio
@@ -48747,7 +48341,6 @@ prender
 algum
 igreja
 maltratar
-fazer
 passar
 fio
 espada
@@ -48843,7 +48436,6 @@ calça
 sandália
 .
 assim
-fez
 .
 dizer
 .
@@ -48856,7 +48448,6 @@ sair
 seguir
 saber
 real
-fazer
 meio
 anjo
 .
@@ -48934,7 +48525,6 @@ pedrar
 tão
 alegre
 ficar
-fez
 entrar
 voltar
 correr
@@ -48971,13 +48561,11 @@ ficar
 atônito
 .
 porém
-fazer
 sinal
 mão
 calar
 contar
 senhor
-tirar
 prisão
 acrescentar
 .
@@ -49167,7 +48755,6 @@ mágico
 falso
 profeta
 nome
-bae
 jesus
 estar
 procônsul
@@ -49303,7 +48890,6 @@ dizer
 .
 paulo
 levantar
-fazer
 mão
 sinal
 silêncio
@@ -49329,7 +48915,6 @@ peregrinação
 terra
 egito
 onde
-tirar
 braço
 poderoso
 .
@@ -49390,7 +48975,6 @@ jessé
 homem
 segundo
 coração
-fazer
 todo
 vontade
 .
@@ -49473,7 +49057,6 @@ tudo
 respeito
 estar
 escrito
-tirar
 madeiro
 pôr
 túmulo
@@ -49778,7 +49361,6 @@ palavra
 graça
 conceder
 mão
-fazer
 sinais
 prodígio
 .
@@ -49852,7 +49434,6 @@ andar
 multidão
 ver
 paulo
-fazer
 gritar
 língua
 licaônica
@@ -49904,7 +49485,6 @@ multidão
 clamar
 .
 senhor
-fazer
 .
 nó
 homem
@@ -49918,7 +49498,6 @@ vão
 converter
 deus
 vivo
-fez
 céu
 terra
 mar
@@ -49938,7 +49517,6 @@ deixar
 ficar
 testemunho
 si
-fazer
 bem
 dar
 céu
@@ -50051,7 +49629,6 @@ igreja
 relatar
 quanto
 coisa
-fazer
 deus
 abrir
 gentio
@@ -50127,7 +49704,6 @@ presbítero
 relatar
 tudo
 deus
-fazer
 .
 insurgir
 entretanto
@@ -50227,7 +49803,6 @@ quanto
 sinais
 prodígio
 deus
-fazer
 meio
 gentio
 .
@@ -50280,7 +49855,6 @@ invocado
 nome
 dizer
 senhor
-fazer
 coisa
 conhecido
 desde
@@ -50427,7 +50001,6 @@ sexual
 ilícito
 .
 coisa
-fazer
 bem
 guardar
 .
@@ -50891,7 +50464,6 @@ bradar
 alto
 voz
 .
-fazer
 nenhum
 mal
 todo
@@ -50915,7 +50487,6 @@ dizer
 .
 senhor
 dever
-fazer
 salvo
 .
 responder
@@ -51364,7 +50935,6 @@ precisamente
 anunciar
 .
 deus
-fez
 mundo
 tudo
 nele
@@ -51392,7 +50962,6 @@ vida
 respiração
 tudo
 .
-fez
 todo
 raça
 humano
@@ -51552,7 +51121,6 @@ ali
 trabalhar
 pois
 profissão
-fazer
 tenda
 .
 todo
@@ -51642,7 +51210,6 @@ estar
 comigo
 ninguém
 ousar
-fazer
 mal
 pois
 povo
@@ -52014,7 +51581,6 @@ grego
 deus
 mão
 paulo
-fazer
 milagre
 extraordinário
 ponto
@@ -52052,7 +51618,6 @@ jesus
 paulo
 prega
 .
-fazer
 sete
 filho
 judeu
@@ -52180,7 +51745,6 @@ pois
 ourives
 chamado
 demétrio
-fazer
 prata
 nicho
 diana
@@ -52292,7 +51856,6 @@ estar
 reunido
 .
 então
-tirar
 alexandre
 multidão
 impelir
@@ -52348,7 +51911,6 @@ convir
 manter
 calmo
 nado
-fazer
 precipitadamente
 .
 porque
@@ -52855,7 +52417,6 @@ acompanhar
 navio
 .
 apartar
-fazer
 vela
 correr
 direitura
@@ -52991,7 +52552,6 @@ santo
 assim
 judeu
 jerusalém
-fazer
 dono
 cinto
 entregar
@@ -53011,7 +52571,6 @@ jerusalém
 então
 responder
 .
-fazer
 chorar
 quebrantar
 coração
@@ -53031,7 +52590,6 @@ persuadir
 conformado
 dizer
 .
-fazer
 vontade
 senhor
 .
@@ -53078,7 +52636,6 @@ saudado
 contar
 minuciosamente
 deus
-fazer
 gentio
 ministério
 .
@@ -53117,14 +52674,12 @@ segundo
 costume
 lei
 .
-fazer
 pois
 .
 certamente
 saber
 chegado
 .
-fazer
 portanto
 dizer
 .
@@ -53138,7 +52693,6 @@ voto
 .
 toma
 purificar
-fazer
 despesa
 necessário
 raspar
@@ -53185,7 +52739,6 @@ acertar
 cumprimento
 dia
 purificação
-fazer
 oferta
 favor
 cada
@@ -53379,12 +52932,10 @@ permissão
 paulo
 pé
 escada
-fez
 mão
 sinal
 povo
 .
-fez
 grande
 silêncio
 falar
@@ -53511,7 +53062,6 @@ comigo
 então
 perguntar
 .
-fazer
 senhor
 .
 senhor
@@ -53526,7 +53076,6 @@ dizer
 acerca
 tudo
 ordenado
-fazer
 .
 ficar
 cego
@@ -53661,7 +53210,6 @@ então
 gritar
 dizer
 .
-tira
 tal
 homem
 terra
@@ -53719,7 +53267,6 @@ comandante
 dizer
 .
 estar
-fazer
 .
 porque
 homem
@@ -53969,7 +53516,6 @@ respeito
 jerusalém
 assim
 importar
-fazer
 roma
 .
 amanhecer
@@ -54142,7 +53688,6 @@ cesaréia
 .
 preparar
 animal
-fazer
 paulo
 montar
 segurança
@@ -54412,7 +53957,6 @@ poder
 provar
 acusação
 agora
-fazer
 contra
 mim
 .
@@ -54455,7 +53999,6 @@ vir
 trazer
 esmola
 nação
-fazer
 oferenda
 prático
 algum
@@ -55315,7 +54858,6 @@ louco
 paulo
 .
 letra
-fazer
 delirar
 .
 paulo
@@ -55373,7 +54915,6 @@ dizer
 .
 pouco
 persuadir
-fazer
 cristão
 .
 paulo
@@ -55451,7 +54992,6 @@ estar
 partido
 costear
 ásia
-fazer
 mar
 indo
 comigo
@@ -55501,7 +55041,6 @@ estar
 partido
 itália
 nele
-fez
 embarcar
 .
 navegar
@@ -55967,7 +55506,6 @@ querer
 salvar
 paulo
 impedir
-fazer
 .
 ordenar
 saber
@@ -56078,7 +55616,7 @@ homem
 principal
 ilha
 chamado
-público
+públio
 receber
 hospedar
 benignamente
@@ -56092,7 +55630,7 @@ disenteria
 arder
 febre
 pai
-público
+públio
 .
 paulo
 visitá-lo
@@ -56305,7 +55843,6 @@ então
 desde
 manhã
 tarde
-fez
 exposição
 testemunho
 reino
@@ -56528,7 +56065,6 @@ evangelho
 filho
 testemunha
 incessantemente
-fazer
 menção
 vós
 todo
@@ -56825,7 +56361,6 @@ tal
 coisa
 praticar
 somente
-fazer
 aprovar
 assim
 proceder
@@ -56866,7 +56401,6 @@ condenar
 praticar
 tal
 coisa
-fazer
 penso
 livrar
 juízo
@@ -56905,7 +56439,6 @@ procedimento
 vida
 eterno
 perseverar
-fazer
 bem
 procurar
 glória
@@ -56927,7 +56460,6 @@ sobre
 almo
 qualquer
 homem
-fazer
 mal
 judeu
 primeiro
@@ -57226,7 +56758,6 @@ dizer
 algum
 caluniosamente
 afirmar
-fazer
 .
 praticar
 mal
@@ -57266,10 +56797,8 @@ deus
 .
 todo
 extraviar
-fazer
 inútil
 .
-fazer
 bem
 sequer
 .
@@ -58489,20 +58018,17 @@ próprio
 modo
 agir
 pois
-fazer
 preferir
 sim
 detestar
 .
 ora
-fazer
 querer
 consentir
 lei
 bom
 .
 caso
-fazer
 pecado
 habitar
 mim
@@ -58524,16 +58050,12 @@ porém
 efetuá-lo
 .
 porque
-fazer
 bem
 preferir
 mal
 querer
-fazer
 .
-fazer
 querer
-fazer
 sim
 pecado
 habitar
@@ -58541,7 +58063,6 @@ mim
 .
 então
 querer
-fazer
 bem
 encontro
 lei
@@ -58565,7 +58086,6 @@ guerrear
 contra
 lei
 mente
-fazer
 prisioneiro
 lei
 pecado
@@ -58621,7 +58141,6 @@ lei
 estar
 enfermo
 carne
-fez
 deus
 enviar
 próprio
@@ -59254,9 +58773,7 @@ porventura
 poder
 objeto
 perguntar
-fez
 .
-fazer
 assim
 .
 oleiro
@@ -59264,7 +58781,6 @@ direito
 sobre
 massa
 barro
-fazer
 vaso
 honra
 outro
@@ -59591,7 +59107,6 @@ certo
 .
 todo
 terra
-fez
 ouvir
 voz
 palavra
@@ -59684,7 +59199,6 @@ arrasar
 altar
 ficar
 procurar
-tirar
 vida
 .
 dizer
@@ -59969,7 +59483,6 @@ jacó
 impiedade
 .
 aliança
-tirar
 pecado
 .
 quantum
@@ -60146,7 +59659,6 @@ esmerar
 fazê-lo
 .
 exortar
-fazer
 dedicação
 .
 contribuir
@@ -60229,7 +59741,6 @@ mal
 mal
 .
 esforçar
-fazer
 bem
 perante
 todo
@@ -60273,7 +59784,6 @@ dar
 beber
 .
 porque
-fazer
 amontoar
 brasa
 vivo
@@ -60319,17 +59829,14 @@ condenação
 porque
 magistrado
 temor
-fazer
 bem
 sim
-fazer
 mal
 .
 querer
 temer
 autoridade
 .
-fazer
 bem
 louvor
 visto
@@ -60339,7 +59846,6 @@ deus
 bem
 .
 entretanto
-fazer
 mal
 temer
 .
@@ -60533,7 +60039,6 @@ senhor
 poderoso
 suster
 .
-fazer
 diferença
 dia
 dia
@@ -60555,7 +60060,6 @@ distinguir
 dia
 dia
 senhor
-fazer
 .
 comer
 senhor
@@ -60683,7 +60187,6 @@ fraternal
 .
 causa
 comido
-fazer
 perecer
 favor
 cristo
@@ -60742,7 +60245,6 @@ comer
 carne
 beber
 vinho
-fazer
 qualquer
 outro
 coisa
@@ -60769,7 +60271,6 @@ dúvida
 condenado
 comer
 porque
-fazer
 provir
 fé
 .
@@ -60987,7 +60488,6 @@ algum
 senão
 sobre
 cristo
-fez
 intermédio
 conduzir
 gentio
@@ -61812,7 +61312,6 @@ comigo
 anunciar
 testemunho
 deus
-fazer
 ostentação
 linguagem
 sabedoria
@@ -62213,7 +61712,6 @@ alguém
 vós
 sábio
 século
-fazer
 estulto
 tornar
 sábio
@@ -62362,7 +61860,6 @@ detrimento
 outro
 .
 pois
-fazer
 sobressair
 .
 recebido
@@ -62775,9 +62272,7 @@ antes
 dano
 .
 vós
-fazer
 injustiça
-fazer
 dano
 próprio
 irmão
@@ -62865,7 +62360,6 @@ porventura
 tomar
 membro
 cristo
-fazer
 membro
 meretriz
 .
@@ -63147,7 +62641,6 @@ chamado
 estar
 incircunciso
 .
-fazer
 circuncidar
 .
 circuncisão
@@ -63359,7 +62852,6 @@ flor
 idade
 circunstância
 exigir
-fazer
 querer
 .
 peco
@@ -63382,17 +62874,14 @@ conservar
 virgem
 filho
 bem
-fazer
 .
 assim
 casa
 filho
 virgem
-fazer
 bem
 .
 casa
-fazer
 melhor
 .
 mulher
@@ -63615,11 +63104,9 @@ direito
 comer
 beber
 .
-fazer
 acompanhar
 mulher
 irmão
-fazer
 demais
 apóstolo
 irmão
@@ -63688,7 +63175,6 @@ esperança
 .
 pisa
 trigo
-fazer
 esperança
 receber
 parte
@@ -63737,7 +63223,6 @@ alimentar
 servir
 altar
 altar
-tira
 sustento
 .
 assim
@@ -63754,7 +63239,6 @@ nenhum
 coisa
 escrever
 assim
-fazer
 comigo
 .
 porque
@@ -63781,7 +63265,6 @@ mim
 pregar
 evangelho
 .
-fazer
 livre
 vontade
 galardão
@@ -63807,7 +63290,6 @@ dar
 porque
 livre
 todo
-fazer
 escravo
 todo
 fim
@@ -63851,14 +63333,12 @@ viver
 regime
 lei
 .
-fazer
 fraco
 fraco
 fim
 ganhar
 fraco
 .
-fazer
 tudo
 todo
 fim
@@ -63868,7 +63348,6 @@ salvar
 algum
 .
 tudo
-fazer
 causa
 evangelho
 fim
@@ -63979,7 +63458,6 @@ coisa
 mau
 cobiçar
 .
-fazer
 pois
 idólatra
 algum
@@ -63998,7 +63476,6 @@ divertir
 praticar
 imoralidade
 algum
-fazer
 cair
 dia
 vinte
@@ -64009,7 +63486,6 @@ ponhar
 senhor
 prova
 algum
-fazer
 perecer
 mordedura
 serpente
@@ -64243,11 +63719,9 @@ quer
 comer
 quer
 beber
-fazer
 outro
 coisa
 qualquer
-fazer
 tudo
 glória
 deus
@@ -64536,7 +64010,6 @@ corpo
 dado
 vós
 .
-fazer
 memória
 mim
 .
@@ -64553,7 +64026,6 @@ novo
 aliança
 sangue
 .
-fazer
 todo
 vez
 beber
@@ -64662,7 +64134,6 @@ mudo
 segundo
 guiado
 .
-fazer
 compreender
 ninguém
 fala
@@ -65304,7 +64775,6 @@ mente
 ficar
 infrutífero
 .
-fazer
 pois
 .
 orar
@@ -65456,7 +64926,6 @@ fato
 meio
 vós
 .
-fazer
 pois
 irmão
 .
@@ -65887,7 +65356,6 @@ todo
 192
 outro
 maneiro
-fazer
 batizar
 causa
 morto
@@ -66230,7 +65698,6 @@ vão
 quantum
 coleto
 santo
-fazer
 vós
 ordenar
 igreja
@@ -66248,7 +65715,6 @@ conforme
 prosperidade
 vá
 juntar
-fazer
 coleto
 .
 chegado
@@ -66281,7 +65747,6 @@ passe
 inverno
 encaminhar
 viagem
-fazer
 .
 porque
 querer
@@ -66802,7 +66267,6 @@ ora
 alguém
 causar
 tristeza
-fez
 apenas
 mim
 demasiadamente
@@ -66850,7 +66314,6 @@ perdoado
 .
 causa
 vós
-fazer
 presença
 cristo
 .
@@ -67088,7 +66551,6 @@ embotar
 pois
 dia
 hoje
-fazer
 leitura
 antigo
 aliança
@@ -67537,7 +66999,6 @@ antigo
 passar
 .
 eis
-fazer
 novo
 .
 ora
@@ -67582,7 +67043,6 @@ deus
 .
 conhecer
 pecado
-fez
 pecado
 nó
 .
@@ -67965,7 +67425,6 @@ portanto
 embora
 escrito
 causa
-fez
 mal
 causa
 sofrer
@@ -68031,7 +67490,6 @@ confiar
 vós
 .
 irmão
-fazer
 conhecer
 graça
 deus
@@ -68068,7 +67526,6 @@ assistência
 santo
 .
 somente
-fazer
 nó
 esperar
 dar
@@ -68121,7 +67578,6 @@ senhor
 jesus
 cristo
 rico
-fez
 pobre
 amor
 vós
@@ -68404,7 +67860,6 @@ alegria
 .
 deus
 poder
-fazer
 abundar
 todo
 graça
@@ -68445,7 +67900,6 @@ enriquecer
 tudo
 todo
 generosidade
-fazer
 intermédio
 tributar
 graça
@@ -68798,7 +68252,6 @@ estar
 vós
 passar
 privação
-fazer
 pesado
 ninguém
 .
@@ -68832,8 +68285,6 @@ amo
 deus
 saber
 .
-fazer
-fazer
 cortar
 ocasião
 buscar
@@ -69382,7 +68833,6 @@ dizer
 anteriormente
 torno
 dizer
-fazer
 estar
 presente
 segundo
@@ -69456,13 +68906,11 @@ reprovado
 estar
 orar
 deus
-fazer
 mal
 algum
 simplesmente
 parecer
 aprovado
-fazer
 bem
 embora
 tido
@@ -69658,7 +69106,6 @@ homem
 servo
 cristo
 .
-fazer
 porém
 saber
 irmão
@@ -69818,7 +69265,7 @@ estar
 comigo
 grego
 constrangido
-circundar
+circuncidar
 .
 causa
 falso
@@ -69904,7 +69351,6 @@ somente
 lembrar
 pobre
 esforçar
-fazer
 .
 porém
 cefas
@@ -70116,7 +69562,6 @@ operar
 milagre
 vós
 porventura
-fazer
 obra
 lei
 pregação
@@ -70205,7 +69650,6 @@ cristo
 resgatar
 maldição
 lei
-fazer
 próprio
 maldição
 lugar
@@ -70302,7 +69746,6 @@ causa
 transgressão
 vir
 descendente
-fez
 promessa
 promulgar
 meio
@@ -70595,7 +70038,6 @@ dizer
 verdade
 .
 obsequiar
-fazer
 sinceramente
 querer
 afastar
@@ -70939,7 +70381,6 @@ porque
 oposto
 si
 .
-fazer
 porventura
 vosso
 querer
@@ -71071,7 +70512,6 @@ fardo
 estar
 instruído
 palavra
-fazer
 participante
 todo
 coisa
@@ -71104,7 +70544,6 @@ vida
 eterno
 .
 cansar
-fazer
 bem
 porque
 tempo
@@ -71113,7 +70552,6 @@ desfalecer
 .
 enquanto
 oportunidade
-fazer
 bem
 todo
 principalmente
@@ -71297,7 +70735,6 @@ segundo
 beneplácito
 propor
 cristo
-fazer
 convergir
 nele
 dispensação
@@ -71317,7 +70754,6 @@ herança
 predestinado
 segundo
 propósito
-fazer
 todo
 coisa
 conforme
@@ -71364,7 +70800,6 @@ cessar
 dar
 graça
 vós
-fazer
 menção
 vós
 oração
@@ -71404,7 +70839,6 @@ exercer
 cristo
 ressuscitar
 morto
-fazer
 sentar
 direito
 lugar
@@ -71471,7 +70905,6 @@ outrora
 segundo
 inclinação
 carne
-fazer
 vontade
 carne
 pensamento
@@ -71501,7 +70934,6 @@ graça
 salvo
 juntamente
 ressuscitar
-fez
 assentar
 lugar
 celestial
@@ -71589,7 +71021,6 @@ cristo
 porque
 paz
 ambos
-fez
 .
 derribado
 parede
@@ -71608,7 +71039,6 @@ criar
 si
 novo
 homem
-fazer
 paz
 reconciliar
 ambos
@@ -71857,7 +71287,6 @@ deus
 ora
 aquel
 poderoso
-fazer
 infinitamente
 tudo
 quantum
@@ -72131,7 +71560,6 @@ furtar
 .
 antes
 trabalhar
-fazer
 próprio
 mão
 bom
@@ -72297,7 +71725,6 @@ porém
 reprovar
 .
 porque
-fazer
 oculto
 referir
 vergonha
@@ -72453,7 +71880,6 @@ antes
 alimentar
 cuidar
 cristo
-fazer
 igreja
 .
 porque
@@ -72546,7 +71972,6 @@ agradar
 homem
 servo
 cristo
-fazer
 coração
 vontade
 deus
@@ -72558,7 +71983,6 @@ senhor
 homem
 certo
 cada
-fazer
 algum
 coisa
 bom
@@ -72693,7 +72117,6 @@ abrir
 boca
 palavra
 intrepidez
-fazer
 conhecido
 mistério
 evangelho
@@ -72707,7 +72130,6 @@ fazê-lo
 .
 saber
 respeito
-fazer
 tudo
 informar
 tíquico
@@ -72778,7 +72200,6 @@ deus
 tudo
 recordo
 vós
-fazer
 sempre
 alegria
 súplica
@@ -72837,7 +72258,6 @@ misericórdia
 cristo
 jesus
 .
-fazer
 oração
 .
 vosso
@@ -72906,7 +72326,6 @@ porfia
 .
 outro
 porém
-fazer
 bom
 vontade
 .
@@ -73115,7 +72534,6 @@ almo
 sentimento
 .
 nado
-fazer
 partidarismo
 vanglória
 humildade
@@ -73221,7 +72639,6 @@ segundo
 bom
 vontade
 .
-fazer
 tudo
 murmuração
 contenda
@@ -73547,10 +72964,10 @@ quantum
 mim
 julgar
 haver
+-
 alcançado
 .
 coisa
-fazer
 .
 esquecer
 coisa
@@ -73821,7 +73238,6 @@ poder
 fortalecer
 .
 todavia
-fazer
 bem
 associar
 tribulação
@@ -74070,7 +73486,6 @@ alegria
 dar
 graça
 pai
-fez
 idôneo
 parte
 cabe
@@ -74475,7 +73890,6 @@ corpo
 cristo
 .
 ninguém
-fazer
 árbitro
 contra
 vós
@@ -74588,7 +74002,6 @@ vós
 manifestado
 glória
 .
-fazer
 pois
 morrer
 vosso
@@ -74744,10 +74157,8 @@ vosso
 coração
 .
 tudo
-fazer
 palavra
 ação
-fazer
 nome
 senhor
 jesus
@@ -74812,8 +74223,6 @@ senhor
 .
 tudo
 quantum
-fazer
-fazer
 todo
 coração
 senhor
@@ -74830,7 +74239,6 @@ estai
 servir
 .
 pois
-fazer
 injustiça
 receber
 troco
@@ -74872,7 +74280,6 @@ algemar
 .
 manifestar
 dever
-fazer
 .
 portar
 sabedoria
@@ -74922,7 +74329,6 @@ irmão
 vosso
 meio
 .
-fazer
 saber
 tudo
 aqui
@@ -75594,7 +75000,6 @@ dirigir
 caminho
 vós
 senhor
-fazer
 crescer
 aumentar
 amor
@@ -75635,7 +75040,6 @@ agradar
 deus
 efetivamente
 estai
-fazer
 continuar
 progredir
 cada
@@ -75944,7 +75348,6 @@ outro
 edificar
 reciprocamente
 estai
-fazer
 .
 agora
 rogar
@@ -76046,7 +75449,6 @@ cristo
 .
 fiel
 chama
-fazer
 .
 irmão
 orar
@@ -76579,7 +75981,6 @@ pão
 vós
 irmão
 cansar
-fazer
 bem
 .
 caso
@@ -76719,7 +76120,6 @@ todavia
 dizer
 assunto
 sobre
-fazer
 ousado
 asseveração
 .
@@ -76780,7 +76180,6 @@ insolente
 obter
 misericórdia
 pois
-fazer
 ignorância
 incredulidade
 .
@@ -77335,7 +76734,6 @@ leitura
 exortação
 ensino
 .
-fazer
 negligente
 dom
 ti
@@ -77363,7 +76761,6 @@ continuum
 dever
 .
 porque
-fazer
 assim
 salvar
 tanto
@@ -77607,7 +77004,6 @@ guardar
 conselho
 prevenção
 nado
-fazer
 parcialidade
 .
 ninguém
@@ -77809,7 +77205,6 @@ posse
 vida
 eterno
 chamado
-fazer
 bom
 confissão
 perante
@@ -77828,7 +77223,6 @@ jesus
 diante
 pôncio
 pilatos
-fez
 bom
 confissão
 guardar
@@ -78663,7 +78057,6 @@ todo
 coisa
 suportar
 aflição
-fazer
 trabalho
 evangelista
 cumprir
@@ -78841,7 +78234,6 @@ inverno
 enviar
 saudação
 .
-fazer
 prudente
 lenir
 cláudia
@@ -79296,7 +78688,6 @@ palavra
 querer
 tocante
 coisa
-fazer
 afirmação
 confiadamente
 crer
@@ -79522,7 +78913,6 @@ evangelho
 nado
 porém
 querer
-fazer
 consentimento
 bondade
 vir
@@ -79565,7 +78955,6 @@ mim
 .
 algum
 dano
-fez
 deve
 algum
 coisa
@@ -79600,7 +78989,6 @@ estar
 obediência
 escrever
 saber
-fazer
 estar
 pedir
 .
@@ -79652,7 +79040,6 @@ constituir
 herdeiro
 todo
 coisa
-fez
 universo
 .
 resplendor
@@ -79712,7 +79099,6 @@ anjo
 dizer
 .
 anjo
-fazer
 vento
 ministro
 labareda
@@ -79876,7 +79262,6 @@ filho
 homem
 visitar
 .
-fazer
 pouco
 menor
 anjo
@@ -80032,7 +79417,6 @@ sacerdote
 coisa
 referente
 deus
-fazer
 propiciação
 por+os
 pecado
@@ -80320,7 +79704,6 @@ sétimo
 dia
 todo
 obra
-fazer
 .
 novamente
 lugar
@@ -80665,7 +80048,6 @@ morto
 juízo
 eterno
 .
-fazer
 deus
 permitir
 .
@@ -80785,7 +80167,6 @@ promessa
 .
 pois
 deus
-fez
 promessa
 abraão
 visto
@@ -81170,7 +80551,6 @@ por+os
 povo
 .
 porque
-fez
 vez
 todo
 si
@@ -81257,7 +80637,6 @@ dizer
 .
 247
 vê
-fazer
 todo
 coisa
 acordo
@@ -81311,7 +80690,6 @@ casa
 judá
 segundo
 aliança
-fazer
 pai
 dia
 tomar
@@ -81765,7 +81143,6 @@ cristo
 oferecido
 vez
 sempre
-tirar
 pecado
 aparecer
 segundo
@@ -81811,7 +81188,6 @@ pecado
 .
 entretanto
 sacrifício
-fazer
 recordação
 pecado
 todo
@@ -81854,7 +81230,6 @@ estar
 escrito
 respeito
 .
-fazer
 ó
 deus
 vontade
@@ -81882,7 +81257,6 @@ acrescentar
 eis
 aqui
 estar
-fazer
 ó
 deus
 vontade
@@ -81959,7 +81333,6 @@ após
 dito
 .
 aliança
-fazer
 dia
 dizer
 senhor
@@ -82025,7 +81398,6 @@ confissão
 esperança
 vacilar
 pois
-fez
 promessa
 fiel
 .
@@ -82042,7 +81414,6 @@ costume
 algum
 .
 antes
-fazer
 admoestação
 tanto
 quantum
@@ -82494,7 +81865,6 @@ fé
 josé
 próximo
 fim
-fez
 menção
 êxodo
 filho
@@ -82643,9 +82013,7 @@ escapar
 fio
 espada
 fraqueza
-tirar
 força
-fazer
 poderoso
 guerra
 pôr
@@ -82759,7 +82127,6 @@ estar
 proposto
 suportar
 cruz
-fazer
 caso
 ignomínia
 estar
@@ -82892,7 +82259,6 @@ descaído
 joelho
 trôpego
 .
-fazer
 caminho
 reto
 pé
@@ -83056,7 +82422,6 @@ dizer
 ainda
 vez
 todo
-fazer
 abalar
 terra
 céu
@@ -83161,7 +82526,6 @@ auxílio
 temer
 .
 poder
-fazer
 homem
 .
 lembrar
@@ -83284,7 +82648,6 @@ almo
 deve
 prestar
 conta
-fazer
 alegria
 gemer
 .
@@ -83310,7 +82673,6 @@ condignamente
 rogo
 empenho
 assim
-fazer
 fim
 restituído
 depressa
@@ -83745,7 +83107,6 @@ aqui
 abaixo
 estrado
 pé
-fazer
 distinção
 vós
 tornar
@@ -83798,11 +83159,9 @@ escritura
 amar
 próximo
 ti
-fazer
 bem
 .
 todavia
-fazer
 acepção
 pessoa
 cometer
@@ -83917,7 +83276,6 @@ fé
 crer
 deus
 .
-fazer
 bem
 .
 demônio
@@ -83988,7 +83346,6 @@ meretriz
 raabe
 acolher
 emissário
-fez
 partir
 outro
 caminho
@@ -84262,7 +83619,6 @@ obter
 .
 viver
 lutar
-fazer
 guerra
 .
 nado
@@ -84302,7 +83658,6 @@ ciúme
 nó
 ansiar
 espírito
-fez
 habitar
 nó
 .
@@ -84390,7 +83745,6 @@ legislador
 juiz
 poder
 salvar
-fazer
 perecer
 .
 porém
@@ -84434,7 +83788,6 @@ dizer
 senhor
 querer
 viver
-fazer
 .
 agora
 entretanto
@@ -84451,9 +83804,7 @@ maligno
 portanto
 saber
 deve
-fazer
 bem
-fazer
 estar
 pecar
 .
@@ -84532,7 +83883,6 @@ matança
 condenado
 matar
 justo
-fazer
 resistência
 .
 sede
@@ -84630,7 +83980,6 @@ alguém
 vós
 sofrer
 .
-fazer
 oração
 .
 estar
@@ -84648,7 +83997,6 @@ doente
 chamar
 presbítero
 igreja
-fazer
 oração
 sobre
 ungir
@@ -84708,7 +84056,6 @@ céu
 dar
 chuva
 terra
-fez
 germinar
 fruto
 .
@@ -85182,7 +84529,6 @@ forasteiro
 abster
 paixão
 carnal
-fazer
 guerra
 contra
 almo
@@ -85231,7 +84577,6 @@ vontade
 deus
 prático
 bem
-fazer
 emudecer
 ignorância
 insensato
@@ -85321,7 +84666,6 @@ revidar
 ultraje
 .
 maltratado
-fazer
 ameaça
 entregar
 aquel
@@ -85416,7 +84760,6 @@ estar
 submisso
 próprio
 marido
-fazer
 sarar
 obedecer
 abraão
@@ -85557,7 +84900,6 @@ pedir
 razão
 esperança
 vós
-fazer
 todavia
 mansidão
 temor
@@ -85772,7 +85114,6 @@ deus
 .
 alguém
 servir
-fazer
 força
 deus
 suprir
@@ -86157,7 +85498,6 @@ existir
 vós
 vós
 aumentar
-fazer
 inativo
 infrutuoso
 pleno
@@ -86248,7 +85588,6 @@ parte
 esforçar
 me-ei
 diligentemente
-fazer
 todo
 tempo
 partido
@@ -86305,7 +85644,6 @@ tanto
 confirmado
 palavra
 profético
-fazer
 bem
 atendê-la
 candeia
@@ -86387,7 +85725,6 @@ verdade
 .
 movido
 avareza
-fazer
 comércio
 vós
 palavra
@@ -86424,7 +85761,6 @@ pregador
 justiça
 sete
 pessoa
-fez
 vir
 dilúvio
 sobre
@@ -86887,7 +86223,6 @@ acerca
 assunto
 fato
 costumar
-fazer
 todo
 epístola
 certo
@@ -87261,7 +86596,6 @@ bem
 concupiscência
 .
 porém
-fazer
 vontade
 deus
 permanecer
@@ -87357,7 +86691,6 @@ filho
 pai
 .
 promessa
-fez
 vida
 eterno
 .
@@ -87463,7 +86796,6 @@ lei
 .
 saber
 manifestar
-tirar
 pecado
 nele
 existir
@@ -87670,7 +87002,6 @@ receber
 porque
 guardar
 mandamento
-fazer
 diante
 agradável
 .
@@ -88092,7 +87423,6 @@ testemunho
 dar
 crédito
 deus
-fazer
 mentiroso
 porque
 crer
@@ -88344,7 +87674,6 @@ boas-vindas
 porquanto
 dar
 boas-vindas
-fazer
 cúmplice
 obra
 mau
@@ -88384,7 +87713,6 @@ verdade
 amado
 acima
 tudo
-fazer
 voto
 prosperidade
 saúde
@@ -88415,7 +87743,6 @@ proceder
 fielmente
 praticar
 irmão
-fazer
 estrangeiro
 perante
 igreja
@@ -88424,7 +87751,6 @@ testemunho
 amor
 .
 bem
-fazer
 encaminhar
 jornada
 modo
@@ -88618,7 +87944,6 @@ todo
 senhor
 libertado
 povo
-tirar
 terra
 egito
 destruir
@@ -88781,7 +88106,6 @@ exercer
 juízo
 contra
 todo
-fazer
 convicto
 todo
 ímpio
@@ -89032,7 +88356,8 @@ dizer
 senhor
 deus
 vir
-todo-poderoso
+todo
+poderoso
 .
 joão
 irmão
@@ -89729,7 +89054,6 @@ negar
 nome
 .
 eis
-fazer
 algum
 sinagoga
 satanás
@@ -89738,7 +89062,6 @@ declarar
 judeu
 mentir
 eis
-fazer
 vir
 prostrar
 pé
@@ -90377,7 +89700,6 @@ vermelho
 .
 cavaleiro
 dado
-tirar
 paz
 terra
 homem
@@ -90630,7 +89952,6 @@ voz
 quatro
 anjo
 dado
-fazer
 dano
 terra
 mar
@@ -91185,7 +90506,6 @@ ferro
 .
 barulho
 asa
-fazer
 barulho
 carro
 cavalo
@@ -92082,7 +91402,6 @@ mulher
 água
 rio
 fim
-fazer
 fossar
 arrebatado
 rio
@@ -92285,7 +91604,6 @@ primeiro
 besta
 presença
 .
-fazer
 terra
 habitante
 adorar
@@ -92302,7 +91620,6 @@ sinais
 maneiro
 fogo
 céu
-fazer
 descer
 terra
 diante
@@ -92322,7 +91639,6 @@ dizer
 habitar
 sobre
 terra
-fazer
 imagem
 besta
 ferido
@@ -92337,7 +91653,6 @@ besta
 imagem
 falar
 ainda
-fazer
 morrer
 quanto
 adorar
@@ -92351,7 +91666,6 @@ rico
 pobre
 livre
 escravo
-fazer
 dado
 certo
 marca
@@ -92499,7 +91813,6 @@ hora
 juízo
 .
 adorar
-fez
 céu
 terra
 mar
@@ -92803,7 +92116,6 @@ ti
 porque
 ato
 justiça
-fazer
 manifesto
 .
 coisa
@@ -93398,7 +92710,6 @@ ver
 besta
 odiar
 meretriz
-fazer
 devastar
 despojado
 comer
@@ -93996,7 +93307,6 @@ porém
 dizer
 .
 vê
-fazer
 .
 conservo
 irmão
@@ -94501,7 +93811,6 @@ trono
 dizer
 .
 eis
-fazer
 novo
 todo
 coisa
@@ -94941,7 +94250,6 @@ então
 dizer
 .
 vê
-fazer
 .
 conservo
 irmão
@@ -94967,7 +94275,6 @@ próximo
 .
 continuar
 injusto
-fazer
 injustiça
 continuar
 imundo
@@ -95068,7 +94375,6 @@ livro
 testificar
 .
 alguém
-fazer
 qualquer
 acréscimo
 deus
@@ -95078,14 +94384,12 @@ escrito
 livro
 .
 alguém
-tirar
 qualquer
 coisa
 palavra
 livro
 profecia
 deus
-tirar
 parte
 árvore
 vida

@@ -4,60 +4,82 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    dilma  /  0.683962264151  /  68.3962264151
-    lula  /  0.353562376795  /  35.3562376795
-    aécio  /  0.265171782596  /  26.5171782596
-    tira  /  0.103315967333  /  10.3315967333
-    jbs  /  0.0663897493664  /  6.63897493664
-    governo  /  0.0612855533652  /  6.12855533652
-    impeachment  /  0.0565685722332  /  5.65685722332
-    crime  /  0.0542100816671  /  5.42100816671
+    renan  /  0.705882352941  /  70.5882352941
+    pmdb  /  0.383350309821  /  38.3350309821
+    liderança  /  0.22152194211  /  22.152194211
+    senado  /  0.144660894661  /  14.4660894661
+    acordo  /  0.10610304728  /  10.610304728
+    bancada  /  0.102219675749  /  10.2219675749
+    governo  /  0.102219675749  /  10.2219675749
+    mantém  /  0.0848824378236  /  8.48824378236
+    senador  /  0.0610729140141  /  6.10729140141
+    senha  /  0.0318309141839  /  3.18309141839
+    programa  /  0.0265682030388  /  2.65682030388
+    causa  /  0.0212206094559  /  2.12206094559
+    indicação  /  0.0212206094559  /  2.12206094559
+    requião  /  0.0132841015194  /  1.32841015194
+    bglh  /  0.010610304728  /  1.0610304728
+    macleod  /  0.010610304728  /  1.0610304728
+    apoio  /  0.010610304728  /  1.0610304728
+    sarney  /  0.010610304728  /  1.0610304728
+    peça  /  0.010610304728  /  1.0610304728
+    🙄🙄  /  0.010610304728  /  1.0610304728
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
 
- Tema: dilma
+ Tema: renan
 
      Sentença    /    IRSE    /    IRSE(%)
-tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vamos transa no estado e o pezão , no governo era a dilma , no ff joaquim que fala e os mano que confirma 🎶 rt @ obsol   /   0.705882352941    /    70.5882352941
-
-@ marilianevesv uma personal dilma rousseff da família neves @ dilmabr_ @ jornaloglobo ea dilma bolada , e a propina pra page do face como é que tá   /   0.0294117647059    /    2.94117647059
-
-null - nao convergiu   /   0.117647058824    /    11.7647058824
-
-esse é o bandido que o psdb e pt estão articulando para colocar no lugar de temer , serviu fhc , serviu lula e dilma , não   /   0.0882352941176    /    8.82352941176
-
-irmãos jbs , filhinho do lula , lula , dilma os caralha de asas arrombaram o brasil via bndes   /   0.0588235294118    /    5.88235294118
+bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
 
 
 
 
- Tema: lula
+ Tema: pmdb
 
      Sentença    /    IRSE    /    IRSE(%)
-esse é o bandido que o psdb e pt estão articulando para colocar no lugar de temer , serviu fhc , serviu lula e dilma , não   /   0.428571428571    /    42.8571428571
-
-null - nao convergiu   /   0.571428571429    /    57.1428571429
+bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
 
 
 
 
- Tema: aécio
+ Tema: liderança
 
      Sentença    /    IRSE    /    IRSE(%)
-tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vamos transa no estado e o pezão , no governo era a dilma , no ff joaquim que fala e os mano que confirma 🎶 rt @ obsol   /   0.74    /    74.0
-
-@ brasildecide ninguém caiu no conto do aécio , porque ninguém votou nele de verdade   /   0.02    /    2.0
-
-null - nao convergiu   /   0.24    /    24.0
+bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
 
 
 
 
- Tema: tira
+ Tema: senado
 
      Sentença    /    IRSE    /    IRSE(%)
-tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vamos transa no estado e o pezão , no governo era a dilma , no ff joaquim que fala e os mano que confirma 🎶 rt @ obsol   /   1.0    /    100.0
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: acordo
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: mantém
+
+     Sentença    /    IRSE    /    IRSE(%)
+bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
+
+
+
+
+ Tema: bancada
+
+     Sentença    /    IRSE    /    IRSE(%)
+bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
 
 
 
@@ -65,12 +87,22 @@ tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vam
  Tema: governo
 
      Sentença    /    IRSE    /    IRSE(%)
-tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vamos transa no estado e o pezão , no governo era a dilma , no ff joaquim que fala e os mano que confirma 🎶 rt @ obsol   /   1.0    /    100.0
+null - nao convergiu   /   0    /    0
 
 
 
 
- Tema: impeachment
+ Tema: senador
+
+     Sentença    /    IRSE    /    IRSE(%)
+to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.333333333333    /    33.3333333333
+
+com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.666666666667    /    66.6666666667
+
+
+
+
+ Tema: causa
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -78,18 +110,82 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: jbs
-
-     Sentença    /    IRSE    /    IRSE(%)
-irmãos jbs , filhinho do lula , lula , dilma os caralha de asas arrombaram o brasil via bndes   /   1.0    /    100.0
-
-
-
-
- Tema: crime
+ Tema: programa
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: senha
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: bglh
+
+     Sentença    /    IRSE    /    IRSE(%)
+# pmdb # renancalheiros # senado # brasil renan entrou no meu tt e twitou vrs bglh renan , me responde uma coisa   /   1.0    /    100.0
+
+
+
+
+ Tema: indicação
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: requião
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: macleod
+
+     Sentença    /    IRSE    /    IRSE(%)
+'' frase de connor macleod ou renan calheiros   /   1.0    /    100.0
+
+
+
+
+ Tema: apoio
+
+     Sentença    /    IRSE    /    IRSE(%)
+requião pergunta se retirada de apoio a renan será compensada com mala igual a de rodrigo loures   /   1.0    /    100.0
+
+
+
+
+ Tema: sarney
+
+     Sentença    /    IRSE    /    IRSE(%)
+com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   1.0    /    100.0
+
+
+
+
+ Tema: peça
+
+     Sentença    /    IRSE    /    IRSE(%)
+@ micheltemer_ofc peça p/ renan parar de amaciar o ego da zaga da orcrim fazendo críticas ao seu governo   /   1.0    /    100.0
+
+
+
+
+ Tema: 🙄🙄
+
+     Sentença    /    IRSE    /    IRSE(%)
+tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭😭😭 preciso dormir cedo , acordo 5:00 pra ir pra faculdade e to na semana de prova😥😥😥😥 n quero ir pra mãe 🙄🙄 renan , lobão , lindinho e aécio   /   1.0    /    100.0
 
 
 
@@ -102,17 +198,21 @@ null - nao convergiu   /   0    /    0
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-tira a dilma , tira o cunha , tira o temer , tira o aécio , tira a roupa bb vamos transa no estado e o pezão , no governo era a dilma , no ff joaquim que fala e os mano que confirma 🎶 rt @ obsol   /   0.673076923077    /    67.3076923077
+bancada do pmdb mantém renan calheiros na liderança do partido   /   0.4    /    40.0
 
-null - nao convergiu   /   0.192307692308    /    19.2307692308
+com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.2    /    20.0
 
-irmãos jbs , filhinho do lula , lula , dilma os caralha de asas arrombaram o brasil via bndes   /   0.0576923076923    /    5.76923076923
+tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭😭😭 preciso dormir cedo , acordo 5:00 pra ir pra faculdade e to na semana de prova😥😥😥😥 n quero ir pra mãe 🙄🙄 renan , lobão , lindinho e aécio   /   0.0666666666667    /    6.66666666667
 
-esse é o bandido que o psdb e pt estão articulando para colocar no lugar de temer , serviu fhc , serviu lula e dilma , não   /   0.0576923076923    /    5.76923076923
+requião pergunta se retirada de apoio a renan será compensada com mala igual a de rodrigo loures   /   0.0666666666667    /    6.66666666667
 
-@ brasildecide ninguém caiu no conto do aécio , porque ninguém votou nele de verdade   /   0.00961538461538    /    0.961538461538
+to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.0666666666667    /    6.66666666667
 
-@ marilianevesv uma personal dilma rousseff da família neves @ dilmabr_ @ jornaloglobo ea dilma bolada , e a propina pra page do face como é que tá   /   0.00961538461538    /    0.961538461538
+'' frase de connor macleod ou renan calheiros   /   0.0666666666667    /    6.66666666667
+
+@ micheltemer_ofc peça p/ renan parar de amaciar o ego da zaga da orcrim fazendo críticas ao seu governo   /   0.0666666666667    /    6.66666666667
+
+# pmdb # renancalheiros # senado # brasil renan entrou no meu tt e twitou vrs bglh renan , me responde uma coisa   /   0.0666666666667    /    6.66666666667
 
 null - nao convergiu   /   0.0    /    0.0
 

@@ -1,2279 +1,445 @@
-TEMA: deus
+TEMA: renan
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus     /     1200    /    nao
+        renan     /     77    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus cristo     /     169    /    nao
-       deus homem     /     116    /    nao
-       deus nó     /     72    /    nao
-       deus espírito     /     86    /    nao
-       deus coisa     /     81    /    nao
-       deus poder     /     77    /    nao
-       deus graça     /     97    /    nao
+        renan calheiros     /     20    /    nao
+       renan liderança     /     22    /    nao
+       renan continuum     /     3    /    nullll
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus cristo graça     /     44    /    nao
-       deus cristo fé     /     27    /    nao
-       deus homem cristo     /     17    /    nao
-       deus homem coisa     /     11    /    nao
-       deus homem coração     /     8    /    nao
-       deus homem verdade     /     8    /    nao
-       deus nó cristo     /     17    /    nao
-       deus nó amor     /     12    /    nao
-       deus espírito cristo     /     20    /    nao
-       deus espírito carne     /     10    /    nao
-       deus espírito poder     /     10    /    nao
-       deus espírito coração     /     11    /    nao
-       deus espírito homem     /     8    /    nao
-       deus espírito amor     /     10    /    nao
-       deus espírito graça     /     11    /    nao
-       deus espírito nó     /     6    /    nao
-       deus coisa cristo     /     15    /    nao
-       deus poder glória     /     8    /    nao
-       deus graça cristo     /     44    /    nullll
-       deus graça fé     /     16    /    nao
-       deus graça paulo     /     15    /    nao
-       deus graça nó     /     11    /    nao
-       deus graça amor     /     14    /    nao
-       deus graça espírito     /     11    /    nullll
-       deus graça glória     /     9    /    nao
-       deus graça poder     /     10    /    nao
+        renan calheiros mantém     /     2    /    nao
+       renan liderança pmdb     /     20    /    nao
 
 
 
  - ITERACAO 3:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus cristo graça fé     /     13    /    nao
-       deus cristo graça paulo     /     13    /    nao
-       deus cristo fé amor     /     10    /    nao
-       deus cristo fé graça     /     13    /    nullll
-       deus cristo fé poder     /     8    /    nao
-       deus cristo fé glória     /     5    /    nao
-       deus cristo fé esperança     /     6    /    nao
-       deus cristo fé evangelho     /     6    /    nao
-       deus cristo fé tempo     /     4    /    nao
-       deus cristo fé espírito     /     5    /    nao
-       deus cristo fé pai     /     8    /    nao
-       deus cristo fé paulo     /     3    /    nao
-       deus cristo fé apóstolo     /     5    /    nao
-       deus cristo fé fim     /     4    /    nao
-       deus cristo fé saber     /     4    /    nao
-       deus cristo fé paz     /     5    /    nao
-       deus cristo fé justiça     /     4    /    nao
-       deus homem cristo coração     /     3    /    nao
-       deus homem cristo graça     /     4    /    nao
-       deus homem cristo cabeça     /     1    /    sim
-       deus homem cristo povo     /     2    /    nao
-       deus homem cristo pedra     /     2    /    nao
-       deus homem cristo nome     /     2    /    nao
-       deus homem cristo si     /     2    /    nullll
-       deus homem cristo carne     /     2    /    nao
-       deus homem coisa terra     /     2    /    nullll
-       deus homem coisa espírito     /     2    /    nao
-       deus homem coisa pecado     /     2    /    nullll
-       deus homem coração cristo     /     3    /    nullll
-       deus homem coração espírito     /     3    /    nao
-       deus homem coração carne     /     2    /    nao
-       deus homem coração carta     /     1    /    sim
-       deus homem coração tábua     /     1    /    sim
-       deus homem coração evangelho     /     2    /    nullll
-       deus homem coração letra     /     1    /    sim
-       deus homem verdade palavra     /     1    /    sim
-       deus homem verdade glória     /     1    /    sim
-       deus homem verdade céu     /     2    /    nullll
-       deus homem verdade entendimento     /     1    /    sim
-       deus nó cristo graça     /     7    /    nao
-       deus nó cristo amor     /     7    /    nao
-       deus nó cristo glória     /     3    /    nao
-       deus nó cristo verdade     /     1    /    sim
-       deus nó cristo fim     /     3    /    nao
-       deus nó cristo misericórdia     /     3    /    nao
-       deus nó cristo si     /     2    /    nullll
-       deus nó cristo conhecimento     /     3    /    nao
-       deus nó cristo pai     /     2    /    nao
-       deus nó amor cristo     /     7    /    nullll
-       deus nó amor graça     /     6    /    nao
-       deus nó amor verdade     /     1    /    sim
-       deus nó amor fé     /     2    /    nao
-       deus nó amor misericórdia     /     3    /    nao
-       deus nó amor pai     /     2    /    nao
-       deus nó amor fim     /     2    /    nao
-       deus espírito cristo graça     /     9    /    nao
-       deus espírito cristo carne     /     6    /    nullll
-       deus espírito cristo amor     /     7    /    nao
-       deus espírito cristo fé     /     5    /    nullll
-       deus espírito cristo coração     /     4    /    nao
-       deus espírito cristo glória     /     3    /    nao
-       deus espírito cristo nó     /     2    /    nullll
-       deus espírito cristo saber     /     4    /    nao
-       deus espírito cristo evangelho     /     4    /    nao
-       deus espírito cristo poder     /     3    /    nao
-       deus espírito cristo sobre     /     3    /    nao
-       deus espírito cristo nome     /     4    /    nao
-       deus espírito cristo sangue     /     2    /    nullll
-       deus espírito cristo homem     /     2    /    nao
-       deus espírito cristo pai     /     4    /    nao
-       deus espírito cristo esperança     /     3    /    nao
-       deus espírito cristo oração     /     3    /    nao
-       deus espírito cristo verdade     /     2    /    nao
-       deus espírito carne cristo     /     6    /    nullll
-       deus espírito carne nó     /     2    /    nullll
-       deus espírito poder amor     /     5    /    nao
-       deus espírito poder palavra     /     5    /    nao
-       deus espírito poder esperança     /     3    /    nao
-       deus espírito poder saber     /     4    /    nao
-       deus espírito poder fé     /     4    /    nao
-       deus espírito poder sabedoria     /     2    /    nao
-       deus espírito poder graça     /     3    /    nao
-       deus espírito poder cristo     /     3    /    nullll
-       deus espírito poder oração     /     2    /    nao
-       deus espírito coração cristo     /     4    /    nullll
-       deus espírito coração homem     /     3    /    nullll
-       deus espírito coração amor     /     2    /    nao
-       deus espírito homem coração     /     3    /    nullll
-       deus espírito homem fala     /     1    /    sim
-       deus espírito homem cristo     /     2    /    nullll
-       deus espírito homem carne     /     2    /    nao
-       deus espírito homem carta     /     1    /    sim
-       deus espírito homem tábua     /     1    /    sim
-       deus espírito homem coisa     /     2    /    nullll
-       deus espírito homem verdade     /     1    /    sim
-       deus espírito homem letra     /     1    /    sim
-       deus espírito amor poder     /     5    /    nullll
-       deus espírito amor graça     /     5    /    nao
-       deus espírito amor cristo     /     7    /    nullll
-       deus espírito amor saber     /     4    /    nao
-       deus espírito amor esperança     /     4    /    nao
-       deus espírito amor fé     /     4    /    nao
-       deus espírito amor oração     /     3    /    nao
-       deus espírito amor paulo     /     1    /    sim
-       deus espírito graça cristo     /     9    /    nullll
-       deus espírito graça amor     /     5    /    nullll
-       deus espírito graça fé     /     5    /    nao
-       deus espírito graça poder     /     3    /    nullll
-       deus espírito graça evangelho     /     4    /    nao
-       deus espírito graça glória     /     2    /    nao
-       deus espírito graça saber     /     3    /    nao
-       deus espírito graça pai     /     4    /    nao
-       deus espírito graça esperança     /     3    /    nao
-       deus espírito graça oração     /     2    /    nao
-       deus espírito nó carne     /     2    /    nullll
-       deus espírito nó cristo     /     2    /    nullll
-       deus espírito nó fim     /     2    /    nao
-       deus coisa cristo tempo     /     3    /    nao
-       deus coisa cristo fé     /     3    /    nao
-       deus coisa cristo amor     /     5    /    nao
-       deus coisa cristo glória     /     4    /    nao
-       deus coisa cristo vida     /     3    /    nao
-       deus coisa cristo sangue     /     2    /    nao
-       deus coisa cristo graça     /     2    /    nao
-       deus coisa cristo justiça     /     2    /    nao
-       deus coisa cristo nele     /     3    /    nao
-       deus coisa cristo século     /     2    /    nao
-       deus poder glória honra     /     3    /    nao
-       deus poder glória vaso     /     1    /    sim
-       deus graça fé cristo     /     13    /    nullll
-       deus graça fé amor     /     6    /    nao
-       deus graça fé poder     /     6    /    nao
-       deus graça fé espírito     /     5    /    nullll
-       deus graça fé paulo     /     3    /    nao
-       deus graça fé glória     /     3    /    nao
-       deus graça fé evangelho     /     4    /    nao
-       deus graça fé esperança     /     4    /    nao
-       deus graça fé apóstolo     /     4    /    nao
-       deus graça fé oração     /     3    /    nao
-       deus graça fé epístola     /     4    /    nao
-       deus graça fé tempo     /     2    /    nao
-       deus graça fé saber     /     3    /    nao
-       deus graça fé pai     /     5    /    nao
-       deus graça fé verdade     /     3    /    nao
-       deus graça fé conhecimento     /     4    /    nao
-       deus graça paulo cristo     /     13    /    nullll
-       deus graça paulo timóteo     /     8    /    nao
-       deus graça paulo epístola     /     12    /    nao
-       deus graça paulo fé     /     3    /    nullll
-       deus graça paulo igreja     /     5    /    nao
-       deus graça paulo apóstolo     /     8    /    nao
-       deus graça paulo parte     /     10    /    nao
-       deus graça paulo paz     /     11    /    nao
-       deus graça paulo vida     /     2    /    nao
-       deus graça nó cristo     /     7    /    nullll
-       deus graça nó amor     /     6    /    nullll
-       deus graça nó verdade     /     1    /    sim
-       deus graça nó fé     /     2    /    nao
-       deus graça nó misericórdia     /     3    /    nao
-       deus graça nó vida     /     2    /    nao
-       deus graça amor cristo     /     11    /    nao
-       deus graça amor nó     /     6    /    nullll
-       deus graça amor fé     /     6    /    nullll
-       deus graça amor glória     /     3    /    nao
-       deus graça amor verdade     /     1    /    sim
-       deus graça amor espírito     /     5    /    nullll
-       deus graça amor pai     /     4    /    nao
-       deus graça amor poder     /     3    /    nao
-       deus graça amor oração     /     3    /    nao
-       deus graça amor esperança     /     3    /    nao
-       deus graça amor misericórdia     /     3    /    nao
-       deus graça amor saber     /     3    /    nao
-       deus graça amor paulo     /     2    /    nao
-       deus graça amor causa     /     3    /    nao
-       deus graça amor riqueza     /     2    /    nao
-       deus graça glória cristo     /     6    /    nao
-       deus graça glória fé     /     3    /    nullll
-       deus graça glória sabedoria     /     3    /    nao
-       deus graça glória século     /     2    /    nao
-       deus graça glória amor     /     3    /    nullll
-       deus graça glória poder     /     2    /    nao
-       deus graça poder fé     /     6    /    nullll
-       deus graça poder cristo     /     5    /    nao
-       deus graça poder amor     /     3    /    nullll
-       deus graça poder paulo     /     2    /    nao
-       deus graça poder glória     /     2    /    nullll
-       deus graça poder força     /     3    /    nao
-       deus graça poder espírito     /     3    /    nullll
-       deus graça poder saber     /     3    /    nao
-       deus graça poder esperança     /     3    /    nao
-       deus graça poder pai     /     3    /    nao
-       deus graça poder oração     /     2    /    nao
+        renan calheiros mantém liderança     /     1    /    sim
+       renan liderança pmdb acordo     /     9    /    nullll
+       renan liderança pmdb mantém     /     7    /    nullll
+
+
+
+
+
+
+TEMA: pmdb
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pmdb     /     38    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pmdb renan     /     36    /    nao
+       pmdb senado     /     13    /    nullll
+       pmdb mantém     /     7    /    nao
+       pmdb acordo     /     9    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pmdb renan liderança     /     20    /    nullll
+       pmdb renan calheiros     /     10    /    nullll
+       pmdb mantém liderança     /     7    /    nullll
+       pmdb mantém renan     /     7    /    nao
+       pmdb acordo renan     /     9    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pmdb mantém renan liderança     /     7    /    nullll
+       pmdb mantém renan calheiros     /     1    /    sim
+       pmdb mantém renan derrota     /     6    /    nullll
+       pmdb acordo renan liderança     /     9    /    nullll
+
+
+
+
+
+
+TEMA: liderança
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        liderança     /     22    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        liderança pmdb     /     20    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        liderança pmdb renan     /     20    /    nullll
+       liderança pmdb acordo     /     9    /    nao
+       liderança pmdb mantém     /     7    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        liderança pmdb acordo renan     /     9    /    nullll
+       liderança pmdb mantém renan     /     7    /    nao
 
 
 
  - ITERACAO 4:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus cristo graça fé amor     /     5    /    nao
-       deus cristo graça fé poder     /     5    /    nao
-       deus cristo graça fé paulo     /     3    /    nao
-       deus cristo graça fé glória     /     3    /    nao
-       deus cristo graça fé espírito     /     4    /    nao
-       deus cristo graça fé evangelho     /     4    /    nao
-       deus cristo graça fé esperança     /     4    /    nao
-       deus cristo graça fé apóstolo     /     4    /    nao
-       deus cristo graça fé oração     /     3    /    nao
-       deus cristo graça fé epístola     /     4    /    nao
-       deus cristo graça fé saber     /     3    /    nao
-       deus cristo graça fé pai     /     5    /    nao
-       deus cristo graça fé conhecimento     /     4    /    nao
-       deus cristo graça paulo timóteo     /     8    /    nao
-       deus cristo graça paulo epístola     /     12    /    nao
-       deus cristo graça paulo fé     /     3    /    nullll
-       deus cristo graça paulo igreja     /     5    /    nao
-       deus cristo graça paulo apóstolo     /     8    /    nao
-       deus cristo graça paulo parte     /     10    /    nao
-       deus cristo graça paulo paz     /     11    /    nao
-       deus cristo graça paulo vida     /     2    /    nao
-       deus cristo fé amor poder     /     4    /    nao
-       deus cristo fé amor pai     /     5    /    nao
-       deus cristo fé amor espírito     /     4    /    nao
-       deus cristo fé amor saber     /     4    /    nao
-       deus cristo fé amor oração     /     3    /    nao
-       deus cristo fé amor glória     /     2    /    nao
-       deus cristo fé amor graça     /     5    /    nullll
-       deus cristo fé amor esperança     /     3    /    nao
-       deus cristo fé amor paulo     /     1    /    sim
-       deus cristo fé poder amor     /     4    /    nullll
-       deus cristo fé poder graça     /     5    /    nullll
-       deus cristo fé poder esperança     /     4    /    nao
-       deus cristo fé poder paulo     /     2    /    nao
-       deus cristo fé poder espírito     /     3    /    nao
-       deus cristo fé poder saber     /     3    /    nao
-       deus cristo fé poder pai     /     4    /    nao
-       deus cristo fé poder tempo     /     2    /    nao
-       deus cristo fé poder carne     /     2    /    nao
-       deus cristo fé glória tempo     /     2    /    nao
-       deus cristo fé glória sangue     /     2    /    nao
-       deus cristo fé glória pai     /     2    /    nao
-       deus cristo fé glória graça     /     3    /    nullll
-       deus cristo fé glória amor     /     2    /    nullll
-       deus cristo fé glória esperança     /     2    /    nao
-       deus cristo fé glória espírito     /     2    /    nao
-       deus cristo fé glória revelação     /     2    /    nao
-       deus cristo fé glória saber     /     2    /    nao
-       deus cristo fé glória evangelho     /     2    /    nao
-       deus cristo fé glória século     /     1    /    sim
-       deus cristo fé glória poder     /     1    /    sim
-       deus cristo fé esperança pai     /     6    /    nao
-       deus cristo fé esperança tempo     /     3    /    nao
-       deus cristo fé esperança poder     /     4    /    nullll
-       deus cristo fé esperança graça     /     4    /    nullll
-       deus cristo fé esperança paulo     /     2    /    nao
-       deus cristo fé esperança amor     /     3    /    nullll
-       deus cristo fé esperança glória     /     2    /    nullll
-       deus cristo fé esperança saber     /     3    /    nao
-       deus cristo fé esperança oração     /     2    /    nao
-       deus cristo fé evangelho graça     /     4    /    nullll
-       deus cristo fé evangelho amor     /     2    /    nullll
-       deus cristo fé evangelho espírito     /     3    /    nao
-       deus cristo fé evangelho século     /     2    /    nao
-       deus cristo fé evangelho mistério     /     2    /    nao
-       deus cristo fé tempo pai     /     3    /    nao
-       deus cristo fé tempo esperança     /     3    /    nullll
-       deus cristo fé espírito amor     /     4    /    nullll
-       deus cristo fé espírito poder     /     3    /    nullll
-       deus cristo fé espírito glória     /     2    /    nullll
-       deus cristo fé espírito saber     /     3    /    nao
-       deus cristo fé espírito evangelho     /     3    /    nullll
-       deus cristo fé espírito graça     /     4    /    nullll
-       deus cristo fé espírito oração     /     2    /    nao
-       deus cristo fé pai esperança     /     6    /    nullll
-       deus cristo fé pai amor     /     5    /    nullll
-       deus cristo fé pai tempo     /     3    /    nullll
-       deus cristo fé pai poder     /     4    /    nullll
-       deus cristo fé pai graça     /     5    /    nullll
-       deus cristo fé pai paulo     /     2    /    nao
-       deus cristo fé pai glória     /     2    /    nullll
-       deus cristo fé pai saber     /     3    /    nao
-       deus cristo fé pai oração     /     2    /    nao
-       deus cristo fé paulo apóstolo     /     3    /    nao
-       deus cristo fé paulo graça     /     3    /    nullll
-       deus cristo fé paulo esperança     /     2    /    nullll
-       deus cristo fé paulo epístola     /     3    /    nao
-       deus cristo fé paulo tito     /     1    /    sim
-       deus cristo fé paulo timóteo     /     1    /    sim
-       deus cristo fé paulo tempo     /     1    /    sim
-       deus cristo fé paulo paz     /     2    /    nao
-       deus cristo fé paulo mandato     /     2    /    nao
-       deus cristo fé paulo poder     /     2    /    nullll
-       deus cristo fé apóstolo paulo     /     3    /    nullll
-       deus cristo fé apóstolo graça     /     4    /    nullll
-       deus cristo fé apóstolo epístola     /     4    /    nao
-       deus cristo fé fim amor     /     2    /    nao
-       deus cristo fé fim tempo     /     1    /    sim
-       deus cristo fé fim obra     /     2    /    nao
-       deus cristo fé fim poder     /     2    /    nao
-       deus cristo fé fim sangue     /     1    /    sim
-       deus cristo fé fim pai     /     1    /    sim
-       deus cristo fé fim entendimento     /     1    /    sim
-       deus cristo fé saber amor     /     4    /    nullll
-       deus cristo fé saber pai     /     3    /    nullll
-       deus cristo fé saber poder     /     3    /    nullll
-       deus cristo fé saber glória     /     2    /    nullll
-       deus cristo fé saber esperança     /     3    /    nullll
-       deus cristo fé saber espírito     /     3    /    nullll
-       deus cristo fé saber graça     /     3    /    nullll
-       deus cristo fé saber oração     /     2    /    nao
-       deus cristo fé paz paulo     /     2    /    nullll
-       deus cristo fé paz epístola     /     3    /    nao
-       deus cristo fé paz apóstolo     /     3    /    nao
-       deus cristo fé paz graça     /     3    /    nao
-       deus cristo fé paz esperança     /     2    /    nao
-       deus cristo fé paz timóteo     /     1    /    sim
-       deus cristo fé paz tempo     /     1    /    sim
-       deus cristo fé paz tito     /     1    /    sim
-       deus cristo fé paz conhecimento     /     2    /    nao
-       deus cristo fé paz pai     /     3    /    nao
-       deus cristo fé paz mandato     /     2    /    nao
-       deus cristo fé paz parte     /     3    /    nao
-       deus cristo fé paz simão     /     1    /    sim
-       deus cristo fé justiça proceder     /     1    /    sim
-       deus cristo fé justiça graça     /     2    /    nao
-       deus homem cristo coração carne     /     2    /    nao
-       deus homem cristo coração carta     /     1    /    sim
-       deus homem cristo coração tábua     /     1    /    sim
-       deus homem cristo graça paulo     /     1    /    sim
-       deus homem cristo graça parte     /     1    /    sim
-       deus homem cristo graça si     /     1    /    sim
-       deus homem cristo povo nome     /     1    /    sim
-       deus homem cristo povo si     /     1    /    sim
-       deus homem cristo pedra carta     /     1    /    sim
-       deus homem cristo pedra tábua     /     1    /    sim
-       deus homem cristo pedra coração     /     1    /    sim
-       deus homem cristo pedra viver     /     1    /    sim
-       deus homem cristo nome povo     /     1    /    sim
-       deus homem cristo carne coração     /     2    /    nullll
-       deus homem cristo carne carta     /     1    /    sim
-       deus homem cristo carne tábua     /     1    /    sim
-       deus homem coisa espírito dessarte     /     1    /    sim
-       deus homem coração espírito carta     /     1    /    sim
-       deus homem coração espírito tábua     /     1    /    sim
-       deus homem coração espírito letra     /     1    /    sim
-       deus homem coração carne cristo     /     2    /    nullll
-       deus homem coração carne carta     /     1    /    sim
-       deus homem coração carne tábua     /     1    /    sim
-       deus nó cristo graça amor     /     5    /    nao
-       deus nó cristo graça verdade     /     1    /    sim
-       deus nó cristo graça misericórdia     /     3    /    nao
-       deus nó cristo graça vida     /     2    /    nao
-       deus nó cristo amor graça     /     5    /    nullll
-       deus nó cristo amor verdade     /     1    /    sim
-       deus nó cristo amor misericórdia     /     3    /    nao
-       deus nó cristo amor vida     /     2    /    nao
-       deus nó cristo glória graça     /     2    /    nao
-       deus nó cristo glória vontade     /     1    /    sim
-       deus nó cristo glória si     /     1    /    sim
-       deus nó cristo glória beneplácito     /     1    /    sim
-       deus nó cristo glória adoção     /     1    /    sim
-       deus nó cristo fim graça     /     2    /    nao
-       deus nó cristo fim si     /     1    /    sim
-       deus nó cristo fim esperança     /     2    /    nao
-       deus nó cristo fim obra     /     2    /    nao
-       deus nó cristo misericórdia verdade     /     1    /    sim
-       deus nó cristo misericórdia graça     /     3    /    nullll
-       deus nó cristo misericórdia amor     /     3    /    nullll
-       deus nó cristo misericórdia pai     /     1    /    sim
-       deus nó cristo misericórdia vida     /     2    /    nao
-       deus nó cristo misericórdia causa     /     2    /    nao
-       deus nó cristo conhecimento fé     /     1    /    sim
-       deus nó cristo conhecimento graça     /     2    /    nao
-       deus nó cristo conhecimento lugar     /     1    /    sim
-       deus nó cristo pai verdade     /     1    /    sim
-       deus nó cristo pai glória     /     1    /    sim
-       deus nó cristo pai parte     /     2    /    nao
-       deus nó cristo pai demo     /     1    /    sim
-       deus nó amor graça cristo     /     5    /    nullll
-       deus nó amor graça verdade     /     1    /    sim
-       deus nó amor graça fé     /     2    /    nullll
-       deus nó amor graça misericórdia     /     3    /    nao
-       deus nó amor graça vida     /     2    /    nao
-       deus nó amor fé graça     /     2    /    nullll
-       deus nó amor misericórdia verdade     /     1    /    sim
-       deus nó amor misericórdia cristo     /     3    /    nullll
-       deus nó amor misericórdia graça     /     3    /    nullll
-       deus nó amor misericórdia pai     /     1    /    sim
-       deus nó amor misericórdia vida     /     2    /    nao
-       deus nó amor misericórdia causa     /     2    /    nao
-       deus nó amor pai verdade     /     1    /    sim
-       deus nó amor fim pai     /     1    /    sim
-       deus espírito cristo graça amor     /     5    /    nao
-       deus espírito cristo graça fé     /     4    /    nullll
-       deus espírito cristo graça poder     /     3    /    nao
-       deus espírito cristo graça evangelho     /     4    /    nao
-       deus espírito cristo graça glória     /     2    /    nao
-       deus espírito cristo graça saber     /     3    /    nao
-       deus espírito cristo graça pai     /     4    /    nao
-       deus espírito cristo graça esperança     /     3    /    nao
-       deus espírito cristo graça oração     /     2    /    nao
-       deus espírito cristo amor graça     /     5    /    nullll
-       deus espírito cristo amor fé     /     4    /    nullll
-       deus espírito cristo amor poder     /     3    /    nao
-       deus espírito cristo amor saber     /     3    /    nao
-       deus espírito cristo amor esperança     /     3    /    nao
-       deus espírito cristo amor oração     /     3    /    nao
-       deus espírito cristo amor paulo     /     1    /    sim
-       deus espírito cristo coração pai     /     2    /    nao
-       deus espírito cristo coração carta     /     1    /    sim
-       deus espírito cristo coração glória     /     1    /    sim
-       deus espírito cristo coração graça     /     2    /    nao
-       deus espírito cristo coração tábua     /     1    /    sim
-       deus espírito cristo coração poder     /     1    /    sim
-       deus espírito cristo coração grandeza     /     1    /    sim
-       deus espírito cristo glória fé     /     2    /    nullll
-       deus espírito cristo glória poder     /     1    /    sim
-       deus espírito cristo glória graça     /     2    /    nullll
-       deus espírito cristo glória grandeza     /     1    /    sim
-       deus espírito cristo saber amor     /     3    /    nullll
-       deus espírito cristo saber poder     /     3    /    nao
-       deus espírito cristo saber carne     /     2    /    nao
-       deus espírito cristo saber fé     /     3    /    nullll
-       deus espírito cristo saber graça     /     3    /    nullll
-       deus espírito cristo evangelho graça     /     4    /    nullll
-       deus espírito cristo evangelho amor     /     2    /    nullll
-       deus espírito cristo evangelho fé     /     3    /    nullll
-       deus espírito cristo poder amor     /     3    /    nullll
-       deus espírito cristo poder fé     /     3    /    nullll
-       deus espírito cristo poder saber     /     3    /    nullll
-       deus espírito cristo poder graça     /     3    /    nullll
-       deus espírito cristo poder oração     /     2    /    nao
-       deus espírito cristo sobre sangue     /     1    /    sim
-       deus espírito cristo sobre nó     /     1    /    sim
-       deus espírito cristo sobre obra     /     2    /    nao
-       deus espírito cristo nome paulo     /     1    /    sim
-       deus espírito cristo nome graça     /     2    /    nao
-       deus espírito cristo nome salmo     /     1    /    sim
-       deus espírito cristo homem carta     /     1    /    sim
-       deus espírito cristo homem tábua     /     1    /    sim
-       deus espírito cristo homem coração     /     1    /    sim
-       deus espírito cristo homem verdade     /     1    /    sim
-       deus espírito cristo homem entendimento     /     1    /    sim
-       deus espírito cristo pai graça     /     4    /    nullll
-       deus espírito cristo pai amor     /     2    /    nao
-       deus espírito cristo pai poder     /     2    /    nao
-       deus espírito cristo pai oração     /     2    /    nao
-       deus espírito cristo esperança amor     /     3    /    nullll
-       deus espírito cristo esperança graça     /     3    /    nullll
-       deus espírito cristo esperança poder     /     2    /    nao
-       deus espírito cristo oração amor     /     3    /    nullll
-       deus espírito cristo oração poder     /     2    /    nullll
-       deus espírito cristo verdade homem     /     1    /    sim
-       deus espírito cristo verdade entendimento     /     1    /    sim
-       deus espírito poder amor saber     /     4    /    nao
-       deus espírito poder amor fé     /     3    /    nao
-       deus espírito poder amor graça     /     3    /    nao
-       deus espírito poder amor cristo     /     3    /    nullll
-       deus espírito poder amor oração     /     2    /    nullll
-       deus espírito poder palavra amor     /     2    /    nao
-       deus espírito poder palavra vez     /     1    /    sim
-       deus espírito poder palavra sabedoria     /     1    /    sim
-       deus espírito poder palavra saber     /     2    /    nao
-       deus espírito poder palavra fé     /     2    /    nao
-       deus espírito poder palavra cristo     /     1    /    sim
-       deus espírito poder esperança amor     /     2    /    nao
-       deus espírito poder esperança oração     /     2    /    nao
-       deus espírito poder saber amor     /     4    /    nullll
-       deus espírito poder saber fé     /     3    /    nao
-       deus espírito poder saber graça     /     3    /    nao
-       deus espírito poder saber cristo     /     3    /    nullll
-       deus espírito poder saber oração     /     2    /    nao
-       deus espírito poder fé amor     /     3    /    nullll
-       deus espírito poder fé sabedoria     /     2    /    nao
-       deus espírito poder fé saber     /     3    /    nullll
-       deus espírito poder fé graça     /     3    /    nao
-       deus espírito poder fé cristo     /     3    /    nullll
-       deus espírito poder fé oração     /     2    /    nao
-       deus espírito poder sabedoria glória     /     1    /    sim
-       deus espírito poder sabedoria fé     /     2    /    nullll
-       deus espírito poder sabedoria grandeza     /     1    /    sim
-       deus espírito poder graça amor     /     3    /    nullll
-       deus espírito poder graça fé     /     3    /    nullll
-       deus espírito poder graça saber     /     3    /    nullll
-       deus espírito poder graça cristo     /     3    /    nullll
-       deus espírito poder graça oração     /     2    /    nao
-       deus espírito poder oração amor     /     2    /    nullll
-       deus espírito coração amor glória     /     1    /    sim
-       deus espírito coração amor esperança     /     2    /    nao
-       deus espírito coração amor poder     /     1    /    sim
-       deus espírito coração amor grandeza     /     1    /    sim
-       deus espírito homem carne carta     /     1    /    sim
-       deus espírito homem carne tábua     /     1    /    sim
-       deus espírito homem carne coração     /     1    /    sim
-       deus espírito homem carne cristo     /     1    /    sim
-       deus espírito amor graça cristo     /     5    /    nullll
-       deus espírito amor graça poder     /     3    /    nullll
-       deus espírito amor graça fé     /     3    /    nao
-       deus espírito amor graça saber     /     3    /    nao
-       deus espírito amor graça esperança     /     3    /    nao
-       deus espírito amor graça oração     /     2    /    nao
-       deus espírito amor saber poder     /     4    /    nullll
-       deus espírito amor saber fé     /     3    /    nao
-       deus espírito amor saber graça     /     3    /    nullll
-       deus espírito amor saber cristo     /     3    /    nullll
-       deus espírito amor saber oração     /     2    /    nao
-       deus espírito amor esperança graça     /     3    /    nullll
-       deus espírito amor esperança poder     /     2    /    nullll
-       deus espírito amor esperança cristo     /     3    /    nullll
-       deus espírito amor fé poder     /     3    /    nullll
-       deus espírito amor fé cristo     /     4    /    nullll
-       deus espírito amor fé saber     /     3    /    nullll
-       deus espírito amor fé graça     /     3    /    nullll
-       deus espírito amor fé oração     /     2    /    nao
-       deus espírito amor oração poder     /     2    /    nullll
-       deus espírito amor oração cristo     /     3    /    nullll
-       deus espírito graça fé amor     /     3    /    nullll
-       deus espírito graça fé poder     /     3    /    nullll
-       deus espírito graça fé glória     /     2    /    nao
-       deus espírito graça fé saber     /     3    /    nao
-       deus espírito graça fé evangelho     /     3    /    nao
-       deus espírito graça fé cristo     /     4    /    nullll
-       deus espírito graça fé oração     /     2    /    nao
-       deus espírito graça evangelho cristo     /     4    /    nullll
-       deus espírito graça evangelho amor     /     2    /    nao
-       deus espírito graça evangelho fé     /     3    /    nullll
-       deus espírito graça glória fé     /     2    /    nullll
-       deus espírito graça glória poder     /     1    /    sim
-       deus espírito graça glória grandeza     /     1    /    sim
-       deus espírito graça saber amor     /     3    /    nullll
-       deus espírito graça saber poder     /     3    /    nullll
-       deus espírito graça saber fé     /     3    /    nullll
-       deus espírito graça saber cristo     /     3    /    nullll
-       deus espírito graça saber oração     /     2    /    nao
-       deus espírito graça pai cristo     /     4    /    nullll
-       deus espírito graça pai amor     /     2    /    nao
-       deus espírito graça pai poder     /     2    /    nao
-       deus espírito graça pai oração     /     2    /    nao
-       deus espírito graça esperança amor     /     3    /    nullll
-       deus espírito graça esperança poder     /     2    /    nao
-       deus espírito graça esperança cristo     /     3    /    nullll
-       deus espírito graça oração amor     /     2    /    nullll
-       deus espírito graça oração poder     /     2    /    nullll
-       deus espírito nó fim carne     /     1    /    sim
-       deus espírito nó fim cristo     /     1    /    sim
-       deus coisa cristo tempo sangue     /     2    /    nao
-       deus coisa cristo tempo fim     /     2    /    nao
-       deus coisa cristo tempo pecado     /     2    /    nao
-       deus coisa cristo tempo glória     /     2    /    nao
-       deus coisa cristo tempo céu     /     2    /    nao
-       deus coisa cristo tempo vontade     /     1    /    sim
-       deus coisa cristo tempo fé     /     1    /    sim
-       deus coisa cristo tempo pai     /     1    /    sim
-       deus coisa cristo tempo graça     /     1    /    sim
-       deus coisa cristo tempo amor     /     2    /    nao
-       deus coisa cristo tempo beneplácito     /     1    /    sim
-       deus coisa cristo tempo adoção     /     1    /    sim
-       deus coisa cristo fé proceder     /     1    /    sim
-       deus coisa cristo fé tempo     /     1    /    sim
-       deus coisa cristo fé sangue     /     1    /    sim
-       deus coisa cristo fé pai     /     1    /    sim
-       deus coisa cristo fé justiça     /     1    /    sim
-       deus coisa cristo fé nele     /     2    /    nao
-       deus coisa cristo fé amor     /     2    /    nao
-       deus coisa cristo amor fé     /     2    /    nullll
-       deus coisa cristo amor tempo     /     2    /    nullll
-       deus coisa cristo amor glória     /     3    /    nao
-       deus coisa cristo amor sangue     /     2    /    nao
-       deus coisa cristo amor justiça     /     2    /    nao
-       deus coisa cristo amor nele     /     2    /    nao
-       deus coisa cristo amor louvor     /     2    /    nao
-       deus coisa cristo amor proceder     /     1    /    sim
-       deus coisa cristo amor poder     /     1    /    sim
-       deus coisa cristo amor vontade     /     1    /    sim
-       deus coisa cristo amor pai     /     1    /    sim
-       deus coisa cristo amor graça     /     1    /    sim
-       deus coisa cristo amor beneplácito     /     1    /    sim
-       deus coisa cristo amor adoção     /     1    /    sim
-       deus coisa cristo glória tempo     /     2    /    nullll
-       deus coisa cristo glória sangue     /     2    /    nao
-       deus coisa cristo glória amor     /     3    /    nullll
-       deus coisa cristo glória louvor     /     2    /    nao
-       deus coisa cristo glória vontade     /     1    /    sim
-       deus coisa cristo glória fé     /     1    /    sim
-       deus coisa cristo glória pai     /     1    /    sim
-       deus coisa cristo glória graça     /     1    /    sim
-       deus coisa cristo glória século     /     1    /    sim
-       deus coisa cristo glória beneplácito     /     1    /    sim
-       deus coisa cristo glória adoção     /     1    /    sim
-       deus coisa cristo vida morte     /     2    /    nao
-       deus coisa cristo vida poder     /     1    /    sim
-       deus coisa cristo sangue tempo     /     2    /    nullll
-       deus coisa cristo sangue pai     /     1    /    sim
-       deus coisa cristo sangue glória     /     2    /    nullll
-       deus coisa cristo sangue fé     /     1    /    sim
-       deus coisa cristo sangue vontade     /     1    /    sim
-       deus coisa cristo sangue graça     /     1    /    sim
-       deus coisa cristo sangue beneplácito     /     1    /    sim
-       deus coisa cristo sangue amor     /     2    /    nullll
-       deus coisa cristo sangue adoção     /     1    /    sim
-       deus coisa cristo graça riqueza     /     2    /    nao
-       deus coisa cristo graça dispensação     /     2    /    nao
-       deus coisa cristo graça mistério     /     2    /    nao
-       deus coisa cristo graça sabedoria     /     2    /    nao
-       deus coisa cristo graça vontade     /     1    /    sim
-       deus coisa cristo graça nele     /     2    /    nao
-       deus coisa cristo graça beneplácito     /     1    /    sim
-       deus coisa cristo graça adoção     /     1    /    sim
-       deus coisa cristo justiça proceder     /     1    /    sim
-       deus coisa cristo justiça fé     /     1    /    sim
-       deus coisa cristo justiça amor     /     2    /    nullll
-       deus coisa cristo nele graça     /     2    /    nullll
-       deus coisa cristo nele vontade     /     1    /    sim
-       deus coisa cristo nele riqueza     /     2    /    nao
-       deus coisa cristo nele fé     /     2    /    nullll
-       deus coisa cristo nele dispensação     /     2    /    nao
-       deus coisa cristo nele proceder     /     1    /    sim
-       deus coisa cristo nele mistério     /     2    /    nao
-       deus coisa cristo nele justiça     /     1    /    sim
-       deus coisa cristo nele sabedoria     /     2    /    nao
-       deus coisa cristo nele beneplácito     /     1    /    sim
-       deus coisa cristo nele adoção     /     1    /    sim
-       deus coisa cristo século lugar     /     1    /    sim
-       deus poder glória honra século     /     1    /    sim
-       deus graça fé amor cristo     /     5    /    nullll
-       deus graça fé amor poder     /     3    /    nao
-       deus graça fé amor oração     /     3    /    nao
-       deus graça fé amor espírito     /     3    /    nullll
-       deus graça fé amor saber     /     3    /    nao
-       deus graça fé amor pai     /     3    /    nao
-       deus graça fé poder cristo     /     5    /    nullll
-       deus graça fé poder amor     /     3    /    nullll
-       deus graça fé poder paulo     /     2    /    nao
-       deus graça fé poder espírito     /     3    /    nullll
-       deus graça fé poder saber     /     3    /    nao
-       deus graça fé poder esperança     /     3    /    nao
-       deus graça fé poder pai     /     3    /    nao
-       deus graça fé poder oração     /     2    /    nao
-       deus graça fé paulo cristo     /     3    /    nullll
-       deus graça fé paulo apóstolo     /     3    /    nao
-       deus graça fé paulo esperança     /     2    /    nao
-       deus graça fé paulo epístola     /     3    /    nao
-       deus graça fé paulo tito     /     1    /    sim
-       deus graça fé paulo timóteo     /     1    /    sim
-       deus graça fé paulo tempo     /     1    /    sim
-       deus graça fé paulo paz     /     2    /    nao
-       deus graça fé paulo mandato     /     2    /    nao
-       deus graça fé paulo poder     /     2    /    nullll
-       deus graça fé glória cristo     /     3    /    nullll
-       deus graça fé glória espírito     /     2    /    nullll
-       deus graça fé glória poder     /     1    /    sim
-       deus graça fé glória grandeza     /     1    /    sim
-       deus graça fé evangelho cristo     /     4    /    nullll
-       deus graça fé evangelho amor     /     2    /    nao
-       deus graça fé evangelho espírito     /     3    /    nullll
-       deus graça fé evangelho paulo     /     1    /    sim
-       deus graça fé esperança cristo     /     4    /    nullll
-       deus graça fé esperança poder     /     3    /    nullll
-       deus graça fé esperança paulo     /     2    /    nullll
-       deus graça fé esperança amor     /     2    /    nao
-       deus graça fé esperança pai     /     4    /    nao
-       deus graça fé esperança oração     /     2    /    nao
-       deus graça fé apóstolo cristo     /     4    /    nullll
-       deus graça fé apóstolo paulo     /     3    /    nullll
-       deus graça fé apóstolo epístola     /     4    /    nao
-       deus graça fé apóstolo timóteo     /     1    /    sim
-       deus graça fé apóstolo tempo     /     1    /    sim
-       deus graça fé apóstolo esperança     /     2    /    nao
-       deus graça fé apóstolo paz     /     3    /    nao
-       deus graça fé apóstolo tito     /     1    /    sim
-       deus graça fé apóstolo mandato     /     2    /    nao
-       deus graça fé apóstolo conhecimento     /     2    /    nao
-       deus graça fé apóstolo poder     /     2    /    nao
-       deus graça fé apóstolo carne     /     1    /    sim
-       deus graça fé oração amor     /     3    /    nullll
-       deus graça fé oração poder     /     2    /    nullll
-       deus graça fé oração cristo     /     3    /    nullll
-       deus graça fé oração pai     /     2    /    nao
-       deus graça fé oração saber     /     2    /    nao
-       deus graça fé oração espírito     /     2    /    nullll
-       deus graça fé oração glória     /     1    /    sim
-       deus graça fé oração esperança     /     2    /    nullll
-       deus graça fé oração conhecimento     /     2    /    nao
-       deus graça fé oração grandeza     /     1    /    sim
-       deus graça fé epístola cristo     /     4    /    nullll
-       deus graça fé epístola paulo     /     3    /    nullll
-       deus graça fé epístola apóstolo     /     4    /    nullll
-       deus graça fé epístola timóteo     /     1    /    sim
-       deus graça fé epístola tempo     /     1    /    sim
-       deus graça fé epístola esperança     /     2    /    nao
-       deus graça fé epístola paz     /     3    /    nao
-       deus graça fé epístola tito     /     1    /    sim
-       deus graça fé epístola mandato     /     2    /    nao
-       deus graça fé epístola conhecimento     /     2    /    nao
-       deus graça fé epístola poder     /     2    /    nao
-       deus graça fé epístola carne     /     1    /    sim
-       deus graça fé tempo cristo     /     1    /    sim
-       deus graça fé tempo paulo     /     1    /    sim
-       deus graça fé tempo tito     /     1    /    sim
-       deus graça fé tempo espírito     /     1    /    sim
-       deus graça fé tempo verdade     /     2    /    nao
-       deus graça fé tempo hipocrisia     /     1    /    sim
-       deus graça fé saber amor     /     3    /    nullll
-       deus graça fé saber poder     /     3    /    nullll
-       deus graça fé saber espírito     /     3    /    nullll
-       deus graça fé saber cristo     /     3    /    nullll
-       deus graça fé saber oração     /     2    /    nullll
-       deus graça fé pai cristo     /     5    /    nullll
-       deus graça fé pai esperança     /     4    /    nullll
-       deus graça fé pai poder     /     3    /    nullll
-       deus graça fé pai paulo     /     2    /    nao
-       deus graça fé pai amor     /     3    /    nullll
-       deus graça fé pai oração     /     2    /    nullll
-       deus graça fé verdade tempo     /     2    /    nullll
-       deus graça fé verdade espírito     /     2    /    nao
-       deus graça fé verdade cristo     /     2    /    nao
-       deus graça fé verdade tito     /     1    /    sim
-       deus graça fé verdade paulo     /     1    /    sim
-       deus graça fé conhecimento cristo     /     4    /    nullll
-       deus graça fé conhecimento poder     /     2    /    nao
-       deus graça fé conhecimento oração     /     2    /    nullll
-       deus graça paulo timóteo cristo     /     8    /    nullll
-       deus graça paulo timóteo epístola     /     8    /    nao
-       deus graça paulo timóteo igreja     /     4    /    nao
-       deus graça paulo timóteo paz     /     8    /    nao
-       deus graça paulo timóteo pai     /     8    /    nao
-       deus graça paulo timóteo parte     /     7    /    nao
-       deus graça paulo timóteo luta     /     1    /    sim
-       deus graça paulo epístola cristo     /     12    /    nullll
-       deus graça paulo epístola timóteo     /     8    /    nullll
-       deus graça paulo epístola fé     /     3    /    nullll
-       deus graça paulo epístola igreja     /     5    /    nao
-       deus graça paulo epístola apóstolo     /     8    /    nao
-       deus graça paulo epístola parte     /     10    /    nao
-       deus graça paulo epístola paz     /     11    /    nao
-       deus graça paulo epístola vida     /     2    /    nao
-       deus graça paulo igreja cristo     /     5    /    nullll
-       deus graça paulo igreja epístola     /     5    /    nullll
-       deus graça paulo igreja parte     /     4    /    nao
-       deus graça paulo igreja paz     /     5    /    nao
-       deus graça paulo igreja homem     /     1    /    sim
-       deus graça paulo igreja timóteo     /     4    /    nullll
-       deus graça paulo igreja pai     /     5    /    nao
-       deus graça paulo igreja apóstolo     /     2    /    nao
-       deus graça paulo apóstolo cristo     /     8    /    nullll
-       deus graça paulo apóstolo timóteo     /     4    /    nao
-       deus graça paulo apóstolo epístola     /     8    /    nullll
-       deus graça paulo apóstolo fé     /     3    /    nullll
-       deus graça paulo apóstolo parte     /     7    /    nao
-       deus graça paulo apóstolo paz     /     7    /    nao
-       deus graça paulo apóstolo vida     /     2    /    nao
-       deus graça paulo parte cristo     /     10    /    nullll
-       deus graça paulo parte timóteo     /     7    /    nullll
-       deus graça paulo parte epístola     /     10    /    nullll
-       deus graça paulo parte igreja     /     4    /    nullll
-       deus graça paulo parte fé     /     2    /    nao
-       deus graça paulo parte apóstolo     /     7    /    nullll
-       deus graça paulo parte paz     /     10    /    nao
-       deus graça paulo parte vida     /     2    /    nao
-       deus graça paulo paz cristo     /     11    /    nullll
-       deus graça paulo paz timóteo     /     8    /    nullll
-       deus graça paulo paz epístola     /     11    /    nullll
-       deus graça paulo paz igreja     /     5    /    nullll
-       deus graça paulo paz fé     /     2    /    nullll
-       deus graça paulo paz apóstolo     /     7    /    nullll
-       deus graça paulo paz parte     /     10    /    nullll
-       deus graça paulo paz vida     /     2    /    nao
-       deus graça paulo vida cristo     /     2    /    nullll
-       deus graça paulo vida tito     /     1    /    sim
-       deus graça paulo vida timóteo     /     1    /    sim
-       deus graça paulo vida tempo     /     1    /    sim
-       deus graça paulo vida apóstolo     /     2    /    nullll
-       deus graça paulo vida fé     /     1    /    sim
-       deus graça paulo vida paz     /     2    /    nullll
-       deus graça paulo vida epístola     /     2    /    nullll
-       deus graça paulo vida esperança     /     1    /    sim
-       deus graça nó fé amor     /     2    /    nullll
-       deus graça nó misericórdia verdade     /     1    /    sim
-       deus graça nó misericórdia cristo     /     3    /    nullll
-       deus graça nó misericórdia amor     /     3    /    nullll
-       deus graça nó misericórdia pai     /     1    /    sim
-       deus graça nó misericórdia vida     /     2    /    nao
-       deus graça nó misericórdia causa     /     2    /    nao
-       deus graça nó vida cristo     /     2    /    nullll
-       deus graça nó vida amor     /     2    /    nullll
-       deus graça nó vida misericórdia     /     2    /    nullll
-       deus graça amor cristo nó     /     5    /    nullll
-       deus graça amor cristo fé     /     5    /    nullll
-       deus graça amor cristo verdade     /     1    /    sim
-       deus graça amor cristo espírito     /     5    /    nullll
-       deus graça amor cristo pai     /     4    /    nao
-       deus graça amor cristo poder     /     3    /    nao
-       deus graça amor cristo oração     /     3    /    nao
-       deus graça amor cristo paulo     /     2    /    nao
-       deus graça amor cristo saber     /     3    /    nao
-       deus graça amor cristo glória     /     2    /    nao
-       deus graça amor cristo misericórdia     /     3    /    nao
-       deus graça amor cristo esperança     /     3    /    nao
-       deus graça amor cristo causa     /     3    /    nao
-       deus graça amor cristo riqueza     /     2    /    nao
-       deus graça amor glória cristo     /     2    /    nullll
-       deus graça amor glória vontade     /     1    /    sim
-       deus graça amor glória riqueza     /     2    /    nao
-       deus graça amor glória sabedoria     /     2    /    nao
-       deus graça amor glória coisa     /     2    /    nao
-       deus graça amor glória beneplácito     /     1    /    sim
-       deus graça amor glória poder     /     1    /    sim
-       deus graça amor glória grandeza     /     1    /    sim
-       deus graça amor pai verdade     /     1    /    sim
-       deus graça amor pai cristo     /     4    /    nullll
-       deus graça amor pai poder     /     2    /    nao
-       deus graça amor pai fé     /     3    /    nullll
-       deus graça amor pai oração     /     2    /    nao
-       deus graça amor pai saber     /     2    /    nao
-       deus graça amor pai glória     /     1    /    sim
-       deus graça amor pai esperança     /     2    /    nao
-       deus graça amor pai espírito     /     2    /    nullll
-       deus graça amor pai grandeza     /     1    /    sim
-       deus graça amor poder fé     /     3    /    nullll
-       deus graça amor poder espírito     /     3    /    nullll
-       deus graça amor poder saber     /     3    /    nao
-       deus graça amor poder cristo     /     3    /    nullll
-       deus graça amor poder oração     /     2    /    nullll
-       deus graça amor oração fé     /     3    /    nullll
-       deus graça amor oração poder     /     2    /    nullll
-       deus graça amor oração cristo     /     3    /    nullll
-       deus graça amor oração pai     /     2    /    nullll
-       deus graça amor oração saber     /     2    /    nao
-       deus graça amor oração espírito     /     2    /    nullll
-       deus graça amor oração glória     /     1    /    sim
-       deus graça amor oração esperança     /     2    /    nao
-       deus graça amor oração conhecimento     /     2    /    nao
-       deus graça amor oração grandeza     /     1    /    sim
-       deus graça amor esperança poder     /     2    /    nao
-       deus graça amor esperança espírito     /     3    /    nullll
-       deus graça amor esperança cristo     /     3    /    nullll
-       deus graça amor misericórdia nó     /     3    /    nullll
-       deus graça amor misericórdia verdade     /     1    /    sim
-       deus graça amor misericórdia cristo     /     3    /    nullll
-       deus graça amor misericórdia pai     /     1    /    sim
-       deus graça amor misericórdia vida     /     2    /    nao
-       deus graça amor misericórdia causa     /     2    /    nao
-       deus graça amor saber poder     /     3    /    nullll
-       deus graça amor saber fé     /     3    /    nullll
-       deus graça amor saber espírito     /     3    /    nullll
-       deus graça amor saber cristo     /     3    /    nullll
-       deus graça amor saber oração     /     2    /    nullll
-       deus graça amor paulo cristo     /     2    /    nullll
-       deus graça amor paulo respeito     /     2    /    nao
-       deus graça amor causa verdade     /     1    /    sim
-       deus graça amor causa cristo     /     3    /    nullll
-       deus graça amor causa pai     /     1    /    sim
-       deus graça amor causa nó     /     2    /    nao
-       deus graça amor causa misericórdia     /     2    /    nullll
-       deus graça amor riqueza glória     /     2    /    nullll
-       deus graça amor riqueza cristo     /     2    /    nullll
-       deus graça amor riqueza vontade     /     1    /    sim
-       deus graça amor riqueza sabedoria     /     2    /    nao
-       deus graça amor riqueza poder     /     1    /    sim
-       deus graça amor riqueza beneplácito     /     1    /    sim
-       deus graça amor riqueza grandeza     /     1    /    sim
-       deus graça glória cristo fé     /     3    /    nullll
-       deus graça glória cristo redenção     /     2    /    nao
-       deus graça glória sabedoria cristo     /     2    /    nao
-       deus graça glória sabedoria poder     /     2    /    nao
-       deus graça glória sabedoria vontade     /     1    /    sim
-       deus graça glória sabedoria riqueza     /     2    /    nao
-       deus graça glória sabedoria força     /     2    /    nao
-       deus graça glória sabedoria século     /     1    /    sim
-       deus graça glória sabedoria beneplácito     /     1    /    sim
-       deus graça glória sabedoria amor     /     2    /    nullll
-       deus graça glória sabedoria grandeza     /     1    /    sim
-       deus graça glória século si     /     1    /    sim
-       deus graça glória poder força     /     2    /    nao
-       deus graça glória poder sabedoria     /     2    /    nullll
-       deus graça glória poder século     /     1    /    sim
-       deus graça glória poder grandeza     /     1    /    sim
-       deus graça poder cristo fé     /     5    /    nullll
-       deus graça poder cristo amor     /     3    /    nullll
-       deus graça poder cristo paulo     /     2    /    nao
-       deus graça poder cristo espírito     /     3    /    nullll
-       deus graça poder cristo saber     /     3    /    nao
-       deus graça poder cristo esperança     /     3    /    nao
-       deus graça poder cristo pai     /     3    /    nao
-       deus graça poder cristo oração     /     2    /    nao
-       deus graça poder paulo cristo     /     2    /    nullll
-       deus graça poder paulo fé     /     2    /    nullll
-       deus graça poder paulo tito     /     1    /    sim
-       deus graça poder paulo tempo     /     1    /    sim
-       deus graça poder paulo apóstolo     /     2    /    nao
-       deus graça poder paulo epístola     /     2    /    nao
-       deus graça poder força glória     /     2    /    nullll
-       deus graça poder força sabedoria     /     2    /    nao
-       deus graça poder força século     /     1    /    sim
-       deus graça poder saber amor     /     3    /    nullll
-       deus graça poder saber fé     /     3    /    nullll
-       deus graça poder saber espírito     /     3    /    nullll
-       deus graça poder saber cristo     /     3    /    nullll
-       deus graça poder saber oração     /     2    /    nao
-       deus graça poder esperança fé     /     3    /    nullll
-       deus graça poder esperança cristo     /     3    /    nullll
-       deus graça poder esperança amor     /     2    /    nullll
-       deus graça poder esperança pai     /     3    /    nao
-       deus graça poder esperança oração     /     2    /    nao
-       deus graça poder pai fé     /     3    /    nullll
-       deus graça poder pai cristo     /     3    /    nullll
-       deus graça poder pai amor     /     2    /    nullll
-       deus graça poder pai esperança     /     3    /    nullll
-       deus graça poder pai oração     /     2    /    nao
-       deus graça poder oração amor     /     2    /    nullll
+        liderança pmdb mantém renan calheiros     /     1    /    sim
+       liderança pmdb mantém renan derrota     /     6    /    nullll
 
 
 
- - ITERACAO 5:
+
+
+
+TEMA: senado
+
+ - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deus cristo graça fé amor poder     /     3    /    nao
-       deus cristo graça fé amor oração     /     3    /    nao
-       deus cristo graça fé amor espírito     /     3    /    nao
-       deus cristo graça fé amor saber     /     3    /    nao
-       deus cristo graça fé amor pai     /     3    /    nao
-       deus cristo graça fé amor paulo     /     1    /    sim
-       deus cristo graça fé amor glória     /     1    /    sim
-       deus cristo graça fé amor esperança     /     2    /    nao
-       deus cristo graça fé amor evangelho     /     2    /    nullll
-       deus cristo graça fé amor conhecimento     /     2    /    nao
-       deus cristo graça fé amor convicção     /     1    /    sim
-       deus cristo graça fé poder amor     /     3    /    nullll
-       deus cristo graça fé poder paulo     /     2    /    nao
-       deus cristo graça fé poder espírito     /     3    /    nao
-       deus cristo graça fé poder saber     /     3    /    nao
-       deus cristo graça fé poder esperança     /     3    /    nao
-       deus cristo graça fé poder pai     /     3    /    nao
-       deus cristo graça fé poder oração     /     2    /    nao
-       deus cristo graça fé paulo apóstolo     /     3    /    nao
-       deus cristo graça fé paulo esperança     /     2    /    nao
-       deus cristo graça fé paulo epístola     /     3    /    nao
-       deus cristo graça fé paulo tito     /     1    /    sim
-       deus cristo graça fé paulo timóteo     /     1    /    sim
-       deus cristo graça fé paulo tempo     /     1    /    sim
-       deus cristo graça fé paulo paz     /     2    /    nao
-       deus cristo graça fé paulo mandato     /     2    /    nao
-       deus cristo graça fé paulo poder     /     2    /    nullll
-       deus cristo graça fé glória espírito     /     2    /    nao
-       deus cristo graça fé glória poder     /     1    /    sim
-       deus cristo graça fé glória grandeza     /     1    /    sim
-       deus cristo graça fé espírito amor     /     3    /    nullll
-       deus cristo graça fé espírito poder     /     3    /    nullll
-       deus cristo graça fé espírito glória     /     2    /    nullll
-       deus cristo graça fé espírito saber     /     3    /    nao
-       deus cristo graça fé espírito evangelho     /     3    /    nao
-       deus cristo graça fé espírito oração     /     2    /    nao
-       deus cristo graça fé evangelho amor     /     2    /    nullll
-       deus cristo graça fé evangelho espírito     /     3    /    nullll
-       deus cristo graça fé evangelho paulo     /     1    /    sim
-       deus cristo graça fé esperança poder     /     3    /    nullll
-       deus cristo graça fé esperança paulo     /     2    /    nullll
-       deus cristo graça fé esperança amor     /     2    /    nullll
-       deus cristo graça fé esperança pai     /     4    /    nao
-       deus cristo graça fé esperança oração     /     2    /    nao
-       deus cristo graça fé apóstolo paulo     /     3    /    nullll
-       deus cristo graça fé apóstolo epístola     /     4    /    nao
-       deus cristo graça fé apóstolo timóteo     /     1    /    sim
-       deus cristo graça fé apóstolo tempo     /     1    /    sim
-       deus cristo graça fé apóstolo esperança     /     2    /    nao
-       deus cristo graça fé apóstolo paz     /     3    /    nao
-       deus cristo graça fé apóstolo tito     /     1    /    sim
-       deus cristo graça fé apóstolo mandato     /     2    /    nao
-       deus cristo graça fé apóstolo conhecimento     /     2    /    nao
-       deus cristo graça fé apóstolo poder     /     2    /    nao
-       deus cristo graça fé apóstolo carne     /     1    /    sim
-       deus cristo graça fé oração amor     /     3    /    nullll
-       deus cristo graça fé oração poder     /     2    /    nullll
-       deus cristo graça fé oração pai     /     2    /    nao
-       deus cristo graça fé oração saber     /     2    /    nao
-       deus cristo graça fé oração espírito     /     2    /    nullll
-       deus cristo graça fé oração glória     /     1    /    sim
-       deus cristo graça fé oração esperança     /     2    /    nullll
-       deus cristo graça fé oração conhecimento     /     2    /    nao
-       deus cristo graça fé oração grandeza     /     1    /    sim
-       deus cristo graça fé epístola paulo     /     3    /    nullll
-       deus cristo graça fé epístola apóstolo     /     4    /    nullll
-       deus cristo graça fé epístola timóteo     /     1    /    sim
-       deus cristo graça fé epístola tempo     /     1    /    sim
-       deus cristo graça fé epístola esperança     /     2    /    nao
-       deus cristo graça fé epístola paz     /     3    /    nao
-       deus cristo graça fé epístola tito     /     1    /    sim
-       deus cristo graça fé epístola mandato     /     2    /    nao
-       deus cristo graça fé epístola conhecimento     /     2    /    nao
-       deus cristo graça fé epístola poder     /     2    /    nao
-       deus cristo graça fé epístola carne     /     1    /    sim
-       deus cristo graça fé saber amor     /     3    /    nullll
-       deus cristo graça fé saber poder     /     3    /    nullll
-       deus cristo graça fé saber espírito     /     3    /    nullll
-       deus cristo graça fé saber oração     /     2    /    nullll
-       deus cristo graça fé pai esperança     /     4    /    nullll
-       deus cristo graça fé pai poder     /     3    /    nullll
-       deus cristo graça fé pai paulo     /     2    /    nao
-       deus cristo graça fé pai amor     /     3    /    nullll
-       deus cristo graça fé pai oração     /     2    /    nullll
-       deus cristo graça fé conhecimento poder     /     2    /    nao
-       deus cristo graça fé conhecimento oração     /     2    /    nullll
-       deus cristo graça paulo timóteo epístola     /     8    /    nao
-       deus cristo graça paulo timóteo igreja     /     4    /    nao
-       deus cristo graça paulo timóteo paz     /     8    /    nao
-       deus cristo graça paulo timóteo pai     /     8    /    nao
-       deus cristo graça paulo timóteo parte     /     7    /    nao
-       deus cristo graça paulo timóteo luta     /     1    /    sim
-       deus cristo graça paulo epístola timóteo     /     8    /    nullll
-       deus cristo graça paulo epístola fé     /     3    /    nullll
-       deus cristo graça paulo epístola igreja     /     5    /    nao
-       deus cristo graça paulo epístola apóstolo     /     8    /    nao
-       deus cristo graça paulo epístola parte     /     10    /    nao
-       deus cristo graça paulo epístola paz     /     11    /    nao
-       deus cristo graça paulo epístola vida     /     2    /    nao
-       deus cristo graça paulo igreja epístola     /     5    /    nullll
-       deus cristo graça paulo igreja parte     /     4    /    nao
-       deus cristo graça paulo igreja paz     /     5    /    nao
-       deus cristo graça paulo igreja homem     /     1    /    sim
-       deus cristo graça paulo igreja timóteo     /     4    /    nullll
-       deus cristo graça paulo igreja pai     /     5    /    nao
-       deus cristo graça paulo igreja apóstolo     /     2    /    nao
-       deus cristo graça paulo apóstolo timóteo     /     4    /    nao
-       deus cristo graça paulo apóstolo epístola     /     8    /    nullll
-       deus cristo graça paulo apóstolo fé     /     3    /    nullll
-       deus cristo graça paulo apóstolo parte     /     7    /    nao
-       deus cristo graça paulo apóstolo paz     /     7    /    nao
-       deus cristo graça paulo apóstolo vida     /     2    /    nao
-       deus cristo graça paulo parte timóteo     /     7    /    nullll
-       deus cristo graça paulo parte epístola     /     10    /    nullll
-       deus cristo graça paulo parte igreja     /     4    /    nullll
-       deus cristo graça paulo parte fé     /     2    /    nao
-       deus cristo graça paulo parte apóstolo     /     7    /    nullll
-       deus cristo graça paulo parte paz     /     10    /    nao
-       deus cristo graça paulo parte vida     /     2    /    nao
-       deus cristo graça paulo paz timóteo     /     8    /    nullll
-       deus cristo graça paulo paz epístola     /     11    /    nullll
-       deus cristo graça paulo paz igreja     /     5    /    nullll
-       deus cristo graça paulo paz fé     /     2    /    nullll
-       deus cristo graça paulo paz apóstolo     /     7    /    nullll
-       deus cristo graça paulo paz parte     /     10    /    nullll
-       deus cristo graça paulo paz vida     /     2    /    nao
-       deus cristo graça paulo vida tito     /     1    /    sim
-       deus cristo graça paulo vida timóteo     /     1    /    sim
-       deus cristo graça paulo vida tempo     /     1    /    sim
-       deus cristo graça paulo vida apóstolo     /     2    /    nullll
-       deus cristo graça paulo vida fé     /     1    /    sim
-       deus cristo graça paulo vida paz     /     2    /    nullll
-       deus cristo graça paulo vida epístola     /     2    /    nullll
-       deus cristo graça paulo vida esperança     /     1    /    sim
-       deus cristo fé amor poder espírito     /     3    /    nao
-       deus cristo fé amor poder saber     /     3    /    nao
-       deus cristo fé amor poder graça     /     3    /    nullll
-       deus cristo fé amor poder oração     /     2    /    nullll
-       deus cristo fé amor pai glória     /     2    /    nao
-       deus cristo fé amor pai esperança     /     3    /    nao
-       deus cristo fé amor pai saber     /     3    /    nao
-       deus cristo fé amor pai poder     /     2    /    nao
-       deus cristo fé amor pai oração     /     2    /    nao
-       deus cristo fé amor espírito poder     /     3    /    nullll
-       deus cristo fé amor espírito saber     /     3    /    nao
-       deus cristo fé amor espírito graça     /     3    /    nullll
-       deus cristo fé amor espírito oração     /     2    /    nao
-       deus cristo fé amor saber pai     /     3    /    nullll
-       deus cristo fé amor saber poder     /     3    /    nullll
-       deus cristo fé amor saber glória     /     2    /    nao
-       deus cristo fé amor saber esperança     /     3    /    nao
-       deus cristo fé amor saber espírito     /     3    /    nullll
-       deus cristo fé amor saber graça     /     3    /    nullll
-       deus cristo fé amor saber oração     /     2    /    nao
-       deus cristo fé amor oração poder     /     2    /    nullll
-       deus cristo fé amor oração pai     /     2    /    nullll
-       deus cristo fé amor oração saber     /     2    /    nullll
-       deus cristo fé amor oração graça     /     3    /    nullll
-       deus cristo fé amor oração espírito     /     2    /    nullll
-       deus cristo fé amor oração glória     /     1    /    sim
-       deus cristo fé amor oração esperança     /     2    /    nao
-       deus cristo fé amor oração conhecimento     /     2    /    nao
-       deus cristo fé amor oração grandeza     /     1    /    sim
-       deus cristo fé amor glória pai     /     2    /    nullll
-       deus cristo fé amor glória sangue     /     1    /    sim
-       deus cristo fé amor glória saber     /     2    /    nullll
-       deus cristo fé amor glória tempo     /     1    /    sim
-       deus cristo fé amor glória esperança     /     2    /    nao
-       deus cristo fé amor glória poder     /     1    /    sim
-       deus cristo fé amor glória grandeza     /     1    /    sim
-       deus cristo fé amor esperança pai     /     3    /    nullll
-       deus cristo fé amor esperança glória     /     2    /    nullll
-       deus cristo fé amor esperança saber     /     3    /    nullll
-       deus cristo fé amor esperança poder     /     2    /    nao
-       deus cristo fé amor esperança oração     /     2    /    nullll
-       deus cristo fé poder esperança amor     /     2    /    nullll
-       deus cristo fé poder esperança pai     /     4    /    nao
-       deus cristo fé poder esperança graça     /     3    /    nullll
-       deus cristo fé poder esperança tempo     /     2    /    nao
-       deus cristo fé poder esperança oração     /     2    /    nao
-       deus cristo fé poder paulo tito     /     1    /    sim
-       deus cristo fé poder paulo tempo     /     1    /    sim
-       deus cristo fé poder paulo apóstolo     /     2    /    nao
-       deus cristo fé poder paulo graça     /     2    /    nullll
-       deus cristo fé poder paulo epístola     /     2    /    nao
-       deus cristo fé poder espírito amor     /     3    /    nullll
-       deus cristo fé poder espírito saber     /     3    /    nao
-       deus cristo fé poder espírito graça     /     3    /    nullll
-       deus cristo fé poder espírito oração     /     2    /    nao
-       deus cristo fé poder saber amor     /     3    /    nullll
-       deus cristo fé poder saber espírito     /     3    /    nullll
-       deus cristo fé poder saber graça     /     3    /    nullll
-       deus cristo fé poder saber oração     /     2    /    nao
-       deus cristo fé poder pai esperança     /     4    /    nullll
-       deus cristo fé poder pai amor     /     2    /    nullll
-       deus cristo fé poder pai graça     /     3    /    nullll
-       deus cristo fé poder pai tempo     /     2    /    nao
-       deus cristo fé poder pai oração     /     2    /    nao
-       deus cristo fé poder tempo esperança     /     2    /    nullll
-       deus cristo fé poder tempo tito     /     1    /    sim
-       deus cristo fé poder tempo paulo     /     1    /    sim
-       deus cristo fé poder tempo pai     /     2    /    nullll
-       deus cristo fé poder tempo paz     /     1    /    sim
-       deus cristo fé poder carne paulo     /     1    /    sim
-       deus cristo fé poder carne mão     /     1    /    sim
-       deus cristo fé glória tempo pai     /     1    /    sim
-       deus cristo fé glória tempo sangue     /     1    /    sim
-       deus cristo fé glória tempo século     /     1    /    sim
-       deus cristo fé glória sangue pai     /     1    /    sim
-       deus cristo fé glória sangue tempo     /     1    /    sim
-       deus cristo fé glória pai sangue     /     1    /    sim
-       deus cristo fé glória pai saber     /     2    /    nao
-       deus cristo fé glória pai tempo     /     1    /    sim
-       deus cristo fé glória pai esperança     /     2    /    nao
-       deus cristo fé glória pai amor     /     2    /    nullll
-       deus cristo fé glória pai poder     /     1    /    sim
-       deus cristo fé glória pai grandeza     /     1    /    sim
-       deus cristo fé glória esperança pai     /     2    /    nullll
-       deus cristo fé glória esperança sangue     /     1    /    sim
-       deus cristo fé glória esperança saber     /     2    /    nao
-       deus cristo fé glória esperança tempo     /     1    /    sim
-       deus cristo fé glória esperança amor     /     2    /    nullll
-       deus cristo fé glória esperança poder     /     1    /    sim
-       deus cristo fé glória esperança grandeza     /     1    /    sim
-       deus cristo fé glória espírito poder     /     1    /    sim
-       deus cristo fé glória espírito graça     /     2    /    nullll
-       deus cristo fé glória espírito grandeza     /     1    /    sim
-       deus cristo fé glória revelação poder     /     1    /    sim
-       deus cristo fé glória revelação século     /     1    /    sim
-       deus cristo fé glória revelação grandeza     /     1    /    sim
-       deus cristo fé glória saber pai     /     2    /    nullll
-       deus cristo fé glória saber sangue     /     1    /    sim
-       deus cristo fé glória saber tempo     /     1    /    sim
-       deus cristo fé glória saber esperança     /     2    /    nullll
-       deus cristo fé glória saber amor     /     2    /    nullll
-       deus cristo fé glória saber poder     /     1    /    sim
-       deus cristo fé glória saber grandeza     /     1    /    sim
-       deus cristo fé glória evangelho século     /     1    /    sim
-       deus cristo fé esperança pai tempo     /     3    /    nao
-       deus cristo fé esperança pai poder     /     4    /    nullll
-       deus cristo fé esperança pai graça     /     4    /    nullll
-       deus cristo fé esperança pai paulo     /     2    /    nao
-       deus cristo fé esperança pai amor     /     3    /    nullll
-       deus cristo fé esperança pai glória     /     2    /    nullll
-       deus cristo fé esperança pai saber     /     3    /    nao
-       deus cristo fé esperança pai oração     /     2    /    nao
-       deus cristo fé esperança tempo pai     /     3    /    nullll
-       deus cristo fé esperança tempo mácula     /     2    /    nao
-       deus cristo fé esperança tempo poder     /     2    /    nullll
-       deus cristo fé esperança tempo sangue     /     1    /    sim
-       deus cristo fé esperança tempo tito     /     1    /    sim
-       deus cristo fé esperança tempo paulo     /     1    /    sim
-       deus cristo fé esperança paulo timóteo     /     1    /    sim
-       deus cristo fé esperança paulo tempo     /     1    /    sim
-       deus cristo fé esperança paulo apóstolo     /     2    /    nao
-       deus cristo fé esperança paulo graça     /     2    /    nullll
-       deus cristo fé esperança paulo tito     /     1    /    sim
-       deus cristo fé esperança paulo epístola     /     2    /    nao
-       deus cristo fé esperança paulo paz     /     2    /    nao
-       deus cristo fé esperança paulo mandato     /     2    /    nao
-       deus cristo fé esperança saber pai     /     3    /    nullll
-       deus cristo fé esperança saber amor     /     3    /    nullll
-       deus cristo fé esperança saber glória     /     2    /    nullll
-       deus cristo fé esperança saber poder     /     2    /    nao
-       deus cristo fé esperança saber oração     /     2    /    nao
-       deus cristo fé esperança oração amor     /     2    /    nullll
-       deus cristo fé esperança oração poder     /     2    /    nullll
-       deus cristo fé evangelho espírito amor     /     2    /    nullll
-       deus cristo fé evangelho espírito graça     /     3    /    nullll
-       deus cristo fé evangelho século mistério     /     2    /    nao
-       deus cristo fé evangelho século lugar     /     1    /    sim
-       deus cristo fé evangelho mistério século     /     2    /    nullll
-       deus cristo fé evangelho mistério lugar     /     1    /    sim
-       deus cristo fé tempo pai esperança     /     3    /    nullll
-       deus cristo fé tempo pai mácula     /     2    /    nao
-       deus cristo fé tempo pai poder     /     2    /    nullll
-       deus cristo fé tempo pai sangue     /     1    /    sim
-       deus cristo fé tempo pai tito     /     1    /    sim
-       deus cristo fé tempo pai paulo     /     1    /    sim
-       deus cristo fé espírito saber amor     /     3    /    nullll
-       deus cristo fé espírito saber poder     /     3    /    nullll
-       deus cristo fé espírito saber graça     /     3    /    nullll
-       deus cristo fé espírito saber oração     /     2    /    nao
-       deus cristo fé espírito oração amor     /     2    /    nullll
-       deus cristo fé espírito oração poder     /     2    /    nullll
-       deus cristo fé pai paulo esperança     /     2    /    nullll
-       deus cristo fé pai paulo timóteo     /     1    /    sim
-       deus cristo fé pai paulo tempo     /     1    /    sim
-       deus cristo fé pai paulo apóstolo     /     2    /    nao
-       deus cristo fé pai paulo graça     /     2    /    nullll
-       deus cristo fé pai paulo tito     /     1    /    sim
-       deus cristo fé pai paulo epístola     /     2    /    nao
-       deus cristo fé pai paulo paz     /     2    /    nao
-       deus cristo fé pai paulo mandato     /     2    /    nao
-       deus cristo fé pai saber amor     /     3    /    nullll
-       deus cristo fé pai saber glória     /     2    /    nullll
-       deus cristo fé pai saber esperança     /     3    /    nullll
-       deus cristo fé pai saber poder     /     2    /    nao
-       deus cristo fé pai saber oração     /     2    /    nao
-       deus cristo fé pai oração amor     /     2    /    nullll
-       deus cristo fé pai oração poder     /     2    /    nullll
-       deus cristo fé paulo apóstolo graça     /     3    /    nullll
-       deus cristo fé paulo apóstolo esperança     /     2    /    nullll
-       deus cristo fé paulo apóstolo epístola     /     3    /    nao
-       deus cristo fé paulo apóstolo tito     /     1    /    sim
-       deus cristo fé paulo apóstolo timóteo     /     1    /    sim
-       deus cristo fé paulo apóstolo tempo     /     1    /    sim
-       deus cristo fé paulo apóstolo paz     /     2    /    nao
-       deus cristo fé paulo apóstolo mandato     /     2    /    nao
-       deus cristo fé paulo apóstolo poder     /     2    /    nullll
-       deus cristo fé paulo epístola apóstolo     /     3    /    nullll
-       deus cristo fé paulo epístola graça     /     3    /    nullll
-       deus cristo fé paulo epístola esperança     /     2    /    nullll
-       deus cristo fé paulo epístola tito     /     1    /    sim
-       deus cristo fé paulo epístola timóteo     /     1    /    sim
-       deus cristo fé paulo epístola tempo     /     1    /    sim
-       deus cristo fé paulo epístola paz     /     2    /    nao
-       deus cristo fé paulo epístola mandato     /     2    /    nao
-       deus cristo fé paulo epístola poder     /     2    /    nullll
-       deus cristo fé paulo paz esperança     /     2    /    nullll
-       deus cristo fé paulo paz timóteo     /     1    /    sim
-       deus cristo fé paulo paz tempo     /     1    /    sim
-       deus cristo fé paulo paz apóstolo     /     2    /    nullll
-       deus cristo fé paulo paz graça     /     2    /    nullll
-       deus cristo fé paulo paz tito     /     1    /    sim
-       deus cristo fé paulo paz epístola     /     2    /    nullll
-       deus cristo fé paulo paz mandato     /     2    /    nao
-       deus cristo fé paulo mandato esperança     /     2    /    nullll
-       deus cristo fé paulo mandato timóteo     /     1    /    sim
-       deus cristo fé paulo mandato tempo     /     1    /    sim
-       deus cristo fé paulo mandato apóstolo     /     2    /    nullll
-       deus cristo fé paulo mandato graça     /     2    /    nullll
-       deus cristo fé paulo mandato tito     /     1    /    sim
-       deus cristo fé paulo mandato epístola     /     2    /    nullll
-       deus cristo fé paulo mandato paz     /     2    /    nullll
-       deus cristo fé apóstolo epístola paulo     /     3    /    nullll
-       deus cristo fé apóstolo epístola graça     /     4    /    nullll
-       deus cristo fé apóstolo epístola timóteo     /     1    /    sim
-       deus cristo fé apóstolo epístola tempo     /     1    /    sim
-       deus cristo fé apóstolo epístola esperança     /     2    /    nao
-       deus cristo fé apóstolo epístola paz     /     3    /    nao
-       deus cristo fé apóstolo epístola tito     /     1    /    sim
-       deus cristo fé apóstolo epístola mandato     /     2    /    nao
-       deus cristo fé apóstolo epístola conhecimento     /     2    /    nao
-       deus cristo fé apóstolo epístola poder     /     2    /    nao
-       deus cristo fé apóstolo epístola carne     /     1    /    sim
-       deus cristo fé fim amor tempo     /     1    /    sim
-       deus cristo fé fim amor pai     /     1    /    sim
-       deus cristo fé fim amor sangue     /     1    /    sim
-       deus cristo fé fim obra sangue     /     1    /    sim
-       deus cristo fé fim obra tempo     /     1    /    sim
-       deus cristo fé fim obra pai     /     1    /    sim
-       deus cristo fé fim poder amor     /     1    /    sim
-       deus cristo fé saber oração amor     /     2    /    nullll
-       deus cristo fé saber oração poder     /     2    /    nullll
-       deus cristo fé paz epístola paulo     /     2    /    nullll
-       deus cristo fé paz epístola apóstolo     /     3    /    nullll
-       deus cristo fé paz epístola graça     /     3    /    nullll
-       deus cristo fé paz epístola esperança     /     2    /    nao
-       deus cristo fé paz epístola timóteo     /     1    /    sim
-       deus cristo fé paz epístola tempo     /     1    /    sim
-       deus cristo fé paz epístola tito     /     1    /    sim
-       deus cristo fé paz epístola conhecimento     /     2    /    nao
-       deus cristo fé paz epístola mandato     /     2    /    nao
-       deus cristo fé paz epístola simão     /     1    /    sim
-       deus cristo fé paz apóstolo paulo     /     2    /    nullll
-       deus cristo fé paz apóstolo epístola     /     3    /    nullll
-       deus cristo fé paz apóstolo graça     /     3    /    nullll
-       deus cristo fé paz apóstolo esperança     /     2    /    nao
-       deus cristo fé paz apóstolo timóteo     /     1    /    sim
-       deus cristo fé paz apóstolo tempo     /     1    /    sim
-       deus cristo fé paz apóstolo tito     /     1    /    sim
-       deus cristo fé paz apóstolo conhecimento     /     2    /    nao
-       deus cristo fé paz apóstolo mandato     /     2    /    nao
-       deus cristo fé paz apóstolo simão     /     1    /    sim
-       deus cristo fé paz graça paulo     /     2    /    nullll
-       deus cristo fé paz graça epístola     /     3    /    nullll
-       deus cristo fé paz graça apóstolo     /     3    /    nullll
-       deus cristo fé paz graça esperança     /     2    /    nao
-       deus cristo fé paz graça timóteo     /     1    /    sim
-       deus cristo fé paz graça tempo     /     1    /    sim
-       deus cristo fé paz graça tito     /     1    /    sim
-       deus cristo fé paz graça conhecimento     /     2    /    nao
-       deus cristo fé paz graça mandato     /     2    /    nao
-       deus cristo fé paz graça simão     /     1    /    sim
-       deus cristo fé paz esperança paulo     /     2    /    nullll
-       deus cristo fé paz esperança timóteo     /     1    /    sim
-       deus cristo fé paz esperança tempo     /     1    /    sim
-       deus cristo fé paz esperança apóstolo     /     2    /    nullll
-       deus cristo fé paz esperança graça     /     2    /    nullll
-       deus cristo fé paz esperança tito     /     1    /    sim
-       deus cristo fé paz esperança epístola     /     2    /    nullll
-       deus cristo fé paz esperança mandato     /     2    /    nao
-       deus cristo fé paz conhecimento epístola     /     2    /    nullll
-       deus cristo fé paz conhecimento tito     /     1    /    sim
-       deus cristo fé paz conhecimento paulo     /     1    /    sim
-       deus cristo fé paz conhecimento tempo     /     1    /    sim
-       deus cristo fé paz conhecimento apóstolo     /     2    /    nullll
-       deus cristo fé paz conhecimento graça     /     2    /    nullll
-       deus cristo fé paz conhecimento esperança     /     1    /    sim
-       deus cristo fé paz pai paulo     /     2    /    nullll
-       deus cristo fé paz pai esperança     /     2    /    nao
-       deus cristo fé paz pai tito     /     1    /    sim
-       deus cristo fé paz pai timóteo     /     1    /    sim
-       deus cristo fé paz pai tempo     /     1    /    sim
-       deus cristo fé paz pai apóstolo     /     2    /    nao
-       deus cristo fé paz pai graça     /     2    /    nao
-       deus cristo fé paz pai epístola     /     2    /    nao
-       deus cristo fé paz pai mandato     /     2    /    nao
-       deus cristo fé paz pai parte     /     3    /    nao
-       deus cristo fé paz mandato paulo     /     2    /    nullll
-       deus cristo fé paz mandato esperança     /     2    /    nullll
-       deus cristo fé paz mandato timóteo     /     1    /    sim
-       deus cristo fé paz mandato tempo     /     1    /    sim
-       deus cristo fé paz mandato apóstolo     /     2    /    nullll
-       deus cristo fé paz mandato graça     /     2    /    nullll
-       deus cristo fé paz mandato tito     /     1    /    sim
-       deus cristo fé paz mandato epístola     /     2    /    nullll
-       deus cristo fé paz parte paulo     /     2    /    nao
-       deus cristo fé paz parte esperança     /     2    /    nao
-       deus cristo fé paz parte tito     /     1    /    sim
-       deus cristo fé paz parte timóteo     /     1    /    sim
-       deus cristo fé paz parte tempo     /     1    /    sim
-       deus cristo fé paz parte apóstolo     /     2    /    nao
-       deus cristo fé paz parte graça     /     2    /    nao
-       deus cristo fé paz parte epístola     /     2    /    nao
-       deus cristo fé paz parte pai     /     3    /    nullll
-       deus cristo fé paz parte mandato     /     2    /    nao
-       deus cristo fé justiça graça simão     /     1    /    sim
-       deus homem cristo coração carne carta     /     1    /    sim
-       deus homem cristo coração carne tábua     /     1    /    sim
-       deus nó cristo graça amor verdade     /     1    /    sim
-       deus nó cristo graça amor misericórdia     /     3    /    nao
-       deus nó cristo graça amor vida     /     2    /    nao
-       deus nó cristo graça misericórdia verdade     /     1    /    sim
-       deus nó cristo graça misericórdia amor     /     3    /    nullll
-       deus nó cristo graça misericórdia pai     /     1    /    sim
-       deus nó cristo graça misericórdia vida     /     2    /    nao
-       deus nó cristo graça misericórdia causa     /     2    /    nao
-       deus nó cristo graça vida amor     /     2    /    nullll
-       deus nó cristo graça vida misericórdia     /     2    /    nullll
-       deus nó cristo amor misericórdia verdade     /     1    /    sim
-       deus nó cristo amor misericórdia graça     /     3    /    nullll
-       deus nó cristo amor misericórdia pai     /     1    /    sim
-       deus nó cristo amor misericórdia vida     /     2    /    nao
-       deus nó cristo amor misericórdia causa     /     2    /    nao
-       deus nó cristo amor vida graça     /     2    /    nullll
-       deus nó cristo amor vida misericórdia     /     2    /    nullll
-       deus nó cristo glória graça si     /     1    /    sim
-       deus nó cristo glória graça vontade     /     1    /    sim
-       deus nó cristo glória graça beneplácito     /     1    /    sim
-       deus nó cristo glória graça adoção     /     1    /    sim
-       deus nó cristo fim graça si     /     1    /    sim
-       deus nó cristo fim graça esperança     /     2    /    nao
-       deus nó cristo fim graça obra     /     2    /    nao
-       deus nó cristo fim esperança graça     /     2    /    nullll
-       deus nó cristo fim esperança si     /     1    /    sim
-       deus nó cristo fim esperança obra     /     2    /    nao
-       deus nó cristo fim obra graça     /     2    /    nullll
-       deus nó cristo fim obra si     /     1    /    sim
-       deus nó cristo fim obra esperança     /     2    /    nullll
-       deus nó cristo misericórdia vida amor     /     2    /    nullll
-       deus nó cristo misericórdia vida graça     /     2    /    nullll
-       deus nó cristo misericórdia causa verdade     /     1    /    sim
-       deus nó cristo misericórdia causa pai     /     1    /    sim
-       deus nó cristo misericórdia causa graça     /     2    /    nullll
-       deus nó cristo misericórdia causa amor     /     2    /    nullll
-       deus nó cristo conhecimento graça fé     /     1    /    sim
-       deus nó cristo conhecimento graça oração     /     1    /    sim
-       deus nó cristo pai parte verdade     /     1    /    sim
-       deus nó cristo pai parte glória     /     1    /    sim
-       deus nó cristo pai parte demo     /     1    /    sim
-       deus nó amor graça misericórdia verdade     /     1    /    sim
-       deus nó amor graça misericórdia cristo     /     3    /    nullll
-       deus nó amor graça misericórdia pai     /     1    /    sim
-       deus nó amor graça misericórdia vida     /     2    /    nao
-       deus nó amor graça misericórdia causa     /     2    /    nao
-       deus nó amor graça vida cristo     /     2    /    nullll
-       deus nó amor graça vida misericórdia     /     2    /    nullll
-       deus nó amor misericórdia vida cristo     /     2    /    nullll
-       deus nó amor misericórdia vida graça     /     2    /    nullll
-       deus nó amor misericórdia causa verdade     /     1    /    sim
-       deus nó amor misericórdia causa cristo     /     2    /    nullll
-       deus nó amor misericórdia causa pai     /     1    /    sim
-       deus nó amor misericórdia causa graça     /     2    /    nullll
-       deus espírito cristo graça amor poder     /     3    /    nao
-       deus espírito cristo graça amor fé     /     3    /    nullll
-       deus espírito cristo graça amor saber     /     3    /    nao
-       deus espírito cristo graça amor esperança     /     3    /    nao
-       deus espírito cristo graça amor oração     /     2    /    nao
-       deus espírito cristo graça poder amor     /     3    /    nullll
-       deus espírito cristo graça poder fé     /     3    /    nullll
-       deus espírito cristo graça poder saber     /     3    /    nao
-       deus espírito cristo graça poder oração     /     2    /    nao
-       deus espírito cristo graça evangelho amor     /     2    /    nullll
-       deus espírito cristo graça evangelho fé     /     3    /    nullll
-       deus espírito cristo graça glória fé     /     2    /    nullll
-       deus espírito cristo graça glória poder     /     1    /    sim
-       deus espírito cristo graça glória grandeza     /     1    /    sim
-       deus espírito cristo graça saber amor     /     3    /    nullll
-       deus espírito cristo graça saber poder     /     3    /    nullll
-       deus espírito cristo graça saber fé     /     3    /    nullll
-       deus espírito cristo graça saber oração     /     2    /    nao
-       deus espírito cristo graça pai amor     /     2    /    nao
-       deus espírito cristo graça pai poder     /     2    /    nao
-       deus espírito cristo graça pai oração     /     2    /    nao
-       deus espírito cristo graça esperança amor     /     3    /    nullll
-       deus espírito cristo graça esperança poder     /     2    /    nao
-       deus espírito cristo graça oração amor     /     2    /    nullll
-       deus espírito cristo graça oração poder     /     2    /    nullll
-       deus espírito cristo amor poder fé     /     3    /    nullll
-       deus espírito cristo amor poder saber     /     3    /    nao
-       deus espírito cristo amor poder graça     /     3    /    nullll
-       deus espírito cristo amor poder oração     /     2    /    nullll
-       deus espírito cristo amor saber poder     /     3    /    nullll
-       deus espírito cristo amor saber fé     /     3    /    nullll
-       deus espírito cristo amor saber graça     /     3    /    nullll
-       deus espírito cristo amor saber oração     /     2    /    nao
-       deus espírito cristo amor esperança graça     /     3    /    nullll
-       deus espírito cristo amor esperança poder     /     2    /    nao
-       deus espírito cristo amor oração poder     /     2    /    nullll
-       deus espírito cristo coração pai glória     /     1    /    sim
-       deus espírito cristo coração pai graça     /     2    /    nao
-       deus espírito cristo coração pai poder     /     1    /    sim
-       deus espírito cristo coração pai grandeza     /     1    /    sim
-       deus espírito cristo coração graça pai     /     2    /    nullll
-       deus espírito cristo coração graça glória     /     1    /    sim
-       deus espírito cristo coração graça poder     /     1    /    sim
-       deus espírito cristo coração graça grandeza     /     1    /    sim
-       deus espírito cristo saber poder amor     /     3    /    nullll
-       deus espírito cristo saber poder fé     /     3    /    nullll
-       deus espírito cristo saber poder graça     /     3    /    nullll
-       deus espírito cristo saber poder oração     /     2    /    nao
-       deus espírito cristo saber carne ressurreição     /     2    /    nao
-       deus espírito cristo saber carne paulo     /     1    /    sim
-       deus espírito cristo saber carne indagação     /     1    /    sim
-       deus espírito cristo poder oração amor     /     2    /    nullll
-       deus espírito cristo sobre obra sangue     /     1    /    sim
-       deus espírito cristo sobre obra nó     /     1    /    sim
-       deus espírito cristo nome graça paulo     /     1    /    sim
-       deus espírito cristo pai amor poder     /     2    /    nao
-       deus espírito cristo pai amor oração     /     2    /    nao
-       deus espírito cristo pai poder amor     /     2    /    nullll
-       deus espírito cristo pai poder oração     /     2    /    nao
-       deus espírito cristo pai oração amor     /     2    /    nullll
-       deus espírito cristo pai oração poder     /     2    /    nullll
-       deus espírito cristo esperança poder amor     /     2    /    nullll
-       deus espírito cristo esperança poder oração     /     2    /    nao
-       deus espírito poder amor saber fé     /     3    /    nao
-       deus espírito poder amor saber graça     /     3    /    nao
-       deus espírito poder amor saber cristo     /     3    /    nullll
-       deus espírito poder amor saber oração     /     2    /    nullll
-       deus espírito poder amor fé saber     /     3    /    nullll
-       deus espírito poder amor fé graça     /     3    /    nao
-       deus espírito poder amor fé cristo     /     3    /    nullll
-       deus espírito poder amor fé oração     /     2    /    nullll
-       deus espírito poder amor graça fé     /     3    /    nullll
-       deus espírito poder amor graça saber     /     3    /    nullll
-       deus espírito poder amor graça cristo     /     3    /    nullll
-       deus espírito poder amor graça oração     /     2    /    nullll
-       deus espírito poder palavra amor saber     /     2    /    nao
-       deus espírito poder palavra amor prisão     /     1    /    sim
-       deus espírito poder palavra saber amor     /     2    /    nullll
-       deus espírito poder palavra saber prisão     /     1    /    sim
-       deus espírito poder palavra fé sabedoria     /     1    /    sim
-       deus espírito poder palavra fé amor     /     1    /    sim
-       deus espírito poder esperança amor oração     /     2    /    nullll
-       deus espírito poder esperança oração amor     /     2    /    nullll
-       deus espírito poder saber fé amor     /     3    /    nullll
-       deus espírito poder saber fé graça     /     3    /    nao
-       deus espírito poder saber fé cristo     /     3    /    nullll
-       deus espírito poder saber fé oração     /     2    /    nao
-       deus espírito poder saber graça amor     /     3    /    nullll
-       deus espírito poder saber graça fé     /     3    /    nullll
-       deus espírito poder saber graça cristo     /     3    /    nullll
-       deus espírito poder saber graça oração     /     2    /    nao
-       deus espírito poder saber oração amor     /     2    /    nullll
-       deus espírito poder fé sabedoria glória     /     1    /    sim
-       deus espírito poder fé sabedoria grandeza     /     1    /    sim
-       deus espírito poder fé graça amor     /     3    /    nullll
-       deus espírito poder fé graça saber     /     3    /    nullll
-       deus espírito poder fé graça cristo     /     3    /    nullll
-       deus espírito poder fé graça oração     /     2    /    nao
-       deus espírito poder fé oração amor     /     2    /    nullll
-       deus espírito poder graça oração amor     /     2    /    nullll
-       deus espírito coração amor esperança glória     /     1    /    sim
-       deus espírito coração amor esperança poder     /     1    /    sim
-       deus espírito coração amor esperança grandeza     /     1    /    sim
-       deus espírito amor graça fé poder     /     3    /    nullll
-       deus espírito amor graça fé saber     /     3    /    nao
-       deus espírito amor graça fé cristo     /     3    /    nullll
-       deus espírito amor graça fé oração     /     2    /    nao
-       deus espírito amor graça saber poder     /     3    /    nullll
-       deus espírito amor graça saber fé     /     3    /    nullll
-       deus espírito amor graça saber cristo     /     3    /    nullll
-       deus espírito amor graça saber oração     /     2    /    nao
-       deus espírito amor graça esperança poder     /     2    /    nao
-       deus espírito amor graça esperança cristo     /     3    /    nullll
-       deus espírito amor graça oração poder     /     2    /    nullll
-       deus espírito amor saber fé poder     /     3    /    nullll
-       deus espírito amor saber fé graça     /     3    /    nullll
-       deus espírito amor saber fé cristo     /     3    /    nullll
-       deus espírito amor saber fé oração     /     2    /    nao
-       deus espírito amor saber oração poder     /     2    /    nullll
-       deus espírito amor fé oração poder     /     2    /    nullll
-       deus espírito graça fé glória poder     /     1    /    sim
-       deus espírito graça fé glória grandeza     /     1    /    sim
-       deus espírito graça fé saber amor     /     3    /    nullll
-       deus espírito graça fé saber poder     /     3    /    nullll
-       deus espírito graça fé saber cristo     /     3    /    nullll
-       deus espírito graça fé saber oração     /     2    /    nao
-       deus espírito graça fé evangelho amor     /     2    /    nao
-       deus espírito graça fé evangelho cristo     /     3    /    nullll
-       deus espírito graça fé oração amor     /     2    /    nullll
-       deus espírito graça fé oração poder     /     2    /    nullll
-       deus espírito graça evangelho amor cristo     /     2    /    nullll
-       deus espírito graça saber oração amor     /     2    /    nullll
-       deus espírito graça saber oração poder     /     2    /    nullll
-       deus espírito graça pai amor poder     /     2    /    nao
-       deus espírito graça pai amor oração     /     2    /    nao
-       deus espírito graça pai poder amor     /     2    /    nullll
-       deus espírito graça pai poder oração     /     2    /    nao
-       deus espírito graça pai oração amor     /     2    /    nullll
-       deus espírito graça pai oração poder     /     2    /    nullll
-       deus espírito graça esperança poder amor     /     2    /    nullll
-       deus espírito graça esperança poder oração     /     2    /    nao
-       deus coisa cristo tempo sangue pai     /     1    /    sim
-       deus coisa cristo tempo sangue glória     /     2    /    nao
-       deus coisa cristo tempo sangue fé     /     1    /    sim
-       deus coisa cristo tempo sangue vontade     /     1    /    sim
-       deus coisa cristo tempo sangue graça     /     1    /    sim
-       deus coisa cristo tempo sangue beneplácito     /     1    /    sim
-       deus coisa cristo tempo sangue amor     /     2    /    nao
-       deus coisa cristo tempo sangue adoção     /     1    /    sim
-       deus coisa cristo tempo fim pai     /     1    /    sim
-       deus coisa cristo tempo fim fé     /     1    /    sim
-       deus coisa cristo tempo fim sangue     /     1    /    sim
-       deus coisa cristo tempo fim refrigério     /     1    /    sim
-       deus coisa cristo tempo pecado céu     /     2    /    nao
-       deus coisa cristo tempo pecado vontade     /     1    /    sim
-       deus coisa cristo tempo pecado graça     /     1    /    sim
-       deus coisa cristo tempo pecado beneplácito     /     1    /    sim
-       deus coisa cristo tempo pecado refrigério     /     1    /    sim
-       deus coisa cristo tempo glória sangue     /     2    /    nullll
-       deus coisa cristo tempo glória pai     /     1    /    sim
-       deus coisa cristo tempo glória fé     /     1    /    sim
-       deus coisa cristo tempo glória vontade     /     1    /    sim
-       deus coisa cristo tempo glória graça     /     1    /    sim
-       deus coisa cristo tempo glória beneplácito     /     1    /    sim
-       deus coisa cristo tempo glória amor     /     2    /    nao
-       deus coisa cristo tempo glória adoção     /     1    /    sim
-       deus coisa cristo tempo céu pecado     /     2    /    nullll
-       deus coisa cristo tempo céu vontade     /     1    /    sim
-       deus coisa cristo tempo céu graça     /     1    /    sim
-       deus coisa cristo tempo céu beneplácito     /     1    /    sim
-       deus coisa cristo tempo céu refrigério     /     1    /    sim
-       deus coisa cristo tempo amor sangue     /     2    /    nullll
-       deus coisa cristo tempo amor pai     /     1    /    sim
-       deus coisa cristo tempo amor glória     /     2    /    nullll
-       deus coisa cristo tempo amor fé     /     1    /    sim
-       deus coisa cristo tempo amor vontade     /     1    /    sim
-       deus coisa cristo tempo amor graça     /     1    /    sim
-       deus coisa cristo tempo amor beneplácito     /     1    /    sim
-       deus coisa cristo tempo amor adoção     /     1    /    sim
-       deus coisa cristo fé nele proceder     /     1    /    sim
-       deus coisa cristo fé nele justiça     /     1    /    sim
-       deus coisa cristo fé nele lugar     /     1    /    sim
-       deus coisa cristo fé amor sangue     /     1    /    sim
-       deus coisa cristo fé amor justiça     /     1    /    sim
-       deus coisa cristo fé amor proceder     /     1    /    sim
-       deus coisa cristo fé amor tempo     /     1    /    sim
-       deus coisa cristo fé amor pai     /     1    /    sim
-       deus coisa cristo amor glória tempo     /     2    /    nullll
-       deus coisa cristo amor glória sangue     /     2    /    nao
-       deus coisa cristo amor glória louvor     /     2    /    nao
-       deus coisa cristo amor glória vontade     /     1    /    sim
-       deus coisa cristo amor glória fé     /     1    /    sim
-       deus coisa cristo amor glória pai     /     1    /    sim
-       deus coisa cristo amor glória graça     /     1    /    sim
-       deus coisa cristo amor glória beneplácito     /     1    /    sim
-       deus coisa cristo amor glória adoção     /     1    /    sim
-       deus coisa cristo amor sangue tempo     /     2    /    nullll
-       deus coisa cristo amor sangue pai     /     1    /    sim
-       deus coisa cristo amor sangue glória     /     2    /    nullll
-       deus coisa cristo amor sangue fé     /     1    /    sim
-       deus coisa cristo amor sangue vontade     /     1    /    sim
-       deus coisa cristo amor sangue graça     /     1    /    sim
-       deus coisa cristo amor sangue beneplácito     /     1    /    sim
-       deus coisa cristo amor sangue adoção     /     1    /    sim
-       deus coisa cristo amor justiça proceder     /     1    /    sim
-       deus coisa cristo amor justiça fé     /     1    /    sim
-       deus coisa cristo amor nele vontade     /     1    /    sim
-       deus coisa cristo amor nele proceder     /     1    /    sim
-       deus coisa cristo amor nele justiça     /     1    /    sim
-       deus coisa cristo amor nele graça     /     1    /    sim
-       deus coisa cristo amor nele fé     /     1    /    sim
-       deus coisa cristo amor nele beneplácito     /     1    /    sim
-       deus coisa cristo amor nele adoção     /     1    /    sim
-       deus coisa cristo amor louvor glória     /     2    /    nullll
-       deus coisa cristo amor louvor vontade     /     1    /    sim
-       deus coisa cristo amor louvor graça     /     1    /    sim
-       deus coisa cristo amor louvor beneplácito     /     1    /    sim
-       deus coisa cristo glória sangue tempo     /     2    /    nullll
-       deus coisa cristo glória sangue pai     /     1    /    sim
-       deus coisa cristo glória sangue fé     /     1    /    sim
-       deus coisa cristo glória sangue vontade     /     1    /    sim
-       deus coisa cristo glória sangue graça     /     1    /    sim
-       deus coisa cristo glória sangue beneplácito     /     1    /    sim
-       deus coisa cristo glória sangue amor     /     2    /    nullll
-       deus coisa cristo glória sangue adoção     /     1    /    sim
-       deus coisa cristo glória louvor vontade     /     1    /    sim
-       deus coisa cristo glória louvor graça     /     1    /    sim
-       deus coisa cristo glória louvor beneplácito     /     1    /    sim
-       deus coisa cristo glória louvor amor     /     2    /    nullll
-       deus coisa cristo vida morte poder     /     1    /    sim
-       deus coisa cristo graça riqueza dispensação     /     2    /    nao
-       deus coisa cristo graça riqueza mistério     /     2    /    nao
-       deus coisa cristo graça riqueza sabedoria     /     2    /    nao
-       deus coisa cristo graça riqueza vontade     /     1    /    sim
-       deus coisa cristo graça riqueza nele     /     2    /    nao
-       deus coisa cristo graça riqueza beneplácito     /     1    /    sim
-       deus coisa cristo graça riqueza adoção     /     1    /    sim
-       deus coisa cristo graça dispensação riqueza     /     2    /    nullll
-       deus coisa cristo graça dispensação mistério     /     2    /    nao
-       deus coisa cristo graça dispensação sabedoria     /     2    /    nao
-       deus coisa cristo graça dispensação vontade     /     1    /    sim
-       deus coisa cristo graça dispensação nele     /     2    /    nao
-       deus coisa cristo graça dispensação beneplácito     /     1    /    sim
-       deus coisa cristo graça dispensação adoção     /     1    /    sim
-       deus coisa cristo graça mistério riqueza     /     2    /    nullll
-       deus coisa cristo graça mistério dispensação     /     2    /    nullll
-       deus coisa cristo graça mistério sabedoria     /     2    /    nao
-       deus coisa cristo graça mistério vontade     /     1    /    sim
-       deus coisa cristo graça mistério nele     /     2    /    nao
-       deus coisa cristo graça mistério beneplácito     /     1    /    sim
-       deus coisa cristo graça mistério adoção     /     1    /    sim
-       deus coisa cristo graça sabedoria riqueza     /     2    /    nullll
-       deus coisa cristo graça sabedoria dispensação     /     2    /    nullll
-       deus coisa cristo graça sabedoria mistério     /     2    /    nullll
-       deus coisa cristo graça sabedoria vontade     /     1    /    sim
-       deus coisa cristo graça sabedoria nele     /     2    /    nao
-       deus coisa cristo graça sabedoria beneplácito     /     1    /    sim
-       deus coisa cristo graça sabedoria adoção     /     1    /    sim
-       deus coisa cristo graça nele riqueza     /     2    /    nullll
-       deus coisa cristo graça nele dispensação     /     2    /    nullll
-       deus coisa cristo graça nele mistério     /     2    /    nullll
-       deus coisa cristo graça nele sabedoria     /     2    /    nullll
-       deus coisa cristo graça nele vontade     /     1    /    sim
-       deus coisa cristo graça nele beneplácito     /     1    /    sim
-       deus coisa cristo graça nele adoção     /     1    /    sim
-       deus coisa cristo nele riqueza graça     /     2    /    nullll
-       deus coisa cristo nele riqueza dispensação     /     2    /    nao
-       deus coisa cristo nele riqueza mistério     /     2    /    nao
-       deus coisa cristo nele riqueza sabedoria     /     2    /    nao
-       deus coisa cristo nele riqueza vontade     /     1    /    sim
-       deus coisa cristo nele riqueza beneplácito     /     1    /    sim
-       deus coisa cristo nele riqueza adoção     /     1    /    sim
-       deus coisa cristo nele dispensação graça     /     2    /    nullll
-       deus coisa cristo nele dispensação riqueza     /     2    /    nullll
-       deus coisa cristo nele dispensação mistério     /     2    /    nao
-       deus coisa cristo nele dispensação sabedoria     /     2    /    nao
-       deus coisa cristo nele dispensação vontade     /     1    /    sim
-       deus coisa cristo nele dispensação beneplácito     /     1    /    sim
-       deus coisa cristo nele dispensação adoção     /     1    /    sim
-       deus coisa cristo nele mistério graça     /     2    /    nullll
-       deus coisa cristo nele mistério riqueza     /     2    /    nullll
-       deus coisa cristo nele mistério dispensação     /     2    /    nullll
-       deus coisa cristo nele mistério sabedoria     /     2    /    nao
-       deus coisa cristo nele mistério vontade     /     1    /    sim
-       deus coisa cristo nele mistério beneplácito     /     1    /    sim
-       deus coisa cristo nele mistério adoção     /     1    /    sim
-       deus coisa cristo nele sabedoria graça     /     2    /    nullll
-       deus coisa cristo nele sabedoria riqueza     /     2    /    nullll
-       deus coisa cristo nele sabedoria dispensação     /     2    /    nullll
-       deus coisa cristo nele sabedoria mistério     /     2    /    nullll
-       deus coisa cristo nele sabedoria vontade     /     1    /    sim
-       deus coisa cristo nele sabedoria beneplácito     /     1    /    sim
-       deus coisa cristo nele sabedoria adoção     /     1    /    sim
-       deus graça fé amor poder espírito     /     3    /    nullll
-       deus graça fé amor poder saber     /     3    /    nao
-       deus graça fé amor poder cristo     /     3    /    nullll
-       deus graça fé amor poder oração     /     2    /    nullll
-       deus graça fé amor oração poder     /     2    /    nullll
-       deus graça fé amor oração cristo     /     3    /    nullll
-       deus graça fé amor oração pai     /     2    /    nao
-       deus graça fé amor oração saber     /     2    /    nao
-       deus graça fé amor oração espírito     /     2    /    nullll
-       deus graça fé amor oração glória     /     1    /    sim
-       deus graça fé amor oração esperança     /     2    /    nao
-       deus graça fé amor oração conhecimento     /     2    /    nao
-       deus graça fé amor oração grandeza     /     1    /    sim
-       deus graça fé amor saber poder     /     3    /    nullll
-       deus graça fé amor saber espírito     /     3    /    nullll
-       deus graça fé amor saber cristo     /     3    /    nullll
-       deus graça fé amor saber oração     /     2    /    nullll
-       deus graça fé amor pai cristo     /     3    /    nullll
-       deus graça fé amor pai poder     /     2    /    nao
-       deus graça fé amor pai oração     /     2    /    nullll
-       deus graça fé amor pai saber     /     2    /    nao
-       deus graça fé amor pai glória     /     1    /    sim
-       deus graça fé amor pai espírito     /     2    /    nao
-       deus graça fé amor pai esperança     /     2    /    nao
-       deus graça fé amor pai grandeza     /     1    /    sim
-       deus graça fé poder paulo cristo     /     2    /    nullll
-       deus graça fé poder paulo tito     /     1    /    sim
-       deus graça fé poder paulo tempo     /     1    /    sim
-       deus graça fé poder paulo apóstolo     /     2    /    nao
-       deus graça fé poder paulo epístola     /     2    /    nao
-       deus graça fé poder saber amor     /     3    /    nullll
-       deus graça fé poder saber espírito     /     3    /    nullll
-       deus graça fé poder saber cristo     /     3    /    nullll
-       deus graça fé poder saber oração     /     2    /    nao
-       deus graça fé poder esperança cristo     /     3    /    nullll
-       deus graça fé poder esperança amor     /     2    /    nao
-       deus graça fé poder esperança pai     /     3    /    nao
-       deus graça fé poder esperança oração     /     2    /    nao
-       deus graça fé poder pai cristo     /     3    /    nullll
-       deus graça fé poder pai amor     /     2    /    nullll
-       deus graça fé poder pai esperança     /     3    /    nullll
-       deus graça fé poder pai oração     /     2    /    nao
-       deus graça fé poder oração amor     /     2    /    nullll
-       deus graça fé paulo apóstolo cristo     /     3    /    nullll
-       deus graça fé paulo apóstolo esperança     /     2    /    nao
-       deus graça fé paulo apóstolo epístola     /     3    /    nao
-       deus graça fé paulo apóstolo tito     /     1    /    sim
-       deus graça fé paulo apóstolo timóteo     /     1    /    sim
-       deus graça fé paulo apóstolo tempo     /     1    /    sim
-       deus graça fé paulo apóstolo paz     /     2    /    nao
-       deus graça fé paulo apóstolo mandato     /     2    /    nao
-       deus graça fé paulo apóstolo poder     /     2    /    nullll
-       deus graça fé paulo esperança cristo     /     2    /    nullll
-       deus graça fé paulo esperança timóteo     /     1    /    sim
-       deus graça fé paulo esperança tempo     /     1    /    sim
-       deus graça fé paulo esperança apóstolo     /     2    /    nullll
-       deus graça fé paulo esperança tito     /     1    /    sim
-       deus graça fé paulo esperança epístola     /     2    /    nao
-       deus graça fé paulo esperança paz     /     2    /    nao
-       deus graça fé paulo esperança mandato     /     2    /    nao
-       deus graça fé paulo epístola cristo     /     3    /    nullll
-       deus graça fé paulo epístola apóstolo     /     3    /    nullll
-       deus graça fé paulo epístola esperança     /     2    /    nullll
-       deus graça fé paulo epístola tito     /     1    /    sim
-       deus graça fé paulo epístola timóteo     /     1    /    sim
-       deus graça fé paulo epístola tempo     /     1    /    sim
-       deus graça fé paulo epístola paz     /     2    /    nao
-       deus graça fé paulo epístola mandato     /     2    /    nao
-       deus graça fé paulo epístola poder     /     2    /    nullll
-       deus graça fé paulo paz cristo     /     2    /    nullll
-       deus graça fé paulo paz esperança     /     2    /    nullll
-       deus graça fé paulo paz timóteo     /     1    /    sim
-       deus graça fé paulo paz tempo     /     1    /    sim
-       deus graça fé paulo paz apóstolo     /     2    /    nullll
-       deus graça fé paulo paz tito     /     1    /    sim
-       deus graça fé paulo paz epístola     /     2    /    nullll
-       deus graça fé paulo paz mandato     /     2    /    nao
-       deus graça fé paulo mandato cristo     /     2    /    nullll
-       deus graça fé paulo mandato esperança     /     2    /    nullll
-       deus graça fé paulo mandato timóteo     /     1    /    sim
-       deus graça fé paulo mandato tempo     /     1    /    sim
-       deus graça fé paulo mandato apóstolo     /     2    /    nullll
-       deus graça fé paulo mandato tito     /     1    /    sim
-       deus graça fé paulo mandato epístola     /     2    /    nullll
-       deus graça fé paulo mandato paz     /     2    /    nullll
-       deus graça fé evangelho amor cristo     /     2    /    nullll
-       deus graça fé esperança amor poder     /     2    /    nullll
-       deus graça fé esperança amor oração     /     2    /    nullll
-       deus graça fé esperança pai cristo     /     4    /    nullll
-       deus graça fé esperança pai poder     /     3    /    nullll
-       deus graça fé esperança pai paulo     /     2    /    nao
-       deus graça fé esperança pai amor     /     2    /    nullll
-       deus graça fé esperança pai oração     /     2    /    nao
-       deus graça fé esperança oração amor     /     2    /    nullll
-       deus graça fé esperança oração poder     /     2    /    nullll
-       deus graça fé apóstolo epístola cristo     /     4    /    nullll
-       deus graça fé apóstolo epístola paulo     /     3    /    nullll
-       deus graça fé apóstolo epístola timóteo     /     1    /    sim
-       deus graça fé apóstolo epístola tempo     /     1    /    sim
-       deus graça fé apóstolo epístola esperança     /     2    /    nao
-       deus graça fé apóstolo epístola paz     /     3    /    nao
-       deus graça fé apóstolo epístola tito     /     1    /    sim
-       deus graça fé apóstolo epístola mandato     /     2    /    nao
-       deus graça fé apóstolo epístola conhecimento     /     2    /    nao
-       deus graça fé apóstolo epístola poder     /     2    /    nao
-       deus graça fé apóstolo epístola carne     /     1    /    sim
-       deus graça fé apóstolo esperança paulo     /     2    /    nullll
-       deus graça fé apóstolo esperança cristo     /     2    /    nullll
-       deus graça fé apóstolo esperança timóteo     /     1    /    sim
-       deus graça fé apóstolo esperança tempo     /     1    /    sim
-       deus graça fé apóstolo esperança tito     /     1    /    sim
-       deus graça fé apóstolo esperança epístola     /     2    /    nullll
-       deus graça fé apóstolo esperança paz     /     2    /    nao
-       deus graça fé apóstolo esperança mandato     /     2    /    nao
-       deus graça fé apóstolo paz cristo     /     3    /    nullll
-       deus graça fé apóstolo paz paulo     /     2    /    nullll
-       deus graça fé apóstolo paz epístola     /     3    /    nullll
-       deus graça fé apóstolo paz esperança     /     2    /    nullll
-       deus graça fé apóstolo paz timóteo     /     1    /    sim
-       deus graça fé apóstolo paz tempo     /     1    /    sim
-       deus graça fé apóstolo paz tito     /     1    /    sim
-       deus graça fé apóstolo paz conhecimento     /     2    /    nao
-       deus graça fé apóstolo paz mandato     /     2    /    nao
-       deus graça fé apóstolo paz simão     /     1    /    sim
-       deus graça fé apóstolo mandato paulo     /     2    /    nullll
-       deus graça fé apóstolo mandato cristo     /     2    /    nullll
-       deus graça fé apóstolo mandato esperança     /     2    /    nullll
-       deus graça fé apóstolo mandato timóteo     /     1    /    sim
-       deus graça fé apóstolo mandato tempo     /     1    /    sim
-       deus graça fé apóstolo mandato tito     /     1    /    sim
-       deus graça fé apóstolo mandato epístola     /     2    /    nullll
-       deus graça fé apóstolo mandato paz     /     2    /    nullll
-       deus graça fé apóstolo conhecimento cristo     /     2    /    nullll
-       deus graça fé apóstolo conhecimento epístola     /     2    /    nullll
-       deus graça fé apóstolo conhecimento tito     /     1    /    sim
-       deus graça fé apóstolo conhecimento paulo     /     1    /    sim
-       deus graça fé apóstolo conhecimento tempo     /     1    /    sim
-       deus graça fé apóstolo conhecimento paz     /     2    /    nullll
-       deus graça fé apóstolo conhecimento esperança     /     1    /    sim
-       deus graça fé apóstolo poder cristo     /     2    /    nullll
-       deus graça fé apóstolo poder paulo     /     2    /    nullll
-       deus graça fé apóstolo poder tito     /     1    /    sim
-       deus graça fé apóstolo poder tempo     /     1    /    sim
-       deus graça fé apóstolo poder epístola     /     2    /    nullll
-       deus graça fé oração pai amor     /     2    /    nullll
-       deus graça fé oração pai poder     /     2    /    nullll
-       deus graça fé oração saber amor     /     2    /    nullll
-       deus graça fé oração saber poder     /     2    /    nullll
-       deus graça fé oração conhecimento glória     /     1    /    sim
-       deus graça fé oração conhecimento amor     /     2    /    nullll
-       deus graça fé oração conhecimento cristo     /     2    /    nullll
-       deus graça fé oração conhecimento poder     /     1    /    sim
-       deus graça fé oração conhecimento grandeza     /     1    /    sim
-       deus graça fé epístola esperança paulo     /     2    /    nullll
-       deus graça fé epístola esperança cristo     /     2    /    nullll
-       deus graça fé epístola esperança timóteo     /     1    /    sim
-       deus graça fé epístola esperança tempo     /     1    /    sim
-       deus graça fé epístola esperança apóstolo     /     2    /    nullll
-       deus graça fé epístola esperança tito     /     1    /    sim
-       deus graça fé epístola esperança paz     /     2    /    nao
-       deus graça fé epístola esperança mandato     /     2    /    nao
-       deus graça fé epístola paz cristo     /     3    /    nullll
-       deus graça fé epístola paz paulo     /     2    /    nullll
-       deus graça fé epístola paz apóstolo     /     3    /    nullll
-       deus graça fé epístola paz esperança     /     2    /    nullll
-       deus graça fé epístola paz timóteo     /     1    /    sim
-       deus graça fé epístola paz tempo     /     1    /    sim
-       deus graça fé epístola paz tito     /     1    /    sim
-       deus graça fé epístola paz conhecimento     /     2    /    nao
-       deus graça fé epístola paz mandato     /     2    /    nao
-       deus graça fé epístola paz simão     /     1    /    sim
-       deus graça fé epístola mandato paulo     /     2    /    nullll
-       deus graça fé epístola mandato cristo     /     2    /    nullll
-       deus graça fé epístola mandato esperança     /     2    /    nullll
-       deus graça fé epístola mandato timóteo     /     1    /    sim
-       deus graça fé epístola mandato tempo     /     1    /    sim
-       deus graça fé epístola mandato apóstolo     /     2    /    nullll
-       deus graça fé epístola mandato tito     /     1    /    sim
-       deus graça fé epístola mandato paz     /     2    /    nullll
-       deus graça fé epístola conhecimento cristo     /     2    /    nullll
-       deus graça fé epístola conhecimento tito     /     1    /    sim
-       deus graça fé epístola conhecimento paulo     /     1    /    sim
-       deus graça fé epístola conhecimento tempo     /     1    /    sim
-       deus graça fé epístola conhecimento apóstolo     /     2    /    nullll
-       deus graça fé epístola conhecimento paz     /     2    /    nullll
-       deus graça fé epístola conhecimento esperança     /     1    /    sim
-       deus graça fé epístola poder cristo     /     2    /    nullll
-       deus graça fé epístola poder paulo     /     2    /    nullll
-       deus graça fé epístola poder tito     /     1    /    sim
-       deus graça fé epístola poder tempo     /     1    /    sim
-       deus graça fé epístola poder apóstolo     /     2    /    nullll
-       deus graça fé tempo verdade cristo     /     1    /    sim
-       deus graça fé tempo verdade paulo     /     1    /    sim
-       deus graça fé tempo verdade tito     /     1    /    sim
-       deus graça fé tempo verdade espírito     /     1    /    sim
-       deus graça fé tempo verdade hipocrisia     /     1    /    sim
-       deus graça fé pai paulo cristo     /     2    /    nullll
-       deus graça fé pai paulo esperança     /     2    /    nullll
-       deus graça fé pai paulo timóteo     /     1    /    sim
-       deus graça fé pai paulo tempo     /     1    /    sim
-       deus graça fé pai paulo apóstolo     /     2    /    nao
-       deus graça fé pai paulo tito     /     1    /    sim
-       deus graça fé pai paulo epístola     /     2    /    nao
-       deus graça fé pai paulo paz     /     2    /    nao
-       deus graça fé pai paulo mandato     /     2    /    nao
-       deus graça fé verdade espírito hipocrisia     /     1    /    sim
-       deus graça fé verdade cristo tito     /     1    /    sim
-       deus graça fé verdade cristo paulo     /     1    /    sim
-       deus graça fé verdade cristo tempo     /     1    /    sim
-       deus graça fé conhecimento poder cristo     /     2    /    nullll
-       deus graça fé conhecimento poder esperança     /     2    /    nao
-       deus graça fé conhecimento poder paulo     /     1    /    sim
-       deus graça fé conhecimento poder tito     /     1    /    sim
-       deus graça fé conhecimento poder pai     /     2    /    nao
-       deus graça fé conhecimento poder tempo     /     1    /    sim
-       deus graça fé conhecimento poder glória     /     1    /    sim
-       deus graça fé conhecimento poder grandeza     /     1    /    sim
-       deus graça paulo timóteo epístola cristo     /     8    /    nullll
-       deus graça paulo timóteo epístola igreja     /     4    /    nao
-       deus graça paulo timóteo epístola paz     /     8    /    nao
-       deus graça paulo timóteo epístola pai     /     8    /    nao
-       deus graça paulo timóteo epístola parte     /     7    /    nao
-       deus graça paulo timóteo epístola luta     /     1    /    sim
-       deus graça paulo timóteo igreja cristo     /     4    /    nullll
-       deus graça paulo timóteo igreja paz     /     4    /    nao
-       deus graça paulo timóteo igreja epístola     /     4    /    nullll
-       deus graça paulo timóteo igreja parte     /     3    /    nao
-       deus graça paulo timóteo paz cristo     /     8    /    nullll
-       deus graça paulo timóteo paz epístola     /     8    /    nullll
-       deus graça paulo timóteo paz igreja     /     4    /    nullll
-       deus graça paulo timóteo paz pai     /     8    /    nao
-       deus graça paulo timóteo paz parte     /     7    /    nao
-       deus graça paulo timóteo paz luta     /     1    /    sim
-       deus graça paulo timóteo pai cristo     /     8    /    nullll
-       deus graça paulo timóteo pai epístola     /     8    /    nullll
-       deus graça paulo timóteo pai igreja     /     4    /    nao
-       deus graça paulo timóteo pai paz     /     8    /    nullll
-       deus graça paulo timóteo pai parte     /     7    /    nao
-       deus graça paulo timóteo pai luta     /     1    /    sim
-       deus graça paulo timóteo parte cristo     /     7    /    nullll
-       deus graça paulo timóteo parte epístola     /     7    /    nullll
-       deus graça paulo timóteo parte igreja     /     3    /    nullll
-       deus graça paulo timóteo parte paz     /     7    /    nullll
-       deus graça paulo timóteo parte pai     /     7    /    nullll
-       deus graça paulo timóteo parte luta     /     1    /    sim
-       deus graça paulo epístola igreja cristo     /     5    /    nullll
-       deus graça paulo epístola igreja parte     /     4    /    nao
-       deus graça paulo epístola igreja paz     /     5    /    nao
-       deus graça paulo epístola igreja homem     /     1    /    sim
-       deus graça paulo epístola igreja timóteo     /     4    /    nullll
-       deus graça paulo epístola igreja pai     /     5    /    nao
-       deus graça paulo epístola igreja apóstolo     /     2    /    nao
-       deus graça paulo epístola apóstolo cristo     /     8    /    nullll
-       deus graça paulo epístola apóstolo timóteo     /     4    /    nao
-       deus graça paulo epístola apóstolo fé     /     3    /    nullll
-       deus graça paulo epístola apóstolo parte     /     7    /    nao
-       deus graça paulo epístola apóstolo paz     /     7    /    nao
-       deus graça paulo epístola apóstolo vida     /     2    /    nao
-       deus graça paulo epístola parte cristo     /     10    /    nullll
-       deus graça paulo epístola parte timóteo     /     7    /    nullll
-       deus graça paulo epístola parte igreja     /     4    /    nullll
-       deus graça paulo epístola parte fé     /     2    /    nao
-       deus graça paulo epístola parte apóstolo     /     7    /    nullll
-       deus graça paulo epístola parte paz     /     10    /    nao
-       deus graça paulo epístola parte vida     /     2    /    nao
-       deus graça paulo epístola paz cristo     /     11    /    nullll
-       deus graça paulo epístola paz timóteo     /     8    /    nullll
-       deus graça paulo epístola paz igreja     /     5    /    nullll
-       deus graça paulo epístola paz fé     /     2    /    nullll
-       deus graça paulo epístola paz apóstolo     /     7    /    nullll
-       deus graça paulo epístola paz parte     /     10    /    nullll
-       deus graça paulo epístola paz vida     /     2    /    nao
-       deus graça paulo epístola vida cristo     /     2    /    nullll
-       deus graça paulo epístola vida tito     /     1    /    sim
-       deus graça paulo epístola vida timóteo     /     1    /    sim
-       deus graça paulo epístola vida tempo     /     1    /    sim
-       deus graça paulo epístola vida apóstolo     /     2    /    nullll
-       deus graça paulo epístola vida fé     /     1    /    sim
-       deus graça paulo epístola vida paz     /     2    /    nullll
-       deus graça paulo epístola vida esperança     /     1    /    sim
-       deus graça paulo igreja parte cristo     /     4    /    nullll
-       deus graça paulo igreja parte epístola     /     4    /    nullll
-       deus graça paulo igreja parte paz     /     4    /    nao
-       deus graça paulo igreja parte homem     /     1    /    sim
-       deus graça paulo igreja parte timóteo     /     3    /    nullll
-       deus graça paulo igreja parte pai     /     4    /    nao
-       deus graça paulo igreja parte apóstolo     /     2    /    nao
-       deus graça paulo igreja paz cristo     /     5    /    nullll
-       deus graça paulo igreja paz epístola     /     5    /    nullll
-       deus graça paulo igreja paz parte     /     4    /    nullll
-       deus graça paulo igreja paz homem     /     1    /    sim
-       deus graça paulo igreja paz timóteo     /     4    /    nullll
-       deus graça paulo igreja paz pai     /     5    /    nao
-       deus graça paulo igreja paz apóstolo     /     2    /    nao
-       deus graça paulo igreja pai cristo     /     5    /    nullll
-       deus graça paulo igreja pai epístola     /     5    /    nullll
-       deus graça paulo igreja pai parte     /     4    /    nullll
-       deus graça paulo igreja pai paz     /     5    /    nullll
-       deus graça paulo igreja pai homem     /     1    /    sim
-       deus graça paulo igreja pai timóteo     /     4    /    nullll
-       deus graça paulo igreja pai apóstolo     /     2    /    nao
-       deus graça paulo igreja apóstolo cristo     /     2    /    nullll
-       deus graça paulo igreja apóstolo parte     /     2    /    nullll
-       deus graça paulo igreja apóstolo homem     /     1    /    sim
-       deus graça paulo igreja apóstolo pai     /     2    /    nullll
-       deus graça paulo igreja apóstolo epístola     /     2    /    nullll
-       deus graça paulo apóstolo timóteo cristo     /     4    /    nullll
-       deus graça paulo apóstolo timóteo paz     /     4    /    nao
-       deus graça paulo apóstolo timóteo epístola     /     4    /    nullll
-       deus graça paulo apóstolo timóteo parte     /     4    /    nao
-       deus graça paulo apóstolo timóteo pai     /     4    /    nao
-       deus graça paulo apóstolo timóteo conformidade     /     1    /    sim
-       deus graça paulo apóstolo parte cristo     /     7    /    nullll
-       deus graça paulo apóstolo parte timóteo     /     4    /    nullll
-       deus graça paulo apóstolo parte epístola     /     7    /    nullll
-       deus graça paulo apóstolo parte fé     /     2    /    nao
-       deus graça paulo apóstolo parte paz     /     7    /    nao
-       deus graça paulo apóstolo parte igreja     /     2    /    nullll
-       deus graça paulo apóstolo paz cristo     /     7    /    nullll
-       deus graça paulo apóstolo paz timóteo     /     4    /    nullll
-       deus graça paulo apóstolo paz epístola     /     7    /    nullll
-       deus graça paulo apóstolo paz fé     /     2    /    nullll
-       deus graça paulo apóstolo paz parte     /     7    /    nullll
-       deus graça paulo apóstolo paz igreja     /     2    /    nullll
-       deus graça paulo apóstolo vida cristo     /     2    /    nullll
-       deus graça paulo apóstolo vida tito     /     1    /    sim
-       deus graça paulo apóstolo vida timóteo     /     1    /    sim
-       deus graça paulo apóstolo vida tempo     /     1    /    sim
-       deus graça paulo apóstolo vida fé     /     1    /    sim
-       deus graça paulo apóstolo vida paz     /     2    /    nao
-       deus graça paulo apóstolo vida epístola     /     2    /    nullll
-       deus graça paulo apóstolo vida esperança     /     1    /    sim
-       deus graça paulo parte fé cristo     /     2    /    nullll
-       deus graça paulo parte fé esperança     /     2    /    nao
-       deus graça paulo parte fé timóteo     /     1    /    sim
-       deus graça paulo parte fé tempo     /     1    /    sim
-       deus graça paulo parte fé apóstolo     /     2    /    nullll
-       deus graça paulo parte fé tito     /     1    /    sim
-       deus graça paulo parte fé epístola     /     2    /    nullll
-       deus graça paulo parte fé paz     /     2    /    nao
-       deus graça paulo parte fé mandato     /     2    /    nao
-       deus graça paulo parte paz cristo     /     10    /    nullll
-       deus graça paulo parte paz timóteo     /     7    /    nullll
-       deus graça paulo parte paz epístola     /     10    /    nullll
-       deus graça paulo parte paz igreja     /     4    /    nullll
-       deus graça paulo parte paz fé     /     2    /    nullll
-       deus graça paulo parte paz apóstolo     /     7    /    nullll
-       deus graça paulo parte paz vida     /     2    /    nao
-       deus graça paulo parte vida cristo     /     2    /    nullll
-       deus graça paulo parte vida tito     /     1    /    sim
-       deus graça paulo parte vida timóteo     /     1    /    sim
-       deus graça paulo parte vida tempo     /     1    /    sim
-       deus graça paulo parte vida apóstolo     /     2    /    nao
-       deus graça paulo parte vida fé     /     1    /    sim
-       deus graça paulo parte vida paz     /     2    /    nullll
-       deus graça paulo parte vida epístola     /     2    /    nullll
-       deus graça paulo parte vida esperança     /     1    /    sim
-       deus graça paulo paz vida cristo     /     2    /    nullll
-       deus graça paulo paz vida tito     /     1    /    sim
-       deus graça paulo paz vida timóteo     /     1    /    sim
-       deus graça paulo paz vida tempo     /     1    /    sim
-       deus graça paulo paz vida apóstolo     /     2    /    nullll
-       deus graça paulo paz vida fé     /     1    /    sim
-       deus graça paulo paz vida epístola     /     2    /    nullll
-       deus graça paulo paz vida esperança     /     1    /    sim
-       deus graça nó misericórdia vida cristo     /     2    /    nullll
-       deus graça nó misericórdia vida amor     /     2    /    nullll
-       deus graça nó misericórdia causa verdade     /     1    /    sim
-       deus graça nó misericórdia causa cristo     /     2    /    nullll
-       deus graça nó misericórdia causa pai     /     1    /    sim
-       deus graça nó misericórdia causa amor     /     2    /    nullll
-       deus graça amor cristo pai verdade     /     1    /    sim
-       deus graça amor cristo pai poder     /     2    /    nao
-       deus graça amor cristo pai fé     /     3    /    nullll
-       deus graça amor cristo pai oração     /     2    /    nao
-       deus graça amor cristo pai saber     /     2    /    nao
-       deus graça amor cristo pai glória     /     1    /    sim
-       deus graça amor cristo pai esperança     /     2    /    nao
-       deus graça amor cristo pai espírito     /     2    /    nullll
-       deus graça amor cristo pai grandeza     /     1    /    sim
-       deus graça amor cristo poder fé     /     3    /    nullll
-       deus graça amor cristo poder espírito     /     3    /    nullll
-       deus graça amor cristo poder saber     /     3    /    nao
-       deus graça amor cristo poder oração     /     2    /    nullll
-       deus graça amor cristo oração fé     /     3    /    nullll
-       deus graça amor cristo oração poder     /     2    /    nullll
-       deus graça amor cristo oração pai     /     2    /    nullll
-       deus graça amor cristo oração saber     /     2    /    nao
-       deus graça amor cristo oração espírito     /     2    /    nullll
-       deus graça amor cristo oração glória     /     1    /    sim
-       deus graça amor cristo oração esperança     /     2    /    nao
-       deus graça amor cristo oração conhecimento     /     2    /    nao
-       deus graça amor cristo oração grandeza     /     1    /    sim
-       deus graça amor cristo paulo respeito     /     2    /    nullll
-       deus graça amor cristo saber poder     /     3    /    nullll
-       deus graça amor cristo saber fé     /     3    /    nullll
-       deus graça amor cristo saber espírito     /     3    /    nullll
-       deus graça amor cristo saber oração     /     2    /    nullll
-       deus graça amor cristo glória vontade     /     1    /    sim
-       deus graça amor cristo glória riqueza     /     2    /    nao
-       deus graça amor cristo glória sabedoria     /     2    /    nao
-       deus graça amor cristo glória poder     /     1    /    sim
-       deus graça amor cristo glória beneplácito     /     1    /    sim
-       deus graça amor cristo glória grandeza     /     1    /    sim
-       deus graça amor cristo misericórdia nó     /     3    /    nullll
-       deus graça amor cristo misericórdia verdade     /     1    /    sim
-       deus graça amor cristo misericórdia pai     /     1    /    sim
-       deus graça amor cristo misericórdia vida     /     2    /    nao
-       deus graça amor cristo misericórdia causa     /     2    /    nao
-       deus graça amor cristo esperança poder     /     2    /    nao
-       deus graça amor cristo esperança espírito     /     3    /    nullll
-       deus graça amor cristo causa verdade     /     1    /    sim
-       deus graça amor cristo causa pai     /     1    /    sim
-       deus graça amor cristo causa nó     /     2    /    nao
-       deus graça amor cristo causa misericórdia     /     2    /    nullll
-       deus graça amor cristo riqueza glória     /     2    /    nullll
-       deus graça amor cristo riqueza vontade     /     1    /    sim
-       deus graça amor cristo riqueza sabedoria     /     2    /    nao
-       deus graça amor cristo riqueza poder     /     1    /    sim
-       deus graça amor cristo riqueza beneplácito     /     1    /    sim
-       deus graça amor cristo riqueza grandeza     /     1    /    sim
-       deus graça amor glória riqueza cristo     /     2    /    nullll
-       deus graça amor glória riqueza vontade     /     1    /    sim
-       deus graça amor glória riqueza sabedoria     /     2    /    nao
-       deus graça amor glória riqueza poder     /     1    /    sim
-       deus graça amor glória riqueza beneplácito     /     1    /    sim
-       deus graça amor glória riqueza grandeza     /     1    /    sim
-       deus graça amor glória sabedoria cristo     /     2    /    nullll
-       deus graça amor glória sabedoria vontade     /     1    /    sim
-       deus graça amor glória sabedoria riqueza     /     2    /    nullll
-       deus graça amor glória sabedoria poder     /     1    /    sim
-       deus graça amor glória sabedoria beneplácito     /     1    /    sim
-       deus graça amor glória sabedoria grandeza     /     1    /    sim
-       deus graça amor glória coisa cristo     /     1    /    sim
-       deus graça amor glória coisa vontade     /     1    /    sim
-       deus graça amor glória coisa beneplácito     /     1    /    sim
-       deus graça amor glória coisa adoção     /     1    /    sim
-       deus graça amor pai poder oração     /     2    /    nullll
-       deus graça amor pai oração poder     /     2    /    nullll
-       deus graça amor pai saber poder     /     2    /    nao
-       deus graça amor pai saber oração     /     2    /    nao
-       deus graça amor pai esperança poder     /     2    /    nao
-       deus graça amor pai esperança oração     /     2    /    nao
-       deus graça amor poder saber fé     /     3    /    nullll
-       deus graça amor poder saber espírito     /     3    /    nullll
-       deus graça amor poder saber cristo     /     3    /    nullll
-       deus graça amor poder saber oração     /     2    /    nullll
-       deus graça amor oração saber poder     /     2    /    nullll
-       deus graça amor oração esperança poder     /     2    /    nullll
-       deus graça amor oração conhecimento fé     /     2    /    nullll
-       deus graça amor oração conhecimento glória     /     1    /    sim
-       deus graça amor oração conhecimento cristo     /     2    /    nullll
-       deus graça amor oração conhecimento poder     /     1    /    sim
-       deus graça amor oração conhecimento grandeza     /     1    /    sim
-       deus graça amor esperança poder oração     /     2    /    nullll
-       deus graça amor misericórdia vida cristo     /     2    /    nullll
-       deus graça amor misericórdia vida nó     /     2    /    nullll
-       deus graça amor misericórdia causa verdade     /     1    /    sim
-       deus graça amor misericórdia causa cristo     /     2    /    nullll
-       deus graça amor misericórdia causa pai     /     1    /    sim
-       deus graça amor misericórdia causa nó     /     2    /    nullll
-       deus graça amor paulo respeito cristo     /     2    /    nullll
-       deus graça amor causa nó verdade     /     1    /    sim
-       deus graça amor causa nó cristo     /     2    /    nullll
-       deus graça amor causa nó pai     /     1    /    sim
-       deus graça amor causa nó misericórdia     /     2    /    nullll
-       deus graça amor riqueza sabedoria glória     /     2    /    nullll
-       deus graça amor riqueza sabedoria cristo     /     2    /    nullll
-       deus graça amor riqueza sabedoria vontade     /     1    /    sim
-       deus graça amor riqueza sabedoria poder     /     1    /    sim
-       deus graça amor riqueza sabedoria beneplácito     /     1    /    sim
-       deus graça amor riqueza sabedoria grandeza     /     1    /    sim
-       deus graça glória cristo redenção sangue     /     2    /    nao
-       deus graça glória cristo redenção pecado     /     2    /    nao
-       deus graça glória cristo redenção vontade     /     1    /    sim
-       deus graça glória cristo redenção beneplácito     /     1    /    sim
-       deus graça glória cristo redenção adoção     /     1    /    sim
-       deus graça glória sabedoria cristo vontade     /     1    /    sim
-       deus graça glória sabedoria cristo riqueza     /     2    /    nao
-       deus graça glória sabedoria cristo poder     /     1    /    sim
-       deus graça glória sabedoria cristo beneplácito     /     1    /    sim
-       deus graça glória sabedoria cristo amor     /     2    /    nullll
-       deus graça glória sabedoria cristo grandeza     /     1    /    sim
-       deus graça glória sabedoria poder força     /     2    /    nao
-       deus graça glória sabedoria poder século     /     1    /    sim
-       deus graça glória sabedoria poder grandeza     /     1    /    sim
-       deus graça glória sabedoria riqueza cristo     /     2    /    nullll
-       deus graça glória sabedoria riqueza vontade     /     1    /    sim
-       deus graça glória sabedoria riqueza poder     /     1    /    sim
-       deus graça glória sabedoria riqueza beneplácito     /     1    /    sim
-       deus graça glória sabedoria riqueza amor     /     2    /    nullll
-       deus graça glória sabedoria riqueza grandeza     /     1    /    sim
-       deus graça glória sabedoria força poder     /     2    /    nullll
-       deus graça glória sabedoria força século     /     1    /    sim
-       deus graça glória sabedoria força grandeza     /     1    /    sim
-       deus graça glória poder força sabedoria     /     2    /    nullll
-       deus graça glória poder força século     /     1    /    sim
-       deus graça glória poder força grandeza     /     1    /    sim
-       deus graça poder cristo paulo fé     /     2    /    nullll
-       deus graça poder cristo paulo tito     /     1    /    sim
-       deus graça poder cristo paulo tempo     /     1    /    sim
-       deus graça poder cristo paulo apóstolo     /     2    /    nao
-       deus graça poder cristo paulo epístola     /     2    /    nao
-       deus graça poder cristo saber amor     /     3    /    nullll
-       deus graça poder cristo saber fé     /     3    /    nullll
-       deus graça poder cristo saber espírito     /     3    /    nullll
-       deus graça poder cristo saber oração     /     2    /    nao
-       deus graça poder cristo esperança fé     /     3    /    nullll
-       deus graça poder cristo esperança amor     /     2    /    nullll
-       deus graça poder cristo esperança pai     /     3    /    nao
-       deus graça poder cristo esperança oração     /     2    /    nao
-       deus graça poder cristo pai fé     /     3    /    nullll
-       deus graça poder cristo pai amor     /     2    /    nullll
-       deus graça poder cristo pai esperança     /     3    /    nullll
-       deus graça poder cristo pai oração     /     2    /    nao
-       deus graça poder cristo oração amor     /     2    /    nullll
-       deus graça poder paulo apóstolo cristo     /     2    /    nullll
-       deus graça poder paulo apóstolo fé     /     2    /    nullll
-       deus graça poder paulo apóstolo tito     /     1    /    sim
-       deus graça poder paulo apóstolo tempo     /     1    /    sim
-       deus graça poder paulo apóstolo epístola     /     2    /    nao
-       deus graça poder paulo epístola cristo     /     2    /    nullll
-       deus graça poder paulo epístola fé     /     2    /    nullll
-       deus graça poder paulo epístola tito     /     1    /    sim
-       deus graça poder paulo epístola tempo     /     1    /    sim
-       deus graça poder paulo epístola apóstolo     /     2    /    nullll
-       deus graça poder força sabedoria glória     /     2    /    nullll
-       deus graça poder força sabedoria século     /     1    /    sim
-       deus graça poder força sabedoria grandeza     /     1    /    sim
-       deus graça poder saber oração amor     /     2    /    nullll
-       deus graça poder esperança pai fé     /     3    /    nullll
-       deus graça poder esperança pai cristo     /     3    /    nullll
-       deus graça poder esperança pai amor     /     2    /    nullll
-       deus graça poder esperança pai oração     /     2    /    nao
-       deus graça pode
+        senado     /     17    /    nullll
+
+
+
+
+
+
+TEMA: acordo
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        acordo     /     10    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        acordo renan     /     10    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        acordo renan liderança     /     9    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        acordo renan liderança pmdb     /     9    /    nullll
+
+
+
+
+
+
+TEMA: mantém
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        mantém     /     8    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        mantém liderança     /     7    /    nao
+       mantém renan     /     8    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        mantém liderança pmdb     /     7    /    nao
+       mantém renan liderança     /     7    /    nao
+       mantém renan calheiros     /     2    /    nao
+       mantém renan derrota     /     6    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        mantém liderança pmdb renan     /     7    /    nao
+       mantém renan liderança pmdb     /     7    /    nullll
+       mantém renan calheiros liderança     /     1    /    sim
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        mantém liderança pmdb renan calheiros     /     1    /    sim
+       mantém liderança pmdb renan derrota     /     6    /    nullll
+
+
+
+
+
+
+TEMA: bancada
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bancada     /     13    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bancada pmdb     /     10    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bancada pmdb renan     /     10    /    nao
+       bancada pmdb senado     /     7    /    nullll
+       bancada pmdb renancalheiros     /     3    /    nao
+       bancada pmdb mantém     /     1    /    sim
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bancada pmdb renan liderança     /     2    /    nullll
+       bancada pmdb renan calheiros     /     6    /    nullll
+       bancada pmdb renancalheiros senado     /     3    /    nullll
+
+
+
+
+
+
+TEMA: governo
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        governo     /     13    /    nullll
+
+
+
+
+
+
+TEMA: senador
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senador     /     8    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senador renan     /     8    /    nao
+       senador pmdb     /     6    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senador renan liderança     /     4    /    nao
+       senador renan calheiros     /     3    /    nao
+       senador pmdb renan     /     6    /    nao
+       senador pmdb senado     /     2    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senador renan liderança pmdb     /     4    /    nao
+       senador renan calheiros continuum     /     1    /    sim
+       senador pmdb renan liderança     /     4    /    nullll
+       senador pmdb renan calheiros     /     3    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senador renan liderança pmdb acordo     /     1    /    sim
+       senador pmdb renan calheiros continuum     /     1    /    sim
+
+
+
+
+
+
+TEMA: causa
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        causa     /     2    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        causa renan     /     2    /    nullll
+
+
+
+
+
+
+TEMA: programa
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        programa     /     4    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        programa pmdb     /     3    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        programa pmdb renan     /     3    /    nullll
+
+
+
+
+
+
+TEMA: senha
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        senha     /     3    /    nullll
+
+
+
+
+
+
+TEMA: bglh
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bglh     /     1    /    sim
+
+
+
+
+
+
+TEMA: indicação
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        indicação     /     2    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        indicação micheltemer     /     2    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        indicação micheltemer renan     /     2    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        indicação micheltemer renan calheiros     /     2    /    nullll
+
+
+
+
+
+
+TEMA: requião
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        requião     /     2    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        requião renan     /     2    /    nullll
+
+
+
+
+
+
+TEMA: macleod
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        macleod     /     1    /    sim
+
+
+
+
+
+
+TEMA: apoio
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        apoio     /     1    /    sim
+
+
+
+
+
+
+TEMA: sarney
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        sarney     /     1    /    sim
+
+
+
+
+
+
+TEMA: peça
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        peça     /     1    /    sim
+
+
+
+
+
+
+TEMA: 🙄🙄
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        🙄🙄     /     1    /    sim
+
+
+
+
+
+

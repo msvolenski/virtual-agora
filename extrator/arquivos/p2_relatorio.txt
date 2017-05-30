@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 13011 parágrafos.
-Os dados de entrada possuem 157652 palavras.
-Os dados lematizados possuem 170129 palavras.
-Palavras não lematizadas: deixá-la recém-nascido adorá-lo adorá-lo ensiná-los colocá-la se-vos-á se-vos-á se-lhe-á servi-lo te-ei acordá-lo perdê-la-á achá-la-á te-ás acusá-lo amarrá-lo lhe-á possuí-la matá-lo lançá-lo despedi-la te-ei reprová-lo perdê-la-á achá-la-á expulsá-lo argüi-lo lhes-á fazê-lo concedê-lo matemo-lo prendê-lo movê-los se-ão castigá-lo-á se-á matá-lo reedificá-lo deitá-las livrá-lo anunciá-lo servi-los tirá-la amarrá-lo prendê-lo subjugá-lo enviá-los atá-lo matá-lo siro-fenícia lançá-lo fartá-los reprová-lo perdê-la-á salvá-la-á expulsá-lo interrogá-lo se-á interrogá-lo escarnecê-lo açoitá-lo matá-lo concedê-lo matemo-lo prendê-lo interrogá-lo interrogá-lo interrogá-lo tirá-lo embalsamá-lo anunciá-lo redimi-lo procurá-lo te-ei me-eis servi-los apertá-lo ajudá-los introduzi-lo pô-lo introduzi-lo se-á deixá-la tocá-lo se-vos-á conservá-lo anunciá-lo vê-lo perdê-la-á interrogá-lo salvá-las te-ei te-ei te-ás procurá-lo se-vos-á se-vos-á se-lhe-á lhes-ei argüi-lo confundi-lo reconstruí-los-ei castigá-lo-á cortá-la cortá-la levá-lo te-á vê-lo experimentá-las encontrá-la põe-em encontrá-la me-ei conciliá-lo se-ão vê-los tirá-los perdê-la-á defendê-los lhe-ão vê-lo se-lhe-á eliminá-lo fazê-lo ouvi-lo entregá-lo apanhá-lo interrogá-lo se-á ouvi-lo prendê-lo acusá-lo vê-lo vê-lo castigá-lo soltá-lo-ei condená-lo soltá-lo-ei buscá-la lhe-ia matá-lo arrebatá-lo traí-lo matá-lo prendê-lo prendê-lo ouvi-lo se-á conduzi-las reavê-la prendê-lo despertá-lo vê-lo matá-lo denunciá-lo traí-lo dizê-lo preservá-la-á salvá-lo lo-á me-eis vos-íeis me-eis me-eis interrogá-lo me-eis açoitá-lo soltá-lo põe-em me-ás ameacemo-los buscá-los matá-los destruí-los forçá-los reconduzi-los contemplá-la libertá-lo apresentá-lo apresentá-lo circuncidá-los restaurá-lo-ei enviá-los enviá-los frígio-gálata açoitá-los procurá-los trazê-los recebemo-lo matá-lo meio-dia vos-á assassiná-lo enviá-lo te-ei acusá-lo julgá-lo ouvi-lo te-ei mandá-lo meio-dia visitá-lo persuadi-los efetuá-lo co-herdeiros me-ei nos-íamos alcançá-la pô-los fazê-lo vê-lo compreendê-lo fazê-lo servi-los entendê-las suportá-lo submetê-lo escandalizá-lo fazê-lo vos-ei interpretá-las confortá-lo me-ei se-á praticá-las ab-rogar co-herdeiros co-participantes fazê-lo mandá-lo fazê-lo tão-somente tão-somente fazê-las se-ão fazê-los conhecê-lo recém-casadas admoestá-lo conservá-lo te-ei renová-los co-participantes ressuscitá-lo lhe-á salvá-lo lhe-ão recém-nascidas alcançá-la co-participantes co-participante co-participantes me-ei atendê-la conhecê-lo fazemo-lo vê-lo fazê-lo lhe-ei recebê-los fazê-lo lhe-ei te-ei lhe-ei lhe-ei fá-lo-ei lhe-ei se-ão oferecê-lo tão-somente se-á convertê-las adorá-la-ão ajuntá-los te-ei te-ei se-ão adorá-lo reuni-las te-ei adorá-lo 
-O documento lematizado e sem stopwords possui 81147 palavras.
+Os dados de entrada contém 147 parágrafos.
+Os dados de entrada possuem 1403 palavras.
+Os dados lematizados possuem 1540 palavras.
+Não houveram erros durante a lematização.
+O documento lematizado e sem stopwords possui 903 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 48.5277700251 %.
-Em média, cada sentença do texto original possui 12 palavras.
+Compressão do texto após pré-processamento: 35.6379187455 %.
+Em média, cada sentença do texto original possui 10 palavras.
 Em média, cada sentença do texto lematizado sem stop-words possui 6 palavras.

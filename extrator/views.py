@@ -5,7 +5,7 @@ from django.views import generic
 from subprocess import call
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.contrib import messages
-from .models import DadosSelecaoTemas, TextoPreproc, DadosPreproc, ListaVertices, TabelaRanking, ProtoFrase, Sorteio, ListaDeAdjacencias, DadosProtofrases, DadosMapeamentoEExtracao, MapeamentoEExtracaoTextos, ParagrafosExtraidos, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import DadosSelecaoTemas, TextoPreproc, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from django.db import models
 import os.path
 import subprocess
@@ -75,8 +75,7 @@ class ExtratorHomeView(generic.ListView):
     for file in os.listdir("extrator/arquivos/protofrases/"):
         if file.endswith(".txt"):
             new.append(file)
-    #### protofrases do arquivo escolhido ####
-    dadoM = DadosMapeamentoEExtracao.objects.get(id=1)
+    #### protofrases do arquivo escolhido ####    
     arquivo = dadoM.arquivo
     lista = open("extrator/arquivos/protofrases/" + arquivo).readlines()
     count = 0
@@ -96,7 +95,7 @@ class ExtratorHomeView(generic.ListView):
 
 def inserir_dados_de_entrada(request):
     #CRIA/lÊ O ARQUIVO ONDE SERÁ INSERIDO OS DADOS DE ENTRADA
-    ParagrafosExtraidos.objects.all().delete()
+    
     if os.path.exists("extrator/arquivos/p1_texto_inicial_original.txt"):
             programName = "C:/Program Files/Notepad++/notepad++.exe"
             fileName = "extrator/arquivos/p1_texto_inicial_original.txt"
@@ -458,14 +457,7 @@ def ver_arquivo(request, arquivo):
         messages.success(request, "Arquivo aberto com sucesso!")
         return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
 
-    if arquivo == "excessao2":
-        arq = ParagrafosExtraidos.objects.first()
-        arquivo = arq.arquivo
-        programName = "C:/Program Files/Notepad++/notepad++.exe"
-        fileName = "extrator/arquivos/paragrafos/extracao_" + arquivo
-        subprocess.Popen([programName, fileName])
-        messages.success(request, "Arquivo aberto com sucesso!")
-        return redirect(request.META['HTTP_REFERER'])
+  
     
     #abre arquivo no notepad++
     if os.path.exists("extrator/arquivos/" + arquivo +".txt"):
@@ -1312,26 +1304,9 @@ def processarProtofrases(request):
             arq_subdocumento.write(' ')
     arq_subdocumento.close()
 
-    #determina a % de nós que será selecionada na sub rede segundo a % de nós selecionados na rede completa
-    #tabela_graus = OrderedDict()
-    #lista_graus = TabelaRanking.objects.all().order_by('-grau')
-    #for linha in lista_graus:
-    #    tabela_graus[linha.vertice_nome] = linha.grau
-        
-    #print len(tabela_graus)
-    #nos_selecionados = SelecionaSubTemas(tabela_graus)
-    #print len(nos_selecionados)
-    #per = float(int(len(nos_selecionados))/int(len(tabela_graus)))*100
-    #print per
-
-
-
-
-    #subtemas_selecionados = SelecionaSubTemas(tgo)
-    
     #inicia analise de cada tema
     for tema in temas:        
-        print ('processando o tema ' + tema.tema + '...')
+        #print ('processando o tema ' + tema.tema + '...')
         
         #inicia relatórios
         arq_procedimento.write('TEMA: ' + tema.tema + '\n\n')
@@ -1350,7 +1325,6 @@ def processarProtofrases(request):
         
         while flag == 'on': 
             
-            #print 'carregando protofrases não extraídas...'
             #testa se todas as PFs já extrairam frases
             protofrases = ProtoFrasesNew.objects.filter(extracao = 'nao')
             if not protofrases:
@@ -1374,7 +1348,7 @@ def processarProtofrases(request):
                 
                 #separa palavras da protofrase e armazena em uma lista e atualiza subtenas
                 palavras = protofrase.protofrase.split(' ')
-                subtemas_selecionados = []
+                subtemas_pre_selecionados = []
                 
                 #gera sub-documento e recebe o numero de sentencas
                 numero_de_sentencas, seten = GeraSubDocumento(palavras)                
@@ -1393,39 +1367,41 @@ def processarProtofrases(request):
                 else:                  
                     #Se o conjunto de palavras da pf já foi executado, pega o resultado
                     if set(palavras) in memoria_pf:
-                        ind = memoria_pf.index(set(palavras))
-                        print palavras
-                        print memoria_pf[ind]                        
-                        subtemas_selecionados = memoria_pf[ind] 
+                        ind = memoria_pf.index(set(palavras))                                    
+                        subtemas_pre_selecionados = memoria_pf[ind] 
                     #senão, chama algoritmo de seleção de temas  
                     else:                                
                         #gera nova rede
                         tgo = GeraRede(request)
                     
                         #seleciona os subtemas
-                        subtemas_selecionados = SelecionaSubTemas(tgo)
+                        subtemas_pre_selecionados = SelecionaSubTemas(tgo)
 
                         #atualiza memória de execuções   
                         memoria_pf.append(set(palavras))
-                        memoria_st.append(set(subtemas_selecionados))
+                        memoria_st.append(set(subtemas_pre_selecionados))
                     
                     #adiciona novas protofrases no buffer 
                     convergiu = 'nao'                   
-                    for subtema in subtemas_selecionados:
+                    for subtema in subtemas_pre_selecionados:
                         if subtema not in palavras:
-                            convergiu = 'sim'
-                            pf_i = ' '.join(palavras)
-                            pf = pf_i + ' ' + subtema
-                            buffer_pfs.append(pf)                               
+                            ultimo_tema = palavras[-1]
+                            bigramas = ListaDeAdjacencias.objects.filter(vertice_i__exact=ultimo_tema)
+                            possiveis_subtemas = bigramas.values_list('vertice_f', flat=True)                         
+                            #só acrescenta subtema se ele for vertice de entrada da ultima palavra da protofrase
+                            if subtema in list(possiveis_subtemas):
+                                convergiu = 'sim'
+                                pf_i = ' '.join(palavras)
+                                pf = pf_i + ' ' + subtema
+                                buffer_pfs.append(pf)                               
                     if convergiu == 'nao':
                         arq_procedimento.write('nullll' + '\n')
                     else:
-                        arq_procedimento.write(protofrase.extracao + '\n')                       
-                   
+                        arq_procedimento.write(protofrase.extracao + '\n')                
                     pfn += 1     
 
             print 'atualizando banco de dados...'
-           
+
             #atualiza protofrases no BD
             arq_procedimento.write('\n\n\n')
             iteracao +=1
@@ -1433,7 +1409,10 @@ def processarProtofrases(request):
             if buffer_pfs:
                 ProtoFrasesNew.objects.all().delete()
                 aList = [ProtoFrasesNew(protofrase=pf, extracao='nao',frase='null') for pf in buffer_pfs]    
-                ProtoFrasesNew.objects.bulk_create(aList)            
+                ProtoFrasesNew.objects.bulk_create(aList)
+            else:
+                ProtoFrasesNew.objects.all().delete()
+                            
         
         if convergiu_tema == 'nao':
             f = ExtracaoNew(tema = tema.tema, protofrase = 'tema nao convergiu', frase = 'tema nao convergiu')

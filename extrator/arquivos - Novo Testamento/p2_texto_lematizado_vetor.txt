@@ -5070,8 +5070,7 @@ o
 seu
 lepra
 .
-dizer
-lhe
+disselhe
 ,
 então
 ,
@@ -5145,7 +5144,8 @@ dizer
 .
 eu
 ir
-curá-lo
+curar
+-
 o
 .
 mas
@@ -13293,7 +13293,7 @@ para
 o
 lado
 de
-cesareia
+cesaréia
 de
 filipe
 ,
@@ -14441,8 +14441,7 @@ achar
 um
 estáter
 .
-toma
-o
+tomão
 e
 entrega
 lhe
@@ -26810,6 +26809,7 @@ ali
 orar
 .
 procurar
+em
 o
 diligentemente
 simão
@@ -33934,6 +33934,7 @@ morto
 .
 e
 interrogar
+em
 o
 ,
 dizer
@@ -34159,6 +34160,7 @@ o
 e
 trazer
 lhe
+o
 .
 quando
 ele
@@ -50074,6 +50076,8 @@ o
 pobre
 ,
 anunciar
+se
+lhe
 o
 evangelho
 .
@@ -52419,6 +52423,7 @@ enfermo
 .
 e
 dizer
+lhe
 .
 nado
 levar
@@ -67865,7 +67870,8 @@ o
 direito
 de
 o
-todo-poderoso
+todo
+poderoso
 deus
 .
 então
@@ -73661,7 +73667,8 @@ o
 outro
 .
 ter
-lhe-ia
+lhe
+ir
 ,
 porventura
 ,
@@ -94023,7 +94030,7 @@ quando
 este
 haver
 decidido
-soltá-los
+solto
 o
 .
 vós
@@ -103300,7 +103307,6 @@ profeta
 ,
 de
 nome
-bae
 jesus
 ,
 o
@@ -108145,6 +108151,7 @@ de
 todo
 ,
 ressuscitar
+o
 de
 entre
 o
@@ -117728,7 +117735,7 @@ o
 ilha
 ,
 chamado
-público
+públio
 ,
 o
 qual
@@ -117756,7 +117763,7 @@ febre
 o
 pai
 de
-público
+públio
 .
 paulo
 ir
@@ -148509,7 +148516,7 @@ grego
 ir
 constrangido
 o
-circundar
+circuncidar
 se
 .
 e
@@ -156977,6 +156984,7 @@ mim
 não
 julgar
 haver
+-
 o
 alcançado
 .
@@ -191051,7 +191059,8 @@ de
 vir
 ,
 o
-todo-poderoso
+todo
+poderoso
 .
 eu
 ,

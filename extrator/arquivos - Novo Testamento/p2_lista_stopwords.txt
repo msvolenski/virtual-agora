@@ -1,3 +1,5 @@
+tirar
+tira
 …
 /
 '
@@ -33,7 +35,6 @@ z
 https
 http
 //
-...
 #
 @
 >
@@ -185,6 +186,9 @@ estivessem
 estiver
 estivermos
 estiverem
+fazer
+fez
+fiz
 hei
 há
 havemos
@@ -284,4 +288,9 @@ https
 vtnc
 tbm
 RT
+RT
+rt
+pra
+para
+
 RT

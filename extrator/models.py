@@ -11,7 +11,6 @@ class TextoPreproc(models.Model):
     def __str__(self):
         return self.vertice
 
-
 class DadosPreproc(models.Model):
      corretor = models.CharField('Corretor', max_length=10, default='off')
      palavras_texto_original = models.CharField('PalavrasTO', max_length=10)
@@ -55,62 +54,6 @@ class TabelaRanking(models.Model):
 
      def __str__(self):
         return self.vertice_nome
-
-class ProtoFrase(models.Model):
-     vertice_inicial = models.CharField('vi', max_length=50)
-     protofrase = models.TextField('pf')
-
-     def __str__(self):
-        return self.vertice_inicial
-
-class Sorteio(models.Model):
-    vertice = models.CharField('vertice_s', max_length=50)
-    posicao = models.IntegerField('posicao')
-
-    def __str__(self):
-        return self.vertice
-
-class DadosProtofrases(models.Model):
-    protofrase = models.TextField('dpf')
-    repeticao = models.IntegerField('rep')
-
-    def __str__(self):
-        return self.protofrase
-
-class DadosMapeamentoEExtracao(models.Model):
-    arquivo = models.CharField('arq', max_length=100)
-    protofrase = models.TextField('dpf')
-    num_sent_docPreproc = models.IntegerField('nsdp')
-    num_sent_docPreprocLemCSW = models.IntegerField('nsdplc')
-    num_sent_docPreprocLemSSW = models.IntegerField('nsdpls')
-    extracaoParagrafosEtapa1 = models.TextField('etapa1')
-
-
-    def __str__(self):
-        return self.arquivo
-
-
-class MapeamentoEExtracaoTextos(models.Model):
-    paragrafo = models.IntegerField('par')
-    doc_preproc = models.TextField('d_p')
-    doc_preprocLemCSSW = models.TextField('d_plc')
-    doc_preprocLemSSW = models.TextField('d_pls')
-
-    def __str__(self):
-        return self.doc_preproc
-
-
-class ParagrafosExtraidos(models.Model):
-    paragrafo = models.TextField('Paragrafo')
-    protofrase = models.TextField('Proto-Frase_atual')
-    arquivo = models.TextField('arquivo')
-    dataHora = models.TextField('Data_Hora')
-    etapa = models.IntegerField('etapa')
-    protofrase_original = models.TextField('proto-frase_original')
-
-
-    def __str__(self):
-        return self.paragrafo
 
 
 class DadosSelecaoTemas(models.Model):

@@ -4763,7 +4763,7 @@ da
 sua
 lepra
 .
-disse-lhe
+disselhe
 ,
 então
 ,
@@ -4832,7 +4832,7 @@ disse
 .
 eu
 irei
-curá-lo
+curá-
 lo
 .
 mas
@@ -5623,7 +5623,8 @@ casa
 .
 e
 ,
-levantando-se
+levantando
+se
 ,
 partiu
 para
@@ -11181,7 +11182,8 @@ eu
 não
 temais
 .
-respondendo-lhe
+respondendo
+lhe
 pedro
 ,
 disse
@@ -12439,7 +12441,7 @@ para
 os
 lados
 de
-cesareia
+cesaréia
 de
 filipe
 ,
@@ -12516,7 +12518,8 @@ jesus
 lhe
 afirmou
 .
-bem-aventurado
+bem
+aventurado
 és
 ,
 simão
@@ -13509,7 +13512,7 @@ acharás
 um
 estáter
 .
-toma-o
+tomão
 e
 entrega-lhes
 por
@@ -15920,7 +15923,8 @@ jumentinho
 .
 desprendei-a
 e
-trazei-mos
+trazei
+mos
 .
 e
 ,
@@ -16573,7 +16577,8 @@ dirigindo-se
 ao
 segundo
 ,
-disse-lhe
+disse
+lhe
 a
 mesma
 coisa
@@ -19695,7 +19700,8 @@ os
 seus
 conservos
 para
-dar-lhes
+dar
+lhes
 o
 sustento
 a
@@ -23158,7 +23164,8 @@ tomaram
 o
 caniço
 e
-davam-lhe
+davam
+lhe
 com
 ele
 na
@@ -25047,7 +25054,8 @@ e
 ali
 orava
 .
-procuravam-no
+procuravam
+no
 diligentemente
 simão
 e
@@ -25130,7 +25138,8 @@ se
 quiseres
 ,
 podes
-purificar-me
+purificar
+me
 .
 jesus
 ,
@@ -25574,7 +25583,8 @@ coletoria
 e
 disse-lhe
 .
-segue-me
+segue
+me
 .
 ele
 se
@@ -27955,7 +27965,8 @@ porcos
 e
 entraram
 a
-rogar-lhe
+rogar
+lhe
 que
 se
 retirasse
@@ -31091,7 +31102,8 @@ saliva
 aos
 olhos
 e
-impondo-lhe
+impondo
+lhe
 as
 mãos
 ,
@@ -31707,7 +31719,8 @@ os
 mortos
 .
 e
-interrogaram-no
+interrogaram
+no
 ,
 dizendo
 .
@@ -31918,10 +31931,12 @@ quando
 vos
 sofrerei
 .
-trazei-mos
+trazei
+mo
 .
 e
-trouxeram-lhe
+trouxeram
+lho
 .
 quando
 ele
@@ -32048,7 +32063,8 @@ o
 espírito
 imundo
 ,
-dizendo-lhe
+dizendo
+lhe
 .
 espírito
 mudo
@@ -36663,7 +36679,8 @@ pôde
 .
 antecipou-se
 a
-ungir-me
+ungir
+me
 para
 a
 sepultura
@@ -36914,7 +36931,8 @@ e
 eles
 começaram
 a
-entristecer-se
+entristecer
+se
 e
 a
 dizer-lhe
@@ -38956,7 +38974,8 @@ que
 morrera
 .
 após
-certificar-se
+certificar
+se
 ,
 pela
 informação
@@ -39707,7 +39726,8 @@ incenso
 vendo-o
 ,
 zacarias
-turbou-se
+turbou
+se
 ,
 e
 apoderou-se
@@ -42683,9 +42703,11 @@ eli
 ,
 filho
 de
-mata-te
+mata
+te
 ,
-mata-te
+mata
+te
 ,
 filho
 de
@@ -42838,7 +42860,8 @@ jorim
 este
 ,
 de
-mata-te
+mata
+te
 ,
 filho
 de
@@ -43446,7 +43469,8 @@ evangelizar
 os
 pobres
 .
-enviou-me
+enviou
+me
 para
 proclamar
 libertação
@@ -44634,7 +44658,8 @@ teus
 pecados
 ou
 .
-levanta-te
+levanta
+te
 e
 anda
 .
@@ -46776,7 +46801,9 @@ e
 aos
 pobres
 ,
-anunciar
+anuncia
+se
+lhes
 o
 evangelho
 .
@@ -48971,7 +48998,8 @@ os
 enfermos
 .
 e
-dizer
+disse
+lhes
 .
 nada
 leveis
@@ -51643,7 +51671,8 @@ chegando
 de
 viagem
 ,
-procurou-me
+procurou
+me
 ,
 e
 eu
@@ -56431,7 +56460,8 @@ chamado
 teu
 filho
 .
-trata-me
+trate
+me
 como
 um
 dos
@@ -57612,7 +57642,8 @@ ele
 se
 arrepender
 ,
-perdoa-lhe
+perdoa
+lhe
 .
 se
 ,
@@ -58998,7 +59029,8 @@ jerusalém
 ,
 e
 vai
-cumprir-se
+cumprir
+se
 ali
 tudo
 quanto
@@ -60650,7 +60682,8 @@ temiam
 o
 povo
 .
-observando-o
+observando
+o
 ,
 subornaram
 emissários
@@ -63057,7 +63090,8 @@ curou
 .
 então
 ,
-dirigindo-se
+dirigindo
+se
 jesus
 aos
 principais
@@ -63384,7 +63418,8 @@ tu
 o
 cristo
 ,
-dize-nos
+dize
+nos
 .
 então
 ,
@@ -63424,7 +63459,8 @@ homem
 à
 direita
 do
-todo-poderoso
+todo
+poderoso
 deus
 .
 então
@@ -64044,7 +64080,8 @@ que
 se
 dirá
 .
-bem-aventuradas
+bem
+aventuradas
 as
 estéreis
 ,
@@ -64203,7 +64240,8 @@ e
 ,
 aproximando-se
 ,
-trouxeram-lhe
+trouxeram
+lhe
 vinagre
 ,
 dizendo
@@ -64261,7 +64299,8 @@ tu
 o
 cristo
 .
-salva-te
+salva
+te
 a
 ti
 mesmo
@@ -68870,7 +68909,9 @@ uns
 aos
 outros
 .
-ter-lhe-ia
+ter
+lhe
+ia
 ,
 porventura
 ,
@@ -69041,7 +69082,8 @@ ter
 com
 jesus
 ,
-pediam-lhe
+pediam
+lhe
 que
 permanecesse
 com
@@ -72440,7 +72482,8 @@ quem
 é
 que
 procura
-matar-te
+matar
+te
 .
 replicou-lhes
 jesus
@@ -76925,7 +76968,8 @@ jesus
 ao
 vê-lo
 ,
-lançou-se
+lançou
+se
 lhe
 aos
 pés
@@ -79408,7 +79452,7 @@ nele
 mesmo
 .
 e
-glorificá
+glorifica
 lo-á
 imediatamente
 .
@@ -84867,7 +84911,8 @@ maria
 .
 ela
 ,
-voltando-se
+voltando
+se
 ,
 lhe
 disse
@@ -85520,7 +85565,8 @@ havia
 também
 pão
 .
-disse-lhes
+disse
+lhes
 jesus
 .
 trazei
@@ -85736,7 +85782,8 @@ me
 amas
 .
 pedro
-entristeceu-se
+entristeceu
+se
 por
 ele
 lhe
@@ -88076,7 +88123,7 @@ quando
 este
 havia
 decidido
-soltá-los
+solta
 lo
 .
 vós
@@ -90471,7 +90518,8 @@ entre
 o
 povo
 .
-levantaram-se
+levantaram
+se
 ,
 porém
 ,
@@ -93684,7 +93732,8 @@ helenistas
 mas
 eles
 procuravam
-tirar-lhe
+tirar
+lhe
 a
 vida
 .
@@ -93980,7 +94029,8 @@ vendo
 a
 pedro
 ,
-sentou-se
+sentou
+se
 .
 ele
 ,
@@ -96113,7 +96163,8 @@ meio
 do
 anjo
 .
-parecia-lhe
+parecia
+lhe
 ,
 antes
 ,
@@ -96706,7 +96757,6 @@ profeta
 ,
 de
 nome
-bae
 jesus
 ,
 o
@@ -97016,7 +97066,8 @@ braço
 poderoso
 .
 e
-suportou-lhes
+suportou
+lhes
 os
 maus
 costumes
@@ -99594,7 +99645,8 @@ passa
 à
 macedônia
 e
-ajuda-nos
+ajuda
+nos
 .
 assim
 que
@@ -101227,6 +101279,7 @@ de
 todos
 ,
 ressuscitando
+o
 dentre
 os
 mortos
@@ -102441,7 +102494,8 @@ os
 seus
 preços
 ,
-achou-se
+achou
+se
 que
 montavam
 a
@@ -102998,7 +103052,8 @@ e
 tendo-os
 confortado
 ,
-despediu-se
+despediu
+se
 ,
 e
 partiu
@@ -104823,7 +104878,8 @@ comandante
 .
 é-me
 permitido
-dizer-te
+dizer
+te
 alguma
 coisa
 .
@@ -106196,7 +106252,8 @@ pois
 tem
 algo
 que
-dizer-te
+dizer
+te
 .
 tomou-o
 pela
@@ -106214,7 +106271,8 @@ perguntou-lhe
 que
 tens
 a
-comunicar-me
+comunicar
+me
 .
 respondeu
 ele
@@ -109709,7 +109767,8 @@ bote
 e
 o
 deixaram
-afastar-se
+afastar
+se
 .
 enquanto
 amanhecia
@@ -110180,7 +110239,7 @@ da
 ilha
 ,
 chamado
-público
+públio
 ,
 o
 qual
@@ -110206,7 +110265,7 @@ febre
 o
 pai
 de
-público
+públio
 .
 paulo
 foi
@@ -117824,7 +117883,8 @@ fiquei
 ,
 e
 procuram
-tirar-me
+tirar
+me
 a
 vida
 .
@@ -126585,7 +126645,8 @@ regime
 da
 lei
 .
-fiz-me
+fiz
+me
 fraco
 para
 com
@@ -127592,7 +127653,8 @@ vergonhoso
 o
 tosquiar-se
 ou
-rapar-se
+rapar
+se
 ,
 cumpre-lhe
 usar
@@ -132481,7 +132543,8 @@ da
 macedônia
 voltar
 a
-encontrar-me
+encontrar
+me
 convosco
 ,
 e
@@ -139292,7 +139355,8 @@ grego
 foi
 constrangido
 a
-circundar-se
+circuncidar
+se
 .
 e
 isto
@@ -139832,7 +139896,8 @@ mediante
 a
 lei
 ,
-segue-se
+segue
+se
 que
 morreu
 cristo
@@ -147204,7 +147269,7 @@ mim
 ,
 não
 julgo
-havê
+havê-
 lo
 alcançado
 .
@@ -179307,7 +179372,8 @@ de
 vir
 ,
 o
-todo-poderoso
+todo
+poderoso
 .
 eu
 ,
@@ -179747,7 +179813,8 @@ teu
 primeiro
 amor
 .
-lembra-te
+lembra
+te
 ,
 pois
 ,
@@ -183557,7 +183624,8 @@ da
 terra
 ,
 e
-foi-lhes
+foi
+lhes
 dito
 que
 não
@@ -189925,7 +189993,8 @@ a
 primeira
 ressurreição
 .
-bem-aventurado
+bem
+aventurado
 e
 santo
 é
