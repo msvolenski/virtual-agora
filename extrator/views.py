@@ -5,7 +5,7 @@ from django.views import generic
 from subprocess import call
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.contrib import messages
-from .models import DadosSelecaoTemas, TextoPreproc, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import DadosSelecaoTemas, TextoPreproc, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from django.db import models
 import os.path
 import subprocess
@@ -69,28 +69,7 @@ class ExtratorHomeView(generic.ListView):
 
     return #Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto).distinct()
 
-  def get_context_data(self, **kwargs):
-    ### arquivos txt ####
-    new =[]
-    for file in os.listdir("extrator/arquivos/protofrases/"):
-        if file.endswith(".txt"):
-            new.append(file)
-    #### protofrases do arquivo escolhido ####    
-    arquivo = dadoM.arquivo
-    lista = open("extrator/arquivos/protofrases/" + arquivo).readlines()
-    count = 0
-    new2 = []
-    for i in lista:
-        if count > 2:
-            new2.append(i.strip())
-        count = count + 1
-    str1 = ' '.join(new2)
-    context = super(ExtratorHomeView, self).get_context_data(**kwargs)
-    context['vertices'] = ListaVertices.objects.all()
-    context['arquivos'] = new
-    context['proto_frases'] = new2
-    #context['b'] = a
-    return context
+  
 
 
 def inserir_dados_de_entrada(request):
@@ -172,7 +151,7 @@ def salvar_dados_iniciais(request):
         execucao.corretor = 'off'
         execucao.save()      
     except:
-        DadosPreproc.objects.create(id=1, corretor='off')
+        DadosPreproc.objects.create(id=1, corretor='off',flag_testapalavra='nao')
 
     messages.success(request, "Dados salvos com sucesso!")
     return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
@@ -1194,14 +1173,52 @@ def selecionar_temas(request):
             break
 
     #Pré-seleciona os temas excluindo os não-substantivos
+    
+    #armazena palavras para o teste    
+    execucao = DadosPreproc.objects.get(id=1)
+    if execucao.flag_testapalavra.strip() == 'nao':
+        print 'aaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        TestaPalavra.objects.all().delete()
+        aList = [TestaPalavra(palavra = vertice, condicao='aguardando', resultado='null') for vertice in vertices_selecionados.values()]    
+        TestaPalavra.objects.bulk_create(aList)        
+        execucao.flag_testapalavra = 'sim'
+        execucao.save()
+
+    
+    
+    
+    
+    continuar, palav = testa_substantivo(request)
+    if continuar == 'sim':
+        return render(request, 'extrator/extrator_home.html',{'testa_sub':'sim' , 'palavra_candidata':palav})
+        
+    
+    print 'dormir...'
+    execucao.flag_testapalavra = 'nao'
+    execucao.save()
+    time.sleep(500)
+       
+    
     palavras_lematizadas = arq_lematizador.readlines()    
     for index, vertice in enumerate(vertices_selecionados):
         for linha in palavras_lematizadas:            
-            if vertices_selecionados.values()[index] == linha.split(' ')[1]:                                
+            if vertices_selecionados.values()[index] == linha.split(' ')[1]:
+                                               
                 if linha.split(' ')[2][0] == 'N' or linha.split(' ')[2][0] == 'U': 
                     temas_preselecionados[vertice] = vertices_selecionados.values()[index]       
                     break
-  
+    
+    
+    # #Pré-seleciona os temas excluindo os não-substantivos
+    # palavras_lematizadas = arq_lematizador.readlines()    
+    # for index, vertice in enumerate(vertices_selecionados):
+    #     for linha in palavras_lematizadas:            
+    #         if vertices_selecionados.values()[index] == linha.split(' ')[1]:
+    #             print linha                                 
+    #             if linha.split(' ')[2][0] == 'N' or linha.split(' ')[2][0] == 'U': 
+    #                 temas_preselecionados[vertice] = vertices_selecionados.values()[index]       
+    #                 break
+    
     #escreve relatório
     arq_relatorio.write('- Parâmetros: ' + 'delta: ' + str(dados.delta) + '%; ' + 'f: ' + str(dados.f) + '% dos nós totais (' + str(f) + ' nós)' + '\n' )
     arq_relatorio.write('- Temas pré-selecionados' + '(' + str(len(temas_preselecionados)) +'):' + '\n\n')
@@ -1807,3 +1824,68 @@ def executar_passos_2_a_5(request):
     relatorio_passo_5_3 = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","r",'utf-8').read()
    
     return render(request, 'extrator/extrator_home_4.html', {'rel_ind': relatorio_passo_4_1, 'rel_temas':relatorio_passo_4_2, 'relatorio_preproc':relatorio_passo_2, 'tempo':tempo_total, 'rel_ext':relatorio_passo_5_2, 'rel_repr':relatorio_passo_5_3, 'rel_proc5':relatorio_passo_5_1 })
+
+def testa_substantivo(request):
+    arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
+    palavras_lematizadas = arq_lematizador.readlines()    
+    
+    #carrega palavras nao testadas em uma lista
+    try:
+        palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)
+    except:
+        return 'nao','null'
+
+    for palavra in palavras:
+        tags = []  
+        
+        #Busca todas as tags possíveis para a palavra
+        for linha in palavras_lematizadas:            
+            tokens = linha.strip().split(' ')
+            
+            if palavra in tokens: 
+                          
+                for token in tokens:            
+                    pattern = re.compile("^[A-Z].")
+                    eh_tag = pattern.match(token)
+                    if eh_tag:
+                        tags.append(token)
+                
+        #verifica se todas as referências são à substantivo
+        repeticoes = 0
+        for tag in tags:
+            pattern = re.compile("^N|U")
+            eh_substantivo = pattern.match(tag)
+            if eh_substantivo:
+                repeticoes += 1
+
+        #caso a palavra seja substantivo, atualiza BD 
+        print len(tags)
+        print repeticoes
+        print '\n'
+        if len(tags) == repeticoes:
+            pal = TestaPalavra.objects.get(palavra__exact=palavra)
+            pal.condicao = 'finalizado'
+            pal.resultado ='sim'
+            pal.save()
+            
+        #caso nao, retorna atividade pro usuário
+        else:
+            return 'sim', palavra
+
+    return 'nao','null'
+
+def testa_substantivo_usuario(request , palavra_candidata):
+    resposta = request.POST['opcao_usr']
+
+    pal = TestaPalavra.objects.get(palavra__exact=palavra_candidata)  
+    if resposta == 'sim':        
+        pal.condicao = 'finalizado'
+        pal.resultado ='sim'
+        pal.save()
+    if resposta == 'nao':
+        pal.condicao = 'finalizado'
+        pal.resultado ='nao'
+        pal.save()    
+    
+    return redirect('http://127.0.0.1:8000/agora/extrator/selecionartemas/')
+

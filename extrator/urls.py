@@ -34,4 +34,7 @@ urlpatterns = [
     url(r'^extrator/mostratabela/(?P<tipo>[-\w]+)/$', views.mostra_tabela, name='mostra_tabela'),   
     url(r'^extrator/calcularindice/$', views.calcula_indice, name='calularindice'),
     url(r'^extrator/selecionartemas/$', views.selecionar_temas, name='selecionar_temas'),
+
+    url(r'^extrator/teste/$', views.testa_substantivo, name='testa_substantivo'),
+    url(r'^extrator/testeuser/(?P<palavra_candidata>[-\w]+)/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario')
 ]

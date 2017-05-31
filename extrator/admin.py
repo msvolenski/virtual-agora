@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TextoPreproc, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import TextoPreproc, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 
 # Register your models here.
 
@@ -12,7 +12,7 @@ class ListaVerticesAdmin(admin.ModelAdmin):
 
 
 class DadosPreprocAdmin(admin.ModelAdmin):
-  list_display = ['corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
+  list_display = ['flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
 
 class TabelaRankingAdmin(admin.ModelAdmin):
   list_display = ['vertice_nome','vertice_numero','grau', 'grau_norm', 'betweenness','betweenness_norm','closeness','closeness_norm', 'potenciacao']
@@ -36,6 +36,9 @@ class ProtoFrasesNewAdmin(admin.ModelAdmin):
 class ExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'frase']
 
+class TestaPalavraAdmin(admin.ModelAdmin):
+  list_display = ['palavra','condicao', 'resultado']
+
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']
 
@@ -51,5 +54,5 @@ admin.site.register(TemasNew, TemasNewAdmin)
 admin.site.register(ProtoFrasesNew, ProtoFrasesNewAdmin)
 admin.site.register(ExtracaoNew, ExtracaoNewAdmin)
 admin.site.register(DadosExtracaoNew, DadosExtracaoNewAdmin)
-
+admin.site.register(TestaPalavra, TestaPalavraAdmin)
 

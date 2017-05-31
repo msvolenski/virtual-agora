@@ -114,7 +114,10 @@
               <a href="{% url 'extrator:corretor' %}" style="text-decoration: none;" class="set-buttons" >Corrigir ortografia</a>
               <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
               <a href="{% url 'extrator:executar_passos_2_a_5'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;" class="set-buttons">Executar PASSOS 2 a 5</a>
+              <a href="{% url 'extrator:testa_substantivo'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;" class="set-buttons">Testa Substantivo</a>
+
             </div>
+
           </div>        
         </div>
 
@@ -385,6 +388,26 @@
 							<a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>    
 						</div>	
 					</div>            
+				</div>
+			</div>
+		</div>            
+	{% endif %}
+
+  {%if testa_sub %}
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog" id="modal-dialog-mob">
+				<div class="modal-content">
+					<div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+					<div style="border:1px solid black;margin:10px 30px 10px 30px">              
+						<div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra_candidata}}</b></div>
+					</div>  
+					<div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div> 
+					<div style="padding:40px;display:block;margin-left:200px;">
+            <form action="{% url 'extrator:testa_substantivo_usuario' palavra_candidata %}" method="POST" role="form" enctype="multipart/form-data">						              
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="sim" name="opcao_usr">
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="nao" name="opcao_usr">
+					  </form>
+          </div>       
 				</div>
 			</div>
 		</div>            

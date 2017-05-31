@@ -20,6 +20,7 @@ class DadosPreproc(models.Model):
      palavras_por_sentenca_lssw = models.IntegerField('ppsl')
      palavras_por_sentenca_org = models.IntegerField('ppso')
      nome_rel_protofrase = models.CharField('nome_rel_pfs', max_length=100)
+     flag_testapalavra = models.TextField('Flag')
 
      def __str__(self):
         return self.palavras_texto_original
@@ -118,3 +119,12 @@ class DadosExtracaoNew(models.Model):
 
     def __str__(self):
         return self.tema
+
+class TestaPalavra(models.Model):
+    palavra  = models.TextField('palavra')
+    condicao = models.TextField('Condicao')
+    resultado = models.TextField('Resultado')
+    
+
+    def __str__(self):
+        return self.palavra
