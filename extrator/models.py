@@ -57,10 +57,7 @@ class TabelaRanking(models.Model):
         return self.vertice_nome
 
 
-class DadosSelecaoTemas(models.Model):
-    delta = models.IntegerField('distancia_relativa_minima')
-    f = models.IntegerField('porcentagem_minima_dos_nos_totais_na_cauda_longa')
-    fb = models.IntegerField('frequencia_do_bigrama')
+class DadosSelecaoTemas(models.Model):   
     p_grau = models.FloatField('Peso Graus')
     p_clos = models.FloatField('Peso Betweeness')
     p_bet = models.FloatField('Peso Closeness')   
@@ -122,9 +119,24 @@ class DadosExtracaoNew(models.Model):
 
 class TestaPalavra(models.Model):
     palavra  = models.TextField('palavra')
+    numero = models.IntegerField('nnumero')
     condicao = models.TextField('Condicao')
     resultado = models.TextField('Resultado')
     
 
     def __str__(self):
         return self.palavra
+
+class ListaDeSubstantivos(models.Model):
+    palavra  = models.TextField('palavra')
+    substantivo = models.TextField('Substantivo')
+    
+    def __str__(self):
+        return self.palavra
+
+class ParametrosDeAjuste(models.Model):
+    ident = models.IntegerField('Identificacao',default=1)
+    k_betweenness = models.IntegerField('K_betweenness',default=100)
+    dr_delta_min = models.IntegerField('Delta_distancia_relativa_min',default=5)
+    f_corte = models.IntegerField('Freq_corte_nos_com_dr_min',default=10)
+    f_min_bigramas = models.IntegerField('Freq_min_de_bigramas',default=50)

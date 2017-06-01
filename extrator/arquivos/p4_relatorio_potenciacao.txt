@@ -8,7 +8,7 @@ ETAPA 1 - DETERMINANDO OS PESOS DAS MÉTRICAS
               Restrição: soma dos pesos = 1
 
    - Ajuste à lei de potência
-              Dados: Exclui os 5.0% últimos vértices - 18 vértices.
+              Dados: Exclui os 0.0% últimos vértices - 0 vértices.
               Cálculo de Alpha: Métodos dos mínimos quadrados
               Alpha de ajuste:: Maximun Likelihood fitting
               Erro = |alpha de ajuste - alpha| 

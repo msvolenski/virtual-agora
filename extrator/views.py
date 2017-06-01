@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
 from django.views import generic
 from subprocess import call
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.contrib import messages
-from .models import DadosSelecaoTemas, TextoPreproc, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from django.db import models
 import os.path
 import subprocess
@@ -763,6 +764,14 @@ def metricas_e_ranking(request):
 
     #Objetivo: calcular as métricas de centralidade da rede e gerar tabelas    
     
+     #carrega parametros de ajuste
+    try:
+        parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+        
+    except ObjectDoesNotExist:
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
+        parametros.save()
+
     #Lê arquivo que contém a lista de adjacenicas
     arq_listaAdjacencias = codecs.open("C:/virtual-agora/extrator/arquivos/p3_lista_adjacencias.txt","r","utf-8")
     listaAdjacencias = arq_listaAdjacencias.readlines()
@@ -795,7 +804,7 @@ def metricas_e_ranking(request):
     print "calculando métrica graus..."
     tabela_graus = nx.degree(rede, weight='weight')    
     print "calculando métrica betweenness..."
-    tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=len(rede.nodes()))    
+    tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
     #tabela_closeness = nx.closeness_vitality(rede,weight='weight' )
     print "calculando métrica closeness..."
     tabela_closeness = nx.closeness_centrality(rede) 
@@ -884,7 +893,7 @@ def calcula_indice(request):
     #Inicializa arquivos a serem escritos
     arq_tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt", 'w', 'utf-8')    
     arq_matriz_pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt", 'w', 'utf-8')
-    arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt", 'w')
+    arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt", 'w')   
    
     #Prepara o BD para receber os novos pesos
     pesos = PesosEAlpha.objects.all()
@@ -933,7 +942,7 @@ def calcula_indice(request):
         tabela_potenciacao_temp_ordenada = sorted(tabela_potenciacao_temp.items(),key=lambda x: x[1], reverse=True)
 
         # exclui os 5% ultimos temas quando pertinente (n>0)
-        corte = 0.05
+        corte = 0.00
         numero_vertices_excluidos = int(corte*len(tabela_potenciacao_temp_ordenada))
         if numero_vertices_excluidos > 0:            
             del tabela_potenciacao_temp_ordenada[-numero_vertices_excluidos:]
@@ -949,9 +958,7 @@ def calcula_indice(request):
                 del tabela_potenciacao_temp_ordenada[-1:]
 
         #Faz a regressão linear e calcula alpha da tabela
-        valores_potenciacao = [valor[1] for valor in tabela_potenciacao_temp_ordenada]
-       
-        
+        valores_potenciacao = [valor[1] for valor in tabela_potenciacao_temp_ordenada]        
         fit = powerlaw.Fit(valores_potenciacao)
        
         #calcula o MLF dos dados (o quão ajustados estão)
@@ -1086,26 +1093,33 @@ def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
 
 
 def selecionar_temas(request):
+            
+    #carrega parametros de ajuste
+    try:
+        parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+        
+    except ObjectDoesNotExist:
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
+        parametros.save()
     
+    #carrega dados
+    dados = DadosSelecaoTemas.objects.get(id=1)
+
     #inicializa arquivos a serem escritos e lidos
     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'w')    
     arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
+    arq_distancias = codecs.open("extrator/arquivos/p4_relatorio_distancias_relativas.txt", 'w')
     tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()
 
     #inicializa dados do BD
     TemasNew.objects.all().delete()
     
-    # define dados para detecção da cauda (delta = 2=5%, frequencia 10 iterações)    
-    dados = DadosSelecaoTemas.objects.get(id=1)
-    dados.delta = 2
-    dados.f = 10
-    f = (dados.f/100)*len(tabela_potenciacao)
-    dados.fb = 50 #porcentagem do bigrama
-    dados.save()
-
+    #calculo da frequencia absoluta de corte
+    f = int((parametros.f_corte/100)*len(tabela_potenciacao))    
+    
     tabela_bigramas = ListaDeAdjacencias.objects.all()
-    tabela_potenciacao_objs = TabelaRanking.objects.all().order_by('-potenciacao')
-
+    tabela_potenciacao_objs = TabelaRanking.objects.all().order_by('-potenciacao')    
+    
     #cria listas e dicionários
     tabela_potenciacao_numeros = OrderedDict()
     distancias_relativas_novo = OrderedDict()
@@ -1119,9 +1133,7 @@ def selecionar_temas(request):
     arq_relatorio.write('\n\n\n')
     arq_relatorio.write('ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS')
     arq_relatorio.write('\n\n')
-    arq_relatorio.write('- Métrica: ' + str(dados.p_grau) + '%' + ' graus; '+ str(dados.p_bet) + '%' + ' betwenness; '+ str(dados.p_clos) + '%' + ' closeness;' + '\n' )
-
-    
+    arq_relatorio.write('- Métrica: ' + str(dados.p_grau) + '%' + ' graus; '+ str(dados.p_bet) + '%' + ' betwenness; '+ str(dados.p_clos) + '%' + ' closeness;' + '\n' )    
     
     #cria tabela com indice potenciação
     for linha in tabela_potenciacao:
@@ -1138,6 +1150,11 @@ def selecionar_temas(request):
             distancias_relativas_novo[tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1]] = 100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial) 
         except:
             distancias_relativas_novo[tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1]] = 0 
+        try:
+            arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )        
+        except:
+            arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = 0 \n')
+
     
     #gera o grafico das distancias relativas
     matplotlib.rc('font', family='Arial')    
@@ -1152,16 +1169,17 @@ def selecionar_temas(request):
    
     #Passo 1: selecionando os vertices mais significaivos (fora da cauda longa)    
 
-    #procura início da cauda
+    #procura início da cauda    
     contador = 0
     cauda_encontrada = 'nao'
+    inicio_cauda = distancias_relativas_novo.keys()[-1].split('->')[1]    
     for index, vertices in enumerate(distancias_relativas_novo):      
-        if contador == 10:
+        if contador == f:
             cauda_encontrada = 'sim'
             break
-        if distancias_relativas_novo.values()[index] <= dados.delta and contador < 10:
+        if distancias_relativas_novo.values()[index] <= parametros.dr_delta_min and contador < f:
             contador = contador + 1
-        if distancias_relativas_novo.values()[index] > dados.delta:
+        if distancias_relativas_novo.values()[index] > parametros.dr_delta_min:
             contador = 0        
             inicio_cauda = vertices 
      
@@ -1172,55 +1190,31 @@ def selecionar_temas(request):
         if str(linha.vertice_numero) == str(vertice_inicio_cauda):
             break
 
-    #Pré-seleciona os temas excluindo os não-substantivos
-    
-    #armazena palavras para o teste    
+    #Pré-seleciona os temas excluindo os não-substantivos    
+    #armazena palavras para iniciar o teste    
     execucao = DadosPreproc.objects.get(id=1)
-    if execucao.flag_testapalavra.strip() == 'nao':
-        print 'aaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    if execucao.flag_testapalavra.strip() == 'nao':       
         TestaPalavra.objects.all().delete()
-        aList = [TestaPalavra(palavra = vertice, condicao='aguardando', resultado='null') for vertice in vertices_selecionados.values()]    
+        aList = [TestaPalavra(palavra = nome, numero=int(numero), condicao='aguardando', resultado='null') for numero,nome in vertices_selecionados.items()]    
         TestaPalavra.objects.bulk_create(aList)        
         execucao.flag_testapalavra = 'sim'
-        execucao.save()
-
+        execucao.save()    
     
-    
-    
-    
+    #chama função de teste enquanto houver palavras a serem verificadas
     continuar, palav = testa_substantivo(request)
     if continuar == 'sim':
         return render(request, 'extrator/extrator_home.html',{'testa_sub':'sim' , 'palavra_candidata':palav})
         
-    
-    print 'dormir...'
+    #ao termino, atualiza execuçao para off    
     execucao.flag_testapalavra = 'nao'
     execucao.save()
-    time.sleep(500)
-       
-    
-    palavras_lematizadas = arq_lematizador.readlines()    
-    for index, vertice in enumerate(vertices_selecionados):
-        for linha in palavras_lematizadas:            
-            if vertices_selecionados.values()[index] == linha.split(' ')[1]:
-                                               
-                if linha.split(' ')[2][0] == 'N' or linha.split(' ')[2][0] == 'U': 
-                    temas_preselecionados[vertice] = vertices_selecionados.values()[index]       
-                    break
-    
-    
-    # #Pré-seleciona os temas excluindo os não-substantivos
-    # palavras_lematizadas = arq_lematizador.readlines()    
-    # for index, vertice in enumerate(vertices_selecionados):
-    #     for linha in palavras_lematizadas:            
-    #         if vertices_selecionados.values()[index] == linha.split(' ')[1]:
-    #             print linha                                 
-    #             if linha.split(' ')[2][0] == 'N' or linha.split(' ')[2][0] == 'U': 
-    #                 temas_preselecionados[vertice] = vertices_selecionados.values()[index]       
-    #                 break
-    
+
+    #cria vetor de vertices selecionados
+    temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
+    temas_preselecionados = OrderedDict(temas_preselecionados)
+            
     #escreve relatório
-    arq_relatorio.write('- Parâmetros: ' + 'delta: ' + str(dados.delta) + '%; ' + 'f: ' + str(dados.f) + '% dos nós totais (' + str(f) + ' nós)' + '\n' )
+    arq_relatorio.write('- Parâmetros: ' + 'delta: ' + str(parametros.dr_delta_min) + '%; ' + 'f: ' + str(parametros.f_corte) + '% dos nós totais (' + str(f) + ' nós)' + '\n' )
     arq_relatorio.write('- Temas pré-selecionados' + '(' + str(len(temas_preselecionados)) +'):' + '\n\n')
     for tema in temas_preselecionados.values():
         arq_relatorio.write(tema.encode('utf-8') + '\n')
@@ -1228,7 +1222,7 @@ def selecionar_temas(request):
     #passo 2: definindo os nós-temas baseado na vizinhança e frequencia
     arq_relatorio.write('\n\nETAPA 2: SELEÇÃO FINAL DOS TEMAS\n\n')
     arq_relatorio.write('- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas\n')
-    arq_relatorio.write('- Parâmetro: fb(frequência mínima de bigramas): ' + str(dados.fb) + "% do total de bigramas\n")
+    arq_relatorio.write('- Parâmetro: fb(frequência mínima de bigramas): ' + str(parametros.f_min_bigramas) + "% do total de bigramas\n")
     arq_relatorio.write('- Resultados: \n\n')
     arq_relatorio.write('Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa \n\n')
 
@@ -1246,7 +1240,7 @@ def selecionar_temas(request):
             bigramas = tabela_bigramas.filter(vertice_i=tema_i,vertice_f=tema_f)            
             for bigrama in bigramas:  
                 arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
-                if bigrama.peso >= (dados.fb*tabela_graus_entrada[tema_f])/100:
+                if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
                     temas_excluidos.append(tema_f)
     
     temas_selecionados = temas_preselecionados.values()    
@@ -1270,8 +1264,8 @@ def selecionar_temas(request):
 
     #fecha arquvos
     arq_relatorio.close()
-    arq_lematizador.close()    
-
+    arq_lematizador.close()
+    arq_distancias.close()
     
     #lê relatório
     rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
@@ -1833,17 +1827,19 @@ def testa_substantivo(request):
     try:
         palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)
     except:
-        return 'nao','null'
-
+        return 'nao','null'    
+    
+    #cria lista de substantivos
+    lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
+    lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
     for palavra in palavras:
-        tags = []  
+        tags = [] 
+        pal = TestaPalavra.objects.get(palavra__exact=palavra)    
         
         #Busca todas as tags possíveis para a palavra
         for linha in palavras_lematizadas:            
-            tokens = linha.strip().split(' ')
-            
-            if palavra in tokens: 
-                          
+            tokens = linha.strip().split(' ')            
+            if palavra in tokens:                           
                 for token in tokens:            
                     pattern = re.compile("^[A-Z].")
                     eh_tag = pattern.match(token)
@@ -1856,36 +1852,67 @@ def testa_substantivo(request):
             pattern = re.compile("^N|U")
             eh_substantivo = pattern.match(tag)
             if eh_substantivo:
-                repeticoes += 1
-
+                repeticoes += 1        
+        
+        #print lista_substantivos        
         #caso a palavra seja substantivo, atualiza BD 
-        print len(tags)
-        print repeticoes
-        print '\n'
-        if len(tags) == repeticoes:
-            pal = TestaPalavra.objects.get(palavra__exact=palavra)
+        if palavra in lista_palavras:
+            #analise se a palavra esta na lista de substantivos
+            for key, value in lista_substantivos:
+                if palavra == key:
+                    cond = value
+                    pal.condicao = 'finalizado'
+                    pal.resultado = cond
+                    pal.save()                     
+        
+        elif len(tags) == repeticoes:            
             pal.condicao = 'finalizado'
             pal.resultado ='sim'
             pal.save()
-            
-        #caso nao, retorna atividade pro usuário
-        else:
-            return 'sim', palavra
 
+        #caso nao haja classificação como sunstantivo, atualiza BD 
+        elif repeticoes == 0:
+            pal.condicao = 'finalizado'
+            pal.resultado ='nao'
+            pal.save()
+        
+        #Na impossibilidade de vertificar, pergunta ao usuário
+        else:            
+            return 'sim', palavra
     return 'nao','null'
 
 def testa_substantivo_usuario(request , palavra_candidata):
     resposta = request.POST['opcao_usr']
 
+    #carrega palavra do BD 
     pal = TestaPalavra.objects.get(palavra__exact=palavra_candidata)  
+    
     if resposta == 'sim':        
         pal.condicao = 'finalizado'
         pal.resultado ='sim'
         pal.save()
+        try:
+            sub = ListaDeSubstantivos.objects.get(palavra__exact=pal)            
+        except:
+            sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo='sim')
+            sub.save()
+
     if resposta == 'nao':
         pal.condicao = 'finalizado'
         pal.resultado ='nao'
-        pal.save()    
+        pal.save() 
+        try:
+            sub = ListaDeSubstantivos.objects.get(palavra__exact=pal)
+        except:
+            sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo='nao')
+            sub.save()   
     
-    return redirect('http://127.0.0.1:8000/agora/extrator/selecionartemas/')
+    return selecionar_temas(request)
+
+def limpar_lista_subtantivos(request):
+    ListaDeAdjacencias.objects.all().delete()
+    messages.success(request, "Lista esvaziada com sucesso!")
+    return redirect(request.META['HTTP_REFERER'])
+
+    
 

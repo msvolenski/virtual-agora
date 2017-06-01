@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TextoPreproc, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 
 # Register your models here.
 
@@ -22,13 +22,16 @@ class ListaDeAdjacenciasAdmin(admin.ModelAdmin):
 
 
 class DadosSelecaoTemasAdmin(admin.ModelAdmin):
-  list_display = ['p_grau','p_bet','p_clos','delta','f','fb']
+  list_display = ['p_grau','p_bet','p_clos']
 
 class PesosEAlphaAdmin(admin.ModelAdmin):
   list_display = ['alpha','alphaesp','erro','p_grau','p_betw','p_close']
 
 class TemasNewAdmin(admin.ModelAdmin):
   list_display = ['tema','irt','irt_p']
+
+class ListaDeSubstantivosAdmin(admin.ModelAdmin):
+  list_display = ['palavra','substantivo']
 
 class ProtoFrasesNewAdmin(admin.ModelAdmin):
   list_display = ['protofrase','extracao','frase']
@@ -37,13 +40,19 @@ class ExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'frase']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
-  list_display = ['palavra','condicao', 'resultado']
+  list_display = ['palavra','numero','condicao', 'resultado']
+
+class ParametrosDeAjusteAdmin(admin.ModelAdmin):
+  list_display = ['ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
 
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']
 
 
+ListaDeSubstantivos
+
 admin.site.register(ListaDeAdjacencias, ListaDeAdjacenciasAdmin)
+admin.site.register(ListaDeSubstantivos, ListaDeSubstantivosAdmin)
 admin.site.register(TextoPreproc, TextoPreprocAdmin)
 admin.site.register(DadosPreproc, DadosPreprocAdmin)
 admin.site.register(ListaVertices, ListaVerticesAdmin)
@@ -55,4 +64,4 @@ admin.site.register(ProtoFrasesNew, ProtoFrasesNewAdmin)
 admin.site.register(ExtracaoNew, ExtracaoNewAdmin)
 admin.site.register(DadosExtracaoNew, DadosExtracaoNewAdmin)
 admin.site.register(TestaPalavra, TestaPalavraAdmin)
-
+admin.site.register(ParametrosDeAjuste, ParametrosDeAjusteAdmin)
