@@ -1,0 +1,49 @@
+#circle {
+    position:absolute;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	background: #33CCFF;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	text-align: center;
+    font-size: 1vw;
+    font-family: verdana;
+       
+}
+
+#refer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+      
+}
+
+.quadro_paragrafo{
+    position:fixed;
+    border:black;
+    top:75%;
+    left:70%;    
+    width:30%;
+    height: 25%;
+    background: red;
+    visibility:hidden;
+
+}
+
+
+ul {
+    position: absolute;
+    top: 50%; left: 50%; /*for example purposes only*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    position: absolute;
+    -webkit-transition: all 2s linear;
+    -moz-transition: all 2s linear;
+    transition: all 2s linear;
+}
+

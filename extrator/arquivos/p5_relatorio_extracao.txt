@@ -6,21 +6,11 @@
   renan  /  bancada pmdb mantém renan calheiros liderança partido  /  1  /  bancada do pmdb mantém renan calheiros na liderança do partido
   pmdb  /  bancada pmdb mantém renan calheiros liderança partido  /  1  /  bancada do pmdb mantém renan calheiros na liderança do partido
   liderança  /  bancada pmdb mantém renan calheiros liderança partido  /  1  /  bancada do pmdb mantém renan calheiros na liderança do partido
-  senado  /  tema nao convergiu  /  1  /  null - nao convergiu
+  líder  /  tema nao convergiu  /  1  /  null - nao convergiu
   acordo  /  tema nao convergiu  /  1  /  null - nao convergiu
-  mantém  /  bancada pmdb mantém renan calheiros liderança partido  /  2  /  bancada do pmdb mantém renan calheiros na liderança do partido
   bancada  /  bancada pmdb mantém renan calheiros liderança partido  /  1  /  bancada do pmdb mantém renan calheiros na liderança do partido
   governo  /  tema nao convergiu  /  1  /  null - nao convergiu
   senador  /  puto pprt senador pmdb acordo decidir manter renan liderança partido  /  1  /  to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido
   senador  /  ajuda sarney renan calheiros continuum líder pmdb senado afirmar senador após reunião  /  2  /  com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião
-  causa  /  tema nao convergiu  /  1  /  null - nao convergiu
-  programa  /  tema nao convergiu  /  1  /  null - nao convergiu
-  senha  /  tema nao convergiu  /  1  /  null - nao convergiu
-  bglh  /  pmdb renancalheiros senado brasil renan entrar twitou vrs bglh renan responder coisa  /  1  /  # pmdb # renancalheiros # senado # brasil renan entrou no meu tt e twitou vrs bglh renan , me responde uma coisa
-  indicação  /  tema nao convergiu  /  1  /  null - nao convergiu
-  requião  /  tema nao convergiu  /  1  /  null - nao convergiu
-  macleod  /  frase connor macleod renan calheiros  /  1  /  '' frase de connor macleod ou renan calheiros
-  apoio  /  requião pergunta retirado apoio renan compensado malo igual rodrigar lourar  /  1  /  requião pergunta se retirada de apoio a renan será compensada com mala igual a de rodrigo loures
-  sarney  /  ajuda sarney renan calheiros continuum líder pmdb senado afirmar senador após reunião  /  1  /  com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião
-  peça  /  micheltemer_ofc peça renan parar amaciar ego zaga orcrim crítico governo  /  1  /  @ micheltemer_ofc peça p/ renan parar de amaciar o ego da zaga da orcrim fazendo críticas ao seu governo
-  🙄🙄  /  tudo ficar estar renan líder gabiranzinza 😭😭😭😭😭 preciso dormir cedo acordo 5:00 faculdade semana prova😥😥😥😥 querer mãe 🙄🙄 renan lobão lindo aécio  /  1  /  tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭😭😭 preciso dormir cedo , acordo 5:00 pra ir pra faculdade e to na semana de prova😥😥😥😥 n quero ir pra mãe 🙄🙄 renan , lobão , lindinho e aécio
+  micheltemer  /  tema nao convergiu  /  1  /  null - nao convergiu
+  brasil247  /  tema nao convergiu  /  1  /  null - nao convergiu

@@ -4,8 +4,8 @@ RELATÓRIO FINAL - TEMAS
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
 - Métrica: 0.8% graus; 0.1% betwenness; 0.1% closeness;
-- Parâmetros: delta: 5%; f: 10% dos nós totais (37 nós)
-- Temas pré-selecionados(13):
+- Parâmetros: delta: 4%; f: 10% dos nós totais (37 nós)
+- Temas pré-selecionados(16):
 
 renan
 pmdb
@@ -20,6 +20,9 @@ bancada
 governo
 senador
 derrota
+renancalheiros
+micheltemer
+brasil247
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -37,6 +40,7 @@ renan -> derrota - 7/7 - 100.0%
 pmdb -> renan - 3/52 - 5.76923076923%
 pmdb -> senado - 4/18 - 22.2222222222%
 pmdb -> acordo - 1/10 - 10.0%
+pmdb -> renancalheiros - 4/4 - 100.0%
 liderança -> pmdb - 16/37 - 43.2432432432%
 liderança -> senado - 1/18 - 5.55555555556%
 liderança -> partido - 2/11 - 18.1818181818%
@@ -45,6 +49,7 @@ calheiros -> líder - 5/17 - 29.4117647059%
 líder -> pmdb - 4/37 - 10.8108108108%
 líder -> partido - 7/11 - 63.6363636364%
 líder -> governo - 3/13 - 23.0769230769%
+líder -> brasil247 - 1/9 - 11.1111111111%
 senado -> brasil - 4/4 - 100.0%
 acordo -> renan - 8/52 - 15.3846153846%
 partido -> senado - 9/18 - 50.0%
@@ -53,8 +58,11 @@ brasil -> bancada - 3/7 - 42.8571428571%
 bancada -> pmdb - 10/37 - 27.027027027%
 senador -> renan - 2/52 - 3.84615384615%
 senador -> pmdb - 3/37 - 8.10810810811%
+renancalheiros -> senado - 4/18 - 22.2222222222%
+micheltemer -> renan - 2/52 - 3.84615384615%
+brasil247 -> brasil247 - 1/9 - 11.1111111111%
 
-- Temas selecionados(8):
+- Temas selecionados(10):
 
 renan
 pmdb
@@ -64,12 +72,15 @@ acordo
 bancada
 governo
 senador
+micheltemer
+brasil247
 
 
-- Temas excluídos(5):
+- Temas excluídos(6):
 
 calheiros
 derrota
+renancalheiros
 partido
 brasil
 senado

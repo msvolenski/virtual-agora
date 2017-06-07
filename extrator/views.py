@@ -51,6 +51,7 @@ import threading
 import multiprocessing as mp
 import signal
 import pylab
+from operator import itemgetter
 
 
 
@@ -70,7 +71,161 @@ class ExtratorHomeView(generic.ListView):
 
     return #Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto).distinct()
 
+class ResultadosExtratorHomeView(generic.ListView):
+  template_name = 'extrator/extrator_resultados.html'
   
+  def get_queryset(self):
+    return  
+  
+  def get_context_data(self, **kwargs):
+    
+    temas = TemasNew.objects.all().values_list('tema', flat=True)
+    tabela_graus_n = TabelaRanking.objects.all().values_list('vertice_nome','grau_norm')
+    
+
+    #paramentros genericos (raios)
+    raio_par = 15
+    menor_grau = 1
+    for i in xrange(1, len(temas)):
+        tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+        
+        #menor grau
+        if tema.grau_norm < menor_grau:
+            menor_grau = tema.grau_norm 
+    
+    raio_vertices = float(20/menor_grau)
+
+    #caclula parmetros do tema central
+    irt_central = TemasNew.objects.get(tema__exact=temas[0])
+    diametro_central = int(raio_vertices*irt_central.irt)
+    raio_central = int(diametro_central/2)
+    tema_central = (temas[0], diametro_central, raio_central)
+    
+    #calcula parametros dos parágrafos do tema central
+    tema_central_par = []
+    paragrafos = DadosExtracaoNew.objects.filter(tema__exact=temas[0])
+    delta = int(180/len(paragrafos))
+    posicao = 0
+    
+    for paragrafo in paragrafos:
+        if paragrafo.protofrase.strip() != 'tema nao convergiu':
+            distancia = int(tema_central[2] + raio_par + 100*(1-paragrafo.irse))             
+            pos_x = int(distancia*math.cos(math.radians(posicao)))
+            pos_y = int(distancia*math.sin(math.radians(posicao)))
+            posicao = posicao + delta
+            nome = (temas[0] + str(pos_x) + str(pos_y))
+            tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome ))   
+    
+    
+    #Define os angulos dos temas e inicializa vetor
+    delta_grau = float(360/(len(temas) - 1))    
+    grau = delta_grau
+    vetor_temas =[]   
+    
+    #menor raio
+    t = TemasNew.objects.all()
+    diametro_2_vertice = int(raio_vertices*t[1].irt)
+    raio_2_vertice = int(diametro_2_vertice/2)
+    menor_distancia_do_tema = raio_central + raio_2_vertice + 10
+    tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
+    distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
+    
+    for i in xrange(1, len(temas)):
+        
+        #calcula parametros
+        tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+        irt = TemasNew.objects.get(tema__exact=temas[i])
+        diametro_vertice = int(raio_vertices*irt.irt)
+        raio_vertice = int(diametro_vertice/2)
+        distancia_centro = distancia_do_centro*(1 - tema.grau_norm)
+        pos_x = int(distancia_centro*math.cos(math.radians(grau)))
+        pos_y = int(distancia_centro*math.sin(math.radians(grau)))              
+
+        #carrega vetor      
+        vetor_temas.append((temas[i], distancia_centro ,pos_x, pos_y, diametro_vertice, raio_vertice ))
+        grau = grau + delta_grau
+
+    
+    #maior posição de y (para valores negativos)   
+    maior_distancia = 0
+    for v in vetor_temas:
+        if v[2] < maior_distancia:
+            maior_distancia = v[2]
+        
+    maior_distancia = int(math.fabs(maior_distancia)) + 200
+
+    #parêmetro de definição do tamanho dos vertices
+    
+    #define parametros dos paragrafos
+    vetor_paragrafos = []
+    for tema in temas:
+        paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)
+       
+        delta = int(180/len(paragrafos))
+        posicao = 0
+        for paragrafo in paragrafos:
+            if paragrafo.protofrase.strip() != 'tema nao convergiu':
+                distancia = 0
+                for vetor in vetor_temas:
+                    if vetor[0] == tema:
+                        distancia = int(vetor[5] + raio_par + 100*(1-paragrafo.irse))             
+                pos_x = int(distancia*math.cos(math.radians(posicao)))
+                pos_y = int(distancia*math.sin(math.radians(posicao)))
+                posicao = posicao + delta
+                nome = (tema + str(pos_x) + str(pos_y))
+                print nome
+                vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome ))    
+        
+    print vetor_temas
+
+
+    context = super(ResultadosExtratorHomeView, self).get_context_data(**kwargs)
+    
+    
+    
+    context['vetor_temas'] = vetor_temas  
+    context['temas'] = temas   
+    context['tema_central'] = tema_central
+    context['vetor_paragrafos'] = vetor_paragrafos
+    context['tema_central_par'] = tema_central_par
+    context['maior_distancia'] = maior_distancia
+    #context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
+    #context['answer_form'] = TopicAnswerForm()
+    #auth_user = self.request.user
+    #user = auth_user.user
+    #projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
+    #t = Tutorial.objects.get(user=user)
+    #context['tutorial'] = t.status
+    #context['req_user'] = self.request.user
+    #context['username'] = auth_user
+    #context['user'] = user
+    #context['topic_user'] = User.objects.get(user=auth_user)
+    #context['topic_users'] = TopicAnswer.objects.all()
+    #context['nickname'] = user.nickname
+    #context['projeto'] = projeto_nome.projeto
+    #context['sigla'] = user.projeto
+    return context
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def inserir_dados_de_entrada(request):
@@ -1913,6 +2068,43 @@ def limpar_lista_subtantivos(request):
     ListaDeAdjacencias.objects.all().delete()
     messages.success(request, "Lista esvaziada com sucesso!")
     return redirect(request.META['HTTP_REFERER'])
+
+def ajustar_parametro(request,opcao):
+    
+    #carrega parametros de ajuste
+    try:
+        parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+        
+    except ObjectDoesNotExist:
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
+        parametros.save()
+
+
+    if opcao == 'opcao0':    
+        novo_parametro = request.POST['valor_k']
+        parametros.k_betweenness = int(novo_parametro)
+        parametros.save()
+        
+    
+    if opcao == 'opcao1':            
+        novo_parametro = request.POST['valor_delta']
+        parametros.dr_delta_min = int(novo_parametro)
+        parametros.save()
+      
+    
+    if opcao == 'opcao2':            
+        novo_parametro = request.POST['valor_fc']
+        parametros.f_corte = int(novo_parametro)
+        parametros.save()
+       
+    
+    if opcao == 'opcao3':            
+        novo_parametro = request.POST['valor_fb']
+        parametros.f_min_bigramas = int(novo_parametro)
+        parametros.save()   
+    
+  
+    return render(request, 'extrator/extrator_home.html', {'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas})      
 
     
 

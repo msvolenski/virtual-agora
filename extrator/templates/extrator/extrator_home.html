@@ -246,41 +246,59 @@
     <a href="{% url 'extrator:limpar_lista_subtantivos'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;"
               class="set-buttons">Limpar lista de Substantivos</a>
     <div style="padding:5px;text-align: center;margin-top:20px"><b>PASSO 5</b></div>
+    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;margin-bottom:20px;"
+              class="set-buttons">Carregar parâmetros</a>
     <div style="padding:5px;text-align: center;">Cálculo da métrica betweenness - valor de k </div>
     <div style="padding:5px;text-align: center;">
-      <form>
+      
+       
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
         k = 
-        <input type="text" name="valor_k" value="k" size="1">
+        <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1">
         % dos nós da rede
         <input type="submit" value="Submit">
       </form>
+    
+    
     </div>
     <div style="padding:5px;text-align: center;margin-top:35px;">Seleção dos temas - Distância relativa mínima entre temas-candidato </div>
     <div style="padding:5px;text-align: center;">
-      <form>
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
         delta = 
-        <input type="text" name="valor_delta" value="delta" size="1">
+        <input style="width:50px" type="number" step="1" name="valor_delta" value={{valordelta}} size="1">
         %
         <input type="submit" value="Submit">
       </form>
+    
+    
     </div>
     <div style="padding:5px;text-align: center;margin-top:35px;">Seleção dos temas - Frequência de corte da Distância relativa mínima </div>
     <div style="padding:5px;text-align: center;">
-      <form>
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
         fc = 
-        <input type="text" name="valor_fc" value="fc" size="1">
+        <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">
         % dos nós com dr < delta
         <input type="submit" value="Submit">
       </form>
+    
+    
     </div>
     <div style="padding:5px;text-align: center;margin-top:35px;">Definição dos temas - Frequência mínima do bigrama </div>
     <div style="padding:5px;text-align: center;margin-bottom:20px">
-      <form>
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">>
         fb = 
-        <input type="text" name="valor_fb" value="fb" size="1">
+        <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1">
         % de todos os bigramas do tema
         <input type="submit" value="Submit">
       </form>
+    
+    
     </div>
 
   </div>

@@ -110,11 +110,30 @@ TEMA: liderança
 
 
 
-TEMA: senado
+TEMA: líder
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        senado     /     17    /    nullll
+        líder     /     17    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        líder pmdb     /     11    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        líder pmdb senado     /     11    /    nullll
+       líder pmdb renan     /     9    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        líder pmdb renan calheiros     /     8    /    nullll
 
 
 
@@ -144,48 +163,6 @@ TEMA: acordo
  - ITERACAO 3:
           proto-frase / tamanho da rede (sentencas) / extraiu?
         acordo renan liderança pmdb     /     9    /    nullll
-
-
-
-
-
-
-TEMA: mantém
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        mantém     /     8    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        mantém liderança     /     7    /    nao
-       mantém renan     /     8    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        mantém liderança pmdb     /     7    /    nao
-       mantém renan liderança     /     7    /    nao
-       mantém renan calheiros     /     2    /    nao
-       mantém renan derrota     /     6    /    nullll
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        mantém liderança pmdb renan     /     7    /    nao
-       mantém renan liderança pmdb     /     7    /    nullll
-       mantém renan calheiros liderança     /     1    /    sim
-
-
-
- - ITERACAO 4:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        mantém liderança pmdb renan calheiros     /     1    /    sim
-       mantém liderança pmdb renan derrota     /     6    /    nullll
 
 
 
@@ -280,163 +257,34 @@ TEMA: senador
 
 
 
-TEMA: causa
+TEMA: micheltemer
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        causa     /     2    /    nao
+        micheltemer     /     2    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        causa renan     /     2    /    nullll
-
-
-
-
-
-
-TEMA: programa
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        programa     /     4    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        programa pmdb     /     3    /    nao
+        micheltemer renan     /     2    /    nao
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        programa pmdb renan     /     3    /    nullll
+        micheltemer renan calheiros     /     2    /    nullll
 
 
 
 
 
 
-TEMA: senha
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senha     /     3    /    nullll
-
-
-
-
-
-
-TEMA: bglh
+TEMA: brasil247
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        bglh     /     1    /    sim
-
-
-
-
-
-
-TEMA: indicação
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        indicação     /     2    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        indicação micheltemer     /     2    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        indicação micheltemer renan     /     2    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        indicação micheltemer renan calheiros     /     2    /    nullll
-
-
-
-
-
-
-TEMA: requião
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        requião     /     2    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        requião renan     /     2    /    nullll
-
-
-
-
-
-
-TEMA: macleod
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        macleod     /     1    /    sim
-
-
-
-
-
-
-TEMA: apoio
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        apoio     /     1    /    sim
-
-
-
-
-
-
-TEMA: sarney
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        sarney     /     1    /    sim
-
-
-
-
-
-
-TEMA: peça
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        peça     /     1    /    sim
-
-
-
-
-
-
-TEMA: 🙄🙄
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        🙄🙄     /     1    /    sim
+        brasil247     /     13    /    nullll
 
 
 

@@ -7,23 +7,13 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
     renan  /  0.705882352941  /  70.5882352941
     pmdb  /  0.383350309821  /  38.3350309821
     liderança  /  0.22152194211  /  22.152194211
-    senado  /  0.144660894661  /  14.4660894661
+    líder  /  0.180375180375  /  18.0375180375
     acordo  /  0.10610304728  /  10.610304728
     bancada  /  0.102219675749  /  10.2219675749
     governo  /  0.102219675749  /  10.2219675749
-    mantém  /  0.0848824378236  /  8.48824378236
+    brasil247  /  0.0942831678126  /  9.42831678126
     senador  /  0.0610729140141  /  6.10729140141
-    senha  /  0.0318309141839  /  3.18309141839
-    programa  /  0.0265682030388  /  2.65682030388
-    causa  /  0.0212206094559  /  2.12206094559
-    indicação  /  0.0212206094559  /  2.12206094559
-    requião  /  0.0132841015194  /  1.32841015194
-    bglh  /  0.010610304728  /  1.0610304728
-    macleod  /  0.010610304728  /  1.0610304728
-    apoio  /  0.010610304728  /  1.0610304728
-    sarney  /  0.010610304728  /  1.0610304728
-    peça  /  0.010610304728  /  1.0610304728
-    🙄🙄  /  0.010610304728  /  1.0610304728
+    micheltemer  /  0.0212206094559  /  2.12206094559
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
@@ -52,7 +42,7 @@ bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    / 
 
 
 
- Tema: senado
+ Tema: líder
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -64,14 +54,6 @@ null - nao convergiu   /   0    /    0
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: mantém
-
-     Sentença    /    IRSE    /    IRSE(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
 
 
 
@@ -102,7 +84,7 @@ com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirma
 
 
 
- Tema: causa
+ Tema: micheltemer
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -110,82 +92,10 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: programa
+ Tema: brasil247
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: senha
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: bglh
-
-     Sentença    /    IRSE    /    IRSE(%)
-# pmdb # renancalheiros # senado # brasil renan entrou no meu tt e twitou vrs bglh renan , me responde uma coisa   /   1.0    /    100.0
-
-
-
-
- Tema: indicação
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: requião
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: macleod
-
-     Sentença    /    IRSE    /    IRSE(%)
-'' frase de connor macleod ou renan calheiros   /   1.0    /    100.0
-
-
-
-
- Tema: apoio
-
-     Sentença    /    IRSE    /    IRSE(%)
-requião pergunta se retirada de apoio a renan será compensada com mala igual a de rodrigo loures   /   1.0    /    100.0
-
-
-
-
- Tema: sarney
-
-     Sentença    /    IRSE    /    IRSE(%)
-com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   1.0    /    100.0
-
-
-
-
- Tema: peça
-
-     Sentença    /    IRSE    /    IRSE(%)
-@ micheltemer_ofc peça p/ renan parar de amaciar o ego da zaga da orcrim fazendo críticas ao seu governo   /   1.0    /    100.0
-
-
-
-
- Tema: 🙄🙄
-
-     Sentença    /    IRSE    /    IRSE(%)
-tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭😭😭 preciso dormir cedo , acordo 5:00 pra ir pra faculdade e to na semana de prova😥😥😥😥 n quero ir pra mãe 🙄🙄 renan , lobão , lindinho e aécio   /   1.0    /    100.0
 
 
 
@@ -198,21 +108,11 @@ tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   0.4    /    40.0
+bancada do pmdb mantém renan calheiros na liderança do partido   /   0.571428571429    /    57.1428571429
 
-com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.2    /    20.0
+com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.285714285714    /    28.5714285714
 
-tudo fica como está e renan é líder , … @ gabiranzinza não da 😭😭😭😭😭 preciso dormir cedo , acordo 5:00 pra ir pra faculdade e to na semana de prova😥😥😥😥 n quero ir pra mãe 🙄🙄 renan , lobão , lindinho e aécio   /   0.0666666666667    /    6.66666666667
-
-requião pergunta se retirada de apoio a renan será compensada com mala igual a de rodrigo loures   /   0.0666666666667    /    6.66666666667
-
-to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.0666666666667    /    6.66666666667
-
-'' frase de connor macleod ou renan calheiros   /   0.0666666666667    /    6.66666666667
-
-@ micheltemer_ofc peça p/ renan parar de amaciar o ego da zaga da orcrim fazendo críticas ao seu governo   /   0.0666666666667    /    6.66666666667
-
-# pmdb # renancalheiros # senado # brasil renan entrou no meu tt e twitou vrs bglh renan , me responde uma coisa   /   0.0666666666667    /    6.66666666667
+to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.142857142857    /    14.2857142857
 
 null - nao convergiu   /   0.0    /    0.0
 
