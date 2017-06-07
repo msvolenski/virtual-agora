@@ -152,7 +152,7 @@ class ResultadosExtratorHomeView(generic.ListView):
         if v[2] < maior_distancia:
             maior_distancia = v[2]
         
-    maior_distancia = int(math.fabs(maior_distancia)) + 200
+    maior_distancia = int(math.fabs(maior_distancia)) + 100
 
     #parêmetro de definição do tamanho dos vertices
     
@@ -173,11 +173,18 @@ class ResultadosExtratorHomeView(generic.ListView):
                 pos_y = int(distancia*math.sin(math.radians(posicao)))
                 posicao = posicao + delta
                 nome = (tema + str(pos_x) + str(pos_y))
-                print nome
+                
                 vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome ))    
         
-    print vetor_temas
-
+    
+    #montagem da linha de extração
+    paragrafos_obj = DadosExtracaoNew.objects.all().values_list('sentenca','irgs_p').distinct()
+    paragrafos_linha = []
+    for p in paragrafos_obj:
+        if p[0].strip() != 'null - nao convergiu':
+            paragrafos_linha.append((p[0].strip(),int(p[1]), int(100 - p[1])))    
+            
+    print paragrafos_linha
 
     context = super(ResultadosExtratorHomeView, self).get_context_data(**kwargs)
     
@@ -189,6 +196,8 @@ class ResultadosExtratorHomeView(generic.ListView):
     context['vetor_paragrafos'] = vetor_paragrafos
     context['tema_central_par'] = tema_central_par
     context['maior_distancia'] = maior_distancia
+    context['altura'] = 2*maior_distancia
+    context['paragrafos_linha'] = paragrafos_linha
     #context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
     #context['answer_form'] = TopicAnswerForm()
     #auth_user = self.request.user
