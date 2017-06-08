@@ -30,18 +30,38 @@
     background: transparent;
     visibility:hidden;   
     font-size: 1.2vw;
+    text-align: center; 
+    font-family: verdana;      
+}
+
+.quadro_linha{
+    position:fixed;
+    border:black;
+    top:70%;
+    left:10%;    
+    width:80%;
+    height: 30%;
+    background:transparent;
+    font-size: 1vw;
     text-align: center;
+    overflow: auto;
        
 }
+
+.par{
+    visibility: hidden;
+    font-size: 1.2vw;
+    font-family: verdana;
+}
+
 
 .linha{
     border-bottom: 1px solid black;
     width:80%;
-    height: 30px;
-    margin:0 auto;
+    height: 20px;
     
     
-
+    
 }
 
 

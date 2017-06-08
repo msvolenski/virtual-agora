@@ -1,0 +1,936 @@
+TEMA: deus
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus     /     1200    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo     /     169    /    nao
+       deus homem     /     116    /    nao
+       deus nó     /     72    /    nao
+       deus espírito     /     86    /    nao
+       deus poder     /     77    /    nao
+       deus graça     /     97    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus cristo graça     /     44    /    nullll
+       deus homem cristo     /     17    /    nao
+       deus homem coisa     /     11    /    nao
+       deus homem verdade     /     8    /    nao
+       deus nó cristo     /     17    /    nao
+       deus nó amor     /     12    /    nao
+       deus espírito cristo     /     20    /    nao
+       deus espírito carne     /     10    /    nullll
+       deus espírito poder     /     10    /    nao
+       deus espírito coração     /     11    /    nao
+       deus espírito homem     /     8    /    nao
+       deus espírito graça     /     11    /    nao
+       deus poder glória     /     8    /    nao
+       deus graça cristo     /     44    /    nullll
+       deus graça poder     /     10    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus homem cristo coração     /     3    /    nullll
+       deus homem cristo graça     /     4    /    nullll
+       deus homem cristo cabeça     /     1    /    sim
+       deus homem cristo si     /     2    /    nullll
+       deus homem cristo carne     /     2    /    nao
+       deus homem coisa espírito     /     2    /    nullll
+       deus homem verdade palavra     /     1    /    sim
+       deus nó cristo graça     /     7    /    nao
+       deus nó cristo amor     /     7    /    nao
+       deus nó cristo glória     /     3    /    nao
+       deus nó cristo verdade     /     1    /    sim
+       deus nó cristo fim     /     3    /    nao
+       deus nó cristo misericórdia     /     3    /    nao
+       deus nó cristo si     /     2    /    nullll
+       deus nó cristo pai     /     2    /    nao
+       deus nó amor cristo     /     7    /    nullll
+       deus nó amor verdade     /     1    /    sim
+       deus nó amor fé     /     2    /    nao
+       deus nó amor pai     /     2    /    nullll
+       deus nó amor fim     /     2    /    nao
+       deus espírito cristo graça     /     9    /    nao
+       deus espírito cristo carne     /     6    /    nullll
+       deus espírito cristo amor     /     7    /    nao
+       deus espírito cristo coração     /     4    /    nao
+       deus espírito cristo glória     /     3    /    nao
+       deus espírito cristo nó     /     2    /    nullll
+       deus espírito cristo poder     /     3    /    nao
+       deus espírito cristo sobre     /     3    /    nao
+       deus espírito cristo pai     /     4    /    nao
+       deus espírito cristo verdade     /     2    /    nao
+       deus espírito poder amor     /     5    /    nao
+       deus espírito poder saber     /     4    /    nao
+       deus espírito poder cristo     /     3    /    nullll
+       deus espírito coração cristo     /     4    /    nullll
+       deus espírito coração homem     /     3    /    nullll
+       deus espírito coração amor     /     2    /    nullll
+       deus espírito homem cristo     /     2    /    nao
+       deus espírito homem coisa     /     2    /    nullll
+       deus espírito homem verdade     /     1    /    sim
+       deus espírito graça cristo     /     9    /    nullll
+       deus espírito graça poder     /     3    /    nao
+       deus espírito graça evangelho     /     4    /    nao
+       deus espírito graça pai     /     4    /    nao
+       deus poder glória honra     /     3    /    nullll
+       deus poder glória vaso     /     1    /    sim
+       deus graça poder cristo     /     5    /    nao
+       deus graça poder amor     /     3    /    nao
+       deus graça poder glória     /     2    /    nao
+       deus graça poder força     /     3    /    nao
+       deus graça poder espírito     /     3    /    nullll
+       deus graça poder saber     /     3    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus homem cristo carne coração     /     2    /    nullll
+       deus nó cristo graça verdade     /     1    /    sim
+       deus nó cristo graça misericórdia     /     3    /    nao
+       deus nó cristo graça vida     /     2    /    nullll
+       deus nó cristo amor verdade     /     1    /    sim
+       deus nó cristo glória graça     /     2    /    nullll
+       deus nó cristo fim obra     /     2    /    nao
+       deus nó cristo misericórdia pai     /     1    /    sim
+       deus nó cristo misericórdia causa     /     2    /    nao
+       deus nó cristo pai glória     /     1    /    sim
+       deus nó amor fé graça     /     2    /    nullll
+       deus nó amor fim pai     /     1    /    sim
+       deus espírito cristo graça poder     /     3    /    nao
+       deus espírito cristo graça evangelho     /     4    /    nao
+       deus espírito cristo graça pai     /     4    /    nao
+       deus espírito cristo amor fé     /     4    /    nao
+       deus espírito cristo amor saber     /     3    /    nullll
+       deus espírito cristo amor paulo     /     1    /    sim
+       deus espírito cristo coração pai     /     2    /    nao
+       deus espírito cristo coração poder     /     1    /    sim
+       deus espírito cristo glória poder     /     1    /    sim
+       deus espírito cristo glória graça     /     2    /    nao
+       deus espírito cristo poder amor     /     3    /    nao
+       deus espírito cristo poder saber     /     3    /    nullll
+       deus espírito cristo sobre nó     /     1    /    sim
+       deus espírito cristo sobre obra     /     2    /    nullll
+       deus espírito cristo pai graça     /     4    /    nullll
+       deus espírito cristo pai amor     /     2    /    nullll
+       deus espírito cristo pai poder     /     2    /    nao
+       deus espírito cristo verdade homem     /     1    /    sim
+       deus espírito poder amor saber     /     4    /    nao
+       deus espírito poder amor fé     /     3    /    nao
+       deus espírito poder amor cristo     /     3    /    nullll
+       deus espírito poder saber cristo     /     3    /    nullll
+       deus espírito homem cristo coração     /     1    /    sim
+       deus espírito homem cristo verdade     /     1    /    sim
+       deus espírito graça poder amor     /     3    /    nao
+       deus espírito graça poder saber     /     3    /    nao
+       deus espírito graça poder cristo     /     3    /    nullll
+       deus espírito graça evangelho cristo     /     4    /    nullll
+       deus espírito graça evangelho fé     /     3    /    nao
+       deus espírito graça pai cristo     /     4    /    nullll
+       deus espírito graça pai amor     /     2    /    nullll
+       deus espírito graça pai poder     /     2    /    nao
+       deus graça poder cristo amor     /     3    /    nao
+       deus graça poder cristo espírito     /     3    /    nullll
+       deus graça poder cristo pai     /     3    /    nao
+       deus graça poder amor fé     /     3    /    nao
+       deus graça poder amor espírito     /     3    /    nullll
+       deus graça poder amor saber     /     3    /    nao
+       deus graça poder amor cristo     /     3    /    nullll
+       deus graça poder glória sabedoria     /     2    /    nao
+       deus graça poder força glória     /     2    /    nao
+       deus graça poder saber espírito     /     3    /    nullll
+       deus graça poder saber cristo     /     3    /    nao
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus nó cristo graça misericórdia pai     /     1    /    sim
+       deus nó cristo graça misericórdia causa     /     2    /    nao
+       deus nó cristo fim obra si     /     1    /    sim
+       deus nó cristo misericórdia causa verdade     /     1    /    sim
+       deus nó cristo misericórdia causa graça     /     2    /    nullll
+       deus espírito cristo graça poder amor     /     3    /    nao
+       deus espírito cristo graça poder saber     /     3    /    nullll
+       deus espírito cristo graça evangelho fé     /     3    /    nao
+       deus espírito cristo graça pai amor     /     2    /    nullll
+       deus espírito cristo graça pai poder     /     2    /    nao
+       deus espírito cristo amor fé poder     /     3    /    nao
+       deus espírito cristo amor fé graça     /     3    /    nao
+       deus espírito cristo coração pai glória     /     1    /    sim
+       deus espírito cristo coração pai graça     /     2    /    nao
+       deus espírito cristo coração pai poder     /     1    /    sim
+       deus espírito cristo glória graça poder     /     1    /    sim
+       deus espírito cristo poder amor fé     /     3    /    nullll
+       deus espírito cristo poder amor saber     /     3    /    nullll
+       deus espírito cristo pai poder amor     /     2    /    nullll
+       deus espírito poder amor saber cristo     /     3    /    nullll
+       deus espírito poder amor fé graça     /     3    /    nao
+       deus espírito poder amor fé cristo     /     3    /    nullll
+       deus espírito graça poder amor fé     /     3    /    nullll
+       deus espírito graça poder amor saber     /     3    /    nao
+       deus espírito graça poder amor cristo     /     3    /    nullll
+       deus espírito graça poder saber cristo     /     3    /    nullll
+       deus espírito graça evangelho fé amor     /     2    /    nao
+       deus espírito graça evangelho fé cristo     /     3    /    nullll
+       deus espírito graça pai poder amor     /     2    /    nullll
+       deus graça poder cristo amor fé     /     3    /    nao
+       deus graça poder cristo amor espírito     /     3    /    nullll
+       deus graça poder cristo amor saber     /     3    /    nao
+       deus graça poder cristo pai amor     /     2    /    nullll
+       deus graça poder amor fé espírito     /     3    /    nullll
+       deus graça poder amor fé cristo     /     3    /    nullll
+       deus graça poder amor saber espírito     /     3    /    nullll
+       deus graça poder amor saber cristo     /     3    /    nullll
+       deus graça poder glória sabedoria força     /     2    /    nullll
+       deus graça poder glória sabedoria século     /     1    /    sim
+       deus graça poder força glória sabedoria     /     2    /    nullll
+       deus graça poder saber cristo amor     /     3    /    nullll
+       deus graça poder saber cristo espírito     /     3    /    nullll
+
+
+
+ - ITERACAO 6:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        deus nó cristo graça misericórdia causa verdade     /     1    /    sim
+       deus espírito cristo graça poder amor fé     /     3    /    nullll
+       deus espírito cristo graça poder amor saber     /     3    /    nullll
+       deus espírito cristo graça evangelho fé amor     /     2    /    nullll
+       deus espírito cristo graça pai poder amor     /     2    /    nullll
+       deus espírito cristo amor fé poder saber     /     3    /    nullll
+       deus espírito cristo amor fé graça poder     /     3    /    nullll
+       deus espírito cristo coração pai graça poder     /     1    /    sim
+       deus espírito poder amor fé graça cristo     /     3    /    nullll
+       deus espírito graça poder amor saber cristo     /     3    /    nullll
+       deus espírito graça evangelho fé amor cristo     /     2    /    nullll
+       deus graça poder cristo amor fé espírito     /     3    /    nullll
+       deus graça poder cristo amor saber espírito     /     3    /    nullll
+
+
+
+
+
+
+TEMA: dizer
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dizer     /     1611    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dizer ver     /     68    /    nao
+       dizer deus     /     60    /    nao
+       dizer coisa     /     65    /    nao
+       dizer haver     /     45    /    nao
+       dizer discípulo     /     73    /    nao
+       dizer dia     /     41    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dizer ver homem     /     8    /    nao
+       dizer ver deus     /     7    /    nao
+       dizer ver multidão     /     5    /    nullll
+       dizer ver céu     /     4    /    nao
+       dizer ver anjo     /     3    /    nao
+       dizer ver discípulo     /     3    /    nullll
+       dizer ver olho     /     3    /    nullll
+       dizer deus pai     /     8    /    nao
+       dizer deus lei     /     2    /    nullll
+       dizer deus glória     /     8    /    nao
+       dizer deus trono     /     3    /    nullll
+       dizer deus cristo     /     3    /    nullll
+       dizer deus dia     /     3    /    nao
+       dizer deus verdade     /     8    /    nullll
+       dizer deus poder     /     3    /    nao
+       dizer deus haver     /     3    /    nao
+       dizer deus mundo     /     3    /    nao
+       dizer deus vida     /     3    /    nao
+       dizer deus abraão     /     3    /    nao
+       dizer deus ninguém     /     3    /    nullll
+       dizer deus olho     /     2    /    nao
+       dizer coisa sobre     /     4    /    nullll
+       dizer coisa deus     /     5    /    nao
+       dizer coisa respeito     /     5    /    nullll
+       dizer coisa céu     /     4    /    nao
+       dizer coisa falar     /     4    /    nullll
+       dizer coisa parábola     /     2    /    nao
+       dizer coisa haver     /     4    /    nullll
+       dizer haver dia     /     8    /    nao
+       dizer haver falar     /     4    /    nullll
+       dizer haver céu     /     3    /    nullll
+       dizer haver paulo     /     3    /    nao
+       dizer haver sodoma     /     3    /    nao
+       dizer haver ressurreição     /     4    /    nao
+       dizer haver homem     /     3    /    nullll
+       dizer haver coisa     /     4    /    nullll
+       dizer discípulo multidão     /     3    /    nullll
+       dizer dia haver     /     8    /    nullll
+       dizer dia discípulo     /     6    /    nullll
+       dizer dia casa     /     4    /    nao
+       dizer dia hora     /     3    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dizer ver homem verdade     /     2    /    nullll
+       dizer ver deus céu     /     2    /    nullll
+       dizer ver deus glória     /     3    /    nullll
+       dizer ver deus verdade     /     2    /    nullll
+       dizer ver céu anjo     /     2    /    nao
+       dizer ver céu sobre     /     2    /    nullll
+       dizer ver céu deus     /     2    /    nullll
+       dizer ver anjo sobre     /     2    /    nullll
+       dizer ver anjo deus     /     2    /    nao
+       dizer ver anjo céu     /     2    /    nullll
+       dizer deus pai abraão     /     2    /    nullll
+       dizer deus glória vaso     /     1    /    sim
+       dizer deus dia haver     /     2    /    nao
+       dizer deus dia hora     /     1    /    sim
+       dizer deus poder glória     /     1    /    sim
+       dizer deus haver dia     /     2    /    nullll
+       dizer deus haver cristo     /     1    /    sim
+       dizer deus mundo pai     /     2    /    nullll
+       dizer deus vida causa     /     2    /    nullll
+       dizer deus abraão pai     /     2    /    nullll
+       dizer deus olho chama     /     1    /    sim
+       dizer coisa deus chama     /     1    /    sim
+       dizer coisa céu voz     /     2    /    nullll
+       dizer coisa parábola falar     /     1    /    sim
+       dizer haver dia ressurreição     /     2    /    nao
+       dizer haver dia juízo     /     2    /    nao
+       dizer haver dia deus     /     2    /    nullll
+       dizer haver dia hora     /     1    /    sim
+       dizer haver paulo palavra     /     2    /    nullll
+       dizer haver sodoma cidade     /     2    /    nullll
+       dizer haver sodoma gomorra     /     1    /    sim
+       dizer haver ressurreição cristo     /     1    /    sim
+       dizer dia casa hora     /     1    /    sim
+       dizer dia casa israel     /     2    /    nullll
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dizer ver céu anjo sobre     /     2    /    nullll
+       dizer ver anjo deus verdade     /     1    /    sim
+       dizer deus dia haver cristo     /     1    /    sim
+       dizer haver dia ressurreição cristo     /     1    /    sim
+       dizer haver dia juízo terra     /     1    /    sim
+       dizer haver dia juízo cidade     /     1    /    sim
+
+
+
+
+
+
+TEMA: homem
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        homem     /     644    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        homem deus     /     116    /    nao
+       homem dizer     /     52    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        homem deus cristo     /     17    /    nao
+       homem deus coração     /     8    /    nao
+       homem deus verdade     /     8    /    nao
+       homem dizer ver     /     8    /    nullll
+       homem dizer lei     /     5    /    nao
+       homem dizer povo     /     3    /    nullll
+       homem dizer haver     /     3    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        homem deus cristo coração     /     3    /    nullll
+       homem deus cristo graça     /     4    /    nullll
+       homem deus cristo cabeça     /     1    /    sim
+       homem deus cristo si     /     2    /    nullll
+       homem deus cristo carne     /     2    /    nao
+       homem deus coração cristo     /     3    /    nullll
+       homem deus coração espírito     /     3    /    nullll
+       homem deus verdade palavra     /     1    /    sim
+       homem dizer lei cristo     /     1    /    sim
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        homem deus cristo carne coração     /     2    /    nullll
+
+
+
+
+
+
+TEMA: coisa
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa     /     489    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa deus     /     81    /    nao
+       coisa dizer     /     65    /    nao
+       coisa homem     /     32    /    nao
+       coisa céu     /     25    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa deus cristo     /     15    /    nao
+       coisa dizer ninguém     /     3    /    nao
+       coisa dizer deus     /     5    /    nao
+       coisa dizer respeito     /     5    /    nullll
+       coisa dizer parábola     /     2    /    nao
+       coisa dizer multidão     /     3    /    nao
+       coisa dizer voz     /     3    /    nao
+       coisa dizer haver     /     4    /    nullll
+       coisa homem deus     /     11    /    nao
+       coisa homem dia     /     3    /    nullll
+       coisa homem céu     /     3    /    nullll
+       coisa homem terra     /     2    /    nao
+       coisa céu deus     /     7    /    nao
+       coisa céu terra     /     9    /    nao
+       coisa céu pai     /     6    /    nao
+       coisa céu anjo     /     4    /    nao
+       coisa céu santuário     /     2    /    nao
+       coisa céu sobre     /     5    /    nao
+       coisa céu dizer     /     4    /    nao
+       coisa céu glória     /     3    /    nao
+       coisa céu nó     /     3    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa deus cristo amor     /     5    /    nao
+       coisa deus cristo glória     /     4    /    nao
+       coisa deus cristo vida     /     3    /    nao
+       coisa deus cristo graça     /     2    /    nao
+       coisa deus cristo justiça     /     2    /    nao
+       coisa dizer ninguém abrir     /     1    /    sim
+       coisa dizer deus chama     /     1    /    sim
+       coisa dizer parábola falar     /     1    /    sim
+       coisa dizer multidão parábola     /     1    /    sim
+       coisa dizer multidão ver     /     1    /    sim
+       coisa dizer voz céu     /     2    /    nullll
+       coisa homem deus espírito     /     2    /    nullll
+       coisa homem deus pecado     /     2    /    nullll
+       coisa homem terra deus     /     2    /    nullll
+       coisa céu deus cristo     /     2    /    nao
+       coisa céu deus tempo     /     2    /    nao
+       coisa céu deus sobre     /     3    /    nao
+       coisa céu deus nó     /     3    /    nao
+       coisa céu deus nele     /     2    /    nullll
+       coisa céu terra deus     /     4    /    nao
+       coisa céu terra sobre     /     5    /    nao
+       coisa céu terra plenitude     /     2    /    nao
+       coisa céu pai deus     /     1    /    sim
+       coisa céu anjo deus     /     1    /    sim
+       coisa céu anjo espírito     /     2    /    nao
+       coisa céu santuário tabernáculo     /     2    /    nullll
+       coisa céu sobre terra     /     5    /    nullll
+       coisa céu sobre cristo     /     1    /    sim
+       coisa céu sobre nó     /     2    /    nao
+       coisa céu sobre graça     /     1    /    sim
+       coisa céu dizer voz     /     2    /    nullll
+       coisa céu glória cristo     /     2    /    nao
+       coisa céu glória graça     /     1    /    sim
+       coisa céu nó deus     /     3    /    nullll
+       coisa céu nó cristo     /     1    /    sim
+       coisa céu nó terra     /     3    /    nao
+       coisa céu nó vontade     /     1    /    sim
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa deus cristo amor fé     /     2    /    nullll
+       coisa deus cristo amor proceder     /     1    /    sim
+       coisa deus cristo amor pai     /     1    /    sim
+       coisa deus cristo glória louvor     /     2    /    nullll
+       coisa deus cristo glória pai     /     1    /    sim
+       coisa deus cristo glória graça     /     1    /    sim
+       coisa deus cristo vida morte     /     2    /    nullll
+       coisa deus cristo vida poder     /     1    /    sim
+       coisa deus cristo graça sabedoria     /     2    /    nullll
+       coisa deus cristo justiça proceder     /     1    /    sim
+       coisa deus cristo justiça fé     /     1    /    sim
+       coisa deus cristo justiça amor     /     2    /    nao
+       coisa céu deus cristo graça     /     1    /    sim
+       coisa céu deus tempo vontade     /     1    /    sim
+       coisa céu deus tempo refrigério     /     1    /    sim
+       coisa céu deus sobre cristo     /     1    /    sim
+       coisa céu deus sobre nó     /     2    /    nao
+       coisa céu deus sobre terra     /     3    /    nao
+       coisa céu deus sobre graça     /     1    /    sim
+       coisa céu deus nó cristo     /     1    /    sim
+       coisa céu deus nó terra     /     3    /    nao
+       coisa céu deus nó vontade     /     1    /    sim
+       coisa céu terra deus sobre     /     3    /    nullll
+       coisa céu terra deus nó     /     3    /    nullll
+       coisa céu terra deus cristo     /     1    /    sim
+       coisa céu terra deus nele     /     2    /    nullll
+       coisa céu terra deus vontade     /     1    /    sim
+       coisa céu terra deus graça     /     1    /    sim
+       coisa céu terra sobre cristo     /     1    /    sim
+       coisa céu terra sobre nó     /     2    /    nao
+       coisa céu terra sobre graça     /     1    /    sim
+       coisa céu terra plenitude cristo     /     1    /    sim
+       coisa céu anjo espírito deus     /     1    /    sim
+       coisa céu anjo espírito fala     /     1    /    sim
+       coisa céu sobre nó deus     /     2    /    nullll
+       coisa céu sobre nó cristo     /     1    /    sim
+       coisa céu sobre nó vontade     /     1    /    sim
+       coisa céu sobre nó terra     /     2    /    nullll
+       coisa céu glória cristo graça     /     1    /    sim
+       coisa céu nó terra deus     /     3    /    nullll
+       coisa céu nó terra sobre     /     2    /    nullll
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa deus cristo justiça amor proceder     /     1    /    sim
+       coisa deus cristo justiça amor fé     /     1    /    sim
+       coisa céu deus sobre nó cristo     /     1    /    sim
+       coisa céu deus sobre nó vontade     /     1    /    sim
+       coisa céu deus sobre nó terra     /     2    /    nullll
+       coisa céu deus sobre terra plenitude     /     2    /    nao
+       coisa céu deus nó terra sobre     /     2    /    nullll
+       coisa céu terra sobre nó deus     /     2    /    nullll
+       coisa céu terra sobre nó cristo     /     1    /    sim
+       coisa céu terra sobre nó vontade     /     1    /    sim
+
+
+
+ - ITERACAO 6:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        coisa céu deus sobre terra plenitude cristo     /     1    /    sim
+
+
+
+
+
+
+TEMA: cristo
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo     /     476    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus     /     169    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus graça     /     44    /    nullll
+       cristo deus fé     /     27    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor     /     10    /    nao
+       cristo deus fé graça     /     13    /    nao
+       cristo deus fé poder     /     8    /    nao
+       cristo deus fé esperança     /     6    /    nao
+       cristo deus fé espírito     /     5    /    nao
+       cristo deus fé fim     /     4    /    nao
+       cristo deus fé paz     /     5    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor pai     /     5    /    nao
+       cristo deus fé amor espírito     /     4    /    nao
+       cristo deus fé amor saber     /     4    /    nao
+       cristo deus fé amor paulo     /     1    /    sim
+       cristo deus fé graça poder     /     5    /    nao
+       cristo deus fé graça evangelho     /     4    /    nullll
+       cristo deus fé graça pai     /     5    /    nao
+       cristo deus fé graça conhecimento     /     4    /    nullll
+       cristo deus fé poder amor     /     4    /    nao
+       cristo deus fé poder espírito     /     3    /    nao
+       cristo deus fé poder saber     /     3    /    nao
+       cristo deus fé esperança poder     /     4    /    nao
+       cristo deus fé esperança graça     /     4    /    nao
+       cristo deus fé esperança amor     /     3    /    nao
+       cristo deus fé esperança glória     /     2    /    nao
+       cristo deus fé espírito poder     /     3    /    nullll
+       cristo deus fé espírito glória     /     2    /    nao
+       cristo deus fé espírito saber     /     3    /    nullll
+       cristo deus fé espírito evangelho     /     3    /    nao
+       cristo deus fé espírito graça     /     4    /    nao
+       cristo deus fé fim amor     /     2    /    nao
+       cristo deus fé fim tempo     /     1    /    sim
+       cristo deus fé fim obra     /     2    /    nao
+       cristo deus fé fim poder     /     2    /    nao
+       cristo deus fé fim pai     /     1    /    sim
+       cristo deus fé paz parte     /     3    /    nao
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor pai glória     /     2    /    nao
+       cristo deus fé amor pai saber     /     3    /    nao
+       cristo deus fé amor pai poder     /     2    /    nullll
+       cristo deus fé amor espírito poder     /     3    /    nao
+       cristo deus fé amor espírito saber     /     3    /    nullll
+       cristo deus fé amor espírito graça     /     3    /    nao
+       cristo deus fé amor saber pai     /     3    /    nullll
+       cristo deus fé amor saber esperança     /     3    /    nao
+       cristo deus fé amor saber espírito     /     3    /    nullll
+       cristo deus fé graça poder amor     /     3    /    nao
+       cristo deus fé graça poder espírito     /     3    /    nao
+       cristo deus fé graça poder saber     /     3    /    nao
+       cristo deus fé graça pai poder     /     3    /    nao
+       cristo deus fé graça pai amor     /     3    /    nao
+       cristo deus fé poder amor espírito     /     3    /    nullll
+       cristo deus fé poder amor saber     /     3    /    nao
+       cristo deus fé poder espírito saber     /     3    /    nullll
+       cristo deus fé poder espírito graça     /     3    /    nullll
+       cristo deus fé poder saber espírito     /     3    /    nullll
+       cristo deus fé esperança poder amor     /     2    /    nullll
+       cristo deus fé esperança graça poder     /     3    /    nao
+       cristo deus fé esperança graça pai     /     4    /    nao
+       cristo deus fé esperança amor pai     /     3    /    nao
+       cristo deus fé esperança amor saber     /     3    /    nullll
+       cristo deus fé esperança glória pai     /     2    /    nao
+       cristo deus fé esperança glória poder     /     1    /    sim
+       cristo deus fé espírito glória poder     /     1    /    sim
+       cristo deus fé espírito glória graça     /     2    /    nao
+       cristo deus fé espírito evangelho graça     /     3    /    nullll
+       cristo deus fé espírito graça poder     /     3    /    nullll
+       cristo deus fé espírito graça evangelho     /     3    /    nullll
+       cristo deus fé fim amor pai     /     1    /    sim
+       cristo deus fé fim obra pai     /     1    /    sim
+       cristo deus fé fim poder amor     /     1    /    sim
+       cristo deus fé paz parte paulo     /     2    /    nao
+       cristo deus fé paz parte pai     /     3    /    nao
+
+
+
+ - ITERACAO 6:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor pai glória poder     /     1    /    sim
+       cristo deus fé amor pai saber esperança     /     3    /    nao
+       cristo deus fé amor espírito poder saber     /     3    /    nullll
+       cristo deus fé amor espírito graça poder     /     3    /    nao
+       cristo deus fé amor saber esperança glória     /     2    /    nao
+       cristo deus fé amor saber esperança poder     /     2    /    nullll
+       cristo deus fé graça poder amor espírito     /     3    /    nullll
+       cristo deus fé graça poder amor saber     /     3    /    nao
+       cristo deus fé graça poder espírito saber     /     3    /    nullll
+       cristo deus fé graça poder saber espírito     /     3    /    nullll
+       cristo deus fé graça pai poder amor     /     2    /    nullll
+       cristo deus fé graça pai amor saber     /     2    /    nullll
+       cristo deus fé graça pai amor espírito     /     2    /    nao
+       cristo deus fé poder amor saber espírito     /     3    /    nullll
+       cristo deus fé esperança graça poder amor     /     2    /    nullll
+       cristo deus fé esperança graça pai poder     /     3    /    nao
+       cristo deus fé esperança graça pai amor     /     2    /    nullll
+       cristo deus fé esperança amor pai glória     /     2    /    nao
+       cristo deus fé esperança amor pai saber     /     3    /    nullll
+       cristo deus fé esperança amor pai poder     /     2    /    nullll
+       cristo deus fé esperança glória pai saber     /     2    /    nao
+       cristo deus fé esperança glória pai amor     /     2    /    nullll
+       cristo deus fé esperança glória pai poder     /     1    /    sim
+       cristo deus fé espírito glória graça poder     /     1    /    sim
+       cristo deus fé paz parte paulo timóteo     /     1    /    sim
+       cristo deus fé paz parte paulo apóstolo     /     2    /    nullll
+       cristo deus fé paz parte paulo tito     /     1    /    sim
+       cristo deus fé paz parte pai graça     /     2    /    nullll
+
+
+
+ - ITERACAO 7:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor pai saber esperança glória     /     2    /    nao
+       cristo deus fé amor pai saber esperança poder     /     2    /    nullll
+       cristo deus fé amor espírito graça poder saber     /     3    /    nullll
+       cristo deus fé amor saber esperança glória pai     /     2    /    nullll
+       cristo deus fé amor saber esperança glória poder     /     1    /    sim
+       cristo deus fé graça poder amor saber espírito     /     3    /    nullll
+       cristo deus fé graça pai amor espírito poder     /     2    /    nullll
+       cristo deus fé esperança graça pai poder amor     /     2    /    nullll
+       cristo deus fé esperança amor pai glória poder     /     1    /    sim
+       cristo deus fé esperança glória pai saber tempo     /     1    /    sim
+
+
+
+ - ITERACAO 8:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cristo deus fé amor pai saber esperança glória poder     /     1    /    sim
+
+
+
+
+
+
+TEMA: ver
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ver     /     475    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ver dizer     /     68    /    nao
+       ver deus     /     46    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ver dizer homem     /     8    /    nao
+       ver dizer deus     /     7    /    nao
+       ver dizer multidão     /     5    /    nullll
+       ver dizer anjo     /     3    /    nao
+       ver dizer verdade     /     6    /    nao
+       ver dizer discípulo     /     3    /    nullll
+       ver dizer povo     /     3    /    nullll
+       ver dizer voz     /     6    /    nao
+       ver deus espírito     /     6    /    nao
+       ver deus causa     /     4    /    nao
+       ver deus dizer     /     7    /    nullll
+       ver deus sobre     /     5    /    nao
+       ver deus pai     /     4    /    nullll
+       ver deus céu     /     5    /    nao
+       ver deus graça     /     5    /    nullll
+       ver deus olho     /     4    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ver dizer homem verdade     /     2    /    nullll
+       ver dizer deus céu     /     2    /    nullll
+       ver dizer deus glória     /     3    /    nullll
+       ver dizer deus verdade     /     2    /    nullll
+       ver dizer anjo sobre     /     2    /    nullll
+       ver dizer anjo deus     /     2    /    nao
+       ver dizer anjo céu     /     2    /    nao
+       ver dizer verdade deus     /     2    /    nullll
+       ver dizer voz anjo     /     2    /    nullll
+       ver dizer voz céu     /     2    /    nullll
+       ver deus espírito dia     /     2    /    nullll
+       ver deus espírito sobre     /     2    /    nullll
+       ver deus causa morte     /     1    /    sim
+       ver deus causa graça     /     2    /    nullll
+       ver deus causa testemunho     /     2    /    nullll
+       ver deus sobre vida     /     2    /    nullll
+       ver deus sobre espírito     /     2    /    nullll
+       ver deus sobre pé     /     2    /    nullll
+       ver deus céu dizer     /     2    /    nullll
+       ver deus céu sobre     /     2    /    nullll
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ver dizer anjo deus verdade     /     1    /    sim
+       ver dizer anjo céu sobre     /     2    /    nullll
+
+
+
+
+
+
+TEMA: dia
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia     /     413    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia deus     /     42    /    nao
+       dia haver     /     39    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia deus haver     /     7    /    nao
+       dia deus espírito     /     5    /    nao
+       dia deus cristo     /     6    /    nao
+       dia deus causa     /     4    /    nao
+       dia deus poder     /     5    /    nao
+       dia deus mundo     /     4    /    nullll
+       dia deus oração     /     4    /    nao
+       dia deus dizer     /     3    /    nao
+       dia deus pai     /     4    /    nullll
+       dia haver dizer     /     8    /    nao
+       dia haver deus     /     7    /    nullll
+       dia haver profeta     /     5    /    nao
+       dia haver ali     /     4    /    nullll
+       dia haver sodoma     /     3    /    nao
+       dia haver lugar     /     3    /    nullll
+       dia haver coisa     /     4    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia deus haver dizer     /     2    /    nao
+       dia deus haver profeta     /     3    /    nao
+       dia deus haver coisa     /     2    /    nullll
+       dia deus espírito carne     /     1    /    sim
+       dia deus espírito prisão     /     1    /    sim
+       dia deus cristo carne     /     1    /    sim
+       dia deus cristo dizer     /     1    /    sim
+       dia deus cristo espírito     /     1    /    sim
+       dia deus causa piedade     /     2    /    nullll
+       dia deus poder causa     /     2    /    nullll
+       dia deus poder piedade     /     2    /    nullll
+       dia deus poder cristo     /     1    /    sim
+       dia deus oração súplica     /     3    /    nullll
+       dia deus dizer haver     /     2    /    nullll
+       dia deus dizer hora     /     1    /    sim
+       dia haver dizer reino     /     2    /    nullll
+       dia haver dizer deus     /     2    /    nullll
+       dia haver dizer hora     /     1    /    sim
+       dia haver profeta dizer     /     1    /    sim
+       dia haver sodoma cidade     /     2    /    nao
+       dia haver sodoma gomorra     /     1    /    sim
+       dia haver coisa deus     /     2    /    nullll
+       dia haver coisa apóstolo     /     1    /    sim
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia deus haver dizer cristo     /     1    /    sim
+       dia deus haver profeta dizer     /     1    /    sim
+       dia haver sodoma cidade dizer     /     2    /    nao
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dia haver sodoma cidade dizer verdade     /     1    /    sim
+
+
+
+
+
+
+TEMA: haver
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        haver     /     360    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        haver deus     /     45    /    nao
+       haver dia     /     39    /    nao
+       haver dizer     /     45    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        haver deus dia     /     7    /    nao
+       haver deus cidade     /     4    /    nao
+       haver deus pai     /     5    /    nao
+       haver deus testemunho     /     4    /    nao
+       haver deus dizer     /     3    /    nao
+       haver deus lei     /     2    /    nullll
+       haver dia dizer     /     8    /    nao
+       haver dia deus     /     7    /    nullll
+       haver dia profeta     /     5    /    nao
+       haver dia lugar     /     3    /    nullll
+       haver dia viver     /     3    /    nullll
+       haver dia coisa     /     4    /    nao
+       haver dizer dia     /     8    /    nullll
+       haver dizer hora     /     3    /    nao
+       haver dizer paulo     /     3    /    nao
+       haver dizer homem     /     3    /    nullll
+       haver dizer povo     /     2    /    nullll
+       haver dizer coisa     /     4    /    nullll
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        haver deus dia dizer     /     2    /    nao
+       haver deus dia profeta     /     3    /    nao
+       haver deus dia dever     /     2    /    nao
+       haver deus dia coisa     /     2    /    nullll
+       haver deus cidade aldeia     /     1    /    sim
+       haver deus pai profeta     /     2    /    nullll
+       haver deus testemunho dizer     /     1    /    sim
+       haver deus testemunho coisa     /     2    /    nullll
+       haver deus dizer dia     /     2    /    nullll
+       haver deus dizer cristo     /     1    /    sim
+       haver dia dizer reino     /     2    /    nullll
+       haver dia dizer deus     /     2    /    nullll
+       haver dia dizer hora     /     1    /    sim
+       haver dia profeta dizer     /     1    /    sim
+       haver dia coisa deus     /     2    /    nullll
+       haver dia coisa apóstolo     /     1    /    sim
+       haver dizer hora falar     /     2    /    nao
+       haver dizer hora dia     /     1    /    sim
+       haver dizer paulo palavra     /     2    /    nullll
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        haver deus dia dizer cristo     /     1    /    sim
+       haver deus dia profeta dizer     /     1    /    sim
+       haver deus dia dever dizer     /     1    /    sim
+       haver dizer hora falar espírito     /     1    /    sim
+       haver dizer hora falar pai     /     1    /    sim
+
+
+
+
+
+

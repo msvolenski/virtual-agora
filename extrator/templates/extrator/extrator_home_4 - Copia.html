@@ -1,0 +1,493 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
+
+  <title>Carousel Template for Bootstrap</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'agora/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="{% static 'agora/bootstrap/docs/assets/css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="{% static 'agora/bootstrap/docs/assets/js/ie-emulation-modes-warning.js' %}"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src=""></script>
+    <![endif]-->
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'agora/bootstrap/docs/examples/carousel/carousel.css' %}" rel="stylesheet">
+
+
+
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body>
+
+  <div class="navbar-wrapper">
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+              aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" href="#">Agora Unicamp - ECC</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Carousel
+    ================================================== -->
+  <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators" >
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox" >
+      
+      <div id="slide1" class="item" >
+        <div class="container">
+          <div class="carousel-caption" style="position:relative;left:0%;right:0%;margin-top:100px;background:white;min-height:300px;">
+            <div class="box-passo">PASSO 1</div>
+            <div class="box-etapa"> DADOS DE ENTRADA</div>
+            <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST"
+              role="form" enctype="multipart/form-data">
+              <input style="text-decoration: none;" type="text" name="hashtag" placeholder="Digite uma palavra...">
+              <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+              <input style="text-decoration: none;white-space: normal;border:none" class="set-buttons" type="submit" value="Buscar no Twitter">
+            </form>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:dados' %}" style="text-decoration: none;" class="set-buttons" online="ativa(this.name)">Abrir arquivo e visualizar</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:salvar_iniciais' %}" style="text-decoration: none;" class="set-buttons" online="ativa(this.name)">Salvar dados</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:corretor' %}" style="text-decoration: none;" class="set-buttons">Corrigir ortografia</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:executar_passos_2_a_5'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Executar PASSOS 2 a 5</a>
+            <a href="{% url 'extrator:testa_substantivo'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Testa Substantivo</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="slide2" class="item">
+        <div class="container">
+          <div class="carousel-caption" style="position:relative;left:0%;right:0%;margin-top:100px;background:white;min-height:300px;">
+            <div class="box-passo">PASSO 2</div>
+            <div class="box-etapa"> PRÉ-PROCESSAMENTO</div>
+            <a id="1s2" href="{% url 'extrator:preproc' %}" style="text-decoration: none;" class="set-buttons">Preparar dados</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:lematizador' %}" style="text-decoration: none;" class="set-buttons">Lematizar</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:stopwords' %}" style="text-decoration: none;" class="set-buttons">Eliminar stop-words</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:salvar' %}" style="text-decoration: none;" class="set-buttons">Salvar no BD</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:relatorio' %}" style="text-decoration: none;" class="set-buttons">Gerar Relatório</a>
+            <div style="display:block;">
+              <a href="{% url 'extrator:ver_arquivo' 'p2_lista_stopwords' %}" style="text-decoration: none;margin:0 auto;margin-top:15px;height:40px;width:100px;font-size:70%;background:#e07070;"
+                class="set-buttons">Ver\Editar Lista de stop-words</a>
+              <a href="{% url 'extrator:limpar_ignoradas' %}" style="text-decoration:none;margin:0 auto;margin-top:15px;height:40px;width:100px;font-size:70%;background:#e07070;"
+                class="set-buttons">Limpar Lista de palavras ignoradas</a>
+            </div>
+            <a href="{% url 'extrator:executar_passo_2'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Executar PASSO 2 completo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="container">
+          <div class="carousel-caption" style="position:relative;left:0%;right:0%;margin-top:100px;background:white;min-height:300px;">
+            <div class="box-passo">PASSO 3</div>
+            <div class="box-etapa"> REDE COMPLEXA</div>
+            <a href="{% url 'extrator:lista_vertices' %}" style="text-decoration: none;" class="set-buttons">Definir vértices</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:mapear' %}" style="text-decoration: none;" class="set-buttons">Indexar palavras</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:matriz' %}" style="text-decoration: none;" class="set-buttons">Gerar rede</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a style="text-decoration:none;display:block;margin:0 auto;height:0px;width:100%;padding:0px;" class="set-buttons"></a>
+            <a class="glyphicon glyphicon-arrow-down" id="set-g" style="margin-top:0px;margin-left:210px;display:block;"></a>
+            <a style="text-decoration:none;display:block;margin:0 auto;height:0px;width:100%;padding:0px;" class="set-buttons"></a>
+            <a style="text-decoration: none;margin-top:0px;visibility:hidden;" class="set-buttons"></a>
+            <a style="visibility:hidden;" class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a style="text-decoration: none;margin-top:0px;visibility:hidden;" class="set-buttons"></a>
+            <a style="visibility:hidden;" class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:rede_complexa'%}" style="text-decoration: none;margin-top:5px;height:40px;background:#e07070" class="set-buttons">Ver Rede</a>
+            <a style="margin-top:40px;display:inline-block;visibility:hidden;" class="glyphicon glyphicon-arrow-right"></a>
+            <a href="{% url 'extrator:executar_passo_3'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:-40px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Executar PASSO 3 completo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item active">
+        <div class="container">
+          <div class="carousel-caption" style="position:relative;left:0%;right:0%;margin-top:100px;background:white;min-height:300px;">
+            <div class="box-passo">PASSO 4</div>
+            <div class="box-etapa"> METRICAS E RANKING</div>
+            <a href="{% url 'extrator:metricas_ranking' %}" style="text-decoration: none;" class="set-buttons">Calcular métricas</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:calularindice' %}" style="text-decoration: none;" class="set-buttons">Calcular Índice</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:selecionar_temas'%}" style="text-decoration: none;" class="set-buttons">Selecionar Temas</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a style="text-decoration:none;display:block;margin:0 auto;height:0px;width:100%;padding:0px;" class="set-buttons"></a>
+            <a class="glyphicon glyphicon-arrow-down" id="set-g" style="margin-top:0px;margin-left:210px;display:block;visibility:hidden;visibility:hidden;"></a>
+            <a style="text-decoration:none;display:block;margin:0 auto;height:0px;width:100%;padding:0px;" class="set-buttons"></a>
+            <a href="{% url 'extrator:mostra_tabela' 'graus'%}" style="text-decoration: none;margin-top:5px;height:80px;background:#e07070"
+              class="set-buttons">Ver Tabela Graus</a>
+            <a style="visibility:hidden;" class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:mostra_tabela' 'bet'%}" style="text-decoration: none;margin-top:5px;height:80px;background:#e07070;font-size:92%"
+              class="set-buttons">Ver Tabela Betweeness</a>
+            <a style="visibility:hidden;" class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:mostra_tabela' 'closs'%}" style="text-decoration: none;margin-top:5px;height:80px;background:#e07070;"
+              class="set-buttons">Ver Tabela Closeness</a>
+            <a style="visibility:hidden;" class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:executar_passo_4'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:0px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Executar PASSO 4 completo</a>
+            <a style="margin-top:40px;display:inline-block;visibility:hidden;" class="glyphicon glyphicon-arrow-right"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="container">
+          <div class="carousel-caption" style="position:relative;left:0%;right:0%;margin-top:100px;background:white;min-height:300px;">
+            <div class="box-passo">PASSO 5</div>
+            <div class="box-etapa"> PROTO-FRASES</div>
+            <a href="{% url 'extrator:processarpfs'%}" style="text-decoration: none;" class="set-buttons">Processar Proto-Frases</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:mapear_e_extrair' %}" style="text-decoration: none;" class="set-buttons">Mapear extração</a>
+            <a class="glyphicon glyphicon-arrow-right" id="set-g"></a>
+            <a href="{% url 'extrator:calculair' %}" style="text-decoration: none;overflow:hidden;word-break:break-all;font-size:95%"
+              class="set-buttons">Calcular Representatividade</a>
+            <a href="{% url 'extrator:executar_passo_5'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:20px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Executar PASSO 5 completo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+  
+  </div>
+  <!-- /.carousel -->
+  
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing" style="border:1px solid black;padding:10px;margin:0 auto;width:70%">
+    <div style="padding:5px;text-align: center;font-size:120%"><b>AJUSTE DE PARÂMETROS</b></div>
+   
+    <div style="padding:5px;text-align: center;margin-top:20px;"><b>PASSO 4</b></div>
+    <a href="{% url 'extrator:limpar_lista_subtantivos'%}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;"
+              class="set-buttons">Limpar lista de Substantivos</a>
+    <div style="padding:5px;text-align: center;margin-top:20px"><b>PASSO 5</b></div>
+    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" style="text-decoration: none;display:block;margin:0 auto;margin-top:15px;height:40px;width:200px;font-size:100%;background:#7092e0;margin-bottom:20px;"
+              class="set-buttons">Carregar parâmetros</a>
+    <div style="padding:5px;text-align: center;">Cálculo da métrica betweenness - valor de k </div>
+    <div style="padding:5px;text-align: center;">
+      
+       
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
+        k = 
+        <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1">
+        % dos nós da rede
+        <input type="submit" value="Submit">
+      </form>
+    
+    
+    </div>
+    <div style="padding:5px;text-align: center;margin-top:35px;">Seleção dos temas - Distância relativa mínima entre temas-candidato </div>
+    <div style="padding:5px;text-align: center;">
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
+        delta = 
+        <input style="width:50px" type="number" step="1" name="valor_delta" value={{valordelta}} size="1">
+        %
+        <input type="submit" value="Submit">
+      </form>
+    
+    
+    </div>
+    <div style="padding:5px;text-align: center;margin-top:35px;">Seleção dos temas - Frequência de corte da Distância relativa mínima </div>
+    <div style="padding:5px;text-align: center;">
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
+        fc = 
+        <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">
+        % dos nós com dr < delta
+        <input type="submit" value="Submit">
+      </form>
+    
+    
+    </div>
+    <div style="padding:5px;text-align: center;margin-top:35px;">Definição dos temas - Frequência mínima do bigrama </div>
+    <div style="padding:5px;text-align: center;margin-bottom:20px">
+      
+      
+      <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">>
+        fb = 
+        <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1">
+        % de todos os bigramas do tema
+        <input type="submit" value="Submit">
+      </form>
+    
+    
+    </div>
+
+  </div>
+ 
+  
+  
+  
+  <div class="container marketing" style="margin-top:20px;">
+    {% for message in messages %}
+    <div style="width:70%;text-shadow:none;margin: 0 auto;margin-top:0px;font-size:90%;" id="config-message" class="alert alert-{{ message.tags }} alert-dismissible fade in"
+        role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>        {{ message }}
+    </div>
+    {% endfor %}
+  
+
+ 
+
+
+    <!-- START THE FEATURETTES -->
+    <div class="row featurette">
+
+      {% if tempo %}
+      <div style="margin-top:20px;"> Tempo total de execução do passo 3: {{tempo}} segundos. </div>
+      {% endif %} {% if dados_de_entrada %}
+      <div id="dadosdeentrada" class="col-md-7">
+        <h2>Dados de Entrada: </h2>
+        <br>
+        <p class="lead">{{dados_de_entrada|linebreaks}}</p>
+      </div>
+      {% endif %} {% if relatorio_preproc %}
+      <div id="relatoriopreproc" class="col-md-7">
+        <h2>Relatório Passo 2: </h2>
+        <br>
+        <p class="lead">{{relatorio_preproc|linebreaks}}</p>
+      </div>
+      {% endif %} {% if tabela_graus %}
+      <div class="col-md-7">
+        <h2>Tabela Graus: </h2>
+        <br>
+        <p class="lead">{{tabela_graus|linebreaks}}</p>
+      </div>
+      {% endif %} {% if tabela_bet %}
+      <div class="col-md-7">
+        <h2>Tabela Betweenness: </h2>
+        <br>
+        <p class="lead">{{tabela_bet|linebreaks}}</p>
+      </div>
+      {% endif %} {% if tabela_closs %}
+      <div class="col-md-7">
+        <h2>Tabela Closenness: </h2>
+        <br>
+        <p class="lead">{{tabela_closs|linebreaks}}</p>
+      </div>
+      {% endif %} {% if relatorio_protofrases %}
+      <div class="col-md-7">
+        <h2>Relatório proto-frases: </h2>
+        <br>
+        <p class="lead">{{relatorio_protofrases|linebreaks}}</p>
+      </div>
+      {% endif %} {% if relatorio_ext %}
+      <div class="col-md-7">
+        <h2>Relatório de Extração: </h2>
+        <br>
+        <p class="lead">{{relatorio_ext|linebreaks}}</p>
+      </div>
+      {% endif %} {% if rel_ind %}
+      <div id="rel_ind" class="col-md-7">
+        <h2>Relatório Passo 4: </h2>
+        <br>
+        <p class="lead">{{rel_ind|linebreaks}}</p>
+      </div>
+      {% endif %} {% if rel_temas %}
+      <div id="rel_temas" class="col-md-7">
+        <h2>Seleção de Temas: </h2>
+        <br>
+        <p class="lead">{{rel_temas|linebreaks}}</p>
+      </div>
+      {% endif %} {% if rel_ext %}
+      <div id="rel_temas" class="col-md-7">
+        <h1>Relatório Extração Passo 5: </h1>
+        <br>
+        <p class="lead">{{rel_ext|linebreaks}}</p>
+      </div>
+      {% endif %} {% if rel_repr %}
+      <div id="rel_repr" class="col-md-7">
+        <h1>Relatório Indices de Representatividade Passo 5: </h1>
+        <br>
+        <p class="lead">{{rel_repr|linebreaks}}</p>
+      </div>
+      {% endif %} {% if rel_proc5 %}
+      <div id="rel_proc5" class="col-md-7">
+        <h1>Relatório de Procedimento de extração dos parágrafos - Passo 5: </h1>
+        <br>
+        <p class="lead">{{rel_proc5|linebreaks}}</p>
+      </div>
+      {% endif %}
+      
+    <!-- /END THE FEATURETTES -->
+    </div>
+    
+    <!-- /.container -->
+
+    {%if popup %}
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" id="modal-dialog-mob">
+        <div class="modal-content">
+          <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
+          <div style="border:1px solid black;margin:10px 30px 10px 30px">
+            <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra}}</b></div>
+          </div>
+          <div style="color:black;padding:10px;font-size:120%;margin:10px">Faça uma das 5 opções: </div>
+          <div style="border:0.5px solid black;margin:10px 30px 30px 30px">
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Ignorar "{{palavra}}": </div>
+            <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao0' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Ignorar</a>
+            <hr style="border-top: 1px solid #848484">
+
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Incluir "{{palavra}}" ao dicionário: </div>
+            <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao1' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" por uma das sugestões: </div>
+            <div style="margin:0px 20px 0px 20px">
+              {% for sugestao in lista_de_sugestoes %}
+              <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a>              {% endfor %} {% if not lista_de_sugestoes %}
+              <div style="margin-left:40%;">não há sugestões</div>
+              {% endif %}
+            </div>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" e adicionar ao dicionário: </div>
+            <div style="margin-left:5%;margin-bottom:20px">
+              <form action="{% url 'extrator:atualiza_corretor' 'null' posicao 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="text" name="sugestao_usr" required="required">
+                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir"
+                  name="substituir">
+                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir todas as ocorrências"
+                  name="todas">
+              </form>
+            </div>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Adicionar "{{palavra}}" às stop-words (a palavra aparecerá novamente para escolha de uma das opções acima): </div>
+            <div style="margin-bottom: 20px">
+              <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %} {%if testa_sub %}
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog" id="modal-dialog-mob">
+        <div class="modal-content">
+          <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+          <div style="border:1px solid black;margin:10px 30px 10px 30px">
+            <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra_candidata}}</b></div>
+          </div>
+          <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
+          <div style="padding:40px;display:block;margin-left:200px;">
+            <form action="{% url 'extrator:testa_substantivo_usuario' palavra_candidata %}" method="POST" role="form" enctype="multipart/form-data">
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="sim" name="opcao_usr">
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="nao" name="opcao_usr">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+		================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="{% static 'agora/ bootstrap / docs / assets / js / vendor / jquery.min.js' %}"><\/script>')
+    </script>
+    <script src="{% static 'agora/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="{% static 'agora/bootstrap/docs/assets/js/vendor/holder.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'agora/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+
+    <script>
+      $('#myModal').modal('show')
+    </script>
+
+</body>
+
+</html>

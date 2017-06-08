@@ -1,0 +1,9 @@
+Foi extraído 1 parágrafo.
+Etapa de extração: 2
+
+Proto-frase original: g b c d t
+Proto-frase utilizada: g b c d t
+
+Parágrafo:
+
+g b c d t f 
