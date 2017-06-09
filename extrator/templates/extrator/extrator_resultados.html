@@ -12,12 +12,17 @@
     <meta name="author" content="">
     <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	
     <title>Resultados do ECC</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'agora/css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'agora/css/style.css' %}"> <!-- Resource style -->
     <link href="{% static 'agora/css/extrator.css' %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="{% static 'agora/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="{% static 'agora/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -32,7 +37,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="{% static 'agora/bootstrap/docs/assets/js/ie-emulation-modes-warning.js' %}"></script>
-
+    <script src="{% static 'agora/js/modernizr.js' %}"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -47,7 +52,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background:white;">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background:white;font-family:verdana">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -69,10 +74,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#passo1">Ajustes</a>
+                        <a class="page-scroll" href="#ajuste">Ajustes</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Mapa Orbital</a>
+                        <a class="page-scroll" href="#passo1">Passo 1</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#download">Linha de extração</a>
@@ -105,72 +110,206 @@
         </div>
     </header>
 
-        <!-- About Section -->
-    <section id="passo1" class="container content-section text-center">
+    <!-- About Section -->
+    <section id="ajuste" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+            <div class="col-lg-8 col-lg-offset-2" style="margin-top:-50px;" >
+                <h2>Ajuste de Parâmetros</h2>
+                <div class="container marketing" style="margin:0 auto;width:80%">                   
+                    <a href="{% url 'extrator:limpar_lista_subtantivos'%}" class="botao_ajuste">Limpar lista de Substantivos</a>                   
+                    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
+                    
+                    <div class="titulo_ajuste">Valor de k </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
+                            k =
+                            <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1"> %
+                            dos nós da rede
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                    <div class="titulo_ajuste">Distância relativa mínima entre temas-candidato </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
+                            delta =
+                            <input style="width:50px" type="number" step="1" name="valor_delta" value={{valordelta}} size="1">                            %
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                    <div class="titulo_ajuste">Frequência de corte da Distância relativa mínima </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
+                            fc =
+                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">                            % dos nós com dr
+                            < delta <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                    <div class="titulo_ajuste">Frequência mínima do bigrama </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data"> fb =
+                            <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1">                            % de todos os bigramas do tema
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    
+   
+   
+   
+   
+   
+   
+   
+   
+    <section id="passo1" class="container content-section text-center">
+       
+       <section id="cd-timeline" class="cd-container" style="">
+		<div class="cd-timeline-block" style="color:black">
+			<div class="cd-timeline-img cd-picture" >
+				<span class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Dados do Twitter</h2>	
+                <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST" role="form" enctype="multipart/form-data">
+              <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">            
+              <input style="margin-top:30px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
+            </form>    
+
+
+
+				<span class="cd-date">Jan 14</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img class="fa fa-twitter" alt="Movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Visualizar Dados</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+				<a href="#0" class="cd-read-more">Read more</a>
+				<span class="cd-date">Jan 18</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="img/cd-icon-picture.svg" alt="Picture">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Title of section 3</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+				<a href="#0" class="cd-read-more">Read more</a>
+				<span class="cd-date">Jan 24</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-location">
+				<img src="img/cd-icon-location.svg" alt="Location">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Title of section 4</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+				<a href="#0" class="cd-read-more">Read more</a>
+				<span class="cd-date">Feb 14</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-location">
+				<img src="img/cd-icon-location.svg" alt="Location">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Title of section 5</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+				<a href="#0" class="cd-read-more">Read more</a>
+				<span class="cd-date">Feb 18</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img src="img/cd-icon-movie.svg" alt="Movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>Final Section</h2>
+				<p>This is the content of the last section</p>
+				<span class="cd-date">Feb 26</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+	</section> <!-- cd-timeline --> 
+    </section>
+    
+    
+    
+    
+        </div>
+    </section>
     <!-- About Section -->
     <section id="about" class="container content-section text-center" style="background:white;">
         <div class="row" style="background:white;">
             <div class="col-lg-8 col-lg-offset-2" style="height:{{altura}}px;" style="background:white;">
                 <div id="refer" style="top:{{maior_distancia}}px">
-                        <div title="irt={{tema_central.3}}%" id="circle" style="top: border-radius:{{tema_central.1}}px;-webkit-border-radius:{{tema_central.1}}px;-moz-border-radius:{{tema_central.1}}px;width:{{tema_central.1}}px;height:{{tema_central.1}}px;line-height:{{tema_central.1}}px;top:-{{tema_central.2}}px;left:-{{tema_central.2}}px;"><b>{{tema_central.0}}</b></div>
-                        {% for prgf in tema_central_par %}
+                    <div title="irt={{tema_central.3}}%" id="circle" style="top: border-radius:{{tema_central.1}}px;-webkit-border-radius:{{tema_central.1}}px;-moz-border-radius:{{tema_central.1}}px;width:{{tema_central.1}}px;height:{{tema_central.1}}px;line-height:{{tema_central.1}}px;top:-{{tema_central.2}}px;left:-{{tema_central.2}}px;"><b>{{tema_central.0}}</b></div>
+                    {% for prgf in tema_central_par %}
+                    <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
+                        <div name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
+                    </div>
+                    {% endfor %} {% for tema in vetor_temas %}
+                    <div id="refer" style="top:{{tema.2}}px;left:{{tema.3}}px">
+                        <div title="irt={{tema.6}}%" id="circle" style="border-radius:{{tema.4}}px;-webkit-border-radius:{{tema.4}}px;-moz-border-radius:{{tema.4}}px;width:{{tema.4}}px;height:{{tema.4}}px;line-height:{{tema.4}}px;top:-{{tema.5}}px;left:-{{tema.5}}px;"></div>
+                        {% for prgf in vetor_paragrafos %} {% if prgf.0 == tema.0 %}
                         <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
                             <div name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
                         </div>
-                        {% endfor %} {% for tema in vetor_temas %}
-                        <div id="refer" style="top:{{tema.2}}px;left:{{tema.3}}px">
-                            <div title="irt={{tema.6}}%" id="circle" style="border-radius:{{tema.4}}px;-webkit-border-radius:{{tema.4}}px;-moz-border-radius:{{tema.4}}px;width:{{tema.4}}px;height:{{tema.4}}px;line-height:{{tema.4}}px;top:-{{tema.5}}px;left:-{{tema.5}}px;"></div>
-                            {% for prgf in vetor_paragrafos %} {% if prgf.0 == tema.0 %}
-                            <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
-                                <div name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
-                            </div>
-                            {% endif %} {% endfor %}
-                            <div style="position:absolute;top:{{tema.5}}px;font-size: 1vw;font-family: verdana;"> {{tema.0}} </div>
-                        </div>
-                        {% endfor %}
+                        {% endif %} {% endfor %}
+                        <div style="position:absolute;top:{{tema.5}}px;font-size: 1vw;font-family: verdana;"> {{tema.0}} </div>
                     </div>
-
-                    {% for prgf in tema_central_par %}
-                    <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
-                    {% endfor %} {% for prgf in vetor_paragrafos %}
-                    <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
                     {% endfor %}
+                </div>
+
+                {% for prgf in tema_central_par %}
+                <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
+                {% endfor %} {% for prgf in vetor_paragrafos %}
+                <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
+                {% endfor %}
 
             </div>
         </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center"  >
-        <div class="download-section" style="background: white " >
-            
-                <div style="height:{{maior_distancia}}px;margin-top:200px;" >
+    <section id="download" class="content-section text-center">
+        <div class="download-section" style="background: white ">
+
+            <div style="height:{{maior_distancia}}px;margin-top:200px;">
                 <div class="linha" style="position:absolute;left:10%">
                     <span title="Parágrafos mais significativos" class="glyphicon glyphicon-plus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:-15px;"></span>
-                    <span title="Parágrafos menos significativos" class="glyphicon glyphicon-minus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:100%;"></span>                   
-                    {% for p in paragrafos_linha %}
-                    <div title="irgs={{p.1}}%" id="circle" name={{p.2}}  onclick="mostrar_paragrafo(this)"  style="width:40px;height:40px;background:#C30FFF;left:{{p.2}}%"></div>
+                    <span title="Parágrafos menos significativos" class="glyphicon glyphicon-minus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:100%;"></span>                    {% for p in paragrafos_linha %}
+                    <div title="irgs={{p.1}}%" id="circle" name={{p.2}} onclick="mostrar_paragrafo(this)" style="width:40px;height:40px;background:#C30FFF;left:{{p.2}}%"></div>
                     {% endfor %}
-                    
+
                 </div>
-               </div>
-            
+            </div>
+
         </div>
         <div class="quadro_linha">
-        {% for p in paragrafos_linha %}
-        <div id={{p.2}} class="par">"{{p.0}}"</div>
-        {% endfor %}
-       
+            {% for p in paragrafos_linha %}
+            <div id={{p.2}} class="par">"{{p.0}}"</div>
+            {% endfor %}
+
         </div>
     </section>
 
@@ -234,17 +373,17 @@
             document.getElementById(nome).style.visibility = "hidden";
         }
 
-        function mostrar_paragrafo(name){
+        function mostrar_paragrafo(name) {
             var nome = name.attributes["name"].value;
-                cond = document.getElementById(nome);
-                 
-            if (cond.style.visibility == "hidden"){                
-                cond.style.visibility = "visible"; 
-            }      
-            else{
+            cond = document.getElementById(nome);
+
+            if (cond.style.visibility == "hidden") {
+                cond.style.visibility = "visible";
+            }
+            else {
                 cond.style.visibility = 'hidden';
-            }    
-           
+            }
+
 
         }
     </script>
@@ -262,6 +401,17 @@
 
     <!-- Theme JavaScript -->
     <script src="{% static 'agora/js/grayscale.min.js' %}"></script>
+
+    {% if goto %}
+    <script> window.location.hash = '#{{goto}}'; </script>
+    {% endif %}
+
+    {% if gotoajuste %}
+    <script> window.location.hash = '#{{gotoajuste}}'; </script>
+    {% endif %}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static 'agora/js/main.js' %}"></script>
 
 
 

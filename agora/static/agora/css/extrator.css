@@ -58,10 +58,42 @@
 .linha{
     border-bottom: 1px solid black;
     width:80%;
-    height: 20px;
-    
-    
-    
+    height: 20px;    
 }
 
+.botao_ajuste{    
+    display:block;
+    margin:0 auto;
+    margin-top:30px;
+    height:50px;
+    width:250px;
+    font-size:100%;
+    background:#33CCFF;
+    color:black;
+    text-align: center;
+    line-height: 50px;
+    font-size: 110%; 
+}
+
+.titulo_ajuste{
+    margin-top:40px;
+    padding:5px;
+    text-align: center;
+    font-size: 110%;
+
+}
+
+.form_ajuste{
+    padding:5px;
+    text-align: center;
+    font-size: 110%;
+
+}
+
+.botao_enviar{
+    background:#FFC106;
+    border: 0;
+    padding:10px;
+    margin-left:10px;
+}
 

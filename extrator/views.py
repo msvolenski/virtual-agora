@@ -202,41 +202,8 @@ class ResultadosExtratorHomeView(generic.ListView):
     context['altura'] = 2*maior_distancia
     context['paragrafos_linha'] = paragrafos_linha
     context['posicao_linha'] = int(maior_distancia/2)
-    #context['answers'] = TopicAnswer.objects.filter(topic=context['topic']).order_by('-answer_date').reverse()
-    #context['answer_form'] = TopicAnswerForm()
-    #auth_user = self.request.user
-    #user = auth_user.user
-    #projeto_nome = Projeto.objects.filter(sigla=user.user.user.projeto).first()
-    #t = Tutorial.objects.get(user=user)
-    #context['tutorial'] = t.status
-    #context['req_user'] = self.request.user
-    #context['username'] = auth_user
-    #context['user'] = user
-    #context['topic_user'] = User.objects.get(user=auth_user)
-    #context['topic_users'] = TopicAnswer.objects.all()
-    #context['nickname'] = user.nickname
-    #context['projeto'] = projeto_nome.projeto
-    #context['sigla'] = user.projeto
+    
     return context
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -289,7 +256,7 @@ def inserir_dados_de_entrada_twitter(request):
     entrada_tweets_copia.close()
    
     messages.success(request, "Busca realizada com sucesso!")
-    return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1'})
 
 
 def salvar_dados_iniciais(request):
@@ -2117,7 +2084,7 @@ def ajustar_parametro(request,opcao):
         parametros.save()   
     
   
-    return render(request, 'extrator/extrator_home.html', {'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas})      
+    return render(request, 'extrator/extrator_resultados.html', {'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
 
     
 
