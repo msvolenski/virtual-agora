@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 147 parágrafos.
-Os dados de entrada possuem 1403 palavras.
-Os dados lematizados possuem 1540 palavras.
-Não houveram erros durante a lematização.
-O documento lematizado e sem stopwords possui 903 palavras.
+Os dados de entrada contém 23 parágrafos.
+Os dados de entrada possuem 261 palavras.
+Os dados lematizados possuem 290 palavras.
+Palavras não lematizadas: deelma-frankstemer $ $ $ 
+O documento lematizado e sem stopwords possui 150 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 35.6379187455 %.
-Em média, cada sentença do texto original possui 10 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 6 palavras.
+Compressão do texto após pré-processamento: 42.5287356322 %.
+Em média, cada sentença do texto original possui 11 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 7 palavras.

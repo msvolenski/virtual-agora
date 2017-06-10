@@ -13,12 +13,16 @@
     <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	
+
     <title>Resultados do ECC</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'agora/css/reset.css' %}"> <!-- CSS reset -->
-	<link rel="stylesheet" href="{% static 'agora/css/style.css' %}"> <!-- Resource style -->
+    <link rel="stylesheet" href="{% static 'agora/css/reset.css' %}">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'agora/css/style.css' %}">
+    <!-- Resource style -->
     <link href="{% static 'agora/css/extrator.css' %}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href="{% static 'agora/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -79,12 +83,22 @@
                     <li>
                         <a class="page-scroll" href="#passo1">Passo 1</a>
                     </li>
+                     <li>
+                        <a class="page-scroll" href="#passo2">Passo 2</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#passo3">Passo 3</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#passo4">Passo 4</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#passo5">Passo 5</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#download">Linha de extração</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Extrator</a>
-                    </li>
+                  
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -113,12 +127,12 @@
     <!-- About Section -->
     <section id="ajuste" class="container content-section text-center">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2" style="margin-top:-50px;" >
+            <div class="col-lg-8 col-lg-offset-2" style="margin-top:-50px;">
                 <h2>Ajuste de Parâmetros</h2>
-                <div class="container marketing" style="margin:0 auto;width:80%">                   
-                    <a href="{% url 'extrator:limpar_lista_subtantivos'%}" class="botao_ajuste">Limpar lista de Substantivos</a>                   
+                <div class="container marketing" style="margin:0 auto;width:80%">
+                    <a href="{% url 'extrator:limpar_lista_subtantivos'%}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
-                    
+
                     <div class="titulo_ajuste">Valor de k </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
@@ -156,106 +170,276 @@
         </div>
     </section>
 
-    
-   
-   
-   
-   
-   
-   
-   
-   
+
+
+
+
+
+
+
+
+
     <section id="passo1" class="container content-section text-center">
+
+        <section id="cd-timeline" class="cd-container" style="">
+            
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <!-- cd-timeline-img -->
+                <div class="cd-timeline-content">
+                    <h2 style="margin-bottom:15px" >Dados do Twitter</h2>
+                    <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST"
+                        role="form" enctype="multipart/form-data">
+                        <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">
+                        <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
+                    </form>
+                    <span class="cd-date">Jan 14</span>
+                </div>                
+            </div>          
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_vis_dados" class="glyphicon glyphicon-search" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2 style="margin-bottom:15px">Visualizar Dados</h2>
+                    <a  href="{% url 'extrator:dados' %}" style="text-decoration:none;margin-left:45%;" class="cd-read-more">Abrir</a>
+                    <span class="cd-date">Jan 18</span>
+                </div>              
+            </div>
+            <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_salvar_dados" class="glyphicon glyphicon-floppy-disk" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2 style="margin-bottom:15px">Salvar Dados</h2>                    
+                    <a href="{% url 'extrator:salvar_iniciais' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
+                    <span class="cd-date">Jan 24</span>
+                </div>             
+            </div>
+            <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_corretor" class="glyphicon glyphicon-pencil" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content">
+                    <h2 style="margin-bottom:15px">Corrigir ortografia</h2>                    
+                    <a href="{% url 'extrator:corretor' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Corrigir</a>
+                    <span class="cd-date">Feb 14</span>
+                </div>               
+            </div>
+            
+              <!-- começa o PASSO 2  -->
+            <div id="passo2" style="padding-top:300px;">      
+         
+            <div class="cd-timeline-block" >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_preparar_dados" class="glyphicon glyphicon-file" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #F2B0E4">
+                    <h2>Preparar Dados</h2>                    
+                    <a href="{% url 'extrator:preproc' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Preparar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>              
+            </div>
+            <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_lematizar" class="glyphicon glyphicon-font" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #F2B0E4">
+                    <h2>Lematizar</h2>
+                    <a href="{% url 'extrator:lematizador' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">lematizar</a>                   
+                    <span class="cd-date">Feb 26</span>
+                </div>            
+            </div>
+
+            <div class="cd-timeline-block"  >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_eliminar_sw" class="glyphicon glyphicon-scissors" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #F2B0E4"> 
+                    <h2>Eliminar Stop-words</h2>                    
+                    <a href="{% url 'extrator:stopwords' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Eliminar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>               
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_salvar_bd" class="glyphicon glyphicon-floppy-save" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #F2B0E4">
+                    <h2>Salvar no Banco de Dados</h2>
+                    <a href="{% url 'extrator:salvar' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
+                    <span class="cd-date">Feb 26</span>
+                </div>               
+            </div>
+
+             <div class="cd-timeline-block"  >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_gerar_rp2" class="glyphicon glyphicon-list-alt" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #F2B0E4;">
+                    <h2>Gerar Relatório</h2>                   
+                    <a href="{% url 'extrator:relatorio' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>
+                <!-- cd-timeline-content -->
+            </div>
+            <!-- cd-timeline-block -->
        
-       <section id="cd-timeline" class="cd-container" style="">
-		<div class="cd-timeline-block" style="color:black">
-			<div class="cd-timeline-img cd-picture" >
-				<span class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
-			</div> <!-- cd-timeline-img -->
+       </div>
 
-			<div class="cd-timeline-content">
-				<h2>Dados do Twitter</h2>	
-                <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST" role="form" enctype="multipart/form-data">
-              <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">            
-              <input style="margin-top:30px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
-            </form>    
+       
+       
+       <div id="passo3" style="padding-top:300px;">      
+         
+            <div class="cd-timeline-block" >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_def_vertices" class="glyphicon glyphicon-record" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #33e0a1">
+                    <h2>Definir Vértices</h2>                    
+                    <a href="{% url 'extrator:lista_vertices' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Definir</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>              
+            </div>
+            <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_indexar" class="glyphicon glyphicon-tags" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #33e0a1">
+                    <h2>Indexar Palavras</h2>
+                    <a href="{% url 'extrator:mapear' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Indexar</a>                   
+                    <span class="cd-date">Feb 26</span>
+                </div>            
+            </div>
+
+            <div class="cd-timeline-block"  >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_rede" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #33e0a1"> 
+                    <h2>Gerar Rede Complexa</h2>                    
+                    <a href="{% url 'extrator:matriz' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>               
+            </div>
+
+            
+            <!-- cd-timeline-block -->
+       
+       </div>
+
+ <div id="passo4" style="padding-top:300px;">      
+         
+            <div class="cd-timeline-block" >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_calc_metricas" class="glyphicon glyphicon-plus" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #EFCEAA">
+                    <h2>Calcular Métricas</h2>                    
+                    <a href="{% url 'extrator:metricas_ranking' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>              
+            </div>
+            <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_calc_indice" class="glyphicon glyphicon-asterisk" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #EFCEAA">
+                    <h2>calcular Índice</h2>
+                    <a href="{% url 'extrator:calularindice' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>                   
+                    <span class="cd-date">Feb 26</span>
+                </div>            
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_sel_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #EFCEAA"> 
+                    <h2>Selecionar Temas</h2>                    
+                    <a href="{% url 'extrator:selecionar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Selecionar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>               
+            </div>
+
+            
+            <!-- cd-timeline-block -->
+       
+       </div>
+
+        <div id="passo5" style="padding-top:300px;">      
+         
+            <div class="cd-timeline-block" >
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_protofrases" class="glyphicon glyphicon-tasks" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #E04644">
+                    <h2>Protofrases</h2>                    
+                    <a href="{% url 'extrator:processarpfs'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>              
+            </div>
+            <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_map_extracao" class="glyphicon glyphicon-zoom-in" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #E04644">
+                    <h2>Extração</h2>
+                    <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>                   
+                    <span class="cd-date">Feb 26</span>
+                </div>            
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <span id="logo_repres" class="glyphicon glyphicon-king" style="font-size:200%;margin-top:15px;"></span>
+                </div>
+                <div class="cd-timeline-content" style="background: #E04644"> 
+                    <h2>Representatividade</h2>                    
+                    <a href="{% url 'extrator:calculair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
+                    <span class="cd-date">Feb 18</span>
+                </div>               
+                <div class="botao_resultados_1" style="height:0px;border:none;"></div>
+            </div>
+
+            
+
+            
+            <!-- cd-timeline-block -->
+       
+       </div>
+       
 
 
 
-				<span class="cd-date">Jan 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img class="fa fa-twitter" alt="Movie">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Visualizar Dados</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-				<img src="img/cd-icon-picture.svg" alt="Picture">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 3</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 24</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 4</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 14</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-				<img src="img/cd-icon-location.svg" alt="Location">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 5</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 18</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-				<img src="img/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Final Section</h2>
-				<p>This is the content of the last section</p>
-				<span class="cd-date">Feb 26</span>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-	</section> <!-- cd-timeline --> 
+        </section>
+    
+    {% if fim %}
+    <div id="fim" class="botao_resultados_2"><b>RESULTADOS</b></div>
+    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" id="texto_resultados" style="margin-top:100px;"><b>MAPA ORBITAL</b></a>
+    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" id="texto_resultados"><b>LINHA DE EXTRAÇÃO DOS PARÁGRAFOS</b></a>
+    
+    {% endif %}    
+        <!-- cd-timeline -->
     </section>
-    
-    
-    
-    
-        </div>
+
+
+
+
+    </div>
     </section>
     <!-- About Section -->
     <section id="about" class="container content-section text-center" style="background:white;">
@@ -337,29 +521,137 @@
         </div>
     </section>
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
     <!-- Map Section -->
     <div id="map"></div>
 
     <!-- Footer -->
     <footer>
+        
+  
         <div class="container text-center">
             <p>Copyright &copy; Your Website 2016</p>
+            {{popup}}
         </div>
     </footer>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="{% static 'agora/ bootstrap / docs / assets / js / vendor / jquery.min.js' %}"><\/script>')
-    </script>
-    <script src="{% static 'agora/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
-    <script src="{% static 'agora/bootstrap/docs/assets/js/vendor/holder.min.js' %}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{% static 'agora/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.min.js"></script>
+    
+{%if popup %}
+    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+      <div class="modal-dialog" id="modal-dialog-mob" style="width: 40%;margin-bottom:10px;">
+        <div class="modal-content" >
+          <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
+          <div style="border:1px solid black;margin:10px 30px 10px 30px">
+            <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra}}</b></div>
+          </div>
+          <div style="color:black;padding:10px;font-size:120%;margin:10px">Faça uma das 5 opções: </div>
+          <div style="border:0.5px solid black;margin:10px 30px 30px 30px">
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Ignorar "{{palavra}}": </div>
+            <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao0' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Ignorar</a>
+            <hr style="border-top: 1px solid #848484">
 
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Incluir "{{palavra}}" ao dicionário: </div>
+            <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao1' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" por uma das sugestões: </div>
+            <div style="margin:0px 20px 0px 20px">
+              {% for sugestao in lista_de_sugestoes %}
+              <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a>              {% endfor %} {% if not lista_de_sugestoes %}
+              <div style="margin-left:40%;">não há sugestões</div>
+              {% endif %}
+            </div>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" e adicionar ao dicionário: </div>
+            <div style="margin-left:5%;margin-bottom:20px">
+              <form action="{% url 'extrator:atualiza_corretor' 'null' posicao 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">
+                <input type="text" name="sugestao_usr" required="required">
+                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir"
+                  name="substituir">
+                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir todas as ocorrências"
+                  name="todas">
+              </form>
+            </div>
+            <hr style="border-top: 1px solid #848484">
+            <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Adicionar "{{palavra}}" às stop-words (a palavra aparecerá novamente para escolha de uma das opções acima): </div>
+            <div style="margin-bottom: 20px">
+              <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %} 
+
+    {%if testa_sub %}
+    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+      <div class="modal-dialog" id="modal-dialog-mob">
+        <div class="modal-content">
+          <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+          <div style="border:1px solid black;margin:10px 30px 10px 30px">
+            <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra_candidata}}</b></div>
+          </div>
+          <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
+          <div style="padding:40px;display:block;margin-left:200px;">
+            <form action="{% url 'extrator:testa_substantivo_usuario' palavra_candidata %}" method="POST" role="form" enctype="multipart/form-data">
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="sim" name="opcao_usr">
+              <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="nao" name="opcao_usr">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}   
+
+    <!-- jQuery -->
+    <script src="{% static 'agora/vendor/jquery/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'agora/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{% static 'agora/js/grayscale.min.js' %}"></script> 
+
+    <!-- BS JavaScript -->
+    <script type="text/javascript" src="{% static 'agora/js/bootstrap.js' %}"></script>
+    <script src="{% static 'agora/js/main.js' %}"></script>
+    
+    {% if goto %}
+    <script>
+        window.location.hash = '#{{goto}}';
+        3
+    </script>
+
+    {% endif %} 
+    
+    {% if muda_logo %}
+    <script>
+         var classe = document.getElementById('{{muda_logo}}');
+         classe.className = "glyphicon glyphicon-ok";
+         classe.style.color = "#A1E570";
+    </script>
+    {% endif %}
+
+    {% if muda_logo_error %}
+    <script>
+         var classe = document.getElementById('{{muda_logo_error}}');
+         classe.className = "glyphicon glyphicon-remove";
+         classe.style.color = "red"; 
+    </script>
+    {% endif %}
 
     <script type="text/javascript">
         function show_sidebar(name) {
@@ -383,40 +675,9 @@
             else {
                 cond.style.visibility = 'hidden';
             }
-
-
         }
     </script>
-
-    <script src="{% static 'agora/vendor/jquery/jquery.js' %}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'agora/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="{% static 'agora/js/grayscale.min.js' %}"></script>
-
-    {% if goto %}
-    <script> window.location.hash = '#{{goto}}'; </script>
-    {% endif %}
-
-    {% if gotoajuste %}
-    <script> window.location.hash = '#{{gotoajuste}}'; </script>
-    {% endif %}
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{% static 'agora/js/main.js' %}"></script>
-
-
-
-
+    
 
 </body>
-
 </html>

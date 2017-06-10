@@ -1,290 +1,64 @@
-TEMA: renan
+TEMA: deelma
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        renan     /     77    /    nao
+        deelma     /     11    /    nullll
+
+
+
+
+
+
+TEMA: loola
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        loola     /     6    /    nullll
+
+
+
+
+
+
+TEMA: boca
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        boca     /     2    /    nullll
+
+
+
+
+
+
+TEMA: denúncia
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        denúncia     /     2    /    nullll
+
+
+
+
+
+
+TEMA: época
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        época     /     4    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        renan calheiros     /     20    /    nao
-       renan liderança     /     22    /    nao
-       renan continuum     /     3    /    nullll
+        época falatório     /     3    /    nao
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        renan calheiros mantém     /     2    /    nao
-       renan liderança pmdb     /     20    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        renan calheiros mantém liderança     /     1    /    sim
-       renan liderança pmdb acordo     /     9    /    nullll
-       renan liderança pmdb mantém     /     7    /    nullll
-
-
-
-
-
-
-TEMA: pmdb
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        pmdb     /     38    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        pmdb renan     /     36    /    nao
-       pmdb senado     /     13    /    nullll
-       pmdb mantém     /     7    /    nao
-       pmdb acordo     /     9    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        pmdb renan liderança     /     20    /    nullll
-       pmdb renan calheiros     /     10    /    nullll
-       pmdb mantém liderança     /     7    /    nullll
-       pmdb mantém renan     /     7    /    nao
-       pmdb acordo renan     /     9    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        pmdb mantém renan liderança     /     7    /    nullll
-       pmdb mantém renan calheiros     /     1    /    sim
-       pmdb mantém renan derrota     /     6    /    nullll
-       pmdb acordo renan liderança     /     9    /    nullll
-
-
-
-
-
-
-TEMA: liderança
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        liderança     /     22    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        liderança pmdb     /     20    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        liderança pmdb renan     /     20    /    nullll
-       liderança pmdb acordo     /     9    /    nao
-       liderança pmdb mantém     /     7    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        liderança pmdb acordo renan     /     9    /    nullll
-       liderança pmdb mantém renan     /     7    /    nao
-
-
-
- - ITERACAO 4:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        liderança pmdb mantém renan calheiros     /     1    /    sim
-       liderança pmdb mantém renan derrota     /     6    /    nullll
-
-
-
-
-
-
-TEMA: líder
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        líder     /     17    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        líder pmdb     /     11    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        líder pmdb senado     /     11    /    nullll
-       líder pmdb renan     /     9    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        líder pmdb renan calheiros     /     8    /    nullll
-
-
-
-
-
-
-TEMA: acordo
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        acordo     /     10    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        acordo renan     /     10    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        acordo renan liderança     /     9    /    nao
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        acordo renan liderança pmdb     /     9    /    nullll
-
-
-
-
-
-
-TEMA: bancada
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        bancada     /     13    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        bancada pmdb     /     10    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        bancada pmdb renan     /     10    /    nao
-       bancada pmdb senado     /     7    /    nullll
-       bancada pmdb renancalheiros     /     3    /    nao
-       bancada pmdb mantém     /     1    /    sim
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        bancada pmdb renan liderança     /     2    /    nullll
-       bancada pmdb renan calheiros     /     6    /    nullll
-       bancada pmdb renancalheiros senado     /     3    /    nullll
-
-
-
-
-
-
-TEMA: governo
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        governo     /     13    /    nullll
-
-
-
-
-
-
-TEMA: senador
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senador     /     8    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senador renan     /     8    /    nao
-       senador pmdb     /     6    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senador renan liderança     /     4    /    nao
-       senador renan calheiros     /     3    /    nao
-       senador pmdb renan     /     6    /    nao
-       senador pmdb senado     /     2    /    nullll
-
-
-
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senador renan liderança pmdb     /     4    /    nao
-       senador renan calheiros continuum     /     1    /    sim
-       senador pmdb renan liderança     /     4    /    nullll
-       senador pmdb renan calheiros     /     3    /    nao
-
-
-
- - ITERACAO 4:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        senador renan liderança pmdb acordo     /     1    /    sim
-       senador pmdb renan calheiros continuum     /     1    /    sim
-
-
-
-
-
-
-TEMA: micheltemer
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        micheltemer     /     2    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        micheltemer renan     /     2    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        micheltemer renan calheiros     /     2    /    nullll
-
-
-
-
-
-
-TEMA: brasil247
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil247     /     13    /    nullll
+        época falatório toinho     /     3    /    nullll
 
 
 

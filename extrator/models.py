@@ -21,6 +21,7 @@ class DadosPreproc(models.Model):
      palavras_por_sentenca_org = models.IntegerField('ppso')
      nome_rel_protofrase = models.CharField('nome_rel_pfs', max_length=100)
      flag_testapalavra = models.TextField('Flag')
+     flag_resultados = models.TextField('resultado')
 
      def __str__(self):
         return self.palavras_texto_original

@@ -4,45 +4,16 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    renan  /  0.705882352941  /  70.5882352941
-    pmdb  /  0.383350309821  /  38.3350309821
-    liderança  /  0.22152194211  /  22.152194211
-    líder  /  0.180375180375  /  18.0375180375
-    acordo  /  0.10610304728  /  10.610304728
-    bancada  /  0.102219675749  /  10.2219675749
-    governo  /  0.102219675749  /  10.2219675749
-    brasil247  /  0.0942831678126  /  9.42831678126
-    senador  /  0.0610729140141  /  6.10729140141
-    micheltemer  /  0.0212206094559  /  2.12206094559
+    deelma  /  0.722222222222  /  72.2222222222
+    loola  /  0.375816993464  /  37.5816993464
+    época  /  0.309368191721  /  30.9368191721
+    boca  /  0.232026143791  /  23.2026143791
+    denúncia  /  0.154684095861  /  15.4684095861
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
 
- Tema: renan
-
-     Sentença    /    IRSE    /    IRSE(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
-
-
-
-
- Tema: pmdb
-
-     Sentença    /    IRSE    /    IRSE(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
-
-
-
-
- Tema: liderança
-
-     Sentença    /    IRSE    /    IRSE(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
-
-
-
-
- Tema: líder
+ Tema: deelma
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -50,7 +21,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: acordo
+ Tema: loola
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -58,15 +29,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: bancada
-
-     Sentença    /    IRSE    /    IRSE(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   1.0    /    100.0
-
-
-
-
- Tema: governo
+ Tema: boca
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -74,17 +37,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: senador
-
-     Sentença    /    IRSE    /    IRSE(%)
-to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.333333333333    /    33.3333333333
-
-com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.666666666667    /    66.6666666667
-
-
-
-
- Tema: micheltemer
+ Tema: denúncia
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -92,7 +45,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: brasil247
+ Tema: época
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -108,11 +61,5 @@ null - nao convergiu   /   0    /    0
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-bancada do pmdb mantém renan calheiros na liderança do partido   /   0.571428571429    /    57.1428571429
-
-com ajuda de sarney , renan calheiros continua líder do pmdb no senado , afirmam senadores após reunião   /   0.285714285714    /    28.5714285714
-
-to muito puto pprt senadores do pmdb fazem acordo e decidem manter renan na liderança do partido   /   0.142857142857    /    14.2857142857
-
 null - nao convergiu   /   0.0    /    0.0
 

@@ -79,131 +79,133 @@ class ResultadosExtratorHomeView(generic.ListView):
   
   def get_context_data(self, **kwargs):
     
-    temas = TemasNew.objects.all().values_list('tema', flat=True)
-    tabela_graus_n = TabelaRanking.objects.all().values_list('vertice_nome','grau_norm')
-    
-
-    #paramentros genericos (raios)
-    raio_par = 15
-    menor_grau = 1
-    for i in xrange(1, len(temas)):
-        tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+    #verifica se há resultados a serem mostrados
+    result = DadosPreproc.objects.get(id=1)
         
-        #menor grau
-        if tema.grau_norm < menor_grau:
-            menor_grau = tema.grau_norm 
-    
-    raio_vertices = float(20/menor_grau)
-
-    #caclula parmetros do tema central
-    irt_central = TemasNew.objects.get(tema__exact=temas[0])
-    diametro_central = int(raio_vertices*irt_central.irt)
-    raio_central = int(diametro_central/2)
-    tema_central = (temas[0], diametro_central, raio_central,irt_central.irt_p)
-    
-    #calcula parametros dos parágrafos do tema central
-    tema_central_par = []
-    paragrafos = DadosExtracaoNew.objects.filter(tema__exact=temas[0])
-    delta = int(180/len(paragrafos))
-    posicao = 0
-    
-    for paragrafo in paragrafos:
-        if paragrafo.protofrase.strip() != 'tema nao convergiu':
-            distancia = int(tema_central[2] + raio_par + 100*(1-paragrafo.irse))             
-            pos_x = int(distancia*math.cos(math.radians(posicao)))
-            pos_y = int(distancia*math.sin(math.radians(posicao)))
-            posicao = posicao + delta
-            nome = (temas[0] + str(pos_x) + str(pos_y))
-            tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome ))   
-    
-    
-    #Define os angulos dos temas e inicializa vetor
-    delta_grau = float(360/(len(temas) - 1))    
-    grau = delta_grau
-    vetor_temas =[]   
-    
-    #menor raio
-    t = TemasNew.objects.all()
-    diametro_2_vertice = int(raio_vertices*t[1].irt)
-    raio_2_vertice = int(diametro_2_vertice/2)
-    menor_distancia_do_tema = raio_central + raio_2_vertice + 10
-    tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
-    distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
-    
-    for i in xrange(1, len(temas)):
+    if result.flag_resultados == 'sim':
+        print 111
+        temas = TemasNew.objects.all().values_list('tema', flat=True)
+        tabela_graus_n = TabelaRanking.objects.all().values_list('vertice_nome','grau_norm')
         
-        #calcula parametros
-        tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
-        irt = TemasNew.objects.get(tema__exact=temas[i])
-        diametro_vertice = int(raio_vertices*irt.irt)
-        raio_vertice = int(diametro_vertice/2)
-        distancia_centro = distancia_do_centro*(1 - tema.grau_norm)
-        pos_x = int(distancia_centro*math.cos(math.radians(grau)))
-        pos_y = int(distancia_centro*math.sin(math.radians(grau)))              
-
-        #carrega vetor      
-        vetor_temas.append((temas[i], distancia_centro ,pos_x, pos_y, diametro_vertice, raio_vertice, irt.irt_p ))
-        grau = grau + delta_grau
-
-    
-    #maior posição de y (para valores negativos)   
-    maior_distancia = 0
-    for v in vetor_temas:
-        if v[2] < maior_distancia:
-            maior_distancia = v[2]
+        #paramentros genericos (raios)
+        raio_par = 15
+        menor_grau = 1
+        for i in xrange(1, len(temas)):
+            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+            
+            #menor grau
+            if tema.grau_norm < menor_grau:
+                menor_grau = tema.grau_norm 
         
-    maior_distancia = int(math.fabs(maior_distancia)) + 100
+        raio_vertices = float(20/menor_grau)
 
-    #parêmetro de definição do tamanho dos vertices
-    
-    #define parametros dos paragrafos
-    vetor_paragrafos = []
-    for tema in temas:
-        paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)
-       
+        #caclula parmetros do tema central
+        irt_central = TemasNew.objects.get(tema__exact=temas[0])
+        diametro_central = int(raio_vertices*irt_central.irt)
+        raio_central = int(diametro_central/2)
+        tema_central = (temas[0], diametro_central, raio_central,irt_central.irt_p)
+        
+        #calcula parametros dos parágrafos do tema central
+        tema_central_par = []
+        paragrafos = DadosExtracaoNew.objects.filter(tema__exact=temas[0])
         delta = int(180/len(paragrafos))
         posicao = 0
+        
         for paragrafo in paragrafos:
             if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                distancia = 0
-                for vetor in vetor_temas:
-                    if vetor[0] == tema:
-                        distancia = int(vetor[5] + raio_par + 100*(1-paragrafo.irse))             
+                distancia = int(tema_central[2] + raio_par + 100*(1-paragrafo.irse))             
                 pos_x = int(distancia*math.cos(math.radians(posicao)))
                 pos_y = int(distancia*math.sin(math.radians(posicao)))
                 posicao = posicao + delta
-                nome = (tema + str(pos_x) + str(pos_y))
-                
-                
-                vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome ))    
+                nome = (temas[0] + str(pos_x) + str(pos_y))
+                tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome ))   
         
-    
-    #montagem da linha de extração
-    cont = 0
-    paragrafos_obj = DadosExtracaoNew.objects.all().values_list('sentenca','irgs_p').order_by('-irgs_p').distinct()
-    paragrafos_linha = []
-    for p in paragrafos_obj:
-        if p[0].strip() != 'null - nao convergiu':
-            nome = str(cont) + '_' + str(int(p[1]))
-            paragrafos_linha.append((p[0].strip(),int(p[1]), int(100 - p[1]),nome))    
-            cont += 1
-    print paragrafos_linha
+        
+        #Define os angulos dos temas e inicializa vetor
+        delta_grau = float(360/(len(temas) - 1))    
+        grau = delta_grau
+        vetor_temas =[]   
+        
+        #menor raio
+        t = TemasNew.objects.all()
+        diametro_2_vertice = int(raio_vertices*t[1].irt)
+        raio_2_vertice = int(diametro_2_vertice/2)
+        menor_distancia_do_tema = raio_central + raio_2_vertice + 10
+        tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
+        distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
+        
+        for i in xrange(1, len(temas)):
+            
+            #calcula parametros
+            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+            irt = TemasNew.objects.get(tema__exact=temas[i])
+            diametro_vertice = int(raio_vertices*irt.irt)
+            raio_vertice = int(diametro_vertice/2)
+            distancia_centro = distancia_do_centro*(1 - tema.grau_norm)
+            pos_x = int(distancia_centro*math.cos(math.radians(grau)))
+            pos_y = int(distancia_centro*math.sin(math.radians(grau)))              
 
-    context = super(ResultadosExtratorHomeView, self).get_context_data(**kwargs)
-    
-    
-    
-    context['vetor_temas'] = vetor_temas  
-    context['temas'] = temas   
-    context['tema_central'] = tema_central
-    context['vetor_paragrafos'] = vetor_paragrafos
-    context['tema_central_par'] = tema_central_par
-    context['maior_distancia'] = maior_distancia
-    context['altura'] = 2*maior_distancia
-    context['paragrafos_linha'] = paragrafos_linha
-    context['posicao_linha'] = int(maior_distancia/2)
-    
-    return context
+            #carrega vetor      
+            vetor_temas.append((temas[i], distancia_centro ,pos_x, pos_y, diametro_vertice, raio_vertice, irt.irt_p ))
+            grau = grau + delta_grau
+
+        
+        #maior posição de y (para valores negativos)   
+        maior_distancia = 0
+        for v in vetor_temas:
+            if v[2] < maior_distancia:
+                maior_distancia = v[2]
+            
+        maior_distancia = int(math.fabs(maior_distancia)) + 100
+
+        #parêmetro de definição do tamanho dos vertices
+        
+        #define parametros dos paragrafos
+        vetor_paragrafos = []
+        for tema in temas:
+            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)
+        
+            delta = int(180/len(paragrafos))
+            posicao = 0
+            for paragrafo in paragrafos:
+                if paragrafo.protofrase.strip() != 'tema nao convergiu':
+                    distancia = 0
+                    for vetor in vetor_temas:
+                        if vetor[0] == tema:
+                            distancia = int(vetor[5] + raio_par + 100*(1-paragrafo.irse))             
+                    pos_x = int(distancia*math.cos(math.radians(posicao)))
+                    pos_y = int(distancia*math.sin(math.radians(posicao)))
+                    posicao = posicao + delta
+                    nome = (tema + str(pos_x) + str(pos_y))
+                    
+                    
+                    vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome ))    
+            
+        
+        #montagem da linha de extração
+        cont = 0
+        paragrafos_obj = DadosExtracaoNew.objects.all().values_list('sentenca','irgs_p').order_by('-irgs_p').distinct()
+        paragrafos_linha = []
+        for p in paragrafos_obj:
+            if p[0].strip() != 'null - nao convergiu':
+                nome = str(cont) + '_' + str(int(p[1]))
+                paragrafos_linha.append((p[0].strip(),int(p[1]), int(100 - p[1]),nome))    
+                cont += 1
+        print paragrafos_linha
+
+        context = super(ResultadosExtratorHomeView, self).get_context_data(**kwargs)   
+        context['vetor_temas'] = vetor_temas  
+        context['temas'] = temas   
+        context['tema_central'] = tema_central
+        context['vetor_paragrafos'] = vetor_paragrafos
+        context['tema_central_par'] = tema_central_par
+        context['maior_distancia'] = maior_distancia
+        context['altura'] = 2*maior_distancia
+        context['paragrafos_linha'] = paragrafos_linha
+        context['posicao_linha'] = int(maior_distancia/2)
+        context['fim'] = 'fim'
+        return context
+    return
 
 
 
@@ -217,7 +219,7 @@ def inserir_dados_de_entrada(request):
             subprocess.Popen([programName, fileName])
             messages.success(request, "Arquivo de entrada aberto com sucesso. Caso deseje, insire novos dados. ATENÇÃO: SALVAR ARQUIVO EM utf-8")
             dados_de_entrada = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r","utf-8").read()
-            return render(request, 'extrator/extrator_home.html', {'dados_de_entrada':dados_de_entrada })
+            return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_vis_dados'})
     else:
         file_doc_original = codesc.open("extrator/arquivos/p1_texto_inicial_original.txt","w","utf-8")
         file_doc_original.close()
@@ -226,7 +228,7 @@ def inserir_dados_de_entrada(request):
         subprocess.Popen([programName, fileName])
         messages.success(request, "Arquivo de entrada criado e aberto com sucesso. Insira os dados e salve-o. ATENÇÃO: SALVAR ARQUIVO EM utf-8")
         dados_de_entrada = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r","utf-8").read()
-        return render(request, 'extrator/extrator_home.html', {'dados_de_entrada':dados_de_entrada })
+        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_vis_dados'})
 
 
 def inserir_dados_de_entrada_twitter(request):
@@ -256,7 +258,7 @@ def inserir_dados_de_entrada_twitter(request):
     entrada_tweets_copia.close()
    
     messages.success(request, "Busca realizada com sucesso!")
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1'})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_twitter'})
 
 
 def salvar_dados_iniciais(request):
@@ -265,6 +267,11 @@ def salvar_dados_iniciais(request):
     entrada_tokenizada1 = codecs.open("extrator/arquivos/p1_texto_inicial_tokens.txt","w", "utf-8")
     entrada_tokenizada2 = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt","w", "utf-8")
 
+    #indica que nao ha resultados a ser mostrado
+    result = DadosPreproc.objects.get(id=1)
+    result.flag_resultados = 'nao'
+    result.save()
+    
     #grava tokens nos novos arquivos  
     documento = entrada_original.read()
 
@@ -290,7 +297,7 @@ def salvar_dados_iniciais(request):
         DadosPreproc.objects.create(id=1, corretor='off',flag_testapalavra='nao')
 
     messages.success(request, "Dados salvos com sucesso!")
-    return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_salvar_dados'})
 
 
 def corretor_ortografico(request):
@@ -334,7 +341,7 @@ def corretor_ortografico(request):
                     sugestoes_codificadas.append(item.decode('iso-8859-1'))
                 arquivo.close()
                 arquivo_np.close()               
-                return render(request, 'extrator/extrator_home_2.html', {'popup': 'sim','palavra':palavra , 'lista_de_sugestoes':sugestoes_codificadas, 'posicao':posicao})    
+                return render(request, 'extrator/extrator_resultados.html', {'popup': 'sim','palavra':palavra , 'lista_de_sugestoes':sugestoes_codificadas, 'posicao':posicao})    
             
         posicao = posicao + 1
         
@@ -343,7 +350,7 @@ def corretor_ortografico(request):
     arquivo_np.close()   
     messages.success(request, "Corretor Ortográfico finalizado com sucesso!" ) 
 
-    return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_corretor'})
 
 
 def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
@@ -429,7 +436,7 @@ def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
         arquivo_sw.close()
         return corretor_ortografico(request)       
     
-    return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1'})
 
 
 def limpar_palavras_ignoradas(request):
@@ -500,7 +507,7 @@ def pre_processamento(request):
         messages.error(request, "Objetdo 'Dados do Pre-processamento não foi encontrado. Recomece desde o passo 1.")
     
     messages.success(request, "Documento preparado com sucesso!")
-    return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'muda_logo':'logo_preparar_dados','goto':'passo2'})
 
 
 def lematizar(request):
@@ -558,7 +565,7 @@ def lematizar(request):
         messages.error(request, "Objetdo 'Dados do Pre-processamento não foi encontrado. Recomece desde o passo 1.")
    
     messages.success(request, "Documento lematizado com sucesso! " + "Tempo: " + str(temp) + " segundos." )
-    return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})    
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2', 'muda_logo':'logo_lematizar'})    
 
 
 def ver_arquivo(request, arquivo):
@@ -630,7 +637,7 @@ def eliminar_stopwords(request):
     except:
        messages.error(request, "Objetdo 'Dados do Pre-processamento não foi encontrado. Recomece desde o passo 1.")    
     messages.success(request, "StopWords eliminadas com sucesso.")
-    return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})    
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo2','muda_logo':'logo_eliminar_sw'  })    
 
 
 def salvar_dados(request):
@@ -645,7 +652,7 @@ def salvar_dados(request):
     TextoPreproc.objects.bulk_create(aList)
     
     messages.success(request, "Dados salvos com sucesso.")
-    return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2','muda_logo':'logo_salvar_bd' })
 
 
 def gerar_relatorio(request):
@@ -694,7 +701,7 @@ def gerar_relatorio(request):
 
     #LÊ relatório    
     p2_relatorio = codecs.open("extrator/arquivos/p2_relatorio.txt","r","utf-8").read()
-    return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None, 'relatorio_preproc':p2_relatorio })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2','muda_logo':'logo_gerar_rp2'})
 
 def executar_passo_2(request):
     
@@ -738,7 +745,7 @@ def lista_de_vertices(request):
     ListaVertices.objects.bulk_create(aList)
  
     messages.success(request, "Lista de vértices criada com sucesso.")
-    return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3', 'muda_logo':'logo_def_vertices' })
 
 def mapear(request):
             
@@ -768,7 +775,7 @@ def mapear(request):
     #print len(palavras)
     if len(lista_texto) != len(palavras):
         messages.error("Verificar erro de tamanho de textos na linha 663!")
-        return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })       
+        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo3','muda_logo_error':'logo_indexar'})       
     
     #armazena no BD
     TextoPreproc.objects.all().delete()
@@ -777,25 +784,8 @@ def mapear(request):
     
     messages.success(request, "Bi-gramas criados com sucesso.")
     
-    return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3' , 'muda_logo':'logo_indexar'})
 
-# def mapear(request):
-            
-#     #Objetivo: Associar cada palavra do texto lematizado ao seu respectivo indice
-
-#     #carrega objetos
-#     palavras = TextoPreproc.objects.all()
-#     vertices = ListaVertices.objects.all()
-    
-#     #mapeia salvando o indice no objeto texto
-#     for palavra in palavras:
-#          for vertice in vertices:
-#             if palavra.vertice == vertice.node:
-#                 palavra.vertice_num = vertice.index
-#                 palavra.save()
-
-#     messages.success(request, "Bi-gramas criados com sucesso.")
-#     return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
 
 def matriz(request):
     
@@ -849,7 +839,7 @@ def matriz(request):
        
     messages.success(request, "Rede Complexa gerada com sucesso.")
     
-    return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo3','muda_logo':'logo_rede'})
 
 
 def rede_complexa(request):
@@ -991,7 +981,7 @@ def metricas_e_ranking(request):
     arq_tabela_closeness.close()
     arq_texto_vertices.close()   
 
-    return render(request, 'extrator/extrator_home_4.html', {'dados_de_entrada': None, 'relatorio_preproc':None }) 
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_metricas' }) 
 
 
 def mostra_tabela(request , tipo):
@@ -1208,7 +1198,7 @@ def calcula_indice(request):
     messages.success(request, "ìndice calculado com Sucesso!")
     
     rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
-    return render(request, 'extrator/extrator_home_4.html', {'rel_ind': rel_ind, 'relatorio_preproc':None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
 
 
 def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
@@ -1338,7 +1328,7 @@ def selecionar_temas(request):
     #chama função de teste enquanto houver palavras a serem verificadas
     continuar, palav = testa_substantivo(request)
     if continuar == 'sim':
-        return render(request, 'extrator/extrator_home.html',{'testa_sub':'sim' , 'palavra_candidata':palav})
+        return render(request, 'extrator/extrator_resultados.html',{'testa_sub':'sim' , 'palavra_candidata':palav})
         
     #ao termino, atualiza execuçao para off    
     execucao.flag_testapalavra = 'nao'
@@ -1404,7 +1394,7 @@ def selecionar_temas(request):
     
     #lê relatório
     rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
-    return render(request, 'extrator/extrator_home_4.html', {'rel_temas': rel_temas, 'relatorio_preproc':None })
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo4', 'muda_logo':'logo_sel_temas' })
 
 
 def executar_passo_4(request):
@@ -1578,7 +1568,7 @@ def processarProtofrases(request):
     messages.success(request, "Frases extraídas com sucesso")
     rel_proc = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt", 'r','utf-8').read()
 
-    return render(request, 'extrator/extrator_home_5.html', {'dados_de_entrada': None, 'rel_proc5':rel_proc })
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
 
 
 def mapearEextrair(request):
@@ -1618,7 +1608,7 @@ def mapearEextrair(request):
     #teste de mapeamento
     if len(sentencas_lem) != len(sentencas_pp):
         messages.error(request, "A quantidade de sentenças de p2_texto_lematizado_ssw é diferente de p2_texto_preprocessado. Verificar e corrigir para continuar.")
-        return render(request, 'extrator/extrator_home_5.html', {'dados_de_entrada': None, 'relatorio_preproc':None })
+        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo_error':'logo_map_extracao' })
 
     #inicializa relatorio
     arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
@@ -1640,7 +1630,7 @@ def mapearEextrair(request):
     messages.success(request, "Parágrafos extraídos com sucesso")
     rel_ext = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt", 'r','utf-8').read()
     
-    return render(request, 'extrator/extrator_home_5.html', {'dados_de_entrada': None, 'rel_ext':rel_ext })
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
 
 def GeraSubDocumento(palavras):
@@ -1878,11 +1868,16 @@ def calcula_indice_representatividade(request):
     for linha in irgss_u:
         arq_relatorio.write(linha[0].encode('utf-8') + '   /   ' + str(linha[1]) + '    /    ' + str(linha[2]) + '\n\n')
     arq_relatorio.close()
-
+    
+    #indica que há resultados prontos a serem mostrados
+    result = DadosPreproc.objects.get(id=1)
+    result.flag_resultados = 'sim'
+    result.save()
+    
     messages.success(request, "Índices calculados com sucesso")
     rel_repr = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt", 'r','utf-8').read() 
     
-    return render(request, 'extrator/extrator_home_5.html', {'dados_de_entrada': None, 'rel_repr': rel_repr })
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
 
 
 def executar_passo_5(request):
@@ -2081,7 +2076,11 @@ def ajustar_parametro(request,opcao):
     if opcao == 'opcao3':            
         novo_parametro = request.POST['valor_fb']
         parametros.f_min_bigramas = int(novo_parametro)
-        parametros.save()   
+        parametros.save() 
+
+    if opcao == 'opcao4':
+        return HttpResponseRedirect('/extrator/resultados/')
+
     
   
     return render(request, 'extrator/extrator_resultados.html', {'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
