@@ -132,7 +132,10 @@
 
 #texto_resultados{
     display:block;
-    color:#33CCFF;
+    color:black;
     font-size:150%;
     padding:40px;
+    margin: 0 auto;
+    text-align: center;
+    
 }

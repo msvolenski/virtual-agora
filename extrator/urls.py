@@ -4,10 +4,9 @@ from . import views
 
 app_name = 'extrator'
 urlpatterns = [
-    url(r'^extrator/$', views.ExtratorHomeView.as_view(), name='extratorHome'),
-    url(r'^extrator/resultados$', views.ResultadosExtratorHomeView.as_view(), name='resultadosextratorHome'),
+    url(r'^extrator/antigo$', views.ExtratorHomeView.as_view(), name='extratorHome'),
+    url(r'^extrator/$', views.ResultadosExtratorHomeView.as_view(), name='resultadosextratorHome'),
     url(r'^extrator/lematizar$', views.lematizar, name='lematizador'),
-    url(r'^extrator/verarquivo/(?P<arquivo>[-\w]+)/$', views.ver_arquivo, name='ver_arquivo'),
     url(r'^extrator/dados$', views.inserir_dados_de_entrada, name='dados'),
     url(r'^extrator/dadostwitter$', views.inserir_dados_de_entrada_twitter, name='dados_twitter'),
     url(r'^extrator/stopwords$', views.eliminar_stopwords, name='stopwords'),
@@ -36,7 +35,7 @@ urlpatterns = [
     url(r'^extrator/selecionartemas/$', views.selecionar_temas, name='selecionar_temas'),
     url(r'^extrator/limpasubstantivo/$', views.limpar_lista_subtantivos, name='limpar_lista_subtantivos'),
     url(r'^extrator/ajustarparametro/(?P<opcao>[-\w]+)/$', views.ajustar_parametro, name='ajustar_parametro'),
-
+    url(r'^extrator/resultadosfinais/(?P<arquivo>[-\w]+)/$', views.resultados, name='resultados'),
     url(r'^extrator/teste/$', views.testa_substantivo, name='testa_substantivo'),
     url(r'^extrator/testeuser/(?P<palavra_candidata>[-\w]+)/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario')
 ]
