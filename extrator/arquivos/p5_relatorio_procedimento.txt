@@ -1,64 +1,158 @@
-TEMA: deelma
+TEMA: lula
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        deelma     /     11    /    nullll
-
-
-
-
-
-
-TEMA: loola
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        loola     /     6    /    nullll
-
-
-
-
-
-
-TEMA: boca
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        boca     /     2    /    nullll
-
-
-
-
-
-
-TEMA: denúncia
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        denúncia     /     2    /    nullll
-
-
-
-
-
-
-TEMA: época
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        época     /     4    /    nao
+        lula     /     101    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        época falatório     /     3    /    nao
+        lula dilma     /     6    /    nullll
+       lula dizer     /     12    /    nao
+       lula poder     /     3    /    nullll
+       lula saber     /     3    /    nullll
+       lula blogdojefferson     /     4    /    nullll
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        época falatório toinho     /     3    /    nullll
+        lula dizer negócio     /     1    /    sim
+
+
+
+
+
+
+TEMA: miriam
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        miriam     /     12    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        miriam leitão     /     12    /    nullll
+
+
+
+
+
+
+TEMA: odebrecht
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        odebrecht     /     11    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        odebrecht emílio     /     2    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        odebrecht emílio dizer     /     1    /    sim
+
+
+
+
+
+
+TEMA: rico
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        rico     /     12    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        rico piada     /     1    /    sim
+       rico dizer     /     6    /    nullll
+
+
+
+
+
+
+TEMA: dilma
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula     /     6    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula bendine     /     2    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula bendine lindberg     /     2    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula bendine lindberg gleise     /     2    /    nullll
+
+
+
+
+
+
+TEMA: contra
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        contra     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        contra lula     /     5    /    nullll
+
+
+
+
+
+
+TEMA: madeleinelacsko
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        madeleinelacsko     /     5    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        madeleinelacsko lula     /     5    /    nullll
+       madeleinelacsko mostra     /     4    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        madeleinelacsko mostra lula     /     4    /    nullll
 
 
 

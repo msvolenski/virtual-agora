@@ -3,8 +3,10 @@
 
   tema   /   frase   /   repetições   /   sentença (texto original)
 
-  deelma  /  tema nao convergiu  /  1  /  null - nao convergiu
-  loola  /  tema nao convergiu  /  1  /  null - nao convergiu
-  boca  /  tema nao convergiu  /  1  /  null - nao convergiu
-  denúncia  /  tema nao convergiu  /  1  /  null - nao convergiu
-  época  /  tema nao convergiu  /  1  /  null - nao convergiu
+  lula  /  dono odebrecht emílio dizer negócio lula -  /  1  /  dono da odebrecht , emílio diz que não teve negócios com lula -
+  miriam  /  tema nao convergiu  /  1  /  null - nao convergiu
+  odebrecht  /  dono odebrecht emílio dizer negócio lula -  /  1  /  dono da odebrecht , emílio diz que não teve negócios com lula -
+  rico  /  lula nunca querer ficar rico piada pronto  /  1  /  e essa do `` lula nunca quis ficar rico '' piada pronta
+  dilma  /  tema nao convergiu  /  1  /  null - nao convergiu
+  contra  /  tema nao convergiu  /  1  /  null - nao convergiu
+  madeleinelacsko  /  tema nao convergiu  /  1  /  null - nao convergiu

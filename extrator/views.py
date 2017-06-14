@@ -148,7 +148,9 @@ def salvar_dados_iniciais(request):
     documento = documento.replace(r'https:',r'https')
 
     palavras = nltk.word_tokenize(documento)
+    
     for token in palavras:
+       
         entrada_tokenizada1.write(token)
         entrada_tokenizada2.write(token)
         entrada_tokenizada1.write(' ')
@@ -192,13 +194,13 @@ def corretor_ortografico(request):
     for palavra in palavras:
            
         #Testa se o token é uma palavra (formada por letras)
-        pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$")        
+        pattern = re.compile("(?:[.A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$")        
         eh_palavra = pattern.match(palavra.encode('utf-8'))                
             
         if eh_palavra:
             #testa se a palavra está no dicionario        
-            res = corretor.check(palavra.encode("iso-8859-1"))                            
-                    
+            res = corretor.check(palavra.encode("iso-8859-1"))
+
             #condição caso a palavra nao estiver no dicionário                
             if res == 0 and palavra not in palavras_ignoradas: 
                 sugestoes = []
@@ -1458,6 +1460,7 @@ def mapearEextrair(request):
     arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
 
     dados = DadosExtracaoNew.objects.all()
+    print dados
     for dado in dados:
         try:        
             indice =  sentencas_lem_strip.index(dado.protofrase.strip())
@@ -1536,7 +1539,7 @@ def GeraRede(request):
 
 def SelecionaSubTemas(tabela_graus_ordenada):
     #print 'selecionando os subtemas...'
-
+    print tabela_graus_ordenada
     #calculo das distancias relativas 
     distancias_relativas_novo = OrderedDict()
     for index, numero in enumerate(tabela_graus_ordenada):        
@@ -1549,6 +1552,7 @@ def SelecionaSubTemas(tabela_graus_ordenada):
             distancias_relativas_novo[tabela_graus_ordenada.keys()[index] + '->' + tabela_graus_ordenada.keys()[index+1]] = 100*((grau_inicial - grau_final)/grau_inicial) 
         except:
             distancias_relativas_novo[tabela_graus_ordenada.keys()[index] + '->' + tabela_graus_ordenada.keys()[index+1]] = 0 
+    
     
     #procura início da cauda
     contador = 0
@@ -1779,19 +1783,14 @@ def executar_passos_2_a_5(request):
     print 'extraindo parágrafos...'
     mapearEextrair(request)
     print 'calculando índice de representatividade dos parágrafos extraídos...'
-    calcula_indice_representatividade(request) 
+    calcula_indice_representatividade(request)
+    print 'gerando resultados'
+    resultados(request,'none') 
     
     #finaliza tempo
     tempo_total =  time.time() - inicio   
    
-    relatorio_passo_2 = codecs.open("extrator/arquivos/p2_relatorio.txt","r",'utf-8').read()
-    relatorio_passo_4_1 = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
-    relatorio_passo_4_2 = codecs.open("extrator/arquivos/p4_relatorio_temas.txt","r",'utf-8').read()
-    relatorio_passo_5_1 = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","r",'utf-8').read()
-    relatorio_passo_5_2 = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","r",'utf-8').read()
-    relatorio_passo_5_3 = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","r",'utf-8').read()
-   
-    return render(request, 'extrator/extrator_home_4.html', {'rel_ind': relatorio_passo_4_1, 'rel_temas':relatorio_passo_4_2, 'relatorio_preproc':relatorio_passo_2, 'tempo':tempo_total, 'rel_ext':relatorio_passo_5_2, 'rel_repr':relatorio_passo_5_3, 'rel_proc5':relatorio_passo_5_1 })
+    return render(request, 'extrator/extrator_resultados.html', {'mostra_res':'mostra_res','goto':'resultados'})
 
 def testa_substantivo(request):
     arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
@@ -1923,7 +1922,7 @@ def ajustar_parametro(request,opcao):
         parametros.save() 
 
     if opcao == 'opcao4':
-        return HttpResponseRedirect('/extrator/resultados/')
+        return render(request, 'extrator/extrator_resultados.html', {'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})
 
     
   
@@ -1937,18 +1936,19 @@ def resultados(request,arquivo):
         tabela_graus_n = TabelaRanking.objects.all().values_list('vertice_nome','grau_norm')
         
         #paramentros genericos (raios)
-        raio_par = 15
-        menor_grau = 1
+        #raio do esfera parágrafo (deve ser igual ao definido no css)
+        raio_par = 15 
+        
+        #Define o raio da menor esfera dos subtemas
+        menor_grau = 1        
         for i in xrange(1, len(temas)):
-            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
-            
+            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])            
             #menor grau
             if tema.grau_norm < menor_grau:
-                menor_grau = tema.grau_norm 
-        
+                menor_grau = tema.grau_norm         
         raio_vertices = float(20/menor_grau)
 
-        #caclula parmetros do tema central
+        #caclula parmetros do tema central - raio e diâmetro 
         irt_central = TemasNew.objects.get(tema__exact=temas[0])
         diametro_central = int(raio_vertices*irt_central.irt)
         raio_central = int(diametro_central/2)
@@ -1960,14 +1960,46 @@ def resultados(request,arquivo):
         delta = int(180/len(paragrafos))
         posicao = 0
         
+        #acha maior distancia entre tema central e parágrafo        
+        bias_central = 0        
         for paragrafo in paragrafos:
             if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                distancia = int(tema_central[2] + raio_par + 100*(1-paragrafo.irse))             
+                distancia = int(tema_central[2] + raio_par + 80*(1-paragrafo.irse))             
+                if distancia > bias_central:
+                    bias_central = distancia
                 pos_x = int(distancia*math.cos(math.radians(posicao)))
                 pos_y = int(distancia*math.sin(math.radians(posicao)))
                 posicao = posicao + delta
                 nome = (temas[0] + str(pos_x) + str(pos_y))
-                tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome ))   
+                tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome, paragrafo.irse_p ))   
+        
+        # CALCULO DO BIAS ###############################################################################
+        #acha maior distancia entre subtema e paragrafo (bias_subtema)
+        bias_subtema = 0
+        vet_buf = []
+        for i in xrange(1, len(temas)):            
+            #calcula parametros
+            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+            irt = TemasNew.objects.get(tema__exact=temas[i])
+            diametro_vertice = int(raio_vertices*irt.irt)
+            raio_vertice = int(diametro_vertice/2)
+            vet_buf.append((temas[i],raio_vertice))        
+        
+        for tema in temas:
+            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)       
+            for paragrafo in paragrafos:
+                if paragrafo.protofrase.strip() != 'tema nao convergiu':
+                    distancia = 0
+                    for vetor in vet_buf:
+                        if vetor[0] == tema:
+                            distancia = int(vetor[1] + raio_par + 80*(1-paragrafo.irse))
+                            if distancia > bias_subtema:
+                                bias_subtema = distancia
+
+        bias = bias_central + bias_subtema             
+        ##########################################################################################
+        
+        
         
         
         #Define os angulos dos temas e inicializa vetor
@@ -1979,7 +2011,7 @@ def resultados(request,arquivo):
         t = TemasNew.objects.all()
         diametro_2_vertice = int(raio_vertices*t[1].irt)
         raio_2_vertice = int(diametro_2_vertice/2)
-        menor_distancia_do_tema = raio_central + raio_2_vertice + 10
+        menor_distancia_do_tema = raio_central + raio_2_vertice + bias + 10
         tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
         distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
         
@@ -2011,9 +2043,9 @@ def resultados(request,arquivo):
         
         #define parametros dos paragrafos
         vetor_paragrafos = []
-        for tema in temas:
-            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)
         
+        for tema in temas:
+            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)        
             delta = int(180/len(paragrafos))
             posicao = 0
             for paragrafo in paragrafos:
@@ -2021,16 +2053,14 @@ def resultados(request,arquivo):
                     distancia = 0
                     for vetor in vetor_temas:
                         if vetor[0] == tema:
-                            distancia = int(vetor[5] + raio_par + 100*(1-paragrafo.irse))             
+                            distancia = int(vetor[5] + raio_par + 80*(1-paragrafo.irse))                                      
                     pos_x = int(distancia*math.cos(math.radians(posicao)))
                     pos_y = int(distancia*math.sin(math.radians(posicao)))
                     posicao = posicao + delta
-                    nome = (tema + str(pos_x) + str(pos_y))
-                    
-                    
-                    vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome ))    
+                    nome = (tema + str(pos_x) + str(pos_y))                    
+                    vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome, paragrafo.irse_p  ))    
             
-        
+             
         #montagem da linha de extração
         cont = 0
         paragrafos_obj = DadosExtracaoNew.objects.all().values_list('sentenca','irgs_p').order_by('-irgs_p').distinct()
@@ -2041,28 +2071,41 @@ def resultados(request,arquivo):
                 paragrafos_linha.append((p[0].strip(),int(p[1]), int(100 - p[1]),nome))    
                 cont += 1   
        
- 
+        #define a altura dos vertices na linha
+        maior_top = 0
+        paragrafos_linha_corrigido = []   
+        irgs_count = Counter(elem[2] for elem in paragrafos_linha)
+        for k,v in irgs_count.items():
+            top = 0
+            for p in paragrafos_linha:                
+                if p[2] == k:
+                    paragrafos_linha_corrigido.append((p[0],p[1],p[2],p[3],top))
+                    top = top + 40
+                    if top > maior_top:
+                        maior_top = top
+        maior_top = maior_top
+
         if arquivo == 'fig1':           
             image = Image.open("extrator/arquivos/p4_grafico_alphas.png")
             image.show()           
-            return render(request, 'extrator/extrator_resultados.html', {'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
+            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top , 'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
 
         if arquivo == 'fig2':
             image = Image.open("extrator/arquivos/p4_grafico_alpha_selecionado.png")
             image.show() 
-            return render(request, 'extrator/extrator_resultados.html', {'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
+            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
 
         if arquivo == 'fig3':
             image = Image.open("extrator/arquivos/p4_grafico_distancias_relativas_potenciacao.png")
             image.show() 
-            return render(request, 'extrator/extrator_resultados.html', {'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
+            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
      
         if arquivo != 'none':
             #Abre arquivo no notepad++    
             programName = "C:/Program Files/Notepad++/notepad++.exe"
             fileName = "extrator/arquivos/" + arquivo + '.txt'
             subprocess.Popen([programName, fileName])
-            return render(request, 'extrator/extrator_resultados.html', {'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
+            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
     
-    return render(request, 'extrator/extrator_resultados.html', {'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'resultados'})
+    return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'resultados'})
 

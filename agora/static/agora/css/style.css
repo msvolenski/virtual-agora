@@ -88,9 +88,9 @@ header h1 {
   /* this is the vertical line */
   content: '';
   position: absolute;
-  top: 0;
+  top: -46px;
   left: 18px;
-  height: 100%;
+  height: 101%;
   width: 4px;
   background: #33CCFF;
   z-index:0;

@@ -3,33 +3,18 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.1% graus; 0.6% betwenness; 0.3% closeness;
-- Parâmetros: delta: 4%; f: 10% dos nós totais (8 nós)
-- Temas pré-selecionados(23):
+- Métrica: 0.7% graus; 0.2% betwenness; 0.1% closeness;
+- Parâmetros: delta: 4%; f: 10% dos nós totais (53 nós)
+- Temas pré-selecionados(8):
 
-deelma
-loola
-senado
-minoria
-boca
-gab
-20.950
-16
+lula
+miriam
+leitão
+odebrecht
+rico
+dilma
 contra
-caipira
-denúncia
-carlos
-época
-expludi
-8924
-motoqueiro
-banco
-expludiu
-gay
-lorelay_fox
-pássaro
-falatório
-toinho
+madeleinelacsko
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -40,55 +25,24 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-deelma -> carlos - 3/3 - 100.0%
-deelma -> expludi - 1/1 - 100.0%
-loola -> deelma - 3/12 - 25.0%
-senado -> motoqueiro - 1/1 - 100.0%
-senado -> lorelay_fox - 1/1 - 100.0%
-minoria -> senado - 3/3 - 100.0%
-boca -> 20.950 - 3/3 - 100.0%
-gab -> minoria - 3/3 - 100.0%
-20.950 -> 16 - 3/3 - 100.0%
-16 -> gab - 3/3 - 100.0%
-contra -> loola - 2/6 - 33.3333333333%
-caipira -> contra - 2/2 - 100.0%
-denúncia -> caipira - 2/2 - 100.0%
-época -> falatório - 3/3 - 100.0%
-expludi -> 8924 - 1/1 - 100.0%
-8924 -> banco - 1/1 - 100.0%
-motoqueiro -> deelma - 3/12 - 25.0%
-banco -> expludiu - 1/1 - 100.0%
-expludiu -> época - 1/4 - 25.0%
-lorelay_fox -> pássaro - 1/1 - 100.0%
-pássaro -> gay - 1/2 - 50.0%
-falatório -> toinho - 3/3 - 100.0%
+lula -> dilma - 1/6 - 16.6666666667%
+miriam -> leitão - 12/12 - 100.0%
+dilma -> lula - 1/63 - 1.5873015873%
+contra -> lula - 1/63 - 1.5873015873%
+contra -> miriam - 1/11 - 9.09090909091%
+madeleinelacsko -> lula - 1/63 - 1.5873015873%
 
-- Temas selecionados(5):
+- Temas selecionados(7):
 
-deelma
-loola
-boca
-denúncia
-época
-
-
-- Temas excluídos(18):
-
-carlos
-expludi
-motoqueiro
-lorelay_fox
-senado
-20.950
-minoria
-16
-gab
+lula
+miriam
+odebrecht
+rico
+dilma
 contra
-caipira
-falatório
-8924
-banco
-expludiu
-pássaro
-gay
-toinho
+madeleinelacsko
+
+
+- Temas excluídos(1):
+
+leitão

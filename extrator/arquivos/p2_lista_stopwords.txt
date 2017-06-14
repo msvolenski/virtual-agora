@@ -294,3 +294,8 @@ pra
 para
 
 RT
+TT
+Pq
+pq
+tb
+pfv

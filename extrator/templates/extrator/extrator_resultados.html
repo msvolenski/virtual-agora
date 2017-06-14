@@ -168,11 +168,11 @@
             </div>
         </div>
     </section>
-
+    
+    
     <section id="passo1" class="container content-section text-center">
-
+         <div class="inicio_timeline"><b>INÍCIO</b></div>
         <section id="cd-timeline" class="cd-container" style="">
-
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-picture">
                     <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
@@ -226,7 +226,13 @@
 
             <!-- começa o PASSO 2  -->
             <div id="passo2" style="padding-top:300px;">
-
+                
+                
+                <div class="branch" style="display:inline-block;margin-left:20px"><b></b></div>               
+                <div class="executar_passos" style="position:absolute;top:895px;left:200px;width:350px;"><a href="{% url 'extrator:executar_passos_2_a_5' %}" style="color:#4d4d4d"><b>EXECUTAR TODOS OS PASSOS</b></a></div>
+                
+                
+                
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_preparar_dados" class="glyphicon glyphicon-file" style="font-size:200%;margin-top:15px;"></span>
@@ -421,16 +427,19 @@
                     <div title="irt={{tema_central.3}}%" id="circle" style="top: border-radius:{{tema_central.1}}px;-webkit-border-radius:{{tema_central.1}}px;-moz-border-radius:{{tema_central.1}}px;width:{{tema_central.1}}px;height:{{tema_central.1}}px;line-height:{{tema_central.1}}px;top:-{{tema_central.2}}px;left:-{{tema_central.2}}px;"><b>{{tema_central.0}}</b></div>
                     {% for prgf in tema_central_par %}
                     <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
-                        <div name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
+                        <div title="irse={{prgf.5}}" name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
                     </div>
-                    {% endfor %} {% for tema in vetor_temas %}
+                    {% endfor %} 
+                    {% for tema in vetor_temas %}
                     <div id="refer" style="top:{{tema.2}}px;left:{{tema.3}}px">
                         <div title="irt={{tema.6}}%" id="circle" style="border-radius:{{tema.4}}px;-webkit-border-radius:{{tema.4}}px;-moz-border-radius:{{tema.4}}px;width:{{tema.4}}px;height:{{tema.4}}px;line-height:{{tema.4}}px;top:-{{tema.5}}px;left:-{{tema.5}}px;"></div>
-                        {% for prgf in vetor_paragrafos %} {% if prgf.0 == tema.0 %}
+                        {% for prgf in vetor_paragrafos %}
+                        {% if prgf.0 == tema.0 %}
                         <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
-                            <div name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
+                            <div title="irse={{prgf.5}}" name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
                         </div>
-                        {% endif %} {% endfor %}
+                        {% endif %} 
+                        {% endfor %}
                         <div style="position:absolute;top:{{tema.5}}px;font-size: 1vw;font-family: verdana;"> {{tema.0}} </div>
                     </div>
                     {% endfor %}
@@ -438,7 +447,8 @@
 
                 {% for prgf in tema_central_par %}
                 <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
-                {% endfor %} {% for prgf in vetor_paragrafos %}
+                {% endfor %} 
+                {% for prgf in vetor_paragrafos %}
                 <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
                 {% endfor %}
 
@@ -453,11 +463,12 @@
     <section id="resultado_par" class="content-section text-center">
         <div class="download-section" style="background: white ">
 
-            <div style="height:{{maior_distancia}}px;margin-top:200px;">
+            <div style="height:{{top}}px;margin-top:200px;">
                 <div class="linha" style="position:absolute;left:10%">
                     <span title="Parágrafos mais significativos" class="glyphicon glyphicon-plus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:-15px;"></span>
-                    <span title="Parágrafos menos significativos" class="glyphicon glyphicon-minus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:100%;"></span>                    {% for p in paragrafos_linha %}
-                    <div title="irgs={{p.1}}%" id="circle" name={{p.2}} onclick="mostrar_paragrafo(this)" style="width:40px;height:40px;background:#C30FFF;left:{{p.2}}%"></div>
+                    <span title="Parágrafos menos significativos" class="glyphicon glyphicon-minus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:100%;"></span>                   
+                    {% for p in paragrafos_linha %}
+                    <div title="irgs={{p.1}}%" id="circle" name={{p.3}} onclick="mostrar_paragrafo(this)" style="top:{{p.4}}px;background:#C30FFF;width:40px;height:40px;left:{{p.2}}%"></div>
                     {% endfor %}
 
                 </div>
@@ -466,7 +477,7 @@
         </div>
         <div class="quadro_linha">
             {% for p in paragrafos_linha %}
-            <div id={{p.2}} class="par">"{{p.0}}"</div>
+            <div id={{p.3}} class="par">"{{p.0}}"</div>
             {% endfor %}
 
         </div>
@@ -722,9 +733,12 @@
 
              if (cond.style.visibility == "hidden") {
                  cond.style.visibility = "visible";
+                 name.style.background = "red";
              }
              else {
                  cond.style.visibility = 'hidden';
+                 name.style.background = "#C30FFF";
+                 
              }
          }
     </script>
