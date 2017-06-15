@@ -3,18 +3,15 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.7% graus; 0.2% betwenness; 0.1% closeness;
-- Parâmetros: delta: 4%; f: 10% dos nós totais (53 nós)
-- Temas pré-selecionados(8):
+- Métrica: 0.8% graus; 0.1% betwenness; 0.1% closeness;
+- Parâmetros: delta: 7%; f: 10% dos nós totais (44 nós)
+- Temas pré-selecionados(5):
 
 lula
-miriam
-leitão
-odebrecht
-rico
 dilma
-contra
-madeleinelacsko
+ação
+pt
+tempo
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -25,24 +22,19 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> dilma - 1/6 - 16.6666666667%
-miriam -> leitão - 12/12 - 100.0%
-dilma -> lula - 1/63 - 1.5873015873%
-contra -> lula - 1/63 - 1.5873015873%
-contra -> miriam - 1/11 - 9.09090909091%
-madeleinelacsko -> lula - 1/63 - 1.5873015873%
+lula -> dilma - 6/11 - 54.5454545455%
+dilma -> lula - 1/75 - 1.33333333333%
+dilma -> pt - 1/6 - 16.6666666667%
+pt -> lula - 1/75 - 1.33333333333%
 
-- Temas selecionados(7):
+- Temas selecionados(4):
 
 lula
-miriam
-odebrecht
-rico
-dilma
-contra
-madeleinelacsko
+ação
+pt
+tempo
 
 
 - Temas excluídos(1):
 
-leitão
+dilma

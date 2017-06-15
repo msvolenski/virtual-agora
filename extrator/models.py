@@ -22,6 +22,8 @@ class DadosPreproc(models.Model):
      nome_rel_protofrase = models.CharField('nome_rel_pfs', max_length=100)
      flag_testapalavra = models.TextField('Flag')
      flag_resultados = models.TextField('resultado')
+     flag_completo = models.TextField('completo')
+     
 
      def __str__(self):
         return self.palavras_texto_original

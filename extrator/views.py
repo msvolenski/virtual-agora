@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
 from django.views import generic
 from subprocess import call
@@ -1064,7 +1065,7 @@ def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
 
 
 def selecionar_temas(request):
-            
+                    
     #carrega parametros de ajuste
     try:
         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
@@ -1075,6 +1076,7 @@ def selecionar_temas(request):
     
     #carrega dados
     dados = DadosSelecaoTemas.objects.get(id=1)
+    r =  DadosPreproc.objects.get(id=1)
 
     #inicializa arquivos a serem escritos e lidos
     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'w')    
@@ -1161,24 +1163,87 @@ def selecionar_temas(request):
         if str(linha.vertice_numero) == str(vertice_inicio_cauda):
             break
 
-    #Pré-seleciona os temas excluindo os não-substantivos    
-    #armazena palavras para iniciar o teste    
-    execucao = DadosPreproc.objects.get(id=1)
-    if execucao.flag_testapalavra.strip() == 'nao':       
+    #Pré-seleciona os temas excluindo os não-substantivos #########################################################    
+    
+    #armazena palavras para iniciar o teste  
+    if r.flag_testapalavra.strip() == 'nao': 
         TestaPalavra.objects.all().delete()
         aList = [TestaPalavra(palavra = nome, numero=int(numero), condicao='aguardando', resultado='null') for numero,nome in vertices_selecionados.items()]    
-        TestaPalavra.objects.bulk_create(aList)        
-        execucao.flag_testapalavra = 'sim'
-        execucao.save()    
+        TestaPalavra.objects.bulk_create(aList)
+        r.flag_testapalavra = 'sim'
+        r.save()                
+      
+    #inicializa flag de execucao
+    flag_fim = 'nao'  
     
-    #chama função de teste enquanto houver palavras a serem verificadas
-    continuar, palav = testa_substantivo(request)
-    if continuar == 'sim':
-        return render(request, 'extrator/extrator_resultados.html',{'testa_sub':'sim' , 'palavra_candidata':palav})
+    #Verifica se há palavras a serem testadas
+    palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)
+   
+    
+    if not palavras:    
+        flag_fim = 'sim'             
         
+    while flag_fim == 'nao':        
+        lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
+        lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
+        arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
+        palavras_lematizadas = arq_lematizador.readlines()  
+        
+        for palavra in palavras:
+            tags = [] 
+            pal = TestaPalavra.objects.get(palavra__exact=palavra)    
+            
+            #Busca todas as tags possíveis para a palavra
+            for linha in palavras_lematizadas:            
+                tokens = linha.strip().split(' ')            
+                if palavra in tokens:                           
+                    for token in tokens:            
+                        pattern = re.compile("^[A-Z].")
+                        eh_tag = pattern.match(token)
+                        if eh_tag:
+                            tags.append(token)
+                    
+            #verifica se todas as referências são à substantivo
+            repeticoes = 0
+            for tag in tags:
+                pattern = re.compile("^N|U")
+                eh_substantivo = pattern.match(tag)
+                if eh_substantivo:
+                    repeticoes += 1        
+            
+            #caso a palavra seja substantivo, atualiza BD 
+            if palavra in lista_palavras:
+                #analise se a palavra esta na lista de substantivos
+                for key, value in lista_substantivos:
+                    if palavra == key:
+                        cond = value
+                        pal.condicao = 'finalizado'
+                        pal.resultado = cond
+                        pal.save()                     
+            
+            elif len(tags) == repeticoes:            
+                pal.condicao = 'finalizado'
+                pal.resultado ='sim'
+                pal.save()
+
+            #caso nao haja classificação como sunstantivo, atualiza BD 
+            elif repeticoes == 0:
+                pal.condicao = 'finalizado'
+                pal.resultado ='nao'
+                pal.save()
+            
+            #Na impossibilidade de vertificar, pergunta ao usuário            
+            else:                
+                if r.flag_completo == 'sim':
+                    return palavra    
+                else:                           
+                    return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':palavra})
+        flag_fim = 'sim'
+                
+
     #ao termino, atualiza execuçao para off    
-    execucao.flag_testapalavra = 'nao'
-    execucao.save()
+    r.flag_testapalavra = 'nao'
+    r.save()
 
     #cria vetor de vertices selecionados
     temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
@@ -1240,7 +1305,16 @@ def selecionar_temas(request):
     
     #lê relatório
     rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo4', 'muda_logo':'logo_sel_temas' })
+    
+    if r.flag_completo == 'sim':
+        return 'none'    
+    else: 
+        r.flag_test = 'off'
+        r.save()                          
+        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo4', 'muda_logo':'logo_sel_temas' })
+    
+    
+    
 
 
 def executar_passo_4(request):
@@ -1742,120 +1816,10 @@ def executar_passo_5(request):
     return render(request, 'extrator/extrator_home_5.html', {'rel_ext':rel_extracao, 'tempo':tempo_total})
 
 
-def executar_passos_2_a_5(request):
-    #inicializa tempo
-    inicio = time.time() 
-    
-    #passo 2
-    print 'Passo 1:'
-    print 'executando o pré-processamento...'
-    pre_processamento(request)
-    print 'lematizando dados...'
-    lematizar(request)
-    print 'eliminando stop-words...'    
-    eliminar_stopwords(request)
-    print 'salvando dados...'
-    salvar_dados(request)
-    gerar_relatorio(request)
-    
-    #passo 22   
-    print 'Passo 2'
-    print 'separando os vértices da rede...'
-    lista_de_vertices(request)
-    print 'criando bigramas e lista de adjacências...'
-    mapear(request)
-    print 'gerando rede complexa dos dados...'
-    matriz(request)
- 
-    #passo 4
-    print 'Passo 4'
-    print 'calculando métricas e rankeando os vértices...'
-    metricas_e_ranking(request)
-    print 'calculando índice de potenciação dos vértices...'  
-    calcula_indice(request)   
-    print 'selecionando os temas...'
-    selecionar_temas(request)
-
-    #passo 5
-    print 'Passo 5'
-    print 'gerando as proto-frases...'
-    processarProtofrases(request)
-    print 'extraindo parágrafos...'
-    mapearEextrair(request)
-    print 'calculando índice de representatividade dos parágrafos extraídos...'
-    calcula_indice_representatividade(request)
-    print 'gerando resultados'
-    resultados(request,'none') 
-    
-    #finaliza tempo
-    tempo_total =  time.time() - inicio   
-   
-    return render(request, 'extrator/extrator_resultados.html', {'mostra_res':'mostra_res','goto':'resultados'})
-
-def testa_substantivo(request):
-    arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
-    palavras_lematizadas = arq_lematizador.readlines()    
-    
-    #carrega palavras nao testadas em uma lista
-    try:
-        palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)
-    except:
-        return 'nao','null'    
-    
-    #cria lista de substantivos
-    lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
-    lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
-    for palavra in palavras:
-        tags = [] 
-        pal = TestaPalavra.objects.get(palavra__exact=palavra)    
-        
-        #Busca todas as tags possíveis para a palavra
-        for linha in palavras_lematizadas:            
-            tokens = linha.strip().split(' ')            
-            if palavra in tokens:                           
-                for token in tokens:            
-                    pattern = re.compile("^[A-Z].")
-                    eh_tag = pattern.match(token)
-                    if eh_tag:
-                        tags.append(token)
-                
-        #verifica se todas as referências são à substantivo
-        repeticoes = 0
-        for tag in tags:
-            pattern = re.compile("^N|U")
-            eh_substantivo = pattern.match(tag)
-            if eh_substantivo:
-                repeticoes += 1        
-        
-        #print lista_substantivos        
-        #caso a palavra seja substantivo, atualiza BD 
-        if palavra in lista_palavras:
-            #analise se a palavra esta na lista de substantivos
-            for key, value in lista_substantivos:
-                if palavra == key:
-                    cond = value
-                    pal.condicao = 'finalizado'
-                    pal.resultado = cond
-                    pal.save()                     
-        
-        elif len(tags) == repeticoes:            
-            pal.condicao = 'finalizado'
-            pal.resultado ='sim'
-            pal.save()
-
-        #caso nao haja classificação como sunstantivo, atualiza BD 
-        elif repeticoes == 0:
-            pal.condicao = 'finalizado'
-            pal.resultado ='nao'
-            pal.save()
-        
-        #Na impossibilidade de vertificar, pergunta ao usuário
-        else:            
-            return 'sim', palavra
-    return 'nao','null'
-
 def testa_substantivo_usuario(request , palavra_candidata):
     resposta = request.POST['opcao_usr']
+    r = DadosPreproc.objects.get(id=1)
+    
 
     #carrega palavra do BD 
     pal = TestaPalavra.objects.get(palavra__exact=palavra_candidata)  
@@ -1880,10 +1844,13 @@ def testa_substantivo_usuario(request , palavra_candidata):
             sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo='nao')
             sub.save()   
     
-    return selecionar_temas(request)
-
+    if r.flag_completo == 'nao':
+        return selecionar_temas(request)
+    else:
+        return executar_passos_2_a_5(request)
+                
 def limpar_lista_subtantivos(request):
-    ListaDeAdjacencias.objects.all().delete()
+    ListaDeSubstantivos.objects.all().delete()
     messages.success(request, "Lista esvaziada com sucesso!")
     return redirect(request.META['HTTP_REFERER'])
 
@@ -2109,3 +2076,66 @@ def resultados(request,arquivo):
     
     return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'resultados'})
 
+def executar_passos_2_a_5(request):
+    
+    #carrega flags de execução
+    r = DadosPreproc.objects.get(id=1)
+    r.flag_completo = 'sim'
+    r.save()
+    
+    #inicializa tempo
+    inicio = time.time() 
+    
+    if flag_testapalavra == 'off':
+        #passo 2
+        print 'Passo 1:'
+        print 'executando o pré-processamento...'
+        pre_processamento(request)
+        print 'lematizando dados...'
+        lematizar(request)
+        print 'eliminando stop-words...'    
+        eliminar_stopwords(request)
+        print 'salvando dados...'
+        salvar_dados(request)
+        gerar_relatorio(request)
+    
+        #passo 22   
+        print 'Passo 2'
+        print 'separando os vértices da rede...'
+        lista_de_vertices(request)
+        print 'criando bigramas e lista de adjacências...'
+        mapear(request)
+        print 'gerando rede complexa dos dados...'
+        matriz(request)
+ 
+        #passo 4
+        print 'Passo 4'
+        print 'calculando métricas e rankeando os vértices...'
+        metricas_e_ranking(request)
+        print 'calculando índice de potenciação dos vértices...'  
+        calcula_indice(request)   
+    
+    print 'selecionando os temas...'
+    p = selecionar_temas(request)
+    
+    if p != 'none':
+        return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':p}) 
+
+    #passo 5
+    print 'Passo 5'
+    print 'gerando as proto-frases...'
+    processarProtofrases(request)
+    print 'extraindo parágrafos...'
+    mapearEextrair(request)
+    print 'calculando índice de representatividade dos parágrafos extraídos...'
+    calcula_indice_representatividade(request)
+    print 'gerando resultados'
+    resultados(request,'none') 
+    
+    #finaliza tempo
+    tempo_total =  time.time() - inicio   
+    
+    r.flag_completo = 'nao'
+    r.save()
+
+    return render(request, 'extrator/extrator_resultados.html', {'mostra_res':'mostra_res','goto':'resultados'})

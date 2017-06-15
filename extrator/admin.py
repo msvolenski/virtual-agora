@@ -12,7 +12,7 @@ class ListaVerticesAdmin(admin.ModelAdmin):
 
 
 class DadosPreprocAdmin(admin.ModelAdmin):
-  list_display = ['flag_resultados', 'flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
+  list_display = ['flag_completo','flag_resultados', 'flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
 
 class TabelaRankingAdmin(admin.ModelAdmin):
   list_display = ['vertice_nome','vertice_numero','grau', 'grau_norm', 'betweenness','betweenness_norm','closeness','closeness_norm', 'potenciacao']

@@ -4,13 +4,10 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    lula  /  0.694980694981  /  69.4980694981
-    miriam  /  0.10034723122  /  10.034723122
-    rico  /  0.0869244124278  /  8.69244124278
-    odebrecht  /  0.0849939104973  /  8.49939104973
-    dilma  /  0.0484957632609  /  4.84957632609
-    contra  /  0.0484957632609  /  4.84957632609
-    madeleinelacsko  /  0.0432095566324  /  4.32095566324
+    lula  /  0.691983122363  /  69.1983122363
+    ação  /  0.0864565235377  /  8.64565235377
+    tempo  /  0.0647389757591  /  6.47389757591
+    pt  /  0.0486059402664  /  4.86059402664
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
@@ -18,36 +15,14 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  Tema: lula
 
      Sentença    /    IRSE    /    IRSE(%)
-dono da odebrecht , emílio diz que não teve negócios com lula -   /   1.0    /    100.0
+fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu   /   0.5    /    50.0
+
+avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7   /   0.5    /    50.0
 
 
 
 
- Tema: miriam
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: odebrecht
-
-     Sentença    /    IRSE    /    IRSE(%)
-dono da odebrecht , emílio diz que não teve negócios com lula -   /   1.0    /    100.0
-
-
-
-
- Tema: rico
-
-     Sentença    /    IRSE    /    IRSE(%)
-e essa do `` lula nunca quis ficar rico '' piada pronta   /   1.0    /    100.0
-
-
-
-
- Tema: dilma
+ Tema: ação
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -55,7 +30,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: contra
+ Tema: pt
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -63,7 +38,7 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: madeleinelacsko
+ Tema: tempo
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -79,9 +54,9 @@ null - nao convergiu   /   0    /    0
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-dono da odebrecht , emílio diz que não teve negócios com lula -   /   0.666666666667    /    66.6666666667
+fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu   /   0.5    /    50.0
 
-e essa do `` lula nunca quis ficar rico '' piada pronta   /   0.333333333333    /    33.3333333333
+avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7   /   0.5    /    50.0
 
 null - nao convergiu   /   0.0    /    0.0
 

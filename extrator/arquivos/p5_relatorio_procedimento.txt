@@ -2,157 +2,85 @@ TEMA: lula
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula     /     101    /    nao
+        lula     /     91    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dilma     /     6    /    nullll
-       lula dizer     /     12    /    nao
-       lula poder     /     3    /    nullll
-       lula saber     /     3    /    nullll
-       lula blogdojefferson     /     4    /    nullll
+        lula dilma     /     9    /    nao
+       lula vez     /     4    /    nullll
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dizer negócio     /     1    /    sim
-
-
-
-
-
-
-TEMA: miriam
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        miriam     /     12    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        miriam leitão     /     12    /    nullll
-
-
-
-
-
-
-TEMA: odebrecht
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        odebrecht     /     11    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        odebrecht emílio     /     2    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        odebrecht emílio dizer     /     1    /    sim
-
-
-
-
-
-
-TEMA: rico
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        rico     /     12    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        rico piada     /     1    /    sim
-       rico dizer     /     6    /    nullll
-
-
-
-
-
-
-TEMA: dilma
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        dilma     /     6    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        dilma lula     /     6    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        dilma lula bendine     /     2    /    nao
+        lula dilma pt     /     2    /    nao
 
 
 
  - ITERACAO 3:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        dilma lula bendine lindberg     /     2    /    nao
-
-
-
- - ITERACAO 4:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        dilma lula bendine lindberg gleise     /     2    /    nullll
+        lula dilma pt copa     /     1    /    sim
+       lula dilma pt 😜     /     1    /    sim
 
 
 
 
 
 
-TEMA: contra
+TEMA: ação
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        contra     /     6    /    nao
+        ação     /     10    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        contra lula     /     5    /    nullll
-
-
-
-
-
-
-TEMA: madeleinelacsko
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        madeleinelacsko     /     5    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        madeleinelacsko lula     /     5    /    nullll
-       madeleinelacsko mostra     /     4    /    nao
+        ação triplex     /     7    /    nullll
+       ação sobre     /     7    /    nao
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        madeleinelacsko mostra lula     /     4    /    nullll
+        ação sobre triplex     /     6    /    nullll
+
+
+
+
+
+
+TEMA: pt
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt lula     /     5    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt lula dilma     /     2    /    nullll
+
+
+
+
+
+
+TEMA: tempo
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        tempo     /     9    /    nullll
 
 
 

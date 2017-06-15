@@ -3,10 +3,8 @@
 
   tema   /   frase   /   repetições   /   sentença (texto original)
 
-  lula  /  dono odebrecht emílio dizer negócio lula -  /  1  /  dono da odebrecht , emílio diz que não teve negócios com lula -
-  miriam  /  tema nao convergiu  /  1  /  null - nao convergiu
-  odebrecht  /  dono odebrecht emílio dizer negócio lula -  /  1  /  dono da odebrecht , emílio diz que não teve negócios com lula -
-  rico  /  lula nunca querer ficar rico piada pronto  /  1  /  e essa do `` lula nunca quis ficar rico '' piada pronta
-  dilma  /  tema nao convergiu  /  1  /  null - nao convergiu
-  contra  /  tema nao convergiu  /  1  /  null - nao convergiu
-  madeleinelacsko  /  tema nao convergiu  /  1  /  null - nao convergiu
+  lula  /  dilma pt copa * lula bolsonaro pré candidato 2018 *  /  1  /  fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu
+  lula  /  avisar lula dilma hoje mostrar dar pt 😜 ovelhavermelha7  /  1  /  avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7
+  ação  /  tema nao convergiu  /  1  /  null - nao convergiu
+  pt  /  tema nao convergiu  /  1  /  null - nao convergiu
+  tempo  /  tema nao convergiu  /  1  /  null - nao convergiu
