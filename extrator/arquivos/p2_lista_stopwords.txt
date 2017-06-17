@@ -1,3 +1,8 @@
+%
+"
+-
+’
+‘
 tirar
 tira
 …
@@ -301,3 +306,5 @@ tb
 pfv
 hj
 vcs
+jalavatu
+https

@@ -4,14 +4,22 @@ RELATÓRIO FINAL - TEMAS
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
 - Métrica: 0.8% graus; 0.1% betwenness; 0.1% closeness;
-- Parâmetros: delta: 7%; f: 10% dos nós totais (44 nós)
-- Temas pré-selecionados(5):
+- Parâmetros: delta: 4%; f: 10% dos nós totais (53 nós)
+- Temas pré-selecionados(13):
 
 lula
 dilma
-ação
+aécio
+brasil
+deus
+porra
+editor
+amor
 pt
-tempo
+ai
+campanha
+poder
+governo
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -22,19 +30,35 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> dilma - 6/11 - 54.5454545455%
-dilma -> lula - 1/75 - 1.33333333333%
-dilma -> pt - 1/6 - 16.6666666667%
-pt -> lula - 1/75 - 1.33333333333%
+lula -> dilma - 11/15 - 73.3333333333%
+lula -> aécio - 1/12 - 8.33333333333%
+lula -> brasil - 1/6 - 16.6666666667%
+lula -> pt - 1/8 - 12.5%
+lula -> ai - 10/10 - 100.0%
+dilma -> aécio - 1/12 - 8.33333333333%
+brasil -> lula - 3/79 - 3.79746835443%
+amor -> deus - 10/10 - 100.0%
+pt -> lula - 1/79 - 1.26582278481%
+ai -> amor - 10/10 - 100.0%
+campanha -> lula - 5/79 - 6.32911392405%
+governo -> pt - 4/8 - 50.0%
 
-- Temas selecionados(4):
+- Temas selecionados(8):
 
 lula
-ação
-pt
-tempo
+aécio
+brasil
+porra
+editor
+campanha
+poder
+governo
 
 
-- Temas excluídos(1):
+- Temas excluídos(5):
 
 dilma
+ai
+deus
+amor
+pt

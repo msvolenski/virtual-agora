@@ -2,85 +2,147 @@ TEMA: lula
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula     /     91    /    nao
+        lula     /     92    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dilma     /     9    /    nao
-       lula vez     /     4    /    nullll
+        lula aécio     /     10    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       lula pt     /     4    /    nullll
+nullll
+nullll
+nullll
+       lula dilma     /     14    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       lula cobra     /     1    /    sim
 
 
 
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dilma pt     /     2    /    nao
 
 
 
- - ITERACAO 3:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dilma pt copa     /     1    /    sim
-       lula dilma pt 😜     /     1    /    sim
-
-
-
-
-
-
-TEMA: ação
+TEMA: aécio
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        ação     /     10    /    nao
+        aécio     /     14    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+
+
+
+
+
+
+TEMA: brasil
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        brasil     /     13    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        ação triplex     /     7    /    nullll
-       ação sobre     /     7    /    nao
+        brasil lula     /     9    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       brasil cuba     /     2    /    nao
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        ação sobre triplex     /     6    /    nullll
+        brasil cuba país     /     1    /    sim
 
 
 
 
 
 
-TEMA: pt
+TEMA: porra
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        pt     /     6    /    nao
+        porra     /     10    /    sim - com repeticao
+
+
+
+
+
+
+TEMA: editor
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        editor     /     10    /    sim - com repeticao
+
+
+
+
+
+
+TEMA: campanha
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        campanha     /     7    /    nullll
+nullll
+nullll
+
+
+
+
+
+
+TEMA: poder
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        poder     /     5    /    nullll
+nullll
+nullll
+nullll
+nullll
+
+
+
+
+
+
+TEMA: governo
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        governo     /     5    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        pt lula     /     5    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        pt lula dilma     /     2    /    nullll
-
-
-
-
-
-
-TEMA: tempo
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        tempo     /     9    /    nullll
+        governo pt     /     5    /    nullll
+sim - com repeticao
 
 
 

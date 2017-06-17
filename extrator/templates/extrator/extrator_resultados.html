@@ -129,7 +129,8 @@
             <div class="col-lg-8 col-lg-offset-2" style="margin-top:-50px;">
                 <h2>Ajuste de Parâmetros</h2>
                 <div class="container marketing" style="margin:0 auto;width:80%">
-                    <a href="{% url 'extrator:limpar_lista_subtantivos'%}" class="botao_ajuste">Limpar lista de Substantivos</a>
+                    <a href="{% url 'extrator:limpar_lista_subtantivos' 'opum' %}" class="botao_ajuste">Limpar Palavras Ignoradas</a>
+                    <a href="{% url 'extrator:limpar_lista_subtantivos' 'opdois' %}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
 
                     <div class="titulo_ajuste">Valor de k </div>
@@ -161,6 +162,13 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data"> fb =
                             <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1">                            % de todos os bigramas do tema
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                    <div class="titulo_ajuste">Acuidade de Extração </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao5' %}" method="POST" role="form" enctype="multipart/form-data"> ae =
+                            <input style="width:50px" type="number" step="1" name="valor_ae" value={{valorae}} size="1">                            % de todas as extrações
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>

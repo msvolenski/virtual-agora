@@ -3,8 +3,11 @@
 
   tema   /   frase   /   repetições   /   sentença (texto original)
 
-  lula  /  dilma pt copa * lula bolsonaro pré candidato 2018 *  /  1  /  fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu
-  lula  /  avisar lula dilma hoje mostrar dar pt 😜 ovelhavermelha7  /  1  /  avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7
-  ação  /  tema nao convergiu  /  1  /  null - nao convergiu
-  pt  /  tema nao convergiu  /  1  /  null - nao convergiu
-  tempo  /  tema nao convergiu  /  1  /  null - nao convergiu
+  lula  /  lindlixo braço direito quadrilha lula cobra emoticon canalha  /  1  /  lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha
+  aécio  /  tema nao convergiu  /  1  /  null - nao convergiu
+  brasil  /  cuba país servir modelo lula brasil  /  1  /  cuba , o país que serviu de modelo para lula fazer no brasil
+  porra  /  imaginar editor ver " porra boto lula ai amor deus "  /  1  /  imagino o editor da veja " porra bota o lula ai pelo amor de deus "
+  editor  /  imaginar editor ver " porra boto lula ai amor deus "  /  1  /  imagino o editor da veja " porra bota o lula ai pelo amor de deus "
+  campanha  /  tema nao convergiu  /  1  /  null - nao convergiu
+  poder  /  tema nao convergiu  /  1  /  null - nao convergiu
+  governo  /  jbs tornar império fraudar bndes governo pt  /  1  /  a jbs se tornou um império fraudando o bndes nos governo do pt

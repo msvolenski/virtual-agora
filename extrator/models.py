@@ -20,9 +20,8 @@ class DadosPreproc(models.Model):
      palavras_por_sentenca_lssw = models.IntegerField('ppsl')
      palavras_por_sentenca_org = models.IntegerField('ppso')
      nome_rel_protofrase = models.CharField('nome_rel_pfs', max_length=100)
-     flag_testapalavra = models.TextField('Flag')
-     flag_resultados = models.TextField('resultado')
-     flag_completo = models.TextField('completo')
+     flag_testapalavra = models.TextField('Flag -Testa Substantivo')    
+     flag_completo = models.TextField('Flag - Exec. Completa')
      
 
      def __str__(self):
@@ -143,3 +142,4 @@ class ParametrosDeAjuste(models.Model):
     dr_delta_min = models.IntegerField('Delta_distancia_relativa_min',default=5)
     f_corte = models.IntegerField('Freq_corte_nos_com_dr_min',default=10)
     f_min_bigramas = models.IntegerField('Freq_min_de_bigramas',default=50)
+    acuidade = models.IntegerField('Freq_min_de_bigramas',default=100)

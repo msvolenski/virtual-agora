@@ -4,10 +4,14 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    lula  /  0.691983122363  /  69.1983122363
-    ação  /  0.0864565235377  /  8.64565235377
-    tempo  /  0.0647389757591  /  6.47389757591
-    pt  /  0.0486059402664  /  4.86059402664
+    lula  /  0.653333333333  /  65.3333333333
+    aécio  /  0.0938461538462  /  9.38461538462
+    porra  /  0.0807692307692  /  8.07692307692
+    editor  /  0.0807692307692  /  8.07692307692
+    brasil  /  0.0761538461538  /  7.61538461538
+    campanha  /  0.0501282051282  /  5.01282051282
+    poder  /  0.0403846153846  /  4.03846153846
+    governo  /  0.0403846153846  /  4.03846153846
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
@@ -15,14 +19,12 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  Tema: lula
 
      Sentença    /    IRSE    /    IRSE(%)
-fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu   /   0.5    /    50.0
-
-avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7   /   0.5    /    50.0
+lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha   /   1.0    /    100.0
 
 
 
 
- Tema: ação
+ Tema: aécio
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -30,7 +32,31 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: pt
+ Tema: brasil
+
+     Sentença    /    IRSE    /    IRSE(%)
+cuba , o país que serviu de modelo para lula fazer no brasil   /   1.0    /    100.0
+
+
+
+
+ Tema: porra
+
+     Sentença    /    IRSE    /    IRSE(%)
+imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   1.0    /    100.0
+
+
+
+
+ Tema: editor
+
+     Sentença    /    IRSE    /    IRSE(%)
+imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   1.0    /    100.0
+
+
+
+
+ Tema: campanha
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -38,10 +64,18 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: tempo
+ Tema: poder
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: governo
+
+     Sentença    /    IRSE    /    IRSE(%)
+a jbs se tornou um império fraudando o bndes nos governo do pt   /   1.0    /    100.0
 
 
 
@@ -54,9 +88,13 @@ null - nao convergiu   /   0    /    0
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-fora dilma fora pt não vai ter copa *lula e bolsonaro pré candidatos pra 2018* eu   /   0.5    /    50.0
+imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   0.4    /    40.0
 
-avisa o lula e a dilma que hoje vamos mostrar como se dá um pt 😜 rt @ ovelhavermelha7   /   0.5    /    50.0
+cuba , o país que serviu de modelo para lula fazer no brasil   /   0.2    /    20.0
+
+lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha   /   0.2    /    20.0
+
+a jbs se tornou um império fraudando o bndes nos governo do pt   /   0.2    /    20.0
 
 null - nao convergiu   /   0.0    /    0.0
 
