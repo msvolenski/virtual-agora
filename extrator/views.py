@@ -55,12 +55,18 @@ class ResultadosExtratorHomeView(generic.ListView):
 def inserir_dados_de_entrada(request):
     #CRIA/lÊ O ARQUIVO ONDE SERÁ INSERIDO OS DADOS DE ENTRADA
     
+    #inicia cronometro
+    inicio = time.time() 
+    
     if os.path.exists("extrator/arquivos/p1_texto_inicial_original.txt"):
             programName = "C:/Program Files/Notepad++/notepad++.exe"
             fileName = "extrator/arquivos/p1_texto_inicial_original.txt"
             subprocess.Popen([programName, fileName])
             dados_de_entrada = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r","utf-8").read()
-            return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_vis_dados'})
+            
+            #finaliza tempo
+            tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+            return render(request, 'extrator/extrator_resultados.html', {'tempo_p1vd':tempo_total, 'goto':'passo1','muda_logo':'logo_vis_dados'})
     else:
         file_doc_original = codesc.open("extrator/arquivos/p1_texto_inicial_original.txt","w","utf-8")
         file_doc_original.close()
@@ -68,16 +74,25 @@ def inserir_dados_de_entrada(request):
         fileName = "extrator/arquivos/p1_texto_inicial_original.txt"
         subprocess.Popen([programName, fileName])
         dados_de_entrada = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r","utf-8").read()
-        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_vis_dados'})
+        
+        #finaliza tempo
+        tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+        return render(request, 'extrator/extrator_resultados.html', {'tempo_p1vd':tempo_total, 'goto':'passo1','muda_logo':'logo_vis_dados'})
 
 
 def inserir_dados_de_entrada_twitter(request):
+    #inicia cronometro
+    inicio = time.time() 
+    
     #define documento de entrada
     entrada_tweets_copia = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","w", "utf-8")
     
     #busca palavra digita e testa sua existencia
     hashtag = request.POST['hashtag']
-    if not hashtag:       
+    if not hashtag:
+        
+        #finaliza tempo
+        tempo_total =  ("{0:.4f}".format(time.time() - inicio))          
         return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
 
     #busca dados no twitter
@@ -86,20 +101,72 @@ def inserir_dados_de_entrada_twitter(request):
     access_token = '493595634-6Qv9H8bBkRJ8FHme6yHu3HW4BUmVHLjYXXqWqOic'
     access_token_secret = '7bxNoz9El5H9w2Af0jx3pXiWvQuiBCggkoFwmQHkeuYRt'
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
+    auth.set_access_token(access_token, access_token_secret)    
     api = tweepy.API(auth)
-    public_tweets = api.search(q=hashtag ,lang='pt', count=100)
 
-    #Salva tweets no documento de entrada
-    for tweet in public_tweets:
-        entrada_tweets_copia.write(tweet.text)
-        entrada_tweets_copia.write('\n\n')   
-    entrada_tweets_copia.close()   
+    #variaveis
+    num_tweets = 500
+    contador_tweets = 0
+    max_id = 0
+    tweets_por_busca = 100
+    fim = 'nao'
+
+    #primeira Busca - Define o ultimo_id
+    public_tweets = api.search(q=hashtag ,lang='pt', count=100, result_type='recent')
+    ultimo_id = public_tweets[-1].id
+    
+    #salva primeiros tweets
+    for tweet in public_tweets:          
+        try: 
+            tweet.retweeted_status
+                #print tweet.retweeted_status.text
+        except:
+            a = 1
+        
+        if contador_tweets < num_tweets:
+            entrada_tweets_copia.write(tweet.text)
+            entrada_tweets_copia.write(str(contador_tweets))
+            entrada_tweets_copia.write('\n\n')
+            contador_tweets += 1
+            print tweet.id   
+         
+    print 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+    while fim == 'nao':       
+            public_tweets = api.search(q=hashtag ,lang='pt', count=100, max_id=(ultimo_id - 1))   
+            for tweet in public_tweets:
+                #try: 
+                 #   tweet.retweeted_status
+                    #print tweet.retweeted_status.text
+                #except:
+                 #   a = 1
+                #print tweet.id
+                if contador_tweets < num_tweets:
+                    entrada_tweets_copia.write(tweet.text)
+                    entrada_tweets_copia.write(str(contador_tweets))
+                    entrada_tweets_copia.write('\n\n')
+                    contador_tweets += 1
+                    print tweet.id
+                else:
+                    fim = 'sim' 
+                print 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'                 
+            ultimo_id = public_tweets[-1].id    
+       
+    
+    entrada_tweets_copia.close() 
+    
+    
+
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))   
    
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_twitter'})
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p1dt':tempo_total,'goto':'passo1','muda_logo':'logo_twitter'})
 
 
 def salvar_dados_iniciais(request):
+    #inicia cronometro
+    inicio = time.time()
+    
     #inicializa as flags de controle
     r = DadosPreproc.objects.get(id=1)
     r.flag_testapalavra = 'nao'
@@ -117,7 +184,8 @@ def salvar_dados_iniciais(request):
     #resolve problema dos links do twiiter
     documento = documento.replace(r'https:',r'https')
     
-    #elimina os malditos emoticons
+    
+    #elimina os mais ainda malditos emoticons
     myre = re.compile('('
             '\ud83c[\udf00-\udfff]|'
             '\ud83d[\udc00-\ude4f\ude80-\udeff]|'
@@ -129,11 +197,15 @@ def salvar_dados_iniciais(request):
     tknzr = TweetTokenizer()
     palavras = tknzr.tokenize(documento)    
       
-    for i,token in enumerate(palavras):        
-        entrada_tokenizada1.write(token)
-        entrada_tokenizada2.write(token)
-        entrada_tokenizada1.write(' ')
-        entrada_tokenizada2.write(' ')      
+    for i,token in enumerate(palavras): 
+        #elinina os links malditos do twitter
+        myre = re.compile("t.co.")
+        eh_link = myre.match(token)
+        if not eh_link:                    
+            entrada_tokenizada1.write(token)
+            entrada_tokenizada2.write(token)
+            entrada_tokenizada1.write(' ')
+            entrada_tokenizada2.write(' ')      
     entrada_original.close()
     entrada_tokenizada1.close()
     entrada_tokenizada2.close()
@@ -146,10 +218,16 @@ def salvar_dados_iniciais(request):
     except:
         DadosPreproc.objects.create(id=1, corretor='off',flag_testapalavra='nao')
    
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_salvar_dados'})
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p1sd':tempo_total,'goto':'passo1','muda_logo':'logo_salvar_dados'})
 
 
 def corretor_ortografico(request):
+    #inicia cronometro
+    inicio = time.time()
+    
     # Lê documento a ser corrigido
     arquivo = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt", "r", "utf-8")
     documento = arquivo.read()
@@ -196,9 +274,12 @@ def corretor_ortografico(request):
         
     #finaliza o corretor
     arquivo.close() 
-    arquivo_np.close()   
+    arquivo_np.close() 
+
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))    
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1','muda_logo':'logo_corretor'})
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p1co':tempo_total ,'goto':'passo1','muda_logo':'logo_corretor'})
 
 
 def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
@@ -295,7 +376,9 @@ def limpar_palavras_ignoradas(request):
 
 
 def pre_processamento(request):
-    
+    #inicia cronometro
+    inicio = time.time()
+
     #Tokeniza o texto e escreve em documento único.
     arq_texto_preproc = codecs.open('extrator/arquivos/p2_texto_preprocessado.txt','w','utf-8')
     arq_texto_preproc_vet = file_org = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","w",'utf-8')
@@ -352,12 +435,16 @@ def pre_processamento(request):
     dados_preprocessamento.quantidade_de_sentencas = sentencas
     dados_preprocessamento.palavras_texto_original = str(contador)
     dados_preprocessamento.save()
+    
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
    
-   
-    return render(request, 'extrator/extrator_resultados.html', {'muda_logo':'logo_preparar_dados','goto':'passo2'})
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2pd':tempo_total,'muda_logo':'logo_preparar_dados','goto':'passo2'})
 
 
 def lematizar(request):
+    #inicia cronometro
+    inicio = time.time()
 
     #Abre o Bash e executa o lematizador no texto inicial
     is32bit = (platform.architecture()[0] == '32bit')
@@ -408,16 +495,22 @@ def lematizar(request):
     dados_preprocessamento.palavras_texto_lematizado = str(contador)
     dados_preprocessamento.save()  
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2', 'muda_logo':'logo_lematizar'})    
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2le':tempo_total,'goto': 'passo2', 'muda_logo':'logo_lematizar'})    
 
 
 def eliminar_stopwords(request):
+    #inicia cronometro
+    inicio = time.time()
+
     #Lê arquivo de stop-words e cria uma lista
     if os.path.exists("extrator/arquivos/p2_lista_stopwords.txt"):
         arq_stopwords = codecs.open("extrator/arquivos/p2_lista_stopwords.txt", "r", "utf-8")
         lista_de_stopwords = arq_stopwords.read()
         stopwords = tokens = nltk.word_tokenize(lista_de_stopwords)
     else:
+        
         return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})
     
     #lê texto lematizado
@@ -452,10 +545,14 @@ def eliminar_stopwords(request):
     dados_preprocessamento.palavras_texto_lematizado_ssw = str(contador)
     dados_preprocessamento.save()        
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo2','muda_logo':'logo_eliminar_sw'  })    
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2es':tempo_total,'goto':'passo2','muda_logo':'logo_eliminar_sw'  })    
 
 
 def salvar_dados(request):
+    #inicia cronometro
+    inicio = time.time()
     
     #Pega objetos-texto e reinicializa o BD para receber novo texto
     texto_passo1 = TextoPreproc.objects.all()
@@ -470,10 +567,14 @@ def salvar_dados(request):
     aList = [TextoPreproc(vertice=token.rstrip('\n'), vertice_num=-1) for token in tokens]    
     TextoPreproc.objects.bulk_create(aList)
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2','muda_logo':'logo_salvar_bd' })
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2sb':tempo_total,'goto': 'passo2','muda_logo':'logo_salvar_bd' })
 
 
 def gerar_relatorio(request):
+    #inicia cronometro
+    inicio = time.time()
     
     #inicializações: cria arquivo do relatório e pega dados no BD
     dadosPreprocessamento = DadosPreproc.objects.get(id=1)
@@ -518,12 +619,17 @@ def gerar_relatorio(request):
    
     #LÊ relatório    
     p2_relatorio = codecs.open("extrator/arquivos/p2_relatorio.txt","r","utf-8").read()
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo2','muda_logo':'logo_gerar_rp2'})
+
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2gr':tempo_total,'goto': 'passo2','muda_logo':'logo_gerar_rp2'})
 
 
 ## PASSO 3. REDE COMPLEXA -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def lista_de_vertices(request):
+    #inicia cronometro
+    inicio = time.time()
             
     #Objtivo: Criar uma lista com todos os vertices distintos e associa-los a um número (indice)
     
@@ -544,10 +650,15 @@ def lista_de_vertices(request):
     #Salva no BD via bulk    
     aList = [ListaVertices(index = key, node = element.strip()) for key,element in vertices.iteritems()]    
     ListaVertices.objects.bulk_create(aList) 
-  
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3', 'muda_logo':'logo_def_vertices' })
+    
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio)) 
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p3dv':tempo_total,'goto': 'passo3', 'muda_logo':'logo_def_vertices' })
 
 def mapear(request):
+    #inicia cronometro
+    inicio = time.time()
             
     #Objetivo: Associar cada palavra do texto lematizado ao seu respectivo indice
 
@@ -570,21 +681,27 @@ def mapear(request):
             numero = -1
             lista_texto.append((palavra[0].strip(),numero))    
    
-    #Testa se a lista de palavras mapeadas tem o mesmo tamanho da lista de objetos de texto pre processado
-    #print len(lista_texto)
-    #print len(palavras)
-    if len(lista_texto) != len(palavras):    
-        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo3','muda_logo_error':'logo_indexar'})       
+    #Testa se a lista de palavras mapeadas tem o mesmo tamanho da lista de objetos de texto pre processado  
+    if len(lista_texto) != len(palavras):  
+         
+        #finaliza tempo
+        tempo_total =  ("{0:.4f}".format(time.time() - inicio))    
+        return render(request, 'extrator/extrator_resultados.html', {'tempo_p1vd':tempo_total,'goto':'passo3','muda_logo_error':'logo_indexar'})       
     
     #armazena no BD
     TextoPreproc.objects.all().delete()
     aList = [TextoPreproc(vertice=linha[0].strip(), vertice_num=linha[1]) for linha in lista_texto]    
     TextoPreproc.objects.bulk_create(aList)    
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3' , 'muda_logo':'logo_indexar'})
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p3ip':tempo_total,'goto': 'passo3' , 'muda_logo':'logo_indexar'})
 
 
 def matriz(request):
+    #inicia cronometro
+    inicio = time.time()
     
     #Objetivo: gera a lista de adjacencias a partir de uma matriz de adjacências
 
@@ -634,7 +751,10 @@ def matriz(request):
     aList = [ListaDeAdjacencias(vertice_i=k.split(' ')[0], vertice_f=k.split(' ')[1],peso=v) for k,v in lista_adjacencias.items()]    
     ListaDeAdjacencias.objects.bulk_create(aList)       
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo3','muda_logo':'logo_rede'})
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p3gr':tempo_total,'goto':'passo3','muda_logo':'logo_rede'})
 
 
 def rede_complexa(request):
@@ -663,13 +783,18 @@ def rede_complexa(request):
     nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
     plt.show()
     plt.close()
-
-    return render(request, 'extrator/extrator_home_3.html', {'dados_de_entrada': None, 'relatorio_preproc':None })    
+    
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_home_3.html', {'tempo_p1vd':tempo_total,'dados_de_entrada': None, 'relatorio_preproc':None })    
 
 
 ## PASSO 4. MÉTRICAS E RANKING  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def metricas_e_ranking(request): 
+    #inicia cronometro
+    inicio = time.time()
 
     #Objetivo: calcular as métricas de centralidade da rede e gerar tabelas    
     
@@ -764,24 +889,16 @@ def metricas_e_ranking(request):
     arq_tabela_betweenness.close()
     arq_tabela_closeness.close()
     arq_texto_vertices.close()   
-
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_metricas' }) 
-
-
-def mostra_tabela(request , tipo):
     
-    if tipo == "graus":
-        graus = open("extrator/arquivos/p4_tabela_graus.txt","r").read()
-        return render(request, 'extrator/extrator_home_4.html', {'tabela_graus': graus })
-    if tipo == "bet":
-        bet = open("extrator/arquivos/p4_tabela_betweenness.txt","r").read()
-        return render(request, 'extrator/extrator_home_4.html', {'tabela_bet': bet })
-    if tipo == "closs":
-        closs = open("extrator/arquivos/p4_tabela_closeness.txt","r").read()
-        return render(request, 'extrator/extrator_home_4.html', {'tabela_closs': closs })
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4cm':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_metricas' }) 
 
 
 def calcula_indice(request):
+    #inicia cronometro
+    inicio = time.time()
     
     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
     matplotlib.use('agg')
@@ -980,7 +1097,11 @@ def calcula_indice(request):
     arq_tabela_potenciacao.close()
     
     rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
+    
+     #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4ci':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
 
 
 def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
@@ -1000,6 +1121,8 @@ def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
 
 
 def selecionar_temas(request):
+    #inicia cronometro
+    inicio = time.time()
                     
     #carrega parametros de ajuste
     try:
@@ -1248,13 +1371,18 @@ def selecionar_temas(request):
     if r.flag_completo == 'sim':
         return 'none'    
     else: 
-        r.flag_test = 'off'
-        r.save()                          
-        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo4', 'muda_logo':'logo_sel_temas' })
+        r.flag_testapalavra = 'nao'
+        r.save() 
+        #finaliza tempo
+        tempo_total =  ("{0:.4f}".format(time.time() - inicio))                           
+        return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':tempo_total,'goto':'passo4', 'muda_logo':'logo_sel_temas' })
    
 ##### PASSO 5 ###################################################################################################################################
 
 def processarProtofrases(request):
+    #inicia cronometro
+    inicio = time.time()
+
     #carrega parâmetros
     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)        
 
@@ -1421,11 +1549,16 @@ def processarProtofrases(request):
     arq_extracao.close()
 
     rel_proc = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt", 'r','utf-8').read()
-
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
+     
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':tempo_total,'goto': 'passo5', 'muda_logo':'logo_protofrases' })
 
 
 def mapearEextrair(request):
+    #inicia cronometro
+    inicio = time.time()
 
     #relatorio
     arq_relatorio =codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w")
@@ -1467,8 +1600,9 @@ def mapearEextrair(request):
     arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
 
     dados = DadosExtracaoNew.objects.all()
-    
+
     for dado in dados:
+      
         try:        
             indice =  sentencas_lem_strip.index(dado.protofrase.strip())
             dado.sentenca = sentencas_pp_strip[indice].strip()
@@ -1482,8 +1616,11 @@ def mapearEextrair(request):
     arq_relatorio.close()
 
     rel_ext = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt", 'r','utf-8').read()
+         
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_map_extracao'})
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':tempo_total,'goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
 
 def GeraSubDocumento(palavras):
@@ -1615,6 +1752,8 @@ def SelecionaSubTemas(tabela_graus_ordenada):
 
 
 def calcula_indice_representatividade(request):
+    #inicia cronometro
+    inicio = time.time()
     
     #Abre arquivos
     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
@@ -1734,8 +1873,11 @@ def calcula_indice_representatividade(request):
     arq_relatorio.close()
       
     rel_repr = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt", 'r','utf-8').read() 
+     
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':tempo_total,'goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
 
 
 def testa_substantivo_usuario(request , palavra_candidata):
@@ -1898,7 +2040,9 @@ def resultados(request,arquivo):
                             if distancia > bias_subtema:
                                 bias_subtema = distancia
 
-        bias = bias_central + bias_subtema             
+        bias = bias_central + bias_subtema
+        if not paragrafos:
+            bias = 100             
         ##########################################################################################
         
         
@@ -2068,12 +2212,12 @@ def executar_passos_2_a_5(request):
     print 'calculando índice de representatividade dos parágrafos extraídos...'
     calcula_indice_representatividade(request)
     print 'gerando resultados'
-    resultados(request,'none') 
-    
-    #finaliza tempo
-    tempo_total =  time.time() - inicio   
+    resultados(request,'none')     
     
     r.flag_completo = 'nao'
     r.save()
 
-    return render(request, 'extrator/extrator_resultados.html', {'mostra_res':'mostra_res','goto':'resultados'})
+    #finaliza tempo
+    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2a5':tempo_total,'mostra_res':'mostra_res'})

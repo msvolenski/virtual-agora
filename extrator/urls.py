@@ -26,7 +26,6 @@ urlpatterns = [
     url(r'^extrator/mapeareextrair$',views.mapearEextrair, name='mapear_e_extrair'),
     url(r'^extrator/indicerepresentatividade$', views.calcula_indice_representatividade, name='calculair'),
     url(r'^extrator/processarprotofrases$', views.processarProtofrases, name='processarpfs'),      
-    url(r'^extrator/mostratabela/(?P<tipo>[-\w]+)/$', views.mostra_tabela, name='mostra_tabela'),   
     url(r'^extrator/calcularindice/$', views.calcula_indice, name='calularindice'),
     url(r'^extrator/selecionartemas/$', views.selecionar_temas, name='selecionar_temas'),
     url(r'^extrator/limpasubstantivo/(?P<opcao>[-\w]+)/$', views.limpar_lista_subtantivos, name='limpar_lista_subtantivos'),

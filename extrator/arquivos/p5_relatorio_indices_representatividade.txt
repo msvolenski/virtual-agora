@@ -4,27 +4,36 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    lula  /  0.653333333333  /  65.3333333333
-    aécio  /  0.0938461538462  /  9.38461538462
-    porra  /  0.0807692307692  /  8.07692307692
-    editor  /  0.0807692307692  /  8.07692307692
-    brasil  /  0.0761538461538  /  7.61538461538
-    campanha  /  0.0501282051282  /  5.01282051282
-    poder  /  0.0403846153846  /  4.03846153846
-    governo  /  0.0403846153846  /  4.03846153846
+    joesley  /  0.346111641221  /  34.6111641221
+    lula  /  0.204651717557  /  20.4651717557
+    chefe  /  0.174451335878  /  17.4451335878
+    brasil  /  0.0935591603053  /  9.35591603053
+    época  /  0.0892175572519  /  8.92175572519
+    governo  /  0.0866173664122  /  8.66173664122
+    ano  /  0.0677003816794  /  6.77003816794
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
 
+ Tema: joesley
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
  Tema: lula
 
      Sentença    /    IRSE    /    IRSE(%)
-lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha   /   1.0    /    100.0
+@lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes   /   0.5    /    50.0
+
+lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza   /   0.5    /    50.0
 
 
 
 
- Tema: aécio
+ Tema: chefe
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -35,36 +44,12 @@ null - nao convergiu   /   0    /    0
  Tema: brasil
 
      Sentença    /    IRSE    /    IRSE(%)
-cuba , o país que serviu de modelo para lula fazer no brasil   /   1.0    /    100.0
-
-
-
-
- Tema: porra
-
-     Sentença    /    IRSE    /    IRSE(%)
-imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   1.0    /    100.0
-
-
-
-
- Tema: editor
-
-     Sentença    /    IRSE    /    IRSE(%)
-imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   1.0    /    100.0
-
-
-
-
- Tema: campanha
-
-     Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
 
 
 
 
- Tema: poder
+ Tema: época
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -75,7 +60,15 @@ null - nao convergiu   /   0    /    0
  Tema: governo
 
      Sentença    /    IRSE    /    IRSE(%)
-a jbs se tornou um império fraudando o bndes nos governo do pt   /   1.0    /    100.0
+/ / @poder_360 tão democrático quanto o governo temer   /   1.0    /    100.0
+
+
+
+
+ Tema: ano
+
+     Sentença    /    IRSE    /    IRSE(%)
+lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula   /   1.0    /    100.0
 
 
 
@@ -88,13 +81,13 @@ a jbs se tornou um império fraudando o bndes nos governo do pt   /   1.0    /  
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-imagino o editor da veja " porra bota o lula ai pelo amor de deus "   /   0.4    /    40.0
+@lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes   /   0.25    /    25.0
 
-cuba , o país que serviu de modelo para lula fazer no brasil   /   0.2    /    20.0
+lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula   /   0.25    /    25.0
 
-lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha   /   0.2    /    20.0
+lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza   /   0.25    /    25.0
 
-a jbs se tornou um império fraudando o bndes nos governo do pt   /   0.2    /    20.0
+/ / @poder_360 tão democrático quanto o governo temer   /   0.25    /    25.0
 
 null - nao convergiu   /   0.0    /    0.0
 

@@ -1,42 +1,98 @@
-TEMA: lula
+TEMA: joesley
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula     /     92    /    nao
+        joesley     /     52    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula aécio     /     10    /    nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-       lula pt     /     4    /    nullll
-nullll
-nullll
-nullll
-       lula dilma     /     14    /    nullll
+        joesley dizer     /     16    /    nao
+       joesley época     /     12    /    nao
+       joesley chefe     /     14    /    nullll
 nullll
 nullll
 nullll
 nullll
 nullll
 nullll
-       lula cobra     /     1    /    sim
+nullll
+nullll
+nullll
+nullll
+nullll
+       joesley chama     /     4    /    nullll
+nullll
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        joesley dizer época     /     4    /    nullll
+nullll
+nullll
+       joesley dizer lula     /     4    /    nullll
+nullll
+nullll
+nullll
+       joesley dizer presidente     /     3    /    nullll
+nullll
+nullll
+       joesley época dizer     /     4    /    nullll
+nullll
+nullll
 
 
 
 
 
 
-TEMA: aécio
+TEMA: lula
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        aécio     /     14    /    nullll
+        lula     /     27    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma     /     11    /    sim - com repeticao
+nullll
+nullll
+nullll
+nullll
+       lula esquema     /     2    /    nao
+       lula presidente     /     3    /    nullll
+nullll
+nullll
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula esquema roubalheira     /     1    /    sim
+
+
+
+
+
+
+TEMA: chefe
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        chefe     /     21    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
 nullll
 nullll
 nullll
@@ -62,52 +118,15 @@ TEMA: brasil
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil lula     /     9    /    nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-       brasil cuba     /     2    /    nao
+        brasil dizer     /     7    /    nao
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil cuba país     /     1    /    sim
-
-
-
-
-
-
-TEMA: porra
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        porra     /     10    /    sim - com repeticao
-
-
-
-
-
-
-TEMA: editor
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        editor     /     10    /    sim - com repeticao
-
-
-
-
-
-
-TEMA: campanha
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        campanha     /     7    /    nullll
+        brasil dizer joesley     /     6    /    nullll
+nullll
+nullll
 nullll
 nullll
 
@@ -116,12 +135,29 @@ nullll
 
 
 
-TEMA: poder
+TEMA: época
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        poder     /     5    /    nullll
+        época     /     14    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        época joesley     /     12    /    nao
+       época dizer     /     4    /    nullll
 nullll
+nullll
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        época joesley dizer     /     4    /    nullll
+nullll
+nullll
+       época joesley chefe     /     5    /    nullll
 nullll
 nullll
 nullll
@@ -135,14 +171,47 @@ TEMA: governo
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        governo     /     5    /    nao
+        governo     /     11    /    sim - com repeticao
+nullll
+nullll
+nullll
+nullll
+
+
+
+
+
+
+TEMA: ano
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ano     /     6    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        governo pt     /     5    /    nullll
-sim - com repeticao
+        ano pt     /     3    /    nao
+       ano dilma     /     3    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ano pt dilma     /     1    /    sim
+       ano dilma presidente     /     3    /    nullll
+nullll
+nullll
+       ano dilma lula     /     3    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ano dilma lula presidente     /     3    /    nullll
+nullll
+nullll
 
 
 

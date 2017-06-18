@@ -3,11 +3,11 @@
 
   tema   /   frase   /   repetições   /   sentença (texto original)
 
-  lula  /  lindlixo braço direito quadrilha lula cobra emoticon canalha  /  1  /  lindlixo é braço direito da quadrilha do lula , cobra emoticon deste canalha
-  aécio  /  tema nao convergiu  /  1  /  null - nao convergiu
-  brasil  /  cuba país servir modelo lula brasil  /  1  /  cuba , o país que serviu de modelo para lula fazer no brasil
-  porra  /  imaginar editor ver " porra boto lula ai amor deus "  /  1  /  imagino o editor da veja " porra bota o lula ai pelo amor de deus "
-  editor  /  imaginar editor ver " porra boto lula ai amor deus "  /  1  /  imagino o editor da veja " porra bota o lula ai pelo amor de deus "
-  campanha  /  tema nao convergiu  /  1  /  null - nao convergiu
-  poder  /  tema nao convergiu  /  1  /  null - nao convergiu
-  governo  /  jbs tornar império fraudar bndes governo pt  /  1  /  a jbs se tornou um império fraudando o bndes nos governo do pt
+  joesley  /  tema nao convergiu  /  1  /  null - nao convergiu
+  lula  /  @lobaoeletrico querer prender temer reeleger lula esquema roubalheira bilionário continuar antes  /  1  /  @lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes
+  lula  /  lula presidente 8 ano dilma presidente 6 ano joesley dizer temer chefe tudo @fcorazza  /  1  /  lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza
+  chefe  /  tema nao convergiu  /  1  /  null - nao convergiu
+  brasil  /  tema nao convergiu  /  1  /  null - nao convergiu
+  época  /  tema nao convergiu  /  1  /  null - nao convergiu
+  governo  /  @poder_360 tão democrático quantum governo temer  /  1  /  / / @poder_360 tão democrático quanto o governo temer
+  ano  /  lula presidente 8 ano dilma presidente 6 ano joesley dizer temer chefe tudo pergunta quer calar época detonar temer produção mega empresário inversão pt dilma lula  /  1  /  lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula

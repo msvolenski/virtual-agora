@@ -193,7 +193,9 @@
                         <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">
                         <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
                     </form>
-                    <span class="cd-date">Jan 14</span>
+                    {% if tempo_p1dt %}
+                    <span class="cd-date" style="margin-left:-195px;">{{tempo_p1dt}} s</span>
+                    {% endif %}
                 </div>
             </div>
 
@@ -204,7 +206,9 @@
                 <div class="cd-timeline-content">
                     <h2 style="margin-bottom:15px">Visualizar Dados</h2>
                     <a href="{% url 'extrator:dados' %}" style="text-decoration:none;margin-left:45%;" class="cd-read-more">Abrir</a>
-                    <span class="cd-date">Jan 18</span>
+                    {% if tempo_p1vd %}
+                    <span class="cd-date">{{tempo_p1vd}} s</span>
+                    {% endif %}
                 </div>
             </div>
             <!-- cd-timeline-block -->
@@ -216,7 +220,9 @@
                 <div class="cd-timeline-content">
                     <h2 style="margin-bottom:15px">Salvar Dados</h2>
                     <a href="{% url 'extrator:salvar_iniciais' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
-                    <span class="cd-date">Jan 24</span>
+                    {% if tempo_p1sd %}
+                    <span class="cd-date" style="margin-left:-195px;">{{tempo_p1sd}} s</span>
+                    {% endif %}
                 </div>
             </div>
             <!-- cd-timeline-block -->
@@ -228,7 +234,9 @@
                 <div class="cd-timeline-content">
                     <h2 style="margin-bottom:15px">Corrigir ortografia</h2>
                     <a href="{% url 'extrator:corretor' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Corrigir</a>
-                    <span class="cd-date">Feb 14</span>
+                    {% if tempo_p1co %}
+                    <span class="cd-date">{{tempo_p1co}} s</span>
+                    {% endif %}
                 </div>
             </div>
 
@@ -248,7 +256,9 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Preparar Dados</h2>
                         <a href="{% url 'extrator:preproc' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Preparar</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p2pd %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p2pd}} s</span>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- cd-timeline-block -->
@@ -259,7 +269,9 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Lematizar</h2>
                         <a href="{% url 'extrator:lematizador' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">lematizar</a>
-                        <span class="cd-date">Feb 26</span>
+                         {% if tempo_p2le %}
+                         <span class="cd-date">{{tempo_p2le}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -270,7 +282,9 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Eliminar Stop-words</h2>
                         <a href="{% url 'extrator:stopwords' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Eliminar</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p2es %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p2es}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -281,7 +295,9 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Salvar no Banco de Dados</h2>
                         <a href="{% url 'extrator:salvar' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
-                        <span class="cd-date">Feb 26</span>
+                         {% if tempo_p2sb %}
+                        <span class="cd-date">{{tempo_p2sb}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -292,12 +308,13 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4;">
                         <h2>Gerar Relatório</h2>
                         <a href="{% url 'extrator:relatorio' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p2gr %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p2gr}} s</span>
+                        {% endif %}
                     </div>
                     <!-- cd-timeline-content -->
                 </div>
                 <!-- cd-timeline-block -->
-
             </div>
 
 
@@ -311,7 +328,9 @@
                     <div class="cd-timeline-content" style="background: #33e0a1">
                         <h2>Definir Vértices</h2>
                         <a href="{% url 'extrator:lista_vertices' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Definir</a>
-                        <span class="cd-date">Feb 18</span>
+                        {% if tempo_p3dv %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p3dv}} s</span>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- cd-timeline-block -->
@@ -322,7 +341,9 @@
                     <div class="cd-timeline-content" style="background: #33e0a1">
                         <h2>Indexar Palavras</h2>
                         <a href="{% url 'extrator:mapear' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Indexar</a>
-                        <span class="cd-date">Feb 26</span>
+                        {% if tempo_p3ip %}
+                         <span class="cd-date">{{tempo_p3ip}} s</span>
+                        {% endif %}
                     </div>
                 </div>
 
@@ -333,7 +354,9 @@
                     <div class="cd-timeline-content" style="background: #33e0a1">
                         <h2>Gerar Rede Complexa</h2>
                         <a href="{% url 'extrator:matriz' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p3gr %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p3gr}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -351,7 +374,9 @@
                     <div class="cd-timeline-content" style="background: #EFCEAA">
                         <h2>Calcular Métricas</h2>
                         <a href="{% url 'extrator:metricas_ranking' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                        <span class="cd-date">Feb 18</span>
+                        {% if tempo_p4cm %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4cm}} s</span>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- cd-timeline-block -->
@@ -362,7 +387,9 @@
                     <div class="cd-timeline-content" style="background: #EFCEAA">
                         <h2>calcular Índice</h2>
                         <a href="{% url 'extrator:calularindice' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                        <span class="cd-date">Feb 26</span>
+                         {% if tempo_p4ci %}
+                         <span class="cd-date">{{tempo_p4ci}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -373,7 +400,9 @@
                     <div class="cd-timeline-content" style="background: #EFCEAA">
                         <h2>Selecionar Temas</h2>
                         <a href="{% url 'extrator:selecionar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Selecionar</a>
-                        <span class="cd-date">Feb 18</span>
+                        {% if tempo_p4st %}
+                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                        {% endif %}
                     </div>
                 </div>
                 <!-- cd-timeline-block -->
@@ -389,7 +418,9 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Protofrases</h2>
                         <a href="{% url 'extrator:processarpfs'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p5pr %}
+                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p5pr}} s</span>
+                         {% endif %}
                     </div>
                 </div>
                 <!-- cd-timeline-block -->
@@ -400,7 +431,9 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Extração</h2>
                         <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>
-                        <span class="cd-date">Feb 26</span>
+                         {% if tempo_p5ex %}
+                         <span class="cd-date">{{tempo_p5ex}} s</span>
+                         {% endif %}
                     </div>
                 </div>
 
@@ -411,7 +444,9 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Representatividade</h2>
                         <a href="{% url 'extrator:calculair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                        <span class="cd-date">Feb 18</span>
+                         {% if tempo_p5re %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5re}} s</span>
+                         {% endif %}
                     </div>
                     <div class="botao_resultados_1" style="height:0px;border:none;"></div>
                 </div>
@@ -420,7 +455,11 @@
             </div>
         </section>
         <div id="fim" class="botao_resultados_2"><a href="{% url 'extrator:resultados' 'none' %}" style="color:black"><b>RESULTADOS</b></a></div>
-    
+        
+        {% if tempo_p2a5 %}
+        <span class="cd-date" style="margin-left:10px;">{{tempo_p2a5}} s</span>
+        {% endif %}
+        
     </section>
 
     </div>

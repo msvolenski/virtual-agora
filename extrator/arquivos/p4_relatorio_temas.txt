@@ -3,23 +3,17 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.8% graus; 0.1% betwenness; 0.1% closeness;
-- Parâmetros: delta: 4%; f: 10% dos nós totais (53 nós)
-- Temas pré-selecionados(13):
+- Métrica: 0.7% graus; 0.2% betwenness; 0.1% closeness;
+- Parâmetros: delta: 4%; f: 10% dos nós totais (50 nós)
+- Temas pré-selecionados(7):
 
+joesley
 lula
-dilma
-aécio
+chefe
 brasil
-deus
-porra
-editor
-amor
-pt
-ai
-campanha
-poder
+época
 governo
+ano
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -30,35 +24,23 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> dilma - 11/15 - 73.3333333333%
-lula -> aécio - 1/12 - 8.33333333333%
-lula -> brasil - 1/6 - 16.6666666667%
-lula -> pt - 1/8 - 12.5%
-lula -> ai - 10/10 - 100.0%
-dilma -> aécio - 1/12 - 8.33333333333%
-brasil -> lula - 3/79 - 3.79746835443%
-amor -> deus - 10/10 - 100.0%
-pt -> lula - 1/79 - 1.26582278481%
-ai -> amor - 10/10 - 100.0%
-campanha -> lula - 5/79 - 6.32911392405%
-governo -> pt - 4/8 - 50.0%
+joesley -> chefe - 1/22 - 4.54545454545%
+joesley -> época - 3/12 - 25.0%
+época -> joesley - 2/36 - 5.55555555556%
+governo -> lula - 8/23 - 34.7826086957%
+ano -> joesley - 3/36 - 8.33333333333%
+ano -> governo - 1/11 - 9.09090909091%
 
-- Temas selecionados(8):
+- Temas selecionados(7):
 
+joesley
 lula
-aécio
+chefe
 brasil
-porra
-editor
-campanha
-poder
+época
 governo
+ano
 
 
-- Temas excluídos(5):
+- Temas excluídos(0):
 
-dilma
-ai
-deus
-amor
-pt
