@@ -43,7 +43,7 @@ class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
 
 class ParametrosDeAjusteAdmin(admin.ModelAdmin):
-  list_display = ['acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
+  list_display = ['permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
 
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']

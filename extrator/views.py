@@ -83,6 +83,14 @@ def inserir_dados_de_entrada(request):
 def inserir_dados_de_entrada_twitter(request):
     #inicia cronometro
     inicio = time.time() 
+
+    #carrega parametros de ajuste
+    try:
+        parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+        
+    except ObjectDoesNotExist:
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,acuidade=100,num_tweets=100)
+        parametros.save()
     
     #define documento de entrada
     entrada_tweets_copia = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","w", "utf-8")
@@ -105,10 +113,10 @@ def inserir_dados_de_entrada_twitter(request):
     api = tweepy.API(auth)
 
     #variaveis
-    num_tweets = 500
+    num_tweets = parametros.num_tweets
     contador_tweets = 0
     max_id = 0
-    tweets_por_busca = 100
+    permitir_RT = parametros.permitir_RT
     fim = 'nao'
 
     #primeira Busca - Define o ultimo_id
@@ -117,41 +125,78 @@ def inserir_dados_de_entrada_twitter(request):
     
     #salva primeiros tweets
     for tweet in public_tweets:          
-        try: 
-            tweet.retweeted_status
-                #print tweet.retweeted_status.text
-        except:
-            a = 1
-        
-        if contador_tweets < num_tweets:
-            entrada_tweets_copia.write(tweet.text)
-            entrada_tweets_copia.write(str(contador_tweets))
-            entrada_tweets_copia.write('\n\n')
-            contador_tweets += 1
-            print tweet.id   
-         
-    print 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-
-    while fim == 'nao':       
-            public_tweets = api.search(q=hashtag ,lang='pt', count=100, max_id=(ultimo_id - 1))   
-            for tweet in public_tweets:
-                #try: 
-                 #   tweet.retweeted_status
-                    #print tweet.retweeted_status.text
-                #except:
-                 #   a = 1
-                #print tweet.id
+        if permitir_RT == 'sim':            
+            if hasattr(tweet, 'retweeted_status'):
                 if contador_tweets < num_tweets:
-                    entrada_tweets_copia.write(tweet.text)
-                    entrada_tweets_copia.write(str(contador_tweets))
-                    entrada_tweets_copia.write('\n\n')
-                    contador_tweets += 1
-                    print tweet.id
+                    if not tweet.retweeted_status.truncated:
+                        entrada_tweets_copia.write(tweet.retweeted_status.text)                                        
+                        entrada_tweets_copia.write('\n\n')
+                        contador_tweets += 1                    
                 else:
-                    fim = 'sim' 
-                print 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'                 
+                    fim = 'sim'               
+            else:
+                if contador_tweets < num_tweets:
+                    if not tweet.truncated:
+                        entrada_tweets_copia.write(tweet.text)                                          
+                        entrada_tweets_copia.write('\n\n')
+                        contador_tweets += 1                    
+                else:
+                    fim = 'sim'
+        
+        if permitir_RT == 'nao':
+            if hasattr(tweet, 'retweeted_status'):
+                do = 'nothing'
+            else:            
+                if contador_tweets < num_tweets:
+                    if not tweet.truncated:
+                        entrada_tweets_copia.write(tweet.text)                                          
+                        entrada_tweets_copia.write('\n\n')
+                        contador_tweets += 1                    
+                else:
+                    fim = 'sim'            
+    
+    print str(contador_tweets) + " Tweets carregados..." 
+    
+    while fim == 'nao':       
+        public_tweets = api.search(q=hashtag ,lang='pt', count=100, max_id=(ultimo_id - 1) , truncated='false')   
+        for tweet in public_tweets:          
+            if permitir_RT == 'sim':
+                if hasattr(tweet, 'retweeted_status'):                    
+                    if contador_tweets < num_tweets:
+                        if not tweet.retweeted_status.truncated:
+                            entrada_tweets_copia.write(tweet.retweeted_status.text)                                      
+                            entrada_tweets_copia.write('\n\n')
+                            contador_tweets += 1                        
+                    else:
+                        fim = 'sim'               
+                else:
+                    if contador_tweets < num_tweets:
+                        if not tweet.truncated:
+                            entrada_tweets_copia.write(tweet.text)                                             
+                            entrada_tweets_copia.write('\n\n')
+                            contador_tweets += 1                        
+                    else:
+                        fim = 'sim'
+        
+            if permitir_RT == 'nao':
+                if hasattr(tweet, 'retweeted_status'):  
+                   do = 'nothing'
+                else:            
+                    if contador_tweets < num_tweets:
+                        if not tweet.truncated:
+                            entrada_tweets_copia.write(tweet.text)                        
+                            entrada_tweets_copia.write('\n\n')
+                            contador_tweets += 1
+                        
+                    else:
+                        fim = 'sim'     
+
+        print str(contador_tweets) + " Tweets carregados..."      
+        
+        try:
             ultimo_id = public_tweets[-1].id    
-       
+        except:
+            fim = 'sim'    
     
     entrada_tweets_copia.close() 
     
@@ -160,7 +205,7 @@ def inserir_dados_de_entrada_twitter(request):
     #finaliza tempo
     tempo_total =  ("{0:.4f}".format(time.time() - inicio))   
    
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p1dt':tempo_total,'goto':'passo1','muda_logo':'logo_twitter'})
+    return render(request, 'extrator/extrator_resultados.html', {'contador_nt':contador_tweets,'tempo_p1dt':tempo_total,'goto':'passo1','muda_logo':'logo_twitter'})
 
 
 def salvar_dados_iniciais(request):
@@ -182,13 +227,15 @@ def salvar_dados_iniciais(request):
     documento = entrada_original.read()
 
     #resolve problema dos links do twiiter
-    documento = documento.replace(r'https:',r'https')
-    
+    documento = re.sub(r"http\S+", ".", documento)
+            
+    print repr(u'🤣')
     
     #elimina os mais ainda malditos emoticons
     myre = re.compile('('
             '\ud83c[\udf00-\udfff]|'
             '\ud83d[\udc00-\ude4f\ude80-\udeff]|'
+            '\ud83e[\u0000-\uffff]|'
             '[\u2600-\u26FF\u2700-\u27BF])+'.decode('unicode_escape'), 
             re.UNICODE)            
     documento = myre.sub('emoticon',documento)      
@@ -1935,8 +1982,14 @@ def ajustar_parametro(request,opcao):
     except ObjectDoesNotExist:
         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
         parametros.save()
-
-
+    
+    if parametros.permitir_RT == 'sim':
+            check_sim = 'checked'
+            check_nao = 'off'
+    if parametros.permitir_RT == 'nao':
+            check_sim = 'off'
+            check_nao = 'checked'
+    
     if opcao == 'opcao0':    
         novo_parametro = request.POST['valor_k']
         parametros.k_betweenness = int(novo_parametro)
@@ -1964,13 +2017,32 @@ def ajustar_parametro(request,opcao):
         novo_parametro = request.POST['valor_ae']
         parametros.acuidade = int(novo_parametro)
         parametros.save()
+    
+    if opcao == 'opcao6':            
+        novo_parametro = request.POST['valor_nt']
+        parametros.num_tweets = int(novo_parametro)
+        parametros.save()
+
+    if opcao == 'opcao7':        
+             
+        display_type = request.POST.get("display_type", None)
+        parametros.permitir_RT = display_type
+        parametros.save()
+        if  display_type == 'sim':
+            check_sim = 'checked'
+            check_nao = 'off'
+        if  display_type == 'nao':
+            check_sim = 'off'
+            check_nao = 'checked'
 
     if opcao == 'opcao4':
-        return render(request, 'extrator/extrator_resultados.html', {'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})
+        print check_sim
+        print check_nao
+        return render(request, 'extrator/extrator_resultados.html', { 'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})
 
     
   
-    return render(request, 'extrator/extrator_resultados.html', {'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
 
 def resultados(request,arquivo):
     result = DadosPreproc.objects.get(id=1)

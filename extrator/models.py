@@ -143,3 +143,5 @@ class ParametrosDeAjuste(models.Model):
     f_corte = models.IntegerField('Freq_corte_nos_com_dr_min',default=10)
     f_min_bigramas = models.IntegerField('Freq_min_de_bigramas',default=50)
     acuidade = models.IntegerField('Freq_min_de_bigramas',default=100)
+    num_tweets = models.IntegerField('Número de Tweets',default=100)
+    permitir_RT = models.CharField('RT',default=100, max_length=10)

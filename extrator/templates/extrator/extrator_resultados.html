@@ -132,6 +132,28 @@
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opum' %}" class="botao_ajuste">Limpar Palavras Ignoradas</a>
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opdois' %}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
+                                       
+                    <div class="titulo_ajuste">Quantidade de Tweets </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao6' %}" method="POST" role="form" enctype="multipart/form-data">
+                            n =
+                            <input style="width:50px" type="number" step="1" name="valor_nt" value={{valornt}} size="1"> Tweets
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>                    
+                    
+                    <div class="titulo_ajuste">Permitir Retweets</div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao7' %}" method="POST" role="form" enctype="multipart/form-data">
+                            <div style="display:inline-block">
+                                <input type="radio" name="display_type" {{check_sim}} value="sim"> Sim<br>
+                                <input type="radio" name="display_type" {{check_nao}} value="nao"> Não
+                            </div>
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
+                                <input type="submit" class="botao_enviar" value="Enviar"> 
+                            </div>    
+                        </form>
+                    </div>
 
                     <div class="titulo_ajuste">Valor de k </div>
                     <div class="form_ajuste">
@@ -194,7 +216,7 @@
                         <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
                     </form>
                     {% if tempo_p1dt %}
-                    <span class="cd-date" style="margin-left:-195px;">{{tempo_p1dt}} s</span>
+                    <span class="cd-date" style="margin-left:-185px;">  {{tempo_p1dt}} s - {{contador_nt}} tweets </span>
                     {% endif %}
                 </div>
             </div>

@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 201 parágrafos.
-Os dados de entrada possuem 1917 palavras.
-Os dados lematizados possuem 1998 palavras.
-Palavras não lematizadas: frase-bomba processá-lo $ ex-porta ex-levantador 
-O documento lematizado e sem stopwords possui 1047 palavras.
+Os dados de entrada contém 1006 parágrafos.
+Os dados de entrada possuem 13396 palavras.
+Os dados lematizados possuem 14837 palavras.
+Palavras não lematizadas: :- pós-doutorado crea-sp lepe-unicamp vídeo-fragmento $ financiá-las vídeo-fragmento étnico-raciais campinas-sp étnico-raciais exercícios-ime-ita-vunesp-fuvest-unicamp-uerj fgv-rio e-prints crea-sp crea-sp crea-sp étnico-raciais crea-sp crea-sp crea-sp campinas-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp veiga-neto crea-sp crea-sp exercícios-ime-ita-vunesp-fuvest-unicamp-uerj crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp exaltá-la crea-sp crea-sp crea-sp crea-sp limeira-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp étnico-raciais veiga-neto veiga-neto 
+O documento lematizado e sem stopwords possui 8015 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 45.3834115806 %.
-Em média, cada sentença do texto original possui 10 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 5 palavras.
+Compressão do texto após pré-processamento: 40.1687070767 %.
+Em média, cada sentença do texto original possui 13 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 8 palavras.

@@ -298,7 +298,6 @@ RT
 rt
 pra
 para
-
 RT
 TT
 Pq
@@ -309,3 +308,6 @@ hj
 vcs
 jalavatu
 https
+mlk
+bjs
+tks
