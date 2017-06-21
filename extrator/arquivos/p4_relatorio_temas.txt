@@ -3,17 +3,11 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.7% graus; 0.2% betwenness; 0.1% closeness;
-- Parâmetros: delta: 4%; f: 10% dos nós totais (50 nós)
-- Temas pré-selecionados(7):
+- Métrica: 0.1% graus; 0.1% betwenness; 0.8% closeness;
+- Parâmetros: delta: 4%; f: 10% dos nós totais (148 nós)
+- Temas pré-selecionados(1):
 
-joesley
-lula
-chefe
-brasil
-época
-governo
-ano
+unicamp
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -24,22 +18,10 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-joesley -> chefe - 1/22 - 4.54545454545%
-joesley -> época - 3/12 - 25.0%
-época -> joesley - 2/36 - 5.55555555556%
-governo -> lula - 8/23 - 34.7826086957%
-ano -> joesley - 3/36 - 8.33333333333%
-ano -> governo - 1/11 - 9.09090909091%
 
-- Temas selecionados(7):
+- Temas selecionados(1):
 
-joesley
-lula
-chefe
-brasil
-época
-governo
-ano
+unicamp
 
 
 - Temas excluídos(0):

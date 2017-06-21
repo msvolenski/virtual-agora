@@ -4,71 +4,43 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    joesley  /  0.346111641221  /  34.6111641221
-    lula  /  0.204651717557  /  20.4651717557
-    chefe  /  0.174451335878  /  17.4451335878
-    brasil  /  0.0935591603053  /  9.35591603053
-    época  /  0.0892175572519  /  8.92175572519
-    governo  /  0.0866173664122  /  8.66173664122
-    ano  /  0.0677003816794  /  6.77003816794
+    unicamp  /  0.817142857143  /  81.7142857143
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
 
- Tema: joesley
+ Tema: unicamp
 
      Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
+sobre ontem fui no centro de manhã encontrei o breno que passou na prova ️ depois fomos pra unicamp   /   0.0588235294118    /    5.88235294118
 
+nasci e vivo para ver o mbl passar vergonha no grupo da unicamp   /   0.0588235294118    /    5.88235294118
 
+o documentário martírio teve duas sessões hoje na unicamp e não pude ir   /   0.0588235294118    /    5.88235294118
 
+embora eu tenha dado aula sobre uma das obras da unicamp   /   0.0588235294118    /    5.88235294118
 
- Tema: lula
+minha mãe tem uma confiança que vou passar na unicamp que meu deus , da até vontade de chorar de felicidade   /   0.0588235294118    /    5.88235294118
 
-     Sentença    /    IRSE    /    IRSE(%)
-@lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes   /   0.5    /    50.0
+comecei a ler os da fuvest agora , e pretendo ler os da unicamp a tempo kkkk vamos ver qualquer vai dar jesus mi ajuda   /   0.0588235294118    /    5.88235294118
 
-lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza   /   0.5    /    50.0
+eu tb não vejo a hora de falar " eu passei no vestibular de medicina na unicamp " ️ #medicina #vestibulanda   /   0.0588235294118    /    5.88235294118
 
+fiquei um dia todo procurando a bata 28 pra trocar tudo isso pra acabar trocando com a unicamp duas horas antes de ir embora   /   0.0588235294118    /    5.88235294118
 
+fui enviar meu trabalho nessa bosta de moodle da unicamp e o negócio bloqueio meu envio porque se tinha passado 1 minuto pq o site travou   /   0.0588235294118    /    5.88235294118
 
+unicamp fecha acordo com byd , uma das maiores fabricantes de baterias recarregáveis do mundo , para construir centro de pesquisas em campinas   /   0.0588235294118    /    5.88235294118
 
- Tema: chefe
+tenho um monte de lição da unicamp pra fazer   /   0.0588235294118    /    5.88235294118
 
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
+@singshoran vou tentar usp q é em sp né , aí unicamp , unesp e unifesp q é interior de sp , e federal no rio , minas e acho q no sul   /   0.176470588235    /    17.6470588235
 
+@amandaguedes_ sério eu já falei pra minha mãe que se ela não me levar eu faço historia na unicamp só pra ter aula com ele hahaha   /   0.0588235294118    /    5.88235294118
 
+só deus sabe como que vou passar em arq na unicamp   /   0.0588235294118    /    5.88235294118
 
-
- Tema: brasil
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: época
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: governo
-
-     Sentença    /    IRSE    /    IRSE(%)
-/ / @poder_360 tão democrático quanto o governo temer   /   1.0    /    100.0
-
-
-
-
- Tema: ano
-
-     Sentença    /    IRSE    /    IRSE(%)
-lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula   /   1.0    /    100.0
+o grupo da unicamp tem um monte de memes particulares , tipo não é treta , a película de vidro , é pro meu tcc   /   0.0588235294118    /    5.88235294118
 
 
 
@@ -81,13 +53,33 @@ lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley d
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-@lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes   /   0.25    /    25.0
+@singshoran vou tentar usp q é em sp né , aí unicamp , unesp e unifesp q é interior de sp , e federal no rio , minas e acho q no sul   /   0.176470588235    /    17.6470588235
 
-lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula   /   0.25    /    25.0
+tenho um monte de lição da unicamp pra fazer   /   0.0588235294118    /    5.88235294118
 
-lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza   /   0.25    /    25.0
+eu tb não vejo a hora de falar " eu passei no vestibular de medicina na unicamp " ️ #medicina #vestibulanda   /   0.0588235294118    /    5.88235294118
 
-/ / @poder_360 tão democrático quanto o governo temer   /   0.25    /    25.0
+minha mãe tem uma confiança que vou passar na unicamp que meu deus , da até vontade de chorar de felicidade   /   0.0588235294118    /    5.88235294118
 
-null - nao convergiu   /   0.0    /    0.0
+fiquei um dia todo procurando a bata 28 pra trocar tudo isso pra acabar trocando com a unicamp duas horas antes de ir embora   /   0.0588235294118    /    5.88235294118
+
+embora eu tenha dado aula sobre uma das obras da unicamp   /   0.0588235294118    /    5.88235294118
+
+@amandaguedes_ sério eu já falei pra minha mãe que se ela não me levar eu faço historia na unicamp só pra ter aula com ele hahaha   /   0.0588235294118    /    5.88235294118
+
+sobre ontem fui no centro de manhã encontrei o breno que passou na prova ️ depois fomos pra unicamp   /   0.0588235294118    /    5.88235294118
+
+o grupo da unicamp tem um monte de memes particulares , tipo não é treta , a película de vidro , é pro meu tcc   /   0.0588235294118    /    5.88235294118
+
+só deus sabe como que vou passar em arq na unicamp   /   0.0588235294118    /    5.88235294118
+
+comecei a ler os da fuvest agora , e pretendo ler os da unicamp a tempo kkkk vamos ver qualquer vai dar jesus mi ajuda   /   0.0588235294118    /    5.88235294118
+
+o documentário martírio teve duas sessões hoje na unicamp e não pude ir   /   0.0588235294118    /    5.88235294118
+
+nasci e vivo para ver o mbl passar vergonha no grupo da unicamp   /   0.0588235294118    /    5.88235294118
+
+unicamp fecha acordo com byd , uma das maiores fabricantes de baterias recarregáveis do mundo , para construir centro de pesquisas em campinas   /   0.0588235294118    /    5.88235294118
+
+fui enviar meu trabalho nessa bosta de moodle da unicamp e o negócio bloqueio meu envio porque se tinha passado 1 minuto pq o site travou   /   0.0588235294118    /    5.88235294118
 

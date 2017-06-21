@@ -1,16 +1,14 @@
-TEMA: joesley
+TEMA: unicamp
 
  - ITERACAO 0:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        joesley     /     52    /    nao
+        unicamp     /     444    /    nao
 
 
 
  - ITERACAO 1:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        joesley dizer     /     16    /    nao
-       joesley época     /     12    /    nao
-       joesley chefe     /     14    /    nullll
+        unicamp dia     /     16    /    nullll
 nullll
 nullll
 nullll
@@ -22,196 +20,161 @@ nullll
 nullll
 nullll
 nullll
-       joesley chama     /     4    /    nullll
+nullll
+nullll
+nullll
+       unicamp usp     /     21    /    nao
+       unicamp sobre     /     34    /    nao
+       unicamp ano     /     14    /    nao
+       unicamp ver     /     12    /    nao
+       unicamp curso     /     14    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp aqui     /     11    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp aula     /     12    /    nao
+       unicamp tô     /     11    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp unesp     /     17    /    nao
+       unicamp achar     /     8    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp poder     /     8    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp trabalho     /     5    /    nao
+       unicamp amanhã     /     8    /    nao
+       unicamp deve     /     4    /    nullll
+nullll
+nullll
+nullll
+       unicamp pena     /     5    /    nullll
+nullll
+nullll
+nullll
+       unicamp grupo     /     8    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp medicina     /     5    /    nullll
+nullll
+nullll
+nullll
+       unicamp né     /     6    /    nullll
+nullll
+nullll
+nullll
+nullll
+nullll
+       unicamp negócio     /     3    /    nullll
+nullll
+nullll
+       unicamp enem     /     6    /    nullll
+nullll
+nullll
+       unicamp puc     /     2    /    nullll
+nullll
+       unicamp corte     /     4    /    nullll
+nullll
+       unicamp crush     /     2    /    nullll
+nullll
+       unicamp deus     /     3    /    nao
+       unicamp duas     /     2    /    nao
+       unicamp pesquisa     /     8    /    nullll
+sim - com repeticao
+       unicamp monte     /     2    /    nao
+       unicamp alguém     /     2    /    nullll
+nullll
+       unicamp tempo     /     2    /    nao
+       unicamp merda     /     2    /    nullll
 nullll
 
 
 
  - ITERACAO 2:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        joesley dizer época     /     4    /    nullll
+        unicamp usp unesp     /     9    /    nao
+       unicamp usp unifesp     /     4    /    nao
+       unicamp usp sp     /     1    /    sim
+       unicamp sobre prova     /     15    /    sim - com repeticao
 nullll
 nullll
-       joesley dizer lula     /     4    /    nullll
+       unicamp ano tava     /     2    /    nullll
 nullll
+       unicamp ano tô     /     2    /    nullll
 nullll
-nullll
-       joesley dizer presidente     /     3    /    nullll
-nullll
-nullll
-       joesley época dizer     /     4    /    nullll
-nullll
-nullll
-
-
-
-
-
-
-TEMA: lula
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula     /     27    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula dilma     /     11    /    sim - com repeticao
-nullll
-nullll
-nullll
-nullll
-       lula esquema     /     2    /    nao
-       lula presidente     /     3    /    nullll
-nullll
-nullll
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        lula esquema roubalheira     /     1    /    sim
-
-
-
-
-
-
-TEMA: chefe
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        chefe     /     21    /    nullll
+       unicamp ver hora     /     2    /    nao
+       unicamp ver mbl     /     1    /    sim
+       unicamp aula falar     /     4    /    nao
+       unicamp aula sobre     /     2    /    nao
+       unicamp unesp usp     /     9    /    nullll
 nullll
 nullll
 nullll
 nullll
 nullll
+       unicamp unesp unifesp     /     8    /    nullll
 nullll
 nullll
 nullll
+       unicamp unesp tava     /     2    /    nullll
 nullll
+       unicamp trabalho bosta     /     1    /    sim
+       unicamp amanhã rolê     /     2    /    nullll
 nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-nullll
-
-
-
-
-
-
-TEMA: brasil
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil     /     13    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil dizer     /     7    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        brasil dizer joesley     /     6    /    nullll
-nullll
-nullll
-nullll
-nullll
-
-
-
-
-
-
-TEMA: época
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        época     /     14    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        época joesley     /     12    /    nao
-       época dizer     /     4    /    nullll
-nullll
-nullll
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        época joesley dizer     /     4    /    nullll
-nullll
-nullll
-       época joesley chefe     /     5    /    nullll
-nullll
-nullll
-nullll
-
-
-
-
-
-
-TEMA: governo
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        governo     /     11    /    sim - com repeticao
-nullll
-nullll
-nullll
-nullll
-
-
-
-
-
-
-TEMA: ano
-
- - ITERACAO 0:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        ano     /     6    /    nao
-
-
-
- - ITERACAO 1:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        ano pt     /     3    /    nao
-       ano dilma     /     3    /    nao
-
-
-
- - ITERACAO 2:
-          proto-frase / tamanho da rede (sentencas) / extraiu?
-        ano pt dilma     /     1    /    sim
-       ano dilma presidente     /     3    /    nullll
-nullll
-nullll
-       ano dilma lula     /     3    /    nao
+       unicamp deus vontade     /     1    /    sim
+       unicamp deus saber     /     1    /    sim
+       unicamp duas hora     /     1    /    sim
+       unicamp duas sessão     /     1    /    sim
+       unicamp monte lição     /     1    /    sim
+       unicamp monte memes     /     1    /    sim
+       unicamp tempo kkkk     /     1    /    sim
 
 
 
  - ITERACAO 3:
           proto-frase / tamanho da rede (sentencas) / extraiu?
-        ano dilma lula presidente     /     3    /    nullll
-nullll
-nullll
+        unicamp usp unesp unifesp     /     4    /    nullll
+sim - com repeticao
+       unicamp usp unifesp unesp     /     4    /    nullll
+sim - com repeticao
+       unicamp ver hora falar     /     1    /    sim
+       unicamp aula falar mãe     /     2    /    sim - com repeticao
+       unicamp aula sobre obra     /     1    /    sim
 
 
 

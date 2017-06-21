@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 
 # Register your models here.
 
@@ -9,6 +9,9 @@ class TextoPreprocAdmin(admin.ModelAdmin):
 
 class ListaVerticesAdmin(admin.ModelAdmin):
   list_display = ['id','index', 'node']
+
+class CorrigePalavraAdmin(admin.ModelAdmin):
+  list_display = ['palavra','palavra_correta']
 
 
 class DadosPreprocAdmin(admin.ModelAdmin):
@@ -49,8 +52,8 @@ class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']
 
 
-ListaDeSubstantivos
 
+admin.site.register(CorrigePalavra, CorrigePalavraAdmin)
 admin.site.register(ListaDeAdjacencias, ListaDeAdjacenciasAdmin)
 admin.site.register(ListaDeSubstantivos, ListaDeSubstantivosAdmin)
 admin.site.register(TextoPreproc, TextoPreprocAdmin)

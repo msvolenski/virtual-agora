@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -25,9 +25,6 @@ import re
 import subprocess
 import time
 import tweepy
-
-
-
 
 # Create your views here.
 class RelatorioPreprocHomeView(generic.ListView):
@@ -129,7 +126,8 @@ def inserir_dados_de_entrada_twitter(request):
             if hasattr(tweet, 'retweeted_status'):
                 if contador_tweets < num_tweets:
                     if not tweet.retweeted_status.truncated:
-                        entrada_tweets_copia.write(tweet.retweeted_status.text)                                        
+                        entrada_tweets_copia.write(tweet.retweeted_status.text)
+                        entrada_tweets_copia.write('.')                                          
                         entrada_tweets_copia.write('\n\n')
                         contador_tweets += 1                    
                 else:
@@ -137,7 +135,8 @@ def inserir_dados_de_entrada_twitter(request):
             else:
                 if contador_tweets < num_tweets:
                     if not tweet.truncated:
-                        entrada_tweets_copia.write(tweet.text)                                          
+                        entrada_tweets_copia.write(tweet.text)
+                        entrada_tweets_copia.write('.')                                            
                         entrada_tweets_copia.write('\n\n')
                         contador_tweets += 1                    
                 else:
@@ -149,7 +148,8 @@ def inserir_dados_de_entrada_twitter(request):
             else:            
                 if contador_tweets < num_tweets:
                     if not tweet.truncated:
-                        entrada_tweets_copia.write(tweet.text)                                          
+                        entrada_tweets_copia.write(tweet.text)
+                        entrada_tweets_copia.write('.')                                            
                         entrada_tweets_copia.write('\n\n')
                         contador_tweets += 1                    
                 else:
@@ -164,7 +164,8 @@ def inserir_dados_de_entrada_twitter(request):
                 if hasattr(tweet, 'retweeted_status'):                    
                     if contador_tweets < num_tweets:
                         if not tweet.retweeted_status.truncated:
-                            entrada_tweets_copia.write(tweet.retweeted_status.text)                                      
+                            entrada_tweets_copia.write(tweet.retweeted_status.text)
+                            entrada_tweets_copia.write('.')                                        
                             entrada_tweets_copia.write('\n\n')
                             contador_tweets += 1                        
                     else:
@@ -172,7 +173,8 @@ def inserir_dados_de_entrada_twitter(request):
                 else:
                     if contador_tweets < num_tweets:
                         if not tweet.truncated:
-                            entrada_tweets_copia.write(tweet.text)                                             
+                            entrada_tweets_copia.write(tweet.text)
+                            entrada_tweets_copia.write('.')                                               
                             entrada_tweets_copia.write('\n\n')
                             contador_tweets += 1                        
                     else:
@@ -184,7 +186,8 @@ def inserir_dados_de_entrada_twitter(request):
                 else:            
                     if contador_tweets < num_tweets:
                         if not tweet.truncated:
-                            entrada_tweets_copia.write(tweet.text)                        
+                            entrada_tweets_copia.write(tweet.text) 
+                            entrada_tweets_copia.write('.')                       
                             entrada_tweets_copia.write('\n\n')
                             contador_tweets += 1
                         
@@ -225,34 +228,35 @@ def salvar_dados_iniciais(request):
 
     #grava tokens nos novos arquivos  
     documento = entrada_original.read()
-
+    
     #resolve problema dos links do twiiter
     documento = re.sub(r"http\S+", ".", documento)
-            
-    print repr(u'🤣')
     
-    #elimina os mais ainda malditos emoticons
+    #elimina os mais ainda malditos emoticons e outros caracteres 
     myre = re.compile('('
+            '\x96|' #caractere bizarro SPA 
+            '\u200b|' #MALDITO ESPAO BRANCO
+            '[\ud800-\udbff][\udc00-\udfff]|'
             '\ud83c[\udf00-\udfff]|'
             '\ud83d[\udc00-\ude4f\ude80-\udeff]|'
             '\ud83e[\u0000-\uffff]|'
             '[\u2600-\u26FF\u2700-\u27BF])+'.decode('unicode_escape'), 
             re.UNICODE)            
-    documento = myre.sub('emoticon',documento)      
+    documento = myre.sub('',documento)      
     
     #tokenizer para Tweets
     tknzr = TweetTokenizer()
     palavras = tknzr.tokenize(documento)    
       
-    for i,token in enumerate(palavras): 
-        #elinina os links malditos do twitter
-        myre = re.compile("t.co.")
-        eh_link = myre.match(token)
-        if not eh_link:                    
-            entrada_tokenizada1.write(token)
-            entrada_tokenizada2.write(token)
-            entrada_tokenizada1.write(' ')
-            entrada_tokenizada2.write(' ')      
+    for i,token in enumerate(palavras):                
+        entrada_tokenizada1.write(token.strip())
+        try:
+            correta = CorrigePalavra.objects.get(palavra=token.strip()) 
+            entrada_tokenizada2.write(correta.palavra_correta.strip())
+        except:
+            entrada_tokenizada2.write(token.strip())
+        entrada_tokenizada1.write(' ')
+        entrada_tokenizada2.write(' ')      
     entrada_original.close()
     entrada_tokenizada1.close()
     entrada_tokenizada2.close()
@@ -291,11 +295,12 @@ def corretor_ortografico(request):
     else:
         arquivo_np = codecs.open("extrator/arquivos/p2_lista_palavrasIgnoradas.txt", "w", "utf-8")
         palavras_ignoradas = []         
-
+  
+    
     #inicia análise das palavras pelo corretor
     posicao = 0
     for palavra in palavras:
-           
+                
         #Testa se o token é uma palavra (formada por letras)
         pattern = re.compile("(?:[.A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$")        
         eh_palavra = pattern.match(palavra.encode('utf-8'))                
@@ -391,6 +396,11 @@ def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
         
         if tipo == "todas_as_ocorrencias":
             arq_atualiza = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt", "w", "utf-8")            
+            
+            #cria novo objeto CorrigePalavra
+            novo = CorrigePalavra(palavra=palavras[int(posicao)], palavra_correta=palavra_correta)
+            novo.save()
+
             correcao =[]
             for word in palavras:
                 if word == palavras[int(posicao)]:
@@ -448,11 +458,12 @@ def pre_processamento(request):
         if eh_palavra:
             contador = contador + 1 
 
-    #Conta o número de sentenças e escreve tokens nos arquivos
-    pontuacao = [".","!","(",")",":",";","<","=",">","?","[","]","{","|","}"]    
+    #Conta o número de sentenças e escreve tokens nos arquivos e substitui pontuação
     sentencas = 0
     for item in tokens:        
-        if item in pontuacao:
+        pat = re.compile("[\:\;\.\!\?\-\]\[]+")
+        eh = pat.match(item)        
+        if eh:
             item = "."
             sentencas = sentencas + 1
         item_l = item.lower()
@@ -463,21 +474,13 @@ def pre_processamento(request):
         if eh_palavra:
             item_l = '.' 
         
-        #elimina tudo que possui http substituindo por um ponto final
-        pattern = re.compile(ur'^http')
-        eh_palavra = pattern.match(item_l)
-        if eh_palavra:
-            item_l = '.'
-               
-       
         arq_texto_preproc.write(item_l + " ")
         arq_texto_preproc_vet.write(item_l + '\n')
     arq_texto_preproc.close()
     arq_texto_preproc_vet.close()
     arq_texto_inicial.close()
 
-    #Salva dados no Banco de dados
-   
+    #Salva dados no Banco de dados   
     dados_preprocessamento = DadosPreproc.objects.get(id=1)
     dados_preprocessamento.quantidade_de_sentencas = sentencas
     dados_preprocessamento.palavras_texto_original = str(contador)
@@ -510,29 +513,32 @@ def lematizar(request):
 
     #Pega a palavra lematizada no documento de saída do lematizador
     contador = 0
-    for linha in saida_lematizador:        
-        try:
+    for linha in saida_lematizador:
+                      
+        try:           
             linha.split(' ')[2]
-            word_lem = linha.split(' ')[1]
-            texto_lematizado.write(word_lem + ' '),
-            texto_lematizado_vetor.write(word_lem + '\n'),
-            
-            #contador de palavras
-            pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
-            eh_palavra = pattern.match(word_lem.encode('utf-8'))
-            if eh_palavra:
-                contador = contador + 1 
+            if linha[0] != ' ':    
+                word_lem = linha.split(' ')[1]
+                texto_lematizado.write(word_lem + ' '),
+                texto_lematizado_vetor.write(word_lem + '\n'),
+                
+                #contador de palavras
+                pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
+                eh_palavra = pattern.match(word_lem.encode('utf-8'))
+                if eh_palavra:
+                    contador = contador + 1 
      
         except:
-            word_lem = linha.split(' ')[0]           
-            texto_lematizado.write(word_lem + ' '),
-            texto_lematizado_vetor.write(word_lem + '\n'),
-           
-            #contador de palavras
-            pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
-            eh_palavra = pattern.match(word_lem.encode('utf-8'))
-            if eh_palavra:
-                contador = contador + 1
+            if linha[0] != ' ':    
+                word_lem = linha.split(' ')[0]           
+                texto_lematizado.write(word_lem + ' '),
+                texto_lematizado_vetor.write(word_lem + '\n'),
+            
+                #contador de palavras
+                pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
+                eh_palavra = pattern.match(word_lem.encode('utf-8'))
+                if eh_palavra:
+                    contador = contador + 1
     texto_lematizado_vetor.close()
     texto_lematizado.close()
     
@@ -554,17 +560,20 @@ def eliminar_stopwords(request):
     #Lê arquivo de stop-words e cria uma lista
     if os.path.exists("extrator/arquivos/p2_lista_stopwords.txt"):
         arq_stopwords = codecs.open("extrator/arquivos/p2_lista_stopwords.txt", "r", "utf-8")
-        lista_de_stopwords = arq_stopwords.read()
-        stopwords = tokens = nltk.word_tokenize(lista_de_stopwords)
-    else:
-        
+        lista_de_stopwords = arq_stopwords.readlines()
+        #stopwords = tokens = nltk.word_tokenize(lista_de_stopwords)
+    else:        
         return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})
+    
+    stopwords = []
+    for linha in lista_de_stopwords:
+        stopwords.append(linha.strip())
     
     #lê texto lematizado
     arq_texto = codecs.open("extrator/arquivos/p2_texto_lematizado.txt", "r", "utf-8")
     texto = arq_texto.read()
     palavras = texto.split(' ')
-
+    
     #gera arquivos de saída
     arq_saida = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","w", "utf-8")
     arq_saida_vetor = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw_vetor.txt","w", "utf-8")
@@ -572,7 +581,7 @@ def eliminar_stopwords(request):
     #verifica se a palavra é uma stop-word, grava palavras no arquvivo e conta número de palavras
     contador = 0
     for palavra in palavras:        
-        if palavra not in stopwords:
+        if palavra.strip() not in stopwords:
             arq_saida.write(palavra)
             arq_saida.write(' ')
             arq_saida_vetor.write(palavra)
@@ -605,13 +614,18 @@ def salvar_dados(request):
     texto_passo1 = TextoPreproc.objects.all()
     texto_passo1.delete()
     
+    
+    
     #salvando via bulk
     tokens = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw_vetor.txt", "r", "utf-8").readlines()
-    for t in tokens:
-        
-        t.encode('utf-8')
-        
-    aList = [TextoPreproc(vertice=token.rstrip('\n'), vertice_num=-1) for token in tokens]    
+    
+    #elimina espaçoes em brannco
+    tokens_list = []
+    tokens = filter(None, tokens)
+    for t in tokens:        
+        tokens_list.append(t.strip())    
+    tokens_list = filter(None, tokens_list)        
+    aList = [TextoPreproc(vertice=token, vertice_num=-1) for token in tokens_list]    
     TextoPreproc.objects.bulk_create(aList)
     
     #finaliza tempo
@@ -691,7 +705,7 @@ def lista_de_vertices(request):
    
     for item in objs:
         if item != '\n':
-            vertices[index] = item
+            vertices[index] = item.strip()
             index = index + 1
     
     #Salva no BD via bulk    
@@ -907,9 +921,27 @@ def metricas_e_ranking(request):
         tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau
         tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness
         tabela_closeness_normalizado[vertice] = tabela_closeness.get(vertice)/maior_closeness
+    
+    #Correção de erro - NetworkX gerando nós nao existentes
+    #error = []
+    #for k,v in tabela_graus.items():       
+    #    flag = 0
+    #    for l in lista_de_vertices:
+    #        if k == l.node:
+    #            flag = 1                
+    #    if flag == 0:            
+    #        error.append(k)
+    #for erro in error:
+     #   del tabela_graus[erro]
+     #   del tabela_grau_normalizado[erro]
+     #   del tabela_betweenness[erro]
+     #   del tabela_betweenness_normalizado[erro]
+     #   del tabela_closeness[erro]
+     #   del tabela_closeness_normalizado[erro]
+     #   vertices.remove(erro)
 
     #Armazenando Tabelas no BD via Bulking 
-    aList = [TabelaRanking(vertice_nome = vertice.rstrip('\n'), vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
+    aList = [TabelaRanking(vertice_nome = vertice, vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
         betweenness=tabela_betweenness[vertice], betweenness_norm=tabela_betweenness_normalizado[vertice], 
         closeness=tabela_closeness[vertice], closeness_norm=tabela_closeness_normalizado[vertice], potenciacao=1.0) for vertice in vertices]
     TabelaRanking.objects.bulk_create(aList)

@@ -3,11 +3,18 @@
 
   tema   /   frase   /   repetições   /   sentença (texto original)
 
-  joesley  /  tema nao convergiu  /  1  /  null - nao convergiu
-  lula  /  @lobaoeletrico querer prender temer reeleger lula esquema roubalheira bilionário continuar antes  /  1  /  @lobaoeletrico querem prender temer e reeleger lula para o esquema da roubalheira bilionária continuar como antes
-  lula  /  lula presidente 8 ano dilma presidente 6 ano joesley dizer temer chefe tudo @fcorazza  /  1  /  lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo rt @fcorazza
-  chefe  /  tema nao convergiu  /  1  /  null - nao convergiu
-  brasil  /  tema nao convergiu  /  1  /  null - nao convergiu
-  época  /  tema nao convergiu  /  1  /  null - nao convergiu
-  governo  /  @poder_360 tão democrático quantum governo temer  /  1  /  / / @poder_360 tão democrático quanto o governo temer
-  ano  /  lula presidente 8 ano dilma presidente 6 ano joesley dizer temer chefe tudo pergunta quer calar época detonar temer produção mega empresário inversão pt dilma lula  /  1  /  lula foi presidente por 8 anos , dilma foi presidente por 6 anos mas o joesley diz que o temer era o chefe de tudo a pergunta que não quer calar pq época detona temer se a produção de megas empresários foi inversão do pt de dilma e lula
+  unicamp  /  sobre ontem centro manhã encontrar breno passar prova fomo unicamp  /  1  /  sobre ontem fui no centro de manhã encontrei o breno que passou na prova ️ depois fomos pra unicamp
+  unicamp  /  nascer vivo ver mbl passar vergonha grupo unicamp  /  1  /  nasci e vivo para ver o mbl passar vergonha no grupo da unicamp
+  unicamp  /  documentário martírio duas sessão hoje unicamp poder  /  1  /  o documentário martírio teve duas sessões hoje na unicamp e não pude ir
+  unicamp  /  embora dado aula sobre obra unicamp  /  1  /  embora eu tenha dado aula sobre uma das obras da unicamp
+  unicamp  /  mãe confiança passar unicamp deus vontade chorar felicidade  /  1  /  minha mãe tem uma confiança que vou passar na unicamp que meu deus , da até vontade de chorar de felicidade
+  unicamp  /  começar ler fuvest agora pretender ler unicamp tempo kkkk ver qualquer dar jesus mi ajuda  /  1  /  comecei a ler os da fuvest agora , e pretendo ler os da unicamp a tempo kkkk vamos ver qualquer vai dar jesus mi ajuda
+  unicamp  /  ver hora falar passar vestibular medicina unicamp medicina vestibulando  /  1  /  eu tb não vejo a hora de falar " eu passei no vestibular de medicina na unicamp " ️ #medicina #vestibulanda
+  unicamp  /  ficar dia todo procurar bata 28 trocar tudo acabar trocar unicamp duas hora antes embora  /  1  /  fiquei um dia todo procurando a bata 28 pra trocar tudo isso pra acabar trocando com a unicamp duas horas antes de ir embora
+  unicamp  /  enviar trabalho bosta moodle unicamp negócio bloqueio envio porque passado 1 minuto site travar  /  1  /  fui enviar meu trabalho nessa bosta de moodle da unicamp e o negócio bloqueio meu envio porque se tinha passado 1 minuto pq o site travou
+  unicamp  /  unicamp fecha acordo byd maior fabricante bateria recarregável mundo construir centro pesquisa campina  /  1  /  unicamp fecha acordo com byd , uma das maiores fabricantes de baterias recarregáveis do mundo , para construir centro de pesquisas em campinas
+  unicamp  /  monte lição unicamp  /  1  /  tenho um monte de lição da unicamp pra fazer
+  unicamp  /  @singshoran tentar usp sp né aí unicamp unesp unifesp interior sp federal rio mina achar sul  /  3  /  @singshoran vou tentar usp q é em sp né , aí unicamp , unesp e unifesp q é interior de sp , e federal no rio , minas e acho q no sul
+  unicamp  /  @amandaguedes_ sério falar mãe levar historiar unicamp aula hahaha  /  1  /  @amandaguedes_ sério eu já falei pra minha mãe que se ela não me levar eu faço historia na unicamp só pra ter aula com ele hahaha
+  unicamp  /  deus saber passar arq unicamp  /  1  /  só deus sabe como que vou passar em arq na unicamp
+  unicamp  /  grupo unicamp monte memes particular tipo treta película vidro pro tcc  /  1  /  o grupo da unicamp tem um monte de memes particulares , tipo não é treta , a película de vidro , é pro meu tcc

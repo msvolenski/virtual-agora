@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 1006 parágrafos.
-Os dados de entrada possuem 13396 palavras.
-Os dados lematizados possuem 14837 palavras.
-Palavras não lematizadas: :- pós-doutorado crea-sp lepe-unicamp vídeo-fragmento $ financiá-las vídeo-fragmento étnico-raciais campinas-sp étnico-raciais exercícios-ime-ita-vunesp-fuvest-unicamp-uerj fgv-rio e-prints crea-sp crea-sp crea-sp étnico-raciais crea-sp crea-sp crea-sp campinas-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp veiga-neto crea-sp crea-sp exercícios-ime-ita-vunesp-fuvest-unicamp-uerj crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp exaltá-la crea-sp crea-sp crea-sp crea-sp limeira-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp crea-sp étnico-raciais veiga-neto veiga-neto 
-O documento lematizado e sem stopwords possui 8015 palavras.
+Os dados de entrada contém 813 parágrafos.
+Os dados de entrada possuem 6825 palavras.
+Os dados lematizados possuem 7543 palavras.
+Palavras não lematizadas: | $ ~ $ | $ $ $ $ $ $ $ $ $ $ | $ $ $ $ $ $ $ $ | e-racing limpá-las étnico-raciais > > | pós-doutorado crea-sp lepe-unicamp | vídeo-fragmento $ financiá-las vídeo-fragmento | | étnico-raciais étnico-raciais exercícios-ime-ita-vunesp-fuvest-unicamp-uerj | fgv-rio e-prints 
+O documento lematizado e sem stopwords possui 3914 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 40.1687070767 %.
-Em média, cada sentença do texto original possui 13 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 8 palavras.
+Compressão do texto após pré-processamento: 42.652014652 %.
+Em média, cada sentença do texto original possui 8 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 5 palavras.

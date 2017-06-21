@@ -1,3 +1,12 @@
+-
++
+]
+{
+[
+}
+:-
+\
+️
 então
 %
 "
@@ -162,6 +171,7 @@ nossas
 dela
 delas
 esta
+estar
 estes
 estas
 aquele
@@ -311,3 +321,8 @@ https
 mlk
 bjs
 tks
+mt
+kkkkkk
+eim
+kkk
+mt
