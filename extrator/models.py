@@ -62,7 +62,10 @@ class TabelaRanking(models.Model):
 class DadosSelecaoTemas(models.Model):   
     p_grau = models.FloatField('Peso Graus')
     p_clos = models.FloatField('Peso Betweeness')
-    p_bet = models.FloatField('Peso Closeness')   
+    p_bet = models.FloatField('Peso Closeness')
+    sel_graus = models.CharField('Graus?',default='sim', max_length=10)
+    sel_betw = models.CharField('Betwweeness?',default='sim', max_length=10)
+    sel_clos = models.CharField('Closeness?',default='sim', max_length=10)   
 
     def __str__(self):
         return self.temas_selecionados
@@ -145,6 +148,7 @@ class ParametrosDeAjuste(models.Model):
     acuidade = models.IntegerField('Freq_min_de_bigramas',default=100)
     num_tweets = models.IntegerField('Número de Tweets',default=100)
     permitir_RT = models.CharField('RT',default=100, max_length=10)
+   
 
 
 class CorrigePalavra(models.Model):

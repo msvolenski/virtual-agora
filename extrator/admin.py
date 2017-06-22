@@ -12,7 +12,8 @@ class ListaVerticesAdmin(admin.ModelAdmin):
 
 class CorrigePalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','palavra_correta']
-
+  ordering = ['palavra']
+  actions = ['delete_selected']
 
 class DadosPreprocAdmin(admin.ModelAdmin):
   list_display = ['flag_completo','flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
