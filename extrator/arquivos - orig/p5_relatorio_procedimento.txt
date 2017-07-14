@@ -1,0 +1,224 @@
+TEMA: lula
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula     /     200    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma     /     24    /    nao
+       lula janot     /     12    /    nao
+       lula pt     /     12    /    nao
+       lula poder     /     7    /    nao
+       lula prova     /     5    /    null
+       lula aécio     /     7    /    nao
+       lula dizer     /     8    /    null
+       lula dirceu     /     5    /    nao
+       lula volta     /     5    /    null
+       lula joesley     /     6    /    null
+       lula mão     /     5    /    null
+       lula cadeia     /     5    /    null
+       lula fala     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma josé     /     1    /    sim
+       lula janot petralha     /     1    /    sim
+       lula pt sai     /     1    /    sim
+       lula poder pt     /     2    /    sim - com repeticao
+sim - com repeticao
+       lula aécio poder     /     2    /    sim - com repeticao
+sim - com repeticao
+       lula dirceu josé     /     1    /    sim
+
+
+
+
+
+
+TEMA: pt
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt     /     15    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt lula     /     12    /    nao
+       pt sai     /     1    /    sim
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        pt lula poder     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: janot
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        janot     /     14    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        janot lula     /     12    /    nao
+       janot petralha     /     1    /    sim
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        janot lula joesley     /     3    /    null
+       janot lula dilma     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: poder
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        poder     /     10    /    null
+
+
+
+
+
+
+TEMA: brasil
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        brasil     /     14    /    null
+
+
+
+
+
+
+TEMA: aécio
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio     /     9    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio poder     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: condenação
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        condenação     /     10    /    null
+
+
+
+
+
+
+TEMA: jbs
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        jbs     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        jbs lula     /     5    /    null
+
+
+
+
+
+
+TEMA: preso
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        preso     /     8    /    null
+
+
+
+
+
+
+TEMA: prova
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova     /     5    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova lula     /     5    /    null
+
+
+
+
+
+
+TEMA: ladrão
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ladrão     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        ladrão lula     /     4    /    null
+
+
+
+
+
+
+TEMA: corrupção
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        corrupção     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        corrupção lula     /     4    /    null
+
+
+
+
+
+

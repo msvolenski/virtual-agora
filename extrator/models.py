@@ -148,7 +148,9 @@ class ParametrosDeAjuste(models.Model):
     acuidade = models.IntegerField('Freq_min_de_bigramas',default=100)
     num_tweets = models.IntegerField('Número de Tweets',default=100)
     permitir_RT = models.CharField('RT',default=100, max_length=10)
-   
+    check_grau = models.CharField('graus',default='sim', max_length=10)
+    check_betw = models.CharField('betweenness',default='sim', max_length=10)
+    check_clos = models.CharField('closeness',default='sim', max_length=10)
 
 
 class CorrigePalavra(models.Model):

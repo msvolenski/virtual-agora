@@ -1,0 +1,156 @@
+RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
+
+
+ - Índice de Representatividade do Tema (IRT)
+
+      Tema   \   IRT   \   IRT(%)
+    lula  /  0.785714285714  /  78.5714285714
+    pt  /  0.0597672295755  /  5.97672295755
+    janot  /  0.058338658147  /  5.8338658147
+    brasil  /  0.0519488817891  /  5.19488817891
+    poder  /  0.0462345960749  /  4.62345960749
+    condenação  /  0.0462345960749  /  4.62345960749
+    aécio  /  0.036818804199  /  3.6818804199
+    preso  /  0.033792788681  /  3.3792788681
+    prova  /  0.0279096303058  /  2.79096303058
+    ladrão  /  0.0277407576449  /  2.77407576449
+    jbs  /  0.0261433135555  /  2.61433135555
+    corrupção  /  0.0261433135555  /  2.61433135555
+
+
+ - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
+
+ Tema: lula
+
+     Sentença    /    IRSE    /    IRSE(%)
+aécio pode ir antes de lula   /   0.2    /    20.0
+
+não podemos admitir que parlamentares do pt façam ameaças e incitação à violência caso lula seja condenado   /   0.2    /    20.0
+
+@leitor1919 @mlganga tudo interessa , janot é um petralha que está criando caso para facilitar a volta de lula   /   0.1    /    10.0
+
+chegou a que fala q o lula escolheu o temer   /   0.2    /    20.0
+
+e se lula não pode mais , o pt sai de cena   /   0.1    /    10.0
+
+faltou lula , dilma , josé dirceu , josé genuíno , antonio palocci , josé vacari , guido mantega   /   0.2    /    20.0
+
+
+
+
+ Tema: pt
+
+     Sentença    /    IRSE    /    IRSE(%)
+não podemos admitir que parlamentares do pt façam ameaças e incitação à violência caso lula seja condenado   /   0.666666666667    /    66.6666666667
+
+e se lula não pode mais , o pt sai de cena   /   0.333333333333    /    33.3333333333
+
+
+
+
+ Tema: janot
+
+     Sentença    /    IRSE    /    IRSE(%)
+@leitor1919 @mlganga tudo interessa , janot é um petralha que está criando caso para facilitar a volta de lula   /   0.333333333333    /    33.3333333333
+
+@lobaoeletrico janot achou provas tão fáceis contra temer e pq não acha contra lula e dilma , pq será   /   0.666666666667    /    66.6666666667
+
+
+
+
+ Tema: poder
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: brasil
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: aécio
+
+     Sentença    /    IRSE    /    IRSE(%)
+aécio pode ir antes de lula   /   1.0    /    100.0
+
+
+
+
+ Tema: condenação
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: jbs
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: preso
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: prova
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: ladrão
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: corrupção
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+
+
+
+
+
+ - Índice de Representatividade Global da (IRGS) 
+
+     Sentença    /    IRGS    /    IRGS(%)
+não podemos admitir que parlamentares do pt façam ameaças e incitação à violência caso lula seja condenado   /   0.222222222222    /    22.2222222222
+
+aécio pode ir antes de lula   /   0.222222222222    /    22.2222222222
+
+@lobaoeletrico janot achou provas tão fáceis contra temer e pq não acha contra lula e dilma , pq será   /   0.111111111111    /    11.1111111111
+
+e se lula não pode mais , o pt sai de cena   /   0.111111111111    /    11.1111111111
+
+faltou lula , dilma , josé dirceu , josé genuíno , antonio palocci , josé vacari , guido mantega   /   0.111111111111    /    11.1111111111
+
+chegou a que fala q o lula escolheu o temer   /   0.111111111111    /    11.1111111111
+
+@leitor1919 @mlganga tudo interessa , janot é um petralha que está criando caso para facilitar a volta de lula   /   0.111111111111    /    11.1111111111
+
+null - nao convergiu   /   0.0    /    0.0
+

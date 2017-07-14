@@ -113,7 +113,10 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading"><span style="color:#FACE83">D</span><span style="color:#FF9858">E</span><span style="color:#F65F47">M</span><span style="color:#EE2E3A">O</span><span style="color:#3F7C7F">S</span></h1>
                         <p class="intro-text">Democracy and Social Data.
-                            <br></p>
+                            <br>
+                             
+                        </p>
+                        <p>A Collective Opinion Extraction Algorithm</p> 
                         <a href="#ajuste" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -133,11 +136,25 @@
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opdois' %}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
                                        
+                    <div class="titulo_ajuste">Métricas</div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao8' %}" method="POST" role="form" enctype="multipart/form-data">
+                            <div style="display:inline-block">
+                                <input type="checkbox" name="checks" {{check_g}} value="grau"> Graus    
+                                <input type="checkbox" name="checks" {{check_b}} value="betw"> Betweenness    
+                                <input type="checkbox" name="checks" {{check_c}} value="clos"> Closeness    
+                            </div>
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
+                                <input type="submit" class="botao_enviar" value="Enviar"> 
+                            </div>    
+                        </form>
+                    </div> 
+                    
                     <div class="titulo_ajuste">Quantidade de Tweets </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao6' %}" method="POST" role="form" enctype="multipart/form-data">
                             n =
-                            <input style="width:50px" type="number" step="1" name="valor_nt" value={{valornt}} size="1"> Tweets
+                            <input style="width:100px" type="number" step="1" name="valor_nt" value={{valornt}} size="1"> Tweets
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>                    
@@ -684,6 +701,7 @@
         <div class="modal-dialog" id="modal-dialog-mob" style="width: 40%;margin-bottom:10px;">
             <div class="modal-content">
                 <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
+                <a class="glyphicon glyphicon-remove-circle" href="{% url 'extrator:atualiza_corretor' 'nones' 0 'opcao5' %}" style="display:inline;float:right;color:black;font-size:200%;margin-top:-40px;margin-right:30px"></a>
                 <div style="border:1px solid black;margin:10px 30px 10px 30px">
                     <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra}}</b></div>
                 </div>

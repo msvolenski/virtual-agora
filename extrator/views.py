@@ -7,6 +7,7 @@ from django.views import generic
 from math import log
 from nltk.tokenize import TweetTokenizer
 from PIL import Image
+from summa import keywords
 import aspell
 import codecs
 import emoji
@@ -231,7 +232,7 @@ def salvar_dados_iniciais(request):
     
     #resolve problema dos links do twiiter
     documento = re.sub(r"http\S+", ".", documento)
-    
+
     #elimina os mais ainda malditos emoticons e outros caracteres 
     myre = re.compile('('
             '\x96|' #caractere bizarro SPA 
@@ -243,6 +244,9 @@ def salvar_dados_iniciais(request):
             '[\u2600-\u26FF\u2700-\u27BF])+'.decode('unicode_escape'), 
             re.UNICODE)            
     documento = myre.sub('',documento)      
+    
+    #extração de palavras-chave com a tecnica do TextRank
+    print keywords.keywords(documento.encode('utf-8'), language='portuguese')
     
     #tokenizer para Tweets
     tknzr = TweetTokenizer()
@@ -457,6 +461,10 @@ def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
         arquivo_sw.write('\n')
         arquivo_sw.close()
         return corretor_ortografico(request)       
+    
+    if opcao == 'opcao5':
+        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1'})
+        
     
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo1'})
 
@@ -923,6 +931,11 @@ def metricas_e_ranking(request):
     #carrega lista de vertices
     lista_de_vertices = ListaVertices.objects.all()
 
+    #cria tabelas
+    tabela_graus = {}
+    tabela_betweenness = {}
+    tabela_closeness ={}
+
     #gera rede
     rede = nx.DiGraph()
     for vertice in lista_de_vertices:
@@ -935,21 +948,21 @@ def metricas_e_ranking(request):
     
     
     #gera tabelas
-    print "calculando métrica graus..."
-    tabela_graus = nx.degree(rede, weight='weight')    
-    print "calculando métrica betweenness..."
-    tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
-    #tabela_betweenness = nx.degree(rede, weight='weight')    
-
-    #tabela_closeness = nx.closeness_vitality(rede,weight='weight' )
-    print "calculando métrica closeness..."
-    tabela_closeness = nx.closeness_centrality(rede) 
-    #tabela_closeness = nx.degree(rede, weight='weight')  
-    print 'fim'
-    #encontra maiores valores de grau, betweenness e cloasennes
-    maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]
-    maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
-    maior_closeness = max(tabela_closeness.iteritems(), key=operator.itemgetter(1))[1]
+    if parametros.check_grau == 'sim':
+        print "calculando métrica graus..."
+        tabela_graus = nx.degree(rede, weight='weight')    
+        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]    
+    
+    if parametros.check_betw == 'sim':
+        print "calculando métrica betweenness..."
+        tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
+        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
+    
+    if parametros.check_clos == 'sim':    
+        print "calculando métrica closeness..."
+        tabela_closeness = nx.closeness_centrality(rede)
+        maior_closeness = max(tabela_closeness.iteritems(), key=operator.itemgetter(1))[1] 
+   
     
     #cria lista de vertices
     vertices = nx.nodes(rede)
@@ -958,62 +971,39 @@ def metricas_e_ranking(request):
     tabela_grau_normalizado = {}
     tabela_betweenness_normalizado = {}
     tabela_closeness_normalizado = {}    
+    
+    #gera conteudo das tabelas
     for vertice in vertices:        
         arq_texto_vertices.write(vertice + ' ')
-        tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau
-        tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness
-        tabela_closeness_normalizado[vertice] = tabela_closeness.get(vertice)/maior_closeness
+        if parametros.check_grau == 'sim':
+            tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau
+        if parametros.check_betw == 'sim':
+            tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness
+        if parametros.check_clos == 'sim':
+            tabela_closeness_normalizado[vertice] = tabela_closeness.get(vertice)/maior_closeness
     
-    print len(vertices)
-    print len(tabela_graus)
+      
+    for vertice in vertices:        
+        arq_texto_vertices.write(vertice + ' ')
+        if parametros.check_grau == 'nao':
+            tabela_graus[vertice] = 0
+            tabela_grau_normalizado[vertice] = 0
+        if parametros.check_betw == 'nao':
+            tabela_betweenness[vertice] = 0
+            tabela_betweenness_normalizado[vertice] = 0
+        if parametros.check_clos == 'nao':
+            tabela_closeness[vertice] = 0
+            tabela_closeness_normalizado[vertice] = 0
+   
     
-    #for v in vertices:
-      #  if v == ';':
-     #       print 'merda'
-
-    #for k,v in 
-    #Correção de erro - NetworkX gerando nós nao existentes
-    #error = []
-    #for k,v in tabela_graus.items():       
-    #    flag = 0
-    #    for l in lista_de_vertices:
-    #        if k == l.node:
-    #            flag = 1                
-    #    if flag == 0:            
-    #        error.append(k)
-    #for erro in error:
-     #   del tabela_graus[erro]
-     #   del tabela_grau_normalizado[erro]
-     #   del tabela_betweenness[erro]
-     #   del tabela_betweenness_normalizado[erro]
-     #   del tabela_closeness[erro]
-     #   del tabela_closeness_normalizado[erro]
-     #   vertices.remove(erro)
-    
-    #Correção de erro - NetworkX gerando nós nao existentes
-    #error = []
-    #for k,v in tabela_graus.items():       
-    #    flag = 0
-    #    for l in lista_de_vertices:
-    #        if k == l.node:
-    #            flag = 1                
-    #    if flag == 0:            
-    #        error.append(k)
-    #for erro in error:
-     #   del tabela_graus[erro]
-     #   del tabela_grau_normalizado[erro]
-     #   del tabela_betweenness[erro]
-     #   del tabela_betweenness_normalizado[erro]
-     #   del tabela_closeness[erro]
-     #   del tabela_closeness_normalizado[erro]
-     #   vertices.remove(erro)
-
     #Armazenando Tabelas no BD via Bulking 
     aList = [TabelaRanking(vertice_nome = vertice, vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
         betweenness=tabela_betweenness[vertice], betweenness_norm=tabela_betweenness_normalizado[vertice], 
         closeness=tabela_closeness[vertice], closeness_norm=tabela_closeness_normalizado[vertice], potenciacao=1.0) for vertice in vertices]
     TabelaRanking.objects.bulk_create(aList)
-
+    
+    
+    
     #gera Tabelas Ranking
     tabela_graus_ordenada = TabelaRanking.objects.all().order_by('-grau')    
     tabela_betweenness_ordenada = TabelaRanking.objects.all().order_by('-betweenness')    
@@ -1056,6 +1046,8 @@ def calcula_indice(request):
     tabela_closeness = codecs.open("extrator/arquivos/p4_tabela_closeness.txt").readlines()
     
     #Carrega dados do BD
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    
     vertices_objs = ListaVertices.objects.all()
 
     tabela_ranking_completa = TabelaRanking.objects.all()
@@ -1074,18 +1066,53 @@ def calcula_indice(request):
     pesos = PesosEAlpha.objects.all()
     pesos.delete()
     
-    #gera matriz de pesos
+    #gera matriz de pesos para cada caso
     var = 0.1
-    for a1 in range(0,12):
-        for a2 in range(0,12):
-            a3 = 10 - a1 - a2
-            if a3 >= 0 and a1 != 0 and a2 != 0 and a3 != 0:
-                arq_matriz_pesos.write(str(a1*var) + ' ')
-                arq_matriz_pesos.write(str(a2*var) + ' ')
-                arq_matriz_pesos.write(str(a3*var) + ' ')
-                arq_matriz_pesos.write('\n')
-    arq_matriz_pesos.close()
-
+    if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_clos == 'sim': 
+       
+        for a1 in range(0,12):
+            for a2 in range(0,12):
+                a3 = 10 - a1 - a2
+                if a3 >= 0 and a1 != 0 and a2 != 0 and a3 != 0:
+                    arq_matriz_pesos.write(str(a1*var) + ' ')
+                    arq_matriz_pesos.write(str(a2*var) + ' ')
+                    arq_matriz_pesos.write(str(a3*var) + ' ')
+                    arq_matriz_pesos.write('\n')
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_clos == 'nao':
+        arq_matriz_pesos.write(str(1.0) + ' ' + str(0.0) + ' ' + str(0.0) + '\n')
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_clos == 'nao': 
+        arq_matriz_pesos.write(str(0.0) + ' ' + str(1.0) + ' ' + str(0.0) + '\n')
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'nao' and parametros.check_betw == 'nao' and parametros.check_clos == 'sim':
+        arq_matriz_pesos.write(str(0.0) + ' ' + str(0.0) + ' ' + str(1.0) + '\n')
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_clos == 'nao':
+        for a1 in range(1,10):
+            p1 = a1*var
+            p2 = 1 - p1
+            arq_matriz_pesos.write(str(p1) + ' ' + str(p2) + ' ' + str(0.0) + '\n')       
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_clos == 'sim':
+        for a1 in range(1,10):
+            p1 = a1*var
+            p2 = 1 - p1
+            arq_matriz_pesos.write(str(p1) + ' ' + str(0.0) + ' ' + str(p2) + '\n')       
+        arq_matriz_pesos.close()
+    
+    if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_clos == 'sim':
+        for a1 in range(1,10):
+            p1 = a1*var
+            p2 = 1 - p1
+            arq_matriz_pesos.write(str(0.0) + ' ' + str(p1) + ' ' + str(p2) + '\n')       
+        arq_matriz_pesos.close()
+    
     ## FIM ETAPA 2 ####################################################
     ## ETAPA 3: SELEÇÃO DOS PESOS DAS MÉTRICAS ########################
 
@@ -1312,69 +1339,67 @@ def selecionar_temas(request):
         
         #cria listas e dicionários
         tabela_potenciacao_numeros = OrderedDict()
-        distancias_relativas_novo = OrderedDict()
+        distancias_relativas_novo = []
         vertices_selecionados = OrderedDict()
-        temas_preselecionados = OrderedDict()                   
+        temas_preselecionados = OrderedDict()
+        label = []                   
         
         #cria tabela com indice potenciação
         for linha in tabela_potenciacao:
             tabela_potenciacao_numeros[linha.split(' ')[0]] = float(linha.split(' ')[2].rstrip('\n'))     
         
         #Calcula as distÂncias relativas entre os vértices da tabela potenciacao
+        contador = 0
+        inicio_cauda = tabela_potenciacao_numeros.keys()[0]
+        print inicio_cauda
+        
         for index, numero in enumerate(tabela_potenciacao_numeros):        
+            
             potenciacao_inicial = tabela_potenciacao_numeros.values()[index]
+                        
             try:
                 potenciacao_final = tabela_potenciacao_numeros.values()[index+1]
             except:
                 break        
-            try:
-                distancias_relativas_novo[tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1]] = 100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial) 
-            except:
-                distancias_relativas_novo[tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1]] = 0 
-            try:
-                arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )        
-            except:
-                arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = 0 \n')
+            
+            #calcula distancia relativa
+            dr = 100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)
+            distancias_relativas_novo.append(dr)
+            label.append(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
+            arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
+
+            if dr < parametros.dr_delta_min:
+                contador += 1
+                if contador >= f:
+                    break
+            else:
+                inicio_cauda = tabela_potenciacao_numeros.keys()[index+1]
+                contador = 0
+
+        print inicio_cauda          
 
         print 'passou 2'
         #gera o grafico das distancias relativas
         matplotlib.rc('font', family='Arial')    
-        objects = distancias_relativas_novo.keys()    
+        objects = label   
         y_pos = np.arange(len(objects))    
-        performance = distancias_relativas_novo.values()
+        performance = distancias_relativas_novo
         plt.bar(y_pos, performance, align='center', alpha=0.5)
         plt.xticks(y_pos, objects)
         plt.ylabel('Distancia relativa') 
         plt.title('Distancias Relativas dos nos da rede')
         pylab.savefig('extrator/arquivos/p4_grafico_distancias_relativas_potenciacao.png')     
     
-        #Passo 1: selecionando os vertices mais significaivos (fora da cauda longa)    
-
-        #procura início da cauda    
-        contador = 0
-        cauda_encontrada = 'nao'
-        #inicio_cauda = distancias_relativas_novo.keys()[-1].split('->')[1]
-        inicio_cauda = distancias_relativas_novo.keys()[-1]    
-        
-        for index, vertices in enumerate(distancias_relativas_novo):      
-            if contador == f:
-                cauda_encontrada = 'sim'
-                break
-            if distancias_relativas_novo.values()[index] <= parametros.dr_delta_min and contador < f:
-                contador = contador + 1
-            if distancias_relativas_novo.values()[index] > parametros.dr_delta_min:
-                contador = 0        
-                inicio_cauda = vertices 
-        
-        
+                
         #Seleciona região fora da cauda e armazena vertices (nomes e numeros)    
-        vertice_inicio_cauda = inicio_cauda.split('->')[1]
+        vertice_inicio_cauda = inicio_cauda
             
         for linha in tabela_potenciacao_objs:
             vertices_selecionados[linha.vertice_numero] = linha.vertice_nome
             if str(linha.vertice_numero) == str(vertice_inicio_cauda):
                 break
-    
+
+ ####################################################################################################################################################   
         #Pré-seleciona os temas excluindo os não-substantivos #########################################################    
         
         #armazena palavras para iniciar o teste  
@@ -1433,6 +1458,11 @@ def selecionar_temas(request):
                         pal.resultado = cond
                         pal.save()                     
             
+            elif re.compile("[0-9]+").match(palavra):        
+                pal.condicao = 'finalizado'
+                pal.resultado ='nao'
+                pal.save()
+
             elif len(tags) == repeticoes:            
                 pal.condicao = 'finalizado'
                 pal.resultado ='sim'
@@ -1566,7 +1596,7 @@ def processarProtofrases(request):
 
     #inicia analise de cada tema
     for tema in temas:        
-        print ('processando o tema ' + tema.tema + '...')
+        print ('processando o tema ' + tema.tema.encode('utf-8') + '...')
         
         #inicia relatórios
         arq_procedimento.write('TEMA: ' + tema.tema + '\n\n')
@@ -1593,9 +1623,9 @@ def processarProtofrases(request):
                 break
             flag = 'on'   
             
-            #relatório           
+            #relatório                       
             arq_procedimento.write(' - ITERACAO ' + str(iteracao) + ':\n' + '          proto-frase / tamanho da rede (sentencas) / extraiu?\n ')    
-                
+           
             #avalia as protofrases que ainda nao obtiveram extracao
             buffer_pfs = []
             pfn = 0
@@ -1611,10 +1641,12 @@ def processarProtofrases(request):
                 palavras = protofrase.protofrase.split(' ')
                 subtemas_pre_selecionados = []
                 
-                print "gerando novo documento"
+                #reinicializa flag
+                convergiu_tema = 'nao'
+             
                 #gera sub-documento e recebe o numero de sentencas
                 numero_de_sentencas, seten, sentencas = GeraSubDocumento(palavras)                
-                print "documento gerado"
+               
                 #relatorio
                 arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                  
                 
@@ -1633,18 +1665,18 @@ def processarProtofrases(request):
                         subtemas_pre_selecionados = memoria_pf[ind] 
                     #senão, chama algoritmo de seleção de temas  
                     else:                                
-                        print 'gerando nova rede'
+                      
                         #gera nova rede
                         tgo = GeraRede(request)
-                        print 'rede gerada'
-                        print 'selecionando novos subtemas'
+                       
                         #seleciona os subtemas
                         subtemas_pre_selecionados = SelecionaSubTemas(tgo)
-                        print 'Subtemas criados'
+                      
                         #atualiza memória de execuções   
                         memoria_pf.append(set(palavras))
                         memoria_st.append(set(subtemas_pre_selecionados))
                     
+                    #print subtemas_pre_selecionados
                     #adiciona novas protofrases no buffer 
                     convergiu = 'nao'                   
                     for subtema in subtemas_pre_selecionados:
@@ -1659,8 +1691,7 @@ def processarProtofrases(request):
                                 pf = pf_i + ' ' + subtema
                                 buffer_pfs.append(pf)                               
                     if convergiu == 'nao':                       
-                        set_count = Counter(elem for elem in sentencas)
-                        
+                        set_count = Counter(elem for elem in sentencas)                        
                         soma = sum(set_count.values())
                         for k,v in set_count.items():
                             per = int((float(v)/soma)*100)
@@ -1670,11 +1701,10 @@ def processarProtofrases(request):
                                 frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
                                 extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
                                 arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')  
-                            else: 
-                                do = 'nothing'
-                                #arq_procedimento.write('nullll' + '\n')                       
+                        if convergiu_tema == 'nao':                              
+                            arq_procedimento.write('null' + '\n') 
                     else:
-                        arq_procedimento.write(protofrase.extracao + '\n')                
+                        arq_procedimento.write(protofrase.extracao + '\n')                               
                     pfn += 1     
 
             print 'atualizando banco de dados...'
@@ -1848,52 +1878,53 @@ def SelecionaSubTemas(tabela_graus_ordenada):
     except ObjectDoesNotExist:
         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
         parametros.save()
-        
-    #calculo das distancias relativas 
-    distancias_relativas_novo = OrderedDict()
-    for index, numero in enumerate(tabela_graus_ordenada):        
-        grau_inicial = tabela_graus_ordenada.values()[index]
-        try:
-            grau_final = tabela_graus_ordenada.values()[index+1]
-        except:
-            break        
-        try:
-            distancias_relativas_novo[tabela_graus_ordenada.keys()[index] + '->' + tabela_graus_ordenada.keys()[index+1]] = 100*((grau_inicial - grau_final)/grau_inicial) 
-        except:
-            distancias_relativas_novo[tabela_graus_ordenada.keys()[index] + '->' + tabela_graus_ordenada.keys()[index+1]] = 0 
     
+    #Calcula as distÂncias relativas entre os vértices da tabela potenciacao
     
-    #procura início da cauda
-    contador = 0
-    cauda_encontrada = 'nao'
+    #normalizando os valores
+    tabela_graus_ordenada_normalizada = OrderedDict()
+    maior_valor = max(tabela_graus_ordenada.iteritems(), key=operator.itemgetter(1))[1]
     
-    #inicializa o inicio da cauda com o último vertice
-    els = list(distancias_relativas_novo.items())
-    inicio_cauda = els[-1][0]
+    for k,v in tabela_graus_ordenada.items():        
+        tabela_graus_ordenada_normalizada[k] = float(int(v)/int(maior_valor))
+    
 
     #calcula frequencia absoluta de corte    
-    f = int(float(parametros.f_corte/100)*len(tabela_graus_ordenada))
-    #Parâmetro da definição da cauda
+    f = int(float(parametros.f_corte/100)*len(tabela_graus_ordenada_normalizada))
     
-    delta = parametros.dr_delta_min #distancia relativa
-    f_repeticao = f #quantas vezes a distancia minima deve se repetir para definir comeco da cauda
-    for index, vertices in enumerate(distancias_relativas_novo):      
-        if contador == f_repeticao:
-            cauda_encontrada = 'sim'
-            break
-        if distancias_relativas_novo.values()[index] <= delta and contador < f_repeticao:
-            contador = contador + 1
-        if distancias_relativas_novo.values()[index] > delta:
-            contador = 0        
-            inicio_cauda = vertices 
+    
+    contador = 0
+    inicio_cauda = tabela_graus_ordenada_normalizada.keys()[0]
+    distancias_relativas_novo =[]
+    
+    for index, numero in enumerate(tabela_graus_ordenada_normalizada):            
+        grau_inicial = tabela_graus_ordenada_normalizada.values()[index]                        
+        try:
+            grau_final = tabela_graus_ordenada_normalizada.values()[index+1]
+        except:
+            break             
+        #calcula distancia relativa
+        dr = 100*((grau_inicial - grau_final)/grau_inicial)
+        distancias_relativas_novo.append(dr)
+        
+        #debugar
+        #print str(grau_inicial) + '  ' + str(grau_final) + '  ' + str(dr)
+        
+        if dr < parametros.dr_delta_min:
+            contador += 1
+            if contador >= f:
+                break
+        else:
+            inicio_cauda = tabela_graus_ordenada_normalizada.keys()[index+1]
+            contador = 0    
     
     #Seleciona região fora da cauda e armazena vertices (nomes e numeros)    
     vertices_selecionados = []
-    vertice_inicio_cauda = inicio_cauda.split('->')[1]    
-    for key, value in tabela_graus_ordenada.items():
+    for key, value in tabela_graus_ordenada_normalizada.items():
         vertices_selecionados.append(key)
-        if key == vertice_inicio_cauda:
+        if key == inicio_cauda:
             break
+    
     
     #Pré-seleciona os temas excluindo os não-substantivos
     temas_selecionados = []
@@ -2094,6 +2125,20 @@ def ajustar_parametro(request,opcao):
         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
         parametros.save()
     
+    if parametros.check_grau == 'sim':
+        check_g = 'checked'
+    else:
+        check_g = 'off'
+    if parametros.check_betw == 'sim':
+        check_b = 'checked'
+    else:
+        check_b = 'off'
+    if parametros.check_clos == 'sim':
+        check_c = 'checked'
+    else:
+        check_c = 'off'        
+    
+    
     if parametros.permitir_RT == 'sim':
             check_sim = 'checked'
             check_nao = 'off'
@@ -2145,15 +2190,49 @@ def ajustar_parametro(request,opcao):
         if  display_type == 'nao':
             check_sim = 'off'
             check_nao = 'checked'
+    
+    if opcao == 'opcao8':
+        checkeds = request.POST.getlist('checks')
+        if 'grau' in checkeds:
+            parametros.check_grau = 'sim'
+            check_g = 'checked'
+        else:
+            parametros.check_grau = 'nao'
+            check_g = 'off'
+        
+        if 'betw' in checkeds:
+            parametros.check_betw = 'sim'
+            check_b = 'checked'
+        else:
+            parametros.check_betw = 'nao'
+            check_b = 'off' 
+        
+        if 'clos' in checkeds:
+            parametros.check_clos = 'sim'
+            check_c = 'checked'
+        else:
+            parametros.check_clos = 'nao'
+            check_c = 'off'
+        parametros.save()                    
 
     if opcao == 'opcao4':
-        print check_sim
-        print check_nao
-        return render(request, 'extrator/extrator_resultados.html', { 'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})
+        if parametros.check_grau == 'sim':
+            check_g = 'checked'
+        else:
+            check_g = 'off'
+        if parametros.check_betw == 'sim':
+                    check_b = 'checked'
+        else:
+            check_b = 'off'
+        if parametros.check_clos == 'sim':
+                    check_c = 'checked'
+        else:
+            check_c = 'off'        
+        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})
 
     
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas,'goto':'ajuste'})      
 
 def resultados(request,arquivo):
     result = DadosPreproc.objects.get(id=1)
@@ -2164,34 +2243,27 @@ def resultados(request,arquivo):
         
         #paramentros genericos (raios)
         #raio do esfera parágrafo (deve ser igual ao definido no css)
-        raio_par = 15 
+        raio_par = 15
+        raio_maximo_temas = 200
+        raio_minimo_temas = 5 
         
-        #Define o raio da menor esfera dos subtemas
-        menor_grau = 1        
-        for i in xrange(1, len(temas)):
-            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])            
-            #menor grau
-            if tema.grau_norm < menor_grau:
-                menor_grau = tema.grau_norm         
-        raio_vertices = float(20/menor_grau)
-
-        #caclula parmetros do tema central - raio e diâmetro 
+        #caclula tamanho do raio do tema central (max 100px) 
         irt_central = TemasNew.objects.get(tema__exact=temas[0])
-        diametro_central = int(raio_vertices*irt_central.irt)
+        diametro_central = int(raio_maximo_temas*irt_central.irt)
         raio_central = int(diametro_central/2)
-        tema_central = (temas[0], diametro_central, raio_central,irt_central.irt_p)
+        tema_central = (temas[0], diametro_central, raio_central, irt_central.irt_p)
         
-        #calcula parametros dos parágrafos do tema central
+        #calcula passo angular dos parágrafos do tema central
         tema_central_par = []
         paragrafos = DadosExtracaoNew.objects.filter(tema__exact=temas[0])
         delta = int(180/len(paragrafos))
         posicao = 0
         
-        #acha maior distancia entre tema central e parágrafo        
+        #calcula distAncias do centro do tema central ate o centro dos parágrafos       
         bias_central = 0        
         for paragrafo in paragrafos:
             if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                distancia = int(tema_central[2] + raio_par + 80*(1-paragrafo.irse))             
+                distancia = int(tema_central[2] + raio_par + (100 - paragrafo.irse_p))             
                 if distancia > bias_central:
                     bias_central = distancia
                 pos_x = int(distancia*math.cos(math.radians(posicao)))
@@ -2202,30 +2274,30 @@ def resultados(request,arquivo):
         
         # CALCULO DO BIAS ###############################################################################
         #acha maior distancia entre subtema e paragrafo (bias_subtema)
-        bias_subtema = 0
-        vet_buf = []
-        for i in xrange(1, len(temas)):            
-            #calcula parametros
-            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
-            irt = TemasNew.objects.get(tema__exact=temas[i])
-            diametro_vertice = int(raio_vertices*irt.irt)
-            raio_vertice = int(diametro_vertice/2)
-            vet_buf.append((temas[i],raio_vertice))        
+        # bias_subtema = 0
+        # vet_buf = []
+        # for i in xrange(1, len(temas)):            
+        #     #calcula parametros
+        #     tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
+        #     irt = TemasNew.objects.get(tema__exact=temas[i])
+        #     diametro_vertice = int(raio_vertices*irt.irt)
+        #     raio_vertice = int(diametro_vertice/2)
+        #     vet_buf.append((temas[i],raio_vertice))        
         
-        for tema in temas:
-            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)       
-            for paragrafo in paragrafos:
-                if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                    distancia = 0
-                    for vetor in vet_buf:
-                        if vetor[0] == tema:
-                            distancia = int(vetor[1] + raio_par + 80*(1-paragrafo.irse))
-                            if distancia > bias_subtema:
-                                bias_subtema = distancia
+        # for tema in temas:
+        #     paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)       
+        #     for paragrafo in paragrafos:
+        #         if paragrafo.protofrase.strip() != 'tema nao convergiu':
+        #             distancia = 0
+        #             for vetor in vet_buf:
+        #                 if vetor[0] == tema:
+        #                     distancia = int(vetor[1] + raio_par + 80*(1-paragrafo.irse))
+        #                     if distancia > bias_subtema:
+        #                         bias_subtema = distancia
 
-        bias = bias_central + bias_subtema
-        if not paragrafos:
-            bias = 100             
+        # bias = bias_central + bias_subtema
+        # if not paragrafos:
+        #     bias = 100             
         ##########################################################################################        
         
         #Define os angulos dos temas e inicializa vetor
@@ -2233,22 +2305,26 @@ def resultados(request,arquivo):
         grau = delta_grau
         vetor_temas =[]   
         
-        #menor raio
-        t = TemasNew.objects.all()
-        diametro_2_vertice = int(raio_vertices*t[1].irt)
-        raio_2_vertice = int(diametro_2_vertice/2)
-        menor_distancia_do_tema = raio_central + raio_2_vertice + bias + 10
-        tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
-        distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
+        #menor distancia do subtema ao raio centrol
+        distancia_do_centro = 330 #raio max central, diametro paragrafo, distancia máxima tema-paragrafo
+        
+        # #menor raio
+        # t = TemasNew.objects.all()
+        # diametro_2_vertice = int(raio_vertices*t[1].irt)
+        # raio_2_vertice = int(diametro_2_vertice/2)
+        # menor_distancia_do_tema = raio_central + raio_2_vertice + bias + 10
+        # tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
+        
+        # distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
         
         for i in xrange(1, len(temas)):
             
             #calcula parametros
             tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
             irt = TemasNew.objects.get(tema__exact=temas[i])
-            diametro_vertice = int(raio_vertices*irt.irt)
+            diametro_vertice = int(raio_maximo_temas*irt.irt)
             raio_vertice = int(diametro_vertice/2)
-            distancia_centro = distancia_do_centro*(1 - tema.grau_norm)
+            distancia_centro = distancia_do_centro + (200 - 200*(tema.grau_norm))
             pos_x = int(distancia_centro*math.cos(math.radians(grau)))
             pos_y = int(distancia_centro*math.sin(math.radians(grau)))              
 
@@ -2279,7 +2355,7 @@ def resultados(request,arquivo):
                     distancia = 0
                     for vetor in vetor_temas:
                         if vetor[0] == tema:
-                            distancia = int(vetor[5] + raio_par + 80*(1-paragrafo.irse))                                      
+                            distancia = int(vetor[5] + raio_par + (100 - paragrafo.irse_p))                                      
                     pos_x = int(distancia*math.cos(math.radians(posicao)))
                     pos_y = int(distancia*math.sin(math.radians(posicao)))
                     posicao = posicao + delta

@@ -4,14 +4,18 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    deus  /  0.546659926899  /  54.6659926899
-    dizer  /  0.505681732004  /  50.5681732004
-    homem  /  0.28301955084  /  28.301955084
-    cristo  /  0.223074040507  /  22.3074040507
-    coisa  /  0.217152218084  /  21.7152218084
-    ver  /  0.20020714305  /  20.020714305
-    dia  /  0.183429235064  /  18.3429235064
-    haver  /  0.159166417786  /  15.9166417786
+    deus  /  0.510962692799  /  51.0962692799
+    jesus  /  0.41149745299  /  41.149745299
+    homem  /  0.276834463609  /  27.6834463609
+    senhor  /  0.267624932949  /  26.7624932949
+    filho  /  0.223604682566  /  22.3604682566
+    cristo  /  0.205063591254  /  20.5063591254
+    dia  /  0.174584718435  /  17.4584718435
+    pai  /  0.168414394187  /  16.8414394187
+    espírito  /  0.156266653889  /  15.6266653889
+    palavra  /  0.147129214889  /  14.7129214889
+    poder  /  0.145604462278  /  14.5604462278
+    irmão  /  0.144923091858  /  14.4923091858
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
@@ -19,57 +23,15 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  Tema: deus
 
      Sentença    /    IRSE    /    IRSE(%)
-o louvor , e a glória , e a sabedoria , e as ações de graças , e a honra , e o poder , e a força sejam ao nosso deus , pelos séculos dos séculos   /   0.037037037037    /    3.7037037037
-
-que diremos , pois , se deus , querendo mostrar a sua ira e dar a conhecer o seu poder , suportou com muita longanimidade os vasos de ira , 171 preparados para a perdição , a fim de que também desse a conhecer as riquezas da sua glória em vasos de misericórdia , que para glória preparou de antemão , os quais somos nós , a quem também chamou , não só dentre os judeus , mas também dentre os gentios   /   0.037037037037    /    3.7037037037
-
-ora , o nosso mesmo deus e pai , e jesus , nosso senhor , dirijam-nos o caminho até vós , e o senhor vos faça crescer e aumentar no amor uns para com os outros e para com todos , como também nós para convosco , a fim de que seja o vosso coração confirmado em santidade , isento de culpa , na presença de nosso deus e pai , na vinda de nosso senhor jesus , com todos os seus santos   /   0.037037037037    /    3.7037037037
-
-quando , porém , se manifestou a benignidade de deus , nosso salvador , e o seu amor para com todos , não por obras de justiça praticadas por nós , mas segundo sua misericórdia , ele nos salvou mediante o lavar regenerador e renovador do espírito santo , que ele derramou sobre nós ricamente , por meio de jesus cristo , nosso salvador , a fim de que , justificados por graça , nos tornemos seus herdeiros , segundo a esperança da vida eterna   /   0.037037037037    /    3.7037037037
-
-mas não foi assim que aprendestes a cristo , se é que , de fato , o tendes ouvido e nele fostes instruídos , segundo é a verdade em jesus , no sentido de que , quanto ao trato passado , vos despojeis do velho homem , que se corrompe segundo as concupiscências do engano , e vos renoveis no espírito do vosso entendimento , e vos revistais do novo homem , criado segundo deus , em justiça e retidão procedentes da verdade   /   0.111111111111    /    11.1111111111
-
-quero , entretanto , que saibais ser cristo o cabeça de todo homem , e o homem , o cabeça da mulher , e deus , o cabeça de cristo   /   0.037037037037    /    3.7037037037
-
-porque não vos demos a conhecer o poder e a vinda de nosso senhor jesus cristo seguindo fábulas engenhosamente inventadas , mas nós mesmos fomos testemunhas oculares da sua majestade , pois ele recebeu , da parte de deus pai , honra e glória , quando pela glória excelsa lhe foi enviada a seguinte voz   /   0.037037037037    /    3.7037037037
-
-272 segunda epístola de joão o presbítero à senhora eleita e aos seus filhos , a quem eu amo na verdade e não somente eu , mas também todos os que conhecem a verdade , por causa da verdade que permanece em nós e conosco estará para sempre , a graça , a misericórdia e a paz , da parte de deus pai e de jesus cristo , o filho do pai , serão conosco em verdade e amor   /   0.296296296296    /    29.6296296296
-
-por isso , também eu , tendo ouvido a fé que há entre vós no senhor jesus e o amor para com todos os santos , não cesso de dar graças por vós , fazendo menção de vós nas minhas orações , para que o deus de nosso senhor jesus cristo , o pai da glória , vos conceda espírito de sabedoria e de revelação no pleno conhecimento dele , iluminados os olhos do vosso coração , para saberdes qual é a esperança do seu chamamento , qual a riqueza da glória da sua herança nos santos e qual a suprema grandeza do seu poder para com os que cremos , segundo a eficácia da força do seu poder   /   0.222222222222    /    22.2222222222
-
-vós sois a nossa carta , escrita em nosso coração , conhecida e lida por todos os homens , estando já manifestos como carta de cristo , produzida pelo nosso ministério , escrita não com tinta , mas pelo espírito do deus vivente , não em tábuas de pedra , mas em tábuas de carne , isto é , nos corações   /   0.037037037037    /    3.7037037037
-
-é que , tendo vós recebido a palavra que de nós ouvistes , que é de deus , acolhestes não como palavra de homens , e sim como , em verdade é , a palavra de deus , a qual , com efeito , está operando eficazmente em vós , os que credes   /   0.037037037037    /    3.7037037037
-
-239 porquanto a graça de deus se manifestou salvadora a todos os homens , educando-nos para que , renegadas a impiedade e as paixões mundanas , vivamos , no presente século , sensata , justa e piedosamente , aguardando a bendita esperança e a manifestação da glória do nosso grande deus e salvador cristo jesus , o qual a si mesmo se deu por nós , a fim de remir-nos de toda iniqüidade e purificar , para si mesmo , um povo exclusivamente seu , zeloso de boas obras   /   0.037037037037    /    3.7037037037
-
-162 epístola de paulo aos romanos paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , o qual foi por deus , outrora , prometido por intermédio dos seus profetas nas sagradas escrituras , com respeito a seu filho , o qual , segundo a carne , veio da descendência de davi e foi designado filho de deus com poder , segundo o espírito de santidade pela ressurreição dos mortos , a saber , jesus cristo , nosso senhor , por intermédio de quem viemos a receber graça e apostolado por amor do seu nome , para a obediência por fé , entre todos os gentios , de cujo número sois também vós , chamados para serdes de jesus cristo   /   0.037037037037    /    3.7037037037
+null - nao convergiu   /   0    /    0
 
 
 
 
- Tema: dizer
+ Tema: jesus
 
      Sentença    /    IRSE    /    IRSE(%)
-faz , hoje , quatro dias que , por volta desta hora , estava eu observando em minha casa a hora nona de oração , e eis que se apresentou diante de mim um varão de vestes resplandecentes e disse   /   0.0625    /    6.25
-
-que diremos , pois , se deus , querendo mostrar a sua ira e dar a conhecer o seu poder , suportou com muita longanimidade os vasos de ira , 171 preparados para a perdição , a fim de que também desse a conhecer as riquezas da sua glória em vasos de misericórdia , que para glória preparou de antemão , os quais somos nós , a quem também chamou , não só dentre os judeus , mas também dentre os gentios   /   0.125    /    12.5
-
-digo-vos , porém , que menos rigor haverá , no dia do juízo , para com a terra de sodoma do que para contigo   /   0.0625    /    6.25
-
-e de muitas coisas lhes falou por parábolas e dizia   /   0.0625    /    6.25
-
-e digo-vos que , desta hora em diante , não beberei deste fruto da videira , até aquele dia em que o hei de beber , novo , convosco no reino de meu pai   /   0.0625    /    6.25
-
-esse homem observou claramente durante uma visão , cerca da hora nona do dia , um anjo de deus que se aproximou dele e lhe disse   /   0.0625    /    6.25
-
-em verdade vos digo que menos rigor haverá para sodoma e gomorra , no dia do juízo , do que para aquela cidade   /   0.125    /    12.5
-
-em verdade , em verdade vos digo que vereis o céu aberto e os anjos de deus subindo e descendo sobre o filho do homem   /   0.0625    /    6.25
-
-estas coisas diz o filho de deus , que tem os olhos como chama de fogo e os pés semelhantes ao bronze polido   /   0.125    /    12.5
-
-mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando testemunho , tanto a pequenos como a grandes , nada dizendo , senão o que os profetas e moisés disseram haver de acontecer , isto é , que o cristo devia padecer e , sendo o primeiro da ressurreição dos mortos , anunciaria a luz ao povo e aos gentios   /   0.25    /    25.0
+null - nao convergiu   /   0    /    0
 
 
 
@@ -77,41 +39,83 @@ mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando teste
  Tema: homem
 
      Sentença    /    IRSE    /    IRSE(%)
-nós temos ouvido da lei que o cristo permanece para sempre , e como dizes tu ser necessário que o filho do homem seja levantado   /   0.333333333333    /    33.3333333333
+i timóteo 4 1 mas o espírito expressamente diz que em tempos posteriores alguns apostatarão da fé , dando ouvidos a espíritos enganadores , e a doutrinas de demônios , 2 pela hipocrisia de homens que falam mentiras e têm a sua própria consciência cauterizada , 3 proibindo o casamento , e ordenando a abstinência de alimentos que deus criou para serem recebidos com ações de graças pelos que são fiéis e que conhecem bem a verdade   /   0.037037037037    /    3.7037037037
 
-quero , entretanto , que saibais ser cristo o cabeça de todo homem , e o homem , o cabeça da mulher , e deus , o cabeça de cristo   /   0.333333333333    /    33.3333333333
+36 digo-vos , pois , que de toda palavra fútil que os homens disserem , hão de dar conta no dia do juízo   /   0.0740740740741    /    7.40740740741
 
-é que , tendo vós recebido a palavra que de nós ouvistes , que é de deus , acolhestes não como palavra de homens , e sim como , em verdade é , a palavra de deus , a qual , com efeito , está operando eficazmente em vós , os que credes   /   0.333333333333    /    33.3333333333
+15 nós , judeus por natureza e não pecadores dentre os gentios , 16 sabendo , contudo , que o homem não é justificado por obras da lei , mas sim , pela fé em cristo jesus , temos também crido em cristo jesus para sermos justificados pela fé em cristo , e não por obras da lei   /   0.037037037037    /    3.7037037037
+
+4 mas quando apareceu a bondade de deus , nosso salvador e o seu amor para com os homens , 5 não em virtude de obras de justiça que nós houvéssemos feito , mas segundo a sua misericórdia , nos salvou mediante o lavar da regeneração e renovação pelo espírito santo , 6 que ele derramou abundantemente sobre nós por jesus cristo , nosso salvador   /   0.037037037037    /    3.7037037037
+
+3 quero porém , que saibais que cristo é a cabeça de todo homem , o homem a cabeça da mulher , e deus a cabeça de cristo   /   0.111111111111    /    11.1111111111
+
+atos 10 1 um homem em cesaréia , por nome cornélio , centurião da corte chamada italiana , 2 piedoso e temente a deus com toda a sua casa , e que fazia muitas esmolas ao povo e de contínuo orava a deus , 3 cerca da hora nona do dia , viu claramente em visão um anjo de deus , que se dirigia para ele e lhe dizia   /   0.0740740740741    /    7.40740740741
+
+13 por isso nós também , sem cessar , damos graças a deus , porquanto vós , havendo recebido a palavra de deus que de nós ouvistes , a recebestes , não como palavra de homens , mas ( segundo ela é na verdade ) como palavra de deus , a qual também opera em vós que credes   /   0.222222222222    /    22.2222222222
+
+13 e naquela hora houve um grande terremoto , e caiu a décima parte da cidade , e no terremoto foram mortos sete mil homens   /   0.037037037037    /    3.7037037037
+
+12 pois , assim como a mulher veio do homem , assim também o homem nasce da mulher , mas tudo vem de deus   /   0.037037037037    /    3.7037037037
+
+14 e olhei , e eis uma nuvem branca , e assentado sobre a nuvem um semelhante a filho de homem , que tinha sobre a cabeça uma coroa de ouro , e na mão uma foice afiada   /   0.037037037037    /    3.7037037037
+
+11 porque a graça de deus se manifestou , trazendo salvação a todos os homens , 12 ensinando-nos , para que , renunciando à impiedade e às paixões mundanas , vivamos no presente mundo sóbria , e justa , e piamente , 13 aguardando a bem-aventurada esperança e o aparecimento da glória do nosso grande deus e salvador cristo jesus , 14 que se deu a si mesmo por nós para nos remir de toda a iniqüidade , e purificar para si um povo todo seu , zeloso de boas obras   /   0.037037037037    /    3.7037037037
+
+27 e , como aos homens está ordenado morrerem uma só vez , vindo depois o juízo , 28 assim também cristo , oferecendo-se uma só vez para levar os pecados de muitos , aparecerá segunda vez , sem pecado , aos que o esperam para salvação   /   0.037037037037    /    3.7037037037
+
+30 então aparecerá no céu o sinal do filho do homem , e todas as tribos da terra se lamentarão , e verão vir o filho do homem sobre as nuvens do céu , com poder e grande glória   /   0.037037037037    /    3.7037037037
+
+15 pois mostram a obra da lei escrita em seus corações , testificando juntamente a sua consciência e os seus pensamentos , quer acusando-os , quer defendendo-os ) , 16 no dia em que deus há de julgar os segredos dos homens , por cristo jesus , segundo o meu evangelho   /   0.037037037037    /    3.7037037037
+
+o reino de deus é assim como se um homem lançasse semente à terra , 27 e dormisse e se levantasse de noite e de dia , e a semente brotasse e crescesse , sem ele saber como   /   0.037037037037    /    3.7037037037
+
+10 ora , para que saibais que o filho do homem tem sobre a terra autoridade para perdoar pecados ( disse ao paralítico ) , 11 a ti te digo , levanta-te , toma o teu leito , e vai para tua casa   /   0.111111111111    /    11.1111111111
 
 
 
 
- Tema: coisa
+ Tema: senhor
 
      Sentença    /    IRSE    /    IRSE(%)
-ora , se invocais como pai aquele que , sem acepção de pessoas , julga segundo as obras de cada um , portai-vos com temor durante o tempo da vossa peregrinação , sabendo que não foi mediante coisas corruptíveis , como prata ou ouro , que fostes resgatados do vosso fútil procedimento que vossos pais vos legaram , mas pelo precioso sangue , como de cordeiro sem defeito e sem mácula , o sangue de cristo , conhecido , com efeito , antes da fundação do mundo , porém manifestado no fim dos tempos , por amor de vós que , por meio dele , tendes fé em deus , o qual o ressuscitou dentre os mortos e lhe deu glória , de sorte que a vossa fé e esperança estejam em deus   /   0.0454545454545    /    4.54545454545
+null - nao convergiu   /   0    /    0
 
-mas tendes chegado ao monte sião e à cidade do deus vivo , a jerusalém celestial , e a incontáveis hostes de anjos , e à universal assembléia e igreja dos primogênitos arrolados nos céus , e a deus , o juiz de todos , e aos espíritos dos justos aperfeiçoados , e a jesus , o mediador da nova aliança , e ao sangue da aspersão que fala coisas superiores ao que fala o próprio abel   /   0.0681818181818    /    6.81818181818
 
-porque eu estou bem certo de que nem a morte , nem a vida , nem os anjos , nem os principados , nem as coisas do presente , nem do porvir , nem os poderes , nem a altura , nem a profundidade , nem qualquer outra criatura poderá separar-nos do amor de deus , que está em cristo jesus , nosso senhor   /   0.0227272727273    /    2.27272727273
 
-18 todas estas coisas disse jesus às multidões por parábolas e sem parábolas nada lhes dizia   /   0.0227272727273    /    2.27272727273
 
-e de muitas coisas lhes falou por parábolas e dizia   /   0.0227272727273    /    2.27272727273
+ Tema: filho
 
-porque , ainda que há também alguns que se chamem deuses , quer no céu ou sobre a terra , como há muitos deuses e muitos senhores , todavia , para nós há um só deus , o pai , de quem são todas as coisas e para quem existimos   /   0.0227272727273    /    2.27272727273
+     Sentença    /    IRSE    /    IRSE(%)
+7 ora , se o ministério da morte , gravado com letras em pedras , veio em glória , de maneira que os filhos de israel não podiam fixar os olhos no rosto de moisés , por causa da glória do seu rosto , a qual se estava desvanecendo , 8 como não será de maior glória o ministério do espírito   /   0.0625    /    6.25
 
-e em amor nos predestinou para ele , para a adoção de filhos , por meio de jesus cristo , segundo o beneplácito de sua vontade , para louvor da glória de sua graça , que ele nos concedeu gratuitamente no amado , no qual temos a redenção , pelo seu sangue , a remissão dos pecados , segundo a riqueza da sua graça , que deus derramou abundantemente sobre nós em toda a sabedoria e prudência , desvendando-nos o mistério da sua vontade , segundo o seu beneplácito que propusera em cristo , de fazer convergir nele , na dispensação da plenitude dos tempos , todas as coisas , tanto as do céu como as da terra   /   0.590909090909    /    59.0909090909
+11 assim como sabeis de que modo vos tratávamos a cada um de vós , como um pai a seus filhos , 12 exortando-vos e consolando-vos , e instando que andásseis de um modo digno de deus , o qual vos chama ao seu reino e glória   /   0.03125    /    3.125
 
-por amor do qual perdi todas as coisas e as considero como refugo , para ganhar a cristo e ser achado nele , não tendo justiça própria , que procede de lei , senão a que é mediante a fé em cristo , a justiça que procede de deus , baseada na fé   /   0.113636363636    /    11.3636363636
+não em que nós tenhamos amado a deus , mas em que ele nos amou a nós , e enviou seu filho como propiciação pelos nossos pecados   /   0.03125    /    3.125
 
-as multidões atendiam , unânimes , às coisas que filipe dizia , ouvindo-as e vendo os sinais que ele operava   /   0.0227272727273    /    2.27272727273
+18 antes , como deus é fiel , a nossa palavra a vós não é sim e não , 19 porque o filho de deus , cristo jesus , que entre vós foi pregado por nós , isto é , por mim , silvano e timóteo , não foi sim e não   /   0.03125    /    3.125
 
-arrependei-vos , pois , e convertei-vos para serem cancelados os vossos pecados , a fim de que , da presença do senhor , venham tempos de refrigério , e que envie ele o cristo , que já vos foi designado , jesus , ao qual é necessário que o céu receba até aos tempos da restauração de todas as coisas , de que deus falou por boca dos seus santos profetas desde a antiguidade   /   0.0227272727273    /    2.27272727273
+3 graça , misericórdia , paz , da parte de deus pai e da parte de jesus cristo , o filho do pai , serão conosco em verdade e amor   /   0.09375    /    9.375
 
-estas coisas diz o filho de deus , que tem os olhos como chama de fogo e os pés semelhantes ao bronze polido   /   0.0227272727273    /    2.27272727273
+porque isto não sucederá sem que venha primeiro a apostasia e seja revelado o homem do pecado , o filho da perdição , 4 aquele que se opõe e se levanta contra tudo o que se chama deus ou é objeto de adoração , de sorte que se assenta no santuário de deus , apresentando-se como deus   /   0.03125    /    3.125
 
-estas coisas diz o santo , o verdadeiro , aquele que tem a chave de davi , que abre , e ninguém fechará , e que fecha , e ninguém abrirá   /   0.0227272727273    /    2.27272727273
+3 porquanto o que era impossível à lei , visto que se achava fraca pela carne , deus enviando o seu próprio filho em semelhança da carne do pecado , e por causa do pecado , na carne condenou o pecado   /   0.09375    /    9.375
+
+hi joão hi joão 1 1 o ancião à senhora eleita , e a seus filhos , aos quais eu amo em verdade , e não somente eu , mas também todos os que conhecem a verdade , 2 por causa da verdade que permanece em nós , e para sempre estará conosco   /   0.09375    /    9.375
+
+3 como pela revelação me foi manifestado o mistério , conforme acima em poucas palavras vos escrevi , 4 pelo que , quando ledes , podeis perceber a minha comprensão do mistério de cristo , 5 o qual em outras gerações não foi manifestado aos filhos dos homens , como se revelou agora no espírito aos seus santos apóstolos e profetas , 6 a saber , que os gentios são co-herdeiros e membros do mesmo corpo e co-participantes da promessa em cristo jesus por meio do evangelho   /   0.03125    /    3.125
+
+5 depois de passarmos ali aqueles dias , saímos e seguimos a nossa viagem , acompanhando-nos todos , com suas mulheres e filhos , até fora da cidade   /   0.03125    /    3.125
+
+35 para que sobre vós caia todo o sangue justo , que foi derramado sobre a terra , desde o sangue de abel , o justo , até o sangue de zacarias , filho de baraquias , que mataste entre o santuário e o altar   /   0.03125    /    3.125
+
+4 que governe bem a sua própria casa , tendo seus filhos em sujeição , com todo o respeito 5 ( pois , se alguém não sabe governar a sua própria casa , como cuidará da igreja de deus   /   0.03125    /    3.125
+
+3 as mulheres idosas , semelhantemente , que sejam reverentes no seu viver , não caluniadoras , não dadas a muito vinho , mestras do bem , 4 para que ensinem as mulheres novas a amarem aos seus maridos e filhos , 5 a serem moderadas , castas , operosas donas de casa , bondosas , submissas a seus maridos , para que a palavra de deus não seja blasfemada   /   0.0625    /    6.25
+
+em verdade vos digo a vós que me seguistes , que na regeneração , quando o filho do homem se assentar no trono da sua glória , sentar-vos-eis também vós sobre doze tronos , para julgar as doze tribos de israel   /   0.03125    /    3.125
+
+romanos romanos 1 1 paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , 2 que ele antes havia prometido pelos seus profetas nas santas escrituras , 3 acerca de seu filho , que nasceu da descendência de davi segundo a carne , 4 e que com poder foi declarado filho de deus segundo o espírito de santidade , pela ressurreição dentre os mortos-jesus cristo nosso senhor , 5 pelo qual recebemos a graça e o apostolado , por amor do seu nome , para a obediência da fé entre todos os gentios , 6 entre os quais sois também vós chamados para serdes de jesus cristo   /   0.28125    /    28.125
+
+4 mas , vindo a plenitude dos tempos , deus enviou seu filho , nascido de mulher , nascido debaixo de lei , 5 para resgatar os que estavam debaixo de lei , a fim de recebermos a adoção de filhos   /   0.03125    /    3.125
 
 
 
@@ -119,27 +123,7 @@ estas coisas diz o santo , o verdadeiro , aquele que tem a chave de davi , que a
  Tema: cristo
 
      Sentença    /    IRSE    /    IRSE(%)
-ora , se invocais como pai aquele que , sem acepção de pessoas , julga segundo as obras de cada um , portai-vos com temor durante o tempo da vossa peregrinação , sabendo que não foi mediante coisas corruptíveis , como prata ou ouro , que fostes resgatados do vosso fútil procedimento que vossos pais vos legaram , mas pelo precioso sangue , como de cordeiro sem defeito e sem mácula , o sangue de cristo , conhecido , com efeito , antes da fundação do mundo , porém manifestado no fim dos tempos , por amor de vós que , por meio dele , tendes fé em deus , o qual o ressuscitou dentre os mortos e lhe deu glória , de sorte que a vossa fé e esperança estejam em deus   /   0.294117647059    /    29.4117647059
-
-229 primeira epístola de paulo a timóteo paulo , apóstolo de cristo jesus , pelo mandato de deus , nosso salvador , e de cristo jesus , nossa esperança , a timóteo , verdadeiro filho na fé , graça , misericórdia e paz , da parte de deus pai e de cristo jesus , nosso senhor   /   0.0588235294118    /    5.88235294118
-
-por isso , também eu , tendo ouvido a fé que há entre vós no senhor jesus e o amor para com todos os santos , não cesso de dar graças por vós , fazendo menção de vós nas minhas orações , para que o deus de nosso senhor jesus cristo , o pai da glória , vos conceda espírito de sabedoria e de revelação no pleno conhecimento dele , iluminados os olhos do vosso coração , para saberdes qual é a esperança do seu chamamento , qual a riqueza da glória da sua herança nos santos e qual a suprema grandeza do seu poder para com os que cremos , segundo a eficácia da força do seu poder   /   0.470588235294    /    47.0588235294
-
-238 epístola de paulo a tito paulo , servo de deus e apóstolo de jesus cristo , para promover a fé que é dos eleitos de deus e o pleno conhecimento da verdade segundo a piedade , na esperança da vida eterna que o deus que não pode mentir prometeu antes dos tempos eternos e , em tempos devidos , manifestou a sua palavra mediante a pregação que me foi confiada por mandato de deus , nosso salvador , a tito , verdadeiro filho , segundo a fé comum , graça e paz , da parte de deus pai e de cristo jesus , nosso salvador   /   0.0588235294118    /    5.88235294118
-
-162 epístola de paulo aos romanos paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , o qual foi por deus , outrora , prometido por intermédio dos seus profetas nas sagradas escrituras , com respeito a seu filho , o qual , segundo a carne , veio da descendência de davi e foi designado filho de deus com poder , segundo o espírito de santidade pela ressurreição dos mortos , a saber , jesus cristo , nosso senhor , por intermédio de quem viemos a receber graça e apostolado por amor do seu nome , para a obediência por fé , entre todos os gentios , de cujo número sois também vós , chamados para serdes de jesus cristo   /   0.0588235294118    /    5.88235294118
-
-e , assim , habite cristo no vosso coração , pela fé , estando vós arraigados e alicerçados em amor , a fim de poderdes compreender , com todos os santos , qual é a largura , e o comprimento , e a altura , e a profundidade e conhecer o amor de cristo , que excede todo entendimento , para que sejais tomados de toda a plenitude de deus   /   0.0588235294118    /    5.88235294118
-
-
-
-
- Tema: ver
-
-     Sentença    /    IRSE    /    IRSE(%)
-vemos , todavia , aquele que , por um pouco , tendo sido feito menor que os anjos , jesus , por causa do sofrimento da morte , foi coroado de glória e de honra , para que , pela graça de deus , provasse a morte por todo homem   /   0.5    /    50.0
-
-em verdade , em verdade vos digo que vereis o céu aberto e os anjos de deus subindo e descendo sobre o filho do homem   /   0.5    /    50.0
+null - nao convergiu   /   0    /    0
 
 
 
@@ -147,35 +131,69 @@ em verdade , em verdade vos digo que vereis o céu aberto e os anjos de deus sub
  Tema: dia
 
      Sentença    /    IRSE    /    IRSE(%)
-126 atos dos apóstolos escrevi o primeiro livro , ó teófilo , relatando todas as coisas que jesus começou a fazer e a ensinar até ao dia em que , depois de haver dado mandamentos por intermédio do espírito santo aos apóstolos que escolhera , foi elevado às alturas   /   0.0714285714286    /    7.14285714286
+atos 10 1 um homem em cesaréia , por nome cornélio , centurião da corte chamada italiana , 2 piedoso e temente a deus com toda a sua casa , e que fazia muitas esmolas ao povo e de contínuo orava a deus , 3 cerca da hora nona do dia , viu claramente em visão um anjo de deus , que se dirigia para ele e lhe dizia   /   0.117647058824    /    11.7647058824
 
-morto , sim , na carne , mas vivificado no espírito , no qual também foi e pregou aos espíritos em prisão , os quais , noutro tempo , foram desobedientes quando a longanimidade de deus aguardava nos dias de noé , enquanto se preparava a arca , na qual poucos , a saber , oito pessoas , foram salvos , através da água , a qual , figurando o batismo , agora também vos salva , não sendo a remoção da imundícia da carne , mas a indagação de uma boa consciência para com deus , por meio da ressurreição de jesus cristo   /   0.285714285714    /    28.5714285714
+5 o anjo que vi em pé sobre o mar e sobre a terra levantou a mão direita ao céu , 6 e jurou por aquele que vive pelos séculos dos séculos , o qual criou o céu e o que nele há , e a terra e o que nela há , e o mar e o que nele há , que não haveria mais demora , 7 mas que nos dias da voz do sétimo anjo , quando este estivesse para tocar a trombeta , se cumpriria o mistério de deus , como anunciou aos seus servos , os profetas   /   0.352941176471    /    35.2941176471
 
-esse homem observou claramente durante uma visão , cerca da hora nona do dia , um anjo de deus que se aproximou dele e lhe disse   /   0.0714285714286    /    7.14285714286
+11 e depois daqueles três dias e meio o espírito de vida , vindo de deus , entrou neles , e puseram-se sobre seus pés , e caiu grande temor sobre os que os viram   /   0.117647058824    /    11.7647058824
 
-em verdade vos digo que menos rigor haverá para sodoma e gomorra , no dia do juízo , do que para aquela cidade   /   0.142857142857    /    14.2857142857
+3 graças damos a deus , pai de nosso senhor jesus cristo , orando sempre por vós , 4 desde que ouvimos falar da vossa fé em cristo jesus , e do amor que tendes a todos os santos , 5 por causa da esperança que vos está reservada nos céus , da qual antes ouvistes pela palavra da verdade do evangelho , 6 que já chegou a vós , como também está em todo o mundo , frutificando e crescendo , assim como entre vós desde o dia em que ouvistes e conhecestes a graça de deus em verdade , 7 segundo aprendestes de epafras , nosso amado conservo , que por nós é fiel ministro de cristo   /   0.352941176471    /    35.2941176471
 
-agora , veio a salvação , o poder , o reino do nosso deus e a autoridade do seu cristo , pois foi expulso o acusador de nossos irmãos , o mesmo que os acusa de dia e de noite , diante do nosso deus   /   0.0714285714286    /    7.14285714286
-
-e digo-vos que , desta hora em diante , não beberei deste fruto da videira , até aquele dia em que o hei de beber , novo , convosco no reino de meu pai   /   0.0714285714286    /    7.14285714286
-
-mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando testemunho , tanto a pequenos como a grandes , nada dizendo , senão o que os profetas e moisés disseram haver de acontecer , isto é , que o cristo devia padecer e , sendo o primeiro da ressurreição dos mortos , anunciaria a luz ao povo e aos gentios   /   0.285714285714    /    28.5714285714
+36 digo-vos , pois , que de toda palavra fútil que os homens disserem , hão de dar conta no dia do juízo   /   0.0588235294118    /    5.88235294118
 
 
 
 
- Tema: haver
+ Tema: pai
 
      Sentença    /    IRSE    /    IRSE(%)
-aconteceu , depois disto , que andava jesus de cidade em cidade e de aldeia em aldeia , pregando e anunciando o evangelho do reino de deus , e os doze iam com ele , e também algumas mulheres que haviam sido curadas de espíritos malignos e de enfermidades   /   0.0833333333333    /    8.33333333333
+null - nao convergiu   /   0    /    0
 
-e , quando vos entregarem , não cuideis em como ou o que haveis de falar , porque , naquela hora , vos será concedido o que haveis de dizer , visto que não sois vós os que falais , mas o espírito de vosso pai é quem fala em vós   /   0.166666666667    /    16.6666666667
 
-e digo-vos que , desta hora em diante , não beberei deste fruto da videira , até aquele dia em que o hei de beber , novo , convosco no reino de meu pai   /   0.166666666667    /    16.6666666667
 
-126 atos dos apóstolos escrevi o primeiro livro , ó teófilo , relatando todas as coisas que jesus começou a fazer e a ensinar até ao dia em que , depois de haver dado mandamentos por intermédio do espírito santo aos apóstolos que escolhera , foi elevado às alturas   /   0.0833333333333    /    8.33333333333
 
-mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando testemunho , tanto a pequenos como a grandes , nada dizendo , senão o que os profetas e moisés disseram haver de acontecer , isto é , que o cristo devia padecer e , sendo o primeiro da ressurreição dos mortos , anunciaria a luz ao povo e aos gentios   /   0.5    /    50.0
+ Tema: espírito
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: poder
+
+     Sentença    /    IRSE    /    IRSE(%)
+7 ora , se o ministério da morte , gravado com letras em pedras , veio em glória , de maneira que os filhos de israel não podiam fixar os olhos no rosto de moisés , por causa da glória do seu rosto , a qual se estava desvanecendo , 8 como não será de maior glória o ministério do espírito   /   0.1875    /    18.75
+
+hebreus 5 1 porque todo sumo sacerdote tomado dentre os homens é constituído a favor dos homens nas coisas concernentes a deus , para que ofereça dons e sacrifícios pelos pecados , 2 podendo ele compadecer-se devidamente dos ignorantes e errados , porquanto também ele mesmo está rodeado de fraqueza   /   0.0625    /    6.25
+
+antes participa comigo dos sofrimentos do evangelho segundo o poder de deus , 9 que nos salvou , e chamou com uma santa vocação , não segundo as nossas obras , mas segundo o seu próprio propósito e a graça que nos foi dada em cristo jesus antes dos tempos eternos , 10 e que agora se manifestou pelo aparecimento de nosso salvador cristo jesus , o qual destruiu a morte , e trouxe à luz a vida e a imortalidade pelo evangelho , 11 do qual fui constituído pregador , apóstolo e mestre   /   0.0625    /    6.25
+
+3 como pela revelação me foi manifestado o mistério , conforme acima em poucas palavras vos escrevi , 4 pelo que , quando ledes , podeis perceber a minha comprensão do mistério de cristo , 5 o qual em outras gerações não foi manifestado aos filhos dos homens , como se revelou agora no espírito aos seus santos apóstolos e profetas , 6 a saber , que os gentios são co-herdeiros e membros do mesmo corpo e co-participantes da promessa em cristo jesus por meio do evangelho   /   0.125    /    12.5
+
+24 levando ele mesmo os nossos pecados em seu corpo sobre o madeiro , para que mortos para os pecados , pudéssemos viver para a justiça   /   0.0625    /    6.25
+
+3 bendito seja o deus e pai de nosso senhor jesus cristo , que , segundo a sua grande misericórdia , nos regenerou para uma viva esperança , pela ressurreição de jesus cristo dentre os mortos , 4 para uma herança incorruptível , incontaminável e imarcescível , reservada nos céus para vós , 5 que pelo poder de deus sois guardados , mediante a fé , para a salvação que está preparada para se revelar no último tempo   /   0.0625    /    6.25
+
+30 então aparecerá no céu o sinal do filho do homem , e todas as tribos da terra se lamentarão , e verão vir o filho do homem sobre as nuvens do céu , com poder e grande glória   /   0.125    /    12.5
+
+romanos romanos 1 1 paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , 2 que ele antes havia prometido pelos seus profetas nas santas escrituras , 3 acerca de seu filho , que nasceu da descendência de davi segundo a carne , 4 e que com poder foi declarado filho de deus segundo o espírito de santidade , pela ressurreição dentre os mortos-jesus cristo nosso senhor , 5 pelo qual recebemos a graça e o apostolado , por amor do seu nome , para a obediência da fé entre todos os gentios , 6 entre os quais sois também vós chamados para serdes de jesus cristo   /   0.3125    /    31.25
+
+
+
+
+ Tema: palavra
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
+
+
+
+
+ Tema: irmão
+
+     Sentença    /    IRSE    /    IRSE(%)
+null - nao convergiu   /   0    /    0
 
 
 
@@ -188,87 +206,83 @@ mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando teste
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-e em amor nos predestinou para ele , para a adoção de filhos , por meio de jesus cristo , segundo o beneplácito de sua vontade , para louvor da glória de sua graça , que ele nos concedeu gratuitamente no amado , no qual temos a redenção , pelo seu sangue , a remissão dos pecados , segundo a riqueza da sua graça , que deus derramou abundantemente sobre nós em toda a sabedoria e prudência , desvendando-nos o mistério da sua vontade , segundo o seu beneplácito que propusera em cristo , de fazer convergir nele , na dispensação da plenitude dos tempos , todas as coisas , tanto as do céu como as da terra   /   0.192592592593    /    19.2592592593
+romanos romanos 1 1 paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , 2 que ele antes havia prometido pelos seus profetas nas santas escrituras , 3 acerca de seu filho , que nasceu da descendência de davi segundo a carne , 4 e que com poder foi declarado filho de deus segundo o espírito de santidade , pela ressurreição dentre os mortos-jesus cristo nosso senhor , 5 pelo qual recebemos a graça e o apostolado , por amor do seu nome , para a obediência da fé entre todos os gentios , 6 entre os quais sois também vós chamados para serdes de jesus cristo   /   0.152173913043    /    15.2173913043
 
-mas , alcançando socorro de deus , permaneço até ao dia de hoje , dando testemunho , tanto a pequenos como a grandes , nada dizendo , senão o que os profetas e moisés disseram haver de acontecer , isto é , que o cristo devia padecer e , sendo o primeiro da ressurreição dos mortos , anunciaria a luz ao povo e aos gentios   /   0.103703703704    /    10.3703703704
+5 o anjo que vi em pé sobre o mar e sobre a terra levantou a mão direita ao céu , 6 e jurou por aquele que vive pelos séculos dos séculos , o qual criou o céu e o que nele há , e a terra e o que nela há , e o mar e o que nele há , que não haveria mais demora , 7 mas que nos dias da voz do sétimo anjo , quando este estivesse para tocar a trombeta , se cumpriria o mistério de deus , como anunciou aos seus servos , os profetas   /   0.0652173913043    /    6.52173913043
 
-por isso , também eu , tendo ouvido a fé que há entre vós no senhor jesus e o amor para com todos os santos , não cesso de dar graças por vós , fazendo menção de vós nas minhas orações , para que o deus de nosso senhor jesus cristo , o pai da glória , vos conceda espírito de sabedoria e de revelação no pleno conhecimento dele , iluminados os olhos do vosso coração , para saberdes qual é a esperança do seu chamamento , qual a riqueza da glória da sua herança nos santos e qual a suprema grandeza do seu poder para com os que cremos , segundo a eficácia da força do seu poder   /   0.103703703704    /    10.3703703704
+13 por isso nós também , sem cessar , damos graças a deus , porquanto vós , havendo recebido a palavra de deus que de nós ouvistes , a recebestes , não como palavra de homens , mas ( segundo ela é na verdade ) como palavra de deus , a qual também opera em vós que credes   /   0.0652173913043    /    6.52173913043
 
-272 segunda epístola de joão o presbítero à senhora eleita e aos seus filhos , a quem eu amo na verdade e não somente eu , mas também todos os que conhecem a verdade , por causa da verdade que permanece em nós e conosco estará para sempre , a graça , a misericórdia e a paz , da parte de deus pai e de jesus cristo , o filho do pai , serão conosco em verdade e amor   /   0.0592592592593    /    5.92592592593
+3 graças damos a deus , pai de nosso senhor jesus cristo , orando sempre por vós , 4 desde que ouvimos falar da vossa fé em cristo jesus , e do amor que tendes a todos os santos , 5 por causa da esperança que vos está reservada nos céus , da qual antes ouvistes pela palavra da verdade do evangelho , 6 que já chegou a vós , como também está em todo o mundo , frutificando e crescendo , assim como entre vós desde o dia em que ouvistes e conhecestes a graça de deus em verdade , 7 segundo aprendestes de epafras , nosso amado conservo , que por nós é fiel ministro de cristo   /   0.0652173913043    /    6.52173913043
 
-ora , se invocais como pai aquele que , sem acepção de pessoas , julga segundo as obras de cada um , portai-vos com temor durante o tempo da vossa peregrinação , sabendo que não foi mediante coisas corruptíveis , como prata ou ouro , que fostes resgatados do vosso fútil procedimento que vossos pais vos legaram , mas pelo precioso sangue , como de cordeiro sem defeito e sem mácula , o sangue de cristo , conhecido , com efeito , antes da fundação do mundo , porém manifestado no fim dos tempos , por amor de vós que , por meio dele , tendes fé em deus , o qual o ressuscitou dentre os mortos e lhe deu glória , de sorte que a vossa fé e esperança estejam em deus   /   0.0518518518519    /    5.18518518519
+7 ora , se o ministério da morte , gravado com letras em pedras , veio em glória , de maneira que os filhos de israel não podiam fixar os olhos no rosto de moisés , por causa da glória do seu rosto , a qual se estava desvanecendo , 8 como não será de maior glória o ministério do espírito   /   0.054347826087    /    5.4347826087
 
-por amor do qual perdi todas as coisas e as considero como refugo , para ganhar a cristo e ser achado nele , não tendo justiça própria , que procede de lei , senão a que é mediante a fé em cristo , a justiça que procede de deus , baseada na fé   /   0.037037037037    /    3.7037037037
+atos 10 1 um homem em cesaréia , por nome cornélio , centurião da corte chamada italiana , 2 piedoso e temente a deus com toda a sua casa , e que fazia muitas esmolas ao povo e de contínuo orava a deus , 3 cerca da hora nona do dia , viu claramente em visão um anjo de deus , que se dirigia para ele e lhe dizia   /   0.0434782608696    /    4.34782608696
 
-e digo-vos que , desta hora em diante , não beberei deste fruto da videira , até aquele dia em que o hei de beber , novo , convosco no reino de meu pai   /   0.0296296296296    /    2.96296296296
+3 quero porém , que saibais que cristo é a cabeça de todo homem , o homem a cabeça da mulher , e deus a cabeça de cristo   /   0.0326086956522    /    3.26086956522
 
-em verdade vos digo que menos rigor haverá para sodoma e gomorra , no dia do juízo , do que para aquela cidade   /   0.0296296296296    /    2.96296296296
+10 ora , para que saibais que o filho do homem tem sobre a terra autoridade para perdoar pecados ( disse ao paralítico ) , 11 a ti te digo , levanta-te , toma o teu leito , e vai para tua casa   /   0.0326086956522    /    3.26086956522
 
-morto , sim , na carne , mas vivificado no espírito , no qual também foi e pregou aos espíritos em prisão , os quais , noutro tempo , foram desobedientes quando a longanimidade de deus aguardava nos dias de noé , enquanto se preparava a arca , na qual poucos , a saber , oito pessoas , foram salvos , através da água , a qual , figurando o batismo , agora também vos salva , não sendo a remoção da imundícia da carne , mas a indagação de uma boa consciência para com deus , por meio da ressurreição de jesus cristo   /   0.0296296296296    /    2.96296296296
+hi joão hi joão 1 1 o ancião à senhora eleita , e a seus filhos , aos quais eu amo em verdade , e não somente eu , mas também todos os que conhecem a verdade , 2 por causa da verdade que permanece em nós , e para sempre estará conosco   /   0.0326086956522    /    3.26086956522
 
-mas não foi assim que aprendestes a cristo , se é que , de fato , o tendes ouvido e nele fostes instruídos , segundo é a verdade em jesus , no sentido de que , quanto ao trato passado , vos despojeis do velho homem , que se corrompe segundo as concupiscências do engano , e vos renoveis no espírito do vosso entendimento , e vos revistais do novo homem , criado segundo deus , em justiça e retidão procedentes da verdade   /   0.0222222222222    /    2.22222222222
+36 digo-vos , pois , que de toda palavra fútil que os homens disserem , hão de dar conta no dia do juízo   /   0.0326086956522    /    3.26086956522
 
-estas coisas diz o filho de deus , que tem os olhos como chama de fogo e os pés semelhantes ao bronze polido   /   0.0222222222222    /    2.22222222222
+3 porquanto o que era impossível à lei , visto que se achava fraca pela carne , deus enviando o seu próprio filho em semelhança da carne do pecado , e por causa do pecado , na carne condenou o pecado   /   0.0326086956522    /    3.26086956522
 
-mas tendes chegado ao monte sião e à cidade do deus vivo , a jerusalém celestial , e a incontáveis hostes de anjos , e à universal assembléia e igreja dos primogênitos arrolados nos céus , e a deus , o juiz de todos , e aos espíritos dos justos aperfeiçoados , e a jesus , o mediador da nova aliança , e ao sangue da aspersão que fala coisas superiores ao que fala o próprio abel   /   0.0222222222222    /    2.22222222222
+30 então aparecerá no céu o sinal do filho do homem , e todas as tribos da terra se lamentarão , e verão vir o filho do homem sobre as nuvens do céu , com poder e grande glória   /   0.0326086956522    /    3.26086956522
 
-que diremos , pois , se deus , querendo mostrar a sua ira e dar a conhecer o seu poder , suportou com muita longanimidade os vasos de ira , 171 preparados para a perdição , a fim de que também desse a conhecer as riquezas da sua glória em vasos de misericórdia , que para glória preparou de antemão , os quais somos nós , a quem também chamou , não só dentre os judeus , mas também dentre os gentios   /   0.0222222222222    /    2.22222222222
+3 como pela revelação me foi manifestado o mistério , conforme acima em poucas palavras vos escrevi , 4 pelo que , quando ledes , podeis perceber a minha comprensão do mistério de cristo , 5 o qual em outras gerações não foi manifestado aos filhos dos homens , como se revelou agora no espírito aos seus santos apóstolos e profetas , 6 a saber , que os gentios são co-herdeiros e membros do mesmo corpo e co-participantes da promessa em cristo jesus por meio do evangelho   /   0.0326086956522    /    3.26086956522
 
-e , quando vos entregarem , não cuideis em como ou o que haveis de falar , porque , naquela hora , vos será concedido o que haveis de dizer , visto que não sois vós os que falais , mas o espírito de vosso pai é quem fala em vós   /   0.0148148148148    /    1.48148148148
+3 graça , misericórdia , paz , da parte de deus pai e da parte de jesus cristo , o filho do pai , serão conosco em verdade e amor   /   0.0326086956522    /    3.26086956522
 
-é que , tendo vós recebido a palavra que de nós ouvistes , que é de deus , acolhestes não como palavra de homens , e sim como , em verdade é , a palavra de deus , a qual , com efeito , está operando eficazmente em vós , os que credes   /   0.0148148148148    /    1.48148148148
+11 e depois daqueles três dias e meio o espírito de vida , vindo de deus , entrou neles , e puseram-se sobre seus pés , e caiu grande temor sobre os que os viram   /   0.0217391304348    /    2.17391304348
 
-126 atos dos apóstolos escrevi o primeiro livro , ó teófilo , relatando todas as coisas que jesus começou a fazer e a ensinar até ao dia em que , depois de haver dado mandamentos por intermédio do espírito santo aos apóstolos que escolhera , foi elevado às alturas   /   0.0148148148148    /    1.48148148148
+3 as mulheres idosas , semelhantemente , que sejam reverentes no seu viver , não caluniadoras , não dadas a muito vinho , mestras do bem , 4 para que ensinem as mulheres novas a amarem aos seus maridos e filhos , 5 a serem moderadas , castas , operosas donas de casa , bondosas , submissas a seus maridos , para que a palavra de deus não seja blasfemada   /   0.0217391304348    /    2.17391304348
 
-quero , entretanto , que saibais ser cristo o cabeça de todo homem , e o homem , o cabeça da mulher , e deus , o cabeça de cristo   /   0.0148148148148    /    1.48148148148
+em verdade vos digo a vós que me seguistes , que na regeneração , quando o filho do homem se assentar no trono da sua glória , sentar-vos-eis também vós sobre doze tronos , para julgar as doze tribos de israel   /   0.0108695652174    /    1.08695652174
 
-esse homem observou claramente durante uma visão , cerca da hora nona do dia , um anjo de deus que se aproximou dele e lhe disse   /   0.0148148148148    /    1.48148148148
+12 pois , assim como a mulher veio do homem , assim também o homem nasce da mulher , mas tudo vem de deus   /   0.0108695652174    /    1.08695652174
 
-em verdade , em verdade vos digo que vereis o céu aberto e os anjos de deus subindo e descendo sobre o filho do homem   /   0.0148148148148    /    1.48148148148
+11 assim como sabeis de que modo vos tratávamos a cada um de vós , como um pai a seus filhos , 12 exortando-vos e consolando-vos , e instando que andásseis de um modo digno de deus , o qual vos chama ao seu reino e glória   /   0.0108695652174    /    1.08695652174
 
-162 epístola de paulo aos romanos paulo , servo de jesus cristo , chamado para ser apóstolo , separado para o evangelho de deus , o qual foi por deus , outrora , prometido por intermédio dos seus profetas nas sagradas escrituras , com respeito a seu filho , o qual , segundo a carne , veio da descendência de davi e foi designado filho de deus com poder , segundo o espírito de santidade pela ressurreição dos mortos , a saber , jesus cristo , nosso senhor , por intermédio de quem viemos a receber graça e apostolado por amor do seu nome , para a obediência por fé , entre todos os gentios , de cujo número sois também vós , chamados para serdes de jesus cristo   /   0.0148148148148    /    1.48148148148
+5 depois de passarmos ali aqueles dias , saímos e seguimos a nossa viagem , acompanhando-nos todos , com suas mulheres e filhos , até fora da cidade   /   0.0108695652174    /    1.08695652174
 
-e de muitas coisas lhes falou por parábolas e dizia   /   0.0148148148148    /    1.48148148148
+15 nós , judeus por natureza e não pecadores dentre os gentios , 16 sabendo , contudo , que o homem não é justificado por obras da lei , mas sim , pela fé em cristo jesus , temos também crido em cristo jesus para sermos justificados pela fé em cristo , e não por obras da lei   /   0.0108695652174    /    1.08695652174
 
-o louvor , e a glória , e a sabedoria , e as ações de graças , e a honra , e o poder , e a força sejam ao nosso deus , pelos séculos dos séculos   /   0.00740740740741    /    0.740740740741
+14 e olhei , e eis uma nuvem branca , e assentado sobre a nuvem um semelhante a filho de homem , que tinha sobre a cabeça uma coroa de ouro , e na mão uma foice afiada   /   0.0108695652174    /    1.08695652174
 
-agora , veio a salvação , o poder , o reino do nosso deus e a autoridade do seu cristo , pois foi expulso o acusador de nossos irmãos , o mesmo que os acusa de dia e de noite , diante do nosso deus   /   0.00740740740741    /    0.740740740741
+i timóteo 4 1 mas o espírito expressamente diz que em tempos posteriores alguns apostatarão da fé , dando ouvidos a espíritos enganadores , e a doutrinas de demônios , 2 pela hipocrisia de homens que falam mentiras e têm a sua própria consciência cauterizada , 3 proibindo o casamento , e ordenando a abstinência de alimentos que deus criou para serem recebidos com ações de graças pelos que são fiéis e que conhecem bem a verdade   /   0.0108695652174    /    1.08695652174
 
-e , assim , habite cristo no vosso coração , pela fé , estando vós arraigados e alicerçados em amor , a fim de poderdes compreender , com todos os santos , qual é a largura , e o comprimento , e a altura , e a profundidade e conhecer o amor de cristo , que excede todo entendimento , para que sejais tomados de toda a plenitude de deus   /   0.00740740740741    /    0.740740740741
+35 para que sobre vós caia todo o sangue justo , que foi derramado sobre a terra , desde o sangue de abel , o justo , até o sangue de zacarias , filho de baraquias , que mataste entre o santuário e o altar   /   0.0108695652174    /    1.08695652174
 
-239 porquanto a graça de deus se manifestou salvadora a todos os homens , educando-nos para que , renegadas a impiedade e as paixões mundanas , vivamos , no presente século , sensata , justa e piedosamente , aguardando a bendita esperança e a manifestação da glória do nosso grande deus e salvador cristo jesus , o qual a si mesmo se deu por nós , a fim de remir-nos de toda iniqüidade e purificar , para si mesmo , um povo exclusivamente seu , zeloso de boas obras   /   0.00740740740741    /    0.740740740741
+porque isto não sucederá sem que venha primeiro a apostasia e seja revelado o homem do pecado , o filho da perdição , 4 aquele que se opõe e se levanta contra tudo o que se chama deus ou é objeto de adoração , de sorte que se assenta no santuário de deus , apresentando-se como deus   /   0.0108695652174    /    1.08695652174
 
-238 epístola de paulo a tito paulo , servo de deus e apóstolo de jesus cristo , para promover a fé que é dos eleitos de deus e o pleno conhecimento da verdade segundo a piedade , na esperança da vida eterna que o deus que não pode mentir prometeu antes dos tempos eternos e , em tempos devidos , manifestou a sua palavra mediante a pregação que me foi confiada por mandato de deus , nosso salvador , a tito , verdadeiro filho , segundo a fé comum , graça e paz , da parte de deus pai e de cristo jesus , nosso salvador   /   0.00740740740741    /    0.740740740741
+o reino de deus é assim como se um homem lançasse semente à terra , 27 e dormisse e se levantasse de noite e de dia , e a semente brotasse e crescesse , sem ele saber como   /   0.0108695652174    /    1.08695652174
 
-ora , o nosso mesmo deus e pai , e jesus , nosso senhor , dirijam-nos o caminho até vós , e o senhor vos faça crescer e aumentar no amor uns para com os outros e para com todos , como também nós para convosco , a fim de que seja o vosso coração confirmado em santidade , isento de culpa , na presença de nosso deus e pai , na vinda de nosso senhor jesus , com todos os seus santos   /   0.00740740740741    /    0.740740740741
+27 e , como aos homens está ordenado morrerem uma só vez , vindo depois o juízo , 28 assim também cristo , oferecendo-se uma só vez para levar os pecados de muitos , aparecerá segunda vez , sem pecado , aos que o esperam para salvação   /   0.0108695652174    /    1.08695652174
 
-quando , porém , se manifestou a benignidade de deus , nosso salvador , e o seu amor para com todos , não por obras de justiça praticadas por nós , mas segundo sua misericórdia , ele nos salvou mediante o lavar regenerador e renovador do espírito santo , que ele derramou sobre nós ricamente , por meio de jesus cristo , nosso salvador , a fim de que , justificados por graça , nos tornemos seus herdeiros , segundo a esperança da vida eterna   /   0.00740740740741    /    0.740740740741
+não em que nós tenhamos amado a deus , mas em que ele nos amou a nós , e enviou seu filho como propiciação pelos nossos pecados   /   0.0108695652174    /    1.08695652174
 
-aconteceu , depois disto , que andava jesus de cidade em cidade e de aldeia em aldeia , pregando e anunciando o evangelho do reino de deus , e os doze iam com ele , e também algumas mulheres que haviam sido curadas de espíritos malignos e de enfermidades   /   0.00740740740741    /    0.740740740741
+11 porque a graça de deus se manifestou , trazendo salvação a todos os homens , 12 ensinando-nos , para que , renunciando à impiedade e às paixões mundanas , vivamos no presente mundo sóbria , e justa , e piamente , 13 aguardando a bem-aventurada esperança e o aparecimento da glória do nosso grande deus e salvador cristo jesus , 14 que se deu a si mesmo por nós para nos remir de toda a iniqüidade , e purificar para si um povo todo seu , zeloso de boas obras   /   0.0108695652174    /    1.08695652174
 
-nós temos ouvido da lei que o cristo permanece para sempre , e como dizes tu ser necessário que o filho do homem seja levantado   /   0.00740740740741    /    0.740740740741
+13 e naquela hora houve um grande terremoto , e caiu a décima parte da cidade , e no terremoto foram mortos sete mil homens   /   0.0108695652174    /    1.08695652174
 
-vós sois a nossa carta , escrita em nosso coração , conhecida e lida por todos os homens , estando já manifestos como carta de cristo , produzida pelo nosso ministério , escrita não com tinta , mas pelo espírito do deus vivente , não em tábuas de pedra , mas em tábuas de carne , isto é , nos corações   /   0.00740740740741    /    0.740740740741
+4 mas , vindo a plenitude dos tempos , deus enviou seu filho , nascido de mulher , nascido debaixo de lei , 5 para resgatar os que estavam debaixo de lei , a fim de recebermos a adoção de filhos   /   0.0108695652174    /    1.08695652174
 
-porque eu estou bem certo de que nem a morte , nem a vida , nem os anjos , nem os principados , nem as coisas do presente , nem do porvir , nem os poderes , nem a altura , nem a profundidade , nem qualquer outra criatura poderá separar-nos do amor de deus , que está em cristo jesus , nosso senhor   /   0.00740740740741    /    0.740740740741
+24 levando ele mesmo os nossos pecados em seu corpo sobre o madeiro , para que mortos para os pecados , pudéssemos viver para a justiça   /   0.0108695652174    /    1.08695652174
 
-porque não vos demos a conhecer o poder e a vinda de nosso senhor jesus cristo seguindo fábulas engenhosamente inventadas , mas nós mesmos fomos testemunhas oculares da sua majestade , pois ele recebeu , da parte de deus pai , honra e glória , quando pela glória excelsa lhe foi enviada a seguinte voz   /   0.00740740740741    /    0.740740740741
+hebreus 5 1 porque todo sumo sacerdote tomado dentre os homens é constituído a favor dos homens nas coisas concernentes a deus , para que ofereça dons e sacrifícios pelos pecados , 2 podendo ele compadecer-se devidamente dos ignorantes e errados , porquanto também ele mesmo está rodeado de fraqueza   /   0.0108695652174    /    1.08695652174
 
-229 primeira epístola de paulo a timóteo paulo , apóstolo de cristo jesus , pelo mandato de deus , nosso salvador , e de cristo jesus , nossa esperança , a timóteo , verdadeiro filho na fé , graça , misericórdia e paz , da parte de deus pai e de cristo jesus , nosso senhor   /   0.00740740740741    /    0.740740740741
+4 que governe bem a sua própria casa , tendo seus filhos em sujeição , com todo o respeito 5 ( pois , se alguém não sabe governar a sua própria casa , como cuidará da igreja de deus   /   0.0108695652174    /    1.08695652174
 
-18 todas estas coisas disse jesus às multidões por parábolas e sem parábolas nada lhes dizia   /   0.00740740740741    /    0.740740740741
+4 mas quando apareceu a bondade de deus , nosso salvador e o seu amor para com os homens , 5 não em virtude de obras de justiça que nós houvéssemos feito , mas segundo a sua misericórdia , nos salvou mediante o lavar da regeneração e renovação pelo espírito santo , 6 que ele derramou abundantemente sobre nós por jesus cristo , nosso salvador   /   0.0108695652174    /    1.08695652174
 
-estas coisas diz o santo , o verdadeiro , aquele que tem a chave de davi , que abre , e ninguém fechará , e que fecha , e ninguém abrirá   /   0.00740740740741    /    0.740740740741
+18 antes , como deus é fiel , a nossa palavra a vós não é sim e não , 19 porque o filho de deus , cristo jesus , que entre vós foi pregado por nós , isto é , por mim , silvano e timóteo , não foi sim e não   /   0.0108695652174    /    1.08695652174
 
-digo-vos , porém , que menos rigor haverá , no dia do juízo , para com a terra de sodoma do que para contigo   /   0.00740740740741    /    0.740740740741
+3 bendito seja o deus e pai de nosso senhor jesus cristo , que , segundo a sua grande misericórdia , nos regenerou para uma viva esperança , pela ressurreição de jesus cristo dentre os mortos , 4 para uma herança incorruptível , incontaminável e imarcescível , reservada nos céus para vós , 5 que pelo poder de deus sois guardados , mediante a fé , para a salvação que está preparada para se revelar no último tempo   /   0.0108695652174    /    1.08695652174
 
-vemos , todavia , aquele que , por um pouco , tendo sido feito menor que os anjos , jesus , por causa do sofrimento da morte , foi coroado de glória e de honra , para que , pela graça de deus , provasse a morte por todo homem   /   0.00740740740741    /    0.740740740741
+15 pois mostram a obra da lei escrita em seus corações , testificando juntamente a sua consciência e os seus pensamentos , quer acusando-os , quer defendendo-os ) , 16 no dia em que deus há de julgar os segredos dos homens , por cristo jesus , segundo o meu evangelho   /   0.0108695652174    /    1.08695652174
 
-as multidões atendiam , unânimes , às coisas que filipe dizia , ouvindo-as e vendo os sinais que ele operava   /   0.00740740740741    /    0.740740740741
+antes participa comigo dos sofrimentos do evangelho segundo o poder de deus , 9 que nos salvou , e chamou com uma santa vocação , não segundo as nossas obras , mas segundo o seu próprio propósito e a graça que nos foi dada em cristo jesus antes dos tempos eternos , 10 e que agora se manifestou pelo aparecimento de nosso salvador cristo jesus , o qual destruiu a morte , e trouxe à luz a vida e a imortalidade pelo evangelho , 11 do qual fui constituído pregador , apóstolo e mestre   /   0.0108695652174    /    1.08695652174
 
-faz , hoje , quatro dias que , por volta desta hora , estava eu observando em minha casa a hora nona de oração , e eis que se apresentou diante de mim um varão de vestes resplandecentes e disse   /   0.00740740740741    /    0.740740740741
-
-arrependei-vos , pois , e convertei-vos para serem cancelados os vossos pecados , a fim de que , da presença do senhor , venham tempos de refrigério , e que envie ele o cristo , que já vos foi designado , jesus , ao qual é necessário que o céu receba até aos tempos da restauração de todas as coisas , de que deus falou por boca dos seus santos profetas desde a antiguidade   /   0.00740740740741    /    0.740740740741
-
-porque , ainda que há também alguns que se chamem deuses , quer no céu ou sobre a terra , como há muitos deuses e muitos senhores , todavia , para nós há um só deus , o pai , de quem são todas as coisas e para quem existimos   /   0.00740740740741    /    0.740740740741
+null - nao convergiu   /   0.0    /    0.0
 

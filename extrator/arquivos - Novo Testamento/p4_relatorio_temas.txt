@@ -3,18 +3,22 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.5% graus; 0.1% betwenness; 0.4% closeness;
-- Parâmetros: delta: 2%; f: 10% dos nós totais (608.8 nós)
-- Temas pré-selecionados(8):
+- Métrica: 0.7% graus; 0.2% betwenness; 0.1% closeness;
+- Parâmetros: delta: 5%; f: 5% dos nós totais (270 nós)
+- Temas pré-selecionados(12):
 
 deus
-dizer
+jesus
 homem
-coisa
+senhor
+filho
 cristo
-ver
 dia
-haver
+pai
+espírito
+poder
+palavra
+irmão
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -25,71 +29,129 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-deus -> deus - 14/1255 - 1.11553784861%
-deus -> dizer - 15/1303 - 1.15118956255%
-deus -> homem - 7/623 - 1.12359550562%
-deus -> cristo - 10/505 - 1.9801980198%
-deus -> dia - 1/372 - 0.268817204301%
-deus -> haver - 6/292 - 2.05479452055%
-dizer -> deus - 3/1255 - 0.239043824701%
-dizer -> dizer - 3/1303 - 0.23023791251%
-dizer -> homem - 6/623 - 0.963081861958%
-dizer -> coisa - 10/466 - 2.14592274678%
-dizer -> cristo - 5/505 - 0.990099009901%
-dizer -> ver - 3/373 - 0.804289544236%
-dizer -> dia - 1/372 - 0.268817204301%
-dizer -> haver - 6/292 - 2.05479452055%
-homem -> deus - 13/1255 - 1.03585657371%
-homem -> dizer - 10/1303 - 0.767459708365%
-homem -> homem - 5/623 - 0.802568218299%
-homem -> coisa - 1/466 - 0.214592274678%
-homem -> cristo - 2/505 - 0.39603960396%
-homem -> ver - 3/373 - 0.804289544236%
-homem -> dia - 1/372 - 0.268817204301%
-coisa -> deus - 8/1255 - 0.637450199203%
-coisa -> dizer - 16/1303 - 1.22793553338%
-coisa -> homem - 1/623 - 0.16051364366%
-coisa -> coisa - 1/466 - 0.214592274678%
-coisa -> ver - 7/373 - 1.87667560322%
-coisa -> haver - 8/292 - 2.7397260274%
-cristo -> deus - 9/1255 - 0.717131474104%
-cristo -> dizer - 4/1303 - 0.306983883346%
-cristo -> cristo - 2/505 - 0.39603960396%
-cristo -> haver - 2/292 - 0.684931506849%
-ver -> deus - 3/1255 - 0.239043824701%
-ver -> dizer - 3/1303 - 0.23023791251%
-ver -> homem - 8/623 - 1.28410914928%
-ver -> coisa - 4/466 - 0.858369098712%
-ver -> cristo - 1/505 - 0.19801980198%
-ver -> ver - 11/373 - 2.9490616622%
-ver -> dia - 4/372 - 1.0752688172%
-ver -> haver - 2/292 - 0.684931506849%
-dia -> deus - 3/1255 - 0.239043824701%
-dia -> dizer - 6/1303 - 0.460475825019%
-dia -> homem - 1/623 - 0.16051364366%
-dia -> coisa - 1/466 - 0.214592274678%
-dia -> cristo - 3/505 - 0.594059405941%
-dia -> ver - 3/373 - 0.804289544236%
-dia -> dia - 7/372 - 1.88172043011%
-dia -> haver - 9/292 - 3.08219178082%
-haver -> deus - 4/1255 - 0.318725099602%
-haver -> dizer - 3/1303 - 0.23023791251%
-haver -> homem - 4/623 - 0.642054574639%
-haver -> coisa - 1/466 - 0.214592274678%
-haver -> cristo - 2/505 - 0.39603960396%
-haver -> ver - 1/373 - 0.268096514745%
-haver -> dia - 1/372 - 0.268817204301%
+deus -> deus - 13/1298 - 1.00154083205%
+deus -> jesus - 4/1031 - 0.387972841901%
+deus -> homem - 8/669 - 1.19581464873%
+deus -> senhor - 8/630 - 1.26984126984%
+deus -> filho - 8/495 - 1.61616161616%
+deus -> cristo - 13/515 - 2.52427184466%
+deus -> dia - 1/414 - 0.24154589372%
+deus -> pai - 47/404 - 11.6336633663%
+deus -> espírito - 6/368 - 1.63043478261%
+deus -> poder - 10/316 - 3.16455696203%
+deus -> palavra - 2/341 - 0.58651026393%
+deus -> irmão - 4/352 - 1.13636363636%
+jesus -> deus - 2/1298 - 0.154083204931%
+jesus -> homem - 3/669 - 0.448430493274%
+jesus -> senhor - 15/630 - 2.38095238095%
+jesus -> filho - 10/495 - 2.0202020202%
+jesus -> cristo - 142/515 - 27.572815534%
+jesus -> pai - 1/404 - 0.247524752475%
+jesus -> espírito - 4/368 - 1.08695652174%
+jesus -> poder - 3/316 - 0.949367088608%
+jesus -> palavra - 1/341 - 0.293255131965%
+jesus -> irmão - 2/352 - 0.568181818182%
+homem -> deus - 14/1298 - 1.07858243451%
+homem -> jesus - 1/1031 - 0.0969932104753%
+homem -> homem - 4/669 - 0.597907324365%
+homem -> senhor - 2/630 - 0.31746031746%
+homem -> filho - 4/495 - 0.808080808081%
+homem -> cristo - 3/515 - 0.582524271845%
+homem -> dia - 1/414 - 0.24154589372%
+homem -> pai - 3/404 - 0.742574257426%
+homem -> espírito - 4/368 - 1.08695652174%
+homem -> poder - 4/316 - 1.26582278481%
+homem -> irmão - 1/352 - 0.284090909091%
+senhor -> deus - 24/1298 - 1.84899845917%
+senhor -> jesus - 104/1031 - 10.0872938894%
+senhor -> homem - 2/669 - 0.298953662182%
+senhor -> senhor - 12/630 - 1.90476190476%
+senhor -> filho - 4/495 - 0.808080808081%
+senhor -> cristo - 2/515 - 0.388349514563%
+senhor -> dia - 1/414 - 0.24154589372%
+senhor -> pai - 1/404 - 0.247524752475%
+senhor -> espírito - 3/368 - 0.815217391304%
+senhor -> irmão - 1/352 - 0.284090909091%
+filho -> deus - 65/1298 - 5.00770416025%
+filho -> jesus - 4/1031 - 0.387972841901%
+filho -> homem - 90/669 - 13.4529147982%
+filho -> filho - 8/495 - 1.61616161616%
+filho -> dia - 1/414 - 0.24154589372%
+filho -> pai - 6/404 - 1.48514851485%
+filho -> espírito - 2/368 - 0.54347826087%
+filho -> irmão - 6/352 - 1.70454545455%
+cristo -> deus - 8/1298 - 0.616332819723%
+cristo -> jesus - 92/1031 - 8.92337536372%
+cristo -> senhor - 14/630 - 2.22222222222%
+cristo -> filho - 12/495 - 2.42424242424%
+cristo -> cristo - 1/515 - 0.194174757282%
+cristo -> pai - 2/404 - 0.49504950495%
+cristo -> espírito - 2/368 - 0.54347826087%
+cristo -> poder - 2/316 - 0.632911392405%
+cristo -> irmão - 2/352 - 0.568181818182%
+dia -> deus - 3/1298 - 0.231124807396%
+dia -> jesus - 3/1031 - 0.290979631426%
+dia -> homem - 1/669 - 0.149476831091%
+dia -> senhor - 10/630 - 1.5873015873%
+dia -> filho - 4/495 - 0.808080808081%
+dia -> cristo - 3/515 - 0.582524271845%
+dia -> dia - 3/414 - 0.724637681159%
+dia -> pai - 1/404 - 0.247524752475%
+dia -> poder - 1/316 - 0.316455696203%
+pai -> deus - 3/1298 - 0.231124807396%
+pai -> jesus - 1/1031 - 0.0969932104753%
+pai -> senhor - 21/630 - 3.33333333333%
+pai -> filho - 13/495 - 2.62626262626%
+pai -> cristo - 3/515 - 0.582524271845%
+pai -> dia - 2/414 - 0.48309178744%
+pai -> pai - 4/404 - 0.990099009901%
+pai -> espírito - 4/368 - 1.08695652174%
+pai -> irmão - 1/352 - 0.284090909091%
+espírito -> deus - 15/1298 - 1.15562403698%
+espírito -> jesus - 2/1031 - 0.193986420951%
+espírito -> homem - 2/669 - 0.298953662182%
+espírito -> senhor - 5/630 - 0.793650793651%
+espírito -> filho - 2/495 - 0.40404040404%
+espírito -> cristo - 2/515 - 0.388349514563%
+espírito -> dia - 3/414 - 0.724637681159%
+espírito -> espírito - 4/368 - 1.08695652174%
+espírito -> poder - 4/316 - 1.26582278481%
+espírito -> palavra - 2/341 - 0.58651026393%
+poder -> deus - 15/1298 - 1.15562403698%
+poder -> homem - 3/669 - 0.448430493274%
+poder -> senhor - 2/630 - 0.31746031746%
+poder -> cristo - 1/515 - 0.194174757282%
+poder -> espírito - 5/368 - 1.35869565217%
+palavra -> deus - 48/1298 - 3.69799691834%
+palavra -> jesus - 2/1031 - 0.193986420951%
+palavra -> homem - 2/669 - 0.298953662182%
+palavra -> senhor - 15/630 - 2.38095238095%
+palavra -> cristo - 2/515 - 0.388349514563%
+palavra -> poder - 3/316 - 0.949367088608%
+irmão -> homem - 2/669 - 0.298953662182%
+irmão -> senhor - 4/630 - 0.634920634921%
+irmão -> filho - 4/495 - 0.808080808081%
+irmão -> cristo - 2/515 - 0.388349514563%
+irmão -> dia - 1/414 - 0.24154589372%
+irmão -> pai - 6/404 - 1.48514851485%
+irmão -> poder - 3/316 - 0.949367088608%
+irmão -> palavra - 1/341 - 0.293255131965%
+irmão -> irmão - 9/352 - 2.55681818182%
 
-- Temas selecionados(8):
+- Temas selecionados(12):
 
 deus
-dizer
+jesus
 homem
-coisa
+senhor
+filho
 cristo
-ver
 dia
-haver
+pai
+espírito
+poder
+palavra
+irmão
 
 
 - Temas excluídos(0):

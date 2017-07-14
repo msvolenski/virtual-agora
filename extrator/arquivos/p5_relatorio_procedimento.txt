@@ -1,0 +1,277 @@
+TEMA: político
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        político     /     40    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        político poder     /     9    /    null
+       político dever     /     8    /    null
+       político discussão     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: poder
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        poder     /     28    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        poder forma     /     5    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        poder forma decisão     /     1    /    sim
+
+
+
+
+
+
+TEMA: conselho
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conselho     /     20    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conselho grupo     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: internet
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        internet     /     19    /    null
+
+
+
+
+
+
+TEMA: espaço
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        espaço     /     24    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        espaço rede     /     4    /    null
+       espaço participação     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+       espaço cidade     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: público
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        público     /     23    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        público população     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+       público mandato     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: participação
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        participação     /     25    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        participação dever     /     4    /    null
+       participação deve     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: população
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        população     /     14    /    null
+
+
+
+
+
+
+TEMA: sociedade
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        sociedade     /     15    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        sociedade forma     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: cidadão
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cidadão     /     14    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cidadão poder     /     5    /    null
+       cidadão conselho     /     5    /    null
+       cidadão forma     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: decisão
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        decisão     /     9    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        decisão poder     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: escola
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        escola     /     9    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        escola poder     /     2    /    sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: projeto
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        projeto     /     11    /    null
+
+
+
+
+
+
+TEMA: partido
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        partido     /     10    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        partido poder     /     3    /    sim - com repeticao
+sim - com repeticao
+sim - com repeticao
+
+
+
+
+
+
+TEMA: lei
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lei     /     9    /    null
+
+
+
+
+
+
+TEMA: número
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        número     /     8    /    null
+
+
+
+
+
+

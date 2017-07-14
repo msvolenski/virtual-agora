@@ -1,0 +1,78 @@
+RELATÓRIO FINAL - TEMAS
+
+
+ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
+
+- Métrica: 0.6% graus; 0.3% betwenness; 0.1% closeness;
+- Parâmetros: delta: 3%; f: 5% dos nós totais (43 nós)
+- Temas pré-selecionados(13):
+
+lula
+dilma
+pt
+janot
+poder
+brasil
+aécio
+condenação
+jbs
+preso
+prova
+ladrão
+corrupção
+
+
+ETAPA 2: SELEÇÃO FINAL DOS TEMAS
+
+- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
+- Parâmetro: fb(frequência mínima de bigramas): 50% do total de bigramas
+- Resultados: 
+
+Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
+
+lula -> lula - 1/168 - 0.595238095238%
+lula -> dilma - 17/25 - 68.0%
+lula -> pt - 5/13 - 38.4615384615%
+lula -> janot - 1/10 - 10.0%
+lula -> poder - 2/9 - 22.2222222222%
+lula -> aécio - 3/8 - 37.5%
+lula -> preso - 2/8 - 25.0%
+lula -> prova - 1/6 - 16.6666666667%
+lula -> ladrão - 2/7 - 28.5714285714%
+dilma -> lula - 4/168 - 2.38095238095%
+dilma -> janot - 1/10 - 10.0%
+dilma -> aécio - 1/8 - 12.5%
+pt -> lula - 3/168 - 1.78571428571%
+janot -> lula - 1/168 - 0.595238095238%
+poder -> pt - 1/13 - 7.69230769231%
+aécio -> dilma - 1/25 - 4.0%
+aécio -> poder - 2/9 - 22.2222222222%
+aécio -> preso - 1/8 - 12.5%
+condenação -> lula - 9/168 - 5.35714285714%
+jbs -> lula - 1/168 - 0.595238095238%
+jbs -> ladrão - 1/7 - 14.2857142857%
+prova -> lula - 1/168 - 0.595238095238%
+prova -> prova - 2/6 - 33.3333333333%
+ladrão -> lula - 1/168 - 0.595238095238%
+ladrão -> brasil - 2/11 - 18.1818181818%
+corrupção -> lula - 2/168 - 1.19047619048%
+
+- Temas selecionados(12):
+
+lula
+pt
+janot
+poder
+brasil
+aécio
+condenação
+jbs
+preso
+prova
+ladrão
+corrupção
+
+
+- Temas excluídos(1):
+
+dilma
