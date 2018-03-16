@@ -49,11 +49,11 @@ class TabelaRanking(models.Model):
      grau_norm = models.FloatField('Grau_norm')
      betweenness = models.FloatField('Betweenness')
      betweenness_norm = models.FloatField('Betweenness_norm')
-     closeness = models.FloatField('Closeness')
-     closeness_norm = models.FloatField('Closeness_norm')
+     eigenvector = models.FloatField('eigenvector')
+     eigenvector_norm = models.FloatField('eigenvector_norm')
      potenciacao = models.FloatField('potenciação')
 #     betweenness = models.DecimalField('Betweenness',max_digits=10, decimal_places=5)
-#     closeness = models.DecimalField('Closeness',max_digits=10, decimal_places=5)
+#     eigenvector = models.DecimalField('eigenvector',max_digits=10, decimal_places=5)
 
      def __str__(self):
         return self.vertice_nome
@@ -61,11 +61,11 @@ class TabelaRanking(models.Model):
 
 class DadosSelecaoTemas(models.Model):   
     p_grau = models.FloatField('Peso Graus')
-    p_clos = models.FloatField('Peso Betweeness')
-    p_bet = models.FloatField('Peso Closeness')
+    p_eigen = models.FloatField('Peso Betweeness')
+    p_bet = models.FloatField('Peso eigenvector')
     sel_graus = models.CharField('Graus?',default='sim', max_length=10)
     sel_betw = models.CharField('Betwweeness?',default='sim', max_length=10)
-    sel_clos = models.CharField('Closeness?',default='sim', max_length=10)   
+    sel_eigen = models.CharField('eigenvector?',default='sim', max_length=10)   
 
     def __str__(self):
         return self.temas_selecionados
@@ -75,7 +75,7 @@ class DadosSelecaoTemas(models.Model):
 class PesosEAlpha(models.Model):
     p_grau = models.FloatField('Peso_Grau')
     p_betw = models.FloatField('Peso_Betweenness')
-    p_close = models.FloatField('Peso_Closeness')
+    p_eigene = models.FloatField('Peso_eigenvector')
     alpha = models.FloatField('Alpha')
     alphaesp = models.FloatField('Alphaesp')
     erro = models.FloatField('erro')
@@ -150,7 +150,7 @@ class ParametrosDeAjuste(models.Model):
     permitir_RT = models.CharField('RT',default=100, max_length=10)
     check_grau = models.CharField('graus',default='sim', max_length=10)
     check_betw = models.CharField('betweenness',default='sim', max_length=10)
-    check_clos = models.CharField('closeness',default='sim', max_length=10)
+    check_eigen = models.CharField('eigenvector',default='sim', max_length=10)
 
 
 class CorrigePalavra(models.Model):

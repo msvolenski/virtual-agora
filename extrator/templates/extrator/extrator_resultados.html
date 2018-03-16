@@ -142,7 +142,7 @@
                             <div style="display:inline-block">
                                 <input type="checkbox" name="checks" {{check_g}} value="grau"> Graus    
                                 <input type="checkbox" name="checks" {{check_b}} value="betw"> Betweenness    
-                                <input type="checkbox" name="checks" {{check_c}} value="clos"> Closeness    
+                                <input type="checkbox" name="checks" {{check_c}} value="clos"> eigenvector    
                             </div>
                             <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
                                 <input type="submit" class="botao_enviar" value="Enviar"> 
@@ -645,7 +645,7 @@
                         <a href="{% url 'extrator:resultados' 'p4_tabela_betweenness' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Tabela Betweenness</span></a>
                     </li>
                     <li>
-                        <a href="{% url 'extrator:resultados' 'p4_tabela_closeness' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Tabela Closeness</span></a>
+                        <a href="{% url 'extrator:resultados' 'p4_tabela_eigenvector' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Tabela eigenvector</span></a>
                     </li>
                 </ul>
                 <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">

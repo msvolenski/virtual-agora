@@ -4,22 +4,14 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  - Índice de Representatividade do Tema (IRT)
 
       Tema   \   IRT   \   IRT(%)
-    político  /  0.603092783505  /  60.3092783505
-    poder  /  0.494242870532  /  49.4242870532
-    participação  /  0.369627794886  /  36.9627794886
-    espaço  /  0.367050475298  /  36.7050475298
-    público  /  0.338499129736  /  33.8499129736
-    conselho  /  0.32427366448  /  32.427366448
-    internet  /  0.269748292944  /  26.9748292944
-    população  /  0.217900656045  /  21.7900656045
-    sociedade  /  0.200997456152  /  20.0997456152
-    projeto  /  0.190688177802  /  19.0688177802
-    cidadão  /  0.185433123577  /  18.5433123577
-    partido  /  0.168630338733  /  16.8630338733
-    decisão  /  0.146572499665  /  14.6572499665
-    escola  /  0.146572499665  /  14.6572499665
-    número  /  0.137501673584  /  13.7501673584
-    lei  /  0.120598473691  /  12.0598473691
+    político  /  0.679487179487  /  67.9487179487
+    marielle  /  0.142857142857  /  14.2857142857
+    morte  /  0.0947802197802  /  9.47802197802
+    país  /  0.0796703296703  /  7.96703296703
+    brasil  /  0.0608974358974  /  6.08974358974
+    gente  /  0.0599816849817  /  5.99816849817
+    execução  /  0.0567765567766  /  5.67765567766
+    lula  /  0.0489926739927  /  4.89926739927
 
 
  - Índice de Representatividade da Sentença em relação ao tema (IRSE) 
@@ -27,28 +19,22 @@ RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE
  Tema: político
 
      Sentença    /    IRSE    /    IRSE(%)
-tem de haver uma discussão mais ampla sobre os critérios de participação em tais instância de forma a legitimá-las e fornecendo a devida heterogeneidade de visões atinentes às diversas políticas em discussão   /   1.0    /    100.0
+' hoje é 1 clichê dizer que a política é algo do mal ' , diz marcia tiburi   /   0.5    /    50.0
+
+@estadao aproveitando a morte de uma guerreira para fazer política   /   0.5    /    50.0
 
 
 
 
- Tema: poder
-
-     Sentença    /    IRSE    /    IRSE(%)
-alternativamente ao construirmos a forma de decisão direta , creio que podemos criar junto as câmaras municipais , um conselho de cidadãos que também seriam eleitos nas eleições para que pudessem acompanhar a atuação dos vereadores e principalmente para que em uma decisão polêmica este conselho também teria o peso de deliberar sobre esta decisão   /   1.0    /    100.0
-
-
-
-
- Tema: conselho
+ Tema: marielle
 
      Sentença    /    IRSE    /    IRSE(%)
-um trabalho que pode começar nas escolas , por meio de conselhos de pais e culminar nos espaços coletivos destas comunidades , sejam fechados ou abertos , delineando uma rede , onde a população possa ser ouvida , o que resultará , inclusive , na solução de questões imediatas , pelo próprio grupo , ao invés de ' sobrecarregar ' a gestão pública , além da melhoria das relações sociais , da efetivação e melhoria do uso dos espaços livres e equipamentos coletivos públicos , queda da violência , etc   /   1.0    /    100.0
+indignação e revolta tomam conta do país com execução de marielle   /   1.0    /    100.0
 
 
 
 
- Tema: internet
+ Tema: morte
 
      Sentença    /    IRSE    /    IRSE(%)
 null - nao convergiu   /   0    /    0
@@ -56,102 +42,42 @@ null - nao convergiu   /   0    /    0
 
 
 
- Tema: espaço
+ Tema: país
 
      Sentença    /    IRSE    /    IRSE(%)
-dentro das melhores práticas está justamente o debate sobre as latências em pps seja no espaço da cidade , estado ou país   /   0.5    /    50.0
-
-penso que estes espaços de participação deveriam ser explorados nas escolas , treinando os jovens na participação popular por meio da tecnologia   /   0.5    /    50.0
+indignação e revolta tomam conta do país com execução de marielle   /   1.0    /    100.0
 
 
 
 
- Tema: público
+ Tema: gente
 
      Sentença    /    IRSE    /    IRSE(%)
-dessa forma , os mandatos que assumem tem uma base de opinião para compor com seus compromissos de campanha , o que baliza a gestão pública   /   0.5    /    50.0
-
-os municípios possuem autonomia para constituir o número de conselhos necessários para que a população possa participar da gestão pública   /   0.5    /    50.0
+gente branca falando sobre o caso da marielle e levando política no meio   /   1.0    /    100.0
 
 
 
 
- Tema: participação
+ Tema: execução
 
      Sentença    /    IRSE    /    IRSE(%)
-a participação deve ser sempre direta , sem a intermediação de lideranças de nenhuma espécie   /   1.0    /    100.0
+indignação e revolta tomam conta do país com execução de marielle   /   1.0    /    100.0
 
 
 
 
- Tema: população
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: sociedade
+ Tema: lula
 
      Sentença    /    IRSE    /    IRSE(%)
-﻿ com a facilidade que a internet proporciona , ninguém mais tem que desmarcar seus compromissos pra ir a conferências , e os custos devem ser bem menores pra uma pagina de discussão há de se ter muito cuidado com formas de participação direta da sociedade   /   1.0    /    100.0
+lula terá recurso adicional na 2ª instância   /   1.0    /    100.0
 
 
 
 
- Tema: cidadão
-
-     Sentença    /    IRSE    /    IRSE(%)
-ademais , fora do ambiente virtual , as prefeituras , governos estaduais , administradores regionais , deveriam fazer periodicamente reuniões com a população para discussão de temas nacionais e voltados às necessidades do governo federal , onde seriam feitas atas e resumos gerais de opiniões sociais , que seriam entregue em forma de dados ao governo federal , para que analisasse melhor os dados , ainda aumentando a relação dos governantes com os cidadãos   /   1.0    /    100.0
-
-
-
-
- Tema: decisão
+ Tema: brasil
 
      Sentença    /    IRSE    /    IRSE(%)
-determinados tipos de consultas e decisões pode ser feita online pelos conselheiros ( ex   /   1.0    /    100.0
-
-
-
-
- Tema: escola
-
-     Sentença    /    IRSE    /    IRSE(%)
-um trabalho que pode começar nas escolas , por meio de conselhos de pais e culminar nos espaços coletivos destas comunidades , sejam fechados ou abertos , delineando uma rede , onde a população possa ser ouvida , o que resultará , inclusive , na solução de questões imediatas , pelo próprio grupo , ao invés de ' sobrecarregar ' a gestão pública , além da melhoria das relações sociais , da efetivação e melhoria do uso dos espaços livres e equipamentos coletivos públicos , queda da violência , etc   /   1.0    /    100.0
-
-
-
-
- Tema: projeto
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: partido
-
-     Sentença    /    IRSE    /    IRSE(%)
-estabelecido que o financiamento de campanha política , é público , que o dinheiro que vai levar membros de partidos políticos ao poder é de todos , com regras , limites e controles claros para todos , elejamos as fontes que consideremos justas de receitas para o sustento e atividade dos partidos políticos e eles que desenvolvam suas atividades como quiserem   /   1.0    /    100.0
-
-
-
-
- Tema: lei
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
-
-
-
-
- Tema: número
-
-     Sentença    /    IRSE    /    IRSE(%)
-null - nao convergiu   /   0    /    0
+pra entender a atual situação do brasil , candidaturas , prisões , execuções , drogas , sistema prisional   /   1.0    /    100.0
 
 
 
@@ -164,29 +90,17 @@ null - nao convergiu   /   0    /    0
  - Índice de Representatividade Global da (IRGS) 
 
      Sentença    /    IRGS    /    IRGS(%)
-um trabalho que pode começar nas escolas , por meio de conselhos de pais e culminar nos espaços coletivos destas comunidades , sejam fechados ou abertos , delineando uma rede , onde a população possa ser ouvida , o que resultará , inclusive , na solução de questões imediatas , pelo próprio grupo , ao invés de ' sobrecarregar ' a gestão pública , além da melhoria das relações sociais , da efetivação e melhoria do uso dos espaços livres e equipamentos coletivos públicos , queda da violência , etc   /   0.147058823529    /    14.7058823529
+indignação e revolta tomam conta do país com execução de marielle   /   0.333333333333    /    33.3333333333
 
-﻿ com a facilidade que a internet proporciona , ninguém mais tem que desmarcar seus compromissos pra ir a conferências , e os custos devem ser bem menores pra uma pagina de discussão há de se ter muito cuidado com formas de participação direta da sociedade   /   0.0882352941176    /    8.82352941176
+gente branca falando sobre o caso da marielle e levando política no meio   /   0.166666666667    /    16.6666666667
 
-os municípios possuem autonomia para constituir o número de conselhos necessários para que a população possa participar da gestão pública   /   0.0882352941176    /    8.82352941176
+lula terá recurso adicional na 2ª instância   /   0.166666666667    /    16.6666666667
 
-dessa forma , os mandatos que assumem tem uma base de opinião para compor com seus compromissos de campanha , o que baliza a gestão pública   /   0.0882352941176    /    8.82352941176
+' hoje é 1 clichê dizer que a política é algo do mal ' , diz marcia tiburi   /   0.133333333333    /    13.3333333333
 
-dentro das melhores práticas está justamente o debate sobre as latências em pps seja no espaço da cidade , estado ou país   /   0.0882352941176    /    8.82352941176
+@estadao aproveitando a morte de uma guerreira para fazer política   /   0.133333333333    /    13.3333333333
 
-penso que estes espaços de participação deveriam ser explorados nas escolas , treinando os jovens na participação popular por meio da tecnologia   /   0.0882352941176    /    8.82352941176
-
-determinados tipos de consultas e decisões pode ser feita online pelos conselheiros ( ex   /   0.0882352941176    /    8.82352941176
-
-estabelecido que o financiamento de campanha política , é público , que o dinheiro que vai levar membros de partidos políticos ao poder é de todos , com regras , limites e controles claros para todos , elejamos as fontes que consideremos justas de receitas para o sustento e atividade dos partidos políticos e eles que desenvolvam suas atividades como quiserem   /   0.0882352941176    /    8.82352941176
-
-ademais , fora do ambiente virtual , as prefeituras , governos estaduais , administradores regionais , deveriam fazer periodicamente reuniões com a população para discussão de temas nacionais e voltados às necessidades do governo federal , onde seriam feitas atas e resumos gerais de opiniões sociais , que seriam entregue em forma de dados ao governo federal , para que analisasse melhor os dados , ainda aumentando a relação dos governantes com os cidadãos   /   0.0882352941176    /    8.82352941176
-
-a participação deve ser sempre direta , sem a intermediação de lideranças de nenhuma espécie   /   0.0588235294118    /    5.88235294118
-
-tem de haver uma discussão mais ampla sobre os critérios de participação em tais instância de forma a legitimá-las e fornecendo a devida heterogeneidade de visões atinentes às diversas políticas em discussão   /   0.0588235294118    /    5.88235294118
-
-alternativamente ao construirmos a forma de decisão direta , creio que podemos criar junto as câmaras municipais , um conselho de cidadãos que também seriam eleitos nas eleições para que pudessem acompanhar a atuação dos vereadores e principalmente para que em uma decisão polêmica este conselho também teria o peso de deliberar sobre esta decisão   /   0.0294117647059    /    2.94117647059
+pra entender a atual situação do brasil , candidaturas , prisões , execuções , drogas , sistema prisional   /   0.0666666666667    /    6.66666666667
 
 null - nao convergiu   /   0.0    /    0.0
 

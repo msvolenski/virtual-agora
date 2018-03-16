@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 194 parágrafos.
-Os dados de entrada possuem 3943 palavras.
-Os dados lematizados possuem 4179 palavras.
-Palavras não lematizadas: não-governamentais transformá-las compreendê-la legitimá-las apoia-lo divulgá-los torná-los integrá-los a-dia se-ia usá-los 
-O documento lematizado e sem stopwords possui 2036 palavras.
+Os dados de entrada contém 160 parágrafos.
+Os dados de entrada possuem 1344 palavras.
+Os dados lematizados possuem 1416 palavras.
+Não houveram erros durante a lematização.
+O documento lematizado e sem stopwords possui 723 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 48.3641897033 %.
-Em média, cada sentença do texto original possui 20 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 10 palavras.
+Compressão do texto após pré-processamento: 46.2053571429 %.
+Em média, cada sentença do texto original possui 8 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 5 palavras.

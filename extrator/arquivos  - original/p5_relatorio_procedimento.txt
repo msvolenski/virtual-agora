@@ -1,0 +1,463 @@
+TEMA: dilma
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma     /     81    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula     /     48    /    nao
+       dilma falar     /     7    /    nao
+       dilma prova     /     5    /    nao
+       dilma conta     /     12    /    nao
+       dilma governo     /     4    /    nullll
+       dilma aécio     /     3    /    nao
+       dilma propina     /     3    /    nao
+       dilma cnj     /     7    /    nao
+       dilma ministro     /     3    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula prova     /     4    /    nao
+       dilma lula aécio     /     3    /    nao
+       dilma lula ministro     /     3    /    nao
+       dilma lula conta     /     10    /    nao
+       dilma falar lula     /     4    /    nullll
+       dilma prova lula     /     4    /    nullll
+       dilma prova ministro     /     1    /    sim
+       dilma conta lula     /     10    /    nullll
+       dilma conta hora     /     5    /    nao
+       dilma aécio lula     /     3    /    nullll
+       dilma aécio friboi     /     1    /    sim
+       dilma propina lula     /     2    /    nullll
+       dilma cnj lula     /     5    /    nao
+       dilma cnj grampo     /     1    /    sim
+       dilma ministro lula     /     3    /    nullll
+       dilma ministro prova     /     1    /    sim
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula prova ministro     /     1    /    sim
+       dilma lula aécio friboi     /     1    /    sim
+       dilma lula ministro prova     /     1    /    sim
+       dilma lula conta hora     /     5    /    nao
+       dilma conta hora paradeiro     /     5    /    nao
+       dilma conta hora lula     /     5    /    nullll
+       dilma conta hora cadeia     /     5    /    nao
+       dilma cnj lula grampo     /     1    /    sim
+       dilma cnj lula divulgação     /     2    /    nullll
+       dilma cnj lula sérgio     /     1    /    sim
+       dilma cnj lula viomundo     /     1    /    sim
+       dilma cnj lula vê     /     1    /    sim
+       dilma cnj lula mídia     /     1    /    sim
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula conta hora paradeiro     /     5    /    nao
+       dilma lula conta hora cadeia     /     5    /    nao
+       dilma conta hora paradeiro lula     /     5    /    nullll
+       dilma conta hora paradeiro cadeia     /     5    /    nao
+       dilma conta hora cadeia paradeiro     /     5    /    nullll
+       dilma conta hora cadeia lula     /     5    /    nullll
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        dilma lula conta hora paradeiro cadeia     /     5    /    nullll
+       dilma lula conta hora cadeia paradeiro     /     5    /    nullll
+       dilma conta hora paradeiro cadeia lula     /     5    /    nullll
+
+
+
+
+
+
+TEMA: lula
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula     /     53    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma     /     48    /    nao
+       lula prova     /     4    /    nao
+       lula aécio     /     3    /    nao
+       lula ministro     /     3    /    nao
+       lula conta     /     10    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma prova     /     4    /    nao
+       lula dilma aécio     /     3    /    nao
+       lula dilma ministro     /     3    /    nao
+       lula dilma conta     /     10    /    nao
+       lula prova dilma     /     4    /    nullll
+       lula prova ministro     /     1    /    sim
+       lula aécio dilma     /     3    /    nullll
+       lula aécio friboi     /     1    /    sim
+       lula ministro dilma     /     3    /    nullll
+       lula ministro prova     /     1    /    sim
+       lula conta dilma     /     10    /    nullll
+       lula conta hora     /     5    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma prova ministro     /     1    /    sim
+       lula dilma aécio friboi     /     1    /    sim
+       lula dilma ministro prova     /     1    /    sim
+       lula dilma conta hora     /     5    /    nao
+       lula conta hora dilma     /     5    /    nullll
+       lula conta hora paradeiro     /     5    /    nao
+       lula conta hora cadeia     /     5    /    nao
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma conta hora paradeiro     /     5    /    nao
+       lula dilma conta hora cadeia     /     5    /    nao
+       lula conta hora paradeiro dilma     /     5    /    nullll
+       lula conta hora paradeiro cadeia     /     5    /    nao
+       lula conta hora cadeia dilma     /     5    /    nullll
+       lula conta hora cadeia paradeiro     /     5    /    nullll
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        lula dilma conta hora paradeiro cadeia     /     5    /    nullll
+       lula dilma conta hora cadeia paradeiro     /     5    /    nullll
+       lula conta hora paradeiro cadeia dilma     /     5    /    nullll
+
+
+
+
+
+
+TEMA: conta
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta     /     14    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta dilma     /     12    /    nao
+       conta propina     /     3    /    nao
+       conta duas     /     3    /    nao
+       conta lula     /     10    /    nao
+       conta bndes     /     3    /    nao
+       conta hora     /     5    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta dilma lula     /     10    /    nao
+       conta dilma hora     /     5    /    nao
+       conta propina duas     /     3    /    nao
+       conta propina bndes     /     2    /    nao
+       conta duas propina     /     3    /    nullll
+       conta duas bndes     /     2    /    nao
+       conta lula dilma     /     10    /    nullll
+       conta lula hora     /     5    /    nao
+       conta bndes mostra     /     1    /    sim
+       conta hora dilma     /     5    /    nullll
+       conta hora paradeiro     /     5    /    nao
+       conta hora lula     /     5    /    nullll
+       conta hora cadeia     /     5    /    nao
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta dilma lula hora     /     5    /    nao
+       conta dilma hora paradeiro     /     5    /    nao
+       conta dilma hora lula     /     5    /    nullll
+       conta dilma hora cadeia     /     5    /    nao
+       conta propina duas bndes     /     2    /    nao
+       conta propina bndes %     /     2    /    nao
+       conta propina bndes duas     /     2    /    nullll
+       conta propina bndes sobre     /     2    /    nao
+       conta propina bndes financiamento     /     2    /    nao
+       conta duas bndes %     /     2    /    nao
+       conta duas bndes propina     /     2    /    nullll
+       conta duas bndes sobre     /     2    /    nao
+       conta duas bndes financiamento     /     2    /    nao
+       conta lula hora dilma     /     5    /    nullll
+       conta lula hora paradeiro     /     5    /    nao
+       conta lula hora cadeia     /     5    /    nao
+       conta hora paradeiro dilma     /     5    /    nullll
+       conta hora paradeiro lula     /     5    /    nullll
+       conta hora paradeiro cadeia     /     5    /    nao
+       conta hora cadeia dilma     /     5    /    nullll
+       conta hora cadeia paradeiro     /     5    /    nullll
+       conta hora cadeia lula     /     5    /    nullll
+
+
+
+ - ITERACAO 4:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta dilma lula hora paradeiro     /     5    /    nao
+       conta dilma lula hora cadeia     /     5    /    nao
+       conta dilma hora paradeiro lula     /     5    /    nullll
+       conta dilma hora paradeiro cadeia     /     5    /    nao
+       conta dilma hora cadeia paradeiro     /     5    /    nullll
+       conta dilma hora cadeia lula     /     5    /    nullll
+       conta propina duas bndes %     /     2    /    nao
+       conta propina duas bndes sobre     /     2    /    nao
+       conta propina duas bndes financiamento     /     2    /    nao
+       conta propina bndes % duas     /     2    /    nullll
+       conta propina bndes % sobre     /     2    /    nao
+       conta propina bndes % financiamento     /     2    /    nao
+       conta propina bndes sobre %     /     2    /    nullll
+       conta propina bndes sobre duas     /     2    /    nullll
+       conta propina bndes sobre financiamento     /     2    /    nao
+       conta propina bndes financiamento %     /     2    /    nullll
+       conta propina bndes financiamento duas     /     2    /    nullll
+       conta propina bndes financiamento sobre     /     2    /    nullll
+       conta duas bndes % propina     /     2    /    nullll
+       conta duas bndes % sobre     /     2    /    nao
+       conta duas bndes % financiamento     /     2    /    nao
+       conta duas bndes sobre %     /     2    /    nullll
+       conta duas bndes sobre propina     /     2    /    nullll
+       conta duas bndes sobre financiamento     /     2    /    nao
+       conta duas bndes financiamento %     /     2    /    nullll
+       conta duas bndes financiamento propina     /     2    /    nullll
+       conta duas bndes financiamento sobre     /     2    /    nullll
+       conta lula hora paradeiro dilma     /     5    /    nullll
+       conta lula hora paradeiro cadeia     /     5    /    nao
+       conta lula hora cadeia dilma     /     5    /    nullll
+       conta lula hora cadeia paradeiro     /     5    /    nullll
+       conta hora paradeiro cadeia dilma     /     5    /    nullll
+       conta hora paradeiro cadeia lula     /     5    /    nullll
+
+
+
+ - ITERACAO 5:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta dilma lula hora paradeiro cadeia     /     5    /    nullll
+       conta dilma lula hora cadeia paradeiro     /     5    /    nullll
+       conta dilma hora paradeiro cadeia lula     /     5    /    nullll
+       conta propina duas bndes % sobre     /     2    /    nao
+       conta propina duas bndes % financiamento     /     2    /    nao
+       conta propina duas bndes sobre %     /     2    /    nullll
+       conta propina duas bndes sobre financiamento     /     2    /    nao
+       conta propina duas bndes financiamento %     /     2    /    nullll
+       conta propina duas bndes financiamento sobre     /     2    /    nullll
+       conta propina bndes % sobre duas     /     2    /    nullll
+       conta propina bndes % sobre financiamento     /     2    /    nao
+       conta propina bndes % financiamento duas     /     2    /    nullll
+       conta propina bndes % financiamento sobre     /     2    /    nullll
+       conta propina bndes sobre financiamento %     /     2    /    nullll
+       conta propina bndes sobre financiamento duas     /     2    /    nullll
+       conta duas bndes % sobre propina     /     2    /    nullll
+       conta duas bndes % sobre financiamento     /     2    /    nao
+       conta duas bndes % financiamento propina     /     2    /    nullll
+       conta duas bndes % financiamento sobre     /     2    /    nullll
+       conta duas bndes sobre financiamento %     /     2    /    nullll
+       conta duas bndes sobre financiamento propina     /     2    /    nullll
+       conta lula hora paradeiro cadeia dilma     /     5    /    nullll
+
+
+
+ - ITERACAO 6:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        conta propina duas bndes % sobre financiamento     /     2    /    nullll
+       conta propina duas bndes % financiamento sobre     /     2    /    nullll
+       conta propina duas bndes sobre financiamento %     /     2    /    nullll
+       conta propina bndes % sobre financiamento duas     /     2    /    nullll
+       conta duas bndes % sobre financiamento propina     /     2    /    nullll
+
+
+
+
+
+
+TEMA: prova
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova     /     6    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova dilma     /     5    /    nao
+       prova lula     /     4    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova dilma lula     /     4    /    nao
+       prova dilma ministro     /     1    /    sim
+       prova lula dilma     /     4    /    nullll
+       prova lula ministro     /     1    /    sim
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        prova dilma lula ministro     /     1    /    sim
+
+
+
+
+
+
+TEMA: falar
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        falar     /     7    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        falar dilma     /     7    /    nao
+       falar lula     /     4    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        falar dilma lula     /     4    /    nullll
+       falar lula dilma     /     4    /    nullll
+
+
+
+
+
+
+TEMA: aécio
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio     /     8    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio lula     /     3    /    nao
+       aécio dilma     /     3    /    nao
+       aécio perrella     /     2    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio lula dilma     /     3    /    nao
+       aécio lula friboi     /     1    /    sim
+       aécio dilma lula     /     3    /    nullll
+       aécio dilma friboi     /     1    /    sim
+       aécio perrella dilma     /     1    /    sim
+       aécio perrella droga     /     1    /    sim
+       aécio perrella troque     /     1    /    sim
+       aécio perrella lula     /     1    /    sim
+       aécio perrella zezé     /     1    /    sim
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        aécio lula dilma friboi     /     1    /    sim
+
+
+
+
+
+
+TEMA: cnj
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cnj     /     9    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cnj lula     /     7    /    nao
+       cnj dilma     /     7    /    nao
+       cnj grampo     /     1    /    sim
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cnj lula dilma     /     5    /    nao
+       cnj lula grampo     /     1    /    sim
+       cnj lula divulgação     /     4    /    nao
+       cnj lula viomundo     /     1    /    sim
+       cnj lula sérgio     /     1    /    sim
+       cnj lula vê     /     1    /    sim
+       cnj lula sergio     /     2    /    nao
+       cnj dilma lula     /     5    /    nullll
+       cnj dilma grampo     /     1    /    sim
+
+
+
+ - ITERACAO 3:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        cnj lula dilma grampo     /     1    /    sim
+       cnj lula dilma divulgação     /     2    /    nullll
+       cnj lula dilma sérgio     /     1    /    sim
+       cnj lula dilma viomundo     /     1    /    sim
+       cnj lula dilma vê     /     1    /    sim
+       cnj lula dilma mídia     /     1    /    sim
+       cnj lula divulgação dilma     /     2    /    nullll
+       cnj lula sergio divulgação     /     2    /    nullll
+
+
+
+
+
+
+TEMA: bndes
+
+ - ITERACAO 0:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bndes     /     8    /    nao
+
+
+
+ - ITERACAO 1:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bndes lula     /     4    /    nao
+       bndes propina     /     3    /    nullll
+       bndes conta     /     3    /    nao
+
+
+
+ - ITERACAO 2:
+          proto-frase / tamanho da rede (sentencas) / extraiu?
+        bndes lula mostra     /     1    /    sim
+       bndes conta mostra     /     1    /    sim
+
+
+
+
+
+

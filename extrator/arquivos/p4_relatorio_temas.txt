@@ -3,27 +3,27 @@ RELATÓRIO FINAL - TEMAS
 
 ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
 
-- Métrica: 0.1% graus; 0.7% betwenness; 0.2% closeness;
-- Parâmetros: delta: 3%; f: 3% dos nós totais (26 nós)
+- Métrica: 0.0% graus; 0.0% betwenness; 1.0% eigenvector;
+- Parâmetros: delta: 3%; f: 3% dos nós totais (13 nós)
 - Temas pré-selecionados(17):
 
 político
-poder
-conselho
-internet
-espaço
-público
-participação
-população
-sociedade
-cidadão
-decisão
-escola
-projeto
-partido
-lei
-popular
-número
+marielle
+franco
+af
+morte
+país
+gente
+execução
+absurdo
+luta
+tá
+velho
+novo
+lula
+total
+brasil
+intervenção
 
 
 ETAPA 2: SELEÇÃO FINAL DOS TEMAS
@@ -34,62 +34,47 @@ ETAPA 2: SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-político -> poder - 2/32 - 6.25%
-político -> público - 9/25 - 36.0%
-político -> cidadão - 1/13 - 7.69230769231%
-político -> escola - 1/10 - 10.0%
-conselho -> político - 1/39 - 2.5641025641%
-conselho -> sociedade - 1/14 - 7.14285714286%
-conselho -> cidadão - 1/13 - 7.69230769231%
-conselho -> escola - 1/10 - 10.0%
-conselho -> popular - 1/15 - 6.66666666667%
-conselho -> número - 1/9 - 11.1111111111%
-internet -> político - 1/39 - 2.5641025641%
-internet -> espaço - 1/22 - 4.54545454545%
-espaço -> público - 3/25 - 12.0%
-espaço -> participação - 2/22 - 9.09090909091%
-espaço -> decisão - 1/9 - 11.1111111111%
-público -> população - 1/15 - 6.66666666667%
-participação -> político - 2/39 - 5.12820512821%
-participação -> cidadão - 5/13 - 38.4615384615%
-participação -> popular - 10/15 - 66.6666666667%
-população -> internet - 1/17 - 5.88235294118%
-população -> participação - 1/22 - 4.54545454545%
-cidadão -> poder - 2/32 - 6.25%
-cidadão -> conselho - 1/20 - 5.0%
-decisão -> político - 1/39 - 2.5641025641%
-decisão -> poder - 1/32 - 3.125%
-escola -> poder - 1/32 - 3.125%
-escola -> público - 1/25 - 4.0%
-projeto -> cidadão - 1/13 - 7.69230769231%
-projeto -> projeto - 1/13 - 7.69230769231%
-projeto -> lei - 1/8 - 12.5%
-partido -> político - 4/39 - 10.2564102564%
-partido -> poder - 1/32 - 3.125%
-lei -> político - 1/39 - 2.5641025641%
-número -> conselho - 1/20 - 5.0%
-número -> partido - 1/13 - 7.69230769231%
+político -> af - 1/3 - 33.3333333333%
+político -> morte - 1/7 - 14.2857142857%
+político -> país - 1/6 - 16.6666666667%
+político -> absurdo - 1/2 - 50.0%
+político -> luta - 1/1 - 100.0%
+político -> tá - 1/2 - 50.0%
+político -> velho - 1/2 - 50.0%
+político -> total - 1/1 - 100.0%
+político -> intervenção - 1/1 - 100.0%
+marielle -> franco - 5/5 - 100.0%
+af -> af - 2/3 - 66.6666666667%
+morte -> marielle - 3/11 - 27.2727272727%
+país -> execução - 1/4 - 25.0%
+país -> brasil - 2/5 - 40.0%
+gente -> político - 1/52 - 1.92307692308%
+execução -> político - 2/52 - 3.84615384615%
+execução -> marielle - 1/11 - 9.09090909091%
+absurdo -> político - 1/52 - 1.92307692308%
+velho -> político - 1/52 - 1.92307692308%
+lula -> novo - 1/2 - 50.0%
 
-- Temas selecionados(16):
+- Temas selecionados(8):
 
 político
-poder
-conselho
-internet
-espaço
-público
-participação
-população
-sociedade
-cidadão
-decisão
-escola
-projeto
-partido
-lei
-número
+marielle
+morte
+país
+gente
+execução
+lula
+brasil
 
 
-- Temas excluídos(1):
+- Temas excluídos(9):
 
-popular
+absurdo
+luta
+tá
+velho
+total
+intervenção
+franco
+af
+novo

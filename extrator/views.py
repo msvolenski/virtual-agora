@@ -8,6 +8,8 @@ from math import log
 from nltk.tokenize import TweetTokenizer
 from PIL import Image
 from summa import keywords
+from sklearn.neighbors.kde import KernelDensity
+from numpy import array, linspace
 import aspell
 import codecs
 import emoji
@@ -233,6 +235,8 @@ def salvar_dados_iniciais(request):
     #resolve problema dos links do twiiter
     documento = re.sub(r"http\S+", ".", documento)
 
+    
+
     #elimina os mais ainda malditos emoticons e outros caracteres 
     myre = re.compile('('
             '\x96|' #caractere bizarro SPA 
@@ -246,14 +250,14 @@ def salvar_dados_iniciais(request):
     documento = myre.sub('',documento)      
     
     #extração de palavras-chave com a tecnica do TextRank
-    print keywords.keywords(documento.encode('utf-8'), language='portuguese')
+    #print keywords.keywords(documento.encode('utf-8'), language='portuguese')
     
     #tokenizer para Tweets
     tknzr = TweetTokenizer()
     palavras = tknzr.tokenize(documento)    
       
     for token in palavras:                
-        
+       
         #substitui as risadas
         token = re.sub(r'\b([kK]+)\b', 'k', token)
         token = re.sub(r'\b([aA]+)\b', 'a', token)
@@ -268,7 +272,13 @@ def salvar_dados_iniciais(request):
         token = re.sub(r'ii[i]?', 'i', token)
         token = re.sub(r'oo[o]?', 'o', token)
         token = re.sub(r'uu[u]?', 'u', token)
+        token = re.sub(r'.\n', '.', token)
 
+        test = re.match(r'.\n', token)
+        if test:                    
+            #print 'achei'
+            #print repr(token)
+            token = "."
         entrada_tokenizada1.write(token.strip())
         try:
             correta = CorrigePalavra.objects.get(palavra=token.strip()) 
@@ -325,15 +335,15 @@ def corretor_ortografico(request):
     #inicia análise das palavras pelo corretor
     posicao = 0
     for palavra in palavras:
-                
+
+        #print repr(palavra)   
         #para a Biblia: testa se primeira palavra é maiúsculo
         flag_nomeproprio = 'nao'
         padrao = re.compile("^[ABCDEFGHIJKLMNOPQRSTUVWYZ]")
         eh_nomeproprio = padrao.match(palavra)
         if eh_nomeproprio:
             flag_nomeproprio = 'sim' 
-
-                
+        
         #testa se a palavra é um número
         flag_numero = 'nao'
         padrao = re.compile("[0-9]+")
@@ -889,13 +899,14 @@ def rede_complexa(request):
     labels = nx.get_edge_attributes(rede,'weight')
     nx.draw_networkx_edge_labels(rede,pos,edge_labels=labels)
     nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
+    plt.savefig('extrator/arquivos/p3_rede.png')
     plt.show()
     plt.close()
     
     #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    #tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
     
-    return render(request, 'extrator/extrator_home_3.html', {'tempo_p1vd':tempo_total,'dados_de_entrada': None, 'relatorio_preproc':None })    
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3','dados_de_entrada': None, 'relatorio_preproc':None })    
 
 
 ## PASSO 4. MÉTRICAS E RANKING  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -921,7 +932,7 @@ def metricas_e_ranking(request):
     #Cria arquivos para receber as tabelas
     arq_tabela_graus = codecs.open("extrator/arquivos/p4_tabela_graus.txt", 'w', 'utf-8')
     arq_tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt", 'w','utf-8')
-    arq_tabela_closeness = codecs.open("extrator/arquivos/p4_tabela_closeness.txt", 'w','utf-8')
+    arq_tabela_eigenvector = codecs.open("extrator/arquivos/p4_tabela_eigenvector.txt", 'w','utf-8')
     arq_texto_vertices = codecs.open("extrator/arquivos/p4_texto_vertices.txt", 'w','utf-8')
 
     #Prepara banco de dados para receber as tabelas
@@ -934,7 +945,7 @@ def metricas_e_ranking(request):
     #cria tabelas
     tabela_graus = {}
     tabela_betweenness = {}
-    tabela_closeness ={}
+    tabela_eigenvector ={}
 
     #gera rede
     rede = nx.DiGraph()
@@ -958,10 +969,13 @@ def metricas_e_ranking(request):
         tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
         maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
     
-    if parametros.check_clos == 'sim':    
-        print "calculando métrica closeness..."
-        tabela_closeness = nx.closeness_centrality(rede)
-        maior_closeness = max(tabela_closeness.iteritems(), key=operator.itemgetter(1))[1] 
+    if parametros.check_eigen == 'sim':    
+        print "calculando métrica eigenvector..."
+        try:
+            tabela_eigenvector = nx.eigenvector_centrality(rede)
+        except:
+            tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
+        maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1] 
    
     
     #cria lista de vertices
@@ -970,7 +984,7 @@ def metricas_e_ranking(request):
     #gera dicionarios de valores normalizados e cria um texto de vertices (para o próximo passo)
     tabela_grau_normalizado = {}
     tabela_betweenness_normalizado = {}
-    tabela_closeness_normalizado = {}    
+    tabela_eigenvector_normalizado = {}    
     
     #gera conteudo das tabelas
     for vertice in vertices:        
@@ -979,8 +993,8 @@ def metricas_e_ranking(request):
             tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau
         if parametros.check_betw == 'sim':
             tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness
-        if parametros.check_clos == 'sim':
-            tabela_closeness_normalizado[vertice] = tabela_closeness.get(vertice)/maior_closeness
+        if parametros.check_eigen == 'sim':
+            tabela_eigenvector_normalizado[vertice] = tabela_eigenvector.get(vertice)/maior_eigenvector
     
       
     for vertice in vertices:        
@@ -991,15 +1005,15 @@ def metricas_e_ranking(request):
         if parametros.check_betw == 'nao':
             tabela_betweenness[vertice] = 0
             tabela_betweenness_normalizado[vertice] = 0
-        if parametros.check_clos == 'nao':
-            tabela_closeness[vertice] = 0
-            tabela_closeness_normalizado[vertice] = 0
+        if parametros.check_eigen == 'nao':
+            tabela_eigenvector[vertice] = 0
+            tabela_eigenvector_normalizado[vertice] = 0
    
     
     #Armazenando Tabelas no BD via Bulking 
     aList = [TabelaRanking(vertice_nome = vertice, vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
         betweenness=tabela_betweenness[vertice], betweenness_norm=tabela_betweenness_normalizado[vertice], 
-        closeness=tabela_closeness[vertice], closeness_norm=tabela_closeness_normalizado[vertice], potenciacao=1.0) for vertice in vertices]
+        eigenvector=tabela_eigenvector[vertice], eigenvector_norm=tabela_eigenvector_normalizado[vertice], potenciacao=1.0) for vertice in vertices]
     TabelaRanking.objects.bulk_create(aList)
     
     
@@ -1007,7 +1021,7 @@ def metricas_e_ranking(request):
     #gera Tabelas Ranking
     tabela_graus_ordenada = TabelaRanking.objects.all().order_by('-grau')    
     tabela_betweenness_ordenada = TabelaRanking.objects.all().order_by('-betweenness')    
-    tabela_closeness_ordenada = TabelaRanking.objects.all().order_by('-closeness')
+    tabela_eigenvector_ordenada = TabelaRanking.objects.all().order_by('-eigenvector')
     
     #Salva ranking graus em arquivo
     for linha in tabela_graus_ordenada:
@@ -1017,15 +1031,15 @@ def metricas_e_ranking(request):
     for linha in tabela_betweenness_ordenada:
         arq_tabela_betweenness.write(linha.vertice_nome + ' ' + str(linha.betweenness) + ' ' + str(linha.betweenness_norm) + '\n')
     
-    #Salva ranking closeness em arquivo
-    for linha in tabela_closeness_ordenada:
-        arq_tabela_closeness.write(linha.vertice_nome + ' ' + str(linha.closeness) + ' ' + str(linha.closeness_norm) + '\n') 
+    #Salva ranking eigenvector em arquivo
+    for linha in tabela_eigenvector_ordenada:
+        arq_tabela_eigenvector.write(linha.vertice_nome + ' ' + str(linha.eigenvector) + ' ' + str(linha.eigenvector_norm) + '\n') 
 
     #fecha arquivos
     arq_tabela_graus.close()
     arq_tabela_betweenness.close()
-    arq_tabela_closeness.close()
-    arq_texto_vertices.close()   
+    arq_tabela_eigenvector.close()
+    arq_texto_vertices.close()  
     
     #finaliza tempo
     tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
@@ -1038,12 +1052,12 @@ def calcula_indice(request):
     inicio = time.time()
     
     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
-    matplotlib.use('agg')
+    #matplotlib.use('agg')
     
     #Abre arquivo de dados a serem lidos
     tabela_grau = codecs.open("extrator/arquivos/p4_tabela_graus.txt").readlines()
     tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt").readlines()
-    tabela_closeness = codecs.open("extrator/arquivos/p4_tabela_closeness.txt").readlines()
+    tabela_eigenvector = codecs.open("extrator/arquivos/p4_tabela_eigenvector.txt").readlines()
     
     #Carrega dados do BD
     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
@@ -1054,173 +1068,28 @@ def calcula_indice(request):
     try:
         td =  DadosSelecaoTemas.objects.get(id=1)                      
     except:
-        DadosSelecaoTemas.objects.create(id=1,p_grau=0,p_bet=0,p_clos=0)
+        DadosSelecaoTemas.objects.create(id=1,p_grau=0,p_bet=0,p_eigen=0)
         td =  DadosSelecaoTemas.objects.get(id=1)
            
     #Inicializa arquivos a serem escritos
     arq_tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt", 'w', 'utf-8')    
-    arq_matriz_pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt", 'w', 'utf-8')
+    #arq_matriz_pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt", 'w', 'utf-8')
     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt", 'w')   
    
-    #Prepara o BD para receber os novos pesos
-    pesos = PesosEAlpha.objects.all()
-    pesos.delete()
-    
-    #gera matriz de pesos para cada caso
-    var = 0.1
-    if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_clos == 'sim': 
-       
-        for a1 in range(0,12):
-            for a2 in range(0,12):
-                a3 = 10 - a1 - a2
-                if a3 >= 0 and a1 != 0 and a2 != 0 and a3 != 0:
-                    arq_matriz_pesos.write(str(a1*var) + ' ')
-                    arq_matriz_pesos.write(str(a2*var) + ' ')
-                    arq_matriz_pesos.write(str(a3*var) + ' ')
-                    arq_matriz_pesos.write('\n')
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_clos == 'nao':
-        arq_matriz_pesos.write(str(1.0) + ' ' + str(0.0) + ' ' + str(0.0) + '\n')
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_clos == 'nao': 
-        arq_matriz_pesos.write(str(0.0) + ' ' + str(1.0) + ' ' + str(0.0) + '\n')
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'nao' and parametros.check_betw == 'nao' and parametros.check_clos == 'sim':
-        arq_matriz_pesos.write(str(0.0) + ' ' + str(0.0) + ' ' + str(1.0) + '\n')
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_clos == 'nao':
-        for a1 in range(1,10):
-            p1 = a1*var
-            p2 = 1 - p1
-            arq_matriz_pesos.write(str(p1) + ' ' + str(p2) + ' ' + str(0.0) + '\n')       
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_clos == 'sim':
-        for a1 in range(1,10):
-            p1 = a1*var
-            p2 = 1 - p1
-            arq_matriz_pesos.write(str(p1) + ' ' + str(0.0) + ' ' + str(p2) + '\n')       
-        arq_matriz_pesos.close()
-    
-    if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_clos == 'sim':
-        for a1 in range(1,10):
-            p1 = a1*var
-            p2 = 1 - p1
-            arq_matriz_pesos.write(str(0.0) + ' ' + str(p1) + ' ' + str(p2) + '\n')       
-        arq_matriz_pesos.close()
-    
-    ## FIM ETAPA 2 ####################################################
-    ## ETAPA 3: SELEÇÃO DOS PESOS DAS MÉTRICAS ########################
-
-    # abre matriz de pesos
-    pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt").readlines()
-
     #inicializa matlibplot para duas figuras e cores
     rgb_a=5
     rgb_b=94
     rgb_c=200
-
-    #calculo de alpha para cada conjunto de peso
-    for peso in pesos:
-        pgra = float(peso.split(' ')[0])
-        pbet =  float(peso.split(' ')[1])
-        pclo = float(peso.split(' ')[2])
-
-        # CALCULA POTENCIAÇÃO
-        tabela_potenciacao_temp = {}
-        for vertice in vertices_objs:
-            grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
-            bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
-            clo_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).closeness_norm
-            potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(pclo)*float(clo_n)
-            tabela_potenciacao_temp[vertice.node] = potenciacao
-        
-        # Cria uma tabela vertice(nome)-indice
-        tabela_potenciacao_temp_ordenada = {}
-        tabela_potenciacao_temp_ordenada = sorted(tabela_potenciacao_temp.items(),key=lambda x: x[1], reverse=True)
-
-        # exclui os 5% ultimos temas quando pertinente (n>0)
-        corte = 0.00
-        numero_vertices_excluidos = int(corte*len(tabela_potenciacao_temp_ordenada))
-        if numero_vertices_excluidos > 0:            
-            del tabela_potenciacao_temp_ordenada[-numero_vertices_excluidos:]
-        
-        #exclui vertice de indice zero       
-        flag = 'on'
-        while flag == 'on':        
-            for i,v in enumerate(tabela_potenciacao_temp_ordenada):
-                flag = 'off'
-                if v[1] == 0.0:
-                    flag = 'on'
-            if flag == 'on':
-                del tabela_potenciacao_temp_ordenada[-1:]
-
-        #Faz a regressão linear e calcula alpha da tabela
-        valores_potenciacao = [valor[1] for valor in tabela_potenciacao_temp_ordenada]        
-        fit = powerlaw.Fit(valores_potenciacao)
-       
-        #calcula o MLF dos dados (o quão ajustados estão)
-        # maximum likelihood fitting (MLF)
-        soma = 0
-        for p in valores_potenciacao:
-            soma = soma + log(float(p)/float(fit.xmin))
-        alpha_esperado = -1*(1 + len(tabela_potenciacao_temp_ordenada)*(1.0/soma))
-        
-        # Caclula o erro entre alpha e MLF
-        erro = (abs(fit.alpha - alpha_esperado)/fit.alpha)*100
-    
-        #plota gráfico
-        eixo_y = list(range(len(tabela_potenciacao_temp_ordenada)))
-        
-        #CHAMA FUNÇÃO QUE PLOTA FIGURAS
-        plota_figura(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')        
-        
-        #_test_chart(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')       
-        rgb_a = (rgb_a + 50)%255
-        rgb_b = (rgb_b + 10)%255
-        rgb_c = (rgb_c+ 80)%255
-    
-        #armazena os pesos, alpha, MLF e erro no BD
-        resultado = PesosEAlpha(p_grau = pgra , p_betw = pbet, p_close = pclo , alpha = fit.alpha, alphaesp = alpha_esperado, erro = erro)
-        resultado.save()        
-
-    #CHAMA FUNÇÃO QUE SALVA FIGURAS   
-    plota_figura('x','x','x','x','x','x','salva_figura_1','extrator/arquivos/p4_grafico_alphas.png')    
-  
-    #Busca pesos de menor erro e maior valor alpha ( para erro < 1%)
-    corte_erro = 0
-    pesos_selecionados = []
-    while not pesos_selecionados:
-        lista_de_erros = []
-        lista_de_erros = PesosEAlpha.objects.all().filter(erro__lt=corte_erro).order_by('alpha')
-        pesos_selecionados = lista_de_erros.last()
-        corte_erro = corte_erro + 1
-        if pesos_selecionados:
-            corte_erro = corte_erro - 1
-
-    #salvar dados com parÂmetros escolhidos
-    td.p_grau= pesos_selecionados.p_grau 
-    td.p_clos= pesos_selecionados.p_close
-    td.p_bet = pesos_selecionados.p_betw
-    td.save()
-
-    #Monta a Tabela de Indices com o Peso encontrado e salva no BD
-    pgra =  pesos_selecionados.p_grau
-    pbet =   pesos_selecionados.p_betw
-    pclo =  pesos_selecionados.p_close
 
     #CALCULA POTENCIAÇÃO
     tabela_potenciacao_temp = {}
     for vertice in vertices_objs:
         grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
         bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
-        clo_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).closeness_norm
-        potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(pclo)*float(clo_n)
-        #Salva na Tabela Ranking
+        eigen_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).eigenvector_norm
+        potenciacao = float(grau_n) + float(bet_n) + float(eigen_n)
+             
+    #   Salva na Tabela Ranking
         tabela = TabelaRanking.objects.get(vertice_nome__iexact = vertice.node)
         tabela.potenciacao = potenciacao
         tabela.save()    
@@ -1236,48 +1105,156 @@ def calcula_indice(request):
         tabela_potenciacao_ordenada_valores.append(linha.potenciacao)
  
     #Chama função que plota o grafico  
-    plota_figura(eixo_y,tabela_potenciacao_ordenada_valores,'black','x','x','x','plota_e_salva_figura_2','extrator/arquivos/p4_grafico_alpha_selecionado.png')   
+    #plota_figura(eixo_y,tabela_potenciacao_ordenada_valores,'black','x','x','x','plota_e_salva_figura_2','extrator/arquivos/p4_grafico_potenciacao.png')   
 
-    ## FIM ETAPA 3 #######################################################
-    ## GERA RELATÒRIO ####################################################
+    #Faz a regressão linear e calcula alpha da tabela
+    #valores_potenciacao = [valor[1] for valor in tabela_potenciacao_ordenada_valores]  
+    valores_calculo_fit = []
+    for item in tabela_potenciacao_ordenada_valores:
+        if item != 0:
+            valores_calculo_fit.append(item)
+    #print valores_calculo_fit
+  
+    #fit = powerlaw.Fit(valores_calculo_fit, discrete=True)
+    #print fit.xmin
+    #print fit.alpha
+    #fit = powerlaw.Fit(valores_calculo_fit, xmin=0.0226, xmax=2000.0, discrete=True)
+    fit = powerlaw.Fit(valores_calculo_fit, discrete=True)
+
+#         #calcula o MLF dos dados (o quão ajustados estão)
+#         # maximum likelihood fitting (MLF)
+    print fit.alpha
+    print fit.xmin
+    valores_calc = []
+    x = 0
+    for item in tabela_potenciacao_ordenada_valores:
+        if x < 100:
+            valores_calc.append(item)
+            x = x + 1
+    print  valores_calc
+    a = array(valores_calc).reshape(0, 3)
+    #a = array([10,11,9,23,21,11,45,20,11,12]).reshape(-1, 1)
+    kde = KernelDensity(kernel='gaussian', bandwidth=100).fit(a)
+    s = linspace(0,100)
+    e = kde.score_samples(s.reshape(0,3))
+    pylab.plot(s, e)
+    plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #soma = 0
+    #for p in valores_calculo_fit:
+    #    soma = soma + log(float(p)/float(fit.xmin))
+    
+    #alpha_esperado = -1*(1 + len(valores_calculo_fit)*(1.0/soma))  
+    #print alpha_esperado
+
+    # data = valores_calculo_fit
+
+    # fit = powerlaw.Fit(data, discrete=True)
+    # ####
+    # fit.distribution_compare('power_law', 'lognormal')
+    # fig = fit.plot_ccdf(linewidth=3, label='Empirical Data')
+    # fit.power_law.plot_ccdf(ax=fig, color='r', linestyle='--', label='Power law fit')
+    # fit.lognormal.plot_ccdf(ax=fig, color='g', linestyle='--', label='Lognormal fit')
+    # ####
+    # fig.set_ylabel(u"p(X≥x)")
+    # fig.set_xlabel("Word Frequency")
+    # handles, labels = fig.get_legend_handles_labels()
+    # fig.legend(handles, labels, loc=3)
+
+    # figname = 'FigLognormal'
+    # #savefig(figname+'.eps', bbox_inches='tight')
+    # pylab.savefig('extrator/arquivos/teste.png', bbox_inches='tight',  dpi=300)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#     fit = powerlaw.Fit(data, discrete=True)
+
+#     ####
+#     figCCDF = fit.plot_pdf(color='b', linewidth=2)
+#     fit.power_law.plot_pdf(color='b', linestyle='--', ax=figCCDF)
+#     fit.plot_ccdf(color='r', linewidth=2, ax=figCCDF)
+#     fit.power_law.plot_ccdf(color='r', linestyle='--', ax=figCCDF)
+#     ####
+#     figCCDF.set_ylabel(u"p(X),  p(X≥x)")
+#     figCCDF.set_xlabel(r"Word Frequency")
+
+
+
+# # #     ####
+# #     figPDF = powerlaw.plot_pdf(data, color='b')
+# #     x = powerlaw.find_xmin()
+# #     print x
+# #     powerlaw.plot_pdf(data, linear_bins=True, color='r', ax=figPDF)
+# # #         ####
+# #     figPDF.set_ylabel("p(X)")
+# #     figPDF.set_xlabel(r"Word Frequency")
+#     figname = 'FigPDF'
+#     pylab.savefig('extrator/arquivos/teste.png', bbox_inches='tight',  dpi=300)
+    #savefig(figname+'.tiff', bbox_inches='tight', dpi=300)
+    # ## FIM ETAPA 3 #######################################################
+    # ## GERA RELATÒRIO ####################################################
    
-    arq_relatorio.write('RELATÓRIO FINAL - TABELA ÍNDICE\n\n\n')   
-    arq_relatorio.write('ETAPA 1 - DETERMINANDO OS PESOS DAS MÉTRICAS\n')
-    arq_relatorio.write('   - Método: Melhor ajuste à Lei da Potência\n')
-    arq_relatorio.write('   - Entrada: Matriz de pesos-candidato\n')
-    arq_relatorio.write('              Variação: 0.1 à 0.9 em ' + str(var) + '\n')
-    arq_relatorio.write('              Restrição: soma dos pesos = 1\n\n')
-    arq_relatorio.write('   - Ajuste à lei de potência\n')
-    arq_relatorio.write('              Dados: Exclui os ' + str(corte*100) + '% últimos vértices - ' +  str(numero_vertices_excluidos) + ' vértices.\n')
-    arq_relatorio.write('              Cálculo de Alpha: Métodos dos mínimos quadrados\n')
-    arq_relatorio.write('              Alpha de ajuste:: Maximun Likelihood fitting\n')
-    arq_relatorio.write('              Erro = |alpha de ajuste - alpha| \n\n')
-    arq_relatorio.write('   - Resultado\n')
-    arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
-    lista_de_alphas = PesosEAlpha.objects.all().order_by('alpha')
-    for la in lista_de_alphas:
-        arq_relatorio.write('              ' + str(la.alpha) + ' / ' + str(la.alphaesp) + ' / ' + str(la.erro) + ' / ' + str(la.p_grau) + ' ' + str(la.p_betw) + ' ' + str(la.p_close) + ' \n')
-    arq_relatorio.write('\n              Corte: erro > ' + str(corte_erro) + ' % \n\n')
-    arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
-    for li in lista_de_erros:
-        arq_relatorio.write('              ' + str(li.alpha) + ' / ' + str(li.alphaesp) + ' / ' + str(li.erro) + ' / ' + str(li.p_grau) + ' ' + str(li.p_betw) + ' ' + str(li.p_close) + ' \n')
-    arq_relatorio.write('\n              Maior alpha: ' + str(pesos_selecionados.alpha) + ' \n')
-    arq_relatorio.write('              Pesos selecionados: Graus: ' + str(pesos_selecionados.p_grau) + ' ; Betweeness: ' + str(pesos_selecionados.p_betw) + ' ; Closeness: ' + str(pesos_selecionados.p_close) + ' \n\n')
-    arq_relatorio.write('ETAPA 2 - TABELA RANKING\n')
-    arq_relatorio.write('   palavra - índice\n\n')
-    for linha in tabela_potenciacao_ordenada:
-        arq_relatorio.write(linha.vertice_nome.encode('utf-8') + ' - ' + str(linha.potenciacao) + '\n')
+    # arq_relatorio.write('RELATÓRIO FINAL - TABELA ÍNDICE\n\n\n')   
+    # arq_relatorio.write('ETAPA 1 - DETERMINANDO OS PESOS DAS MÉTRICAS\n')
+    # arq_relatorio.write('   - Método: Melhor ajuste à Lei da Potência\n')
+    # arq_relatorio.write('   - Entrada: Matriz de pesos-candidato\n')
+    # arq_relatorio.write('              Variação: 0.1 à 0.9 em ' + str(var) + '\n')
+    # arq_relatorio.write('              Restrição: soma dos pesos = 1\n\n')
+    # arq_relatorio.write('   - Ajuste à lei de potência\n')
+    # arq_relatorio.write('              Dados: Exclui os ' + str(corte*100) + '% últimos vértices - ' +  str(numero_vertices_excluidos) + ' vértices.\n')
+    # arq_relatorio.write('              Cálculo de Alpha: Métodos dos mínimos quadrados\n')
+    # arq_relatorio.write('              Alpha de ajuste:: Maximun Likelihood fitting\n')
+    # arq_relatorio.write('              Erro = |alpha de ajuste - alpha| \n\n')
+    # arq_relatorio.write('   - Resultado\n')
+    # arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
+    # lista_de_alphas = PesosEAlpha.objects.all().order_by('alpha')
+    # for la in lista_de_alphas:
+    #     arq_relatorio.write('              ' + str(la.alpha) + ' / ' + str(la.alphaesp) + ' / ' + str(la.erro) + ' / ' + str(la.p_grau) + ' ' + str(la.p_betw) + ' ' + str(la.p_eigene) + ' \n')
+    # arq_relatorio.write('\n              Corte: erro > ' + str(corte_erro) + ' % \n\n')
+    # arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
+    # for li in lista_de_erros:
+    #     arq_relatorio.write('              ' + str(li.alpha) + ' / ' + str(li.alphaesp) + ' / ' + str(li.erro) + ' / ' + str(li.p_grau) + ' ' + str(li.p_betw) + ' ' + str(li.p_eigene) + ' \n')
+    # arq_relatorio.write('\n              Maior alpha: ' + str(pesos_selecionados.alpha) + ' \n')
+    # arq_relatorio.write('              Pesos selecionados: Graus: ' + str(pesos_selecionados.p_grau) + ' ; Betweeness: ' + str(pesos_selecionados.p_betw) + ' ; eigenvector: ' + str(pesos_selecionados.p_eigene) + ' \n\n')
+    # arq_relatorio.write('ETAPA 2 - TABELA RANKING\n')
+    # arq_relatorio.write('   palavra - índice\n\n')
+    # for linha in tabela_potenciacao_ordenada:
+    #     arq_relatorio.write(linha.vertice_nome.encode('utf-8') + ' - ' + str(linha.potenciacao) + '\n')
 
-    #fecha arquivos
-    arq_relatorio.close()
-    arq_tabela_potenciacao.close()
+    # #fecha arquivos
+    # arq_relatorio.close()
+    # arq_tabela_potenciacao.close()
     
-    rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
+    # rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
     
-     #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    #  #finaliza tempo
+    # tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
     
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4ci':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
 
 
 def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
@@ -1323,7 +1300,7 @@ def selecionar_temas(request):
     arq_relatorio.write('\n\n\n')
     arq_relatorio.write('ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS')
     arq_relatorio.write('\n\n')
-    arq_relatorio.write('- Métrica: ' + str(dados.p_grau) + '%' + ' graus; '+ str(dados.p_bet) + '%' + ' betwenness; '+ str(dados.p_clos) + '%' + ' closeness;' + '\n' ) 
+    arq_relatorio.write('- Métrica: ' + str(dados.p_grau) + '%' + ' graus; '+ str(dados.p_bet) + '%' + ' betwenness; '+ str(dados.p_eigen) + '%' + ' eigenvector;' + '\n' ) 
     
     #calculo da frequencia absoluta de corte  
     f = int(float(parametros.f_corte/100)*len(tabela_potenciacao)) 
@@ -1363,7 +1340,9 @@ def selecionar_temas(request):
                 break        
             
             #calcula distancia relativa
+            
             dr = 100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)
+           
             distancias_relativas_novo.append(dr)
             label.append(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
             arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
@@ -2133,7 +2112,7 @@ def ajustar_parametro(request,opcao):
         check_b = 'checked'
     else:
         check_b = 'off'
-    if parametros.check_clos == 'sim':
+    if parametros.check_eigen == 'sim':
         check_c = 'checked'
     else:
         check_c = 'off'        
@@ -2207,11 +2186,11 @@ def ajustar_parametro(request,opcao):
             parametros.check_betw = 'nao'
             check_b = 'off' 
         
-        if 'clos' in checkeds:
-            parametros.check_clos = 'sim'
+        if 'eigen' in checkeds:
+            parametros.check_eigen = 'sim'
             check_c = 'checked'
         else:
-            parametros.check_clos = 'nao'
+            parametros.check_eigen = 'nao'
             check_c = 'off'
         parametros.save()                    
 
@@ -2224,7 +2203,7 @@ def ajustar_parametro(request,opcao):
                     check_b = 'checked'
         else:
             check_b = 'off'
-        if parametros.check_clos == 'sim':
+        if parametros.check_eigen == 'sim':
                     check_c = 'checked'
         else:
             check_c = 'off'        
@@ -2477,3 +2456,280 @@ def executar_passos_2_a_5(request):
     tempo_total =  ("{0:.4f}".format(time.time() - inicio))
 
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p2a5':tempo_total,'mostra_res':'mostra_res'})
+
+
+# def calcula_indice(request):
+#     #inicia cronometro
+#     inicio = time.time()
+    
+#     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
+#     matplotlib.use('agg')
+    
+#     #Abre arquivo de dados a serem lidos
+#     tabela_grau = codecs.open("extrator/arquivos/p4_tabela_graus.txt").readlines()
+#     tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt").readlines()
+#     tabela_eigenvector = codecs.open("extrator/arquivos/p4_tabela_eigenvector.txt").readlines()
+    
+#     #Carrega dados do BD
+#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    
+#     vertices_objs = ListaVertices.objects.all()
+
+#     tabela_ranking_completa = TabelaRanking.objects.all()
+#     try:
+#         td =  DadosSelecaoTemas.objects.get(id=1)                      
+#     except:
+#         DadosSelecaoTemas.objects.create(id=1,p_grau=0,p_bet=0,p_eigen=0)
+#         td =  DadosSelecaoTemas.objects.get(id=1)
+           
+#     #Inicializa arquivos a serem escritos
+#     arq_tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt", 'w', 'utf-8')    
+#     arq_matriz_pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt", 'w', 'utf-8')
+#     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt", 'w')   
+   
+#     #Prepara o BD para receber os novos pesos
+#     pesos = PesosEAlpha.objects.all()
+#     pesos.delete()
+    
+#     #gera matriz de pesos para cada caso
+#     #var = 0.05
+#     #if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim': 
+       
+#     #    for a1 in range(0,20):
+#     #        for a2 in range(0,20):
+#     #            a3 = 20 - a1 - a2                
+#     #            arq_matriz_pesos.write(str(a1*var) + ' ')
+#     #            arq_matriz_pesos.write(str(a2*var) + ' ')
+#     #            arq_matriz_pesos.write(str(a3*var) + ' ')
+#     #            arq_matriz_pesos.write('\n')
+#     #    arq_matriz_pesos.close()
+    
+#     #gera matriz de pesos para cada caso
+#     var = 0.1
+#     if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim': 
+       
+#         for a1 in range(0,12):
+#             for a2 in range(0,12):
+#                 a3 = 10 - a1 - a2
+#                 if a3 >= 0 and a1 != 0 and a2 != 0 and a3 != 0:
+#                     arq_matriz_pesos.write(str(a1*var) + ' ')
+#                     arq_matriz_pesos.write(str(a2*var) + ' ')
+#                     arq_matriz_pesos.write(str(a3*var) + ' ')
+#                     arq_matriz_pesos.write('\n')
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_eigen == 'nao':
+#         arq_matriz_pesos.write(str(1.0) + ' ' + str(0.0) + ' ' + str(0.0) + '\n')
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_eigen == 'nao': 
+#         arq_matriz_pesos.write(str(0.0) + ' ' + str(1.0) + ' ' + str(0.0) + '\n')
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'nao' and parametros.check_betw == 'nao' and parametros.check_eigen == 'sim':
+#         arq_matriz_pesos.write(str(0.0) + ' ' + str(0.0) + ' ' + str(1.0) + '\n')
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'nao':
+#         for a1 in range(1,10):
+#             p1 = a1*var
+#             p2 = 1 - p1
+#             arq_matriz_pesos.write(str(p1) + ' ' + str(p2) + ' ' + str(0.0) + '\n')       
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_eigen == 'sim':
+#         for a1 in range(1,10):
+#             p1 = a1*var
+#             p2 = 1 - p1
+#             arq_matriz_pesos.write(str(p1) + ' ' + str(0.0) + ' ' + str(p2) + '\n')       
+#         arq_matriz_pesos.close()
+    
+#     if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim':
+#         for a1 in range(1,10):
+#             p1 = a1*var
+#             p2 = 1 - p1
+#             arq_matriz_pesos.write(str(0.0) + ' ' + str(p1) + ' ' + str(p2) + '\n')       
+#         arq_matriz_pesos.close()
+    
+#     ## FIM ETAPA 2 ####################################################
+#     ## ETAPA 3: SELEÇÃO DOS PESOS DAS MÉTRICAS ########################
+
+#     # abre matriz de pesos
+#     pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt").readlines()
+
+#     #inicializa matlibplot para duas figuras e cores
+#     rgb_a=5
+#     rgb_b=94
+#     rgb_c=200
+
+#     #calculo de alpha para cada conjunto de peso
+#     for peso in pesos:
+#         pgra = float(peso.split(' ')[0])
+#         pbet =  float(peso.split(' ')[1])
+#         peigen = float(peso.split(' ')[2])
+
+#         # CALCULA POTENCIAÇÃO
+#         tabela_potenciacao_temp = {}
+#         for vertice in vertices_objs:
+#             grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
+#             bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
+#             eigen_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).eigenvector_norm
+#             potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(peigen)*float(eigen_n)
+#             tabela_potenciacao_temp[vertice.node] = potenciacao
+        
+#         # Cria uma tabela vertice(nome)-indice
+#         tabela_potenciacao_temp_ordenada = {}
+#         tabela_potenciacao_temp_ordenada = sorted(tabela_potenciacao_temp.items(),key=lambda x: x[1], reverse=True)
+
+#         # exclui os 5% ultimos temas quando pertinente (n>0)
+#         corte = 0.00
+#         numero_vertices_excluidos = int(corte*len(tabela_potenciacao_temp_ordenada))
+#         if numero_vertices_excluidos > 0:            
+#             del tabela_potenciacao_temp_ordenada[-numero_vertices_excluidos:]
+        
+#         #exclui vertice de indice zero       
+#         flag = 'on'
+#         while flag == 'on':        
+#             for i,v in enumerate(tabela_potenciacao_temp_ordenada):
+#                 flag = 'off'
+#                 if v[1] == 0.0:
+#                     flag = 'on'
+#             if flag == 'on':
+#                 del tabela_potenciacao_temp_ordenada[-1:]
+
+#         #Faz a regressão linear e calcula alpha da tabela
+#         valores_potenciacao = [valor[1] for valor in tabela_potenciacao_temp_ordenada]  
+#         print valores_potenciacao      
+#         fit = powerlaw.Fit(valores_potenciacao, discrete=True)
+#         print fit.xmin
+
+#         data = valores_potenciacao
+#         ####
+#         figPDF = powerlaw.plot_pdf(data, color='b')
+#         powerlaw.plot_pdf(data, linear_bins=True, color='r', ax=figPDF)
+#         ####
+#         figPDF.set_ylabel("p(X)")
+#         figPDF.set_xlabel(r"Word Frequency")
+#         figname = 'FigPDF'
+#         pylab.savefig('extrator/arquivos/teste.png', bbox_inches='tight',  dpi=300)
+#         #savefig(figname+'.tiff', bbox_inches='tight', dpi=300)
+
+        
+
+       
+#         #calcula o MLF dos dados (o quão ajustados estão)
+#         # maximum likelihood fitting (MLF)
+#         soma = 0
+#         for p in valores_potenciacao:
+#             soma = soma + log(float(p)/float(fit.xmin))
+#         alpha_esperado = -1*(1 + len(tabela_potenciacao_temp_ordenada)*(1.0/soma))
+        
+#         # Caclula o erro entre alpha e MLF
+#         erro = (abs(fit.alpha - alpha_esperado)/fit.alpha)*100
+    
+#         #plota gráfico
+#         eixo_y = list(range(len(tabela_potenciacao_temp_ordenada)))
+        
+#         #CHAMA FUNÇÃO QUE PLOTA FIGURAS
+#         plota_figura(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')        
+        
+#         #_test_chart(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')       
+#         rgb_a = (rgb_a + 50)%255
+#         rgb_b = (rgb_b + 10)%255
+#         rgb_c = (rgb_c+ 80)%255
+    
+#         #armazena os pesos, alpha, MLF e erro no BD
+#         resultado = PesosEAlpha(p_grau = pgra , p_betw = pbet, p_eigene = peigen , alpha = fit.alpha, alphaesp = alpha_esperado, erro = erro)
+#         resultado.save()        
+
+#     #CHAMA FUNÇÃO QUE SALVA FIGURAS   
+#     plota_figura('x','x','x','x','x','x','salva_figura_1','extrator/arquivos/p4_grafico_alphas.png')    
+  
+#     #Busca pesos de menor erro e maior valor alpha ( para erro < 1%)
+#     corte_erro = 0
+#     pesos_selecionados = []
+#     while not pesos_selecionados:
+#         lista_de_erros = []
+#         lista_de_erros = PesosEAlpha.objects.all().filter(erro__lt=corte_erro).order_by('alpha')
+#         pesos_selecionados = lista_de_erros.last()
+#         corte_erro = corte_erro + 1
+#         if pesos_selecionados:
+#             corte_erro = corte_erro - 1
+
+#     #salvar dados com parÂmetros escolhidos
+#     td.p_grau= pesos_selecionados.p_grau 
+#     td.p_eigen= pesos_selecionados.p_eigene
+#     td.p_bet = pesos_selecionados.p_betw
+#     td.save()
+
+#     #Monta a Tabela de Indices com o Peso encontrado e salva no BD
+#     pgra =  pesos_selecionados.p_grau
+#     pbet =   pesos_selecionados.p_betw
+#     peigen =  pesos_selecionados.p_eigene
+
+#     #CALCULA POTENCIAÇÃO
+#     tabela_potenciacao_temp = {}
+#     for vertice in vertices_objs:
+#         grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
+#         bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
+#         eigen_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).eigenvector_norm
+#         potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(peigen)*float(eigen_n)
+             
+#         #Salva na Tabela Ranking
+#         tabela = TabelaRanking.objects.get(vertice_nome__iexact = vertice.node)
+#         tabela.potenciacao = potenciacao
+#         tabela.save()    
+
+#     #salva a tabela de indice em um arquivo em ordem alfabética e cria figura
+#     tabela_potenciacao_ordenada = TabelaRanking.objects.all().order_by('-potenciacao')
+#     tabela_potenciacao_ordenada_valores = []
+#     eixo_y = list(range(len(tabela_potenciacao_ordenada)))   
+    
+#     for linha in tabela_potenciacao_ordenada:        
+#         index = ListaVertices.objects.get(node__exact=linha.vertice_nome).index
+#         arq_tabela_potenciacao.write(str(index) + ' ' + linha.vertice_nome + ' ' + str(linha.potenciacao) + ' ' + '\n')        
+#         tabela_potenciacao_ordenada_valores.append(linha.potenciacao)
+ 
+#     #Chama função que plota o grafico  
+#     plota_figura(eixo_y,tabela_potenciacao_ordenada_valores,'black','x','x','x','plota_e_salva_figura_2','extrator/arquivos/p4_grafico_alpha_selecionado.png')   
+
+#     ## FIM ETAPA 3 #######################################################
+#     ## GERA RELATÒRIO ####################################################
+   
+#     arq_relatorio.write('RELATÓRIO FINAL - TABELA ÍNDICE\n\n\n')   
+#     arq_relatorio.write('ETAPA 1 - DETERMINANDO OS PESOS DAS MÉTRICAS\n')
+#     arq_relatorio.write('   - Método: Melhor ajuste à Lei da Potência\n')
+#     arq_relatorio.write('   - Entrada: Matriz de pesos-candidato\n')
+#     arq_relatorio.write('              Variação: 0.1 à 0.9 em ' + str(var) + '\n')
+#     arq_relatorio.write('              Restrição: soma dos pesos = 1\n\n')
+#     arq_relatorio.write('   - Ajuste à lei de potência\n')
+#     arq_relatorio.write('              Dados: Exclui os ' + str(corte*100) + '% últimos vértices - ' +  str(numero_vertices_excluidos) + ' vértices.\n')
+#     arq_relatorio.write('              Cálculo de Alpha: Métodos dos mínimos quadrados\n')
+#     arq_relatorio.write('              Alpha de ajuste:: Maximun Likelihood fitting\n')
+#     arq_relatorio.write('              Erro = |alpha de ajuste - alpha| \n\n')
+#     arq_relatorio.write('   - Resultado\n')
+#     arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
+#     lista_de_alphas = PesosEAlpha.objects.all().order_by('alpha')
+#     for la in lista_de_alphas:
+#         arq_relatorio.write('              ' + str(la.alpha) + ' / ' + str(la.alphaesp) + ' / ' + str(la.erro) + ' / ' + str(la.p_grau) + ' ' + str(la.p_betw) + ' ' + str(la.p_eigene) + ' \n')
+#     arq_relatorio.write('\n              Corte: erro > ' + str(corte_erro) + ' % \n\n')
+#     arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
+#     for li in lista_de_erros:
+#         arq_relatorio.write('              ' + str(li.alpha) + ' / ' + str(li.alphaesp) + ' / ' + str(li.erro) + ' / ' + str(li.p_grau) + ' ' + str(li.p_betw) + ' ' + str(li.p_eigene) + ' \n')
+#     arq_relatorio.write('\n              Maior alpha: ' + str(pesos_selecionados.alpha) + ' \n')
+#     arq_relatorio.write('              Pesos selecionados: Graus: ' + str(pesos_selecionados.p_grau) + ' ; Betweeness: ' + str(pesos_selecionados.p_betw) + ' ; eigenvector: ' + str(pesos_selecionados.p_eigene) + ' \n\n')
+#     arq_relatorio.write('ETAPA 2 - TABELA RANKING\n')
+#     arq_relatorio.write('   palavra - índice\n\n')
+#     for linha in tabela_potenciacao_ordenada:
+#         arq_relatorio.write(linha.vertice_nome.encode('utf-8') + ' - ' + str(linha.potenciacao) + '\n')
+
+#     #fecha arquivos
+#     arq_relatorio.close()
+#     arq_tabela_potenciacao.close()
+    
+#     rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
+    
+#      #finaliza tempo
+#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4ci':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_indice'})

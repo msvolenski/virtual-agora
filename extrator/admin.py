@@ -19,17 +19,17 @@ class DadosPreprocAdmin(admin.ModelAdmin):
   list_display = ['flag_completo','flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
 
 class TabelaRankingAdmin(admin.ModelAdmin):
-  list_display = ['vertice_nome','vertice_numero','grau', 'grau_norm', 'betweenness','betweenness_norm','closeness','closeness_norm', 'potenciacao']
+  list_display = ['vertice_nome','vertice_numero','grau', 'grau_norm', 'betweenness','betweenness_norm','eigenvector','eigenvector_norm', 'potenciacao']
 
 class ListaDeAdjacenciasAdmin(admin.ModelAdmin):
   list_display = ['vertice_i','vertice_f','peso']
 
 
 class DadosSelecaoTemasAdmin(admin.ModelAdmin):
-  list_display = ['p_grau','p_bet','p_clos']
+  list_display = ['p_grau','p_bet','p_eigen']
 
 class PesosEAlphaAdmin(admin.ModelAdmin):
-  list_display = ['alpha','alphaesp','erro','p_grau','p_betw','p_close']
+  list_display = ['alpha','alphaesp','erro','p_grau','p_betw','p_eigene']
 
 class TemasNewAdmin(admin.ModelAdmin):
   list_display = ['tema','irt','irt_p']
@@ -47,7 +47,7 @@ class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
 
 class ParametrosDeAjusteAdmin(admin.ModelAdmin):
-  list_display = ['check_grau','check_betw','check_clos','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
+  list_display = ['check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
 
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']
