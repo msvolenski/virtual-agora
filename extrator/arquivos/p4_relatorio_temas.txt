@@ -1,80 +1,19 @@
 RELATÓRIO FINAL - TEMAS
 
 
-ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS
+PARÂMETROS DE CLUSTERIZAÇÃO
 
-- Métrica: 0.0% graus; 0.0% betwenness; 1.0% eigenvector;
-- Parâmetros: delta: 3%; f: 3% dos nós totais (13 nós)
-- Temas pré-selecionados(17):
+- Faixa de divisão do histograma: 0.5
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (xxde xx)
 
-político
-marielle
-franco
-af
-morte
-país
-gente
-execução
-absurdo
-luta
-tá
-velho
-novo
-lula
-total
-brasil
-intervenção
+CLUSTERS SELECIONADOS
 
+Cluster 1
+12 político 3.0
 
-ETAPA 2: SELEÇÃO FINAL DOS TEMAS
+Cluster 2
+2426 fedly 0.669981373742
+1458 caixa 0.588797593958
+1 politicar 0.567144304799
+174 brasil 0.546037218789
 
-- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
-- Parâmetro: fb(frequência mínima de bigramas): 50% do total de bigramas
-- Resultados: 
-
-Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
-
-político -> af - 1/3 - 33.3333333333%
-político -> morte - 1/7 - 14.2857142857%
-político -> país - 1/6 - 16.6666666667%
-político -> absurdo - 1/2 - 50.0%
-político -> luta - 1/1 - 100.0%
-político -> tá - 1/2 - 50.0%
-político -> velho - 1/2 - 50.0%
-político -> total - 1/1 - 100.0%
-político -> intervenção - 1/1 - 100.0%
-marielle -> franco - 5/5 - 100.0%
-af -> af - 2/3 - 66.6666666667%
-morte -> marielle - 3/11 - 27.2727272727%
-país -> execução - 1/4 - 25.0%
-país -> brasil - 2/5 - 40.0%
-gente -> político - 1/52 - 1.92307692308%
-execução -> político - 2/52 - 3.84615384615%
-execução -> marielle - 1/11 - 9.09090909091%
-absurdo -> político - 1/52 - 1.92307692308%
-velho -> político - 1/52 - 1.92307692308%
-lula -> novo - 1/2 - 50.0%
-
-- Temas selecionados(8):
-
-político
-marielle
-morte
-país
-gente
-execução
-lula
-brasil
-
-
-- Temas excluídos(9):
-
-absurdo
-luta
-tá
-velho
-total
-intervenção
-franco
-af
-novo

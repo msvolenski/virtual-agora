@@ -151,7 +151,8 @@ class ParametrosDeAjuste(models.Model):
     check_grau = models.CharField('graus',default='sim', max_length=10)
     check_betw = models.CharField('betweenness',default='sim', max_length=10)
     check_eigen = models.CharField('eigenvector',default='sim', max_length=10)
-
+    faixa_histo = models.FloatField('Faixa',default=0.2)
+    exc_cluster = models.IntegerField('Exclusao_de_cluster')
 
 class CorrigePalavra(models.Model):
     palavra_correta = models.TextField('palavra_correta')

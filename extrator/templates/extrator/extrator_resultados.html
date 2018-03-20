@@ -181,11 +181,11 @@
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
-                    <div class="titulo_ajuste">Distância relativa mínima entre temas-candidato </div>
+                    <div class="titulo_ajuste">Faixa de intervalo do Histograma</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
-                            delta =
-                            <input style="width:50px" type="number" step="1" name="valor_delta" value={{valordelta}} size="1">                            %
+                            faixa =
+                            <input style="width:80px" type="number" step="any" name="faixa_histo" value={{xxxx}} size="1", min="0" max="3">                            
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
