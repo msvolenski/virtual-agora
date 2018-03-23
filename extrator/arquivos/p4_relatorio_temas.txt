@@ -4,16 +4,50 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.5
-- Critério de exclusão do cluster: posssuir 10% dos nós totais (xxde xx)
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (214.8 de 2148)
 
 CLUSTERS SELECIONADOS
 
-Cluster 1
-12 político 3.0
+TEMAS PRÉ-SELECIONADOS
 
-Cluster 2
-2426 fedly 0.669981373742
-1458 caixa 0.588797593958
-1 politicar 0.567144304799
-174 brasil 0.546037218789
+
+
+SELEÇÃO FINAL DOS TEMAS
+
+- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
+- Parâmetro: fb(frequência mínima de bigramas): 50% do total de bigramas
+- Resultados: 
+
+Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
+
+político -> político - 1/485 - 0.20618556701%
+político -> lula - 1/153 - 0.653594771242%
+político -> stf - 4/69 - 5.79710144928%
+político -> poder - 3/40 - 7.5%
+político -> justiça - 2/23 - 8.69565217391%
+lula -> político - 2/485 - 0.412371134021%
+lula -> stf - 6/69 - 8.69565217391%
+lula -> poder - 11/40 - 27.5%
+lula -> julgamento - 7/40 - 17.5%
+lula -> justiça - 11/23 - 47.8260869565%
+stf -> lula - 3/153 - 1.96078431373%
+poder -> político - 1/485 - 0.20618556701%
+julgamento -> lula - 13/153 - 8.49673202614%
+julgamento -> stf - 1/69 - 1.44927536232%
+prisão -> lula - 46/153 - 30.0653594771%
+justiça -> político - 3/485 - 0.618556701031%
+justiça -> justiça - 1/23 - 4.34782608696%
+
+- Temas selecionados(7):
+
+político
+lula
+stf
+poder
+julgamento
+prisão
+justiça
+
+
+- Temas excluídos(0):
 

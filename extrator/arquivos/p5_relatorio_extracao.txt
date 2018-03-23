@@ -1,14 +1,1092 @@
-   RELATÓRIO DE EXTRAÇÃO
+RELATORIO DE EXTRACAO 
 
+Tema: político
 
-  tema   /   frase   /   repetições   /   sentença (texto original)
+protofrase / frase / peso / corte 
 
-  político  /  1 clichê dizer político dizer marcia tiburi  /  4  /  ' hoje é 1 clichê dizer que a política é algo do mal ' , diz marcia tiburi
-  político  /  @estadao aproveitar morte guerreiro político  /  4  /  @estadao aproveitando a morte de uma guerreira para fazer política
-  marielle  /  indignação revolto tomar conta país execução marielle  /  1  /  indignação e revolta tomam conta do país com execução de marielle
-  morte  /  tema nao convergiu  /  1  /  null - nao convergiu
-  país  /  indignação revolto tomar conta país execução marielle  /  5  /  indignação e revolta tomam conta do país com execução de marielle
-  gente  /  gente branco falar marielle levar político meio  /  5  /  gente branca falando sobre o caso da marielle e levando política no meio
-  execução  /  indignação revolto tomar conta país execução marielle  /  4  /  indignação e revolta tomam conta do país com execução de marielle
-  lula  /  lula recurso adicional 2ª instância  /  5  /  lula terá recurso adicional na 2ª instância
-  brasil  /  entender atual situação brasil candidatura prisão execução droga sistema prisional  /  2  /  pra entender a atual situação do brasil , candidaturas , prisões , execuções , drogas , sistema prisional
+1430 saber futebol político judiciário loteria caixa surpreso mortadela 7 4 coxa grande mídia  /   sabemos que futebol , política , judiciário e loteria são caixinhas de surpresa , mas hoje foi mortadelas 7 x 4 coxinhas / grande mídia  /  40.0  /  0.0
+1450 saber futebol político judiciário loteria caixa surpreso mortadela 7 4 coxa grande mídia  /   todos sabemos que futebol , política judiciário e loteria são uma caixinha de surpresa , mas hoje foi mortadelas 7 x 4 coxinhas / grande mídia  /  40.0  /  0.0
+525 amo vir comer casa tio começar falar político religião  /   eu amo vir comer na casa da minha tia , até eles começarem a falar de política / religião  /  39.0  /  6.0
+849 aula administração falar político gosto entender nado  /   aula de administração falando sobre política gosto muito e não entendo nada  /  36.0  /  4.0
+167 gosto discutir político religião atiçar vez resistir querer resistir  /   não gosto de discutir política e religião , mas me atiçam e as vezes não resisto e nem quero resistir  /  36.0  /  6.0
+900 suportar gente falar político saber falar  /   eu não suporto gente falando de política sem sequer saber do que ta falando  /  35.0  /  3.0
+299 maluco bar falar político saber tá falar  /   maluco aqui no bar falando de política , sabe nem o que tá falando k  /  35.0  /  4.0
+1361 odiar falar político dar vontade sair dar voador pé peito negro  /   odeio falar de política por aqui , mas dá vontade de sair dando umas voadora de dois pé no peito de nego  /  35.0  /  8.0
+1105 alugar palanque falar político partido bbb esconder atrás jogo  /   aluga um palanque pra você falar de política e partidos , isso aqui é bbb , para de se esconder atrás de um jogo  /  34.0  /  6.0
+27 discutir político facebook  /   não discuto mais política no facebook  /  31.0  /  0.0
+792 gente mínimo instrução conhecimento discutir político facebook  /   gente que não tem o mínimo de instrução e conhecimento , discutindo política no facebook  /  31.0  /  4.0
+1459 prometer falar político  /   — prometi não falar sobre política no tt  /  30.0  /  1.0
+541 falar competência falar político  /   era p falarmos da competência , mas falamos de política  /  30.0  /  2.0
+582 mãe discutir político ficar fudida  /   minha mãe quer discutir política comigo , fica logo fudida  /  30.0  /  2.0
+632 aguentar tio falar político  /   não aguento mais meu tio falando de política  /  30.0  /  2.0
+1398 pai falar político engraçado  /   meu pai falando de política é muito engraçado k  /  30.0  /  2.0
+1501 perceber precisar falar político  /   vocês percebem por que precisamos falar de política  /  30.0  /  2.0
+478 dhra mina de12 falar político  /   k dhra é essas mina de12 falando sobre política  /  30.0  /  3.0
+636 namoral meuita engraçado falar político  /   namoral meuita engraçado eu falando de política  /  30.0  /  3.0
+676 lugar falar político deus defenderay  /   em todo lugar que eu vou , estão falando de política deus me defenderay  /  30.0  /  3.0
+784 15 ano idade falar político  /   15 anos de idade e não para de falar de política  /  30.0  /  3.0
+361 yuri falar político opinião mudar kakaksjks  /   eu e o yuri falando sobre política , como se nossa opinião mudasse algo kakaksjks  /  30.0  /  4.0
+797 * * * começar falar político  /   eu com a * * * quando começava a falar de política  /  30.0  /  4.0
+1172 pegar post falar político assunto polêmico  /   pegue um post falando de política ou qualquer assunto polêmico  /  30.0  /  4.0
+1207 guigui malabarismo limão alice falar político  /   guigui fazendo malabarismo com limão e alice falando de política  /  30.0  /  4.0
+1362 twitter legal pessoal entender falar político  /   twitter era legal quando só tinha o pessoal que se entende e não falava de política  /  30.0  /  4.0
+672 aproveitar falar político gostar dizer partido stfvergonhanacional  /   aproveitando que estamos falando de política , gostaria de dizer que sou um bom partido #stfvergonhanacional  /  30.0  /  5.0
+1212 começar falar político coisa vontade dar block  /   quando tu começa a falar de política , entre outras coisas , da vontade de dar block  /  30.0  /  5.0
+17 puta merda guri quarto ficar falar político bolsominions  /   puta merda as duas gurias do quarto só ficam falando de política e ainda são bolsominions  /  30.0  /  6.0
+113 nado dar nojo cria falar político influenciado televisão  /   nada me dá mais nojo que cria falando de política , todos influenciados pela televisão  /  30.0  /  6.0
+232 mundo falar político perder 10 hora ficar juri  /   todo mundo falando de política , o que eu perdi nas 10 horas que fiquei no juri  /  30.0  /  6.0
+1529 tô segurar dar block pessoa falar político tl  /   tô me segurando pra não dar block em algumas pessoas q estão falando de política na minha tl  /  30.0  /  6.0
+1169 povo falar político aí menino dizer país pessoa nojento  /   hoje tinha um povo falando sobre política , daí a menina disse que o país está assim , porque as pessoas são nojentas  /  30.0  /  7.0
+881 pessoa calmo dar caro colega retardado começar discutir político meio aula  /   sou uma pessoa muito calma pra não dar na cara de uns colegas retardados que começam a discutir política no meio da aula  /  30.0  /  8.0
+343 deixar povo perguntar putaria gente deixar falar político ver  /   por isso que vocês tem que deixar o povo perguntar sobre putaria gente , vai deixar falar de política veja bem  /  30.0  /  9.0
+1104 parar falar político twitter coisa chato cacete deixa país explodir tchau  /   eu vou parar de falar de política no meu twitter , coisa chata do cacete , deixa o país explodir , to nem ai tchau  /  30.0  /  9.0
+1559 ficar ver tv pessoal ficar falar político ver série ganho  /   n da p ficar vendo tv se o pessoal fica falando de política vou ver minha série que eu ganho mais  /  30.0  /  10.0
+405 discutir político  /   não discuto política  /  27.0  /  0.0
+567 discutir político  /   até tu discutir política  /  27.0  /  0.0
+500 irmão discutir político  /   o que é meus irmãos discutindo por política k  /  27.0  /  1.0
+1128 primo discutir político violência  /   meus primos , discutindo política , violência  /  27.0  /  2.0
+4 discutir político escola 5 minuto  /   " eu não vou discutir política na escola " 5 minutos depois  /  27.0  /  3.0
+648 hora discutir político mirielli senhor  /   hora dessa eu discutindo sobre política com mirielli , senhor  /  27.0  /  3.0
+684 discutir político mentalmente pessoa discordar  /   eu discutindo política mentalmente com outra pessoa que discorda de mim  /  27.0  /  3.0
+1333 bolsomini casa querer discutir político  /   um bolsomini dentro daqui de casa querendo discutir política comigo  /  27.0  /  3.0
+8 tá chato discutir político galera grupo  /   tá chato discutir política com a galera do grupo  /  27.0  /  4.0
+120 vir discutir político ônibus sentir falto  /   hoje viemos discutindo sobre política no ônibus senti sua falta  /  27.0  /  4.0
+532 discutir político assunto polêmico religião futebol  /   eu não discuto mais política , só assuntos não polêmicos como religião e futebol  /  27.0  /  4.0
+718 discutir político mundo gente votar bolsonaro  /   discuto por política sim , que mundo estamos ontem tem gente que ainda vai votar no bolsonaro  /  27.0  /  4.0
+99 pessoa poder usar tempo gastar discutir político dormir  /   o pessoas podiam usar o tempo que gastam discutindo política pra dormir  /  27.0  /  6.0
+472 mina falar fala hora discutir político brota inferno  /   eis que a mina nem falar contigo fala , mas na hora de discutir política brota do inferno  /  27.0  /  6.0
+658 preço justo pago discutir político governar por+os mau  /   o preço que um justo paga por não discutir sobre política é ser governado pelos maus  /  27.0  /  6.0
+743 adorar gente vir discutir político simples argumento funcionar  /   adoro gente que vem discutir política com o simples argumento de que " não funciona " k  /  27.0  /  6.0
+1310 discutir político família mó dahora tô meio puta  /   discutindo política com a família k mó dahora mas tô meio puta  /  27.0  /  6.0
+902 ficar tão feliz saber pessoa vida discutir político pai  /   fico tão feliz em saber que tenho pelo menos uma pessoa na minha vida pra discutir sobre política ( no caso , meu pai )  /  27.0  /  7.0
+1257 discutir político querer tomar banho gastar resto onda dormir  /   ja discuti tanto política hoje que só quero tomar um banho e gastar o resto da onda dormindo  /  27.0  /  7.0
+747 ver discutir político mãe dizer mudar nado corrupção tá bíblia  /   vejo que não da pra discutir política com a minha mãe quando ela diz que não da pra mudar nada porque corrupção tá na bíblia  /  27.0  /  8.0
+1317 tio vir cá discutir político amor deus prova físico amanhã  /   meus tios vieram pra cá discutir sobre política , pelo amor de deus eu tenho prova de física amanhã  /  27.0  /  8.0
+257 aí grupo sala faculdade vira local discutir político elogiar bolsonaro criticar lula afff credo  /   aí o grupo da sua sala na faculdade vira um local pra discutir política , elogiar o bolsonaro e criticar o lula , afff credo  /  27.0  /  12.0
+761 político 2  /   política 2  /  27.0  /  38.0
+86 brigar político atual cenário crise ciúme zona  /   “ brigar por política no atual cenário , é o mesmo que ter uma crise de ciúme na zona  /  22.0  /  0.0
+826 brigar político atual cenário crise ciúme zona  /   “ brigar por política no atual cenário , é o mesmo que ter uma crise de ciúme na zona  /  22.0  /  0.0
+1163 brigar político atual cenário crise ciúme zona  /   “ brigar por política no atual cenário , é o mesmo que ter uma crise de ciúme na zona  /  22.0  /  0.0
+188 crise político brasil favor intervenção militar  /   diante da crise política no brasil , você é contra ou a favor de uma intervenção militar  /  22.0  /  2.0
+126 entender povo manta diferença opinião político brasil país democrático  /   não entendo pq o povo quase se manta por diferenças de opinião política , brasil não é um país democrático  /  22.0  /  5.0
+732 lulanacadeia bora mexer manifestação 4 abril fim supremo corte político stfsupremavergonha  /   #lulanacadeia bora se mexer , manifestação até 4 de abril , pelo fim dessa suprema corte política #stfsupremavergonha  /  22.0  /  7.0
+1278 crise político brasil assistir desenho  /   toda essa crise política no brasil e eu assistindo desenho  /  20.0  /  2.0
+1282 quantum condenar causa político religião  /   quanto menos condenar por causa de política ou religião  /  20.0  /  2.0
+889 gente preocupado dedo neymar situação político brasil  /   tem mais gente preocupada com o dedinho do neymar do que a situação política do brasil  /  19.0  /  4.0
+1126 puta parir coisa temporada político brasil 2018  /   puta que pariu a melhor coisa da temporada política no brasil 2018  /  19.0  /  4.0
+1006 futebol político religião discutir amizade perder ganhar  /   futebol , política e religião não se discute k amizade e a mesmo perdendo ou ganhando  /  18.0  /  3.0
+853 fim indicação político stf acabar vergonha nacional  /   fim de indicação política no stf acabaria com essa vergonha nacional  /  17.0  /  2.0
+592 assistir história social político brasil  /   assiste história social e política do brasil comigo rs  /  17.0  /  3.0
+1288 parir querer brigar causa político achar assunto  /   as pare , querer brigar por causa de política , mas vai achar outro assunto  /  17.0  /  3.0
+1353 jornaldacultura vez bate desengano político brasil  /   #jornaldacultura as vezes bate um desengano da política no brasil  /  17.0  /  4.0
+800 2018 chocado político br  /   em 2018 chocado com a política br  /  17.0  /  5.0
+584 poder existir pessoa hipócrita ponto odiar causa político futebol  /   como podem existir pessoas hipócritas a ponto de se odiarem por causa de política e futebol  /  17.0  /  6.0
+425 fmf apitar penso político brasil podre conhecer futebol especialmente fmf  /   fmf apitou quem pensa que a política do brasil e podre porque não conhece o futebol especialmente a fmf  /  17.0  /  8.0
+1357 observador medicina substituir ciência político sofrer  /   #observador em medicina , quando se substitui a ciência pela política , quem sofre são os  /  16.0  /  1.0
+1415 medicina substituir ciência político sofrer doente  /   em medicina , quando se substitui a ciência pela política , quem sofre são os doentes  /  16.0  /  1.0
+1063 futebol político religião gênero assunto dar discutir casa  /   futebol , política , religião e gênero são assuntos que não dá pra discutir na minha casa  /  16.0  /  5.0
+813 decidir brigar causa político  /   isso porque eu decidi que jamais ia brigar por causa de política  /  15.0  /  1.0
+1328 classe político brasileiro preciso acabar  /   a classe política brasileira precisa acabar  /  15.0  /  1.0
+1038 começar mundo brigar causa político  /   pronto , começou todo mundo a brigar por causa de política  /  15.0  /  2.0
+496 if roma poder entrar político pão circo  /   if está que nem roma , pode entrar política do pão e circo  /  15.0  /  3.0
+502 pai irmão brigar causa político aiar  /   meu pai e meu irmão brigando por causa de política k aiai  /  15.0  /  3.0
+997 ansioso assistir mecanismo único chance entender político brasileiro  /   ansioso pra assistir o mecanismo porque é minha única chance de entender um pouco da política brasileira  /  15.0  /  5.0
+1137 responder pergunta político religião  /   estou respondendo perguntas sobre política e religião  /  14.0  /  0.0
+1562 grupo sala rolo discussão causa político  /   no grupo da sala de vcs rola discussão por causa de política  /  13.0  /  3.0
+259 pai briga dia causa político ponto chegar  /   meu pai briga comigo todos os dias pro causa de política , a que ponto chegamos  /  13.0  /  4.0
+410 claro político religião discutir país calamidade vê cego  /   claro meu , política e religião não se discute , mas que o país ta uma calamidade só não vê quem é cego  /  13.0  /  4.0
+702 botar grupo discussão político atar senador entender nado  /   me botaram num grupo de discussão política q ate senador tem , to entendendo nada  /  13.0  /  4.0
+291 observatório cena político evangélico  /   observatório da cena política evangélica  /  12.0  /  0.0
+345 lula político aprovado brasil apontar pesquisa ipsos  /   lula é o político mais aprovado do brasil , aponta pesquisa ipsos  /  12.0  /  0.0
+489 lula político aprovado brasil apontar pesquisa ipsos  /   lula é o político mais aprovado do brasil , aponta pesquisa ipsos  /  12.0  /  0.0
+510 observatório cena político evangélico  /   observatório da cena política evangélica  /  12.0  /  0.0
+919 observatório cena político evangélico  /   " observatório da cena política evangélica "  /  12.0  /  0.0
+964 observatório cena político evangélico  /   observatório da cena política evangélica  /  12.0  /  0.0
+319 gosto estudar ciência político  /   mds pq eu gosto de estudar ciência política  /  12.0  /  1.0
+767 retardado tá estudar ciência político  /   o retardado aqui tá estudando ciência política  /  12.0  /  2.0
+1524 grupo debater político futebol religião  /   no grupo debatemos sobre política , futebol , religião  /  12.0  /  2.0
+704 direito tô entender nado atualizar político país  /   só eu que faço direito e não tô entendendo nada / nem um pouco atualizada sobre a política do nosso país  /  12.0  /  3.0
+1546 aula ciência político merda esquerdista cala boca  /   aula de ciência política só da merda desses esquerdistas cala boca  /  12.0  /  4.0
+501 coisa chato pai falar ver coisa político 24hrs dia  /   não tem coisa mais chata que o pai falando ou vendo coisas sobre política 24hrs por dia a  /  12.0  /  5.0
+521 ouvir coisa político dar sono fone ouvido mato  /   ouvir coisas sobre política me dá um sono e se eu não tiver fone ouvido eu me mato  /  12.0  /  5.0
+924 amanhã ciência político cu aula cu professor cu  /   amanhã eu tenho ciência política aquele cu de aula aquele cu de professora simplesmente tudo cu vai se fude  /  12.0  /  6.0
+217 pau cu dever entrar político  /   esse pau no cu deveria entrar na política  /  11.0  /  1.0
+1035 exato amo político brasileiro  /   ha exato eu amo a política brasileira  /  11.0  /  1.0
+223 cansado ver gente brigar político facebook  /   cansado de ver gente brigando por política no facebook  /  11.0  /  2.0
+690 preciso acabar indicação político ministro stf  /   é preciso acabar com a indicação política de ministros do stf  /  11.0  /  2.0
+856 tornar pessoa odiar discutir causa político  /   eu me tornei a pessoa q eu mais odiava a q discutia por causa de política  /  11.0  /  4.0
+1154 bate boca casa causa político ôdoido  /   mo bate boca aqui em casa agora por causa de política ôdoido  /  11.0  /  4.0
+947 mago político brasileiro pai filho presidente lula  /   você é simplesmente um mago da política brasileira , você é o pai que todo filho quer ter presidente lula  /  11.0  /  5.0
+1335 obrigado deus meter converso político religião viver paz  /   obrigada deus , que eu não me meto em nenhuma conversa sobre política ou religião , se não eu não viveria em paz  /  11.0  /  5.0
+1161 acontecer político brasileiro grande teatro picadeiro povo palhaço idiota  /   tudo q está acontecendo na política brasileira é um grande teatro em um picadeiro e este povo está sendo uns palhaços idiotas  /  11.0  /  6.0
+1099 ver hora sair tapa pai causa político homem tolo jesuz  /   já to vendo a hora q vou sair nos tapa com meu pai por causa de política , q homem tolo jesuz  /  11.0  /  8.0
+245 aroeira genial resumir tragédia político charge  /   aroeira , genial , resume nossa tragédia política em uma charge  /  10.0  /  0.0
+294 assunto político dar nojo  /   assunto de política me dá nojo  /  10.0  /  0.0
+645 professor economia político  /   professor de economia política  /  10.0  /  0.0
+937 economia político tá suave  /   ai eu também , mas economia política tá suave  /  10.0  /  1.0
+1042 aroeira genial resumir tragédia político charge – café  /   aroeira , genial , resume nossa tragédia política em uma charge – o cafezinho  /  10.0  /  2.0
+847 sonhar desejar profº pika ciência político  /   " você só sonha com o que você deseja " profº pika de ciência política  /  10.0  /  4.0
+1131 professor economia político citando mano brown coisa dia  /   minha professora de economia política citando mano brown é a melhor coisa do meu dia  /  10.0  /  5.0
+269 carai duvidar capacidade coisa ciência político cabeça lixo  /   carai eu to duvidando muito da minha capacidade de ser alguma coisa dentro da ciência política , na minha cabeça vou ser um lixo  /  10.0  /  6.0
+50 merda ler capítulo inteiro ciência político enfiar cu porra capitular  /   q merda tenho q ler um capítulo inteiro de ciência política enfia no cu a porra do capitulo  /  10.0  /  8.0
+350 brasileiro nascer especialista futebol novela direito penal processo penal direito constitucional ciência político  /   brasileiro nasce especialista em futebol e novela , não em direito penal , processo penal , direito constitucional tampouco ciência política  /  10.0  /  11.0
+721 vergonha misturar político futebol  /   vergonha he misturar política com futebol  /  9.0  /  1.0
+749 stfdefendebandido fim indicação político  /   #stfdefendebandido pelo fim de indicação política  /  9.0  /  1.0
+5 ebm tá político saber dinheiro arrombado  /   ebm tá na política agora , só quer saber de dinheiro esse arrombado  /  9.0  /  2.0
+638 nado ver político  /   não tinha nada a ver com política  /  9.0  /  2.0
+1325 atual político pão circo circo  /   a atual “ política de pão e circo ” ( só com circo )  /  9.0  /  2.0
+32 poder político religião coisa querer  /   pode ser sobre política e religião e qualquer outra coisa que você quiser  /  9.0  /  3.0
+456 vir deixa dar opinião político nado ver  /   la vem os " deixa eu dar minha opinião política em algo que não tem nada a ver com isso "  /  9.0  /  3.0
+1040 ficar ninguém importar político saber tão feliz  /   vcs q ficavam " a ninguém se importa com política e n sei o que " tão felizes agora  /  9.0  /  3.0
+1445 susana naspolini = político pão circo  /   susana naspolini = política do pão e do circo  /  9.0  /  3.0
+33 semana ódio político brasileiro vinhedense diferente  /   toda semana um ódio à política brasileira ( ou vinhedense ) diferente  /  9.0  /  4.0
+848 ódio coração tô chorar político brasileiro  /   eu tenho ódio no coração tô chorando com a política brasileira  /  9.0  /  4.0
+158 próximo saga kratos dever mitologia político brasileiro  /   a próxima saga de kratos deveria ser na mitologia da política brasileira  /  9.0  /  5.0
+1359 adepto político pão circo esquecer problema vida país assistir corinthians  /   sou muito adepto da política pão e circo inclusive esquecendo os problemas da vida e do país assistindo o corinthians aqui  /  9.0  /  7.0
+1509 adorar comentarista insetona político brasileiro capa facebook foto aécio  /   k adoro a comentarista insetona da política brasileira , que tinha como capa do facebook a foto do aécio  /  9.0  /  7.0
+1393 tnc entrar grupo venda facebook vender produto pessoal coisa político merecer  /   tnc entro nos grupos de venda do facebook pra vender meu produto e esse pessoal só posta coisa de política pqp , n mereço isso  /  9.0  /  8.0
+1413 sentir inclinado entrar político ver mulher merda homem merda  /   bem , eu me sentiria mais inclinada a entrar na política vendo uma mulher fazendo merda , do que só homens fazendo merda  /  9.0  /  8.0
+946 internet cheio especialista político né  /   a internet ta cheio de especialista em política né  /  8.0  /  0.0
+1427 internet cheio especialista político né  /   a internet ta cheio de especialista em política né  /  8.0  /  0.0
+1515 dever entrar político  /   você deveria entrar pra política  /  8.0  /  0.0
+1556 economia político  /   isso é economia política  /  8.0  /  0.0
+509 claro político futebol ótimo  /   claro , se ele fizer na política o que ele fez no futebol ta ótimo k  /  8.0  /  1.0
+1465 ficar rico entrar político  /   quem quer ficar rico não entra na política  /  8.0  /  1.0
+260 maior ficha sujo história político país  /   o maior ficha suja da história política desse país  /  8.0  /  2.0
+776 entender político achar horrível dizer selton mecanismo  /   “ entendi política e achei horrível ” , diz selton sobre o mecanismo  /  8.0  /  4.0
+915 halo ver político meio f1nosportv  /   esse halo à meu ver tem muita política no meio #f1nosportv  /  8.0  /  4.0
+453 situação político tá tão ruim político ficha sujo pé giro  /   nossa situação política tá tão ruim , que tem político com a ficha mais suja que meu pé depois da gira  /  8.0  /  5.0
+819 vergonha passar feito cobra economia político arrastar  /   q vergonha de mim , passei feito cobra em economia política , me arrastando  /  8.0  /  5.0
+835 rezar querer dormir aula economia político manhã  /   rezando desde já pra eu não querer dormir na aula de economia política manhã  /  8.0  /  5.0
+695 seleção cobrir olimpíada londres prova economia político cinema  /   " quando fiz a seleção pra cobrir as olimpíadas em londres eu fiz uma prova que tinha economia , política e até cinema "  /  8.0  /  6.0
+1031 5 livro entender história economia político moldar mundo  /   5 livros para entender como história , economia e política moldam o mundo  /  8.0  /  6.0
+1235 tô saco cheio país político dar vontade ler nado  /   eu tô muito de saco cheio desse país , dessa política , não dá vontade de ler mais nada  /  8.0  /  6.0
+420 negro casa burro sinceramente preferir político vizinhança salvar próprio pele zzz  /   nego nessa casa he burro demais sinceramente preferem fazer a política do boa vizinhança do que salvar a própria pele zzz  /  8.0  /  7.0
+124 urr bolsotário saber porra político ficar falar merda parecer superior bolsonaro 2018  /   " urr sou bolsotário não sei porra nenhuma de política mas fico falando merda p parecer q sou superior vai bolsonaro 2018 "  /  8.0  /  8.0
+1347 querer pessoa conversar político atar anime escuta raça negro atar 1kilo  /   queria ter uma pessoa pra conversar de tudo , de política ate anime , que escuta raça negra e vai ate 1kilo  /  8.0  /  8.0
+1005 legal curso maria tipo cursar geografia parte legal geografia político ficar ver pedra  /   legal do curso da maria que he tipo cursar geografia só que com a parte legal , que he geografia política , e não fica vendo pedrinha  /  8.0  /  9.0
+220 posição político  /   qual a tua posição política  /  7.0  /  0.0
+492 posição político  /   minha posição política  /  7.0  /  0.0
+934 posição político  /   qual é sua posição política  /  7.0  /  0.0
+225 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+239 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+241 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+312 mudar posição político  /   mudei minha posição política  /  7.0  /  1.0
+675 gostar futebol político  /   gosta mais de futebol ou de política  /  7.0  /  1.0
+1275 retribuir indicação político  /   estão retribuindo a indicação política  /  7.0  /  1.0
+1039 brigar futebol político caraaaaa  /   brigar por futebol até vai mas por política caraaaaa  /  7.0  /  2.0
+108 alto youtube futebol político padrão  /   o em alta do youtube é só futebol e política hj padrão  /  7.0  /  3.0
+726 preciso parar político saber envolver político  /   preciso parar de por política em tudo mesmo sabendo que tudo envolve política  /  7.0  /  3.0
+729 f1nosportv claro halo coisa político  /   c #f1nosportv claro que o halo foi coisa política  /  7.0  /  3.0
+791 fala conversar político fã político aí  /   fala isso pq nunca " conversou " sobre política com uns fãs de políticos por aí  /  7.0  /  3.0
+1155 esquecer stf entrar indicação político  /   nunca esqueça , no stf só entra por indicação política  /  7.0  /  3.0
+1263 menino lindo falar posição político  /   a menina é linda mas falou posição política a  /  7.0  /  3.0
+47 gostar pergunta triz entender coisa político  /   gostaria de pergunta para essa , a triz se ela entender de alguma coisa de política  /  7.0  /  4.0
+359 amizade século acabar revelar posição político  /   as amizades deste século acabam quando você revela sua posição política  /  7.0  /  4.0
+719 juiz chegar lá competência indicação político  /   um juiz que chegou lá por sua competência e não por indicação política  /  7.0  /  4.0
+985 * uber fala coisa político *  /   * uber fala qualquer coisa sobre política * eu  /  7.0  /  4.0
+45 febre isentão tá pegar centro posição político  /   essa febre de ser isentão tá pegando mesmo , daqui a pouco " centro " vai ser posição política  /  7.0  /  5.0
+436 ultimamente botão silêncio tá ativo coisa político  /   ultimamente meu botão silêncio do tt tá bem ativo mas e mais sobre coisa política  /  7.0  /  5.0
+1336 jornaldacultura perceber diferença nação tribunal carreiro tribunal indicação político  /   #jornaldacultura percebeu a diferença para a nação entre um tribunal de carreira e um tribunal de indicação política  /  7.0  /  7.0
+1365 debater político  /   eu debatendo política  /  6.0  /  0.0
+396 entender nado político  /   — não entendo nada de política  /  6.0  /  1.0
+471 ayrton tá político vizinhança  /   ayrton tá fazendo política de boa vizinhança  /  6.0  /  1.0
+561 entrar político acompanhado  /   entrando pra política muito bem acompanhado  /  6.0  /  1.0
+1253 saber entender político  /   — não sei , não entendo de política  /  6.0  /  1.0
+677 palestra invisibilidade mulher político sensacional  /   a palestra sobre a invisibilidade da mulher na política foi sensacional  /  6.0  /  2.0
+1168 dia medo entender político  /   cada dia com mais medo de entender sobre política  /  6.0  /  2.0
+1463 saber lá importar político país  /   — sei lá , não me importo com política de outro país não  /  6.0  /  2.0
+272 entender nado querer gosto político  /   não entendi é nada , também nem quero não gosto de política  /  6.0  /  3.0
+1237 preferir ficar face debater político  /   preferia ficar no face debatendo política  /  6.0  /  3.0
+1373 político futebol dar comprar juiz  /   na política assim como no futebol dá pra comprar juízes não é mesmo  /  6.0  /  3.0
+1549 mistura político futebol saber doente  /   mistura política com futebol já sei que é doente  /  6.0  /  3.0
+306 primeiro primeiro pichação nado ver manifestação político  /   primeiro que a primeira pichação não tinha nada a ver com manifestação política  /  6.0  /  4.0
+322 primo debater político júlia aí dels  /   meu primo debatendo política com a júlia aí dels  /  6.0  /  4.0
+402 mdb inimigo pt entender político especialista twitter  /   mdb é inimigo do pt sim , quem entende de política é você especialista de twitter  /  6.0  /  5.0
+1242 senhor entender político jogo interesse extremamente flexível  /   para certos senhores entenderem como a política é um jogo de interesses e extremamente flexível  /  6.0  /  5.0
+1108 deixar casa descansar ficar debater político yoh milena  /   quem sou eu q deixei de ir p casa descansar p ficar debatendo política com a yoh e a milena  /  6.0  /  6.0
+313 surpreender intervenção militar dado inércia aproximação movs rua velho classe político  /   eu não me surpreenderia com uma intervenção militar , dada a inércia e aproximação dos movs de rua com a velha classe política  /  6.0  /  8.0
+701 falar odiar político partido poder contar volta direito leve tesão 45  /   falou que odeia política e não tem partido , pode contar que só volta na direita , com um leve tesão pelo 45  /  6.0  /  8.0
+839 gente kd pessoal fodão político viver dizer lula tá morto  /   gente , kd aquele pessoal fodão em política q vive dizendo q o lula tá morto  /  6.0  /  8.0
+34 mano tô entender povo dar ideia menino 13 ano máximo político amor né  /   mano tô sem entender esse povo dando ideia pra uma menina de uns 13 anos no máximo sobre política pelo amor né  /  6.0  /  9.0
+1057 gente igreja vê ajeitar coisa vida ficar peace and love vir caro defender bolsonaro qrnd debater político  /   a gente vai pra igreja vê se ajeita as coisas na vida fica mais peace and love vêm o cara defendendo o bolsonaro e qrnd debater política  /  6.0  /  15.0
+52 conversar político moreno  /   conversando de política com a morena  /  5.0  /  1.0
+100 responder pergunta político dragonball  /   respondendo perguntas sobre política e dragonball  /  5.0  /  1.0
+745 corrupção político judiciário religião  /   é corrupção na política , no judiciário , nas religiões  /  5.0  /  1.0
+206 legal história político pau cu  /   muito legal história política , mas pau no cu dela  /  5.0  /  2.0
+219 ver político  /   eles estão vendo só política  /  5.0  /  2.0
+687 juntar religião político dar  /   juntar religião com política não dá certo  /  5.0  /  2.0
+794 simmm brigar político ban  /   simmm , brigou por política é ban  /  5.0  /  2.0
+1021 lógico meter político meio af  /   mas essa tem muito mais lógica q meter política no meio af  /  5.0  /  2.0
+1356 fala vez conversar político  /   ha a minha fala dele toda vez que conversamos sobre política  /  5.0  /  2.0
+347 retardado caralho enfiar político cu  /   retardado do caralho enfia política no seu cu  /  5.0  /  3.0
+1239 sdds conversar político aula saudade  /   sdds conversar sobre política na aula saudades  /  5.0  /  3.0
+740 engajar destruir político atual incluir psdbosta  /   vou me engajar em destruir a política atual , incluindo o #psdbosta  /  5.0  /  4.0
+1208 abertura coluna político decisão supremo disponível assinante  /   abertura da coluna política + sobre a decisão do supremo já está disponível para assinantes  /  5.0  /  5.0
+156 país inteiro crise político gente conseguir rir país quantum presidente nome genitália  /   um país inteiro em crise política e a gente só consegue rir de q tanto o país quanto seu presidente tem nomes de genitálias  /  5.0  /  9.0
+166 aula redação render debate político atual esculachar candidato faltar professor aplaudir  /   aula de redação rendeu hoje , debate sobre a política atual eu esculachei certos candidatos , só faltou a professora me aplaudir  /  5.0  /  9.0
+128 converso político pai  /   melhores conversas de política é com meu pai  /  4.0  /  0.0
+1132 aula político  /   tendo uma aula sobre política com a  /  4.0  /  0.0
+694 piscar aula político  /   eu que nem piscava na aula de política  /  4.0  /  1.0
+765 político somar dizer senador  /   ' faço política somando ' , disse o senador  /  4.0  /  1.0
+1157 político somar dizer renan  /   ' faço política somando ' , diz renan  /  4.0  /  1.0
+1240 ayrton político vizinhança  /   o ayrton é muito da política da boa vizinhança  /  4.0  /  1.0
+1468 entrar discussão político  /   " do que entrar em discussão política  /  4.0  /  1.0
+1 querer ficar rico político  /   eu quero é ficar rico com política  /  4.0  /  2.0
+181 tão mulher político importar  /   por que temos tão poucas mulheres na política e por que isso importa  /  4.0  /  2.0
+198 aula político cidadania colega  /   aula de política e cidadania colegas  /  4.0  /  2.0
+281 discussão político sala foda  /   discussão política la na sala foi foda  /  4.0  /  2.0
+303 pessoa político gostar amigo kim  /   pessoa política que você goste e seus amigos não — kim  /  4.0  /  2.0
+673 começar vida político cansado  /   mal comecei a vida política e estou cansada  /  4.0  /  2.0
+1350 virar campanha político bbb  /   nossa , virou campanha política o bbb  /  4.0  /  2.0
+1422 campanha político representar nado  /   você faz campanha política , não representa nada  /  4.0  /  2.0
+1478 lá ning fala político  /   mas lá dentro ning fala de política  /  4.0  /  2.0
+89 relembrar trajetória político marcelo miranda  /   relembre trajetória política de marcelo miranda  /  4.0  /  3.0
+252 breno laço ninguém político vizinhança  /   breno não tem laços com ninguém só faz a política da boa vizinhança  /  4.0  /  3.0
+290 tá tão legal comentar político ultimamente  /   tá tão legal comentar política ultimamente  /  4.0  /  3.0
+936 termo político país verdadeiro bacharia  /   em termos de " política " o país está uma verdadeira bacharia  /  4.0  /  3.0
+1020 politicar sistema político partido podre  /   a politica o sistema político todos as partidos são podres  /  4.0  /  3.0
+1065 rezar entender teoria político prova  /   rezando pra entender teoria política até a prova  /  4.0  /  3.0
+1411 momento gleici fala político lá  /   pq em momento algum a gleici fala em política lá  /  4.0  /  3.0
+53 besteira político poupar aí nado ver  /   ou besteira agora até política me poupe isso aí tem nada a ver  /  4.0  /  4.0
+401 acreditar professor teoria político tornar hétero  /   eu não acredito que a professora de teoria política me tornou hétero  /  4.0  /  4.0
+454 incompetência super motivo desaparecer vida político  /   a tua incompetência já é um super motivo pra você desaparecer da vida política  /  4.0  /  4.0
+505 real oficial medo prova teoria político  /   real oficial estou com medo das provas de teoria política  /  4.0  /  4.0
+538 evento mpf defender participação mulher político  /   em evento , mpf defende a participação das mulheres na política  /  4.0  /  4.0
+576 professor adiantar matéria disciplina teoria político  /   meu professor adiantou a matéria todinha ontem da disciplina de teoria política  /  4.0  /  4.0
+894 sobrinho discutir ex político facebook rir  /   e meu sobrinho discutindo com meu ex sobre política no facebook to só rindo aqui  /  4.0  /  4.0
+1106 maturidade sumir fala político preferir discutir  /   minha maturidade some quando se fala de política , prefiro nem discutir  /  4.0  /  4.0
+1434 deve ano regresso ppc vida político  /   esse deve ser o ano de regresso do ppc a vida política  /  4.0  /  4.0
+1535 político grande negócio servir povo servir povo  /   e por aqui a política é um grande negócio não pra servir o povo , mas pra se servir do povo  /  4.0  /  4.0
+657 aula político bonito social comparar feminismo ateísmo  /   na aula de política hoje o bonito de sociais comparou feminismo com ateísmo só isso mesmo  /  4.0  /  5.0
+807 curto página figura político partido chama informação  /   não é porque eu curto uma página de alguma figura política que sou do partido , isso se chama informações  /  4.0  /  5.0
+1267 rer campanha político antecipado seguir desacatar lei  /   reu em campanha política antecipada e q segue desacatando a lei  /  4.0  /  5.0
+1517 stfvergonhanacional achar classe político pior supremo superar  /   #stfvergonhanacional achava a classe política a pior , mas o supremo se superou  /  4.0  /  5.0
+1528 oww jn cansativo assistir fala político porra  /   oww esse #jn é cansativo de assistir , só fala de política porra  /  4.0  /  5.0
+14 poder sair presidência fla dedicar 100 vida político  /   já pode sair da presidência do fla pra se dedicar 100 % à vida política  /  4.0  /  6.0
+141 amor deus velho gago sumir político filho presidente corinthians  /   ha pelo amor de deus seu velhinho gaga , some da política meu filho , vai ser presidente do corinthians  /  4.0  /  6.0
+429 aposto cálice curtir pessoalmente preferir brian sátira político sensacional  /   aposto q o cálice você vai curtir pessoalmente , prefiro o brian q tem uma sátira política sensacional  /  4.0  /  6.0
+1408 mentira lavagem dinheiro campanha político mdb pt psdb  /   mentira , é lavagem de dinheiro para a campanha política do mdb / pt / psdb e outros fdp  /  4.0  /  6.0
+1513 representatividade servir ciclo continuar contribuir mulher político servir  /   se a representatividade não serve p fazer um ciclo e continuar contribuindo p mulheres fora da política ela serve p que  /  4.0  /  6.0
+661 lulalivre livre saber próximo presidente brasil jogado político justiça tucano  /   #lulalivre se ele estiver livre sabe quem será o próximo presidente do brasil , tem que fazer jogada política com a justiça tucana  /  4.0  /  7.0
+916 descobrir discussão ar condicionado sala dar briga discussão político  /   descobri que discussão sobre ar condicionado na sala dá mais briga que discussão por política  /  4.0  /  7.0
+267 ofício historiador postura político merda re interpretar re construir narrativo através  /   ofício do historiador também é ter postura política nessa merda e ( re ) interpretar e ( re ) construir narrativas através delas  /  4.0  /  8.0
+1256 lula símbolo classe político podre manda brasil acobertado por+os capanga stf  /   lula hoje é um símbolo da classe política podre que manda no brasil e acobertado pelos seus capangas do stf  /  4.0  /  9.0
+1111 aula certeza amo direito amo político amo aprender bgl parecer acordar vida  /   com a aula de hoje eu só tive mais certeza que amo direito , amo política amo aprender esses bgl , parece que tu acorda pra vida  /  4.0  /  10.0
+144 interessar político  /   você se interessando por política  /  3.0  /  0.0
+468 interessar político  /   se interessa por política  /  3.0  /  0.0
+783 justiça político  /   justiça é para todos , não política  /  3.0  /  0.0
+1498 político poder  /   política só pôde  /  3.0  /  0.0
+518 escória político nacional  /   escória da política nacional  /  3.0  /  1.0
+789 político público bicho  /   uma política pública dessas , bicho  /  3.0  /  1.0
+1047 refletir político nacional  /   refletindo aqui sobre a política nacional  /  3.0  /  1.0
+1067 possível corte político  /   mas tudo é possível na corte política  /  3.0  /  1.0
+1179 carreiro político enterrado  /   sua carreira política está enterrada  /  3.0  /  1.0
+1258 stf corte político  /   o stf é uma corte política  /  3.0  /  1.0
+1260 querer enfiar político  /   querem enfiar política em tudo  /  3.0  /  1.0
+495 saco povo enfiar político  /   saco esse povo que enfia política em tudo  /  3.0  /  2.0
+1127 motorista tocar assunto político  /   felizmente o motorista não tocou no assunto política  /  3.0  /  2.0
+1402 perfeitamente justiça perseguição político  /   perfeitamente , justiça não é perseguição política  /  3.0  /  2.0
+1560 político poder misturar futebol  /   mas política n pode se misturar c futebol  /  3.0  /  2.0
+452 pai interessar político 16 ano  /   e o teu pai que se interessava por política com 16 anos  /  3.0  /  3.0
+812 misturar político entretenimento deve criança  /   misturar política com entretenimento , você deve ser uma criança rs  /  3.0  /  3.0
+878 nojo tipo post misturar político  /   mas tenho nojo desse tipo de post misturando política  /  3.0  /  3.0
+593 barroso largar toga tentar carreiro político  /   barroso tem é que largar a toga , e tentar carreira na política  /  3.0  /  4.0
+1313 acre gestão recurso hídrico político público  /   no acre , gestão de recursos hídricos é política pública  /  3.0  /  4.0
+609 desvirtuar assunto político grupo direito rodízio chopp  /   eu consigo desvirtuar um assunto de política no grupo de direito pra um de irmos em um rodízio de chopp k  /  3.0  /  5.0
+944 preciso político falar dar vontade jogar carro  /   nem precisa ser sobre política , só ele falar um a já me dá vontade de me jogar do carro  /  3.0  /  5.0
+1234 gostar refletir realidade político poder deixar ler  /   para quem gosta de refletir sobre a realidade política , não pode deixar de ler isso  /  3.0  /  5.0
+1326 poder vir engolir justiça justiça político político  /   bom , pode ser que ainda venha a ter de engolir o à justiça o que é da justiça , à política o que é da política  /  3.0  /  5.0
+23 supremo dever honrar constituição acabar perseguição político descarado  /   supremo deveria honrar a constituição e acabar com esta perseguição política descarada  /  3.0  /  6.0
+575 achar engraçado modelo político público chama lato lixo  /   acho muito engraçado que tem um modelo de política pública que se chama " lata de lixo "  /  3.0  /  6.0
+651 obg deos por+os amigo escutar lamentar político nacional  /   obg deos pelos amigos que me escutam lamentar da política nacional  /  3.0  /  6.0
+1019 político si podre pt coisa chato  /   a política em si é podre não só o pt coisa chata  /  3.0  /  6.0
+1249 perseguição político lula despertar mundo brasil manifestoches sono profundo  /   a perseguição política contra lula já despertou o mundo , somente aqui no brasil os manifestoches ainda estão em um sono profundo  /  3.0  /  7.0
+148 responder parado stories esquerdo direito pensar político marcar direito  /   respondi a parada no stories sobre esquerda / direita e não pensei em política e marquei direita (  /  3.0  /  8.0
+442 achar dório conseguir incrível destruir próprio carreiro político tempo recorde  /   acho que o dória conseguirá o incrível de destruir a própria carreira política em tempo recorde  /  3.0  /  8.0
+829 landa copar vir brasil setembro lançamento livro deus justiça político  /   landa cope vem ao brasil em setembro para o lançamento do seu livro ' deus e a justiça política '  /  3.0  /  8.0
+956 triste poder opinião político ofendido forma grosseiro mau educado democracia  /   que triste , não podemos ter opinião política sem sermos ofendidos , de forma grosseira e mau educada , democracia  /  3.0  /  8.0
+1058 pala galera falar proposto político atar parecer coisa país funcionar  /   eu do pala dessa galera falando de proposta política , ate parece que alguma coisa nesse país funciona  /  3.0  /  8.0
+697 acreditar político  /   vocês que não acreditam na política  /  2.0  /  0.0
+823 ideologia político  /   qual sua ideologia política  /  2.0  /  0.0
+1367 odiar político  /   — nenhum dos dois eu odeio a política  /  2.0  /  0.0
+1536 gostar político  /   não consigo gostar de política  /  2.0  /  0.0
+355 cheira manobra político  /   cheira manobra política  /  2.0  /  1.0
+459 mbl meter político  /   o mbl já se meteu na política  /  2.0  /  1.0
+591 geografia político fim  /   geografia política fim  /  2.0  /  1.0
+608 depender acreditar político  /   depende do que você acredita ou não na política  /  2.0  /  1.0
+698 mau político querer  /   vocês estão fazendo exatamente o que os maus políticos querem  /  2.0  /  1.0
+1070 renan novo político  /   renan o novo na política  /  2.0  /  1.0
+1429 lula voltar político  /   por isso lula quer voltar pra política  /  2.0  /  1.0
+1433 político envolvido 2x  /   pq tem política envolvida 2x  /  2.0  /  1.0
+56 agradecer deus visão político  /   agradeço muito a deus por ter uma boa visão política agora  /  2.0  /  2.0
+293 carla ótimo professor político  /   carla é uma ótima professora sobre política  /  2.0  /  2.0
+331 aí interesse político justiça  /   daí o meu interesse por política e justiça  /  2.0  /  2.0
+906 existir manobra político vergonhoso  /   está existindo é manobra política , vergonhosa  /  2.0  /  2.0
+948 acreditar querer político criança  /   não acredito que eu quero ser da política desde criança  /  2.0  /  2.0
+55 político gente exagerar egoísta acha  /   infelizmente na política sempre vai ter gente que exagera , que é egoísta e se acha  /  2.0  /  3.0
+295 ver gente discutir conta político  /   ainda vejo gente discutindo por conta políticos  /  2.0  /  3.0
+318 brasil brasileiro corrupção político vergonha  /   brasil de brasileiros , a corrupção não é só da política , vergonha  /  2.0  /  3.0
+334 encontro mudar percepção pessoa político  /   este encontro vai mudar a percepção das pessoas do mt sobre política  /  2.0  /  3.0
+348 comovido morte marielle querer político  /   depois os comovidos c a morte de marielle q estão querendo fazer política  /  2.0  /  3.0
+358 pessoa gostar político comandado gostar  /   " as pessoas que não gostam de política , serão comandada pelas que gostam "  /  2.0  /  3.0
+430 adorar visão político novo professor  /   adorei a visão política do meu novo professor  /  2.0  /  3.0
+559 prova político amanhã estudar nado  /   tenho prova de política amanhã e até agora não estudei nada  /  2.0  /  3.0
+569 mp poder usar rede político  /   como um mp pode usar as redes para fazer política  /  2.0  /  3.0
+703 grande pensador político dizer país  /   o que os grandes pensadores da política diriam do nosso país  /  2.0  /  3.0
+904 vergonhoso tipo político chegar clube  /   vergonhoso essa tipo de política chegar ao clube  /  2.0  /  3.0
+1036 maiquecaralho polícia autorizar manifestação político  /   maiquecaralho a polícia tem que autorizar manifestação política  /  2.0  /  3.0
+1151 lamentável nível ignorância tratar político  /   é lamentável o nível de ignorância de alguns se tratando de política  /  2.0  /  3.0
+1299 gosto comentar político caro pau  /   nem gosto de comentar sobre política , mas eles são muito cara de pau ha  /  2.0  /  3.0
+1392 bolsonaro 2018 oi político envolver  /   bolsonaro 2018 — oi tudo bom política n me envolvo  /  2.0  /  3.0
+1538 haver brasil crime compensar político  /   é por isso que se houve muito , que no brasil , o crime compensa , principalmente na política  /  2.0  /  3.0
+531 dever saber verdadeiro cristão envolver político  /   então devia saber que os verdadeiros cristãos não se envolvem com a política  /  2.0  /  4.0
+543 caro professor político canal poema engraçado  /   cara o professor de política tem um canal de poemas muito engraçado k  /  2.0  /  4.0
+617 político coisa gente honrado gente culhão  /   política era pra ser coisa de gente honrada , gente de culhão  /  2.0  /  4.0
+896 político nado fácil ofício coisa complicado  /   política não é nada fácil apesar que para alguns , que a fazem de ofício , as coisas são menos complicadas  /  2.0  /  4.0
+1262 estada 20 ano político profissional  /   contra o estado , mas há 20 anos como político profissional  /  2.0  /  4.0
+1457 postura político ruim distanciar mulher distanciar  /   a postura política ruim distancia , mas não tendo mulher distancia mais ainda  /  2.0  /  4.0
+103 8 mulher incrível político merecer celebrado vida  /   8 mulheres incríveis da política que merecem ser celebradas em vida  /  2.0  /  5.0
+314 ver jogo aí caro vergonha político envolvido  /   nem vi o jogo mas aí , ou os caras são muito sem vergonha ou tem muito política envolvida  /  2.0  /  5.0
+431 lembrar diferença direito esquerdo sentido político julgar  /   eu não me lembro a diferença de direita e esquerda ( sentidos e política , me julgue )  /  2.0  /  5.0
+172 pena político aliança vir nó vosso reino nado  /   é uma pena que a política de alianças do seja somente venha a nós , vosso reino , nada  /  2.0  /  6.0
+534 26 ano político lei aprovado pessoal noite  /   26 anos na política e nenhuma lei aprovada é isso pessoal , boa noite  /  2.0  /  6.0
+994 issac desafiar abraão participar ocupação político escola  /   issac desafia seu abraão para participar da ocupação política em sua escola  /  2.0  /  6.0
+1114 verdade maioria povo acomodado nado acompanhar acontecer político  /   a verdade é que a maioria do povo é acomodado não fazem nada nem acompanham o que está acontecendo na política  /  2.0  /  6.0
+1360 faltar recurso descobrir matar marielle falto vontade político  /   não faltam recursos para descobrir quem matou a marielle , falta é vontade política  /  2.0  /  6.0
+1454 recorde inscrito fórum água pedir vontade político saneamento  /   com recorde de inscritos , fórum da água pede vontade política no saneamento  /  2.0  /  6.0
+82 matéria sátira político social praça dar 10 0 adnet  /   em matéria de sátira política e social , a praça é nossa dá de 10 a 0 no adnet  /  2.0  /  7.0
+307 querer votar novo político sindical pt governo dilma contar  /   queria muito votar em você de novo , mas a política sindical do pt , principalmente no governo dilma , vou te contar  /  2.0  /  7.0
+498 tô aguardar vacinado tipo político existir país coisa errado  /   tô só aguardando , pq estou vacinado com qualquer tipo de política que existe nesse país , só coisas erradas  /  2.0  /  7.0
+114 quarto estádio pernambuco obra político acabar futebol lá mais90  /   o quarto estádio em pernambuco foi obra política e acabaram com o futebol de lá #mais90  /  2.0  /  8.0
+565 pena político defender bandido vez ninguém lembrar motorista deixar família  /   pena que só a política que defende os bandidos tem vez até por que ninguém lembra do motorista que deixou sou família  /  2.0  /  8.0
+583 político apagamento subúrbio carioca lembrar gente época eleitoral fundo gestão  /   a política de apagamento do subúrbio carioca só lembram da gente na época eleitoral ou para fazer fundo de gestão  /  2.0  /  8.0
+858 futebol rolo brasileiro falar ideologia político pingo parcialidade clubismo impossivel  /   futebol até rola , mas brasileiro falar de ideologia / política sem um pingo de parcialidade / clubismo é impossivel  /  2.0  /  8.0
+744 tio político morro medo sujar sobrenome merda família primeiro falar coisa  /   eu q tenho tio em política morro de medo dele sujar meu sobrenome e se fizer merda a família é a primeira a falar alguma coisa  /  2.0  /  9.0
+329 alguém duvidar país futebol pessoa chutar cabeça torcedor estádio morte tratar político diferente  /   alguém duvidou que o país do futebol , onde pessoas chutam a cabeça de torcedores nos estádios até a morte , trataria a política diferente  /  2.0  /  11.0
+1502 amanhã começar 1 ° festival sociocultural apodi comemoração emancipação político  /   amanhã começa o 1 ° festival sociocultural de apodi , em comemoração à emancipação política da  /  2.0  /  15.0
+48 político  /   política  /  0.0  /  0.0
+95 político  /   política  /  0.0  /  0.0
+109 político  /   isso não é sobre política  /  0.0  /  0.0
+191 político  /   política  /  0.0  /  0.0
+215 político  /   política  /  0.0  /  0.0
+480 político  /   política  /  0.0  /  0.0
+876 político  /   não , é a política  /  0.0  /  0.0
+886 político  /   o que uma política não faz  /  0.0  /  0.0
+911 político  /   política  /  0.0  /  0.0
+1119 político  /   política  /  0.0  /  0.0
+1186 político  /   política  /  0.0  /  0.0
+1265 político  /   — a política toda  /  0.0  /  0.0
+1312 político  /   política  /  0.0  /  0.0
+1436 político  /   sem política  /  0.0  /  0.0
+39 político dividir  /   a política nos dividiu  /  0.0  /  1.0
+58 praça político  /   a praça é nossa agora é política  /  0.0  /  1.0
+104 político esquerdo  /   mas ele não era uma política de esquerda  /  0.0  /  1.0
+136 caralho político  /   caralho você he muito política  /  0.0  /  1.0
+169 político amigo  /   — política não é comigo não amigo  /  0.0  /  1.0
+297 parabém político  /   parabéns a nossa política  /  0.0  /  1.0
+365 respeito político  /   a respeito de política (  /  0.0  /  1.0
+398 dinheiro político  /   não é dinheiro , é política mesmo  /  0.0  /  1.0
+419 político brincadeira  /   tira política da brincadeira  /  0.0  /  1.0
+434 preocupação político  /   a preocupação agora é com a política  /  0.0  /  1.0
+574 dizer político  /   " ai eu disse " política "  /  0.0  /  1.0
+604 político nojento  /   política nojenta  /  0.0  /  1.0
+649 giro político  /   giro política k  /  0.0  /  1.0
+736 político caboclo  /   por uma política para os caboclos  /  0.0  /  1.0
+757 bolsonaro político  /   bolsonaro nem na política era pra estar  /  0.0  /  1.0
+836 juiz político  /   juiz não faz política  /  0.0  /  1.0
+974 político vitimização  /   política da vitimização  /  0.0  /  1.0
+1013 chega político  /   chega de política por hoje  /  0.0  /  1.0
+1076 político dialético  /   política / dialética  /  0.0  /  1.0
+1268 preso político  /   quer ser preso político  /  0.0  /  1.0
+1309 renovação político  /   ha , a renovação política  /  0.0  /  1.0
+1314 político 002  /   onde política #002  /  0.0  /  1.0
+1344 sai político  /   sai da política  /  0.0  /  1.0
+1526 força político  /   força política  /  0.0  /  1.0
+68 político desgraça lá  /   hoje é só política desgraça lá  /  0.0  /  2.0
+83 comunicação político período  /   como assim comunicação e política já no segundo período  /  0.0  /  2.0
+96 sextadetremurasdv político coco  /   #sextadetremurasdv política é simplesmente um coco  /  0.0  /  2.0
+417 acéfalo área político  /   sou um acéfalo na área da política  /  0.0  /  2.0
+464 ver matar político  /   é pq você não viu o meu que eles quase se matam por política  /  0.0  /  2.0
+466 político vasco nojento  /   a política do vasco é nojenta ou não  /  0.0  /  2.0
+497 prova legislação político  /   eu na prova de legislação e política  /  0.0  /  2.0
+523 falo cinema político  /   eu falo sobre cinema , não política  /  0.0  /  2.0
+547 virar político gerd  /   tudo tem que virar política , gerd  /  0.0  /  2.0
+564 filho briga político  /   " ainda bem que minha filha não briga por política "  /  0.0  /  2.0
+580 promiscuidade político inferno  /   é uma promiscuidade política dos infernos  /  0.0  /  2.0
+750 pessoal incomodar político  /   pessoal se incomoda muito com política  /  0.0  /  2.0
+912 retweeted conexão político  /   retweeted conexão política ( )  /  0.0  /  2.0
+998 thread político ideal  /   essa é a thread política ideal  /  0.0  /  2.0
+1068 caravana político permitido  /   caravana política é permitido  /  0.0  /  2.0
+1078 existir conspiração político  /   ” existe uma conspiração política  /  0.0  /  2.0
+1093 liberdade religioso político  /   liberdade religiosa e política  /  0.0  /  2.0
+1166 saber impressionar político  /   sabe o que mais me impressiona na política  /  0.0  /  2.0
+1231 dar oportunidade político  /   vamos dar oportunidade pra quem não teve na política  /  0.0  /  2.0
+1243 precisar advogado político  /   precisamos de advogados assim na política  /  0.0  /  2.0
+1330 feminismo político humor  /   feminismo , política , bom humor  /  0.0  /  2.0
+1349 político piada gosto  /   a política é uma piada de muito mal gosto  /  0.0  /  2.0
+1375 pessoa decente político  /   mais uma pessoa decente na política  /  0.0  /  2.0
+1417 carreirismo político paraibano  /   o carreirismo na política paraibana  /  0.0  /  2.0
+1499 parecer decisão político  /   parece decisão política  /  0.0  /  2.0
+1532 marielle político herói  /   marielle era só mais uma política , herói é esse aqui  /  0.0  /  2.0
+11 político burro diretoria permitir  /   a política burra da nossa diretoria não permite isso  /  0.0  /  3.0
+26 acha jovem interessado político  /   voce acha que os jovens estão mais interessados em política  /  0.0  /  3.0
+93 político divisor água gente  /   é política e algum divisor de águas gente  /  0.0  /  3.0
+130 político aplicado converso banal  /   ela é política aplicada e conversas banais  /  0.0  /  3.0
+227 got ação puro político  /   got , n é de ação , é pura política , muito bom  /  0.0  /  3.0
+336 super experiente vivido político  /   mesmo ele sendo super experiente e vivido na política  /  0.0  /  3.0
+437 fanbase curtir tweet político  /   fanbase curtindo tweet sobre política  /  0.0  /  3.0
+461 amor bbb metido político  /   amor esse bbb está metido com política  /  0.0  /  3.0
+581 ana paula vôlei político  /   a ana paula do vôlei da política  /  0.0  /  3.0
+601 existir crise econômico político  /   existe uma crise , mas ela não é econômica , não é política  /  0.0  /  3.0
+622 misturar democracia político concordar  /   você está misturando democracia com política , isto não concordo  /  0.0  /  3.0
+693 preciso opinião jovem político  /   preciso de opiniões sobre jovem na política  /  0.0  /  3.0
+790 político relação interpessoal foda  /   política nas relações interpessoais é foda  /  0.0  /  3.0
+806 burrice brasileiro político básico  /   não é burrice do brasileiro , é apenas política básica  /  0.0  /  3.0
+810 engajado político internet mole  /   ser engajado em política via internet é mole  /  0.0  /  3.0
+918 político vício difícil solução  /   política e seus vícios , difícil solução  /  0.0  /  3.0
+965 jante alguém falir político  /   jante com alguém que fale mal da política com você  /  0.0  /  3.0
+1096 presto atenção mundo político  /   você presta atenção no mundo da política  /  0.0  /  3.0
+1136 poderoso continuar livre político  /   os poderosos continuaram livres e na política  /  0.0  /  3.0
+1139 dever político base unir  /   " devemos fazer política com base no que nos une "  /  0.0  /  3.0
+1196 futebol tiago leifert político  /   um futebol como quer o tiago leifert sem política  /  0.0  /  3.0
+1261 filho continuar viver político  /   k com tanto que ele e filhos continuem vivendo da política  /  0.0  /  3.0
+1405 acreditar inclinação político rato  /   eu não acredito que fizeram a inclinação política dos ratos  /  0.0  /  3.0
+1440 existir político entrar partido  /   mas n existe fazer política sem entrar em partidos  /  0.0  /  3.0
+1554 vergonha bbb misturado político  /   que vergonha bbb misturada com política  /  0.0  /  3.0
+81 maior burrice povo idolatria político  /   a maior burrice do povo é essa idolatria política  /  0.0  /  4.0
+112 caro tão maluco polarização político  /   os cara tão maluco nessa de polarização política  /  0.0  /  4.0
+201 aff apreciar vídeo boto político  /   aff aprecia o vídeo ai tudo tu bota política k  /  0.0  /  4.0
+236 faltar irmão tô treta político  /   era só o q me faltava , irmão rs tô fora dessa treta política rs  /  0.0  /  4.0
+253 mudança querer vir através político  /   " a mudança que tanto queremos , só virá através da política  /  0.0  /  4.0
+266 gente irritar imaginar gente político  /   gente já me irrita imagina gente política  /  0.0  /  4.0
+344 irritar adotar político paz ano  /   não vou me irritar adotei a política de #paz esse ano  /  0.0  /  4.0
+514 agnaldo timóteo vítima racismo político  /   agnaldo timóteo é vítima de racismo por político  /  0.0  /  4.0
+728 homem 30 ano bastidor político  /   esse homem está a uns 30 anos nos bastidores da política  /  0.0  /  4.0
+768 torcida flamengo futebol povo político  /   torcida do flamengo ️ o futebol é do povo , a política também  /  0.0  /  4.0
+1133 ignorante parte cagar andar político  /   seria ignorante da minha parte cagar e andar pra política  /  0.0  /  4.0
+1141 acha dever separar relacionamento político  /   não acha q deveria separar mais relacionamentos e política  /  0.0  /  4.0
+1146 acompanhar ministro político proteger corrupto  /   acompanhei os ministros fazendo política , protegendo um corrupto  /  0.0  /  4.0
+1159 rsrs significar genérico cegueira político  /   rsrs , isso significa que é genérico , essa cegueira que você tem pela política  /  0.0  /  4.0
+1272 julgamento baseado lei político  /   não fizeram um julgamento baseada na lei , mas na política  /  0.0  /  4.0
+1297 cair paraquedas político sair candidato  /   você que está caindo de paraquedas na política e vai sair candidato  /  0.0  /  4.0
+1368 tão político morte moço lá  /   tão fazendo política na morte da moça lá  /  0.0  /  4.0
+1391 assumir poder transformado arma político  /   se não te assumires , não podes ser transformado em arma política  /  0.0  /  4.0
+1394 the metástase político daily sair  /   the metástase política daily já saiu  /  0.0  /  4.0
+1485 candidato lgbt busca afirmação político  /   candidatos lgbt em busca de afirmação política  /  0.0  /  4.0
+63 político condicionamento físico sobra tarefa guardiola  /   política do bom condicionamento físico para sobra em todas as tarefas que fazemos #guardiola  /  0.0  /  5.0
+133 achar foda político retratado através humorista  /   eu acho foda a política sendo retratada através dos humoristas  /  0.0  /  5.0
+176 curso formação político oferecido escola município  /   curso de formação política é oferecido nas escolas do município  /  0.0  /  5.0
+278 gás petróleo político fiscal desenvolvimento inclusão  /   gás , petróleo e política fiscal para desenvolvimento com inclusão  /  0.0  /  5.0
+317 gay divulgar mulher chega macho político  /   gays divulgue mulheres chega de machos na política  /  0.0  /  5.0
+333 desgraça político vendido aí acontecer coisa  /   é a desgraça da política , são uns vendidos , aí acontece essas coisas  /  0.0  /  5.0
+440 delegado acrônimo assumir chefia inquérito político  /   delegada da acrônimo assume chefia de inquéritos contra políticos  /  0.0  /  5.0
+503 comunista amigo hilary pedófilo político usar  /   que comunista ( amigo da hilary ) pedófilo , na política usa  /  0.0  /  5.0
+670 lá grupo antifascista rolar tretinha político  /   lá no grupo " antifascista " ta rolando uma tretinha sobre política  /  0.0  /  5.0
+715 igual gestor político time mostrar intensidade  /   igual ser " gestor " na política , time tem que mostrar " intensidade "  /  0.0  /  5.0
+834 neocon chefe político governo trump mago  /   mais um neocon como chefe de política do governo trump he maga  /  0.0  /  5.0
+999 valer amigo participar primeiro movimentação político  /   valeu amigos que participaram da primeira movimentação política  /  0.0  /  5.0
+1143 futuro país passa derrota político globo  /   o futuro do país passa pela derrota política da globo  /  0.0  /  5.0
+1228 político fossar óbvio stj favorecimento futebol  /   ou que a política não fosse óbvia como hoje o stj ou os favorecimentos no futebol  /  0.0  /  5.0
+1444 país possuir político incentivo qis elevado  /   nosso país não possui uma política de incentivo aos nossos qis elevados  /  0.0  /  5.0
+1476 político parar influenciar futebol flamengo indestrutível  /   quando a política parar de influenciar no futebol , o flamengo será indestrutível  /  0.0  /  5.0
+64 tentar ver praça paulinho gogó quadro político  /   tentei ver a praça mas fora o paulinho gogó todos os quadros foram sobre política  /  0.0  /  6.0
+184 falo político incomodar gente saber respeitar opinião  /   eu já nem falo de política pra não me incomoda , porque o gente que não sabe respeita opinião  /  0.0  /  6.0
+268 ver obstrução federalização político investigação bancada bala  /   o que tem a ver a obstrução da federalização política das investigações com a bancada da bala  /  0.0  /  6.0
+354 livro ficção servir tomar base científico político  /   felizmente tem alguns livros de ficção que também serve pra ser tomar como base científica e política  /  0.0  /  6.0
+383 mano morrer dar liçãozinha político desumano velho  /   o mano morreu e você quer dar liçãozinha de política para de ser desumano velho  /  0.0  /  6.0
+558 francisco pedir bispo fugir negócio político material  /   francisco pede aos bispos que fujam dos negócios , da política e dos bens materiais  /  0.0  /  6.0
+597 jovem precisar participar político ocupar espaço poder  /   os jovens precisam participar da política ocupando espaço de poder  /  0.0  /  6.0
+647 saber ficar zangado político emocionado pessoa importar  /   não sei se fico zangada com essa política ou emocionada por ter pessoas que ainda se importam com as outras  /  0.0  /  6.0
+735 perigo correr passar político inevitabilidade político eternid  /   " o perigo que corremos hoje é passar da política de inevitabilidade para a política de eternid  /  0.0  /  6.0
+780 parte comentário acabar enterrar político hipócrita sujo  /   a melhor parte desse comentário , é que você acabou de se enterrar na política hipócrita sujo  /  0.0  /  6.0
+960 justiça começar feito político classificação grande corinthians  /   a justiça começando a ser feita na política e a classificação do grande corinthians  /  0.0  /  6.0
+1029 pilantra almo político aparecer 4 4 ano  /   pilantra alma política que só aparece de 4 em 4 anos  /  0.0  /  6.0
+1044 brasil governar organização político criminoso mata roubar  /   o brasil é governado por uma organização política criminosa que mata e rouba  /  0.0  /  6.0
+1051 coreia sul definir político desejável criptomoedas blockchain  /   coreia do sul quer definir uma política desejável para criptomoedas e blockchain  /  0.0  /  6.0
+1120 mentir redação amanda falar escrever propaganda político  /   eu menti tanto nessa redação que amanda falou pra eu escrever propaganda política  /  0.0  /  6.0
+222 definir vertente político auto designação medido político toma  /   ele ta certo , o que define vertente política não é a auto designação e sim as medidas que o político toma  /  0.0  /  7.0
+308 primeiro momento achar menino criar tá aí político  /   no primeiro momento eu tb achei mas a menina que criou tá nem aí pra política k  /  0.0  /  7.0
+1011 judiciário deve julgar ideologia base político repercussão social  /   judiciário não deve julgar com ideologia ou com base na política ou repercussão social  /  0.0  /  7.0
+1337 parecer começar abrir mente fato político enfrentamento resolvido  /   parece que começam a abrir a mente para o fato de que a política do enfrentamento sozinha não tem resolvido  /  0.0  /  7.0
+1339 falar eleição conselho estdaual político cultura pe  /   falando sobre as eleições do conselho estdaual de política cultura de pe  /  0.0  /  7.0
+1420 fossar tratado relação político mercosul união europeu assinar  /   se isso fosse um tratado de relação política mercosul / união européia eu assinava  /  0.0  /  7.0
+3 mãe tá tentar entrar mente bag político arrumar nado  /   minha mãe tá tentando entrar na minha mente com bag de política k vai arrumar nada  /  0.0  /  8.0
+102 existir grande conspiração livrar lula restaurar velho ordem político  /   existe uma grande conspiração para livrar lula e restaurar a velha ordem política  /  0.0  /  8.0
+332 opinião lula dever preso país fossar afastado envolvimento político  /   na minha opinião o #lula não deveria ser preso seria melhor para o país se ele fosse afastado de todo envolvimento com a política e pronto  /  0.0  /  8.0
+374 amanhã sai série brasileiro netflix político nó final semana  /   amanhã sai uma série brasileira no netflix sobre política é nós final de semana  /  0.0  /  8.0
+528 brasil quinto mundo luciana político 25 ano nado mudar  /   o brasil é quinto mundo e a luciana é política a 25 anos e nada mudou  /  0.0  /  8.0
+818 gente tão desligado político template colocar direito ligar político  /   minha gente , eu sou tão desligada c isso de política q no template eu coloquei “ direita ” sem me ligar q era sobre política  /  0.0  /  8.0
+986 fácil passar 10 político educacional entender regulamento campeonato carioca  /   é mais fácil eu passar com um 10 em política educacional do que entender o regulamento do campeonato carioca  /  0.0  /  8.0
+1046 querer lulalivre registrar candidatura organizar caravana debater livremente político  /   queremos #lulalivre para registrar a candidatura , organizar as caravanas e debater livremente a boa política  /  0.0  /  8.0
+1409 globolixo invés mostrar político pôr culinário adorar trocar canal  /   #globolixo ao invés de mostrar política põem culinária eu ia adorar e não trocaria de canal  /  0.0  /  8.0
+1548 amenizar twitter tá vário xingamento político olhar filhote fofo  /   pra amenizar um pouco meu twitter que tá com vários xingamentos e política , olhem esse filhote fofo  /  0.0  /  8.0
+485 fã clube político combinar abrir mão cidadania lamber saco político  /   fã clube e política não combina você abre mão da sua cidadania pra lamber saco de político  /  0.0  /  9.0
+1064 bandido existir presídio quartel político congresso ok combater bandido presídio  /   bandidos não existe só no presídio não nos quartéis na política dentro do congresso ok , temos q combater os bandidos q estão fora do presídio  /  0.0  /  9.0
+1112 político baixo atual próprio lula comparar flaxflu comemorar bola trave  /   política baixa é atual , à qual o próprio lula comparou a um flaxflu em que se comemora até bola na trave  /  0.0  /  9.0
+691 claramente escolha halo lobby político f1 carro estético precisar estragar jeito  /   claramente a escolha do halo foi lobby / política , não que o f1 seja um carro estético , mas não precisava estragar desse jeito  /  0.0  /  10.0
+770 mover mundo educação amor chega mimi político título eleitor possuir beijo  /   o que move o mundo é a educação meus amores , chega desses mimi sobre a política se vocês nem título de eleitor ainda possuem beijos  /  0.0  /  10.0
+884 limpo facebook deixar reptiliano degenerado ligado político extremo cêntrico equidimensional quântico  /   fiz uma limpa no meu facebook e deixei só os reptilianos degenerados , ligados à política de extrema cêntrica equidimensional quântica  /  0.0  /  11.0
+357 volta big stick nome referência político externo estada unido presidência theodore rosevelt 1901-1909  /   é a volta do big stick , o nome que faz referência à política externa dos estados unidos sob a presidência de theodore rosevelt ( 1901-1909 )  /  0.0  /  12.0
+1487 tô ver peppa pig papai pig escolher página político precisar rasgar barco papel  /   tô aqui vendo peppa pig e o papai pig escolheu a página de política , a que ele não precisava , para rasgar fora e fazer um barco de papel  /  0.0  /  13.0
+125 discutir 1 hora cl político legislação brasileiro  /   estou discutindo a mais de 1 hora c o cl sobre política e legislação brasileira pqp  /  0.0  /  33.0
+
+Tema: lula
+
+protofrase / frase / peso / corte 
+
+1490 stf adir julgamento hábeas corpus proibir prisão lula 4 abril  /   stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  /  157.0  /  6.0
+1183 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1439 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1456 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1568 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1550 stf decidir lula poder preso decisão hábeas corpus dia 4 abril  /   stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  /  135.0  /  3.0
+1066 stf adir votação hábeas corpus lula 4 abril impedir prisão próximo sessão – jovem pan online  /   stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  /  133.0  /  12.0
+203 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+599 petista avaliar positivamente decisão stf impedir prisão lula  /   > petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+805 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+987 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1290 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1379 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+873 supremo impedir prisão lula decisão hábeas corpus  /   supremo impede prisão de lula até decisão sobre hábeas corpus  /  111.0  /  1.0
+1566 supremo impedir prisão lula decisão hábeas corpus  /   supremo impede prisão de lula até decisão sobre hábeas corpus  /  111.0  /  1.0
+177 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+237 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento de hábeas corpus  /  109.0  /  0.0
+360 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+409 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+513 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+716 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1442 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1170 stf adir julgamento lula 4 abril impedir prisão lá  /   stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  /  108.0  /  6.0
+15 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+170 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+415 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+482 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+795 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1199 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1201 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1244 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1540 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1544 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+320 stf conceder liminar prisão lula suspender julgamento dia 4  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 4  /  104.0  /  4.0
+226 stf decidir lula poder preso julgamento hábeas corpus  /   stf decide que lula não pode ser preso até julgamento de hábeas corpus  /  102.0  /  0.0
+899 petista avaliar positivamente decisão impedir prisão lula  /   petistas avaliam positivamente decisão que impede prisão de lula  /  97.0  /  1.0
+506 liminar stf proibir prisão lula dia 4 abril  /   liminar do stf proíbe prisão de lula até o dia 4 de abril  /  94.0  /  5.0
+18 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+666 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+828 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+984 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1027 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1098 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1303 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1414 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1447 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+883 supremo decidir lula poder preso julgamento hábeas corpus  /   supremo decide que lula não pode ser preso até julgamento de hábeas corpus  /  87.0  /  1.0
+562 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+938 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+1254 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+1304 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+286 supremo julgar hábeas corpus preventivo evitar prisão lula  /   supremo julga hábeas corpus preventivo para evitar prisão de lula  /  82.0  /  4.0
+413 stf aceito julgar hábeas corpus evitar prisão lula  /   stf aceita julgar hábeas corpus que evita a prisão de lula  /  82.0  /  4.0
+596 stf votar favor julgar hábeas corpus evitar prisão lula  /   stf vota a favor de julgar hábeas corpus que evita prisão de lula  /  82.0  /  5.0
+1412 lula poder preso julgamento hábeas corpus  /   lula não pode ser preso até julgamento de hábeas corpus  /  81.0  /  0.0
+1198 stf suspender julgamento hábeas corpus lula dar liminar impedir prisão  /   stf suspende julgamento de hábeas corpus de lula e dá liminar que impede prisão  /  81.0  /  4.0
+1158 stf congelar situação lula poder preso dia 4 abril  /   stf ' congela ' situação e lula não pode ser preso até dia 4 de abril  /  81.0  /  5.0
+212 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+310 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+378 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+554 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+613 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+778 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+932 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+954 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+967 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+990 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+1060 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+1323 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+1372 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+1383 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+1494 lula ganhar ganho dia 4  /   lula ganhou e ganha dia 4  /  77.0  /  1.0
+118 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+544 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+619 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1148 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1351 decisão stf lula poder preso 4 abril  /   por decisão do stf , lula não poderá ser preso até 4 de abril  /  72.0  /  1.0
+1320 stf conceder liminar prisão lula suspender julgamento dia 04/04  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 04/04 > >  /  72.0  /  4.0
+209 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+585 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+1269 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+739 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1012 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1122 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+656 stf marca 4 abril julgamento hábeas corpus lula  /   stf marca para 4 de abril julgamento do hábeas corpus de lula  /  68.0  /  3.0
+411 decisão hábeas corpus lula refletir condenado lava jato dizer líder dem  /   decisão sobre hábeas corpus de lula reflete em outros condenados na lava jato , diz líder do dem  /  65.0  /  6.0
+451 decisão hábeas corpus lula refletir condenado lava jato dizer líder dem  /   decisão sobre hábeas corpus de lula reflete em outros condenados na lava jato , diz líder do dem  /  65.0  /  6.0
+107 julgamento hábeas corpus lula stf  /   julgamento do hábeas corpus de lula no stf  /  58.0  /  0.0
+1570 próximo lula poder preso poder preso  /   ' na próxima segunda , lula poderá ser preso , mas não poderá ser preso '  /  55.0  /  2.0
+204 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+375 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+511 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+606 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+992 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1001 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1043 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1250 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1380 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1448 7 4 supremo dar liberdade lula  /   por 7 a 4 supremo dá liberdade a lula  /  54.0  /  0.0
+1125 stf julgar quinta-feira pedido defeso evitar prisão lula  /   stf julga nesta quinta-feira pedido da defesa para evitar prisão de lula  /  54.0  /  5.0
+1083 petista avaliar positivamente decisão stf lula  /   petistas avaliam positivamente decisão do stf sobre lula  /  48.0  /  0.0
+250 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+522 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+316 dodge defender prisão lula dizer decisão executar pena após 2ª instância combate impunidade  /   dodge defende prisão de lula e diz que decisão de executar pena após 2ª instância combate impunidade  /  46.0  /  11.0
+75 palocci criticar stf furar fila hábeas corpus lula  /   palocci critica stf por " furar fila " com hábeas corpus de lula  /  44.0  /  3.0
+51 indignado palocci criticar stf furar fila hábeas corpus lula  /   indignado , palocci critica stf por " furar fila " com hábeas corpus de lula  /  44.0  /  4.0
+216 acompanhar vivo julgamento pedido hábeas corpus lula stf  /   acompanhe ao vivo julgamento do pedido de hábeas corpus de lula no stf  /  44.0  /  4.0
+1017 liminar resguardar direito conclusão julgamento dizer defeso lula  /   liminar resguarda direito até conclusão do julgamento , diz defesa de lula  /  43.0  /  1.0
+35 lula conseguir ganhar 15 dia solução usual dizer analista xp  /   lula conseguiu ganhar 15 dias com uma solução não usual , diz analista da xp  /  42.0  /  0.0
+1307 lula conseguir ganhar 15 dia solução usual dizer analista xp  /   lula conseguiu ganhar 15 dias com uma solução não usual , diz analista da xp  /  42.0  /  0.0
+1319 lula conseguir ganhar 15 dia solução usual dizer analista xp  /   lula conseguiu ganhar 15 dias com uma solução não usual , diz analista da xp  /  42.0  /  0.0
+1056 2 2 admissibilidade hábeas corpus lula  /   2 a 2 sobre admissibilidade do hábeas corpus de lula  /  38.0  /  3.0
+157 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+713 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+1294 próximo lula poder preso poder  /   na próxima segunda , lula poderá ser preso , mas não poderá ser  /  33.0  /  2.0
+138 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+140 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+1153 petista avaliar decisão stf lula positivamente  /   petistas avaliam decisão do stf sobre lula positivamente  /  32.0  /  2.0
+351 stf adir recurso lula dar liminar impedir prisão  /   stf adia recurso de lula , mas dá liminar para impedir sua prisão  /  30.0  /  5.0
+6 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+234 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+421 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+257 aí grupo sala faculdade vira local discutir político elogiar bolsonaro criticar lula afff credo  /   aí o grupo da sua sala na faculdade vira um local pra discutir política , elogiar o bolsonaro e criticar o lula , afff credo  /  27.0  /  12.0
+71 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+162 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+210 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+373 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+445 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+624 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+634 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1081 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1102 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1293 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1474 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1062 stf suspender sessão impedir lula preso 4 abril  /   stf suspende sessão e impede que lula seja preso antes de 4 de abril  /  22.0  /  3.0
+732 lulanacadeia bora mexer manifestação 4 abril fim supremo corte político stfsupremavergonha  /   #lulanacadeia bora se mexer , manifestação até 4 de abril , pelo fim dessa suprema corte política #stfsupremavergonha  /  22.0  /  7.0
+91 stf hc lula solto passa frente hc palocci preso dizer deltan  /   ‘ no stf , hc de lula , solto , passa na frente de hc de palocci , preso ’ , diz deltan  /  21.0  /  0.0
+758 stf hc lula solto passa frente hc palocci preso dizer deltan  /   ‘ no stf , hc de lula , solto , passa na frente de hc de palocci , preso ’ , diz deltan  /  21.0  /  0.0
+1086 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1088 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1090 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1332 rosa weber responsável voto decisivo liberdade lula stf  /   quem é rosa weber , responsável por voto decisivo para liberdade de lula no stf  /  20.0  /  4.0
+208 advogado lula dizer volúpia encarcerar ex-presidente  /   advogado de lula diz que há " volúpia para encarcerar um ex-presidente "  /  18.0  /  0.0
+1150 advogado lula dizer volúpia encarcerar ex-presidente  /   advogado de lula diz que há ' volúpia para encarcerar um ex-presidente '  /  18.0  /  0.0
+1225 advogado lula denunciar tacão autoritário  /   advogado de lula denuncia o tacão autoritário  /  16.0  /  0.0
+1387 advogado lula denunciar tacão autoritário  /   advogado de lula denuncia o tacão autoritário  /  16.0  /  0.0
+1489 advogado lula denunciar tacão autoritário  /   advogado de lula denuncia o tacão autoritário  /  16.0  /  0.0
+711 decil � stf ex-presidente lula � poder � preso at � 4 abril  /   por decis � o do stf , ex-presidente lula n � o poder � ser preso at � 4 de abril  /  16.0  /  11.0
+323 violência fazendeiro gaúcho lula origem secular  /   violência de fazendeiros gaúchos contra lula tem origem secular  /  15.0  /  0.0
+662 violência fazendeiro gaúcho lula origem secular  /   violência de fazendeiros gaúchos contra lula tem origem secular  /  15.0  /  0.0
+1216 violência fazendeiro gaúcho lula origem secular  /   violência de fazendeiros gaúchos contra lula tem origem secular  /  15.0  /  0.0
+345 lula político aprovado brasil apontar pesquisa ipsos  /   lula é o político mais aprovado do brasil , aponta pesquisa ipsos  /  12.0  /  0.0
+489 lula político aprovado brasil apontar pesquisa ipsos  /   lula é o político mais aprovado do brasil , aponta pesquisa ipsos  /  12.0  /  0.0
+893 pt enxerga vitória momentâneo lula decisão  /   pt enxerga vitória ' momentânea ' de lula com decisão  /  12.0  /  0.0
+923 pt enxerga vitória momentâneo lula decisão  /   pt enxerga vitória ' momentânea ' de lula com decisão  /  12.0  /  0.0
+362 advogado lula dizer & quot  /   advogado de lula diz que há & quot  /  12.0  /  1.0
+1364 nó supremo corte totalmente acovardar dizer lula dilma  /   ‘ nós temos uma suprema corte totalmente acovardada ’ , diz lula a dilma  /  12.0  /  4.0
+947 mago político brasileiro pai filho presidente lula  /   você é simplesmente um mago da política brasileira , você é o pai que todo filho quer ter presidente lula  /  11.0  /  5.0
+929 lula pôr lenço vermelho varga brizolar  /   lula põe o lenço vermelho de vargas e brizola  /  10.0  /  0.0
+1175 lula pôr lenço vermelho varga brizolar  /   lula põe o lenço vermelho de vargas e brizola  /  10.0  /  0.0
+731 palocci crítico stf furar fila hc lula  /   palocci faz críticas sobre o stf por “ furar fila ” com hc de lula  /  9.0  /  3.0
+242 procuradoria acusar defeso lula má-fé processual  /   procuradoria acusa defesa de lula de ‘ má-fé processual ’  /  7.0  /  4.0
+179 tranquilidade inocente dizer lula  /   estou com a tranquilidade dos inocentes , diz lula  /  6.0  /  2.0
+341 caravana lula sul avança respeito compromisso maioria  /   caravana de lula no sul avança em respeito ao ' compromisso com a maioria '  /  6.0  /  4.0
+1116 ex-presidentes sul americano reunir caravana lula sul brasil  /   quatro ex-presidentes sul-americanos se reúnem em caravana de lula pelo sul do brasil  /  6.0  /  5.0
+1471 prazer fazendeiro receber dinheiro dar calote dizer lula  /   prazer de fazendeiro é receber dinheiro e dar calote , diz lula  /  6.0  /  6.0
+733 aceitar viver tacão autoritário dizer advogado pedir lula preso  /   ' não aceitamos viver sob o tacão autoritário ' , diz advogado ao pedir para lula não ser preso  /  6.0  /  7.0
+839 gente kd pessoal fodão político viver dizer lula tá morto  /   gente , kd aquele pessoal fodão em política q vive dizendo q o lula tá morto  /  6.0  /  8.0
+338 caravana lula  /   caravana de lula  /  4.0  /  0.0
+1210 caravana lula  /   caravana de lula  /  4.0  /  0.0
+1007 stf salvar lula salvar próprio pele  /   o stf não está salvando o lula , está salvando a própria pele  /  4.0  /  3.0
+1446 julgamento st ato lula  /   julgamento no st teve atos por e contra lula  /  4.0  /  3.0
+661 lulalivre livre saber próximo presidente brasil jogado político justiça tucano  /   #lulalivre se ele estiver livre sabe quem será o próximo presidente do brasil , tem que fazer jogada política com a justiça tucana  /  4.0  /  7.0
+1256 lula símbolo classe político podre manda brasil acobertado por+os capanga stf  /   lula hoje é um símbolo da classe política podre que manda no brasil e acobertado pelos seus capangas do stf  /  4.0  /  9.0
+168 lula dilma  /   lula ou dilma  /  3.0  /  0.0
+1252 lula dilma  /   lula ou dilma  /  3.0  /  0.0
+1249 perseguição político lula despertar mundo brasil manifestoches sono profundo  /   a perseguição política contra lula já despertou o mundo , somente aqui no brasil os manifestoches ainda estão em um sono profundo  /  3.0  /  7.0
+1429 lula voltar político  /   por isso lula quer voltar pra política  /  2.0  /  1.0
+1419 aposto ficha stf solto lula  /   agora aposto minhas fichas todas que o stf solta ele #lula  /  2.0  /  3.0
+24 juiz morar condenar lula prova  /   , juiz moro condenou lula sem provas  /  2.0  /  4.0
+504 lula obter primeiro grande vitória justiça  /   lula obtém sua primeira grande vitória na justiça  /  2.0  /  4.0
+1385 alguém acreditar ministro indicado pt vão condenar lula  /   alguém acredita que os ministros indicados pelo pt vão condenar lula  /  2.0  /  6.0
+1460 lula provar stf stj corte covarde crime compensar  /   lula provou que o stf e stj são mesmo cortes de covardes e que o crime compensa  /  2.0  /  6.0
+875 lula voltar governo voto popular revogar medido governo golpista temer  /   lula vai voltar ao governo pelo voto popular e revogar medidas do governo golpista de temer  /  2.0  /  8.0
+87 lula obt � primeiro grande vit � ria justi �  /   lula obt � m sua primeira grande vit � ria na justi � a  /  2.0  /  11.0
+261 lulaladrão  /   #lulaladrão  /  0.0  /  0.0
+1049 lula  /   lula  /  0.0  /  0.0
+460 maragato protestar lula  /   quem são os maragatos que protestaram contra lula  /  0.0  /  2.0
+78 pitada enorme psicopatia lulapreso  /   com pitadas enormes de psicopatia #lulapreso  /  0.0  /  3.0
+1079 lula temer aécio preso  /   lula , temer e aécio não serão presos  /  0.0  /  3.0
+1144 entender ofensivo prender lula  /   como entender sua ofensiva para prender lula  /  0.0  /  3.0
+175 personagem game matar lula pt  /   todos os personagens de games vai matar lula no pt agora hoje  /  0.0  /  4.0
+380 lula seguir agenda falar julgamento stf  /   lula segue agenda pelo rs sem falar em julgamento no stf  /  0.0  /  5.0
+394 poder destruir pessoa físico lula ideia  /   ‘ podem destruir a pessoa física de lula , mas as ideias  /  0.0  /  5.0
+969 lula reiterar desejar justiça declarar motivado  /   lula reitera que " deseja justiça " e declara estar mais motivado do que jamais  /  0.0  /  5.0
+1374 relembrar cronologia processo lula triplex guarujá  /   relembre a cronologia do processo de lula no caso do triplex no guarujá  /  0.0  /  5.0
+427 missão lula receber mensagem apoio novo protesto  /   nas missões , lula recebe mensagens de apoio e novos protestos  /  0.0  /  6.0
+737 pt comemorar moderação oposição irritar liminar pró-lula  /   pt comemora com moderação e oposição se irrita com liminar pró-lula  /  0.0  /  6.0
+1424 defender lula pobre brasil único caminho desobedi  /   para defender lula e os pobres do brasil , o nosso único caminho agora é a desobedi  /  0.0  /  6.0
+186 deputado ruralista acionar judicialmente lula explicar crítico fazendeiro  /   deputado ruralista aciona judicialmente lula para que explique críticas a fazendeiros  /  0.0  /  7.0
+1203 quantum surpreso lula envolvido maior praga politicar nacional  /   nossa , quanta surpresa o lula estar envolvido com uma das maiores pragas da politica nacional  /  0.0  /  7.0
+102 existir grande conspiração livrar lula restaurar velho ordem político  /   existe uma grande conspiração para livrar lula e restaurar a velha ordem política  /  0.0  /  8.0
+332 opinião lula dever preso país fossar afastado envolvimento político  /   na minha opinião o #lula não deveria ser preso seria melhor para o país se ele fosse afastado de todo envolvimento com a política e pronto  /  0.0  /  8.0
+1046 querer lulalivre registrar candidatura organizar caravana debater livremente político  /   queremos #lulalivre para registrar a candidatura , organizar as caravanas e debater livremente a boa política  /  0.0  /  8.0
+1112 político baixo atual próprio lula comparar flaxflu comemorar bola trave  /   política baixa é atual , à qual o próprio lula comparou a um flaxflu em que se comemora até bola na trave  /  0.0  /  9.0
+
+Tema: stf
+
+protofrase / frase / peso / corte 
+
+1490 stf adir julgamento hábeas corpus proibir prisão lula 4 abril  /   stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  /  157.0  /  6.0
+1183 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1439 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1456 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1568 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1550 stf decidir lula poder preso decisão hábeas corpus dia 4 abril  /   stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  /  135.0  /  3.0
+1066 stf adir votação hábeas corpus lula 4 abril impedir prisão próximo sessão – jovem pan online  /   stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  /  133.0  /  12.0
+203 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+599 petista avaliar positivamente decisão stf impedir prisão lula  /   > petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+805 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+987 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1290 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1379 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1170 stf adir julgamento lula 4 abril impedir prisão lá  /   stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  /  108.0  /  6.0
+15 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+170 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+415 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+482 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+795 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1199 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1201 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1244 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1540 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1544 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+320 stf conceder liminar prisão lula suspender julgamento dia 4  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 4  /  104.0  /  4.0
+226 stf decidir lula poder preso julgamento hábeas corpus  /   stf decide que lula não pode ser preso até julgamento de hábeas corpus  /  102.0  /  0.0
+506 liminar stf proibir prisão lula dia 4 abril  /   liminar do stf proíbe prisão de lula até o dia 4 de abril  /  94.0  /  5.0
+18 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+666 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+828 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+984 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1027 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1098 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1303 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1414 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1447 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+413 stf aceito julgar hábeas corpus evitar prisão lula  /   stf aceita julgar hábeas corpus que evita a prisão de lula  /  82.0  /  4.0
+596 stf votar favor julgar hábeas corpus evitar prisão lula  /   stf vota a favor de julgar hábeas corpus que evita prisão de lula  /  82.0  /  5.0
+1198 stf suspender julgamento hábeas corpus lula dar liminar impedir prisão  /   stf suspende julgamento de hábeas corpus de lula e dá liminar que impede prisão  /  81.0  /  4.0
+1158 stf congelar situação lula poder preso dia 4 abril  /   stf ' congela ' situação e lula não pode ser preso até dia 4 de abril  /  81.0  /  5.0
+626 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+788 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+832 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+118 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+544 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+619 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1148 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1351 decisão stf lula poder preso 4 abril  /   por decisão do stf , lula não poderá ser preso até 4 de abril  /  72.0  /  1.0
+1320 stf conceder liminar prisão lula suspender julgamento dia 04/04  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 04/04 > >  /  72.0  /  4.0
+209 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+585 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+1269 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+739 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1012 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1122 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+656 stf marca 4 abril julgamento hábeas corpus lula  /   stf marca para 4 de abril julgamento do hábeas corpus de lula  /  68.0  /  3.0
+107 julgamento hábeas corpus lula stf  /   julgamento do hábeas corpus de lula no stf  /  58.0  /  0.0
+1399 dodge dizer confiar decisão stf favor prisão 2ª instância  /   dodge diz que confia em decisão do stf a favor da prisão em 2ª instância  /  57.0  /  1.0
+1492 dodge dizer confiar decisão stf favor prisão 2ª instância  /   dodge diz que confia em decisão do stf a favor da prisão em 2ª instância  /  57.0  /  1.0
+196 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+200 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+284 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ' confiante ' de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+371 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+680 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ' confiante ' de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+940 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+988 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+1125 stf julgar quinta-feira pedido defeso evitar prisão lula  /   stf julga nesta quinta-feira pedido da defesa para evitar prisão de lula  /  54.0  /  5.0
+519 dodge dizer confiar decisão stf favor prisão instância  /   dodge diz que confia em decisão do stf a favor da prisão em segunda instância  /  53.0  /  1.0
+1083 petista avaliar positivamente decisão stf lula  /   petistas avaliam positivamente decisão do stf sobre lula  /  48.0  /  0.0
+250 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+522 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+75 palocci criticar stf furar fila hábeas corpus lula  /   palocci critica stf por " furar fila " com hábeas corpus de lula  /  44.0  /  3.0
+51 indignado palocci criticar stf furar fila hábeas corpus lula  /   indignado , palocci critica stf por " furar fila " com hábeas corpus de lula  /  44.0  /  4.0
+216 acompanhar vivo julgamento pedido hábeas corpus lula stf  /   acompanhe ao vivo julgamento do pedido de hábeas corpus de lula no stf  /  44.0  /  4.0
+157 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+713 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+138 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+140 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+1153 petista avaliar decisão stf lula positivamente  /   petistas avaliam decisão do stf sobre lula positivamente  /  32.0  /  2.0
+351 stf adir recurso lula dar liminar impedir prisão  /   stf adia recurso de lula , mas dá liminar para impedir sua prisão  /  30.0  /  5.0
+672 aproveitar falar político gostar dizer partido stfvergonhanacional  /   aproveitando que estamos falando de política , gostaria de dizer que sou um bom partido #stfvergonhanacional  /  30.0  /  5.0
+43 posição stf vexame agravado inacreditável liminar  /   ' posição do stf foi um vexame ainda agravado pela inacreditável liminar '  /  25.0  /  0.0
+122 posição stf vexame agravado inacreditável liminar  /   ' posição do stf foi um vexame ainda agravado pela inacreditável liminar '  /  25.0  /  0.0
+288 posição stf vexame agravado inacreditável liminar  /   ' posição do stf foi um vexame ainda agravado pela inacreditável liminar '  /  25.0  /  0.0
+643 posição stf vexame agravado inacreditável liminar  /   ' posição do stf foi um vexame ainda agravado pela inacreditável liminar '  /  25.0  /  0.0
+891 posição stf vexame agravado inacreditável liminar  /   ' posição do stf foi um vexame ainda agravado pela inacreditável liminar '  /  25.0  /  0.0
+1062 stf suspender sessão impedir lula preso 4 abril  /   stf suspende sessão e impede que lula seja preso antes de 4 de abril  /  22.0  /  3.0
+1135 stf acabar lava jato igual itália  /   o stf está acabando com a lava jato , igual na itália  /  22.0  /  4.0
+732 lulanacadeia bora mexer manifestação 4 abril fim supremo corte político stfsupremavergonha  /   #lulanacadeia bora se mexer , manifestação até 4 de abril , pelo fim dessa suprema corte política #stfsupremavergonha  /  22.0  /  7.0
+91 stf hc lula solto passa frente hc palocci preso dizer deltan  /   ‘ no stf , hc de lula , solto , passa na frente de hc de palocci , preso ’ , diz deltan  /  21.0  /  0.0
+758 stf hc lula solto passa frente hc palocci preso dizer deltan  /   ‘ no stf , hc de lula , solto , passa na frente de hc de palocci , preso ’ , diz deltan  /  21.0  /  0.0
+1086 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1088 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1090 pt dizer primeiro vitória lula stf  /   pt diz que foi a primeira vitória de lula no stf  /  20.0  /  0.0
+1332 rosa weber responsável voto decisivo liberdade lula stf  /   quem é rosa weber , responsável por voto decisivo para liberdade de lula no stf  /  20.0  /  4.0
+853 fim indicação político stf acabar vergonha nacional  /   fim de indicação política no stf acabaria com essa vergonha nacional  /  17.0  /  2.0
+711 decil � stf ex-presidente lula � poder � preso at � 4 abril  /   por decis � o do stf , ex-presidente lula n � o poder � ser preso at � 4 de abril  /  16.0  /  11.0
+389 stf favor pris  /   o do stf a favor da pris  /  13.0  /  1.0
+863 sepúlveda pertence sai satisfeito stf elogiar batochio  /   sepúlveda pertence “ sai satisfeito ” do stf e elogia batochio  /  12.0  /  0.0
+867 sepúlveda pertence sai satisfeito stf elogiar batochio  /   sepúlveda pertence “ sai satisfeito ” do stf e elogia batochio  /  12.0  /  0.0
+1138 stf derruba norma permitir doação eleitoral oculto  /   stf derruba norma que permitia doações eleitorais ocultas  /  12.0  /  0.0
+1286 stf derruba norma permitir doação eleitoral oculto  /   > stf derruba norma que permitia doações eleitorais ocultas  /  12.0  /  0.0
+690 preciso acabar indicação político ministro stf  /   é preciso acabar com a indicação política de ministros do stf  /  11.0  /  2.0
+749 stfdefendebandido fim indicação político  /   #stfdefendebandido pelo fim de indicação política  /  9.0  /  1.0
+731 palocci crítico stf furar fila hc lula  /   palocci faz críticas sobre o stf por “ furar fila ” com hc de lula  /  9.0  /  3.0
+225 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+239 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+241 esculhambação político stf  /   a esculhambação política também no stf  /  7.0  /  1.0
+1155 esquecer stf entrar indicação político  /   nunca esqueça , no stf só entra por indicação política  /  7.0  /  3.0
+115 stf confirmar prisão após 2ª instância vale  /   stf confirma que prisão após 2ª instância vale para todos os casos  /  6.0  /  4.0
+1007 stf salvar lula salvar próprio pele  /   o stf não está salvando o lula , está salvando a própria pele  /  4.0  /  3.0
+180 stf proibir doação identificado campanha eleitoral  /   stf proíbe qualquer doação não identificada para campanhas eleitorais  /  4.0  /  4.0
+1517 stfvergonhanacional achar classe político pior supremo superar  /   #stfvergonhanacional achava a classe política a pior , mas o supremo se superou  /  4.0  /  5.0
+1256 lula símbolo classe político podre manda brasil acobertado por+os capanga stf  /   lula hoje é um símbolo da classe política podre que manda no brasil e acobertado pelos seus capangas do stf  /  4.0  /  9.0
+1258 stf corte político  /   o stf é uma corte política  /  3.0  /  1.0
+1539 final stf solto  /   no final o stf solta  /  2.0  /  1.0
+594 dar legislar ministro stf  /   não dá para legislar , sendo ministro do stf  /  2.0  /  2.0
+1334 servir stf julgar acordo constituição  /   para que serve o stf se ele que não julga de acordo com a constituição  /  2.0  /  3.0
+1419 aposto ficha stf solto lula  /   agora aposto minhas fichas todas que o stf solta ele #lula  /  2.0  /  3.0
+1460 lula provar stf stj corte covarde crime compensar  /   lula provou que o stf e stj são mesmo cortes de covardes e que o crime compensa  /  2.0  /  6.0
+1551 gleisi petrolão ataca raquel dodge comemorar picaretagem stf  /   gleisi petrolão ataca raquel dodge e comemora a picaretagem do stf  /  2.0  /  6.0
+913 stf  /   #stf  /  0.0  /  0.0
+1055 stf  /   stf  /  0.0  /  0.0
+1224 stf  /   stf  /  0.0  /  0.0
+1386 stf  /   stf  /  0.0  /  0.0
+1488 stf  /   stf  /  0.0  /  0.0
+854 concurso stf  /   concurso já para stf  /  0.0  /  1.0
+720 merecer ocupar stf_oficial  /   esse merece ocupar um posto no stf_oficial  /  0.0  /  2.0
+880 entender stf covarde elogio  /   entender que stf é covarde é elogio  /  0.0  /  3.0
+1274 revoltante rendição stf lulopetismo  /   é revoltante essa rendição do stf ao lulopetismo  /  0.0  /  3.0
+1389 stf bode expiatório coisas-da-politica  /   o stf e os bodes expiatórios #coisas-da-politica  /  0.0  /  3.0
+380 lula seguir agenda falar julgamento stf  /   lula segue agenda pelo rs sem falar em julgamento no stf  /  0.0  /  5.0
+353 brasil acabar decisão nefasto corte politicar stf  /   para mim o brasil acabou com essa decisão nefasta dessa corte politica do stf  /  0.0  /  6.0
+982 decisão correto nado extraordinário afirmar damous stf  /   ‘ decisão foi correta , sem nada de extraordinário ’ , afirma damous sobre stf  /  0.0  /  6.0
+
+Tema: poder
+
+protofrase / frase / peso / corte 
+
+1550 stf decidir lula poder preso decisão hábeas corpus dia 4 abril  /   stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  /  135.0  /  3.0
+226 stf decidir lula poder preso julgamento hábeas corpus  /   stf decide que lula não pode ser preso até julgamento de hábeas corpus  /  102.0  /  0.0
+883 supremo decidir lula poder preso julgamento hábeas corpus  /   supremo decide que lula não pode ser preso até julgamento de hábeas corpus  /  87.0  /  1.0
+1412 lula poder preso julgamento hábeas corpus  /   lula não pode ser preso até julgamento de hábeas corpus  /  81.0  /  0.0
+1158 stf congelar situação lula poder preso dia 4 abril  /   stf ' congela ' situação e lula não pode ser preso até dia 4 de abril  /  81.0  /  5.0
+1351 decisão stf lula poder preso 4 abril  /   por decisão do stf , lula não poderá ser preso até 4 de abril  /  72.0  /  1.0
+209 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+585 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+1269 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+1570 próximo lula poder preso poder preso  /   ' na próxima segunda , lula poderá ser preso , mas não poderá ser preso '  /  55.0  /  2.0
+16 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+171 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+416 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+483 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+796 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1200 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1202 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1245 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1541 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1545 ex-presidente poder preso  /   antes disso , ex-presidente não pode ser preso  /  33.0  /  0.0
+1294 próximo lula poder preso poder  /   na próxima segunda , lula poderá ser preso , mas não poderá ser  /  33.0  /  2.0
+1054 eventual prisão ex-presidente poder ocorrer próximo sessão corte marcado 4 abril  /   eventual prisão do ex-presidente não poderá ocorrer até a próxima sessão da corte , marcada para 4 de abril  /  32.0  /  6.0
+99 pessoa poder usar tempo gastar discutir político dormir  /   o pessoas podiam usar o tempo que gastam discutindo política pra dormir  /  27.0  /  6.0
+759 poder falar politicar religião aquecimento global vir falar time  /   pode falar sobre politica , religião , aquecimento global comigo mas não vem falar de time , principalmente se for o meu  /  22.0  /  0.0
+1095 poder falar politicar religião aquecimento global vir falar time  /   pode falar sobre politica , religião , aquecimento global comigo mas não vem falar de time , principalmente se for o meu  /  22.0  /  0.0
+584 poder existir pessoa hipócrita ponto odiar causa político futebol  /   como podem existir pessoas hipócritas a ponto de se odiarem por causa de política e futebol  /  17.0  /  6.0
+711 decil � stf ex-presidente lula � poder � preso at � 4 abril  /   por decis � o do stf , ex-presidente lula n � o poder � ser preso at � 4 de abril  /  16.0  /  11.0
+496 if roma poder entrar político pão circo  /   if está que nem roma , pode entrar política do pão e circo  /  15.0  /  3.0
+32 poder político religião coisa querer  /   pode ser sobre política e religião e qualquer outra coisa que você quiser  /  9.0  /  3.0
+701 falar odiar político partido poder contar volta direito leve tesão 45  /   falou que odeia política e não tem partido , pode contar que só volta na direita , com um leve tesão pelo 45  /  6.0  /  8.0
+14 poder sair presidência fla dedicar 100 vida político  /   já pode sair da presidência do fla pra se dedicar 100 % à vida política  /  4.0  /  6.0
+1498 político poder  /   política só pôde  /  3.0  /  0.0
+1560 político poder misturar futebol  /   mas política n pode se misturar c futebol  /  3.0  /  2.0
+1234 gostar refletir realidade político poder deixar ler  /   para quem gosta de refletir sobre a realidade política , não pode deixar de ler isso  /  3.0  /  5.0
+1326 poder vir engolir justiça justiça político político  /   bom , pode ser que ainda venha a ter de engolir o à justiça o que é da justiça , à política o que é da política  /  3.0  /  5.0
+956 triste poder opinião político ofendido forma grosseiro mau educado democracia  /   que triste , não podemos ter opinião política sem sermos ofendidos , de forma grosseira e mau educada , democracia  /  3.0  /  8.0
+569 mp poder usar rede político  /   como um mp pode usar as redes para fazer política  /  2.0  /  3.0
+1511 religião politicar poder andar junto  /   religião e politica podem andar juntas  /  2.0  /  3.0
+256 decepcionado classe politicar poder deus causa  /   não somente a eles a todos , estou decepcionado com toda a classe politica e todos os poderes só deus na causa  /  2.0  /  4.0
+815 poder piorar  /   sempre pode piorar  /  0.0  /  1.0
+785 poder votar desgraça  /   tu nem pode votar desgraça  /  0.0  /  2.0
+1558 ninho tucano poder  /   no ninho tucano não pode  /  0.0  /  2.0
+536 politicar tratar valor poder  /   na politica não se trata de valores , mas de poder  /  0.0  /  3.0
+1136 poderoso continuar livre político  /   os poderosos continuaram livres e na política  /  0.0  /  3.0
+615 imaginar caos país psicopata poder  /   imaginem o caos no país com esses psicopatas no poder  /  0.0  /  4.0
+1391 assumir poder transformado arma político  /   se não te assumires , não podes ser transformado em arma política  /  0.0  /  4.0
+394 poder destruir pessoa físico lula ideia  /   ‘ podem destruir a pessoa física de lula , mas as ideias  /  0.0  /  5.0
+597 jovem precisar participar político ocupar espaço poder  /   os jovens precisam participar da política ocupando espaço de poder  /  0.0  /  6.0
+
+Tema: julgamento
+
+protofrase / frase / peso / corte 
+
+1490 stf adir julgamento hábeas corpus proibir prisão lula 4 abril  /   stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  /  157.0  /  6.0
+177 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+237 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento de hábeas corpus  /  109.0  /  0.0
+360 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+409 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+513 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+716 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1442 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1170 stf adir julgamento lula 4 abril impedir prisão lá  /   stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  /  108.0  /  6.0
+15 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+170 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+415 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+482 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+795 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1199 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1201 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1244 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1540 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+1544 stf decidir adiar dia 4 conclusão julgamento lula  /   stf decide adiar para dia 4 conclusão do julgamento de lula  /  104.0  /  1.0
+320 stf conceder liminar prisão lula suspender julgamento dia 4  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 4  /  104.0  /  4.0
+226 stf decidir lula poder preso julgamento hábeas corpus  /   stf decide que lula não pode ser preso até julgamento de hábeas corpus  /  102.0  /  0.0
+883 supremo decidir lula poder preso julgamento hábeas corpus  /   supremo decide que lula não pode ser preso até julgamento de hábeas corpus  /  87.0  /  1.0
+1412 lula poder preso julgamento hábeas corpus  /   lula não pode ser preso até julgamento de hábeas corpus  /  81.0  /  0.0
+1198 stf suspender julgamento hábeas corpus lula dar liminar impedir prisão  /   stf suspende julgamento de hábeas corpus de lula e dá liminar que impede prisão  /  81.0  /  4.0
+1320 stf conceder liminar prisão lula suspender julgamento dia 04/04  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 04/04 > >  /  72.0  /  4.0
+209 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+585 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+1269 maioria stf decidir lula poder preso julgamento final hc  /   maioria no stf decide que lula não pode ser preso até o julgamento final do hc  /  69.0  /  0.0
+739 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1012 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+1122 decisão stf resguardar direito conclusão julgamento dizer defeso lula  /   decisão do stf resguarda direito até conclusão do julgamento , diz defesa de lula  /  68.0  /  0.0
+656 stf marca 4 abril julgamento hábeas corpus lula  /   stf marca para 4 de abril julgamento do hábeas corpus de lula  /  68.0  /  3.0
+107 julgamento hábeas corpus lula stf  /   julgamento do hábeas corpus de lula no stf  /  58.0  /  0.0
+216 acompanhar vivo julgamento pedido hábeas corpus lula stf  /   acompanhe ao vivo julgamento do pedido de hábeas corpus de lula no stf  /  44.0  /  4.0
+1017 liminar resguardar direito conclusão julgamento dizer defeso lula  /   liminar resguarda direito até conclusão do julgamento , diz defesa de lula  /  43.0  /  1.0
+157 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+713 stf resguardar direito fim julgamento dizer defeso lula  /   stf resguarda direito até fim do julgamento , diz defesa de lula  /  34.0  /  0.0
+138 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+140 trf 4 mantém julgamento lula pronunciar decisão stf  /   trf 4 mantém julgamento de lula e se pronuncia sobre decisão do stf  /  33.0  /  5.0
+1446 julgamento st ato lula  /   julgamento no st teve atos por e contra lula  /  4.0  /  3.0
+963 corte adiar próximo sessão julgamento ação impetrar defeso petista  /   corte adiou para a próxima sessão o julgamento da ação impetrada pela defesa do petista  /  3.0  /  7.0
+1272 julgamento baseado lei político  /   não fizeram um julgamento baseada na lei , mas na política  /  0.0  /  4.0
+380 lula seguir agenda falar julgamento stf  /   lula segue agenda pelo rs sem falar em julgamento no stf  /  0.0  /  5.0
+
+Tema: prisão
+
+protofrase / frase / peso / corte 
+
+1490 stf adir julgamento hábeas corpus proibir prisão lula 4 abril  /   stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  /  157.0  /  6.0
+1183 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1439 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1456 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1568 stf conceder liminar evitar prisão lula 4 abril  /   stf concede liminar para evitar prisão de lula até 4 de abril  /  143.0  /  3.0
+1066 stf adir votação hábeas corpus lula 4 abril impedir prisão próximo sessão – jovem pan online  /   stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  /  133.0  /  12.0
+203 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+599 petista avaliar positivamente decisão stf impedir prisão lula  /   > petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+805 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+987 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1290 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+1379 petista avaliar positivamente decisão stf impedir prisão lula  /   petistas avaliam positivamente decisão do stf que impede prisão de lula  /  132.0  /  0.0
+873 supremo impedir prisão lula decisão hábeas corpus  /   supremo impede prisão de lula até decisão sobre hábeas corpus  /  111.0  /  1.0
+1566 supremo impedir prisão lula decisão hábeas corpus  /   supremo impede prisão de lula até decisão sobre hábeas corpus  /  111.0  /  1.0
+177 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+237 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento de hábeas corpus  /  109.0  /  0.0
+360 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+409 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+513 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+716 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1442 supremo barra prisão lula julgamento hábeas corpus  /   supremo barra prisão de lula até julgamento do hábeas corpus  /  109.0  /  0.0
+1170 stf adir julgamento lula 4 abril impedir prisão lá  /   stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  /  108.0  /  6.0
+320 stf conceder liminar prisão lula suspender julgamento dia 4  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 4  /  104.0  /  4.0
+899 petista avaliar positivamente decisão impedir prisão lula  /   petistas avaliam positivamente decisão que impede prisão de lula  /  97.0  /  1.0
+506 liminar stf proibir prisão lula dia 4 abril  /   liminar do stf proíbe prisão de lula até o dia 4 de abril  /  94.0  /  5.0
+18 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+666 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+828 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+984 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1027 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1098 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1303 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1414 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+1447 stf impedir prisão lula  /   stf impede , por ora , a prisão de lula  /  87.0  /  0.0
+562 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+938 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+1254 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+1304 petista celebrar decisão supremo impedir prisão lula  /   petistas celebram decisão do supremo que impede prisão de lula  /  83.0  /  2.0
+286 supremo julgar hábeas corpus preventivo evitar prisão lula  /   supremo julga hábeas corpus preventivo para evitar prisão de lula  /  82.0  /  4.0
+413 stf aceito julgar hábeas corpus evitar prisão lula  /   stf aceita julgar hábeas corpus que evita a prisão de lula  /  82.0  /  4.0
+596 stf votar favor julgar hábeas corpus evitar prisão lula  /   stf vota a favor de julgar hábeas corpus que evita prisão de lula  /  82.0  /  5.0
+1198 stf suspender julgamento hábeas corpus lula dar liminar impedir prisão  /   stf suspende julgamento de hábeas corpus de lula e dá liminar que impede prisão  /  81.0  /  4.0
+626 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+788 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+832 dodge dizer confiar decisão stf favor prisão 2º grau  /   dodge diz confiar em decisão do stf a favor da prisão em 2º grau  /  73.0  /  0.0
+118 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+544 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+619 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1148 stf conceder liminar prisão lula  /   stf concede liminar contra prisão de lula  /  72.0  /  0.0
+1320 stf conceder liminar prisão lula suspender julgamento dia 04/04  /   stf concede liminar contra prisão de lula e suspende julgamento até dia 04/04 > >  /  72.0  /  4.0
+1399 dodge dizer confiar decisão stf favor prisão 2ª instância  /   dodge diz que confia em decisão do stf a favor da prisão em 2ª instância  /  57.0  /  1.0
+1492 dodge dizer confiar decisão stf favor prisão 2ª instância  /   dodge diz que confia em decisão do stf a favor da prisão em 2ª instância  /  57.0  /  1.0
+196 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+200 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+284 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ' confiante ' de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+371 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+680 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ' confiante ' de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+940 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+988 raquel dizer confiante stf respeitar prisão 2º grau  /   raquel diz estar ‘ confiante ’ de que stf vai respeitar prisão em 2º grau  /  55.0  /  0.0
+1125 stf julgar quinta-feira pedido defeso evitar prisão lula  /   stf julga nesta quinta-feira pedido da defesa para evitar prisão de lula  /  54.0  /  5.0
+519 dodge dizer confiar decisão stf favor prisão instância  /   dodge diz que confia em decisão do stf a favor da prisão em segunda instância  /  53.0  /  1.0
+250 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+522 pensar cabra animado dizer lula após stf proibir prisão dia 4  /   ' pense num cabra animado ' , diz lula após stf proibir prisão até dia 4  /  46.0  /  7.0
+316 dodge defender prisão lula dizer decisão executar pena após 2ª instância combate impunidade  /   dodge defende prisão de lula e diz que decisão de executar pena após 2ª instância combate impunidade  /  46.0  /  11.0
+1054 eventual prisão ex-presidente poder ocorrer próximo sessão corte marcado 4 abril  /   eventual prisão do ex-presidente não poderá ocorrer até a próxima sessão da corte , marcada para 4 de abril  /  32.0  /  6.0
+351 stf adir recurso lula dar liminar impedir prisão  /   stf adia recurso de lula , mas dá liminar para impedir sua prisão  /  30.0  /  5.0
+115 stf confirmar prisão após 2ª instância vale  /   stf confirma que prisão após 2ª instância vale para todos os casos  /  6.0  /  4.0
+723 justiça sul-coreana ordenar prisão ex-presidente país corrupção  /   justiça sul-coreana ordena prisão de ex-presidente do país por corrupção  /  2.0  /  5.0
+
+Tema: justiça
+
+protofrase / frase / peso / corte 
+
+6 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+234 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+421 justiça federal negro pedido vereador impedir ato lula passo fundo  /   justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  /  28.0  /  0.0
+71 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+162 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+210 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+373 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+445 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+624 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+634 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1081 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1102 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1293 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+1474 lula justiça limbo  /   lula e a justiça no limbo  /  22.0  /  0.0
+661 lulalivre livre saber próximo presidente brasil jogado político justiça tucano  /   #lulalivre se ele estiver livre sabe quem será o próximo presidente do brasil , tem que fazer jogada política com a justiça tucana  /  4.0  /  7.0
+783 justiça político  /   justiça é para todos , não política  /  3.0  /  0.0
+1402 perfeitamente justiça perseguição político  /   perfeitamente , justiça não é perseguição política  /  3.0  /  2.0
+1326 poder vir engolir justiça justiça político político  /   bom , pode ser que ainda venha a ter de engolir o à justiça o que é da justiça , à política o que é da política  /  3.0  /  5.0
+829 landa copar vir brasil setembro lançamento livro deus justiça político  /   landa cope vem ao brasil em setembro para o lançamento do seu livro ' deus e a justiça política '  /  3.0  /  8.0
+331 aí interesse político justiça  /   daí o meu interesse por política e justiça  /  2.0  /  2.0
+504 lula obter primeiro grande vitória justiça  /   lula obtém sua primeira grande vitória na justiça  /  2.0  /  4.0
+723 justiça sul-coreana ordenar prisão ex-presidente país corrupção  /   justiça sul-coreana ordena prisão de ex-presidente do país por corrupção  /  2.0  /  5.0
+189 justiçaparatodos  /   #justiçaparatodos  /  0.0  /  0.0
+1404 justiça  /   justiça  /  0.0  /  0.0
+1403 querer justiça  /   queremos justiça  /  0.0  /  1.0
+618 vergonha justiça país  /   vergonha a justiça desse país  /  0.0  /  2.0
+949 senhor justiça politicar  /   o senhor não faz justiça , faz politica  /  0.0  /  2.0
+725 17 ano espera família justiça  /   os 17 anos de espera de uma família por justiça  /  0.0  /  4.0
+969 lula reiterar desejar justiça declarar motivado  /   lula reitera que " deseja justiça " e declara estar mais motivado do que jamais  /  0.0  /  5.0
+527 justiça impedir joão azevedo participar plenário ode  /   justiça impede que joão azevedo participe de plenárias do ode  /  0.0  /  6.0
+960 justiça começar feito político classificação grande corinthians  /   a justiça começando a ser feita na política e a classificação do grande corinthians  /  0.0  /  6.0
+

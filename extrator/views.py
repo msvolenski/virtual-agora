@@ -256,10 +256,11 @@ def salvar_dados_iniciais(request):
     #print keywords.keywords(documento.encode('utf-8'), language='portuguese')
     
     #tokenizer para Tweets
-    tknzr = TweetTokenizer()
+    tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
     palavras = tknzr.tokenize(documento)    
       
-    for token in palavras:                
+    for token in palavras: 
+        #print repr(token)               
        
         #substitui as risadas
         token = re.sub(r'\b([kK]+)\b', 'k', token)
@@ -275,19 +276,16 @@ def salvar_dados_iniciais(request):
         token = re.sub(r'ii[i]?', 'i', token)
         token = re.sub(r'oo[o]?', 'o', token)
         token = re.sub(r'uu[u]?', 'u', token)
-        token = re.sub(r'.\n', '.', token)
+        test = re.match(r'(.*?(\n))+.*?', token)
+        if test:
+            token = '.'
 
-        test = re.match(r'.\n', token)
-        if test:                    
-            #print 'achei'
-            #print repr(token)
-            token = "."
-        entrada_tokenizada1.write(token.strip())
+        entrada_tokenizada1.write(token.rstrip())
         try:
-            correta = CorrigePalavra.objects.get(palavra=token.strip()) 
-            entrada_tokenizada2.write(correta.palavra_correta.strip())
+            correta = CorrigePalavra.objects.get(palavra=token.rstrip()) 
+            entrada_tokenizada2.write(correta.palavra_correta.rstrip())
         except:
-            entrada_tokenizada2.write(token.strip())
+            entrada_tokenizada2.write(token.rstrip())
         entrada_tokenizada1.write(' ')
         entrada_tokenizada2.write(' ')      
     entrada_original.close()
@@ -412,16 +410,33 @@ def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
            
     #troca palavra do texto inicial por palavra escolhida pelo usuário
     if opcao == 'opcao2':             
-        arq_atualiza = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt", "w", "utf-8")        
-        buffer1 = list(palavras)
-        buffer1[int(posicao)]=palavra_correta
-        palavras=' '.join(buffer1)        
-        c = 0
-        for ii in palavras.split(' '):            
-            arq_atualiza.write(ii)            
-            arq_atualiza.write(' ')
-            c = c + 1        
-        arq_atualiza.close()
+        arq_atualiza = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt", "w", "utf-8")    
+
+        #cria novo objeto CorrigePalavra
+        novo = CorrigePalavra(palavra=palavras[int(posicao)], palavra_correta=palavra_correta)
+        novo.save() 
+
+        correcao =[]
+        for word in palavras:
+            if word == palavras[int(posicao)]:
+                arq_atualiza.write(palavra_correta)
+                arq_atualiza.write(' ')
+                correcao.append(palavra_correta)                    
+            else:
+                arq_atualiza.write(word)
+                arq_atualiza.write(' ')
+                correcao.append(word)           
+        arq_atualiza.close()   
+        
+        #buffer1 = list(palavras)
+        #buffer1[int(posicao)]=palavra_correta
+        #palavras=' '.join(buffer1)        
+        #c = 0
+        #for ii in palavras.split(' '):            
+        #    arq_atualiza.write(ii)            
+        #    arq_atualiza.write(' ')
+        #    c = c + 1        
+        #arq_atualiza.close()
         return corretor_ortografico(request) 
     
     #troca palavra do texto por palavra digitada pelo usuário e inclui nova palavra no dicionário
@@ -1130,6 +1145,7 @@ def selecionar_temas(request):
     #carrega dados
     dados = DadosSelecaoTemas.objects.get(id=1)
     r =  DadosPreproc.objects.get(id=1)
+    tabela_bigramas = ListaDeAdjacencias.objects.all()
             
     #inicializa dados do BD
     TemasNew.objects.all().delete()
@@ -1144,7 +1160,7 @@ def selecionar_temas(request):
         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,faixa_histo=0.1)
         parametros.save()
 
-    print parametros.faixa_histo
+    #print parametros.faixa_histo
             
     #cria arquivo de tabela para histograma
     arq_tabela_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt", 'w', 'utf-8')  
@@ -1226,9 +1242,9 @@ def selecionar_temas(request):
         arq_clusters.close()
         
         #seleciona os clusters segundo criterio de corte
-        print len(vertices_objs)
+        #print len(vertices_objs)
         for item in clusters_full.items():
-            if len(item[1]) < 0.1*len(vertices_objs):
+            if len(item[1]) < ((parametros.f_corte)/100)*len(vertices_objs):
                 clusters_selecionados[item[0]] = item[1]
 
             
@@ -1326,7 +1342,9 @@ def selecionar_temas(request):
     temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
     temas_preselecionados = OrderedDict(temas_preselecionados)
 
-    print temas_preselecionados
+    #print temas_preselecionados
+
+
 
     #inicializa relatório
     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
@@ -1334,7 +1352,7 @@ def selecionar_temas(request):
     arq_relatorio.write('PARÂMETROS DE CLUSTERIZAÇÃO')
     arq_relatorio.write('\n\n')
     arq_relatorio.write('- Faixa de divisão do histograma: ' + str(parametros.faixa_histo) + '\n' ) 
-    arq_relatorio.write('- Critério de exclusão do cluster: posssuir ' + '10' + '% dos nós totais ' + '(' + 'xx' + 'de ' + 'xx' + ')' + '\n\n'  ) 
+    arq_relatorio.write('- Critério de exclusão do cluster: posssuir ' + str(parametros.f_corte) + '% dos nós totais ' + '(' + str((parametros.f_corte/100)*len(vertices_objs)) + ' de ' + str(len(vertices_objs)) + ')' + '\n\n'  ) 
     arq_relatorio.write('CLUSTERS SELECIONADOS')
     arq_relatorio.write('\n\n')
 
@@ -1342,318 +1360,83 @@ def selecionar_temas(request):
         arq_relatorio.write('Cluster ' + str(item[0]) + '\n')
         for linha in item[1]:
             arq_relatorio.write(str(linha.split(' ')[0]) + ' ' +  str(linha.split(' ')[1].encode('utf-8')) + ' ' + str(linha.split(' ')[2]) + '\n')
-        arq_relatorio.write('\n')        
-            
+        arq_relatorio.write('\n')    
 
+    arq_relatorio.write('TEMAS PRÉ-SELECIONADOS')
+    arq_relatorio.write('\n\n') 
 
+    for item in clusters_selecionados.items():               
+        for linha in item[1]:
+            arq_relatorio.write(str(linha.split(' ')[1].encode('utf-8')) + '\n')
 
-
-
-
-
-
-
-
-
-
-#     #fit = powerlaw.Fit(valores_calculo_fit, discrete=True)
-#     #print fit.xmin
-#     #print fit.alpha\n
-#     #fit = powerlaw.Fit(valores_calculo_fit, xmin=0.0226, xmax=2000.0, discrete=True)
     
-    
-#     #fit = powerlaw.Fit(valores_calculo_fit, discrete=True)
+    arq_relatorio.write('\n\nSELEÇÃO FINAL DOS TEMAS\n\n')
+    arq_relatorio.write('- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas\n')
+    arq_relatorio.write('- Parâmetro: fb(frequência mínima de bigramas): ' + str(parametros.f_min_bigramas) + "% do total de bigramas\n")
+    arq_relatorio.write('- Resultados: \n\n')
+    arq_relatorio.write('Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa \n\n')
 
-# #         #calcula o MLF dos dados (o quão ajustados estão)
-# #         # maximum likelihood fitting (MLF)
-#     #print fit.alpha
-#     #print fit.xmin
-#     valores_calc = []
-#     x = 0
-#     for item in tabela_potenciacao_ordenada_valores:
-#         if x < 100:
-#             valores_calc.append(item)
-#             x = x + 1
-#     #print  valores_calc
-
-#     #x = valores_calc
-#     #intervalo
-   
-#     intervalos = np.arange(0,3.05,0.05)    
-#     print intervalos
+    # calcula grau de entrada dos temas pre-selecionados      
+    tabela_graus_entrada = OrderedDict()
+    for tema in temas_preselecionados.values():
+        print tema
+        tema_entradas = tabela_bigramas.filter(vertice_f=tema)
+        peso = 0
     
-#     x = valores_calculo_fit
-#     # num_bins = 66
-#     n, bins, patches = plt.hist(x, intervalos, facecolor='blue', alpha=0.5)
-#     print n, bins, patches
-    
-#     plt.show()
-    
-    
-#      #inicia cronometro
-#     inicio = time.time()
-    
-#     #carrega dados
-#     dados = DadosSelecaoTemas.objects.get(id=1)
-#     r =  DadosPreproc.objects.get(id=1)
+        print tema_entradas
+        for bigrama in tema_entradas:            
+            peso = peso + bigrama.peso            
+        tabela_graus_entrada[tema] = peso
 
-#     #carrega parametros de ajuste
-#     try:
-#         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-            
-#     except ObjectDoesNotExist:
-#         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
-#         parametros.save()           
-
-#     #inicializa arquivos a serem escritos e lidos
-#     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'w')    
-#     arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
-#     arq_distancias = codecs.open("extrator/arquivos/p4_relatorio_distancias_relativas.txt", 'w')
-#     tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()
+    print tabela_graus_entrada
     
-#     #inicializa relatório
-#     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
-#     arq_relatorio.write('\n\n\n')
-#     arq_relatorio.write('ETAPA 1: PRÉ-SELEÇÃO DOS TEMAS')
-#     arq_relatorio.write('\n\n')
-#     arq_relatorio.write('- Métrica: ' + str(dados.p_grau) + '%' + ' graus; '+ str(dados.p_bet) + '%' + ' betwenness; '+ str(dados.p_eigen) + '%' + ' eigenvector;' + '\n' ) 
+    # verifica se o grau de entrada do vertice-destino é maior que 50% do peso do bigrama e cria lista de vertices a serem excluidos    
+    temas_excluidos = [] 
+    for tema_i in temas_preselecionados.values():
+        for tema_f in temas_preselecionados.values():
+            bigramas = tabela_bigramas.filter(vertice_i=tema_i,vertice_f=tema_f)            
+            for bigrama in bigramas:  
+                arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
+                if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
+                    temas_excluidos.append(tema_f)
+
     
-#     #calculo da frequencia absoluta de corte  
-#     f = int(float(parametros.f_corte/100)*len(tabela_potenciacao)) 
+    temas_selecionados = temas_preselecionados.values()    
     
-#     #inicializa dados do BD
-#     TemasNew.objects.all().delete()
-
-#     #carrega tabelas    
-#     tabela_bigramas = ListaDeAdjacencias.objects.all()
-#     tabela_potenciacao_objs = TabelaRanking.objects.all().order_by('-potenciacao') 
-    
-#     if r.flag_testapalavra.strip() == "nao":               
-        
-#         #cria listas e dicionários
-#         tabela_potenciacao_numeros = OrderedDict()
-#         distancias_relativas_novo = []
-#         vertices_selecionados = OrderedDict()
-#         temas_preselecionados = OrderedDict()
-#         label = []                   
-        
-#         #cria tabela com indice potenciação
-#         for linha in tabela_potenciacao:
-#             tabela_potenciacao_numeros[linha.split(' ')[0]] = float(linha.split(' ')[2].rstrip('\n'))     
-        
-#         #Calcula as distÂncias relativas entre os vértices da tabela potenciacao
-#         contador = 0
-#         inicio_cauda = tabela_potenciacao_numeros.keys()[0]
-#         print inicio_cauda
-        
-#         for index, numero in enumerate(tabela_potenciacao_numeros):        
-            
-#             potenciacao_inicial = tabela_potenciacao_numeros.values()[index]
-                        
-#             try:
-#                 potenciacao_final = tabela_potenciacao_numeros.values()[index+1]
-#             except:
-#                 break        
-            
-#             #calcula distancia relativa
-            
-#             dr = 100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)
-           
-#             distancias_relativas_novo.append(dr)
-#             label.append(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
-#             arq_distancias.write(tabela_potenciacao_numeros.keys()[index] + '->' + tabela_potenciacao_numeros.keys()[index+1] + ' = ' + str(100*((potenciacao_inicial - potenciacao_final)/potenciacao_inicial)) + '\n' )
-
-#             if dr < parametros.dr_delta_min:
-#                 contador += 1
-#                 if contador >= f:
-#                     break
-#             else:
-#                 inicio_cauda = tabela_potenciacao_numeros.keys()[index+1]
-#                 contador = 0
-
-#         print inicio_cauda          
-
-#         print 'passou 2'
-#         #gera o grafico das distancias relativas
-#         matplotlib.rc('font', family='Arial')    
-#         objects = label   
-#         y_pos = np.arange(len(objects))    
-#         performance = distancias_relativas_novo
-#         plt.bar(y_pos, performance, align='center', alpha=0.5)
-#         plt.xticks(y_pos, objects)
-#         plt.ylabel('Distancia relativa') 
-#         plt.title('Distancias Relativas dos nos da rede')
-#         pylab.savefig('extrator/arquivos/p4_grafico_distancias_relativas_potenciacao.png')     
-    
-                
-#         #Seleciona região fora da cauda e armazena vertices (nomes e numeros)    
-#         vertice_inicio_cauda = inicio_cauda
-            
-#         for linha in tabela_potenciacao_objs:
-#             vertices_selecionados[linha.vertice_numero] = linha.vertice_nome
-#             if str(linha.vertice_numero) == str(vertice_inicio_cauda):
-#                 break
-
-#  ####################################################################################################################################################   
-#         #Pré-seleciona os temas excluindo os não-substantivos #########################################################    
-        
-#         #armazena palavras para iniciar o teste  
-#         if r.flag_testapalavra.strip() == 'nao': 
-#             TestaPalavra.objects.all().delete()
-#             aList = [TestaPalavra(palavra = nome, numero=int(numero), condicao='aguardando', resultado='null') for numero,nome in vertices_selecionados.items()]    
-#             TestaPalavra.objects.bulk_create(aList)
-#             r.flag_testapalavra = 'sim'
-#             r.save()                
-        
-          
-#     #inicializa flag de execucao
-#     flag_fim = 'nao'
-    
-#     #Verifica se há palavras a serem testadas
-#     palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)   
-    
-#     if not palavras:    
-#         flag_fim = 'sim'             
-        
-#     while flag_fim == 'nao':        
-#         lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
-#         lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
-#         arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
-#         palavras_lematizadas = arq_lematizador.readlines()  
-        
-#         for palavra in palavras:
-#             tags = [] 
-#             pal = TestaPalavra.objects.get(palavra__exact=palavra)    
-            
-#             #Busca todas as tags possíveis para a palavra
-#             for linha in palavras_lematizadas:            
-#                 tokens = linha.strip().split(' ')            
-#                 if palavra in tokens:                           
-#                     for token in tokens:            
-#                         pattern = re.compile("^[A-Z].")
-#                         eh_tag = pattern.match(token)
-#                         if eh_tag:
-#                             tags.append(token)
-                    
-#             #verifica se todas as referências são à substantivo
-#             repeticoes = 0
-#             for tag in tags:
-#                 pattern = re.compile("^N|U")
-#                 eh_substantivo = pattern.match(tag)
-#                 if eh_substantivo:
-#                     repeticoes += 1        
-            
-#             #caso a palavra seja substantivo, atualiza BD 
-#             if palavra in lista_palavras:
-#                 #analise se a palavra esta na lista de substantivos
-#                 for key, value in lista_substantivos:
-#                     if palavra == key:
-#                         cond = value
-#                         pal.condicao = 'finalizado'
-#                         pal.resultado = cond
-#                         pal.save()                     
-            
-#             elif re.compile("[0-9]+").match(palavra):        
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='nao'
-#                 pal.save()
-
-#             elif len(tags) == repeticoes:            
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='sim'
-#                 pal.save()
-
-#             #caso nao haja classificação como sunstantivo, atualiza BD 
-#             elif repeticoes == 0:
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='nao'
-#                 pal.save()
-            
-#             #Na impossibilidade de vertificar, pergunta ao usuário            
-#             else:                
-#                 if r.flag_completo == 'sim':
-#                     return palavra    
-#                 else:                           
-#                     return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':palavra})
-#         flag_fim = 'sim'
-                
-
-#     #ao termino, atualiza execuçao para off    
-#     r.flag_testapalavra = 'nao'
-#     r.save()
- 
-
-#     #cria vetor de vertices selecionados
-#     temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
-#     temas_preselecionados = OrderedDict(temas_preselecionados)
-            
-#     #escreve relatório
-#     arq_relatorio.write('- Parâmetros: ' + 'delta: ' + str(parametros.dr_delta_min) + '%; ' + 'f: ' + str(parametros.f_corte) + '% dos nós totais (' + str(f) + ' nós)' + '\n' )
-#     arq_relatorio.write('- Temas pré-selecionados' + '(' + str(len(temas_preselecionados)) +'):' + '\n\n')
-#     for tema in temas_preselecionados.values():
-#         arq_relatorio.write(tema.encode('utf-8') + '\n')
-
-#     #passo 2: definindo os nós-temas baseado na vizinhança e frequencia
-#     arq_relatorio.write('\n\nETAPA 2: SELEÇÃO FINAL DOS TEMAS\n\n')
-#     arq_relatorio.write('- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas\n')
-#     arq_relatorio.write('- Parâmetro: fb(frequência mínima de bigramas): ' + str(parametros.f_min_bigramas) + "% do total de bigramas\n")
-#     arq_relatorio.write('- Resultados: \n\n')
-#     arq_relatorio.write('Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa \n\n')
-
-#     # calcula grau de entrada dos temas pre-selecionados      
-#     tabela_graus_entrada = OrderedDict()
-#     for tema in temas_preselecionados.values():
-#         tema_entradas = tabela_bigramas.filter(vertice_f=tema)
-#         peso = 0
-#         for bigrama in tema_entradas:            
-#             peso = peso + bigrama.peso            
-#         tabela_graus_entrada[tema] = peso
-    
-#     # verifica se o grau de entrada do vertice-destino é maior que 50% do peso do bigrama e cria lista de vertices a serem excluidos    
-#     temas_excluidos = [] 
-#     for tema_i in temas_preselecionados.values():
-#         for tema_f in temas_preselecionados.values():
-#             bigramas = tabela_bigramas.filter(vertice_i=tema_i,vertice_f=tema_f)            
-#             for bigrama in bigramas:  
-#                 arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
-#                 if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
-#                     temas_excluidos.append(tema_f)
-    
-#     temas_selecionados = temas_preselecionados.values()    
-#     for tema in temas_excluidos:
-#        temas_selecionados.remove(tema)
+    for tema in temas_excluidos:
+       temas_selecionados.remove(tema)
        
-#     #escreve relatório e armazena temas no BD
-#     arq_relatorio.write('\n- Temas selecionados' + '(' + str(len(temas_selecionados)) + '):' '\n\n')
-#     for tema in temas_selecionados:
-#         arq_relatorio.write(tema.encode('utf-8') + '\n')
+    #escreve relatório e armazena temas no BD
+    arq_relatorio.write('\n- Temas selecionados' + '(' + str(len(temas_selecionados)) + '):' '\n\n')
+    for tema in temas_selecionados:
+        arq_relatorio.write(tema.encode('utf-8') + '\n')
 
-#     #Salva temas no BD via bulk e inicializa protofrases    
-#     aList = [TemasNew(tema = tema, irt=0.0, irt_p=0.0) for tema in temas_selecionados]    
-#     TemasNew.objects.bulk_create(aList)
-#     #aList2 = [ProtoFrasesNew(protofrase = tema) for tema in temas_selecionados]    
-#     #ProtoFrasesNew.objects.bulk_create(aList2)
+    #Salva temas no BD via bulk e inicializa protofrases    
+    aList = [TemasNew(tema = tema, irt=0.0, irt_p=0.0) for tema in temas_selecionados]    
+    TemasNew.objects.bulk_create(aList)
+    #aList2 = [ProtoFrasesNew(protofrase = tema) for tema in temas_selecionados]    
+    #ProtoFrasesNew.objects.bulk_create(aList2)
 
-#     arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
-#     for tema in temas_excluidos:
-#         arq_relatorio.write(tema.encode('utf-8') + '\n' )
+    arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
+    for tema in temas_excluidos:
+        arq_relatorio.write(tema.encode('utf-8') + '\n' )
 
-#     #fecha arquvos
-#     arq_relatorio.close()
+    #fecha arquvos
+    arq_relatorio.close()
 #     arq_lematizador.close()
 #     arq_distancias.close()
     
-#     #lê relatório
-#     rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
+    #lê relatório
+    rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
     
-#     if r.flag_completo == 'sim':
-#         return 'none'    
-#     else: 
-#         r.flag_testapalavra = 'nao'
-#         r.save() 
-#         #finaliza tempo
-#         tempo_total =  ("{0:.4f}".format(time.time() - inicio))                           
-#         return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':tempo_total,'goto':'passo4', 'muda_logo':'logo_sel_temas' })
+    if r.flag_completo == 'sim':
+        return 'none'    
+    else: 
+        r.flag_testapalavra = 'nao'
+        r.save()#         
+        #finaliza tempo
+        #tempo_total =  ("{0:.4f}".format(time.time() - inicio))                           
+        return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st': 'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
 
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
    
@@ -1663,249 +1446,116 @@ def processarProtofrases(request):
     #inicia cronometro
     inicio = time.time()
 
-    #carrega parâmetros
-    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)        
+#     #inicializa dados da extrcao
+    ExtracaoNew.objects.all().delete()
 
     #inicializa arquivo do relatório
     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')
-    arq_extracao = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w",'utf-8')
-
-    #Inicializa BD de frases
-    ExtracaoNew.objects.all().delete()
-    
-    #carrega protofrases
-    temas = TemasNew.objects.all()
-    buffer_temas = []
-
-    #Carrega texto lematizado
-    tokens = TextoPreproc.objects.all()
-
-    #gera arquivo do sub-docimento
-    arq_subdocumento = codecs.open("extrator/arquivos/p5_texto_sub_preprocessado_sentencas.txt",'w','utf-8')
-    
-    for token in tokens:       
-        if token.vertice == '.':
-            arq_subdocumento.write('\n')
-        else:
-            arq_subdocumento.write(token.vertice)
-            arq_subdocumento.write(' ')
-    arq_subdocumento.close()
-
-    #inicia analise de cada tema
-    for tema in temas:        
-        print ('processando o tema ' + tema.tema.encode('utf-8') + '...')
-        
-        #inicia relatórios
-        arq_procedimento.write('TEMA: ' + tema.tema + '\n\n')
-        arq_extracao.write('TEMA: ' + tema.tema + '\n\n')
-
-        #armazena tema no BD de protofrases
-        ProtoFrasesNew.objects.all().delete()
-        pf = ProtoFrasesNew(protofrase = tema.tema, extracao='nao',frase='null')
-        pf.save()
-                
-        #flag de termino do procedomemto (off)
-        flag = 'on'
-        iteracao = 0
-        convergiu_tema = 'nao'
-        extracao = []      
-        
-        while flag == 'on': 
-            
-            print "carregando protofrases"
-            #testa se todas as PFs já extrairam frases
-            protofrases = ProtoFrasesNew.objects.filter(extracao = 'nao')
-            if not protofrases:
-                flag = 'off'                 
-                break
-            flag = 'on'   
-            
-            #relatório                       
-            arq_procedimento.write(' - ITERACAO ' + str(iteracao) + ':\n' + '          proto-frase / tamanho da rede (sentencas) / extraiu?\n ')    
-           
-            #avalia as protofrases que ainda nao obtiveram extracao
-            buffer_pfs = []
-            pfn = 0
-            memoria_pf = []
-            memoria_st = []
-            indx = 0
-            
-            for protofrase in protofrases:
-                
-                print ('protofrase ' + str(pfn))                
-                
-                #separa palavras da protofrase e armazena em uma lista e atualiza subtenas
-                palavras = protofrase.protofrase.split(' ')
-                subtemas_pre_selecionados = []
-                
-                #reinicializa flag
-                convergiu_tema = 'nao'
-             
-                #gera sub-documento e recebe o numero de sentencas
-                numero_de_sentencas, seten, sentencas = GeraSubDocumento(palavras)                
-               
-                #relatorio
-                arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                  
-                
-                #print 'armazena protofrases e extração...'
-                if numero_de_sentencas == 1:
-                    convergiu_tema = 'sim'
-                    frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
-                    extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
-                    arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')
-                    arq_procedimento.write('sim' + '\n')
-                    pfn += 1
-                else:                  
-                    #Se o conjunto de palavras da pf já foi executado, pega o resultado
-                    if set(palavras) in memoria_pf:
-                        ind = memoria_pf.index(set(palavras))                                    
-                        subtemas_pre_selecionados = memoria_pf[ind] 
-                    #senão, chama algoritmo de seleção de temas  
-                    else:                                
-                      
-                        #gera nova rede
-                        tgo = GeraRede(request)
-                       
-                        #seleciona os subtemas
-                        subtemas_pre_selecionados = SelecionaSubTemas(tgo)
-                      
-                        #atualiza memória de execuções   
-                        memoria_pf.append(set(palavras))
-                        memoria_st.append(set(subtemas_pre_selecionados))
-                    
-                    #print subtemas_pre_selecionados
-                    #adiciona novas protofrases no buffer 
-                    convergiu = 'nao'                   
-                    for subtema in subtemas_pre_selecionados:
-                        if subtema not in palavras:
-                            ultimo_tema = palavras[-1]
-                            bigramas = ListaDeAdjacencias.objects.filter(vertice_i__exact=ultimo_tema)
-                            possiveis_subtemas = bigramas.values_list('vertice_f', flat=True)                         
-                            #só acrescenta subtema se ele for vertice de entrada da ultima palavra da protofrase
-                            if subtema in list(possiveis_subtemas):
-                                convergiu = 'sim'
-                                pf_i = ' '.join(palavras)
-                                pf = pf_i + ' ' + subtema
-                                buffer_pfs.append(pf)                               
-                    if convergiu == 'nao':                       
-                        set_count = Counter(elem for elem in sentencas)                        
-                        soma = sum(set_count.values())
-                        for k,v in set_count.items():
-                            per = int((float(v)/soma)*100)
-                            if per >= parametros.acuidade:
-                                convergiu_tema = 'sim'
-                                arq_procedimento.write('sim - com repeticao' + '\n')
-                                frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
-                                extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
-                                arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')  
-                        if convergiu_tema == 'nao':                              
-                            arq_procedimento.write('null' + '\n') 
-                    else:
-                        arq_procedimento.write(protofrase.extracao + '\n')                               
-                    pfn += 1     
-
-            print 'atualizando banco de dados...'
-
-            #atualiza protofrases no BD
-            arq_procedimento.write('\n\n\n')
-            iteracao +=1
-            print ('Iteração ' + str(iteracao) )
-            if buffer_pfs:
-                ProtoFrasesNew.objects.all().delete()
-                aList = [ProtoFrasesNew(protofrase=pf, extracao='nao',frase='null') for pf in buffer_pfs]    
-                ProtoFrasesNew.objects.bulk_create(aList)
-            else:
-                ProtoFrasesNew.objects.all().delete()
-                            
-        
-        if convergiu_tema == 'nao':
-            f = ExtracaoNew(tema = tema.tema, protofrase = 'tema nao convergiu', frase = 'tema nao convergiu')
-            f.save()
-
-        else:           
-            aList = [ExtracaoNew(tema = linha[0], protofrase = linha[1] , frase = linha[2] ) for linha in extracao]    
-            ExtracaoNew.objects.bulk_create(aList)
-        
-        arq_procedimento.write('\n\n\n')
-        arq_extracao.write('\n\n\n')      
-    
-    #fecha arquivos
-    arq_procedimento.close()
-    arq_extracao.close()
-
-    rel_proc = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt", 'r','utf-8').read()
-     
-    #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
-    
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':tempo_total,'goto': 'passo5', 'muda_logo':'logo_protofrases' })
-
-
-def mapearEextrair(request):
-    #inicia cronometro
-    inicio = time.time()
-
-    #relatorio
-    arq_relatorio =codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w")
-
-    #carrega arquivos
-    arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
-    arq_texto_preprocessado = codecs.open("extrator/arquivos/p2_texto_preprocessado.txt","r",'utf-8')
+   
+  
+    #carrega arquivos 
+    sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+    lista_de_adjacencias = codecs.open("extrator/arquivos/p3_lista_adjacencias.txt","r",'utf-8').readlines()
+    arq_texto_preprocessado_vet = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","r",'utf-8').readlines()
+    arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
     
     #carrega os temas
     temas = TemasNew.objects.all()
 
-    #inicializa dados da extrcao
-    DadosExtracaoNew.objects.all().delete()
+    #inicializa listas
+    sentencas_avaliadas = OrderedDict()
+
+    #mapeia as sentencas
+    sentencas_pp_vet = []
+    senten = ''
+    for linha in arq_texto_preprocessado_vet:
+        if linha.rstrip() != '.':
+            senten = senten + ' ' + str(linha.encode('utf-8')).rstrip()
+        if linha.rstrip() == '.':
+            sentencas_pp_vet.append(senten)
+            senten = ''
+    #print sentencas_pp_vet
+
+    if len(arq_sentencas) != len(sentencas_pp_vet):
+        return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
+
+
+    #print len(sentencas)
+    #avalia todas as sentenças do texto
+    lista_adjacencias = {}
+    contador = 0
+    for sentenca in sentencas:
+        peso = 0
+        maior_grau = 0.0
+        palavras_sentenca = sentenca.split(' ')
+        for i, palavra in enumerate(palavras_sentenca):
+            try:
+                palavras_sentenca[i+2]                              
+                bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
+                for linha in lista_de_adjacencias:
+                    if bigrama in linha and float(linha.split(' ')[2]) > maior_grau:
+                        maior_grau = float(linha.split(' ')[2])              
+            except:
+                bigrama = 'fim' 
+        
+        grau_corte = 0.1*maior_grau
+        if grau_corte < 1:
+            grau_corte = 1.0
+
+  
+        corte = 0
+        for i, palavra in enumerate(palavras_sentenca):
+            try:
+                palavras_sentenca[i+2]                              
+                bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
+                for linha in lista_de_adjacencias:
+                    if bigrama in linha:
+                        if float(linha.split(' ')[2]) > grau_corte:
+                            peso = peso + float(linha.split(' ')[2])
+                        else:
+                            corte = corte + 1                
+            except:
+                bigrama = 'fim'     
+        sentencas_avaliadas[str(contador) + ' ' + sentenca] = str(peso) + ' ' + str(corte)
+        contador = contador + 1
+        peso = 0
+    print len(sentencas)
+    print len(sentencas_avaliadas)    
+
+    #salva dados no BD
+    aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, irse_p=0, irgs=0 , irgs_p=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
+    ExtracaoNew.objects.bulk_create(aList)    
+
     
-    #Verifica as repetições de cada protofrase
-    for tema in temas:
-        frases = Counter(ExtracaoNew.objects.filter(tema = tema.tema).values_list('frase', flat=True))        
-        aList = [DadosExtracaoNew(irgs=0,irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = key, quantidade = value) for key,value in frases.items()]    
-        DadosExtracaoNew.objects.bulk_create(aList)   
-            
-    #Prepara textos do mapeamento separando as sentencas e tirando os espacoes em branco do começo e do fim (strip)
-    sentencas_lem_strip = []
-    texto_lematizado = arq_texto_lematizado.read()
-    sentencas_lem = texto_lematizado.split('.')
-    for sentenca in sentencas_lem:
-        sentencas_lem_strip.append(sentenca.strip())
-          
-    sentencas_pp_strip = [] 
-    texto_preprocessado = arq_texto_preprocessado.read()
-    sentencas_pp = texto_preprocessado.split('.') 
-    for sentenca in sentencas_pp:
-        sentencas_pp_strip.append(sentenca.strip())
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases' })
+
+
+def mapearEextrair(request):
+    
+    #carrega os temas
+    temas = TemasNew.objects.all()
+
+    #carrega frases
+    sentencas = ExtracaoNew.objects.all()
+
+    #escreve relatório
+    arq_extracao = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w",'utf-8')
+
    
-    #teste de mapeamento
-    if len(sentencas_lem) != len(sentencas_pp):       
-        return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo_error':'logo_map_extracao' })
+    arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
 
-    #inicializa relatorio
-    arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
-
-    dados = DadosExtracaoNew.objects.all()
-
-    for dado in dados:
-      
-        try:        
-            indice =  sentencas_lem_strip.index(dado.protofrase.strip())
-            dado.sentenca = sentencas_pp_strip[indice].strip()
-            dado.save()
-            arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
-        except:
-            dado.sentenca = 'null - nao convergiu'
-            dado.save()
-            arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
-
-    arq_relatorio.close()
-
-    rel_ext = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt", 'r','utf-8').read()
-         
-    #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+    for tema in temas:
+        arq_extracao.write('Tema: ' + tema.tema + '\n\n')
+        arq_extracao.write('protofrase / frase / peso / corte \n\n')
+        sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
+        for s in sentencas1:
+            arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
+        arq_extracao.write('\n')
     
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':tempo_total,'goto':'passo5', 'muda_logo':'logo_map_extracao'})
+    #print sentencas1
+    arq_extracao.close()
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
 
 def GeraSubDocumento(palavras):
@@ -2045,125 +1695,104 @@ def calcula_indice_representatividade(request):
     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","w")
     
-    #Carrega Temas
+     #carrega os temas
     temas = TemasNew.objects.all()
 
-    #Carrega sentencas
-    sentencas_distintas = DadosExtracaoNew.objects.all()
+    #carrega frases
+    sentencas = ExtracaoNew.objects.all()
 
-    #Carregas sentencas extraídas
-    sentencas_extracao = ExtracaoNew.objects.all()
+    #escreve relatório
+    arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","w",'utf-8')
 
-    #carrega sentenças
-    sentencas_lem_strip = []
-    texto_lematizado = arq_texto_lematizado.read()
-    sentencas_lem = texto_lematizado.split('.')
-    for sentenca in sentencas_lem:
-        sentencas_lem_strip.append(sentenca.strip())
-
-    #inicializa relatorio
-    arq_relatorio.write('RELATÓRIO - ÍNDICES DE REPRESENTATIVIDADE\n\n\n - Índice de Representatividade do Tema (IRT)\n\n      Tema   \   IRT   \   IRT(%)\n')
-    
-    #CÁLCULO DO IRT E IRT%
-    numero_total_sentecas = 0
-    numero_sentencas_tema = 0
-    for tema in temas:
-        for sentenca in sentencas_lem_strip:
-            lista_tokens = sentenca.split(' ')
-            if len(lista_tokens) == 1 and lista_tokens[0] == u'':             
-                'ignore'
-            else:
-                numero_total_sentecas += 1
-                if tema.tema in lista_tokens:
-                    numero_sentencas_tema += 1                    
-        grau_tema = TabelaRanking.objects.get(vertice_nome__exact=tema.tema).grau_norm      
-        irt = (float(grau_tema) + float(numero_sentencas_tema/numero_total_sentecas))/2
-        irt_p = irt*100
-        numero_sentencas_tema = 0
-        numero_total_sentecas = 0
-        tema.irt = irt        
-        tema.irt_p = irt_p
-        tema.save()
-
-    #imprime irt no relatorio em ordem
-    irts = TemasNew.objects.order_by('-irt')
-    for linha in irts:
-        arq_relatorio.write('    ' + linha.tema.encode('utf-8') + '  /  ' + str(linha.irt) + '  /  ' + str(linha.irt_p) + '\n')
-    
-    #CALCULO IRSE E IRGS
-    arq_relatorio.write('\n\n - Índice de Representatividade da Sentença em relação ao tema (IRSE) \n\n')
-    for tema in temas:
-        arq_relatorio.write(' Tema: ' + tema.tema.encode('utf-8') + '\n\n     Sentença    /    IRSE    /    IRSE(%)\n')
-
-        #separa as sentencas extraidas do tema
-        sentencas_tema = DadosExtracaoNew.objects.filter(tema=tema.tema)
+    #calcula indice geral de representatividade
+    sentenca_maior_peso = ExtracaoNew.objects.order_by('-peso')[0]
+    maior_peso = sentenca_maior_peso.peso
+  
+    for seten in sentencas:
+        irgs = (seten.peso - 0.1*seten.corte) / maior_peso
+        if irgs < 0:
+            irgs = 0
+        irgs_por = int(irgs * 100)
+        if irgs_por > 80:
+            seten.irgs_p = 'alta' 
+        if irgs_por > 60 and irgs_por <= 80:
+            seten.irgs_p = 'alta-media'
+        if irgs_por > 40 and irgs_por <= 60:
+            seten.irgs_p = 'media'
+        if irgs_por > 20 and irgs_por <= 40:
+            seten.irgs_p = 'baixa-media'
+        if irgs_por <= 20 :
+            seten.irgs_p = 'baixa' 
         
-        #carrega o IRT do tema
-        irt = TemasNew.objects.get(tema__exact = tema.tema).irt
-        
-        #calcula a quantidade de frases extraidas do Tema
-        numero_total_s_tema = 0
-        for sentenca in sentencas_tema:
-            numero_total_s_tema = numero_total_s_tema + sentenca.quantidade  
-        
-        #calcula o indice
-        for sentenca in sentencas_tema:
-            if sentenca.protofrase == 'tema nao convergiu':
-                sentenca.irse = 0
-                sentenca.irse_p = 0
-                sentenca.save()
-                arq_relatorio.write(sentenca.sentenca.encode('utf-8') + '   /   ' + str(sentenca.irse) + '    /    ' + str(sentenca.irse_p) + '\n\n')
-            else:
-                irse = float(sentenca.quantidade)/float(numero_total_s_tema)
-                irse_p = float(irse*100)            
-                sentenca.irse = irse
-                sentenca.irse_p = irse_p            
-                sentenca.save()
-                arq_relatorio.write(sentenca.sentenca.encode('utf-8') + '   /   ' + str(sentenca.irse) + '    /    ' + str(sentenca.irse_p) + '\n\n')
-
-        arq_relatorio.write('\n\n\n')
-    arq_relatorio.write('\n\n\n')
-
-    #CALCULO DO IRGS 
-    arq_relatorio.write('\n\n - Índice de Representatividade Global da (IRGS) \n\n')
-    arq_relatorio.write('     Sentença    /    IRGS    /    IRGS(%)\n')   
-    #calcula extracoes ocorreram    
-    numero_global_sentencas = 0
-    for sentenca in sentencas_distintas:        
-        if sentenca.protofrase != 'tema nao convergiu':
-            numero_global_sentencas = sentenca.quantidade + numero_global_sentencas
-                
-    #cria lista lista de sentencas distintas
-    sentencas_distintas_quantidade = DadosExtracaoNew.objects.all().values_list('protofrase', flat=True) 
-    for k in sentencas_distintas_quantidade:
-        sent_objs = DadosExtracaoNew.objects.filter(protofrase__exact= k)
-        numero_extracoes = 0
-        for sent in sent_objs:
-            numero_extracoes = sent.quantidade + numero_extracoes
-        for sent in sent_objs:
-            if sent.protofrase == 'tema nao convergiu':
-                sent.irgs = 0
-                sent.irgs_p = 0
-                sent.save()
-            else:    
-                sent.irgs = float(numero_extracoes)/float(numero_global_sentencas)
-                sent.irgs_p = 100*sent.irgs
-                sent.save()
-    
-    #RELATORIO
-    irgss = DadosExtracaoNew.objects.all().values_list('sentenca','irgs','irgs_p').order_by('-irgs')
-    irgss_u = list(set(irgss))  
-    irgss_u = sorted(irgss_u, key=lambda x: x[1], reverse=True)  
-    for linha in irgss_u:
-        arq_relatorio.write(linha[0].encode('utf-8') + '   /   ' + str(linha[1]) + '    /    ' + str(linha[2]) + '\n\n')
-    arq_relatorio.close()
+        seten.irgs = irgs
       
-    rel_repr = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt", 'r','utf-8').read() 
-     
-    #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+        seten.save()
+
+    #calcula indice por tema de representatividade
+    for tema in temas:
+        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema)
+        sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]
+        maior_peso = sentenca_maior_peso.peso
     
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':tempo_total,'goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
+        for seten in sentencas:
+            irse = (seten.peso - 0.1*seten.corte) / maior_peso
+            if irse < 0:
+                irse = 0
+            irse_por = int(irse * 100)
+            if irse_por > 80:
+                seten.irse_p = 'alta' 
+            if irse_por > 60 and irse_por <= 80:
+                seten.irse_p = 'alta-media'
+            if irse_por > 40 and irse_por <= 60:
+                seten.irse_p = 'media'
+            if irse_por > 20 and irse_por <= 40:
+                seten.irse_p = 'baixa-media'
+            if irse_por <= 20 :
+                seten.irse_p = 'baixa'
+        
+            seten.irse = irse
+      
+            seten.save()
+
+    
+  
+    arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')   
+    
+    arq_extracao.write('1. RANKING GERAL \n\n')   
+    arq_extracao.write('frase  \  representatividade \n\n')    
+    bag = []
+    sentencas = ExtracaoNew.objects.filter(irgs__gt=0.6).order_by('-irgs')
+    cont = 1
+    for seten in sentencas:                
+        if seten.frase not in bag:
+            arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.irgs_p + '\n')
+            bag.append(seten.frase)
+            cont = cont + 1
+   
+    arq_extracao.write('\n\n 2. RANKING POR TEMAS \n\n')
+    for tema in temas:
+        arq_extracao.write('Tema: ' + tema.tema.encode('utf-8').decode('utf-8')  + '\n\n')   
+        arq_extracao.write('frase  \  representatividade \n\n')    
+        bag = []
+        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=0.6).order_by('-irse')
+        cont = 1
+        for seten in sentencas:                
+            if seten.frase not in bag:
+                arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.irse_p + '\n')
+                bag.append(seten.frase)
+                cont = cont + 1
+        arq_extracao.write('\n\n')
+
+    arq_extracao.close()    
+    
+
+
+
+
+
+    arq_extracao.close()
+    
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
 
 
 def testa_substantivo_usuario(request , palavra_candidata):
@@ -2851,3 +2480,252 @@ def executar_passos_2_a_5(request):
 #     tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
     
 #     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4ci':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
+
+# def processarProtofrases(request):
+#             #inicia cronometro
+#     inicio = time.time()
+
+#     #carrega parâmetros
+#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)        
+
+#     #inicializa arquivo do relatório
+#     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')
+#     arq_extracao = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w",'utf-8')
+
+#     #Inicializa BD de frases
+#     ExtracaoNew.objects.all().delete()
+    
+#     #carrega protofrases
+#     temas = TemasNew.objects.all()
+#     buffer_temas = []
+
+#     #Carrega texto lematizado
+#     tokens = TextoPreproc.objects.all()
+
+#     #gera arquivo do sub-docimento
+#     arq_subdocumento = codecs.open("extrator/arquivos/p5_texto_sub_preprocessado_sentencas.txt",'w','utf-8')
+    
+#     for token in tokens:       
+#         if token.vertice == '.':
+#             arq_subdocumento.write('\n')
+#         else:
+#             arq_subdocumento.write(token.vertice)
+#             arq_subdocumento.write(' ')
+#     arq_subdocumento.close()
+
+#     #inicia analise de cada tema
+#     for tema in temas:        
+#         print ('processando o tema ' + tema.tema.encode('utf-8') + '...')
+        
+#         #inicia relatórios
+#         arq_procedimento.write('TEMA: ' + tema.tema + '\n\n')
+#         arq_extracao.write('TEMA: ' + tema.tema + '\n\n')
+
+#         #armazena tema no BD de protofrases
+#         ProtoFrasesNew.objects.all().delete()
+#         pf = ProtoFrasesNew(protofrase = tema.tema, extracao='nao',frase='null')
+#         pf.save()
+                
+#         #flag de termino do procedomemto (off)
+#         flag = 'on'
+#         iteracao = 0
+#         convergiu_tema = 'nao'
+#         extracao = []      
+        
+#         while flag == 'on': 
+            
+#             print "carregando protofrases"
+#             #testa se todas as PFs já extrairam frases
+#             protofrases = ProtoFrasesNew.objects.filter(extracao = 'nao')
+#             if not protofrases:
+#                 flag = 'off'                 
+#                 break
+#             flag = 'on'   
+            
+#             #relatório                       
+#             arq_procedimento.write(' - ITERACAO ' + str(iteracao) + ':\n' + '          proto-frase / tamanho da rede (sentencas) / extraiu?\n ')    
+           
+#             #avalia as protofrases que ainda nao obtiveram extracao
+#             buffer_pfs = []
+#             pfn = 0
+#             memoria_pf = []
+#             memoria_st = []
+#             indx = 0
+            
+#             for protofrase in protofrases:
+                
+#                 print ('protofrase ' + str(pfn))                
+                
+#                 #separa palavras da protofrase e armazena em uma lista e atualiza subtenas
+#                 palavras = protofrase.protofrase.split(' ')
+#                 subtemas_pre_selecionados = []
+                
+#                 #reinicializa flag
+#                 convergiu_tema = 'nao'
+             
+#                 #gera sub-documento e recebe o numero de sentencas
+#                 numero_de_sentencas, seten, sentencas = GeraSubDocumento(palavras)                
+               
+#                 #relatorio
+#                 arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                  
+                
+#                 #print 'armazena protofrases e extração...'
+#                 if numero_de_sentencas == 1:
+#                     convergiu_tema = 'sim'
+#                     frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
+#                     extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
+#                     arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')
+#                     arq_procedimento.write('sim' + '\n')
+#                     pfn += 1
+#                 else:                  
+#                     #Se o conjunto de palavras da pf já foi executado, pega o resultado
+#                     if set(palavras) in memoria_pf:
+#                         ind = memoria_pf.index(set(palavras))                                    
+#                         subtemas_pre_selecionados = memoria_pf[ind] 
+#                     #senão, chama algoritmo de seleção de temas  
+#                     else:                                
+                      
+#                         #gera nova rede
+#                         tgo = GeraRede(request)
+                       
+#                         #seleciona os subtemas
+#                         subtemas_pre_selecionados = SelecionaSubTemas(tgo)
+                      
+#                         #atualiza memória de execuções   
+#                         memoria_pf.append(set(palavras))
+#                         memoria_st.append(set(subtemas_pre_selecionados))
+                    
+#                     #print subtemas_pre_selecionados
+#                     #adiciona novas protofrases no buffer 
+#                     convergiu = 'nao'                   
+#                     for subtema in subtemas_pre_selecionados:
+#                         if subtema not in palavras:
+#                             ultimo_tema = palavras[-1]
+#                             bigramas = ListaDeAdjacencias.objects.filter(vertice_i__exact=ultimo_tema)
+#                             possiveis_subtemas = bigramas.values_list('vertice_f', flat=True)                         
+#                             #só acrescenta subtema se ele for vertice de entrada da ultima palavra da protofrase
+#                             if subtema in list(possiveis_subtemas):
+#                                 convergiu = 'sim'
+#                                 pf_i = ' '.join(palavras)
+#                                 pf = pf_i + ' ' + subtema
+#                                 buffer_pfs.append(pf)                               
+#                     if convergiu == 'nao':                       
+#                         set_count = Counter(elem for elem in sentencas)                        
+#                         soma = sum(set_count.values())
+#                         for k,v in set_count.items():
+#                             per = int((float(v)/soma)*100)
+#                             if per >= parametros.acuidade:
+#                                 convergiu_tema = 'sim'
+#                                 arq_procedimento.write('sim - com repeticao' + '\n')
+#                                 frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
+#                                 extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
+#                                 arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')  
+#                         if convergiu_tema == 'nao':                              
+#                             arq_procedimento.write('null' + '\n') 
+#                     else:
+#                         arq_procedimento.write(protofrase.extracao + '\n')                               
+#                     pfn += 1     
+
+#             print 'atualizando banco de dados...'
+
+#             #atualiza protofrases no BD
+#             arq_procedimento.write('\n\n\n')
+#             iteracao +=1
+#             print ('Iteração ' + str(iteracao) )
+#             if buffer_pfs:
+#                 ProtoFrasesNew.objects.all().delete()
+#                 aList = [ProtoFrasesNew(protofrase=pf, extracao='nao',frase='null') for pf in buffer_pfs]    
+#                 ProtoFrasesNew.objects.bulk_create(aList)
+#             else:
+#                 ProtoFrasesNew.objects.all().delete()
+                            
+        
+#         if convergiu_tema == 'nao':
+#             f = ExtracaoNew(tema = tema.tema, protofrase = 'tema nao convergiu', frase = 'tema nao convergiu')
+#             f.save()
+
+#         else:           
+#             aList = [ExtracaoNew(tema = linha[0], protofrase = linha[1] , frase = linha[2] ) for linha in extracao]    
+#             ExtracaoNew.objects.bulk_create(aList)
+        
+#         arq_procedimento.write('\n\n\n')
+#         arq_extracao.write('\n\n\n')      
+    
+#     #fecha arquivos
+#     arq_procedimento.close()
+#     arq_extracao.close()
+
+#     rel_proc = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt", 'r','utf-8').read()
+     
+#     #finaliza tempo
+#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+    
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':tempo_total,'goto': 'passo5', 'muda_logo':'logo_protofrases' })
+
+
+# def mapearEextrair(request):
+#     #inicia cronometro
+#     inicio = time.time()
+
+#     #relatorio
+#     arq_relatorio =codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w")
+
+#     #carrega arquivos
+#     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
+#     arq_texto_preprocessado = codecs.open("extrator/arquivos/p2_texto_preprocessado.txt","r",'utf-8')
+    
+#     #carrega os temas
+#     temas = TemasNew.objects.all()
+
+#     #inicializa dados da extrcao
+#     DadosExtracaoNew.objects.all().delete()
+    
+#     #Verifica as repetições de cada protofrase
+#     for tema in temas:
+#         frases = Counter(ExtracaoNew.objects.filter(tema = tema.tema).values_list('frase', flat=True))        
+#         aList = [DadosExtracaoNew(irgs=0,irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = key, quantidade = value) for key,value in frases.items()]    
+#         DadosExtracaoNew.objects.bulk_create(aList)   
+            
+#     #Prepara textos do mapeamento separando as sentencas e tirando os espacoes em branco do começo e do fim (strip)
+#     sentencas_lem_strip = []
+#     texto_lematizado = arq_texto_lematizado.read()
+#     sentencas_lem = texto_lematizado.split('.')
+#     for sentenca in sentencas_lem:
+#         sentencas_lem_strip.append(sentenca.strip())
+          
+#     sentencas_pp_strip = [] 
+#     texto_preprocessado = arq_texto_preprocessado.read()
+#     sentencas_pp = texto_preprocessado.split('.') 
+#     for sentenca in sentencas_pp:
+#         sentencas_pp_strip.append(sentenca.strip())
+   
+#     #teste de mapeamento
+#     if len(sentencas_lem) != len(sentencas_pp):       
+#         return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo_error':'logo_map_extracao' })
+
+#     #inicializa relatorio
+#     arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
+
+#     dados = DadosExtracaoNew.objects.all()
+
+#     for dado in dados:
+      
+#         try:        
+#             indice =  sentencas_lem_strip.index(dado.protofrase.strip())
+#             dado.sentenca = sentencas_pp_strip[indice].strip()
+#             dado.save()
+#             arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
+#         except:
+#             dado.sentenca = 'null - nao convergiu'
+#             dado.save()
+#             arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
+
+#     arq_relatorio.close()
+
+#     rel_ext = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt", 'r','utf-8').read()
+         
+#     #finaliza tempo
+#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))
+    
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':tempo_total,'goto':'passo5', 'muda_logo':'logo_map_extracao'})
+

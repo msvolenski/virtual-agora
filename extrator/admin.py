@@ -41,7 +41,7 @@ class ProtoFrasesNewAdmin(admin.ModelAdmin):
   list_display = ['protofrase','extracao','frase']
 
 class ExtracaoNewAdmin(admin.ModelAdmin):
-  list_display = ['tema','protofrase', 'frase']
+  list_display = ['protofrase', 'frase', 'peso','corte','irse','irse_p','irgs','irgs_p']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']

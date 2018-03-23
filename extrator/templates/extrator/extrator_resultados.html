@@ -189,12 +189,12 @@
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
-                    <div class="titulo_ajuste">Frequência de corte da Distância relativa mínima </div>
+                    <div class="titulo_ajuste">Porcentagem máxima de nós da rede para um cluster </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
                             fc =
-                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">                            % dos nós com dr
-                            < delta <input type="submit" class="botao_enviar" value="Enviar">
+                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">                            % dos nós totais
+                            <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
                     <div class="titulo_ajuste">Frequência mínima do bigrama </div>
@@ -468,7 +468,7 @@
                         <span id="logo_map_extracao" class="glyphicon glyphicon-zoom-in" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
-                        <h2>Extração</h2>
+                        <h2>Extração</h2> {{mess}}
                         <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>
                          {% if tempo_p5ex %}
                          <span class="cd-date">{{tempo_p5ex}} s</span>

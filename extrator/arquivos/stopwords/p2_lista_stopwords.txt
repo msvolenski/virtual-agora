@@ -292,3 +292,4 @@ pra
 para
 
 RT
+dizer

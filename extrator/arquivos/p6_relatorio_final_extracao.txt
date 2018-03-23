@@ -1,0 +1,170 @@
+RELATORIO FINAL DE EXTRACAO 
+
+1. RANKING GERAL 
+
+frase  \  representatividade 
+
+1 -  stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  \  alta
+2 -  stf concede liminar para evitar prisão de lula até 4 de abril  \  alta
+3 -  stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  \  alta
+4 -  petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+5 -  > petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+6 -  stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  \  alta
+7 -  supremo impede prisão de lula até decisão sobre hábeas corpus  \  alta-media
+8 -  supremo barra prisão de lula até julgamento do hábeas corpus  \  alta-media
+9 -  supremo barra prisão de lula até julgamento de hábeas corpus  \  alta-media
+10 -  stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  \  alta-media
+11 -  stf decide adiar para dia 4 conclusão do julgamento de lula  \  alta-media
+12 -  stf concede liminar contra prisão de lula e suspende julgamento até dia 4  \  alta-media
+13 -  stf decide que lula não pode ser preso até julgamento de hábeas corpus  \  alta-media
+14 -  petistas avaliam positivamente decisão que impede prisão de lula  \  alta-media
+
+
+ 2. RANKING POR TEMAS 
+
+Tema: político
+
+frase  \  representatividade 
+
+1 -  sabemos que futebol , política , judiciário e loteria são caixinhas de surpresa , mas hoje foi mortadelas 7 x 4 coxinhas / grande mídia  \  alta
+2 -  todos sabemos que futebol , política judiciário e loteria são uma caixinha de surpresa , mas hoje foi mortadelas 7 x 4 coxinhas / grande mídia  \  alta
+3 -  eu amo vir comer na casa da minha tia , até eles começarem a falar de política / religião  \  alta
+4 -  aula de administração falando sobre política gosto muito e não entendo nada  \  alta
+5 -  não gosto de discutir política e religião , mas me atiçam e as vezes não resisto e nem quero resistir  \  alta
+6 -  eu não suporto gente falando de política sem sequer saber do que ta falando  \  alta
+7 -  maluco aqui no bar falando de política , sabe nem o que tá falando k  \  alta
+8 -  odeio falar de política por aqui , mas dá vontade de sair dando umas voadora de dois pé no peito de nego  \  alta
+9 -  aluga um palanque pra você falar de política e partidos , isso aqui é bbb , para de se esconder atrás de um jogo  \  alta
+10 -  não discuto mais política no facebook  \  alta-media
+11 -  gente que não tem o mínimo de instrução e conhecimento , discutindo política no facebook  \  alta-media
+12 -  — prometi não falar sobre política no tt  \  alta-media
+13 -  era p falarmos da competência , mas falamos de política  \  alta-media
+14 -  minha mãe quer discutir política comigo , fica logo fudida  \  alta-media
+15 -  não aguento mais meu tio falando de política  \  alta-media
+16 -  meu pai falando de política é muito engraçado k  \  alta-media
+17 -  vocês percebem por que precisamos falar de política  \  alta-media
+18 -  k dhra é essas mina de12 falando sobre política  \  alta-media
+19 -  namoral meuita engraçado eu falando de política  \  alta-media
+20 -  em todo lugar que eu vou , estão falando de política deus me defenderay  \  alta-media
+21 -  15 anos de idade e não para de falar de política  \  alta-media
+22 -  eu e o yuri falando sobre política , como se nossa opinião mudasse algo kakaksjks  \  alta-media
+23 -  eu com a * * * quando começava a falar de política  \  alta-media
+24 -  pegue um post falando de política ou qualquer assunto polêmico  \  alta-media
+25 -  guigui fazendo malabarismo com limão e alice falando de política  \  alta-media
+26 -  twitter era legal quando só tinha o pessoal que se entende e não falava de política  \  alta-media
+27 -  quando tu começa a falar de política , entre outras coisas , da vontade de dar block  \  alta-media
+28 -  puta merda as duas gurias do quarto só ficam falando de política e ainda são bolsominions  \  alta-media
+29 -  nada me dá mais nojo que cria falando de política , todos influenciados pela televisão  \  alta-media
+30 -  todo mundo falando de política , o que eu perdi nas 10 horas que fiquei no juri  \  alta-media
+31 -  tô me segurando pra não dar block em algumas pessoas q estão falando de política na minha tl  \  alta-media
+32 -  hoje tinha um povo falando sobre política , daí a menina disse que o país está assim , porque as pessoas são nojentas  \  alta-media
+33 -  sou uma pessoa muito calma pra não dar na cara de uns colegas retardados que começam a discutir política no meio da aula  \  alta-media
+34 -  por isso que vocês tem que deixar o povo perguntar sobre putaria gente , vai deixar falar de política veja bem  \  alta-media
+35 -  eu vou parar de falar de política no meu twitter , coisa chata do cacete , deixa o país explodir , to nem ai tchau  \  alta-media
+36 -  n da p ficar vendo tv se o pessoal fica falando de política vou ver minha série que eu ganho mais  \  alta-media
+37 -  não discuto política  \  alta-media
+38 -  até tu discutir política  \  alta-media
+39 -  o que é meus irmãos discutindo por política k  \  alta-media
+40 -  meus primos , discutindo política , violência  \  alta-media
+41 -  " eu não vou discutir política na escola " 5 minutos depois  \  alta-media
+42 -  hora dessa eu discutindo sobre política com mirielli , senhor  \  alta-media
+43 -  eu discutindo política mentalmente com outra pessoa que discorda de mim  \  alta-media
+44 -  um bolsomini dentro daqui de casa querendo discutir política comigo  \  alta-media
+45 -  tá chato discutir política com a galera do grupo  \  alta-media
+46 -  hoje viemos discutindo sobre política no ônibus senti sua falta  \  alta-media
+47 -  eu não discuto mais política , só assuntos não polêmicos como religião e futebol  \  alta-media
+48 -  discuto por política sim , que mundo estamos ontem tem gente que ainda vai votar no bolsonaro  \  alta-media
+49 -  eis que a mina nem falar contigo fala , mas na hora de discutir política brota do inferno  \  alta-media
+50 -  o preço que um justo paga por não discutir sobre política é ser governado pelos maus  \  alta-media
+51 -  adoro gente que vem discutir política com o simples argumento de que " não funciona " k  \  alta-media
+52 -  discutindo política com a família k mó dahora mas tô meio puta  \  alta-media
+53 -  fico tão feliz em saber que tenho pelo menos uma pessoa na minha vida pra discutir sobre política ( no caso , meu pai )  \  alta-media
+54 -  ja discuti tanto política hoje que só quero tomar um banho e gastar o resto da onda dormindo  \  alta-media
+55 -  vejo que não da pra discutir política com a minha mãe quando ela diz que não da pra mudar nada porque corrupção tá na bíblia  \  alta-media
+56 -  meus tios vieram pra cá discutir sobre política , pelo amor de deus eu tenho prova de física amanhã  \  alta-media
+
+
+Tema: lula
+
+frase  \  representatividade 
+
+1 -  justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  \  alta
+2 -  stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  \  alta
+3 -  stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  \  alta
+4 -  stf concede liminar para evitar prisão de lula até 4 de abril  \  alta
+5 -  petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+6 -  > petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+7 -  stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  \  alta
+8 -  lula e a justiça no limbo  \  alta-media
+9 -  supremo impede prisão de lula até decisão sobre hábeas corpus  \  alta-media
+10 -  supremo barra prisão de lula até julgamento do hábeas corpus  \  alta-media
+11 -  supremo barra prisão de lula até julgamento de hábeas corpus  \  alta-media
+12 -  stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  \  alta-media
+13 -  stf decide adiar para dia 4 conclusão do julgamento de lula  \  alta-media
+14 -  stf concede liminar contra prisão de lula e suspende julgamento até dia 4  \  alta-media
+15 -  stf decide que lula não pode ser preso até julgamento de hábeas corpus  \  alta-media
+16 -  petistas avaliam positivamente decisão que impede prisão de lula  \  alta-media
+
+
+Tema: stf
+
+frase  \  representatividade 
+
+1 -  stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  \  alta
+2 -  stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  \  alta
+3 -  stf concede liminar para evitar prisão de lula até 4 de abril  \  alta
+4 -  petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+5 -  > petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+6 -  stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  \  alta
+7 -  stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  \  alta-media
+8 -  stf decide adiar para dia 4 conclusão do julgamento de lula  \  alta-media
+9 -  stf concede liminar contra prisão de lula e suspende julgamento até dia 4  \  alta-media
+10 -  stf decide que lula não pode ser preso até julgamento de hábeas corpus  \  alta-media
+
+
+Tema: poder
+
+frase  \  representatividade 
+
+1 -  stf decide que lula não pode ser preso antes de decisão sobre hábeas corpus no dia 4 de abril  \  alta
+2 -  stf decide que lula não pode ser preso até julgamento de hábeas corpus  \  alta-media
+
+
+Tema: julgamento
+
+frase  \  representatividade 
+
+1 -  stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  \  alta
+2 -  supremo barra prisão de lula até julgamento do hábeas corpus  \  alta-media
+3 -  supremo barra prisão de lula até julgamento de hábeas corpus  \  alta-media
+4 -  stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  \  alta-media
+5 -  stf decide adiar para dia 4 conclusão do julgamento de lula  \  alta-media
+6 -  stf concede liminar contra prisão de lula e suspende julgamento até dia 4  \  alta-media
+7 -  stf decide que lula não pode ser preso até julgamento de hábeas corpus  \  alta-media
+
+
+Tema: prisão
+
+frase  \  representatividade 
+
+1 -  stf adia julgamento de hábeas corpus e proíbe prisão de lula até 4 de abril  \  alta
+2 -  stf concede liminar para evitar prisão de lula até 4 de abril  \  alta
+3 -  petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+4 -  > petistas avaliam positivamente decisão do stf que impede prisão de lula  \  alta
+5 -  stf adia votação de hábeas corpus de lula para 4 de abril e impede prisão até próxima sessão – jovem pan online  \  alta
+6 -  supremo impede prisão de lula até decisão sobre hábeas corpus  \  alta-media
+7 -  supremo barra prisão de lula até julgamento do hábeas corpus  \  alta-media
+8 -  supremo barra prisão de lula até julgamento de hábeas corpus  \  alta-media
+9 -  stf adia julgamento de lula para 4 de abril e impede prisão dele até lá  \  alta-media
+10 -  stf concede liminar contra prisão de lula e suspende julgamento até dia 4  \  alta-media
+11 -  petistas avaliam positivamente decisão que impede prisão de lula  \  alta-media
+
+
+Tema: justiça
+
+frase  \  representatividade 
+
+1 -  justiça federal nega pedido de vereadores para impedir ato de lula em passo fundo  \  alta
+2 -  lula e a justiça no limbo  \  alta-media
+
+

@@ -101,9 +101,15 @@ class ProtoFrasesNew(models.Model):
         return self.protofrase
 
 class ExtracaoNew(models.Model):
-    tema  = models.TextField('Tema')
     protofrase = models.TextField('Proto Frase')
     frase = models.TextField('Frase')
+    peso = models.FloatField('peso')
+    corte = models.FloatField('corte')
+    irse = models.FloatField('IRSE')
+    irse_p = models.TextField('IRSE%')
+    irgs = models.FloatField('IRGS') 
+    irgs_p = models.TextField('IRGS%')
+
     
 
     def __str__(self):
