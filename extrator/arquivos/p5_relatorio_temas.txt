@@ -1,0 +1,65 @@
+RELATÓRIO FINAL - TEMAS
+
+
+PARÂMETROS DE CLUSTERIZAÇÃO
+
+- Faixa de divisão do histograma: 0.3
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (248.6 de 2486)
+
+CLUSTERS SELECIONADOS
+
+Cluster 1
+7 brasil 3.0
+
+Cluster 2
+195 querer 0.952842953183
+
+Cluster 3
+42 seguir 0.533911050385
+1715 5x0 0.406351353118
+41 bolívia 0.388700575455
+235 6x0 0.356529251277
+45 lula 0.341371664784
+374 gleici 0.324377597598
+113 ver 0.313897656526
+157 brasileiro 0.306100495653
+
+TEMAS PRÉ-SELECIONADOS
+
+brasil
+querer
+seguir
+5x0
+bolívia
+6x0
+lula
+gleici
+ver
+brasileiro
+
+
+SELEÇÃO FINAL DOS TEMAS
+
+- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas
+- Parâmetro: fb(frequência mínima de bigramas): 80% do total de bigramas
+- Resultados: 
+
+Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
+
+brasil -> brasil - 2/603 - 0.331674958541%
+brasil -> lula - 1/53 - 1.88679245283%
+brasil -> brasileiro - 5/19 - 26.3157894737%
+lula -> brasil - 1/603 - 0.16583747927%
+brasileiro -> brasil - 1/603 - 0.16583747927%
+
+- Temas selecionados(5):
+
+brasil
+bolívia
+lula
+gleici
+brasileiro
+
+
+- Temas excluídos(0):
+

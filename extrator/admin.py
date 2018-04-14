@@ -41,16 +41,16 @@ class ProtoFrasesNewAdmin(admin.ModelAdmin):
   list_display = ['protofrase','extracao','frase']
 
 class ExtracaoNewAdmin(admin.ModelAdmin):
-  list_display = ['protofrase', 'frase', 'peso','corte','irse','irse_p','irgs','irgs_p']
+  list_display = ['protofrase', 'frase', 'peso','corte','irse','rep_tema','irgs','rep_geral']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
 
 class ParametrosDeAjusteAdmin(admin.ModelAdmin):
-  list_display = ['faixa_histo','check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
+  list_display = ['radio_r', 'faixa_histo','check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
 
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
-  list_display = ['tema','protofrase', 'quantidade', 'sentenca','irse','irse_p','irgs','irgs_p']
+  list_display = ['tema','protofrase', 'sentenca','irse','irse_p','irgs','irgs_p']
 
 
 

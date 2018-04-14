@@ -106,9 +106,9 @@ class ExtracaoNew(models.Model):
     peso = models.FloatField('peso')
     corte = models.FloatField('corte')
     irse = models.FloatField('IRSE')
-    irse_p = models.TextField('IRSE%')
-    irgs = models.FloatField('IRGS') 
-    irgs_p = models.TextField('IRGS%')
+    rep_tema = models.TextField('Representativadade_tema')    
+    irgs = models.FloatField('IRGS')     
+    rep_geral = models.TextField('Representatividade_geral')
 
     
 
@@ -122,8 +122,11 @@ class DadosExtracaoNew(models.Model):
     sentenca = models.TextField('Sentenca')
     irse = models.FloatField('IRSE')
     irse_p = models.FloatField('IRSE%')
+    #rep_tema = models.TextField('Representativadade_tema')    
     irgs = models.FloatField('IRGS') 
     irgs_p = models.FloatField('IRGS%')
+    
+    #rep_geral = models.TextField('Representatividade_geral')
 
     def __str__(self):
         return self.tema
@@ -159,6 +162,7 @@ class ParametrosDeAjuste(models.Model):
     check_eigen = models.CharField('eigenvector',default='sim', max_length=10)
     faixa_histo = models.FloatField('Faixa',default=0.2)
     exc_cluster = models.IntegerField('Exclusao_de_cluster')
+    radio_r = models.FloatField('Representatividade_minima',default=0.0)
 
 class CorrigePalavra(models.Model):
     palavra_correta = models.TextField('palavra_correta')

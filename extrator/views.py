@@ -951,7 +951,7 @@ def metricas_e_ranking(request):
     arq_tabela_graus = codecs.open("extrator/arquivos/p4_tabela_graus.txt", 'w', 'utf-8')
     arq_tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt", 'w','utf-8')
     arq_tabela_eigenvector = codecs.open("extrator/arquivos/p4_tabela_eigenvector.txt", 'w','utf-8')
-    arq_texto_vertices = codecs.open("extrator/arquivos/p4_texto_vertices.txt", 'w','utf-8')
+    arq_texto_vertices = codecs.open("extrator/arquivos/p4_aux_texto_vertices.txt", 'w','utf-8')
 
     #Prepara banco de dados para receber as tabelas
     tabelas = TabelaRanking.objects.all()
@@ -1032,9 +1032,7 @@ def metricas_e_ranking(request):
     aList = [TabelaRanking(vertice_nome = vertice, vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
         betweenness=tabela_betweenness[vertice], betweenness_norm=tabela_betweenness_normalizado[vertice], 
         eigenvector=tabela_eigenvector[vertice], eigenvector_norm=tabela_eigenvector_normalizado[vertice], potenciacao=1.0) for vertice in vertices]
-    TabelaRanking.objects.bulk_create(aList)
-    
-    
+    TabelaRanking.objects.bulk_create(aList)   
     
     #gera Tabelas Ranking
     tabela_graus_ordenada = TabelaRanking.objects.all().order_by('-grau')    
@@ -1070,8 +1068,7 @@ def calcula_indice(request):
     inicio = time.time()
     
     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
-    #matplotlib.use('agg')
-    
+        
     #Abre arquivo de dados a serem lidos
     tabela_grau = codecs.open("extrator/arquivos/p4_tabela_graus.txt").readlines()
     tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt").readlines()
@@ -1113,9 +1110,7 @@ def calcula_indice(request):
         arq_tabela_potenciacao.write(str(index) + ' ' + linha.vertice_nome + ' ' + str(linha.potenciacao) + ' ' + '\n')        
         tabela_potenciacao_ordenada_valores.append(linha.potenciacao)
  
-    #Chama função que plota o grafico  
-    plota_figura(eixo_y,tabela_potenciacao_ordenada_valores,'black','x','x','x','plota_e_salva_figura_2','extrator/arquivos/p4_grafico_potenciacao.png')   
-
+    #fecha arquivo
     arq_tabela_potenciacao.close()
     
     #  #finaliza tempo
@@ -1159,19 +1154,14 @@ def selecionar_temas(request):
     except ObjectDoesNotExist:
         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,faixa_histo=0.1)
         parametros.save()
-
-    #print parametros.faixa_histo
             
     #cria arquivo de tabela para histograma
     arq_tabela_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt", 'w', 'utf-8')  
     arq_clusters = codecs.open("extrator/arquivos/p5_clusters.txt", 'w', 'utf-8') 
-    arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'w')    
-      
- 
+    arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt", 'w')
 
     #carrega tabela potenciação
-    tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()
-    
+    tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()    
 
     #cria listas e dicionários
     tabela_potenciacao_numeros = OrderedDict()
@@ -1200,8 +1190,7 @@ def selecionar_temas(request):
     
         n, bins, patches = plt.hist(potenciacao_valores, intervalos, facecolor='blue', alpha=0.5)
         pylab.savefig('extrator/arquivos/p5_grafo_histograma.png')     
-        #print n, bins, patches
-
+       
         for idx,item in enumerate(n):
             tabela_histograma[bins[idx + 1]] = item
             arq_tabela_histo.write(str(idx) + ' ' + str(bins[idx]) + '->'+  str(bins[idx + 1]) + ' ' + str(item) + '\n')
@@ -1242,20 +1231,16 @@ def selecionar_temas(request):
         arq_clusters.close()
         
         #seleciona os clusters segundo criterio de corte
-        #print len(vertices_objs)
         for item in clusters_full.items():
             if len(item[1]) < ((parametros.f_corte)/100)*len(vertices_objs):
                 clusters_selecionados[item[0]] = item[1]
-
             
         #cria lista de vertices selecionados do cluster
         for item in clusters_selecionados.items():
             for linha in item[1]:
                 vertices_selecionados[linha.split(' ')[0]] = linha.split(' ')[1]      
             
-        #if r.flag_testapalavra.strip() == "nao":
-        
-         #armazena palavras para iniciar o teste  
+        #armazena palavras para iniciar o teste  
         if r.flag_testapalavra.strip() == 'nao': 
             TestaPalavra.objects.all().delete()
             aList = [TestaPalavra(palavra = nome, numero=int(numero), condicao='aguardando', resultado='null') for numero,nome in vertices_selecionados.items()]    
@@ -1331,8 +1316,7 @@ def selecionar_temas(request):
                     return palavra    
                 else:                           
                     return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':palavra})
-        flag_fim = 'sim'
-                
+        flag_fim = 'sim'                
 
     #ao termino, atualiza execuçao para off    
     r.flag_testapalavra = 'nao'
@@ -1341,10 +1325,6 @@ def selecionar_temas(request):
     #cria vetor de vertices selecionados
     temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
     temas_preselecionados = OrderedDict(temas_preselecionados)
-
-    #print temas_preselecionados
-
-
 
     #inicializa relatório
     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
@@ -1398,9 +1378,7 @@ def selecionar_temas(request):
             for bigrama in bigramas:  
                 arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
                 if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
-                    temas_excluidos.append(tema_f)
-
-    
+                    temas_excluidos.append(tema_f)   
     temas_selecionados = temas_preselecionados.values()    
     
     for tema in temas_excluidos:
@@ -1414,28 +1392,23 @@ def selecionar_temas(request):
     #Salva temas no BD via bulk e inicializa protofrases    
     aList = [TemasNew(tema = tema, irt=0.0, irt_p=0.0) for tema in temas_selecionados]    
     TemasNew.objects.bulk_create(aList)
-    #aList2 = [ProtoFrasesNew(protofrase = tema) for tema in temas_selecionados]    
-    #ProtoFrasesNew.objects.bulk_create(aList2)
-
+   
     arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
     for tema in temas_excluidos:
         arq_relatorio.write(tema.encode('utf-8') + '\n' )
 
     #fecha arquvos
     arq_relatorio.close()
-#     arq_lematizador.close()
-#     arq_distancias.close()
-    
+#       
     #lê relatório
-    rel_temas = codecs.open("extrator/arquivos/p4_relatorio_temas.txt", 'r', 'utf-8').read()
+    rel_temas = codecs.open("extrator/arquivos/p5_relatorio_temas.txt", 'r', 'utf-8').read()
     
     if r.flag_completo == 'sim':
         return 'none'    
     else: 
         r.flag_testapalavra = 'nao'
-        r.save()#         
-        #finaliza tempo
-        #tempo_total =  ("{0:.4f}".format(time.time() - inicio))                           
+        r.save()
+
         return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st': 'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
 
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
@@ -1443,6 +1416,8 @@ def selecionar_temas(request):
 ##### PASSO 5 ###################################################################################################################################
 
 def processarProtofrases(request):
+    #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
+    
     #inicia cronometro
     inicio = time.time()
 
@@ -1450,14 +1425,13 @@ def processarProtofrases(request):
     ExtracaoNew.objects.all().delete()
 
     #inicializa arquivo do relatório
-    arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')
-   
+    arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')   
   
     #carrega arquivos 
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
     lista_de_adjacencias = codecs.open("extrator/arquivos/p3_lista_adjacencias.txt","r",'utf-8').readlines()
     arq_texto_preprocessado_vet = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","r",'utf-8').readlines()
-    arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+    arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt", "r", 'utf-8').readlines()
     
     #carrega os temas
     temas = TemasNew.objects.all()
@@ -1472,16 +1446,15 @@ def processarProtofrases(request):
         if linha.rstrip() != '.':
             senten = senten + ' ' + str(linha.encode('utf-8')).rstrip()
         if linha.rstrip() == '.':
-            sentencas_pp_vet.append(senten)
+            sentencas_pp_vet.append(senten)          
             senten = ''
-    #print sentencas_pp_vet
 
+    print 'Esse valor ' + str(len(arq_sentencas)) + ' deve ser igual a este ' + str(len(sentencas_pp_vet)) + ' . Caso seja diferente, verificar linha 1450'
+    
     if len(arq_sentencas) != len(sentencas_pp_vet):
         return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
 
-
-    #print len(sentencas)
-    #avalia todas as sentenças do texto
+    # avalia todas as sentenças do texto: atribui peso a todas as setenças conforme o peso das arestas da protofrase
     lista_adjacencias = {}
     contador = 0
     for sentenca in sentencas:
@@ -1500,10 +1473,9 @@ def processarProtofrases(request):
         
         grau_corte = 0.1*maior_grau
         if grau_corte < 1:
-            grau_corte = 1.0
-
-  
+            grau_corte = 1.0  
         corte = 0
+        
         for i, palavra in enumerate(palavras_sentenca):
             try:
                 palavras_sentenca[i+2]                              
@@ -1516,21 +1488,20 @@ def processarProtofrases(request):
                             corte = corte + 1                
             except:
                 bigrama = 'fim'     
+        
         sentencas_avaliadas[str(contador) + ' ' + sentenca] = str(peso) + ' ' + str(corte)
         contador = contador + 1
-        peso = 0
-    print len(sentencas)
-    print len(sentencas_avaliadas)    
+        peso = 0     
 
     #salva dados no BD
-    aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, irse_p=0, irgs=0 , irgs_p=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
-    ExtracaoNew.objects.bulk_create(aList)    
-
+    aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, rep_tema=0, irgs=0 , rep_geral=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
+    ExtracaoNew.objects.bulk_create(aList) 
     
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases' })
 
 
 def mapearEextrair(request):
+    #Apenas escreve o relatório de extração
     
     #carrega os temas
     temas = TemasNew.objects.all()
@@ -1539,8 +1510,7 @@ def mapearEextrair(request):
     sentencas = ExtracaoNew.objects.all()
 
     #escreve relatório
-    arq_extracao = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w",'utf-8')
-
+    arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
    
     arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
 
@@ -1552,139 +1522,10 @@ def mapearEextrair(request):
             arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
         arq_extracao.write('\n')
     
-    #print sentencas1
+  
     arq_extracao.close()
     
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
-
-
-def GeraSubDocumento(palavras):
-    
-    #print 'gerando subdocumento...'
-    #inicializa arquivo do subdocumento
-    arq_subtema = codecs.open('extrator/arquivos/p5_texto_tema.txt','w','utf-8')
-
-    #abre sub-documento e separa senteças que contém todos os temas
-    sentencas_novas = []
-    seten = 'null'
-    sentencas = codecs.open("extrator/arquivos/p5_texto_sub_preprocessado_sentencas.txt",'r','utf-8').readlines()
-    numero_de_sentencas = 0
-    for sentenca in sentencas:        
-        palavras_sentenca = sentenca.split(' ')         
-        if set(palavras).issubset(palavras_sentenca):
-            arq_subtema.write(sentenca)
-            seten = sentenca
-            numero_de_sentencas += 1 
-            sentencas_novas.append(sentenca.strip())       
-    arq_subtema.close()
-
-    return numero_de_sentencas, seten, sentencas_novas
-
-def GeraRede(request):
-   #print 'gerando rede e calculando métrica...'
-    
-    sentencas = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').read().splitlines()
-
-    #cria lista de adjancecias
-    lista_adjacencias = {}
-    for sentenca in sentencas:
-        palavras_sentenca = sentenca.split(' ')
-        for i, palavra in enumerate(palavras_sentenca):
-            try:
-                palavras_sentenca[i+2]                            
-                bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
-            except:
-                bigrama = 'fim' 
-            if bigrama != 'fim':
-                try:   
-                    lista_adjacencias[bigrama] = lista_adjacencias[bigrama] + 1
-                except:
-                    lista_adjacencias[bigrama] = 1       
-    
-   
-    #cria rede
-    rede = nx.DiGraph()
-    for keys,values in lista_adjacencias.items():
-        vertice_inicial = keys.split(' ')[0]
-        vertice_final =  keys.split(' ')[1]
-        peso =  float(values)
-        rede.add_edge(vertice_inicial , vertice_final , weight = peso)
-
-    #calcula métrica graus    
-    tabela_graus = nx.degree(rede, weight='peso')   
-    tabela_buffer = sorted(tabela_graus.items(), key=operator.itemgetter(1), reverse=True)
-    tabela_graus_ordenada = OrderedDict(tabela_buffer)
-
-    return tabela_graus_ordenada
-
-def SelecionaSubTemas(tabela_graus_ordenada):
-    #carrega parametros de ajuste
-    try:
-        parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-        
-    except ObjectDoesNotExist:
-        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
-        parametros.save()
-    
-    #Calcula as distÂncias relativas entre os vértices da tabela potenciacao
-    
-    #normalizando os valores
-    tabela_graus_ordenada_normalizada = OrderedDict()
-    maior_valor = max(tabela_graus_ordenada.iteritems(), key=operator.itemgetter(1))[1]
-    
-    for k,v in tabela_graus_ordenada.items():        
-        tabela_graus_ordenada_normalizada[k] = float(int(v)/int(maior_valor))
-    
-
-    #calcula frequencia absoluta de corte    
-    f = int(float(parametros.f_corte/100)*len(tabela_graus_ordenada_normalizada))
-    
-    
-    contador = 0
-    inicio_cauda = tabela_graus_ordenada_normalizada.keys()[0]
-    distancias_relativas_novo =[]
-    
-    for index, numero in enumerate(tabela_graus_ordenada_normalizada):            
-        grau_inicial = tabela_graus_ordenada_normalizada.values()[index]                        
-        try:
-            grau_final = tabela_graus_ordenada_normalizada.values()[index+1]
-        except:
-            break             
-        #calcula distancia relativa
-        dr = 100*((grau_inicial - grau_final)/grau_inicial)
-        distancias_relativas_novo.append(dr)
-        
-        #debugar
-        #print str(grau_inicial) + '  ' + str(grau_final) + '  ' + str(dr)
-        
-        if dr < parametros.dr_delta_min:
-            contador += 1
-            if contador >= f:
-                break
-        else:
-            inicio_cauda = tabela_graus_ordenada_normalizada.keys()[index+1]
-            contador = 0    
-    
-    #Seleciona região fora da cauda e armazena vertices (nomes e numeros)    
-    vertices_selecionados = []
-    for key, value in tabela_graus_ordenada_normalizada.items():
-        vertices_selecionados.append(key)
-        if key == inicio_cauda:
-            break
-    
-    
-    #Pré-seleciona os temas excluindo os não-substantivos
-    temas_selecionados = []
-    arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
-    palavras_lematizadas = arq_lematizador.readlines()    
-    for vertice in vertices_selecionados:
-        for linha in palavras_lematizadas:            
-            if vertice == linha.split(' ')[1]:                                
-                if linha.split(' ')[2][0] == 'N' or linha.split(' ')[2][0] == 'U': 
-                    temas_selecionados.append(vertice)       
-                    break
-    
-    return temas_selecionados
 
 
 def calcula_indice_representatividade(request):
@@ -1695,9 +1536,15 @@ def calcula_indice_representatividade(request):
     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","w")
     
-     #carrega os temas
+    #carrega os temas
     temas = TemasNew.objects.all()
 
+    #inicializa banco de dados de senteças extraídas
+    DadosExtracaoNew.objects.all().delete()
+
+    #carrega parametros
+    param = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    
     #carrega frases
     sentencas = ExtracaoNew.objects.all()
 
@@ -1707,65 +1554,98 @@ def calcula_indice_representatividade(request):
     #calcula indice geral de representatividade
     sentenca_maior_peso = ExtracaoNew.objects.order_by('-peso')[0]
     maior_peso = sentenca_maior_peso.peso
+
+    #Calculo do indice de representatividade do tema
+    ########################################################################
+    #carrega sentenças
+    sentencas_lem_strip = []
+    texto_lematizado = arq_texto_lematizado.read()
+    sentencas_lem = texto_lematizado.split('.')
+    for sentenca in sentencas_lem:
+        sentencas_lem_strip.append(sentenca.strip())
+
+
+    numero_total_sentecas = 0
+    numero_sentencas_tema = 0
+    for tema in temas:
+        for sentenca in sentencas_lem_strip:
+            lista_tokens = sentenca.split(' ')
+            if len(lista_tokens) == 1 and lista_tokens[0] == u'':             
+                'ignore'
+            else:
+                numero_total_sentecas += 1
+                if tema.tema in lista_tokens:
+                    numero_sentencas_tema += 1                    
+        grau_tema = TabelaRanking.objects.get(vertice_nome__exact=tema.tema).grau_norm      
+        irt = (float(grau_tema) + float(numero_sentencas_tema/numero_total_sentecas))/2
+        irt_p = irt*100
+        numero_sentencas_tema = 0
+        numero_total_sentecas = 0
+        tema.irt = irt        
+        tema.irt_p = irt_p
+        tema.save()
+
+    ##############################################################################  
+    
+    #Calculo do índice de representatividade dos parágrafos
   
     for seten in sentencas:
         irgs = (seten.peso - 0.1*seten.corte) / maior_peso
         if irgs < 0:
             irgs = 0
         irgs_por = int(irgs * 100)
-        if irgs_por > 80:
-            seten.irgs_p = 'alta' 
-        if irgs_por > 60 and irgs_por <= 80:
-            seten.irgs_p = 'alta-media'
-        if irgs_por > 40 and irgs_por <= 60:
-            seten.irgs_p = 'media'
-        if irgs_por > 20 and irgs_por <= 40:
-            seten.irgs_p = 'baixa-media'
-        if irgs_por <= 20 :
-            seten.irgs_p = 'baixa' 
-        
-        seten.irgs = irgs
-      
-        seten.save()
-
+        if irgs_por > 90:
+            seten.rep_geral = 'muito-alta' 
+        if irgs_por > 80 and irgs_por <= 90:
+            seten.rep_geral = 'alta'
+        if irgs_por > 70 and irgs_por <= 80:
+            seten.rep_geral = 'alta-baixa'
+        if irgs_por > 50 and irgs_por <= 70:
+            seten.rep_geral = 'media'
+        if irgs_por <= 50:
+            seten.rep_geral = 'baixa'         
+        seten.irgs = irgs     
+        seten.save()    
+    
     #calcula indice por tema de representatividade
     for tema in temas:
         sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema)
-        sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]
-        maior_peso = sentenca_maior_peso.peso
-    
-        for seten in sentencas:
-            irse = (seten.peso - 0.1*seten.corte) / maior_peso
-            if irse < 0:
-                irse = 0
-            irse_por = int(irse * 100)
-            if irse_por > 80:
-                seten.irse_p = 'alta' 
-            if irse_por > 60 and irse_por <= 80:
-                seten.irse_p = 'alta-media'
-            if irse_por > 40 and irse_por <= 60:
-                seten.irse_p = 'media'
-            if irse_por > 20 and irse_por <= 40:
-                seten.irse_p = 'baixa-media'
-            if irse_por <= 20 :
-                seten.irse_p = 'baixa'
-        
-            seten.irse = irse
-      
-            seten.save()
-
-    
+        sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]       
+        maior_peso = sentenca_maior_peso.peso       
+        if maior_peso > 0:
+            for seten in sentencas:
+                irse = (seten.peso - 0.1*seten.corte) / maior_peso
+                if irse < 0:
+                    irse = 0                   
+                irse_por = int(irse * 100)
+                                        
+                if irse_por > 90:
+                    seten.rep_tema = 'muito-alta' 
+                if irse_por > 80 and irse_por <= 90:
+                    seten.rep_tema = 'alta'
+                if irse_por > 70 and irse_por <= 80:
+                    seten.rep_tema = 'alta-baixa'
+                if irse_por > 50 and irse_por <= 70:
+                    seten.rep_tema = 'media'
+                if irse_por <= 50 :
+                    seten.rep_tema = 'baixa'        
+                seten.irse = irse      
+                seten.save()
+        else:
+            for seten in sentencas:
+                seten.irse = 0
+                seten.rep_tema = 'baixa'  
+                seten.save()   
   
-    arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')   
-    
+    arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')     
     arq_extracao.write('1. RANKING GERAL \n\n')   
     arq_extracao.write('frase  \  representatividade \n\n')    
     bag = []
-    sentencas = ExtracaoNew.objects.filter(irgs__gt=0.6).order_by('-irgs')
+    sentencas = ExtracaoNew.objects.filter(irgs__gt=param.radio_r).order_by('-irgs')
     cont = 1
     for seten in sentencas:                
         if seten.frase not in bag:
-            arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.irgs_p + '\n')
+            arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_geral + '\n')
             bag.append(seten.frase)
             cont = cont + 1
    
@@ -1774,24 +1654,25 @@ def calcula_indice_representatividade(request):
         arq_extracao.write('Tema: ' + tema.tema.encode('utf-8').decode('utf-8')  + '\n\n')   
         arq_extracao.write('frase  \  representatividade \n\n')    
         bag = []
-        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=0.6).order_by('-irse')
+        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=param.radio_r).order_by('-irse')
         cont = 1
         for seten in sentencas:                
             if seten.frase not in bag:
-                arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.irse_p + '\n')
+                arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_tema + '\n')
+                a = DadosExtracaoNew(irgs=seten.irgs, irgs_p=100*seten.irgs,irse=seten.irse,irse_p=100*seten.irse,tema=tema.tema, protofrase = seten.protofrase, quantidade = 0, sentenca=seten.frase)
+               
+                a.save()
                 bag.append(seten.frase)
                 cont = cont + 1
         arq_extracao.write('\n\n')
+        
+        #corrige nao selecçao
+        if cont == 1:
+            a = DadosExtracaoNew(irgs=0, irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = 'null', quantidade = 0, sentenca='null')               
+            a.save()                  
 
-    arq_extracao.close()    
-    
-
-
-
-
-
-    arq_extracao.close()
-    
+    arq_extracao.close()   
+     
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
 
 
@@ -1864,7 +1745,19 @@ def ajustar_parametro(request,opcao):
     else:
         check_c = 'off'        
     
-    
+    radios_1 = radios_2 = radios_3 = radios_4 = radios_5 = ''
+    if parametros.radio_r == 0.9:
+        radios_1 = 'checked'
+    if parametros.radio_r == 0.8:
+        radios_2 = 'checked'
+    if parametros.radio_r == 0.7:
+        radios_3 = 'checked'
+    if parametros.radio_r == 0.4:
+        radios_4 = 'checked'
+    if parametros.radio_r == 0.0:
+        radios_5 = 'checked'
+
+
     if parametros.permitir_RT == 'sim':
             check_sim = 'checked'
             check_nao = 'off'
@@ -1939,7 +1832,27 @@ def ajustar_parametro(request,opcao):
         else:
             parametros.check_eigen = 'nao'
             check_c = 'off'
-        parametros.save()                    
+        parametros.save()  
+
+    if opcao == 'opcao9':
+        rad_checked = request.POST.getlist('radios')
+        for v in rad_checked:
+            number = float(v)       
+        parametros.radio_r = number
+        parametros.save()
+
+        radios_1 = radios_2 = radios_3 = radios_4 = radios_5 = ''
+        if parametros.radio_r == 0.9:
+            radios_1 = 'checked'
+        if parametros.radio_r == 0.8:
+            radios_2 = 'checked'
+        if parametros.radio_r == 0.7:
+            radios_3 = 'checked'
+        if parametros.radio_r == 0.4:
+            radios_4 = 'checked'
+        if parametros.radio_r == 0.0:
+            radios_5 = 'checked'                 
+                  
 
     if opcao == 'opcao4':
         if parametros.check_grau == 'sim':
@@ -1954,11 +1867,11 @@ def ajustar_parametro(request,opcao):
                     check_c = 'checked'
         else:
             check_c = 'off'        
-        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste'})
+        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})
 
     
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste'})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
 
 def resultados(request,arquivo):
     result = DadosPreproc.objects.get(id=1)
@@ -2683,7 +2596,7 @@ def executar_passos_2_a_5(request):
 #     #Verifica as repetições de cada protofrase
 #     for tema in temas:
 #         frases = Counter(ExtracaoNew.objects.filter(tema = tema.tema).values_list('frase', flat=True))        
-#         aList = [DadosExtracaoNew(irgs=0,irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = key, quantidade = value) for key,value in frases.items()]    
+#         aList = [DadosExtracaoNew(irgs=0,rep_geral=0,irse=0,rep_tema=0,tema=tema.tema, protofrase = key, quantidade = value) for key,value in frases.items()]    
 #         DadosExtracaoNew.objects.bulk_create(aList)   
             
 #     #Prepara textos do mapeamento separando as sentencas e tirando os espacoes em branco do começo e do fim (strip)

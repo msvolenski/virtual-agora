@@ -211,6 +211,21 @@
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
+                    <div class="titulo_ajuste">Representatividade mínima</div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao9' %}" method="POST" role="form" enctype="multipart/form-data">
+                            <div style="display:inline-block">
+                                <input type="radio" name="radios" {{radios_1}} value="0.9"> Muito Alta    
+                                <input type="radio" name="radios" {{radios_2}} value="0.8"> Alta    
+                                <input type="radio" name="radios" {{radios_3}} value="0.7"> Alta Baixa
+                                <input type="radio" name="radios" {{radios_4}} value="0.4"> Média 
+                                <input type="radio" name="radios" {{radios_5}} value="0.0"> Baixa    
+                            </div>
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
+                                <input type="submit" class="botao_enviar" value="Enviar"> 
+                            </div>    
+                        </form>
+                    </div> 
                 </div>
             </div>
         </div>
