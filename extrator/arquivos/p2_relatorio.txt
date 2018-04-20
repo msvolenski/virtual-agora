@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 1584 parágrafos.
-Os dados de entrada possuem 11436 palavras.
-Os dados lematizados possuem 12433 palavras.
-Palavras não lematizadas: = $ = ~ ~ ex-presidente $ $ ex-gerente afro-brasileiras < $ exo-l afro-brasileiras pré-candidatura $ ex-bbb < $ $ < x-salada < pró-lula pró-lula lava-jato cú-mpanheiros ex-presidente $ $ brasil-sil-sil-sil 
-O documento lematizado e sem stopwords possui 6258 palavras.
+Os dados de entrada contém 4858 parágrafos.
+Os dados de entrada possuem 36091 palavras.
+Os dados lematizados possuem 38581 palavras.
+Palavras não lematizadas: ex-diretor ex-diretor ex-diretor persuadi-lo homem-bomba ex-diretor ex-diretor homem-bomba ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor pt-br ex-diretor ex-diretor ex-diretor ex-diretor obama-psdb trump-lula ex-diretor ex-diretor ex-fbi ex-diretor ex-diretor < ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor homem-bomba ex-director ex-fbi ex-diretor homem-bomba ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor consultá-los lula-la > > > pró-lula pró-lula pró-lula sino-soviético pró-lula ex-presidente apagá-lo ex-presidente ex-presidente ex-presidente pró-lula pré-candidato anti-lula anti-pt indicá-lo pró-lula > > > > ex-presidente ex-presidente ex-presidente ex-presidente $ ex-presidente ex-presidentes $ ex-presidente ex-presidente anti-lulopetista ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente $ ex-presidente = = pró-lula ex-presidente pró-lula ex-presidente ~ ~ ex-president ex-presidente $ ex-presidente > > ex-presidente ex-presidente $ pré-candidato pró-lula sem-prova pró-lula roubá-lo blá-blá-blá dembélé-mbappé-neymar $ paris-saint $ personaliza-la < > e-sports € deixá-lo < > > $ 
+O documento lematizado e sem stopwords possui 19765 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 45.278069255 %.
+Compressão do texto após pré-processamento: 45.2356543183 %.
 Em média, cada sentença do texto original possui 7 palavras.
 Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.

@@ -459,6 +459,19 @@
                         {% endif %}
                     </div>
                 </div>
+
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_sel_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content" style="background: #EFCEAA">
+                        <h2>Agrupar Temas e Sub-temas</h2>
+                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Selecionar</a>
+                        {% if tempo_p4st %}
+                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
                 <!-- cd-timeline-block -->
 
             </div>

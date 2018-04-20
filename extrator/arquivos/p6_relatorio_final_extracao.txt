@@ -4,62 +4,140 @@ RELATORIO FINAL DE EXTRACAO
 
 frase  \  representatividade 
 
-1 -  comentários de " pq não fazem atos pelos 60mil assassinados no brasil " em 3 , 2 , 1  \  muito-alta
+1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
+2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
+4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
+6 -  faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  alta
+7 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  alta
+8 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
+9 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
+10 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
+11 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
+12 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
+13 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas  \  alta-baixa
+14 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no al  \  alta-baixa
+15 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
+16 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
+17 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
+18 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
+19 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
 
 
  2. RANKING POR TEMAS 
 
-Tema: brasil
+Tema: trump
 
 frase  \  representatividade 
 
-1 -  o melhor do brasil são os brasileiros  \  muito-alta
-2 -  brasil siga a gleici no ig  \  muito-alta
-3 -  o melhor do brasil é o brasileiro k  \  muito-alta
-4 -  brasil siga gleici no ig  \  muito-alta
-5 -  lula livre e presidente do brasil  \  muito-alta
-6 -  meu brasil brasileiro  \  muito-alta
-7 -  o melhor do brasil e o brasileiro  \  muito-alta
-8 -  k o melhor do brasil é o brasileiro  \  muito-alta
-9 -  erika ( 2 ) ⏰ 20 ' do 2ºt ___ brasil 5x0 bolívia  \  muito-alta
-10 -  comentários de " pq não fazem atos pelos 60mil assassinados no brasil " em 3 , 2 , 1  \  muito-alta
-11 -  copa américa feminina erika ( 2 ) ⏰ 20 ' do 2ºt brasil 5x0 bolívia  \  muito-alta
-12 -  ele é teu líder popular , não do brasil , e o povo brasileiro não é bandido como ele  \  muito-alta
-
-
-Tema: bolívia
-
-frase  \  representatividade 
-
-1 -  erika ( 2 ) ⏰ 20 ' do 2ºt ___ brasil 5x0 bolívia  \  muito-alta
-2 -  copa américa feminina erika ( 2 ) ⏰ 20 ' do 2ºt brasil 5x0 bolívia  \  muito-alta
+1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
+2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
+4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
+6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
+7 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
+8 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
+9 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
+10 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
+11 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
+12 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
+13 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
+14 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
+15 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
 
 
 Tema: lula
 
 frase  \  representatividade 
 
-1 -  lula livre e presidente do brasil  \  muito-alta
-2 -  dilma e boulos passeiam pela europa após prisão de lula  \  muito-alta
+1 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em guarujá , sp  \  muito-alta
+2 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
+3 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp leia aqui  \  muito-alta
+4 -  manifestantes ocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
+5 -  manifestantes desocupam triplex atribuído a lula em guarujá  \  alta
+6 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em  \  alta-baixa
+7 -  mtst desocupa triplex atribuído à lula em guarujá , litoral de sp  \  alta-baixa
+8 -  população e movimentos ocupam triplex atribuído a lula  \  alta-baixa
+9 -  manifestantes ocupam triplex atribuído a lula no litoral de sp  \  alta-baixa
 
 
-Tema: gleici
+Tema: neymar
 
 frase  \  representatividade 
 
-1 -  brasil siga a gleici no ig  \  muito-alta
-2 -  brasil siga gleici no ig  \  muito-alta
+1 -  faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  muito-alta
+2 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  muito-alta
+3 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas  \  alta
+4 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no al  \  alta
 
 
-Tema: brasileiro
+Tema: presidente
 
 frase  \  representatividade 
 
-1 -  o melhor do brasil são os brasileiros  \  muito-alta
-2 -  o melhor do brasil é o brasileiro k  \  muito-alta
-3 -  meu brasil brasileiro  \  muito-alta
-4 -  o melhor do brasil e o brasileiro  \  muito-alta
-5 -  k o melhor do brasil é o brasileiro  \  muito-alta
-6 -  ele é teu líder popular , não do brasil , e o povo brasileiro não é bandido como ele  \  muito-alta
+1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
+2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
+4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
+6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
+7 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
+8 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
+9 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
+10 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
+11 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
+12 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
+13 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
+
+
+Tema: triplex
+
+frase  \  representatividade 
+
+1 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em guarujá , sp  \  muito-alta
+2 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
+3 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp leia aqui  \  muito-alta
+4 -  manifestantes ocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
+5 -  manifestantes desocupam triplex atribuído a lula em guarujá  \  alta
+6 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em  \  alta-baixa
+7 -  mtst desocupa triplex atribuído à lula em guarujá , litoral de sp  \  alta-baixa
+8 -  população e movimentos ocupam triplex atribuído a lula  \  alta-baixa
+9 -  manifestantes ocupam triplex atribuído a lula no litoral de sp  \  alta-baixa
+
+
+Tema: poder
+
+frase  \  representatividade 
+
+
+
+Tema: donald
+
+frase  \  representatividade 
+
+1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
+2 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
+
+
+Tema: ex-diretor
+
+frase  \  representatividade 
+
+1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
+2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
+4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
+5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
+6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
+7 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
+8 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
+9 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
+10 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
+11 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
+12 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
+13 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
+14 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
 
 

@@ -13,7 +13,8 @@ from numpy import array, linspace
 from sklearn.cluster import KMeans
 from itertools import groupby
 from operator import itemgetter
-import aspell
+from networkx.drawing.layout import kamada_kawai_layout
+#import aspell
 import codecs
 import emoji
 import networkx as nx
@@ -31,6 +32,9 @@ import re
 import subprocess
 import time
 import tweepy
+import itertools
+import community
+import igraph
 
 # Create your views here.
 class RelatorioPreprocHomeView(generic.ListView):
@@ -1227,6 +1231,7 @@ def selecionar_temas(request):
             clusters_full[cont] = cluster
             cluster = []       
             cont = cont + 1
+            
         
         arq_clusters.close()
         
@@ -1413,6 +1418,144 @@ def selecionar_temas(request):
 
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
    
+
+def agrupar_temas(request):
+    
+    #cria arquivos
+    arq_lista_agp = codecs.open("extrator/arquivos/p4_lista_adjacencias_agrupamento.txt", 'w', 'utf-8') 
+    
+    #cria lista com os temas
+    temas =[]
+    temas_q = TemasNew.objects.all().values_list('tema', flat=True)
+    for t in temas_q:
+        temas.append(t)
+    #cria pares de temas distintos
+    pairs = list(itertools.combinations(temas, 2))
+ 
+    #carrega sentencas
+    sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+    cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()    
+   
+
+    #carrega temas principais (nucleos)
+    nucleos = []
+    cont = 0
+    for linha in cluster:
+        if linha == '\n':
+            nucleos.append('neymar')
+            break
+        if cont == 1:
+            palav = linha.split(' ')
+            nucleos.append(palav[1])       
+        cont = 1    
+  
+    #inicializa variaves de teste
+    flag_termino = 'nao'
+    temas_separados = {}
+    
+    #incilializa teste
+    #t_str = ''
+    #for tem in temas:
+    #    t_str = t_str + ' ' + tem          
+    #temas_lista.append(t_str.lstrip()) 
+    
+    cont2 = 0
+    while(cont2 < 5):
+       
+        #gera rede
+        rede = nx.Graph()   
+        #pega o conjunto de temas da lista
+        #temas_teste = temas_lista[0].rstrip().split(' ')
+        #print temas_teste
+
+        #gera os nos da rede
+        for tema in temas:
+            rede.add_node(tema)
+
+        #cria pares de temas distintos
+        pairs = list(itertools.combinations(temas, 2))
+        print pairs
+
+        #cria lista de adjacencias
+        for par in pairs:
+            cont = 0
+            for sentenca in sentencas:        
+                lista_sent = sentenca.rstrip( ).split(' ')
+                if par[0] in lista_sent and par[1] in lista_sent:
+                    cont = cont + 1
+            arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
+            peso = float(cont)
+            if cont > 0:
+                rede.add_edge(par[0], par[1], weight=peso)            
+        
+        #arq_lista_agp.close()
+        nx.write_gexf(rede, "test.gexf")
+        
+        #separa as comunidade
+        partition = community.best_partition(rede,weight='weight')
+        print partition
+
+        #agrupa temas com mesmo valor
+        dict_nucleos = {}
+        for k,v in partition.iteritems():
+            for nuc in nucleos:
+                if k == nuc:
+                    dict_nucleos[k] = v
+        dif = {}
+        for k,v in dict_nucleos.iteritems():
+            if v not in dif.values():
+                dif[k] = v        
+        temas_agrupados = dict()
+        for k,v in dict_nucleos.iteritems():
+            if v in temas_agrupados.keys():
+                temas_agrupados[v] = temas_agrupados[v] + ' ' + k
+            else:
+                temas_agrupados[v] = k
+
+        #testa se algum tema já está isoldo
+        
+        bag = []
+        for k,v in temas_agrupados.iteritems():
+            list_len = v.split(' ')
+            if len(list_len) == 1:
+                for j,l in partition.iteritems():
+                    if l == k:
+                        bag.append(j)
+           
+        
+
+        
+        temas = set(temas) - set(bag)
+        cont2 = cont2 + 1
+      
+  
+ 
+        
+    # #Visualização da reded
+    # pos = nx.kamada_kawai_layout(rede)
+    # #pos = nx.draw_spring(rede)
+    # labels = nx.get_edge_attributes(rede,'weight')
+    # nx.draw_networkx_edge_labels(rede,pos,edge_labels=labels)
+    # nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
+    # plt.savefig('extrator/arquivos/p4_rede_temas.png')
+    # plt.show()
+    # plt.close()
+
+   
+  
+  
+    
+    
+   
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
+
+
+
+
+
+
+
+
 ##### PASSO 5 ###################################################################################################################################
 
 def processarProtofrases(request):

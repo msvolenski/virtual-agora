@@ -4,38 +4,58 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.3
-- Critério de exclusão do cluster: posssuir 10% dos nós totais (248.6 de 2486)
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (395.8 de 3958)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-7 brasil 3.0
+2 trump 2.67874356827
+226 lula 2.40160725977
 
 Cluster 2
-195 querer 0.952842953183
+2849 neymar 1.92911097336
 
 Cluster 3
-42 seguir 0.533911050385
-1715 5x0 0.406351353118
-41 bolívia 0.388700575455
-235 6x0 0.356529251277
-45 lula 0.341371664784
-374 gleici 0.324377597598
-113 ver 0.313897656526
-157 brasileiro 0.306100495653
+52 dizer 1.18066779249
+46 moralmente 1.17595637527
+69 presidente 1.14991973397
+
+Cluster 4
+159 incapaz 0.895922676339
+67 kanye 0.60568867258
+
+Cluster 5
+63 putin 0.594689029622
+68 west 0.433409222638
+51 fbi 0.424934031565
+325 twitter 0.413915257855
+1728 triplex 0.4040189824
+205 inapto 0.396757245594
+127 poder 0.382868146626
+1 donald 0.349906684375
+50 ex-diretor 0.341811494981
+171 falar 0.304101412467
 
 TEMAS PRÉ-SELECIONADOS
 
-brasil
-querer
-seguir
-5x0
-bolívia
-6x0
+trump
 lula
-gleici
-ver
-brasileiro
+neymar
+dizer
+moralmente
+presidente
+incapaz
+kanye
+putin
+west
+fbi
+twitter
+triplex
+inapto
+poder
+donald
+ex-diretor
+falar
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -46,20 +66,49 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-brasil -> brasil - 2/603 - 0.331674958541%
-brasil -> lula - 1/53 - 1.88679245283%
-brasil -> brasileiro - 5/19 - 26.3157894737%
-lula -> brasil - 1/603 - 0.16583747927%
-brasileiro -> brasil - 1/603 - 0.16583747927%
+trump -> lula - 1/718 - 0.139275766017%
+trump -> presidente - 3/187 - 1.60427807487%
+trump -> kanye - 57/58 - 98.275862069%
+trump -> putin - 59/64 - 92.1875%
+trump -> twitter - 36/45 - 80.0%
+trump -> poder - 6/80 - 7.5%
+trump -> ex-diretor - 1/52 - 1.92307692308%
+lula -> trump - 1/701 - 0.142653352354%
+lula -> lula - 9/718 - 1.25348189415%
+lula -> presidente - 2/187 - 1.06951871658%
+lula -> triplex - 17/153 - 11.1111111111%
+lula -> poder - 13/80 - 16.25%
+neymar -> neymar - 3/617 - 0.486223662885%
+neymar -> twitter - 1/45 - 2.22222222222%
+neymar -> poder - 4/80 - 5.0%
+presidente -> trump - 2/701 - 0.285306704708%
+presidente -> lula - 5/718 - 0.696378830084%
+presidente -> donald - 1/195 - 0.512820512821%
+kanye -> west - 60/61 - 98.3606557377%
+west -> presidente - 57/187 - 30.4812834225%
+twitter -> trump - 1/701 - 0.142653352354%
+triplex -> lula - 63/718 - 8.77437325905%
+poder -> poder - 1/80 - 1.25%
+donald -> trump - 204/701 - 29.1012838802%
+donald -> donald - 1/195 - 0.512820512821%
+ex-diretor -> fbi - 107/122 - 87.7049180328%
 
-- Temas selecionados(5):
+- Temas selecionados(8):
 
-brasil
-bolívia
+trump
 lula
-gleici
-brasileiro
+neymar
+presidente
+triplex
+poder
+donald
+ex-diretor
 
 
-- Temas excluídos(0):
+- Temas excluídos(5):
 
+kanye
+putin
+twitter
+west
+fbi

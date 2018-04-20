@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^extrator/processarprotofrases$', views.processarProtofrases, name='processarpfs'),      
     url(r'^extrator/calcularindice/$', views.calcula_indice, name='calularindice'),
     url(r'^extrator/selecionartemas/$', views.selecionar_temas, name='selecionar_temas'),
+    url(r'^extrator/agrupartemas/$', views.agrupar_temas, name='agrupar_temas'),
     url(r'^extrator/limpasubstantivo/(?P<opcao>[-\w]+)/$', views.limpar_lista_subtantivos, name='limpar_lista_subtantivos'),
     url(r'^extrator/ajustarparametro/(?P<opcao>[-\w]+)/$', views.ajustar_parametro, name='ajustar_parametro'),
     url(r'^extrator/resultadosfinais/(?P<arquivo>[-\w]+)/$', views.resultados, name='resultados'),
