@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 4858 parágrafos.
-Os dados de entrada possuem 36091 palavras.
-Os dados lematizados possuem 38581 palavras.
-Palavras não lematizadas: ex-diretor ex-diretor ex-diretor persuadi-lo homem-bomba ex-diretor ex-diretor homem-bomba ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor pt-br ex-diretor ex-diretor ex-diretor ex-diretor obama-psdb trump-lula ex-diretor ex-diretor ex-fbi ex-diretor ex-diretor < ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor homem-bomba ex-director ex-fbi ex-diretor homem-bomba ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor ex-diretor consultá-los lula-la > > > pró-lula pró-lula pró-lula sino-soviético pró-lula ex-presidente apagá-lo ex-presidente ex-presidente ex-presidente pró-lula pré-candidato anti-lula anti-pt indicá-lo pró-lula > > > > ex-presidente ex-presidente ex-presidente ex-presidente $ ex-presidente ex-presidentes $ ex-presidente ex-presidente anti-lulopetista ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente $ ex-presidente = = pró-lula ex-presidente pró-lula ex-presidente ~ ~ ex-president ex-presidente $ ex-presidente > > ex-presidente ex-presidente $ pré-candidato pró-lula sem-prova pró-lula roubá-lo blá-blá-blá dembélé-mbappé-neymar $ paris-saint $ personaliza-la < > e-sports € deixá-lo < > > $ 
-O documento lematizado e sem stopwords possui 19765 palavras.
+Os dados de entrada contém 153 parágrafos.
+Os dados de entrada possuem 1185 palavras.
+Os dados lematizados possuem 1255 palavras.
+Palavras não lematizadas: ex-presidente ex-president ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente 
+O documento lematizado e sem stopwords possui 681 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 45.2356543183 %.
-Em média, cada sentença do texto original possui 7 palavras.
+Compressão do texto após pré-processamento: 42.5316455696 %.
+Em média, cada sentença do texto original possui 8 palavras.
 Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.
