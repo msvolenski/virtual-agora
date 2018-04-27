@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 153 parágrafos.
-Os dados de entrada possuem 1185 palavras.
-Os dados lematizados possuem 1255 palavras.
-Palavras não lematizadas: ex-presidente ex-president ex-presidente ex-presidente ex-presidente ex-presidente ex-presidente 
-O documento lematizado e sem stopwords possui 681 palavras.
+Os dados de entrada contém 1706 parágrafos.
+Os dados de entrada possuem 26244 palavras.
+Os dados lematizados possuem 29157 palavras.
+Palavras não lematizadas: rio-grandense rio-grandense lava-jato lava-jato lava-jato fichas-sujas lava-jato safá-lo ex-prefeita representá-lo ex-presidente ex-governador varre-sai aprová-la enfrentá-las enfrentá-las lava-jato ex-presidenta norte-rio-grandenses representá-los ex-presidente ex-presidente reconstruí-la lava-jato lava-jato vice-presidente vice-presidente defendê-la pré-sal lava-jato vice-presidente tirá-la lava-jato vê-lo vê-lo pré-sal ex-deputado 
+O documento lematizado e sem stopwords possui 11872 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 42.5316455696 %.
-Em média, cada sentença do texto original possui 8 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.
+Compressão do texto após pré-processamento: 54.7629934461 %.
+Em média, cada sentença do texto original possui 15 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 7 palavras.

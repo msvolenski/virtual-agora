@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import MapasTemasESubtemas, Clusters, Subtemas, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -103,8 +103,11 @@ def inserir_dados_de_entrada_twitter(request):
     entrada_tweets_copia = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","w", "utf-8")
     
     #busca palavra digita e testa sua existencia
-    hashtag = request.POST['hashtag']
-    if not hashtag:
+    hashtags = request.POST['hashtag']
+    hashtag_list = hashtags.split(' ')
+    
+    
+    if not hashtags:
         
         #finaliza tempo
         tempo_total =  ("{0:.4f}".format(time.time() - inicio))          
@@ -119,97 +122,103 @@ def inserir_dados_de_entrada_twitter(request):
     auth.set_access_token(access_token, access_token_secret)    
     api = tweepy.API(auth)
 
-    #variaveis
-    num_tweets = parametros.num_tweets
-    contador_tweets = 0
-    max_id = 0
-    permitir_RT = parametros.permitir_RT
-    fim = 'nao'
+    
 
-    #primeira Busca - Define o ultimo_id
-    public_tweets = api.search(q=hashtag ,lang='pt', count=100, result_type='recent')
-    ultimo_id = public_tweets[-1].id
-    
-    #salva primeiros tweets
-    for tweet in public_tweets:          
-        if permitir_RT == 'sim':            
-            if hasattr(tweet, 'retweeted_status'):
-                if contador_tweets < num_tweets:
-                    if not tweet.retweeted_status.truncated:
-                        entrada_tweets_copia.write(tweet.retweeted_status.text)
-                        entrada_tweets_copia.write('.')                                          
-                        entrada_tweets_copia.write('\n\n')
-                        contador_tweets += 1                    
-                else:
-                    fim = 'sim'               
-            else:
-                if contador_tweets < num_tweets:
-                    if not tweet.truncated:
-                        entrada_tweets_copia.write(tweet.text)
-                        entrada_tweets_copia.write('.')                                            
-                        entrada_tweets_copia.write('\n\n')
-                        contador_tweets += 1                    
-                else:
-                    fim = 'sim'
+    for hashtag in hashtag_list:
+        print "Tweets para " + hashtag
+        #variaveis
+        num_tweets = parametros.num_tweets
+        contador_tweets = 0
+        max_id = 0
+        permitir_RT = parametros.permitir_RT
+        fim = 'nao'
         
-        if permitir_RT == 'nao':
-            if hasattr(tweet, 'retweeted_status'):
-                do = 'nothing'
-            else:            
-                if contador_tweets < num_tweets:
-                    if not tweet.truncated:
-                        entrada_tweets_copia.write(tweet.text)
-                        entrada_tweets_copia.write('.')                                            
-                        entrada_tweets_copia.write('\n\n')
-                        contador_tweets += 1                    
-                else:
-                    fim = 'sim'            
-    
-    print str(contador_tweets) + " Tweets carregados..." 
-    
-    while fim == 'nao':       
-        public_tweets = api.search(q=hashtag ,lang='pt', count=100, max_id=(ultimo_id - 1) , truncated='false')   
+        #primeira Busca - Define o ultimo_id
+        public_tweets = api.search(q=hashtag ,lang='pt', count=100, result_type='recent')
+        ultimo_id = public_tweets[-1].id
+        
+        #salva primeiros tweets
         for tweet in public_tweets:          
-            if permitir_RT == 'sim':
-                if hasattr(tweet, 'retweeted_status'):                    
+            if permitir_RT == 'sim':            
+                if hasattr(tweet, 'retweeted_status'):
                     if contador_tweets < num_tweets:
                         if not tweet.retweeted_status.truncated:
                             entrada_tweets_copia.write(tweet.retweeted_status.text)
-                            entrada_tweets_copia.write('.')                                        
+                            entrada_tweets_copia.write('.')                                          
                             entrada_tweets_copia.write('\n\n')
-                            contador_tweets += 1                        
+                            contador_tweets += 1                    
                     else:
                         fim = 'sim'               
                 else:
                     if contador_tweets < num_tweets:
                         if not tweet.truncated:
                             entrada_tweets_copia.write(tweet.text)
-                            entrada_tweets_copia.write('.')                                               
+                            entrada_tweets_copia.write('.')                                            
                             entrada_tweets_copia.write('\n\n')
-                            contador_tweets += 1                        
+                            contador_tweets += 1                    
                     else:
                         fim = 'sim'
-        
+            
             if permitir_RT == 'nao':
-                if hasattr(tweet, 'retweeted_status'):  
-                   do = 'nothing'
+                if hasattr(tweet, 'retweeted_status'):
+                    do = 'nothing'
                 else:            
                     if contador_tweets < num_tweets:
                         if not tweet.truncated:
-                            entrada_tweets_copia.write(tweet.text) 
-                            entrada_tweets_copia.write('.')                       
+                            entrada_tweets_copia.write(tweet.text)
+                            entrada_tweets_copia.write('.')                                            
                             entrada_tweets_copia.write('\n\n')
-                            contador_tweets += 1
-                        
+                            contador_tweets += 1                    
                     else:
-                        fim = 'sim'     
-
-        print str(contador_tweets) + " Tweets carregados..."      
+                        fim = 'sim'            
         
-        try:
-            ultimo_id = public_tweets[-1].id    
-        except:
-            fim = 'sim'    
+        print str(contador_tweets) + " Tweets carregados..." 
+        
+        while fim == 'nao':       
+            public_tweets = api.search(q=hashtag ,lang='pt', count=100, max_id=(ultimo_id - 1) , truncated='false')   
+            for tweet in public_tweets:          
+                if permitir_RT == 'sim':
+                    if hasattr(tweet, 'retweeted_status'):                    
+                        if contador_tweets < num_tweets:
+                            if not tweet.retweeted_status.truncated:
+                                entrada_tweets_copia.write(tweet.retweeted_status.text)
+                                entrada_tweets_copia.write('.')                                        
+                                entrada_tweets_copia.write('\n\n')
+                                contador_tweets += 1                        
+                        else:
+                            fim = 'sim'               
+                    else:
+                        if contador_tweets < num_tweets:
+                            if not tweet.truncated:
+                                entrada_tweets_copia.write(tweet.text)
+                                entrada_tweets_copia.write('.')                                               
+                                entrada_tweets_copia.write('\n\n')
+                                contador_tweets += 1                        
+                        else:
+                            fim = 'sim'
+            
+                if permitir_RT == 'nao':
+                    if hasattr(tweet, 'retweeted_status'):  
+                        do = 'nothing'
+                    else:            
+                        if contador_tweets < num_tweets:
+                            if not tweet.truncated:
+                                entrada_tweets_copia.write(tweet.text) 
+                                entrada_tweets_copia.write('.')                       
+                                entrada_tweets_copia.write('\n\n')
+                                contador_tweets += 1
+                            
+                        else:
+                            fim = 'sim'     
+
+            print str(contador_tweets) + " Tweets carregados..."      
+            
+            try:
+                ultimo_id = public_tweets[-1].id    
+            except:
+                fim = 'sim'    
+        
+    
     
     entrada_tweets_copia.close() 
     
@@ -898,35 +907,38 @@ def matriz(request):
 
 
 def rede_complexa(request):
+            
+#     #Lê arquivo que contém a lista de adjacenicas
+#     arq_listaAdjacencias = codecs.open("C:/virtual-agora/extrator/arquivos/p3_lista_adjacencias.txt","r","utf-8")
+#     listaAdjacencias = arq_listaAdjacencias.readlines()
     
-    #Lê arquivo que contém a lista de adjacenicas
-    arq_listaAdjacencias = codecs.open("C:/virtual-agora/extrator/arquivos/p3_lista_adjacencias.txt","r","utf-8")
-    listaAdjacencias = arq_listaAdjacencias.readlines()
-    
-    #carrega lista de vertices
-    lista_de_vertices = ListaVertices.objects.all()
+#     #carrega lista de vertices
+#     lista_de_vertices = ListaVertices.objects.all()
 
-    #gera rede
-    rede = nx.DiGraph()
-    for vertice in lista_de_vertices:
-        rede.add_node(vertice.node)
-    for bigrama in listaAdjacencias:                
-        vertice_inicial = bigrama.split(' ')[0]
-        vertice_final =  bigrama.split(' ')[1]
-        peso =  float(bigrama.split(' ')[2])
-        rede.add_edge(vertice_inicial , vertice_final , weight = peso)
+#     #gera rede
+#     rede = nx.DiGraph()
+#     for vertice in lista_de_vertices:
+#         rede.add_node(vertice.node)
+#     for bigrama in listaAdjacencias:                
+#         vertice_inicial = bigrama.split(' ')[0]
+#         vertice_final =  bigrama.split(' ')[1]
+#         peso =  float(bigrama.split(' ')[2])
+#         rede.add_edge(vertice_inicial , vertice_final , weight = peso)
     
-    #Visualização da rede
-    pos = nx.spring_layout(rede)
-    labels = nx.get_edge_attributes(rede,'weight')
-    nx.draw_networkx_edge_labels(rede,pos,edge_labels=labels)
-    nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
-    plt.savefig('extrator/arquivos/p3_rede.png')
-    plt.show()
-    plt.close()
+#     #Visualização da rede
+#     pos = nx.spring_layout(rede)
+#     labels = nx.get_edge_attributes(rede,'weight')
+#     nx.draw_networkx_edge_labels(rede,pos,edge_labels=labels)
+#     nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
+#     plt.savefig('extrator/arquivos/p3_rede.png')
+#     plt.show()
+#     plt.close()
+
+#     nx.write_gexf(rede, "extrator/p3_rede_complexa_gephi.gexf")
     
-    #finaliza tempo
-    #tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
+    
+#     #finaliza tempo
+#     #tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
     
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3','dados_de_entrada': None, 'relatorio_preproc':None })    
 
@@ -934,6 +946,8 @@ def rede_complexa(request):
 ## PASSO 4. MÉTRICAS E RANKING  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def metricas_e_ranking(request): 
+ 
+    
     #inicia cronometro
     inicio = time.time()
 
@@ -1003,7 +1017,10 @@ def metricas_e_ranking(request):
         maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
         print maior_eigenvector 
    
-    
+    #GERA REDE GEPHI
+  
+    nx.write_gexf(rede, "extrator/arquivos/p3_rede_complexa_gephi.gexf")
+  
     #cria lista de vertices
     vertices = nx.nodes(rede)
 
@@ -1229,8 +1246,7 @@ def selecionar_temas(request):
         arq_clusters.write('\n')
         clusters_full[cont] = cluster
         cluster = []       
-        cont = cont + 1        
-    
+        cont = cont + 1    
     arq_clusters.close()
     
     #seleciona os clusters segundo criterio de corte
@@ -1251,51 +1267,34 @@ def selecionar_temas(request):
 
     #separa os substantivos
     #carrega lista de substantivos
-    lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
+    lista_substantivos = ListaDeSubstantivos.objects.all()
     lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
-    palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)   
+    palavras = TestaPalavra.objects.filter(condicao__exact='aguardando')  
 
     # faz a primeira avaliação buscando os substantivos já classificados
     for palavra in palavras:
-        if palavra in lista_palavras:
-        #analise se a palavra esta na lista de substantivos
-            for key, value in lista_substantivos:
-                if palavra == key:
-                    cond = value
-                    pal.condicao = 'finalizado'
-                    pal.resultado = cond
-                    pal.save()          
-        
+        if palavra.palavra in lista_palavras:
+            a = lista_substantivos.get(palavra=palavra.palavra)
+            palavra.condicao = 'finalizado'
+            palavra.resultado = a.substantivo
+            palavra.save()
+            
     #carregas os temas ainda nao classificados
     palavras_faltantes = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)   
     
+    #manda as palavras para o usuário classificar
+    print palavras_faltantes
     if palavras_faltantes:
-        #manda as palavras para o usuário classificar
-        return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':palavra})
+        return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavras_faltantes':palavras_faltantes})
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     #cria vetor de vertices selecionados    
-    temas_preselecionados = OrderedDict(vertices_selecionados)
+    
+    temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
+  
+    temas_preselecionados = OrderedDict(temas_preselecionados)
 
+  
     #inicializa relatório
     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
     arq_relatorio.write('\n\n\n')
@@ -1339,7 +1338,17 @@ def selecionar_temas(request):
                 arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
                 if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
                     temas_excluidos.append(tema_f)   
-    temas_selecionados = temas_preselecionados.values()    
+    
+    
+    #cria vetor de tema e IRT   
+    temas_selecionados = OrderedDict()
+    for tem in temas_preselecionados.values():
+        vertice = TabelaRanking.objects.get(vertice_nome__exact=tem)
+        temas_selecionados[tem] = ((float(vertice.potenciacao))/3)*100
+
+    
+    
+    print temas_selecionados    
     
     for tema in temas_excluidos:
        temas_selecionados.remove(tema)
@@ -1350,7 +1359,7 @@ def selecionar_temas(request):
         arq_relatorio.write(tema.encode('utf-8') + '\n')
 
     #Salva temas no BD via bulk e inicializa protofrases    
-    aList = [TemasNew(tema = tema, irt=0.0, irt_p=0.0) for tema in temas_selecionados]    
+    aList = [TemasNew(classificacao = 'a definir', tema = k, irt=v, irt_l=0.0) for k,v in temas_selecionados.iteritems()]    
     TemasNew.objects.bulk_create(aList)
    
     arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
@@ -1364,57 +1373,184 @@ def selecionar_temas(request):
    
 
 def agrupar_temas(request):
+
+    #inicializa banco de dados     
+    Subtemas.objects.all().delete()
+    Clusters.objects.all().delete()  
     
     #cria arquivos
-    #arq_lista_agp = codecs.open("extrator/arquivos/p4_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
-    arq_temas_subtemas = codecs.open("extrator/arquivos/p4_temas_subtemas.txt", 'w', 'utf-8') 
+    arq_lista_agp = codecs.open("extrator/arquivos/p5_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
     
     #cria lista com os temas
     temas =[]
     temas_q = TemasNew.objects.all().values_list('tema', flat=True)
+    string_grupo = ''
     for t in temas_q:
         temas.append(t)
+        string_grupo = string_grupo + t + ' ' 
+    
+   
+    
     #cria pares de temas distintos
     pairs = list(itertools.combinations(temas, 2))
  
+    
+    
     #carrega sentencas
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
     cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
 
-    #carrega temas principais (nucleos) oriundos do primeiro cluster
+    #carrega temas principais (nucleos) oriundos do parametro nucleos (quantidade)
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    nc = parametros.nc + 1
+    nome = 'cluster ' + str(nc)
     nucleos = []
+    string_nucleos = ''
     cont = 0
     for linha in cluster:
-        if linha == '\n':
-            break
-        if cont == 1:
-            palav = linha.split(' ')
-            nucleos.append(palav[1])       
-        cont = 1    
-  
+        if 'cluster' in linha:                              
+            if nome in linha:
+                break
+        else:
+            try:
+                        
+                palav = linha.split(' ')
+                if palav[1] in temas:
+                    nucleos.append(palav[1])
+                    string_nucleos = string_nucleos + palav[1] + ' '      
+            except:
+                do = 'nothing'
+    
+    
+    #classifica os temas
+    temas_c = TemasNew.objects.all()
+    for tema_c in temas_c:
+        if tema_c.tema in nucleos:
+            tema_c.classificacao = 'tema'
+        else:
+            tema_c.classificacao = 'subtema'
+        tema_c.save()
+    
     #inicializa variaves de teste
     temas_separados = {}
-       
-     #inicializa relatorio
-    arq_temas_subtemas.write('RELATORIO TEMAS E SUBTEMAS \n\n')
-    arq_temas_subtemas.write('TEMAS AVALIADOS: ')
-    for n in nucleos:
-        arq_temas_subtemas.write(n + ' ')
-    arq_temas_subtemas.write('\n\n')
-    arq_temas_subtemas.write('TEMA \ SUBTEMAS \n\n')
+
+    #inicializa grupos
+    a = Clusters(etapa =0, q_nucleos=len(nucleos) , q_subtemas=len(temas), nucleos=string_nucleos, subtemas=string_grupo, situacao='processando')
+    a.save()
+    etapa = 1
+
+    #carrega grupos a serem testados
+    grupos = Clusters.objects.filter(situacao='processando')
+   
+    while grupos: 
+        for grupo in grupos:
+            
+            ######## GERA REDE #######################################################################
+            #separa os temas do grupo
+            temas = grupo.subtemas.rstrip().split(' ')
+            nucleos = grupo.nucleos.rstrip().split(' ')
+                
+            #inicializa rede
+            rede = nx.Graph()
+
+            #gera os nos da rede
+            for tema in temas:
+                rede.add_node(tema)
+            
+            #cria pares de temas distintos
+            pairs = list(itertools.combinations(temas, 2))
+        
+            #cria lista de adjacencias
+            for par in pairs:
+                cont = 0
+                for sentenca in sentencas:        
+                    lista_sent = sentenca.rstrip( ).split(' ')
+                    if par[0] in lista_sent and par[1] in lista_sent:
+                        cont = cont + 1
+                arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
+                peso = float(cont)
+                if cont > 0:
+                    rede.add_edge(par[0], par[1], weight=peso)    
+            ###########################################################################################
+            
+            ##### separa comunidade ###################################################################
+            partition = community.best_partition(rede,weight='weight')
+            ###########################################################################################
+            
+            #verifica em quantos grupos foi particionado
+            quantidade_grupos = set(partition.values())
+        
+            #se nao dividiu, termina
+            if len(quantidade_grupos) == 1:
+                grupo.situacao = 'finalizado'
+                grupo.save()
+            
+            #se nao, verifica se separou os nucleos   
+            else:
+                grupo.situacao = 'descartado'
+                grupo.save()
+                #armazena nos grupos no BD
+                for numero in quantidade_grupos:
+                    novos_subtemas =[]
+                    string_novos_subtemas = ''
+                    novos_nucleos = []
+                    string_novos_nucleos = ''        
+                    #cria novo conjunto de temas
+                    for k,v in partition.iteritems():
+                        if v == numero:
+                            novos_subtemas.append(k)
+                            string_novos_subtemas = string_novos_subtemas + k + ' '
+                    #busca nucleso no novo conjunto
+                    for nt in novos_subtemas:
+                        if nt in nucleos:
+                            novos_nucleos.append(nt)
+                            string_novos_nucleos = string_novos_nucleos + nt + ' '
+
+                    if len(novos_nucleos) == 0:
+                        situ = 'descartado'
+                    
+                    if len(novos_nucleos) == 1:
+                        situ == 'finalizado'
+                    
+                    if len(novos_nucleos) > 1:
+                        situ = 'processando'
+
+                    a = Clusters(etapa=etapa, q_nucleos=len(novos_nucleos),q_subtemas=len(novos_subtemas), nucleos=string_novos_nucleos, subtemas=string_novos_subtemas, situacao=situ)        
+                    a.save()
+        grupos = Clusters.objects.filter(situacao='processando')
+        etapa = etapa + 1      
     
-    while(temas):
-       
+
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
+
+def gerarMapaEResultados(request):
+    #realtório
+    arq_temas_subtemas = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt", 'w', 'utf-8') 
+
+    
+    #inicializa o BD
+    MapasTemasESubtemas.objects.all().delete()
+    
+    #carrega sentencas
+    sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+    
+    #carrega grupos
+    grupos = Clusters.objects.filter(situacao='finalizado')
+
+    for grupo in grupos:
+    
         #gera rede
-        rede = nx.Graph()   
-       
+        rede = nx.DiGraph()
+        
+        #inicializa nós
+        temas = grupo.subtemas.rstrip().split(' ')
+        
         #gera os nos da rede
         for tema in temas:
             rede.add_node(tema)
 
         #cria pares de temas distintos
         pairs = list(itertools.combinations(temas, 2))
-        #print pairs
 
         #cria lista de adjacencias
         for par in pairs:
@@ -1422,84 +1558,82 @@ def agrupar_temas(request):
             for sentenca in sentencas:        
                 lista_sent = sentenca.rstrip( ).split(' ')
                 if par[0] in lista_sent and par[1] in lista_sent:
-                    cont = cont + 1
-            #arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
+                    cont = cont + 1            
             peso = float(cont)
             if cont > 0:
-                rede.add_edge(par[0], par[1], weight=peso)            
-        
-        #arq_lista_agp.close()
-        nx.write_gexf(rede, "test.gexf")
-        
-        #separa as comunidade
-        partition = community.best_partition(rede,weight='weight')
-        #print partition
+                rede.add_edge(par[0], par[1], weight=peso)
 
-        #agrupa temas com mesmo valor
-        dict_nucleos = {}
-        for k,v in partition.iteritems():
-            for nuc in nucleos:
-                if k == nuc:
-                    dict_nucleos[k] = v
-        dif = {}
-        for k,v in dict_nucleos.iteritems():
-            if v not in dif.values():
-                dif[k] = v        
-        temas_agrupados = dict()
-        for k,v in dict_nucleos.iteritems():
-            if v in temas_agrupados.keys():
-                temas_agrupados[v] = temas_agrupados[v] + ' ' + k
-            else:
-                temas_agrupados[v] = k
+        #cria tabelas
+        tabela_graus = {}
+        tabela_betweenness = {}
+        tabela_eigenvector ={}
 
-        
+        #gera metricas de centralidade
        
+        tabela_graus_t = nx.degree(rede, weight='weight')     
+        tabela_graus = dict(tabela_graus_t)
+        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]       
+        tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False)    
+        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
+       
+        try:
+            tabela_eigenvector = nx.eigenvector_centrality(rede)
+        except:
+            tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
+        maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
+       
+        #cria lista de vertices
+        vertices = nx.nodes(rede)
 
-        #testa se algum tema já está isolado        
-        bag = []
-        separou = 'nao'
-        for k,v in temas_agrupados.iteritems():
-            list_len = v.split(' ')
-            if len(list_len) == 1:
-                separou = 'sim'
-               
-                arq_temas_subtemas.write(list_len[0] + ' \ ' )
-                for j,l in partition.iteritems():
-                    if l == k:
-                        if list_len[0] != j:
-                            arq_temas_subtemas.write(j + ' ')
-                        bag.append(j)
-                arq_temas_subtemas.write('\n')
+        #gera dicionarios de valores normalizados e cria um texto de vertices (para o próximo passo)
+        tabela_potenciacao ={} 
+        
+        #gera conteudo das tabelas
+        for vertice in vertices:            
+            tabela_potenciacao[vertice] = (tabela_graus.get(vertice)/maior_grau) + (tabela_betweenness.get(vertice)/maior_betweenness) + (tabela_eigenvector.get(vertice)/maior_eigenvector) 
+            a = TemasNew.objects.get(tema__exact=vertice)
+            a.irt_l = (tabela_graus.get(vertice)/maior_grau) + (tabela_betweenness.get(vertice)/maior_betweenness) + (tabela_eigenvector.get(vertice)/maior_eigenvector)
+            a.save()
+
+    #calcula o IRT local referenciado e armazena no banco de dados de temas e subtemas
+    for grupo in grupos:
+        nucleos = grupo.nucleos.rstrip().split(' ')
+        palavras = grupo.subtemas.rstrip().split(' ')
+        for nucleo in nucleos:
+            nucleo_irt_l = TemasNew.objects.get(tema__exact=nucleo)
+            nucleo_irt_l_valor =  nucleo_irt_l.irt_l
+            maior = 0
+            for palavra in palavras:
+                palavra_irt_l = TemasNew.objects.get(tema__exact=palavra)
+                palavra_irt_l_valor = palavra_irt_l.irt_l
+                indice = palavra_irt_l_valor / nucleo_irt_l_valor
+                if indice > maior:
+                    maior = indice
+                
+            for palavra in palavras:
+                palavra_irt_l = TemasNew.objects.get(tema__exact=palavra)
+                palavra_irt_l_valor = palavra_irt_l.irt_l
+                indice = palavra_irt_l_valor / nucleo_irt_l_valor 
+                indice_n = 100 * (indice / maior)
+                if nucleo != palavra:
+                    b = MapasTemasESubtemas(tema=nucleo, subtema=palavra, irt_l=indice_n)
+                    b.save()            
+    
+    #escreve relatório    
+    arq_temas_subtemas.write("RELATORIO FINAL DE TEMAS E SUBTEMAS \n\n\n")
+    nucleos_w = TemasNew.objects.filter(classificacao='tema').order_by('-irt')
+    
+    for nuc in nucleos_w:
+        c = TemasNew.objects.get(tema__exact=nuc.tema)        
+        tema_irt = c.irt      
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
+        arq_temas_subtemas.write('TEMA: ' + nuc.tema + ' (' + str(tema_irt) + ') ' + '\n\n')
+        for obj in objs:            
+            arq_temas_subtemas.write(obj.subtema + ' (' + str(obj.irt_l) + ') '+ '\n')  
         arq_temas_subtemas.write('\n')
-
-        if separou == 'nao':
-            print temas_agrupados
-            #arq_temas_subtemas.write('Nao foi possivel isolar nenhum tema \n')
-            arq_temas_subtemas.write('TEMAS AGRUPADOS \ SUBTEMAS \n')
-            for p,o in temas_agrupados.iteritems():
-                list_len = o.split(' ')
-                arq_temas_subtemas.write(o + ' \ ')
-                for j,l in partition.iteritems():
-                    if l == p:
-                        if list_len[0] != j and list_len[1] != j: 
-                            arq_temas_subtemas.write(j + ' ')
-                arq_temas_subtemas.write('\n')
-            break
-
-        #atualiza lista de temas                
-        temas = set(temas) - set(bag)
+    arq_temas_subtemas.close()
        
-        #fecha arquivos
-        arq_temas_subtemas.close()
-      
- 
-  
-    
-    
-   
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
-
-
+    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
 
 
 
@@ -1767,41 +1901,39 @@ def calcula_indice_representatividade(request):
     arq_extracao.close()   
      
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
+    # 
 
-
-def testa_substantivo_usuario(request , palavra_candidata):
-    resposta = request.POST['opcao_usr']
-    r = DadosPreproc.objects.get(id=1)
+def testa_substantivo_usuario(request):
+    #carrega palavras
+    palavras = TestaPalavra.objects.filter(condicao__exact='aguardando')  
     
-
-    #carrega palavra do BD 
-    pal = TestaPalavra.objects.get(palavra__exact=palavra_candidata)  
-    
-    if resposta == 'sim':        
+    for pal in palavras:
+        tok = "checks_" + pal.palavra        
+        respostas = request.POST.getlist(tok)
+        for r in respostas:
+            resposta = r
+        
+        #atualiza resposta
         pal.condicao = 'finalizado'
-        pal.resultado ='sim'
+        pal.resultado = resposta
         pal.save()
+
+        #atualiza lista de substatnivos
         try:
             sub = ListaDeSubstantivos.objects.get(palavra__exact=pal)            
         except:
-            sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo='sim')
-            sub.save()
-
-    if resposta == 'nao':
-        pal.condicao = 'finalizado'
-        pal.resultado ='nao'
-        pal.save() 
-        try:
-            sub = ListaDeSubstantivos.objects.get(palavra__exact=pal)
-        except:
-            sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo='nao')
-            sub.save()   
+            sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo=resposta)
+            sub.save()              
+    
+    return selecionar_temas(request)   
     
     if r.flag_completo == 'nao':
         return selecionar_temas(request)
     else:
         return executar_passos_2_a_5(request)
-                
+
+
+
 def limpar_lista_subtantivos(request,opcao):
     
     if opcao == 'opdois':    
@@ -1946,7 +2078,12 @@ def ajustar_parametro(request,opcao):
         if parametros.radio_r == 0.0:
             radios_5 = 'checked'                 
                   
-
+    if opcao == 'opcao10':
+        novo_parametro = request.POST['valor_nc']
+        parametros.nc = int(novo_parametro)
+        parametros.save()        
+    
+    
     if opcao == 'opcao4':
         if parametros.check_grau == 'sim':
             check_g = 'checked'
@@ -1960,11 +2097,11 @@ def ajustar_parametro(request,opcao):
                     check_c = 'checked'
         else:
             check_c = 'off'        
-        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})
+        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5, 'valor_nc':parametros.nc})
 
     
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5, 'valor_nc':parametros.nc})      
 
 def resultados(request,arquivo):
     result = DadosPreproc.objects.get(id=1)
@@ -3011,3 +3148,154 @@ def executar_passos_2_a_5(request):
 #         return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st': 'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
    
 #     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
+
+
+
+
+# def agrupar_temas(request):
+
+#     #inicializa banco de dados     
+#     Subtemas.objects.all().delete()  
+    
+#     #cria arquivos
+#     arq_lista_agp = codecs.open("extrator/arquivos/p5_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
+#     arq_temas_subtemas = codecs.open("extrator/arquivos/p5_temas_subtemas.txt", 'w', 'utf-8') 
+    
+#     #cria lista com os temas
+#     temas =[]
+#     temas_q = TemasNew.objects.all().values_list('tema', flat=True)
+#     for t in temas_q:
+#         temas.append(t)
+#     #cria pares de temas distintos
+#     pairs = list(itertools.combinations(temas, 2))
+ 
+#     #carrega sentencas
+#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+#     cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
+
+#     #carrega temas principais (nucleos) oriundos do primeiro cluster
+#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+#     nc = parametros.nc + 1
+#     nome = 'cluster ' + str(nc)
+#     nucleos = []
+#     cont = 0
+#     for linha in cluster:
+#         if 'cluster' in linha:                              
+#             if nome in linha:
+#                 break
+#         else:
+#             try:        
+#                 palav = linha.split(' ')
+#                 nucleos.append(palav[1])      
+#             except:
+#                 do = 'nothing'
+    
+#     #inicializa variaves de teste
+#     temas_separados = {}
+       
+#      #inicializa relatorio
+#     arq_temas_subtemas.write('RELATORIO TEMAS E SUBTEMAS \n\n')
+#     arq_temas_subtemas.write('TEMAS AVALIADOS: ')
+#     for n in nucleos:
+#         arq_temas_subtemas.write(n + ' ')
+#     arq_temas_subtemas.write('\n\n')
+#     arq_temas_subtemas.write('TEMA \ SUBTEMAS \n\n')
+    
+#     while(temas):
+       
+#         #gera rede
+#         rede = nx.Graph()   
+       
+#         #gera os nos da rede
+#         for tema in temas:
+#             rede.add_node(tema)
+
+#         #cria pares de temas distintos
+#         pairs = list(itertools.combinations(temas, 2))
+#         #print pairs
+
+#         #cria lista de adjacencias
+#         for par in pairs:
+#             cont = 0
+#             for sentenca in sentencas:        
+#                 lista_sent = sentenca.rstrip( ).split(' ')
+#                 if par[0] in lista_sent and par[1] in lista_sent:
+#                     cont = cont + 1
+#             arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
+#             peso = float(cont)
+#             if cont > 0:
+#                 rede.add_edge(par[0], par[1], weight=peso)            
+        
+#         #arq_lista_agp.close()
+#         nx.write_gexf(rede, "extrator/arquivos/p5_rede_temas_gephi.gexf")
+        
+#         #separa as comunidade
+#         partition = community.best_partition(rede,weight='weight')
+#         #print partition
+
+#         #agrupa temas com mesmo valor
+#         dict_nucleos = {}
+#         for k,v in partition.iteritems():
+#             for nuc in nucleos:
+#                 if k == nuc:
+#                     dict_nucleos[k] = v
+#         dif = {}
+#         for k,v in dict_nucleos.iteritems():
+#             if v not in dif.values():
+#                 dif[k] = v        
+#         temas_agrupados = dict()
+#         for k,v in dict_nucleos.iteritems():
+#             if v in temas_agrupados.keys():
+#                 temas_agrupados[v] = temas_agrupados[v] + ' ' + k
+#             else:
+#                 temas_agrupados[v] = k      
+       
+
+#         #testa se algum tema já está isolado        
+#         bag = []
+#         separou = 'nao'
+#         string = ''
+#         for k,v in temas_agrupados.iteritems():
+#             list_len = v.split(' ')
+#             if len(list_len) == 1:
+#                 separou = 'sim'               
+#                 arq_temas_subtemas.write(list_len[0] + ' \ ' )
+#                 for j,l in partition.iteritems():
+#                     if l == k:
+#                         if list_len[0] != j:
+#                             arq_temas_subtemas.write(j + ' ')
+#                             string = string + ' ' + j
+#                         bag.append(j)
+#                 arq_temas_subtemas.write('\n')
+#                 a = Subtemas(temas=list_len[0], subtemas=string)
+#                 a.save()
+#         arq_temas_subtemas.write('\n')
+
+#         if separou == 'nao':           
+#             #arq_temas_subtemas.write('Nao foi possivel isolar nenhum tema \n')
+#             arq_temas_subtemas.write('TEMAS AGRUPADOS \ SUBTEMAS \n')
+#             for p,o in temas_agrupados.iteritems():
+#                 list_len = o.split(' ')
+#                 arq_temas_subtemas.write(o + ' \ ')        
+#                 for j,l in partition.iteritems():
+#                     if l == p:
+#                         if list_len[0] != j and list_len[1] != j: 
+#                             arq_temas_subtemas.write(j + ' ')
+#                             string = string + ' ' + j
+#                 arq_temas_subtemas.write('\n')
+#                 a = Subtemas(temas=o, subtemas=string)
+#                 a.save()
+#             break
+
+#         #atualiza lista de temas                
+#         temas = set(temas) - set(bag)
+       
+#     #fecha arquivos
+#     arq_temas_subtemas.close()
+#     arq_lista_agp.close()   
+    
+   
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
+
+
+

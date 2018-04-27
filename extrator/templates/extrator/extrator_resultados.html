@@ -226,6 +226,13 @@
                             </div>    
                         </form>
                     </div> 
+                    <div class="titulo_ajuste">Quantidade de Cluster para os Temas Principais </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data"> nc =
+                            <input style="width:50px" type="number" step="1" name="valor_nc" value={{valor_nc}} size="1">                            Cluster(s)
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -462,18 +469,32 @@
 
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
-                        <span id="logo_sel_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                        <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #EFCEAA">
                         <h2>Agrupar Temas e Sub-temas</h2>
-                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Selecionar</a>
+                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>
                         {% if tempo_p4st %}
                          <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
                         {% endif %}
                     </div>
                 </div>
-                <!-- cd-timeline-block -->
 
+                
+                <div class="cd-timeline-block">
+                        <div class="cd-timeline-img cd-picture">
+                            <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                        </div>
+                        <div class="cd-timeline-content" style="background: #EFCEAA">
+                            <h2>Gerar Mapas e Resultados</h2>
+                            <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                            {% if tempo_p4st %}
+                             <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                <!-- cd-timeline-block -->
+                
             </div>
 
             <div id="passo5" style="padding-top:300px;">
@@ -772,24 +793,40 @@
     </div>
 
     {% endif %} {%if testa_sub %}
+
+   
+    
+    
     <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+            <form action="{% url 'extrator:testa_substantivo_usuario'%}" method="POST" role="form" enctype="multipart/form-data">
+
         <div class="modal-dialog" id="modal-dialog-mob">
             <div class="modal-content">
+                {%for palav in palavras_faltantes %}  
+                       
                 <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
                 <div style="border:1px solid black;margin:10px 30px 10px 30px">
-                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra_candidata}}</b></div>
+                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palav}}</b></div>
                 </div>
                 <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
                 <div style="padding:40px;display:block;margin-left:200px;">
-                    <form action="{% url 'extrator:testa_substantivo_usuario' palavra_candidata %}" method="POST" role="form" enctype="multipart/form-data">
-                        <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="sim" name="opcao_usr">
-                        <input style="padding:20px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="nao" name="opcao_usr">
-                    </form>
+                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="sim"> Sim 
+                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="nao"> Não
+                   
                 </div>
+                {% endfor %}
+                <div style="display:inline-block;position:relative;margin:10px;">    
+                        <input type="submit" class="botao_enviar" value="Enviar"> 
+                </div> 
             </div>
+             
+        </form>
+       
         </div>
     </div>
+  
     {% endif %}
+
 
     <!-- jQuery -->
     <script src="{% static 'agora/vendor/jquery/jquery.js' %}"></script>

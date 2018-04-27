@@ -1,0 +1,828 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf version="1.2" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="directed" mode="static" name="">
+    <meta>
+      <creator>NetworkX 2.1</creator>
+      <lastmodified>20/04/2018</lastmodified>
+    </meta>
+    <nodes>
+      <node id="afonso" label="afonso" />
+      <node id="ver" label="ver" />
+      <node id="prazo" label="prazo" />
+      <node id="tv" label="tv" />
+      <node id="nó" label="nó" />
+      <node id="igual" label="igual" />
+      <node id="curitiba" label="curitiba" />
+      <node id="depoimento" label="depoimento" />
+      <node id="podre" label="podre" />
+      <node id="quadrado" label="quadrado" />
+      <node id="causa" label="causa" />
+      <node id="facebook" label="facebook" />
+      <node id="marcha" label="marcha" />
+      <node id="almo" label="almo" />
+      <node id="dia" label="dia" />
+      <node id="fhc" label="fhc" />
+      <node id="trf" label="trf" />
+      <node id="querer" label="querer" />
+      <node id="entender" label="entender" />
+      <node id="mundial" label="mundial" />
+      <node id="adicionar" label="adicionar" />
+      <node id="metrô" label="metrô" />
+      <node id="história" label="história" />
+      <node id="hora" label="hora" />
+      <node id="hipocrisia" label="hipocrisia" />
+      <node id="informação" label="informação" />
+      <node id="provar" label="provar" />
+      <node id="vídeo" label="vídeo" />
+      <node id="maratonaredebbb" label="maratonaredebbb" />
+      <node id="participar" label="participar" />
+      <node id="difícil" label="difícil" />
+      <node id="chamar" label="chamar" />
+      <node id="tá" label="tá" />
+      <node id="brigar" label="brigar" />
+      <node id="ler" label="ler" />
+      <node id="100" label="100" />
+      <node id="pato" label="pato" />
+      <node id="conta" label="conta" />
+      <node id="coracao" label="coracao" />
+      <node id="acertar" label="acertar" />
+      <node id="boi" label="boi" />
+      <node id="resto" label="resto" />
+      <node id="morar" label="morar" />
+      <node id="vir" label="vir" />
+      <node id="entrar" label="entrar" />
+      <node id="ouvir" label="ouvir" />
+      <node id="rede" label="rede" />
+      <node id="menino" label="menino" />
+      <node id="prova" label="prova" />
+      <node id="retweeted" label="retweeted" />
+      <node id="nobel" label="nobel" />
+      <node id="usp" label="usp" />
+      <node id="mora" label="mora" />
+      <node id="hoffmann" label="hoffmann" />
+      <node id="solidão" label="solidão" />
+      <node id="saber" label="saber" />
+      <node id="bercovici" label="bercovici" />
+      <node id="hein" label="hein" />
+      <node id="brincadeira" label="brincadeira" />
+      <node id="avança" label="avança" />
+      <node id="esquivel" label="esquivel" />
+      <node id="espírito" label="espírito" />
+      <node id="ñ" label="ñ" />
+      <node id="tnc" label="tnc" />
+      <node id="político" label="político" />
+      <node id="crazy" label="crazy" />
+      <node id="opressor" label="opressor" />
+      <node id="trump" label="trump" />
+      <node id="ponto" label="ponto" />
+      <node id="perder" label="perder" />
+      <node id="noite" label="noite" />
+      <node id="morto" label="morto" />
+      <node id="antagonista" label="antagonista" />
+      <node id="cachoeira" label="cachoeira" />
+      <node id="tríplex" label="tríplex" />
+      <node id="surpreender" label="surpreender" />
+      <node id="estudar" label="estudar" />
+      <node id="democracy" label="democracy" />
+      <node id="ideia" label="ideia" />
+      <node id="litro" label="litro" />
+      <node id="voltar" label="voltar" />
+      <node id="1" label="1" />
+      <node id="voz" label="voz" />
+      <node id="pleno" label="pleno" />
+      <node id="amanhar" label="amanhar" />
+      <node id="gozar" label="gozar" />
+      <node id="justiça" label="justiça" />
+      <node id="roboy" label="roboy" />
+      <node id="tutaméia" label="tutaméia" />
+      <node id="espetacular" label="espetacular" />
+      <node id="turma" label="turma" />
+      <node id="mute" label="mute" />
+      <node id="iptu" label="iptu" />
+      <node id="juíz" label="juíz" />
+      <node id="paulo" label="paulo" />
+      <node id="gente" label="gente" />
+      <node id="fogueira" label="fogueira" />
+      <node id="2018" label="2018" />
+      <node id="buscar" label="buscar" />
+      <node id="bbb18" label="bbb18" />
+      <node id="boulos" label="boulos" />
+      <node id="dever" label="dever" />
+      <node id="temer" label="temer" />
+      <node id="dar" label="dar" />
+      <node id="gritar" label="gritar" />
+      <node id="now" label="now" />
+      <node id="polícia" label="polícia" />
+      <node id="pobre" label="pobre" />
+      <node id="mensagem" label="mensagem" />
+      <node id="visitar" label="visitar" />
+      <node id="globo" label="globo" />
+      <node id="reparar" label="reparar" />
+      <node id="jogo" label="jogo" />
+      <node id="privativo" label="privativo" />
+      <node id="britto" label="britto" />
+      <node id="quantum" label="quantum" />
+      <node id="grita" label="grita" />
+      <node id="lá" label="lá" />
+      <node id="rer" label="rer" />
+      <node id="lê" label="lê" />
+      <node id="manda" label="manda" />
+      <node id="print" label="print" />
+      <node id="analisar" label="analisar" />
+      <node id="beleza" label="beleza" />
+      <node id="único" label="único" />
+      <node id="água" label="água" />
+      <node id="próximo" label="próximo" />
+      <node id="caro" label="caro" />
+      <node id="diariamente" label="diariamente" />
+      <node id="gleisi" label="gleisi" />
+      <node id="brasil" label="brasil" />
+      <node id="ladrão" label="ladrão" />
+      <node id="pipipopo" label="pipipopo" />
+      <node id="humanidade" label="humanidade" />
+      <node id="prender" label="prender" />
+      <node id="aguardar" label="aguardar" />
+      <node id="enterro" label="enterro" />
+      <node id="vizinho" label="vizinho" />
+      <node id="comissão" label="comissão" />
+      <node id="admitir" label="admitir" />
+      <node id="pablo" label="pablo" />
+      <node id="dono" label="dono" />
+      <node id="playlist" label="playlist" />
+      <node id="•" label="•" />
+      <node id="nome" label="nome" />
+      <node id="recebido" label="recebido" />
+      <node id="2" label="2" />
+      <node id="cita" label="cita" />
+      <node id="final" label="final" />
+      <node id="haver" label="haver" />
+      <node id="gear" label="gear" />
+      <node id="país" label="país" />
+      <node id="negro" label="negro" />
+      <node id="abrir" label="abrir" />
+      <node id="beber" label="beber" />
+      <node id="stf" label="stf" />
+      <node id="12" label="12" />
+      <node id="conhecer" label="conhecer" />
+      <node id="colar" label="colar" />
+      <node id="após" label="após" />
+      <node id="pegar" label="pegar" />
+      <node id="comunista" label="comunista" />
+      <node id="merch" label="merch" />
+      <node id="mês" label="mês" />
+      <node id="mágico" label="mágico" />
+      <node id="ano" label="ano" />
+      <node id="assistir" label="assistir" />
+      <node id="pior" label="pior" />
+      <node id="direito" label="direito" />
+      <node id="socio" label="socio" />
+      <node id="lula" label="lula" />
+      <node id="dorgas" label="dorgas" />
+      <node id="comentário" label="comentário" />
+      <node id="detonar" label="detonar" />
+      <node id="denunciado" label="denunciado" />
+      <node id="fugir" label="fugir" />
+      <node id="receber" label="receber" />
+      <node id="lindo" label="lindo" />
+      <node id="companhia" label="companhia" />
+      <node id="professor" label="professor" />
+      <node id="aécio" label="aécio" />
+      <node id="seguir" label="seguir" />
+      <node id="vittar" label="vittar" />
+      <node id="corrupto" label="corrupto" />
+      <node id="elevador" label="elevador" />
+      <node id="possar" label="possar" />
+      <node id="agradar" label="agradar" />
+      <node id="demitido" label="demitido" />
+      <node id="petista" label="petista" />
+      <node id="infância" label="infância" />
+      <node id="idiota" label="idiota" />
+      <node id="zumbi" label="zumbi" />
+      <node id="8" label="8" />
+      <node id="processo" label="processo" />
+      <node id="bilião" label="bilião" />
+      <node id="ranking" label="ranking" />
+      <node id="soltar" label="soltar" />
+      <node id="vítima" label="vítima" />
+      <node id="boff" label="boff" />
+      <node id="bofe" label="bofe" />
+      <node id="atribuído" label="atribuído" />
+      <node id="continuum" label="continuum" />
+      <node id="ódio" label="ódio" />
+      <node id="18" label="18" />
+      <node id="acreditar" label="acreditar" />
+      <node id="islâmico" label="islâmico" />
+      <node id="erika" label="erika" />
+      <node id="merecer" label="merecer" />
+      <node id="fragilida" label="fragilida" />
+      <node id="federal" label="federal" />
+      <node id="luz" label="luz" />
+      <node id="robô" label="robô" />
+      <node id="descobrir" label="descobrir" />
+      <node id="biel" label="biel" />
+      <node id="favor" label="favor" />
+      <node id="3" label="3" />
+      <node id="destino" label="destino" />
+      <node id="vender" label="vender" />
+      <node id="achar" label="achar" />
+      <node id="pagar" label="pagar" />
+      <node id="ganhador" label="ganhador" />
+      <node id="sera" label="sera" />
+      <node id="triplex" label="triplex" />
+      <node id="câmara" label="câmara" />
+      <node id="parecer" label="parecer" />
+      <node id="estupidez" label="estupidez" />
+      <node id="épico" label="épico" />
+      <node id="eleição" label="eleição" />
+      <node id="boto" label="boto" />
+      <node id="20/4" label="20/4" />
+      <node id="falar" label="falar" />
+      <node id="desafiar" label="desafiar" />
+      <node id="doente" label="doente" />
+      <node id="acabar" label="acabar" />
+      <node id="sérgio" label="sérgio" />
+      <node id="dizer" label="dizer" />
+      <node id="anta" label="anta" />
+      <node id="cruzar" label="cruzar" />
+      <node id="ganhar" label="ganhar" />
+      <node id="amigo" label="amigo" />
+      <node id="parar" label="parar" />
+      <node id="léo" label="léo" />
+      <node id="bbb" label="bbb" />
+      <node id="chegar" label="chegar" />
+      <node id="pf" label="pf" />
+      <node id="acre" label="acre" />
+      <node id="pessoa" label="pessoa" />
+      <node id="po" label="po" />
+      <node id="500" label="500" />
+      <node id="moço" label="moço" />
+      <node id="acampamento" label="acampamento" />
+      <node id="pinheiro" label="pinheiro" />
+      <node id="confinar" label="confinar" />
+      <node id="adivinhar" label="adivinhar" />
+      <node id="casa" label="casa" />
+      <node id="encontrar" label="encontrar" />
+      <node id="cinza" label="cinza" />
+      <node id="prisão" label="prisão" />
+      <node id="errado" label="errado" />
+      <node id="ouvido" label="ouvido" />
+      <node id="evento" label="evento" />
+      <node id="colocado" label="colocado" />
+      <node id="paz" label="paz" />
+      <node id="carona" label="carona" />
+      <node id="grana" label="grana" />
+      <node id="2030" label="2030" />
+      <node id="9" label="9" />
+      <node id="sonhar" label="sonhar" />
+      <node id="mostra" label="mostra" />
+      <node id="livre" label="livre" />
+      <node id="livro" label="livro" />
+      <node id="iluminar" label="iluminar" />
+      <node id="topo" label="topo" />
+      <node id="estada" label="estada" />
+      <node id="aparecer" label="aparecer" />
+      <node id="pimenta" label="pimenta" />
+      <node id="juiz" label="juiz" />
+      <node id="recurso" label="recurso" />
+      <node id="campo" label="campo" />
+      <node id="deputado" label="deputado" />
+      <node id="adorar" label="adorar" />
+      <node id="ficar" label="ficar" />
+      <node id="deixa" label="deixa" />
+      <node id="programa" label="programa" />
+      <node id="verificar" label="verificar" />
+      <node id="guarujá" label="guarujá" />
+      <node id="copiar" label="copiar" />
+      <node id="momento" label="momento" />
+      <node id="extrema-direita" label="extrema-direita" />
+      <node id="loja" label="loja" />
+      <node id="gleici" label="gleici" />
+      <node id="4" label="4" />
+      <node id="convocado" label="convocado" />
+      <node id="gleice" label="gleice" />
+      <node id="alckmin" label="alckmin" />
+      <node id="preso" label="preso" />
+      <node id="bernardo" label="bernardo" />
+      <node id="triste" label="triste" />
+      <node id="golpista" label="golpista" />
+      <node id="esquerdo" label="esquerdo" />
+      <node id="líder" label="líder" />
+      <node id="55" label="55" />
+      <node id="canalhice" label="canalhice" />
+      <node id="fernando" label="fernando" />
+      <node id="racista" label="racista" />
+      <node id="relegado" label="relegado" />
+      <node id="compensar" label="compensar" />
+      <node id="cisco" label="cisco" />
+      <node id="zanin" label="zanin" />
+      <node id="gostar" label="gostar" />
+      <node id="amanhã" label="amanhã" />
+      <node id="donald" label="donald" />
+      <node id="morrer" label="morrer" />
+      <node id="118" label="118" />
+      <node id="rejeitar" label="rejeitar" />
+      <node id="duvidar" label="duvidar" />
+      <node id="apoio" label="apoio" />
+      <node id="medo" label="medo" />
+      <node id="carta" label="carta" />
+      <node id="virar" label="virar" />
+      <node id="bola" label="bola" />
+      <node id="ayres" label="ayres" />
+      <node id="mãe" label="mãe" />
+      <node id="simples" label="simples" />
+      <node id="inter" label="inter" />
+      <node id="ocupar" label="ocupar" />
+      <node id="acompanhar" label="acompanhar" />
+      <node id="ô" label="ô" />
+      <node id="leilão" label="leilão" />
+      <node id="esperar" label="esperar" />
+      <node id="rejeição" label="rejeição" />
+      <node id="burrice" label="burrice" />
+      <node id="árabe" label="árabe" />
+      <node id="né" label="né" />
+      <node id="dúvida" label="dúvida" />
+      <node id="presídio" label="presídio" />
+      <node id="ajuda" label="ajuda" />
+      <node id="rolê" label="rolê" />
+      <node id="assustar" label="assustar" />
+      <node id="poder" label="poder" />
+      <node id="instância" label="instância" />
+      <node id="burro" label="burro" />
+      <node id="último" label="último" />
+      <node id="governo" label="governo" />
+      <node id="prefeitura" label="prefeitura" />
+      <node id="polemicar" label="polemicar" />
+      <node id="embargo" label="embargo" />
+      <node id="vivo" label="vivo" />
+      <node id="rebaixamento" label="rebaixamento" />
+      <node id="dívida" label="dívida" />
+      <node id="advogado" label="advogado" />
+      <node id="tocantim" label="tocantim" />
+      <node id="democracia" label="democracia" />
+      <node id="povo" label="povo" />
+      <node id="anjo" label="anjo" />
+      <node id="invadir" label="invadir" />
+      <node id="tão" label="tão" />
+      <node id="condição" label="condição" />
+      <node id="urna" label="urna" />
+      <node id="cotton" label="cotton" />
+      <node id="continuar" label="continuar" />
+      <node id="defeso" label="defeso" />
+      <node id="cadeia" label="cadeia" />
+      <node id="parecido" label="parecido" />
+      <node id="kokay" label="kokay" />
+      <node id="pedir" label="pedir" />
+      <node id="mineiro" label="mineiro" />
+      <node id="papa" label="papa" />
+      <node id="solidário" label="solidário" />
+      <node id="joeslei" label="joeslei" />
+      <node id="urgente" label="urgente" />
+      <node id="dilma" label="dilma" />
+      <node id="ué" label="ué" />
+      <node id="joesley" label="joesley" />
+      <node id="porra" label="porra" />
+      <node id="2008" label="2008" />
+    </nodes>
+    <edges>
+      <edge id="0" source="ver" target="lula" weight="2.0" />
+      <edge id="1" source="ver" target="vídeo" weight="1.0" />
+      <edge id="2" source="ver" target="comentário" weight="1.0" />
+      <edge id="3" source="ver" target="moço" weight="1.0" />
+      <edge id="4" source="ver" target="gleici" weight="1.0" />
+      <edge id="5" source="prazo" target="soltar" weight="1.0" />
+      <edge id="6" source="tv" target="árabe" weight="1.0" />
+      <edge id="7" source="nó" target="dizer" weight="1.0" />
+      <edge id="8" source="igual" target="lula" weight="1.0" />
+      <edge id="9" source="podre" target="lula" weight="1.0" />
+      <edge id="10" source="quadrado" target="20/4" weight="1.0" />
+      <edge id="11" source="causa" target="lula" weight="1.0" />
+      <edge id="12" source="causa" target="polemicar" weight="1.0" />
+      <edge id="13" source="facebook" target="poder" weight="1.0" />
+      <edge id="14" source="marcha" target="povo" weight="1.0" />
+      <edge id="15" source="almo" target="lula" weight="1.0" />
+      <edge id="16" source="dia" target="lula" weight="1.0" />
+      <edge id="17" source="dia" target="caro" weight="1.0" />
+      <edge id="18" source="querer" target="receber" weight="1.0" />
+      <edge id="19" source="mundial" target="líder" weight="1.0" />
+      <edge id="20" source="adicionar" target="vídeo" weight="2.0" />
+      <edge id="21" source="metrô" target="alckmin" weight="1.0" />
+      <edge id="22" source="história" target="humanidade" weight="1.0" />
+      <edge id="23" source="hora" target="ver" weight="1.0" />
+      <edge id="24" source="hipocrisia" target="porra" weight="1.0" />
+      <edge id="25" source="vídeo" target="gleici" weight="1.0" />
+      <edge id="26" source="vídeo" target="playlist" weight="2.0" />
+      <edge id="27" source="participar" target="bbb" weight="1.0" />
+      <edge id="28" source="chamar" target="polícia" weight="1.0" />
+      <edge id="29" source="tá" target="beber" weight="1.0" />
+      <edge id="30" source="tá" target="preso" weight="1.0" />
+      <edge id="31" source="brigar" target="rebaixamento" weight="1.0" />
+      <edge id="32" source="ler" target="momento" weight="1.0" />
+      <edge id="33" source="100" target="iptu" weight="1.0" />
+      <edge id="34" source="pato" target="donald" weight="1.0" />
+      <edge id="35" source="boi" target="presídio" weight="1.0" />
+      <edge id="36" source="morar" target="leilão" weight="1.0" />
+      <edge id="37" source="vir" target="visitar" weight="1.0" />
+      <edge id="38" source="entrar" target="2008" weight="1.0" />
+      <edge id="39" source="ouvir" target="parecido" weight="1.0" />
+      <edge id="40" source="rede" target="globo" weight="1.0" />
+      <edge id="41" source="menino" target="acre" weight="1.0" />
+      <edge id="42" source="prova" target="lula" weight="1.0" />
+      <edge id="43" source="retweeted" target="fernando" weight="1.0" />
+      <edge id="44" source="nobel" target="paz" weight="2.0" />
+      <edge id="45" source="mora" target="cadeia" weight="1.0" />
+      <edge id="46" source="hoffmann" target="lula" weight="1.0" />
+      <edge id="47" source="hoffmann" target="detonar" weight="1.0" />
+      <edge id="48" source="solidão" target="lula" weight="1.0" />
+      <edge id="49" source="saber" target="lula" weight="4.0" />
+      <edge id="50" source="saber" target="ler" weight="1.0" />
+      <edge id="51" source="bercovici" target="analisar" weight="1.0" />
+      <edge id="52" source="brincadeira" target="poder" weight="1.0" />
+      <edge id="53" source="avança" target="brasil" weight="1.0" />
+      <edge id="54" source="espírito" target="idiota" weight="1.0" />
+      <edge id="55" source="ñ" target="falar" weight="1.0" />
+      <edge id="56" source="político" target="político" weight="1.0" />
+      <edge id="57" source="político" target="preso" weight="1.0" />
+      <edge id="58" source="político" target="solidário" weight="1.0" />
+      <edge id="59" source="crazy" target="hoffmann" weight="1.0" />
+      <edge id="60" source="trump" target="saber" weight="1.0" />
+      <edge id="61" source="ponto" target="chegar" weight="1.0" />
+      <edge id="62" source="perder" target="conta" weight="1.0" />
+      <edge id="63" source="noite" target="assistir" weight="1.0" />
+      <edge id="64" source="antagonista" target="lula" weight="1.0" />
+      <edge id="65" source="cachoeira" target="voz" weight="1.0" />
+      <edge id="66" source="tríplex" target="atribuído" weight="1.0" />
+      <edge id="67" source="surpreender" target="dono" weight="1.0" />
+      <edge id="68" source="democracy" target="now" weight="1.0" />
+      <edge id="69" source="ideia" target="morrer" weight="1.0" />
+      <edge id="70" source="litro" target="água" weight="1.0" />
+      <edge id="71" source="voltar" target="falar" weight="1.0" />
+      <edge id="72" source="voltar" target="voltar" weight="1.0" />
+      <edge id="73" source="1" target="mês" weight="1.0" />
+      <edge id="74" source="voz" target="pato" weight="1.0" />
+      <edge id="75" source="pleno" target="globo" weight="1.0" />
+      <edge id="76" source="amanhar" target="perder" weight="1.0" />
+      <edge id="77" source="gozar" target="gozar" weight="1.0" />
+      <edge id="78" source="gozar" target="pipipopo" weight="1.0" />
+      <edge id="79" source="justiça" target="rejeitar" weight="1.0" />
+      <edge id="80" source="justiça" target="brasil" weight="1.0" />
+      <edge id="81" source="roboy" target="coracao" weight="1.0" />
+      <edge id="82" source="espetacular" target="defeso" weight="1.0" />
+      <edge id="83" source="turma" target="prender" weight="1.0" />
+      <edge id="84" source="juíz" target="trf" weight="1.0" />
+      <edge id="85" source="paulo" target="sérgio" weight="1.0" />
+      <edge id="86" source="gente" target="idiota" weight="1.0" />
+      <edge id="87" source="gente" target="descobrir" weight="1.0" />
+      <edge id="88" source="buscar" target="apoio" weight="1.0" />
+      <edge id="89" source="boulos" target="chamar" weight="1.0" />
+      <edge id="90" source="dever" target="momento" weight="1.0" />
+      <edge id="91" source="temer" target="lula" weight="1.0" />
+      <edge id="92" source="temer" target="poder" weight="1.0" />
+      <edge id="93" source="dar" target="mute" weight="1.0" />
+      <edge id="94" source="dar" target="papa" weight="1.0" />
+      <edge id="95" source="dar" target="prazo" weight="1.0" />
+      <edge id="96" source="gritar" target="lula" weight="3.0" />
+      <edge id="97" source="polícia" target="federal" weight="1.0" />
+      <edge id="98" source="polícia" target="racista" weight="1.0" />
+      <edge id="99" source="pobre" target="espírito" weight="1.0" />
+      <edge id="100" source="visitar" target="lula" weight="1.0" />
+      <edge id="101" source="globo" target="mostra" weight="1.0" />
+      <edge id="102" source="globo" target="golpista" weight="1.0" />
+      <edge id="103" source="globo" target="esperar" weight="2.0" />
+      <edge id="104" source="globo" target="agradar" weight="1.0" />
+      <edge id="105" source="reparar" target="cita" weight="1.0" />
+      <edge id="106" source="jogo" target="lula" weight="1.0" />
+      <edge id="107" source="britto" target="admitir" weight="1.0" />
+      <edge id="108" source="quantum" target="lula" weight="1.0" />
+      <edge id="109" source="grita" target="lula" weight="2.0" />
+      <edge id="110" source="lá" target="iluminar" weight="1.0" />
+      <edge id="111" source="rer" target="lula" weight="1.0" />
+      <edge id="112" source="lê" target="carta" weight="1.0" />
+      <edge id="113" source="manda" target="boi" weight="1.0" />
+      <edge id="114" source="print" target="rer" weight="1.0" />
+      <edge id="115" source="analisar" target="processo" weight="1.0" />
+      <edge id="116" source="beleza" target="prender" weight="1.0" />
+      <edge id="117" source="único" target="pessoa" weight="1.0" />
+      <edge id="118" source="água" target="diariamente" weight="1.0" />
+      <edge id="119" source="caro" target="acertar" weight="1.0" />
+      <edge id="120" source="gleisi" target="hoffmann" weight="2.0" />
+      <edge id="121" source="gleisi" target="lê" weight="1.0" />
+      <edge id="122" source="brasil" target="dizer" weight="1.0" />
+      <edge id="123" source="ladrão" target="roboy" weight="1.0" />
+      <edge id="124" source="ladrão" target="comunista" weight="1.0" />
+      <edge id="125" source="pipipopo" target="falar" weight="1.0" />
+      <edge id="126" source="prender" target="lula" weight="5.0" />
+      <edge id="127" source="aguardar" target="possar" weight="1.0" />
+      <edge id="128" source="enterro" target="mãe" weight="1.0" />
+      <edge id="129" source="vizinho" target="acampamento" weight="1.0" />
+      <edge id="130" source="comissão" target="verificar" weight="2.0" />
+      <edge id="131" source="pablo" target="vittar" weight="1.0" />
+      <edge id="132" source="dono" target="poder" weight="1.0" />
+      <edge id="133" source="•" target="tocantim" weight="1.0" />
+      <edge id="134" source="nome" target="tá" weight="1.0" />
+      <edge id="135" source="recebido" target="simples" weight="1.0" />
+      <edge id="136" source="2" target="litro" weight="1.0" />
+      <edge id="137" source="cita" target="lula" weight="2.0" />
+      <edge id="138" source="final" target="bbb" weight="1.0" />
+      <edge id="139" source="haver" target="recebido" weight="1.0" />
+      <edge id="140" source="haver" target="preso" weight="1.0" />
+      <edge id="141" source="país" target="convocado" weight="1.0" />
+      <edge id="142" source="negro" target="embargo" weight="1.0" />
+      <edge id="143" source="abrir" target="casa" weight="1.0" />
+      <edge id="144" source="abrir" target="loja" weight="1.0" />
+      <edge id="145" source="beber" target="2" weight="1.0" />
+      <edge id="146" source="12" target="ano" weight="1.0" />
+      <edge id="147" source="conhecer" target="triplex" weight="2.0" />
+      <edge id="148" source="colar" target="informação" weight="1.0" />
+      <edge id="149" source="após" target="dizer" weight="1.0" />
+      <edge id="150" source="pegar" target="aécio" weight="1.0" />
+      <edge id="151" source="pegar" target="carona" weight="1.0" />
+      <edge id="152" source="pegar" target="metrô" weight="1.0" />
+      <edge id="153" source="comunista" target="virar" weight="1.0" />
+      <edge id="154" source="merch" target="gear" weight="1.0" />
+      <edge id="155" source="mês" target="confinar" weight="1.0" />
+      <edge id="156" source="ano" target="1" weight="1.0" />
+      <edge id="157" source="ano" target="triste" weight="1.0" />
+      <edge id="158" source="assistir" target="programa" weight="1.0" />
+      <edge id="159" source="pior" target="mineiro" weight="1.0" />
+      <edge id="160" source="direito" target="lula" weight="1.0" />
+      <edge id="161" source="direito" target="agradar" weight="1.0" />
+      <edge id="162" source="socio" target="difícil" weight="1.0" />
+      <edge id="163" source="lula" target="prisão" weight="1.0" />
+      <edge id="164" source="lula" target="fugir" weight="1.0" />
+      <edge id="165" source="lula" target="acabar" weight="1.0" />
+      <edge id="166" source="lula" target="extrema-direita" weight="1.0" />
+      <edge id="167" source="lula" target="dizer" weight="1.0" />
+      <edge id="168" source="lula" target="petista" weight="1.0" />
+      <edge id="169" source="lula" target="cotton" weight="1.0" />
+      <edge id="170" source="lula" target="denunciado" weight="1.0" />
+      <edge id="171" source="lula" target="né" weight="1.0" />
+      <edge id="172" source="lula" target="merecer" weight="1.0" />
+      <edge id="173" source="lula" target="vítima" weight="1.0" />
+      <edge id="174" source="lula" target="ideia" weight="1.0" />
+      <edge id="175" source="lula" target="paz" weight="1.0" />
+      <edge id="176" source="lula" target="voltar" weight="1.0" />
+      <edge id="177" source="lula" target="2018" weight="1.0" />
+      <edge id="178" source="lula" target="curitiba" weight="2.0" />
+      <edge id="179" source="lula" target="mora" weight="1.0" />
+      <edge id="180" source="lula" target="assustar" weight="1.0" />
+      <edge id="181" source="lula" target="tá" weight="1.0" />
+      <edge id="182" source="lula" target="pagar" weight="1.0" />
+      <edge id="183" source="lula" target="haver" weight="1.0" />
+      <edge id="184" source="lula" target="livre" weight="13.0" />
+      <edge id="185" source="lula" target="preso" weight="9.0" />
+      <edge id="186" source="lula" target="aécio" weight="2.0" />
+      <edge id="187" source="lula" target="saber" weight="1.0" />
+      <edge id="188" source="lula" target="triplex" weight="1.0" />
+      <edge id="189" source="lula" target="instância" weight="1.0" />
+      <edge id="190" source="lula" target="brincadeira" weight="1.0" />
+      <edge id="191" source="lula" target="ler" weight="1.0" />
+      <edge id="192" source="lula" target="aparecer" weight="1.0" />
+      <edge id="193" source="lula" target="dar" weight="1.0" />
+      <edge id="194" source="lula" target="casa" weight="1.0" />
+      <edge id="195" source="lula" target="continuum" weight="1.0" />
+      <edge id="196" source="lula" target="ocupar" weight="1.0" />
+      <edge id="197" source="lula" target="ladrão" weight="3.0" />
+      <edge id="198" source="lula" target="dilma" weight="2.0" />
+      <edge id="199" source="lula" target="merch" weight="1.0" />
+      <edge id="200" source="lula" target="burro" weight="2.0" />
+      <edge id="201" source="lula" target="querer" weight="1.0" />
+      <edge id="202" source="lula" target="mensagem" weight="1.0" />
+      <edge id="203" source="lula" target="joesley" weight="1.0" />
+      <edge id="204" source="lula" target="pior" weight="1.0" />
+      <edge id="205" source="lula" target="inter" weight="1.0" />
+      <edge id="206" source="lula" target="elevador" weight="2.0" />
+      <edge id="207" source="comentário" target="ver" weight="1.0" />
+      <edge id="208" source="detonar" target="tv" weight="1.0" />
+      <edge id="209" source="detonar" target="gleisi" weight="1.0" />
+      <edge id="210" source="detonar" target="advogado" weight="1.0" />
+      <edge id="211" source="denunciado" target="haver" weight="1.0" />
+      <edge id="212" source="fugir" target="polícia" weight="1.0" />
+      <edge id="213" source="receber" target="bofe" weight="1.0" />
+      <edge id="214" source="lindo" target="depoimento" weight="1.0" />
+      <edge id="215" source="companhia" target="lula" weight="1.0" />
+      <edge id="216" source="professor" target="bercovici" weight="1.0" />
+      <edge id="217" source="aécio" target="temer" weight="1.0" />
+      <edge id="218" source="seguir" target="lula" weight="1.0" />
+      <edge id="219" source="corrupto" target="história" weight="1.0" />
+      <edge id="220" source="elevador" target="privativo" weight="2.0" />
+      <edge id="221" source="possar" target="encontrar" weight="1.0" />
+      <edge id="222" source="agradar" target="esquerdo" weight="1.0" />
+      <edge id="223" source="agradar" target="direito" weight="1.0" />
+      <edge id="224" source="demitido" target="beleza" weight="1.0" />
+      <edge id="225" source="petista" target="ver" weight="1.0" />
+      <edge id="226" source="infância" target="lula" weight="1.0" />
+      <edge id="227" source="idiota" target="cita" weight="1.0" />
+      <edge id="228" source="idiota" target="gente" weight="1.0" />
+      <edge id="229" source="idiota" target="pobre" weight="1.0" />
+      <edge id="230" source="8" target="bilião" weight="2.0" />
+      <edge id="231" source="processo" target="lula" weight="1.0" />
+      <edge id="232" source="bilião" target="entrar" weight="1.0" />
+      <edge id="233" source="bilião" target="dizer" weight="1.0" />
+      <edge id="234" source="ranking" target="mundial" weight="1.0" />
+      <edge id="235" source="soltar" target="lula" weight="1.0" />
+      <edge id="236" source="vítima" target="justiça" weight="1.0" />
+      <edge id="237" source="boff" target="esquivel" weight="1.0" />
+      <edge id="238" source="atribuído" target="lula" weight="3.0" />
+      <edge id="239" source="continuum" target="destino" weight="1.0" />
+      <edge id="240" source="ódio" target="compensar" weight="1.0" />
+      <edge id="241" source="18" target="gleici" weight="1.0" />
+      <edge id="242" source="18" target="•" weight="1.0" />
+      <edge id="243" source="acreditar" target="justiça" weight="1.0" />
+      <edge id="244" source="acreditar" target="4" weight="1.0" />
+      <edge id="245" source="islâmico" target="ajuda" weight="1.0" />
+      <edge id="246" source="erika" target="kokay" weight="1.0" />
+      <edge id="247" source="merecer" target="colocado" weight="1.0" />
+      <edge id="248" source="federal" target="cachoeira" weight="1.0" />
+      <edge id="249" source="luz" target="lula" weight="1.0" />
+      <edge id="250" source="robô" target="seguir" weight="1.0" />
+      <edge id="251" source="descobrir" target="petista" weight="1.0" />
+      <edge id="252" source="biel" target="temer" weight="1.0" />
+      <edge id="253" source="favor" target="500" weight="1.0" />
+      <edge id="254" source="3" target="mês" weight="1.0" />
+      <edge id="255" source="destino" target="lula" weight="1.0" />
+      <edge id="256" source="destino" target="democracia" weight="1.0" />
+      <edge id="257" source="vender" target="lula" weight="1.0" />
+      <edge id="258" source="achar" target="hora" weight="1.0" />
+      <edge id="259" source="achar" target="ganhador" weight="1.0" />
+      <edge id="260" source="achar" target="direito" weight="1.0" />
+      <edge id="261" source="achar" target="ouvido" weight="1.0" />
+      <edge id="262" source="pagar" target="dívida" weight="2.0" />
+      <edge id="263" source="ganhador" target="bbb" weight="1.0" />
+      <edge id="264" source="sera" target="lula" weight="1.0" />
+      <edge id="265" source="triplex" target="lula" weight="2.0" />
+      <edge id="266" source="triplex" target="atribuído" weight="1.0" />
+      <edge id="267" source="triplex" target="nome" weight="1.0" />
+      <edge id="268" source="parecer" target="antagonista" weight="1.0" />
+      <edge id="269" source="estupidez" target="canalhice" weight="1.0" />
+      <edge id="270" source="eleição" target="lula" weight="1.0" />
+      <edge id="271" source="boto" target="rolê" weight="1.0" />
+      <edge id="272" source="20/4" target="18" weight="1.0" />
+      <edge id="273" source="falar" target="lula" weight="4.0" />
+      <edge id="274" source="falar" target="prisão" weight="1.0" />
+      <edge id="275" source="falar" target="socio" weight="1.0" />
+      <edge id="276" source="falar" target="grana" weight="1.0" />
+      <edge id="277" source="desafiar" target="juiz" weight="1.0" />
+      <edge id="278" source="acabar" target="último" weight="1.0" />
+      <edge id="279" source="sérgio" target="pinheiro" weight="1.0" />
+      <edge id="280" source="dizer" target="vizinho" weight="1.0" />
+      <edge id="281" source="dizer" target="fhc" weight="1.0" />
+      <edge id="282" source="dizer" target="nobel" weight="1.0" />
+      <edge id="283" source="dizer" target="paulo" weight="1.0" />
+      <edge id="284" source="dizer" target="lula" weight="2.0" />
+      <edge id="285" source="dizer" target="8" weight="1.0" />
+      <edge id="286" source="anta" target="ganhar" weight="1.0" />
+      <edge id="287" source="cruzar" target="lula" weight="1.0" />
+      <edge id="288" source="ganhar" target="bbb" weight="1.0" />
+      <edge id="289" source="ganhar" target="urna" weight="1.0" />
+      <edge id="290" source="amigo" target="facebook" weight="1.0" />
+      <edge id="291" source="parar" target="evento" weight="1.0" />
+      <edge id="292" source="léo" target="quadrado" weight="1.0" />
+      <edge id="293" source="bbb" target="18" weight="2.0" />
+      <edge id="294" source="bbb" target="3" weight="1.0" />
+      <edge id="295" source="bbb" target="falar" weight="1.0" />
+      <edge id="296" source="chegar" target="bbb18" weight="1.0" />
+      <edge id="297" source="pf" target="ver" weight="1.0" />
+      <edge id="298" source="acre" target="surpreender" weight="1.0" />
+      <edge id="299" source="acre" target="gritar" weight="1.0" />
+      <edge id="300" source="pessoa" target="nó" weight="1.0" />
+      <edge id="301" source="pessoa" target="achar" weight="1.0" />
+      <edge id="302" source="pessoa" target="poder" weight="1.0" />
+      <edge id="303" source="po" target="achar" weight="1.0" />
+      <edge id="304" source="500" target="amigo" weight="1.0" />
+      <edge id="305" source="moço" target="confinar" weight="1.0" />
+      <edge id="306" source="moço" target="acre" weight="1.0" />
+      <edge id="307" source="acampamento" target="lula" weight="1.0" />
+      <edge id="308" source="pinheiro" target="usp" weight="1.0" />
+      <edge id="309" source="confinar" target="saber" weight="1.0" />
+      <edge id="310" source="casa" target="pessoa" weight="1.0" />
+      <edge id="311" source="encontrar" target="lula" weight="1.0" />
+      <edge id="312" source="prisão" target="lula" weight="4.0" />
+      <edge id="313" source="prisão" target="gleice" weight="1.0" />
+      <edge id="314" source="errado" target="pegar" weight="1.0" />
+      <edge id="315" source="errado" target="gritar" weight="1.0" />
+      <edge id="316" source="ouvido" target="errado" weight="1.0" />
+      <edge id="317" source="evento" target="lula" weight="1.0" />
+      <edge id="318" source="colocado" target="fogueira" weight="1.0" />
+      <edge id="319" source="paz" target="adorar" weight="1.0" />
+      <edge id="320" source="paz" target="doente" weight="1.0" />
+      <edge id="321" source="carona" target="parar" weight="1.0" />
+      <edge id="322" source="grana" target="8" weight="1.0" />
+      <edge id="323" source="2030" target="118" weight="1.0" />
+      <edge id="324" source="9" target="dia" weight="1.0" />
+      <edge id="325" source="sonhar" target="lula" weight="1.0" />
+      <edge id="326" source="mostra" target="fragilida" weight="1.0" />
+      <edge id="327" source="livre" target="bernardo" weight="1.0" />
+      <edge id="328" source="livre" target="mágico" weight="1.0" />
+      <edge id="329" source="livre" target="ponto" weight="1.0" />
+      <edge id="330" source="livre" target="pleno" weight="1.0" />
+      <edge id="331" source="livre" target="2030" weight="1.0" />
+      <edge id="332" source="livre" target="causa" weight="1.0" />
+      <edge id="333" source="livre" target="final" weight="1.0" />
+      <edge id="334" source="livro" target="lula" weight="1.0" />
+      <edge id="335" source="iluminar" target="almo" weight="1.0" />
+      <edge id="336" source="topo" target="ranking" weight="1.0" />
+      <edge id="337" source="estada" target="islâmico" weight="1.0" />
+      <edge id="338" source="pimenta" target="desafiar" weight="1.0" />
+      <edge id="339" source="juiz" target="pf" weight="1.0" />
+      <edge id="340" source="recurso" target="lula" weight="1.0" />
+      <edge id="341" source="recurso" target="defeso" weight="1.0" />
+      <edge id="342" source="deputado" target="pedir" weight="1.0" />
+      <edge id="343" source="adorar" target="lula" weight="1.0" />
+      <edge id="344" source="ficar" target="dúvida" weight="1.0" />
+      <edge id="345" source="deixa" target="lula" weight="1.0" />
+      <edge id="346" source="deixa" target="trump" weight="1.0" />
+      <edge id="347" source="programa" target="tão" weight="1.0" />
+      <edge id="348" source="verificar" target="condição" weight="2.0" />
+      <edge id="349" source="guarujá" target="pedir" weight="1.0" />
+      <edge id="350" source="copiar" target="colar" weight="1.0" />
+      <edge id="351" source="momento" target="abrir" weight="1.0" />
+      <edge id="352" source="momento" target="espetacular" weight="1.0" />
+      <edge id="353" source="extrema-direita" target="avança" weight="1.0" />
+      <edge id="354" source="loja" target="vender" weight="1.0" />
+      <edge id="355" source="gleici" target="causa" weight="1.0" />
+      <edge id="356" source="gleici" target="grita" weight="2.0" />
+      <edge id="357" source="4" target="detonar" weight="1.0" />
+      <edge id="358" source="convocado" target="crazy" weight="1.0" />
+      <edge id="359" source="preso" target="ganhar" weight="1.0" />
+      <edge id="360" source="preso" target="amanhã" weight="1.0" />
+      <edge id="361" source="preso" target="dizer" weight="1.0" />
+      <edge id="362" source="preso" target="político" weight="2.0" />
+      <edge id="363" source="preso" target="participar" weight="1.0" />
+      <edge id="364" source="preso" target="amanhar" weight="1.0" />
+      <edge id="365" source="bernardo" target="campo" weight="1.0" />
+      <edge id="366" source="triste" target="ver" weight="1.0" />
+      <edge id="367" source="triste" target="infância" weight="1.0" />
+      <edge id="368" source="golpista" target="gente" weight="1.0" />
+      <edge id="369" source="golpista" target="ayres" weight="1.0" />
+      <edge id="370" source="líder" target="corrupto" weight="1.0" />
+      <edge id="371" source="55" target="rejeição" weight="1.0" />
+      <edge id="372" source="canalhice" target="nobel" weight="1.0" />
+      <edge id="373" source="fernando" target="afonso" weight="1.0" />
+      <edge id="374" source="racista" target="opressor" weight="1.0" />
+      <edge id="375" source="relegado" target="solidão" weight="1.0" />
+      <edge id="376" source="compensar" target="lula" weight="1.0" />
+      <edge id="377" source="gostar" target="vídeo" weight="4.0" />
+      <edge id="378" source="amanhã" target="dia" weight="1.0" />
+      <edge id="379" source="118" target="ano" weight="1.0" />
+      <edge id="380" source="rejeitar" target="último" weight="1.0" />
+      <edge id="381" source="duvidar" target="boulos" weight="1.0" />
+      <edge id="382" source="apoio" target="zumbi" weight="1.0" />
+      <edge id="383" source="medo" target="lula" weight="1.0" />
+      <edge id="384" source="carta" target="lula" weight="1.0" />
+      <edge id="385" source="virar" target="resto" weight="1.0" />
+      <edge id="386" source="bola" target="hein" weight="1.0" />
+      <edge id="387" source="ayres" target="britto" weight="3.0" />
+      <edge id="388" source="mãe" target="lá" weight="1.0" />
+      <edge id="389" source="inter" target="brigar" weight="1.0" />
+      <edge id="390" source="ocupar" target="topo" weight="1.0" />
+      <edge id="391" source="acompanhar" target="enterro" weight="1.0" />
+      <edge id="392" source="ô" target="hipocrisia" weight="1.0" />
+      <edge id="393" source="leilão" target="pagar" weight="1.0" />
+      <edge id="394" source="leilão" target="triplex" weight="1.0" />
+      <edge id="395" source="árabe" target="após" weight="1.0" />
+      <edge id="396" source="árabe" target="detonar" weight="1.0" />
+      <edge id="397" source="presídio" target="cruzar" weight="1.0" />
+      <edge id="398" source="ajuda" target="lula" weight="1.0" />
+      <edge id="399" source="ajuda" target="estada" weight="1.0" />
+      <edge id="400" source="rolê" target="errado" weight="1.0" />
+      <edge id="401" source="assustar" target="advogado" weight="1.0" />
+      <edge id="402" source="poder" target="próximo" weight="1.0" />
+      <edge id="403" source="poder" target="soltar" weight="1.0" />
+      <edge id="404" source="poder" target="provar" weight="1.0" />
+      <edge id="405" source="poder" target="copiar" weight="1.0" />
+      <edge id="406" source="poder" target="gritar" weight="1.0" />
+      <edge id="407" source="poder" target="lula" weight="1.0" />
+      <edge id="408" source="instância" target="negro" weight="1.0" />
+      <edge id="409" source="último" target="recurso" weight="2.0" />
+      <edge id="410" source="governo" target="lula" weight="1.0" />
+      <edge id="411" source="prefeitura" target="pedir" weight="1.0" />
+      <edge id="412" source="embargo" target="embargo" weight="1.0" />
+      <edge id="413" source="embargo" target="lula" weight="1.0" />
+      <edge id="414" source="dívida" target="100" weight="1.0" />
+      <edge id="415" source="dívida" target="tríplex" weight="1.0" />
+      <edge id="416" source="advogado" target="lula" weight="1.0" />
+      <edge id="417" source="advogado" target="zanin" weight="1.0" />
+      <edge id="418" source="democracia" target="brasil" weight="1.0" />
+      <edge id="419" source="povo" target="medo" weight="1.0" />
+      <edge id="420" source="anjo" target="poder" weight="1.0" />
+      <edge id="421" source="invadir" target="voltar" weight="1.0" />
+      <edge id="422" source="tão" target="idiota" weight="1.0" />
+      <edge id="423" source="condição" target="prisão" weight="2.0" />
+      <edge id="424" source="urna" target="épico" weight="1.0" />
+      <edge id="425" source="cotton" target="anjo" weight="1.0" />
+      <edge id="426" source="continuar" target="acreditar" weight="1.0" />
+      <edge id="427" source="defeso" target="lula" weight="1.0" />
+      <edge id="428" source="parecido" target="dilma" weight="1.0" />
+      <edge id="429" source="pedir" target="morar" weight="1.0" />
+      <edge id="430" source="pedir" target="leilão" weight="1.0" />
+      <edge id="431" source="pedir" target="ajuda" weight="1.0" />
+      <edge id="432" source="papa" target="vir" weight="1.0" />
+      <edge id="433" source="solidário" target="podre" weight="1.0" />
+      <edge id="434" source="joeslei" target="falar" weight="1.0" />
+      <edge id="435" source="dilma" target="lula" weight="2.0" />
+      <edge id="436" source="dilma" target="democracy" weight="1.0" />
+      <edge id="437" source="ué" target="saber" weight="1.0" />
+      <edge id="438" source="2008" target="governo" weight="1.0" />
+    </edges>
+  </graph>
+</gexf>

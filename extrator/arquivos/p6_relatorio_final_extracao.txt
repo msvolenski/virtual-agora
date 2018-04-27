@@ -4,140 +4,107 @@ RELATORIO FINAL DE EXTRACAO
 
 frase  \  representatividade 
 
-1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
-2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
-4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
-6 -  faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  alta
-7 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  alta
-8 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
-9 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
-10 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
-11 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
-12 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
-13 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas  \  alta-baixa
-14 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no al  \  alta-baixa
-15 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
-16 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
-17 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
-18 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
-19 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
+1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
+2 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+3 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+4 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
+5 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
 
 
  2. RANKING POR TEMAS 
-
-Tema: trump
-
-frase  \  representatividade 
-
-1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
-2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
-4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
-6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
-7 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
-8 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
-9 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
-10 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
-11 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
-12 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
-13 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
-14 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
-15 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
-
 
 Tema: lula
 
 frase  \  representatividade 
 
-1 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em guarujá , sp  \  muito-alta
-2 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
-3 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp leia aqui  \  muito-alta
-4 -  manifestantes ocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
-5 -  manifestantes desocupam triplex atribuído a lula em guarujá  \  alta
-6 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em  \  alta-baixa
-7 -  mtst desocupa triplex atribuído à lula em guarujá , litoral de sp  \  alta-baixa
-8 -  população e movimentos ocupam triplex atribuído a lula  \  alta-baixa
-9 -  manifestantes ocupam triplex atribuído a lula no litoral de sp  \  alta-baixa
+1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
+2 -  lula pode ser transferido de presídio  \  muito-alta
+3 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
+4 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
+5 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
+6 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+7 -  o setor de propina da odebrecht atuou entre a releição de lula e a de dilma rousseff  \  muito-alta
+8 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+9 -  juíza barra inspeção de deputados à área em que lula está preso  \  muito-alta
+10 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
+11 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
+12 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
+13 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
+14 -  pf pede a transferência de lula com urgência da carceragem da pf em curitiba  \  alta
 
 
-Tema: neymar
-
-frase  \  representatividade 
-
-1 -  faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  muito-alta
-2 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas horas  \  muito-alta
-3 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no altas  \  alta
-4 -  whindersson faz neymar mijar de rir ao falar de noite de núpcias no al  \  alta
-
-
-Tema: presidente
+Tema: dilma
 
 frase  \  representatividade 
 
-1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
-2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
-4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
-6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
-7 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
-8 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
-9 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
-10 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
-11 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
-12 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
-13 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
-
-
-Tema: triplex
-
-frase  \  representatividade 
-
-1 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em guarujá , sp  \  muito-alta
-2 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
-3 -  após pedido da pm , manifestantes desocupam triplex atribuído a lula em guarujá , sp leia aqui  \  muito-alta
-4 -  manifestantes ocupam triplex atribuído a lula em guarujá , sp  \  muito-alta
-5 -  manifestantes desocupam triplex atribuído a lula em guarujá  \  alta
-6 -  pf instaura inquérito e perícia analisa danos após invasão a triplex atribuído a lula em  \  alta-baixa
-7 -  mtst desocupa triplex atribuído à lula em guarujá , litoral de sp  \  alta-baixa
-8 -  população e movimentos ocupam triplex atribuído a lula  \  alta-baixa
-9 -  manifestantes ocupam triplex atribuído a lula no litoral de sp  \  alta-baixa
+1 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
+2 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
+3 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
+4 -  o setor de propina da odebrecht atuou entre a releição de lula e a de dilma rousseff  \  muito-alta
+5 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
 
 
 Tema: poder
 
 frase  \  representatividade 
 
+1 -  lula pode ser transferido de presídio  \  muito-alta
+2 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
 
 
-Tema: donald
-
-frase  \  representatividade 
-
-1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
-2 -  que você prefere , ter a donald trump ou kanye west como presidente  \  alta
-
-
-Tema: ex-diretor
+Tema: pf
 
 frase  \  representatividade 
 
-1 -  donald trump é ' moralmente inapto ' para ser presidente , diz ex-diretor do fbi  \  muito-alta
-2 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-3 -  ex-diretor do fbi diz que trump é “ moralmente incapaz de ser presidente ”  \  muito-alta
-4 -  rt @g1 ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente '  \  muito-alta
-5 -  ex-diretor do fbi diz que trump é ' moralmente incapaz de ser presidente ' clique e saiba mais  \  muito-alta
-6 -  ex-diretor do fbi james comey diz que trump é ' moralmente incapaz de ser presidente '  \  alta
-7 -  trump é “ moralmente incapaz de ser presidente ” , diz ex-diretor do fbi  \  alta-baixa
-8 -  trump é " moralmente incapaz de ser presidente " , diz ex-diretor do fbi  \  alta-baixa
-9 -  ex-diretor do fbi diz que trump é ' moralmente inapto ' para comandar os eua  \  alta-baixa
-10 -  ‘ #trump é #moralmente #incapaz de ser #presidente dos #eua ’ , diz ex-diretor do fbi  \  alta-baixa
-11 -  ‘ trump é moralmente incapaz de ser presidente dos eua ’ , diz ex-diretor do fbi  \  alta-baixa
-12 -  ' trump é moralmente incapaz de ser presidente dos eua ' , diz ex-diretor do fbi →  \  alta-baixa
-13 -  ex-diretor do fbi diz que trump é “ moralmente desqualificado ”  \  media
-14 -  ex-diretor do fbi diz que trump é " moralmente desqualificado " para ser presidente  \  media
+1 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
+2 -  pf pede a transferência de lula com urgência da carceragem da pf em curitiba  \  alta
+
+
+Tema: presidente
+
+frase  \  representatividade 
+
+1 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
+
+
+Tema: pt
+
+frase  \  representatividade 
+
+1 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
+2 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
+
+
+Tema: prisão
+
+frase  \  representatividade 
+
+1 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
+2 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
+
+
+Tema: stf
+
+frase  \  representatividade 
+
+1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
+2 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+3 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
+4 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
+5 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
+
+
+Tema: preso
+
+frase  \  representatividade 
+
+1 -  juíza barra inspeção de deputados à área em que lula está preso  \  muito-alta
+
+
+Tema: presídio
+
+frase  \  representatividade 
+
+1 -  lula pode ser transferido de presídio  \  muito-alta
 
 

@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^extrator/limpasubstantivo/(?P<opcao>[-\w]+)/$', views.limpar_lista_subtantivos, name='limpar_lista_subtantivos'),
     url(r'^extrator/ajustarparametro/(?P<opcao>[-\w]+)/$', views.ajustar_parametro, name='ajustar_parametro'),
     url(r'^extrator/resultadosfinais/(?P<arquivo>[-\w]+)/$', views.resultados, name='resultados'),
-    url(r'^extrator/testeuser/(?P<palavra_candidata>[-\w]+)/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario')
+    url(r'^extrator/testeuser/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario'),
+    url(r'^extrator/mapaeresultadostemas/$', views.gerarMapaEResultados, name='gerar_mapa_resultados'),
 ]

@@ -86,8 +86,9 @@ class PesosEAlpha(models.Model):
 
 class TemasNew(models.Model):
     tema = models.TextField('Tema')
-    irt = models.FloatField('IRT')
-    irt_p = models.FloatField('IRT%')
+    classificacao = models.TextField('Classificacao')
+    irt = models.FloatField('IRT Global (%)')
+    irt_l = models.FloatField('IRT Local (Sem referência)')
     
     def __str__(self):
         return self.tema
@@ -162,7 +163,8 @@ class ParametrosDeAjuste(models.Model):
     check_eigen = models.CharField('eigenvector',default='sim', max_length=10)
     faixa_histo = models.FloatField('Faixa',default=0.2)
     exc_cluster = models.IntegerField('Exclusao_de_cluster')
-    radio_r = models.FloatField('Representatividade_minima',default=0.0)
+    radio_r = models.FloatField('Representatividade_minima', default=0.0)
+    nc =  models.IntegerField('CLusters dos temas principais', default=1)
 
 class CorrigePalavra(models.Model):
     palavra_correta = models.TextField('palavra_correta')
@@ -170,3 +172,31 @@ class CorrigePalavra(models.Model):
 
     def __str__(self):
         return self.palavra
+
+
+class Subtemas(models.Model):
+    temas = models.TextField('Temas')
+    subtemas = models.TextField('Subtemas')
+
+    def __str__(self):
+        return self.temas
+
+
+class Clusters(models.Model):
+    etapa = models.IntegerField('Etapa', null=True)
+    nucleos = models.TextField('Nucleos')
+    q_nucleos = models.IntegerField('Qtdd de Núcleos', null=True)
+    subtemas = models.TextField('Subtemas')
+    q_subtemas = models.IntegerField('Qtdd de subtemas', null=True)
+    situacao = models.TextField('Situação')
+
+    def __str__(self):
+        return self.nucleos
+
+class MapasTemasESubtemas(models.Model):
+    tema = models.TextField('Tema')
+    subtema = models.TextField('Subtema')
+    irt_l = models.FloatField('IRT (subtema) Local Referênciado')
+    
+    def __str__(self):
+        return self.tema
