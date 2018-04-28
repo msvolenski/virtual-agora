@@ -35,10 +35,18 @@ import tweepy
 import itertools
 import community
 import igraph
+import textwrap
 
 # Create your views here.
 class RelatorioPreprocHomeView(generic.ListView):
   template_name = 'extrator/relatoriopreproc.html'
+  #model = Topic
+  def get_queryset(self):
+     #u = User.objects.get(user=self.request.user)
+     return #Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto).distinct()
+
+class GraphTestView(generic.ListView):
+  template_name = 'extrator/graph_test.html'
   #model = Topic
   def get_queryset(self):
      #u = User.objects.get(user=self.request.user)
@@ -1387,14 +1395,10 @@ def agrupar_temas(request):
     string_grupo = ''
     for t in temas_q:
         temas.append(t)
-        string_grupo = string_grupo + t + ' ' 
-    
-   
+        string_grupo = string_grupo + t + ' '    
     
     #cria pares de temas distintos
-    pairs = list(itertools.combinations(temas, 2))
- 
-    
+    pairs = list(itertools.combinations(temas, 2))   
     
     #carrega sentencas
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
@@ -1525,7 +1529,8 @@ def agrupar_temas(request):
 
 def gerarMapaEResultados(request):
     #realtório
-    arq_temas_subtemas = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt", 'w', 'utf-8') 
+    arq_temas_subtemas = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt", 'w', 'utf-8')
+    arq_json = codecs.open("extrator/arquivos/p5_json_temas_subtemas.json", 'w', 'utf-8') 
 
     
     #inicializa o BD
@@ -1632,6 +1637,52 @@ def gerarMapaEResultados(request):
             arq_temas_subtemas.write(obj.subtema + ' (' + str(obj.irt_l) + ') '+ '\n')  
         arq_temas_subtemas.write('\n')
     arq_temas_subtemas.close()
+
+
+    #gera JSON files
+    
+    #cabeçalho
+    arq_json.write("{\n\"name\": \"Tema\",\n")
+    arq_json.write("\"value\": " + str(100) + ",\n")
+    arq_json.write("\"children\": [\n")
+    arq_json.write("    {\n")
+
+    for j, nuc in enumerate(nucleos_w):
+        c = TemasNew.objects.get(tema__exact=nuc.tema)        
+        tema_irt = c.irt      
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
+        
+        arq_json.write("        \"name\": \"" + nuc.tema + "\",\n")
+        arq_json.write("        \"value\": " + str(100) + ",\n")
+        arq_json.write("        \"children\": [\n")
+        
+        for i, obj in enumerate(objs):                   
+            #subtema 
+            arq_json.write("            {\"name\": \"" + obj.subtema + "\", \"value\": " + str(obj.irt_l) + "}")    
+            if i == (len(objs) -1):
+                arq_json.write("\n")         
+            else:
+                arq_json.write(",\n")
+        
+        #fecha tema
+        if j == (len(nucleos_w) -1):
+            arq_json.write("        ]\n    }\n")         
+        else:
+            arq_json.write("        ]\n    },\n    {\n")
+       
+
+    #tema-pai o caro nao final
+    
+    #arq_json.write("        \"name\": \"" + str(111) + "\",\n")
+    #arq_json.write("        \"value\": " + str(100) + ",\n")
+    #arq_json.write("        \"children\": [\n")
+    
+    #subtema 
+    #arq_json.write("            {\"name\": \"" + str(111) + "\", \"value\": " + str(111) + "}")    
+   
+
+   
+
        
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
 

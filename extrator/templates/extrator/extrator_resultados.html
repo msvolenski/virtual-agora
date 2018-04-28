@@ -16,12 +16,15 @@
 
     <title>Resultados do ECC</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static 'agora/css/reset.css' %}">
     <!-- CSS reset -->
-    <link rel="stylesheet" href="{% static 'agora/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'agora/css/style.css' %}">_+
     <!-- Resource style -->
     <link href="{% static 'agora/css/extrator.css' %}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -57,7 +60,6 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background:white;font-family:verdana">
-
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -553,71 +555,17 @@
     </div>
     </section>
 
-    {% if mostra_res %}
+    
     <!-- About Section -->
     <section id="resultados" class="container content-section text-center" style="background:white;">
-        <div class="row" style="background:white;">
-            <div class="col-lg-8 col-lg-offset-2" style="height:{{altura}}px;" style="background:white;">
-                <div id="refer" style="top:{{maior_distancia}}px">
-                    <div title="irt={{tema_central.3}}%" id="circle" style="top: border-radius:{{tema_central.1}}px;-webkit-border-radius:{{tema_central.1}}px;-moz-border-radius:{{tema_central.1}}px;width:{{tema_central.1}}px;height:{{tema_central.1}}px;line-height:{{tema_central.1}}px;top:-{{tema_central.2}}px;left:-{{tema_central.2}}px;"><b>{{tema_central.0}}</b></div>
-                    {% for prgf in tema_central_par %}
-                    <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
-                        <div title="irse={{prgf.5}}" name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
-                    </div>
-                    {% endfor %} 
-                    {% for tema in vetor_temas %}
-                    <div id="refer" style="top:{{tema.2}}px;left:{{tema.3}}px">
-                        <div title="irt={{tema.6}}%" id="circle" style="border-radius:{{tema.4}}px;-webkit-border-radius:{{tema.4}}px;-moz-border-radius:{{tema.4}}px;width:{{tema.4}}px;height:{{tema.4}}px;line-height:{{tema.4}}px;top:-{{tema.5}}px;left:-{{tema.5}}px;"></div>
-                        {% for prgf in vetor_paragrafos %}
-                        {% if prgf.0 == tema.0 %}
-                        <div id="refer" style="top:-{{prgf.2}}px;left:{{prgf.1}}px">
-                            <div title="irse={{prgf.5}}" name={{prgf.4}} onMouseOver="show_sidebar(this)" onMouseOut="hide_sidebar(this)" id="circle" style="top:-15px;left:-15px;background:#C30FFF;"></div>
-                        </div>
-                        {% endif %} 
-                        {% endfor %}
-                        <div style="position:absolute;top:{{tema.5}}px;font-size: 1vw;font-family: verdana;"> {{tema.0}} </div>
-                    </div>
-                    {% endfor %}
-                </div>
+        
+        <resultados></resultados>
+      
+    
 
-                {% for prgf in tema_central_par %}
-                <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
-                {% endfor %} 
-                {% for prgf in vetor_paragrafos %}
-                <div class="quadro_paragrafo" id={{prgf.4}}>"{{prgf.3}}"</div>
-                {% endfor %}
-
-            </div>
-        </div>
+   
     </section>
-
-    <!-- Download Section -->
-    {% if not paragrafos_linha %}
-    <div id="texto_resultados">Não foram extraídos parágrafos</div>
-    {% endif %} {% if paragrafos_linha %}
-    <section id="resultado_par" class="content-section text-center">
-        <div class="download-section" style="background: white ">
-
-            <div style="height:{{top}}px;margin-top:200px;">
-                <div class="linha" style="position:absolute;left:10%">
-                    <span title="Parágrafos mais significativos" class="glyphicon glyphicon-plus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:-15px;"></span>
-                    <span title="Parágrafos menos significativos" class="glyphicon glyphicon-minus-sign" style="font-size:150%;color:black;position:absolute;top:30px;left:100%;"></span>                   
-                    {% for p in paragrafos_linha %}
-                    <div title="irgs={{p.1}}%" id="circle" name={{p.3}} onclick="mostrar_paragrafo(this)" style="top:{{p.4}}px;background:#C30FFF;width:40px;height:40px;left:{{p.2}}%"></div>
-                    {% endfor %}
-
-                </div>
-            </div>
-
-        </div>
-        <div class="quadro_linha">
-            {% for p in paragrafos_linha %}
-            <div id={{p.3}} class="par">"{{p.0}}"</div>
-            {% endfor %}
-
-        </div>
-    </section>
-    {% endif %} 
+    
 
     <section id="dados" class="container content-section text-center" style="width:100%">
         <div class="row">
@@ -712,7 +660,7 @@
         </div>
     </section>
 
-{% endif %}
+
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
@@ -894,6 +842,50 @@
              }
          }
     </script>
+
+    <script>
+ 
+        var color = d3.scale.category10();
+        
+        var width = 800,
+            height = 800;
+        
+        var canvas = d3.select("resultados").append("svg")
+              .attr("width", width)
+              .attr("height", height)          
+     
+  
+        d3.json("{% static 'agora/json/mydata1.json' %}", function (data) {
+        
+            var treemap = d3.layout.treemap()
+              .size([500, 500])
+              .nodes(data)
+          
+            var cells = canvas.selectAll("g")
+              .data(treemap)
+              .enter()
+              .append("g")
+              .attr("class","cell")
+  
+            
+            cells.append("rect")
+              .attr("x", function (d) { return d.x; })
+              .attr("y", function (d) { return d.y; })
+              .attr("width", function (d) { return d.dx; })
+              .attr("height", function (d) { return d.dy; })
+              .attr("fill", function (d) { return d.children ? null : color(d.parent.name);})
+              .attr("stroke","#fff")
+            cells.append("text")
+              .attr("x", function (d) { return d.x + d.dx / 2 })
+              .attr("y", function (d) { return d.y + d.dy / 2 })
+              .attr("text-anchor", "middle")
+              .text(function (d) { return d.name})
+  
+  
+        });
+        
+        
+      </script> 
     
 
 

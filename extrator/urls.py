@@ -4,7 +4,11 @@ from . import views
 
 app_name = 'extrator'
 urlpatterns = [
+
+
+    
     url(r'^extrator/antigo$', views.ExtratorHomeView.as_view(), name='extratorHome'),
+    url(r'^graph$', views.GraphTestView.as_view(), name='graphtest'),
     url(r'^extrator/$', views.ResultadosExtratorHomeView.as_view(), name='resultadosextratorHome'),
     url(r'^extrator/lematizar$', views.lematizar, name='lematizador'),
     url(r'^extrator/dados$', views.inserir_dados_de_entrada, name='dados'),

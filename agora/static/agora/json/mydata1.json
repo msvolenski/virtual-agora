@@ -1,0 +1,33 @@
+{
+"name": "tEMA",
+"value": 100,
+"children": [
+        {
+                "name":"Familia",
+                "value": 125,
+                "children":[
+                        {"name":"Pai", "value": 77},
+                        {"name":"filho", "value": 48}
+                        
+                ]
+        },
+
+        {
+                "name": "Voto",
+                "value": 125,
+                "children":[
+                        {"name":"Maioria","value": 66},
+                        {"name":"governo","value": 93},
+                        {"name":"rio","value": 94},
+                        {"name":"povo","value": 46},
+                        {"name":"partido","value": 95},
+                        {"name":"nome","value": 27},
+                        {"name":"Brasil","value": 60}       
+                ]
+
+        }
+
+        
+
+        ]
+}
