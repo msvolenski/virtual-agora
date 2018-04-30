@@ -1,0 +1,21 @@
+{
+"name": "Tema",
+"value": 2500,
+"size": 100,
+"children": [
+    {
+        "name": "lula",
+        "value": 1467.00747133,
+        "size": 100,
+        "children": [
+        ]
+    },
+    {
+        "name": "trump",
+        "value": 1032.99252867,
+        "size": 70,
+        "children": [
+        ]
+    }
+    ]
+}

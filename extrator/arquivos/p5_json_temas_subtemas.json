@@ -1,60 +1,62 @@
 {
 "name": "Tema",
-"value": 100,
+"value": 2500,
 "children": [
     {
         "name": "voto",
-        "value": 100,
+        "value": 722.584509014,
         "children": [
-            {"name": "partido", "value": 95.8640005772},
-            {"name": "rio", "value": 94.101002317},
-            {"name": "governo", "value": 93.880607463},
-            {"name": "maioria", "value": 66.1206328639},
-            {"name": "brasil", "value": 60.6036785266},
-            {"name": "povo", "value": 46.7199267221},
-            {"name": "nome", "value": 27.3267495902}
+            {"name": "partido", "value": 142.937410866},
+            {"name": "rio", "value": 140.308703476},
+            {"name": "governo", "value": 139.980085125},
+            {"name": "maioria", "value": 98.5887508287},
+            {"name": "brasil", "value": 90.3627310081},
+            {"name": "povo", "value": 69.6614508187},
+            {"name": "nome", "value": 40.7453768909}
         ]
     },
     {
         "name": "brasil",
-        "value": 100,
+        "value": 625.005060761,
         "children": [
-            {"name": "voto", "value": 100.0},
-            {"name": "partido", "value": 95.8640005772},
-            {"name": "rio", "value": 94.101002317},
-            {"name": "governo", "value": 93.880607463},
-            {"name": "maioria", "value": 66.1206328639},
-            {"name": "povo", "value": 46.7199267221},
-            {"name": "nome", "value": 27.3267495902}
+            {"name": "voto", "value": 119.272834211},
+            {"name": "partido", "value": 114.339710477},
+            {"name": "rio", "value": 112.236932485},
+            {"name": "governo", "value": 111.974061296},
+            {"name": "maioria", "value": 78.8639528152},
+            {"name": "povo", "value": 55.7241807429},
+            {"name": "nome", "value": 32.593388734}
         ]
     },
     {
         "name": "povo",
-        "value": 100,
+        "value": 480.725487168,
         "children": [
-            {"name": "voto", "value": 100.0},
-            {"name": "partido", "value": 95.8640005772},
-            {"name": "rio", "value": 94.101002317},
-            {"name": "governo", "value": 93.880607463},
-            {"name": "maioria", "value": 66.1206328639},
-            {"name": "brasil", "value": 60.6036785266},
-            {"name": "nome", "value": 27.3267495902}
+            {"name": "voto", "value": 89.371344495},
+            {"name": "partido", "value": 85.6749462026},
+            {"name": "rio", "value": 84.099330954},
+            {"name": "governo", "value": 83.9023611097},
+            {"name": "maioria", "value": 59.092898579},
+            {"name": "brasil", "value": 54.1623223126},
+            {"name": "nome", "value": 24.4222835155}
         ]
     },
     {
         "name": "país",
-        "value": 100,
+        "value": 363.277801256,
         "children": [
-            {"name": "esperança", "value": 100.0},
-            {"name": "dia", "value": 75.0035821188},
-            {"name": "futuro", "value": 41.1764705883}
+            {"name": "esperança", "value": 168.044089502},
+            {"name": "dia", "value": 126.039086665},
+            {"name": "futuro", "value": 69.1946250891}
         ]
     },
     {
         "name": "família",
-        "value": 100,
+        "value": 308.407141801,
         "children": [
-            {"name": "pai", "value": 77.3811813494},
-            {"name": "filho", "value": 48.8095238106}
+            {"name": "pai", "value": 189.117803398},
+            {"name": "filho", "value": 119.289338402}
         ]
     }
+    ]
+}

@@ -559,106 +559,15 @@
     <!-- About Section -->
     <section id="resultados" class="container content-section text-center" style="background:white;">
         
-        <resultados></resultados>
-      
-    
-
+        <div style="padding:30px;margin:0 auto;font-size:1.5em;font-weight:bold"> MAPA DE TEMAS</div>
+        <resultados style="margin: 0 auto"></resultados>
+        <div style="padding:10px;text-align:left"> LEGENDA </div>
+        <div id="legend" style="margin:0 auto;text-align:center"></div>
    
     </section>
     
 
-    <section id="dados" class="container content-section text-center" style="width:100%">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-
-
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p1_texto_inicial_original' %}" class="btn btn-default btn-lg" style="border:1px solid #96DDDd;color:#4d4d4d"><span class="network-name">Texto Original</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p1_texto_inicial_tokens' %}" class="btn btn-default btn-lg" style="border:1px solid #96DDDd;color:#4d4d4d"><span class="network-name">Texto Tokenizado</span></a>
-                    </li>
-
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_lista_palavrasIgnoradas' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"><span  class="network-name">Palavras ignoradas</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_lista_stopwords' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"><span  class="network-name">Stop-words</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_texto_preprocessado' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"><span  class="network-name">Texto pré-processado</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_texto_lematizado' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"><span  class="network-name">Texto lematizado</span></a>
-                    </li>
-
-                </ul>
-
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_texto_lematizado_ssw' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"></i> <span class="network-name">Texto lematizado sem SWs</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p2_relatorio' %}" class="btn btn-default btn-lg" style="border:1px solid #F2B0E4;color:#4d4d4d"><span class="network-name">Relatório Passo 2</span></a>
-                    </li>
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p3_lista_adjacencias' %}" class="btn btn-default btn-lg" style="border:1px solid #33e0a1;color:#4d4d4d"></i> <span class="network-name">Lista de adjacências</span></a>
-                    </li>
-
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_relatorio_temas' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Relatório Temas</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_relatorio_distancias_relativas' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Distâncias relativas</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_relatorio_potenciacao' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Relatório Cálculo Potenciação</span></a>
-                    </li>
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'fig1' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Gráfico Alphas</span></a>
-                    </li>
-
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'fig2' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Gráfico Alpha selecionado</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'fig3' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Gráfico Distâncias</span></a>
-                    </li>
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_tabela_graus' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"> <span class="network-name">Tabela Graus</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_tabela_betweenness' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Tabela Betweenness</span></a>
-                    </li>
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p4_tabela_eigenvector' %}" class="btn btn-default btn-lg" style="border:1px solid #EFCEAA;color:#4d4d4d"><span class="network-name">Tabela eigenvector</span></a>
-                    </li>
-                </ul>
-                <ul class="list-inline banner-social-buttons" style="margin-top: 30px;">
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p5_relatorio_extracao' %}" class="btn btn-default btn-lg" style="border:1px solid #E04644;color:#4d4d4d"></i> <span class="network-name">Relatório Extração - result.</span></a>
-                    </li>                   
-                    <li>
-                        <a href="{% url 'extrator:resultados' 'p5_relatorio_procedimento' %}" class="btn btn-default btn-lg" style="border:1px solid #E04644;color:#4d4d4d;"><span class="network-name">Relatório Extração - proc.</span></a>
-                    </li>
-                     <li>
-                        <a href="{% url 'extrator:resultados' 'p5_relatorio_indices_representatividade' %}" class="btn btn-default btn-lg" style="border:1px solid #E04644;color:#4d4d4d"><span class="network-name">Índices de Representatividade</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    
 
 
 
@@ -848,25 +757,28 @@
         var color = d3.scale.category10();
         
         var width = 800,
-            height = 800;
+            height = 500;
         
         var canvas = d3.select("resultados").append("svg")
               .attr("width", width)
-              .attr("height", height)          
-     
+              .attr("height", height)         
+        
   
-        d3.json("{% static 'agora/json/mydata1.json' %}", function (data) {
+        d3.json("{% static 'agora/json/p5_json_temas_subtemas.json' %}", function (data) {
         
             var treemap = d3.layout.treemap()
-              .size([500, 500])
+              .size([width, height])
               .nodes(data)
-          
+  
+            var parents = treemap.filter(function(d) {
+                return d.children;}); 
+            
             var cells = canvas.selectAll("g")
               .data(treemap)
               .enter()
               .append("g")
-              .attr("class","cell")
-  
+              .attr("class","cell")       
+         
             
             cells.append("rect")
               .attr("x", function (d) { return d.x; })
@@ -875,20 +787,64 @@
               .attr("height", function (d) { return d.dy; })
               .attr("fill", function (d) { return d.children ? null : color(d.parent.name);})
               .attr("stroke","#fff")
+              .attr("ident", function (d) { return d.children ? null : d.parent.name + ' ' + d.parent.size + '%'})           
+             
+  
             cells.append("text")
               .attr("x", function (d) { return d.x + d.dx / 2 })
               .attr("y", function (d) { return d.y + d.dy / 2 })
               .attr("text-anchor", "middle")
-              .text(function (d) { return d.name})
-  
-  
-        });
-        
+              .text(function (d) { return d.name + "\n\r" + d.size + '%' })            
+     
+              
+            var i;
+            parents_list = []
+            for (i = 0; i < parents.length; i++) { 
+                parents_list.push(parents[i].name)
+            }
+            
+            cores_distintas = []
+            cores_distintas_test = []
+            d3.selectAll("rect").each(function (d){    
+                var b = d3.select(this).attr("fill") 
+                var a = d3.select(this).attr("ident") 
+                
+                if (cores_distintas_test.indexOf(b) >= 0) {
+                    console.log(b)
+                } else {
+                    if (a){
+                    var tuple = [b,a]                 
+                    cores_distintas.push(tuple)
+                    cores_distintas_test.push(b)
+                    }
+                }        
+                
+            }) 
+            
+            var legenda = d3.select("#legend")
+            .selectAll('div')           
+            .data(cores_distintas) 
+            
+            legenda.enter('div')
+              .append('div') 
+              .style("position", "relative")
+              .style("width", 200 + "px")
+              .style("height", 30 + "px")  
+              .style("background", function (d) { { return d[0]} }) 
+              .style("text-align", "center") 
+              .style("vertical-align", "middle")
+              .style("color", "black")
+              .style("line-height", "30px");                
+              
+            legenda.append("text")          
+              .text(function (d) { { return d[1]} })
+              
+             
+        });       
         
       </script> 
-    
 
-
+   
 </body>
 
 </html>

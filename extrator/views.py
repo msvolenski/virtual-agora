@@ -14,6 +14,7 @@ from sklearn.cluster import KMeans
 from itertools import groupby
 from operator import itemgetter
 from networkx.drawing.layout import kamada_kawai_layout
+from django.conf import settings as djangoSettings
 #import aspell
 import codecs
 import emoji
@@ -1355,12 +1356,15 @@ def selecionar_temas(request):
         temas_selecionados[tem] = ((float(vertice.potenciacao))/3)*100
 
     
-    
+    print temas_excluidos
     print temas_selecionados    
     
-    for tema in temas_excluidos:
-       temas_selecionados.remove(tema)
+    #for tema in temas_excluidos:
+    #   temas_selecionados.remove(tema)
        
+    for tema in temas_excluidos:
+        del temas_selecionados[tema]
+    
     #escreve relatório e armazena temas no BD
     arq_relatorio.write('\n- Temas selecionados' + '(' + str(len(temas_selecionados)) + '):' '\n\n')
     for tema in temas_selecionados:
@@ -1483,6 +1487,7 @@ def agrupar_temas(request):
             
             #verifica em quantos grupos foi particionado
             quantidade_grupos = set(partition.values())
+            situ ="indefinido"
         
             #se nao dividiu, termina
             if len(quantidade_grupos) == 1:
@@ -1530,7 +1535,7 @@ def agrupar_temas(request):
 def gerarMapaEResultados(request):
     #realtório
     arq_temas_subtemas = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt", 'w', 'utf-8')
-    arq_json = codecs.open("extrator/arquivos/p5_json_temas_subtemas.json", 'w', 'utf-8') 
+    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p5_json_temas_subtemas.json", 'w', 'utf-8') 
 
     
     #inicializa o BD
@@ -1594,10 +1599,26 @@ def gerarMapaEResultados(request):
         tabela_potenciacao ={} 
         
         #gera conteudo das tabelas
-        for vertice in vertices:            
-            tabela_potenciacao[vertice] = (tabela_graus.get(vertice)/maior_grau) + (tabela_betweenness.get(vertice)/maior_betweenness) + (tabela_eigenvector.get(vertice)/maior_eigenvector) 
+        for vertice in vertices:
+            try:
+                res_grau = tabela_graus.get(vertice)/maior_grau
+            except:
+                res_grau = 0
+            
+            try:
+                res_bet = tabela_betweenness.get(vertice)/maior_betweenness
+            except:
+                res_bet = 0
+            
+            try:
+                res_eig = tabela_eigenvector.get(vertice)/maior_eigenvector
+            except:
+                res_eig = 0
+           
+
+            tabela_potenciacao[vertice] = res_grau +res_bet + res_eig
             a = TemasNew.objects.get(tema__exact=vertice)
-            a.irt_l = (tabela_graus.get(vertice)/maior_grau) + (tabela_betweenness.get(vertice)/maior_betweenness) + (tabela_eigenvector.get(vertice)/maior_eigenvector)
+            a.irt_l = res_grau +res_bet + res_eig
             a.save()
 
     #calcula o IRT local referenciado e armazena no banco de dados de temas e subtemas
@@ -1632,6 +1653,7 @@ def gerarMapaEResultados(request):
         c = TemasNew.objects.get(tema__exact=nuc.tema)        
         tema_irt = c.irt      
         objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
+      
         arq_temas_subtemas.write('TEMA: ' + nuc.tema + ' (' + str(tema_irt) + ') ' + '\n\n')
         for obj in objs:            
             arq_temas_subtemas.write(obj.subtema + ' (' + str(obj.irt_l) + ') '+ '\n')  
@@ -1640,25 +1662,40 @@ def gerarMapaEResultados(request):
 
 
     #gera JSON files
-    
+    soma_irt_temas = 0
+    for st in nucleos_w:
+        soma_irt_temas = soma_irt_temas + st.irt
+
+
     #cabeçalho
     arq_json.write("{\n\"name\": \"Tema\",\n")
-    arq_json.write("\"value\": " + str(100) + ",\n")
+    arq_json.write("\"value\": " + str(2500) + ",\n")
+    arq_json.write("\"size\": " + str(100) + ",\n")
     arq_json.write("\"children\": [\n")
     arq_json.write("    {\n")
 
     for j, nuc in enumerate(nucleos_w):
         c = TemasNew.objects.get(tema__exact=nuc.tema)        
-        tema_irt = c.irt      
+        tema_irt = c.irt
+        xt = (tema_irt * 2500) / soma_irt_temas
+        
         objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
         
         arq_json.write("        \"name\": \"" + nuc.tema + "\",\n")
-        arq_json.write("        \"value\": " + str(100) + ",\n")
+        arq_json.write("        \"value\": " + str(xt) + ",\n")
+        arq_json.write("        \"size\": " + str(int(c.irt)) + ",\n")
         arq_json.write("        \"children\": [\n")
         
+        soma_irt_subtemas = 0
+        for sst in objs:
+            soma_irt_subtemas = soma_irt_subtemas + sst.irt_l
+        
         for i, obj in enumerate(objs):                   
+            
+            xs = (obj.irt_l * xt) / soma_irt_subtemas
+            refs = (obj.irt_l * 100) / soma_irt_subtemas
             #subtema 
-            arq_json.write("            {\"name\": \"" + obj.subtema + "\", \"value\": " + str(obj.irt_l) + "}")    
+            arq_json.write("            {\"name\": \"" + obj.subtema + "\", \"value\": " + str(xs) + ",  \"size\": " + str(int(refs)) + "}")    
             if i == (len(objs) -1):
                 arq_json.write("\n")         
             else:
@@ -1670,7 +1707,7 @@ def gerarMapaEResultados(request):
         else:
             arq_json.write("        ]\n    },\n    {\n")
        
-
+    arq_json.write("    ]\n}")
     #tema-pai o caro nao final
     
     #arq_json.write("        \"name\": \"" + str(111) + "\",\n")
