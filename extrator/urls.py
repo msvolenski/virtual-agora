@@ -7,7 +7,7 @@ urlpatterns = [
 
 
     
-    url(r'^extrator/antigo$', views.ExtratorHomeView.as_view(), name='extratorHome'),
+   
     url(r'^graph$', views.GraphTestView.as_view(), name='graphtest'),
     url(r'^extrator/$', views.ResultadosExtratorHomeView.as_view(), name='resultadosextratorHome'),
     url(r'^extrator/lematizar$', views.lematizar, name='lematizador'),
@@ -20,12 +20,13 @@ urlpatterns = [
     url(r'^extrator/limparIgnoradas$', views.limpar_palavras_ignoradas, name='limpar_ignoradas'),
     url(r'^extrator/relatorio$', views.gerar_relatorio, name='relatorio'),    
     url(r'^extrator/passos2a5$', views.executar_passos_2_a_5, name='executar_passos_2_a_5'),
+    url(r'^extrator/passos2$', views.executa_passo_2, name='executa_passo_2'),
     url(r'^extrator/listavertices$', views.lista_de_vertices, name='lista_vertices'),
     url(r'^extrator/mapear$', views.mapear, name='mapear'),
     url(r'^extrator/matriz$', views.matriz, name='matriz'),
     url(r'^extrator/corretor$', views.corretor_ortografico, name='corretor'),
     url(r'^extrator/atualizacorretor/(?P<palavra_correta>(.+))/(?P<posicao>(\d+))/(?P<opcao>[\w\-]+)$', views.atualiza_corretor_ortografico, name='atualiza_corretor'),
-    url(r'^extrator/rede$', views.rede_complexa, name='rede_complexa'),
+    url(r'^extrator/passo3$', views.executa_passo_3, name='executa_passo_3'),
     url(r'^extrator/metricasranking$', views.metricas_e_ranking, name='metricas_ranking'),    
     url(r'^extrator/mapeareextrair$',views.mapearEextrair, name='mapear_e_extrair'),
     url(r'^extrator/indicerepresentatividade$', views.calcula_indice_representatividade, name='calculair'),

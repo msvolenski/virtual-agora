@@ -16,9 +16,9 @@
 
     <title>Resultados do ECC</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
     <script src="http://d3js.org/d3.v3.min.js"></script>
-    
+
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
@@ -53,10 +53,6 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'agora/bootstrap/docs/examples/carousel/carousel.css' %}" rel="stylesheet">
-
-
-
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="background:white;font-family:verdana">
@@ -65,10 +61,12 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
+                    Menu
+                    <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Ágora Unicamp</span> demos              </a>
+                    <i class="fa fa-play-circle"></i>
+                    <span class="light">Ágora Unicamp</span> demos </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,12 +111,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading"><span style="color:#FACE83">D</span><span style="color:#FF9858">E</span><span style="color:#F65F47">M</span><span style="color:#EE2E3A">O</span><span style="color:#3F7C7F">S</span></h1>
+                        <h1 class="brand-heading">
+                            <span style="color:#FACE83">D</span>
+                            <span style="color:#FF9858">E</span>
+                            <span style="color:#F65F47">M</span>
+                            <span style="color:#EE2E3A">O</span>
+                            <span style="color:#3F7C7F">S</span>
+                        </h1>
                         <p class="intro-text">Democracy and Social Data.
                             <br>
-                             
+
                         </p>
-                        <p>A Collective Opinion Extraction Algorithm</p> 
+                        <p>A Collective Opinion Extraction Algorithm</p>
                         <a href="#ajuste" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -137,21 +141,21 @@
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opum' %}" class="botao_ajuste">Limpar Palavras Ignoradas</a>
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opdois' %}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
-                                       
+
                     <div class="titulo_ajuste">Métricas</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao8' %}" method="POST" role="form" enctype="multipart/form-data">
                             <div style="display:inline-block">
-                                <input type="checkbox" name="checks" {{check_g}} value="grau"> Graus    
-                                <input type="checkbox" name="checks" {{check_b}} value="betw"> Betweenness    
-                                <input type="checkbox" name="checks" {{check_c}} value="clos"> eigenvector    
+                                <input type="checkbox" name="checks" {{check_g}} value="grau"> Graus
+                                <input type="checkbox" name="checks" {{check_b}} value="betw"> Betweenness
+                                <input type="checkbox" name="checks" {{check_c}} value="clos"> eigenvector
                             </div>
-                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
-                                <input type="submit" class="botao_enviar" value="Enviar"> 
-                            </div>    
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">
+                                <input type="submit" class="botao_enviar" value="Enviar">
+                            </div>
                         </form>
-                    </div> 
-                    
+                    </div>
+
                     <div class="titulo_ajuste">Quantidade de Tweets </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao6' %}" method="POST" role="form" enctype="multipart/form-data">
@@ -159,18 +163,19 @@
                             <input style="width:100px" type="number" step="1" name="valor_nt" value={{valornt}} size="1"> Tweets
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
-                    </div>                    
-                    
+                    </div>
+
                     <div class="titulo_ajuste">Permitir Retweets</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao7' %}" method="POST" role="form" enctype="multipart/form-data">
                             <div style="display:inline-block">
-                                <input type="radio" name="display_type" {{check_sim}} value="sim"> Sim<br>
+                                <input type="radio" name="display_type" {{check_sim}} value="sim"> Sim
+                                <br>
                                 <input type="radio" name="display_type" {{check_nao}} value="nao"> Não
                             </div>
-                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
-                                <input type="submit" class="botao_enviar" value="Enviar"> 
-                            </div>    
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">
+                                <input type="submit" class="botao_enviar" value="Enviar">
+                            </div>
                         </form>
                     </div>
 
@@ -178,8 +183,7 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
                             k =
-                            <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1"> %
-                            dos nós da rede
+                            <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1"> % dos nós da rede
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -187,7 +191,7 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
                             faixa =
-                            <input style="width:80px" type="number" step="any" name="faixa_histo" value={{xxxx}} size="1", min="0" max="3">                            
+                            <input style="width:80px" type="number" step="any" name="faixa_histo" value={{xxxx}} size="1" , min="0" max="3">
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -195,21 +199,21 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
                             fc =
-                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1">                            % dos nós totais
+                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1"> % dos nós totais
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
                     <div class="titulo_ajuste">Frequência mínima do bigrama </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data"> fb =
-                            <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1">                            % de todos os bigramas do tema
+                            <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1"> % de todos os bigramas do tema
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
                     <div class="titulo_ajuste">Acuidade de Extração </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao5' %}" method="POST" role="form" enctype="multipart/form-data"> ae =
-                            <input style="width:50px" type="number" step="1" name="valor_ae" value={{valorae}} size="1">                            % de todas as extrações
+                            <input style="width:50px" type="number" step="1" name="valor_ae" value={{valorae}} size="1"> % de todas as extrações
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -217,21 +221,22 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao9' %}" method="POST" role="form" enctype="multipart/form-data">
                             <div style="display:inline-block">
-                                <input type="radio" name="radios" {{radios_1}} value="0.9"> Muito Alta    
-                                <input type="radio" name="radios" {{radios_2}} value="0.8"> Alta    
+                                <input type="radio" name="radios" {{radios_1}} value="0.9"> Muito Alta
+                                <input type="radio" name="radios" {{radios_2}} value="0.8"> Alta
                                 <input type="radio" name="radios" {{radios_3}} value="0.7"> Alta Baixa
-                                <input type="radio" name="radios" {{radios_4}} value="0.4"> Média 
-                                <input type="radio" name="radios" {{radios_5}} value="0.0"> Baixa    
+                                <input type="radio" name="radios" {{radios_4}} value="0.4"> Média
+                                <input type="radio" name="radios" {{radios_5}} value="0.0"> Baixa
                             </div>
-                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">    
-                                <input type="submit" class="botao_enviar" value="Enviar"> 
-                            </div>    
+                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">
+                                <input type="submit" class="botao_enviar" value="Enviar">
+                            </div>
                         </form>
-                    </div> 
+                    </div>
                     <div class="titulo_ajuste">Quantidade de Cluster para os Temas Principais </div>
                     <div class="form_ajuste">
-                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data"> nc =
-                            <input style="width:50px" type="number" step="1" name="valor_nc" value={{valor_nc}} size="1">                            Cluster(s)
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data">
+                            nc =
+                            <input style="width:50px" type="number" step="1" name="valor_nc" value={{valor_nc}} size="1"> Cluster(s)
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -239,79 +244,108 @@
             </div>
         </div>
     </section>
-    
-    
-    <section id="passo1" class="container content-section text-center">
-         <div class="inicio_timeline"><b>INÍCIO</b></div>
-        <section id="cd-timeline" class="cd-container" style="">
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
-                </div>
-                <!-- cd-timeline-img -->
-                <div class="cd-timeline-content">
-                    <h2 style="margin-bottom:15px">Dados do Twitter</h2>
-                    <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST"
-                        role="form" enctype="multipart/form-data">
-                        <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">
-                        <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
-                    </form>
-                    {% if tempo_p1dt %}
-                    <span class="cd-date" style="margin-left:-185px;">  {{tempo_p1dt}} s - {{contador_nt}} tweets </span>
-                    {% endif %}
-                </div>
-            </div>
 
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <span id="logo_vis_dados" class="glyphicon glyphicon-search" style="font-size:200%;margin-top:15px;"></span>
-                </div>
-                <div class="cd-timeline-content">
-                    <h2 style="margin-bottom:15px">Visualizar Dados</h2>
-                    <a href="{% url 'extrator:dados' %}" style="text-decoration:none;margin-left:45%;" class="cd-read-more">Abrir</a>
-                    {% if tempo_p1vd %}
-                    <span class="cd-date">{{tempo_p1vd}} s</span>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- cd-timeline-block -->
 
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <span id="logo_salvar_dados" class="glyphicon glyphicon-floppy-disk" style="font-size:200%;margin-top:15px;"></span>
-                </div>
-                <div class="cd-timeline-content">
-                    <h2 style="margin-bottom:15px">Salvar Dados</h2>
-                    <a href="{% url 'extrator:salvar_iniciais' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
-                    {% if tempo_p1sd %}
-                    <span class="cd-date" style="margin-left:-195px;">{{tempo_p1sd}} s</span>
-                    {% endif %}
-                </div>
-            </div>
-            <!-- cd-timeline-block -->
+    <section id="extracao" class="container content-section text-center" style="position:relative;padding-top:0px">
 
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <span id="logo_corretor" class="glyphicon glyphicon-pencil" style="font-size:200%;margin-top:15px;"></span>
-                </div>
-                <div class="cd-timeline-content">
-                    <h2 style="margin-bottom:15px">Corrigir ortografia</h2>
-                    <a href="{% url 'extrator:corretor' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Corrigir</a>
-                    {% if tempo_p1co %}
-                    <span class="cd-date">{{tempo_p1co}} s</span>
-                    {% endif %}
-                </div>
-            </div>
+        <!-- INÍCIO DO PASSO 1 -->    
+        <div class="inicio_timeline">
+            <b>PASSO 1</b>
+        </div>
 
-            <!-- começa o PASSO 2  -->
-            <div id="passo2" style="padding-top:300px;">
-                
-                
-                <div class="branch" style="display:inline-block;margin-left:20px"><b></b></div>               
-                <div class="executar_passos" style="position:absolute;top:895px;left:200px;width:350px;"><a href="{% url 'extrator:executar_passos_2_a_5' %}" style="color:#4d4d4d"><b>EXECUTAR TODOS OS PASSOS</b></a></div>
-                
-                
-                
+        <div id="cd-timeline" class="cd-container" style="position:relative;">            
+            <div id="passo1">
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content">
+                        <h2 style="margin-bottom:15px">Dados do Twitter</h2>
+                        <form style="display:inline-block;text-shadow:none;color:black;" action="{% url 'extrator:dados_twitter' %}" method="POST"
+                            role="form" enctype="multipart/form-data">
+                            <input style="display:block" type="text" name="hashtag" placeholder="Digite uma palavra...">
+                            <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
+                        </form>
+                        {% if tempo_p1dt %}
+                        <span class="cd-date" style="margin-left:-185px;"> {{tempo_p1dt}} s - {{contador_nt}} tweets </span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_vis_dados" class="glyphicon glyphicon-search" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content">
+                        <h2 style="margin-bottom:15px">Inserir Dados manualmnte</h2>
+                        <a href="{% url 'extrator:dados' %}" style="text-decoration:none;margin-left:45%;" class="cd-read-more">Abrir</a>
+                        {% if tempo_p1vd %}
+                        <span class="cd-date">{{tempo_p1vd}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_salvar_dados" class="glyphicon glyphicon-floppy-disk" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content">
+                        <h2 style="margin-bottom:15px">Salvar Dados</h2>
+                        <a href="{% url 'extrator:salvar_iniciais' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
+                        {% if tempo_p1sd %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p1sd}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_corretor" class="glyphicon glyphicon-pencil" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content">
+                        <h2 style="margin-bottom:15px">Corrigir ortografia</h2>
+                        <a href="{% url 'extrator:corretor' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Corrigir</a>
+                        {% if tempo_p1co %}
+                        <span class="cd-date">{{tempo_p1co}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+
+        {% if documento %}        
+        <!-- RESULTADOS DO PASSO 1  -->
+        <div class="result-content" id="resultado-passo-1">
+              <div style="padding:50px">{{documento|linebreaks}}</div>  
+        </div>
+        {% endif %}
+        
+        {% if not documento %}
+        <div class="sem_resultado" style="margin-top:100px">
+                <b>RESULTADOS</b>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 1 +++++++++++++++++++++++++ 1  -->
+
+
+
+
+        <!-- começa o PASSO 2  -->
+        <div class="inicio_timeline">
+            <a href="{% url 'extrator:executa_passo_2' %}" style="color:inherit;font-weight:bold">PASSO 2</a>
+        </div>
+
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
+            <div id="passo2">
+
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_preparar_dados" class="glyphicon glyphicon-file" style="font-size:200%;margin-top:15px;"></span>
@@ -319,11 +353,12 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Preparar Dados</h2>
                         <a href="{% url 'extrator:preproc' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Preparar</a>
-                         {% if tempo_p2pd %}
+                        {% if tempo_p2pd %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p2pd}} s</span>
                         {% endif %}
                     </div>
                 </div>
+
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
@@ -332,12 +367,13 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Lematizar</h2>
                         <a href="{% url 'extrator:lematizador' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">lematizar</a>
-                         {% if tempo_p2le %}
-                         <span class="cd-date">{{tempo_p2le}} s</span>
-                         {% endif %}
+                        {% if tempo_p2le %}
+                        <span class="cd-date">{{tempo_p2le}} s</span>
+                        {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_eliminar_sw" class="glyphicon glyphicon-scissors" style="font-size:200%;margin-top:15px;"></span>
@@ -345,12 +381,13 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Eliminar Stop-words</h2>
                         <a href="{% url 'extrator:stopwords' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Eliminar</a>
-                         {% if tempo_p2es %}
+                        {% if tempo_p2es %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p2es}} s</span>
-                         {% endif %}
+                        {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_salvar_bd" class="glyphicon glyphicon-floppy-save" style="font-size:200%;margin-top:15px;"></span>
@@ -358,12 +395,13 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4">
                         <h2>Salvar no Banco de Dados</h2>
                         <a href="{% url 'extrator:salvar' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Salvar</a>
-                         {% if tempo_p2sb %}
+                        {% if tempo_p2sb %}
                         <span class="cd-date">{{tempo_p2sb}} s</span>
-                         {% endif %}
+                        {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_gerar_rp2" class="glyphicon glyphicon-list-alt" style="font-size:200%;margin-top:15px;"></span>
@@ -371,19 +409,41 @@
                     <div class="cd-timeline-content" style="background: #F2B0E4;">
                         <h2>Gerar Relatório</h2>
                         <a href="{% url 'extrator:relatorio' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                         {% if tempo_p2gr %}
+                        {% if tempo_p2gr %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p2gr}} s</span>
                         {% endif %}
                     </div>
-                    <!-- cd-timeline-content -->
                 </div>
-                <!-- cd-timeline-block -->
+
             </div>
+        </div>
+
+        {% if documento_p2 %}        
+        <!-- RESULTADOS DO PASSO 2  -->
+        <div class="result-content" id="resultado-passo-2" style="margin-top:150px">
+              <div >{{documento_p2|linebreaks}}</div>  
+        </div>
+        {% endif %}
+        
+        {% if not documento_p2 %}
+        <div class="sem_resultado" style="position:relative;margin-top:110px;">
+                <b>RESULTADOS</b>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 2 +++++++++++++++++++++++++ 1  -->
 
 
 
-            <div id="passo3" style="padding-top:300px;">
 
+        <!-- começa o PASSO 3  -->
+        <div class="inicio_timeline">
+            <a href="{% url 'extrator:executa_passo_3' %}" style="color:inherit;font-weight:bold">PASSO 3</a>
+        </div>
+
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
+            <div id="passo3">
+
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_def_vertices" class="glyphicon glyphicon-record" style="font-size:200%;margin-top:15px;"></span>
@@ -396,6 +456,7 @@
                         {% endif %}
                     </div>
                 </div>
+
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
@@ -405,11 +466,12 @@
                         <h2>Indexar Palavras</h2>
                         <a href="{% url 'extrator:mapear' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Indexar</a>
                         {% if tempo_p3ip %}
-                         <span class="cd-date">{{tempo_p3ip}} s</span>
+                        <span class="cd-date">{{tempo_p3ip}} s</span>
                         {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_rede" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
@@ -417,19 +479,42 @@
                     <div class="cd-timeline-content" style="background: #33e0a1">
                         <h2>Gerar Rede Complexa</h2>
                         <a href="{% url 'extrator:matriz' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                         {% if tempo_p3gr %}
+                        {% if tempo_p3gr %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p3gr}} s</span>
-                         {% endif %}
+                        {% endif %}
                     </div>
                 </div>
+            
+            </div>
+        </div>
 
+        {% if documento %}        
+        <!-- RESULTADOS DO PASSO 2  -->
+        <div class="result-content" id="resultado-passo-2">
+              <div >{{documento|linebreaks}}</div>  
+        </div>
+        {% endif %}
+        
+        {% if not documento %}
+        <div class="sem_resultado" style="position:relative;">
+                <b>RESULTADOS</b>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 1 +++++++++++++++++++++++++ 1  -->
+
+
+
+
+
+        <!-- começa o PASSO 4  -->
+        <div class="inicio_timeline">
+            <b>PASSO 4</b>
+        </div>
+
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
+            <div id="passo4">
 
                 <!-- cd-timeline-block -->
-
-            </div>
-
-            <div id="passo4" style="padding-top:300px;">
-
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_calc_metricas" class="glyphicon glyphicon-plus" style="font-size:200%;margin-top:15px;"></span>
@@ -442,6 +527,7 @@
                         {% endif %}
                     </div>
                 </div>
+
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
@@ -450,12 +536,13 @@
                     <div class="cd-timeline-content" style="background: #EFCEAA">
                         <h2>calcular Índice</h2>
                         <a href="{% url 'extrator:calularindice' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                         {% if tempo_p4ci %}
-                         <span class="cd-date">{{tempo_p4ci}} s</span>
-                         {% endif %}
+                        {% if tempo_p4ci %}
+                        <span class="cd-date">{{tempo_p4ci}} s</span>
+                        {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_sel_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
@@ -464,11 +551,12 @@
                         <h2>Selecionar Temas</h2>
                         <a href="{% url 'extrator:selecionar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Selecionar</a>
                         {% if tempo_p4st %}
-                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
                         {% endif %}
-                    </div>
+                    </div>f
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
@@ -477,30 +565,41 @@
                         <h2>Agrupar Temas e Sub-temas</h2>
                         <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>
                         {% if tempo_p4st %}
-                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
                         {% endif %}
                     </div>
                 </div>
 
-                
-                <div class="cd-timeline-block">
-                        <div class="cd-timeline-img cd-picture">
-                            <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
-                        </div>
-                        <div class="cd-timeline-content" style="background: #EFCEAA">
-                            <h2>Gerar Mapas e Resultados</h2>
-                            <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                            {% if tempo_p4st %}
-                             <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
-                            {% endif %}
-                        </div>
-                    </div>
                 <!-- cd-timeline-block -->
-                
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content" style="background: #EFCEAA">
+                        <h2>Gerar Mapas e Resultados</h2>
+                        <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                        {% if tempo_p4st %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
+
             </div>
+        </div>
 
-            <div id="passo5" style="padding-top:300px;">
 
+
+
+
+        <!-- começa o PASSO 5  -->
+        <div class="inicio_timeline">
+                <b>PASSO 5</b>
+        </div>
+    
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
+            <div id="passo5">
+
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_protofrases" class="glyphicon glyphicon-tasks" style="font-size:200%;margin-top:15px;"></span>
@@ -508,11 +607,12 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Protofrases</h2>
                         <a href="{% url 'extrator:processarpfs'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                         {% if tempo_p5pr %}
-                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p5pr}} s</span>
-                         {% endif %}
+                        {% if tempo_p5pr %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5pr}} s</span>
+                        {% endif %}
                     </div>
                 </div>
+
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
@@ -521,12 +621,13 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Extração</h2> {{mess}}
                         <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>
-                         {% if tempo_p5ex %}
-                         <span class="cd-date">{{tempo_p5ex}} s</span>
-                         {% endif %}
+                        {% if tempo_p5ex %}
+                        <span class="cd-date">{{tempo_p5ex}} s</span>
+                        {% endif %}
                     </div>
                 </div>
 
+                <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_repres" class="glyphicon glyphicon-king" style="font-size:200%;margin-top:15px;"></span>
@@ -534,40 +635,46 @@
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Representatividade</h2>
                         <a href="{% url 'extrator:calculair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                         {% if tempo_p5re %}
+                        {% if tempo_p5re %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p5re}} s</span>
-                         {% endif %}
+                        {% endif %}
                     </div>
                     <div class="botao_resultados_1" style="height:0px;border:none;"></div>
                 </div>
-                <!-- cd-timeline-block -->
 
             </div>
-        </section>
-        <div id="fim" class="botao_resultados_2"><a href="{% url 'extrator:resultados' 'none' %}" style="color:black"><b>RESULTADOS</b></a></div>
-        
+        </div>
+         <!-- fim dos passos  -->
+
+
+        <div id="fim" class="botao_resultados_2">
+            <a href="{% url 'extrator:resultados' 'none' %}" style="color:black">
+                <b>RESULTADOS</b>
+            </a>
+        </div>
+
         {% if tempo_p2a5 %}
         <span class="cd-date" style="margin-left:10px;">{{tempo_p2a5}} s</span>
         {% endif %}
-        
+
     </section>
 
-    </div>
-    </section>
 
-    
+
+
+
     <!-- About Section -->
     <section id="resultados" class="container content-section text-center" style="background:white;">
-        
+
         <div style="padding:30px;margin:0 auto;font-size:1.5em;font-weight:bold"> MAPA DE TEMAS</div>
         <resultados style="margin: 0 auto"></resultados>
         <div style="padding:10px;text-align:left"> LEGENDA </div>
         <div id="legend" style="margin:0 auto;text-align:center"></div>
-   
-    </section>
-    
 
-    
+    </section>
+
+
+
 
 
 
@@ -578,12 +685,16 @@
                 <h2>Contato</h2>
                 <p>Sinta-se livre para opinar e dar feedback sobre o projeto.
                 </p>
-                <p><a href="mailto:tiagonovaesangelo@gmail.com">tiagonovaesangelo@gmail.com</a>
+                <p>
+                    <a href="mailto:tiagonovaesangelo@gmail.com">tiagonovaesangelo@gmail.com</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
 
                     <li>
-                        <a href="https://github.com/msvolenski/virtual-agora" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        <a href="https://github.com/msvolenski/virtual-agora" class="btn btn-default btn-lg">
+                            <i class="fa fa-github fa-fw"></i>
+                            <span class="network-name">Github</span>
+                        </a>
                     </li>
 
                 </ul>
@@ -609,7 +720,9 @@
                 <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
                 <a class="glyphicon glyphicon-remove-circle" href="{% url 'extrator:atualiza_corretor' 'nones' 0 'opcao5' %}" style="display:inline;float:right;color:black;font-size:200%;margin-top:-40px;margin-right:30px"></a>
                 <div style="border:1px solid black;margin:10px 30px 10px 30px">
-                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palavra}}</b></div>
+                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%">
+                        <b>{{palavra}}</b>
+                    </div>
                 </div>
                 <div style="color:black;padding:10px;font-size:120%;margin:10px">Faça uma das 5 opções: </div>
                 <div style="border:0.5px solid black;margin:10px 30px 30px 30px">
@@ -623,7 +736,7 @@
                     <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" por uma das sugestões: </div>
                     <div style="margin:0px 20px 0px 20px">
                         {% for sugestao in lista_de_sugestoes %}
-                        <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a>                        {% endfor %} {% if not lista_de_sugestoes %}
+                        <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a> {% endfor %} {% if not lista_de_sugestoes %}
                         <div style="margin-left:40%;">não há sugestões</div>
                         {% endif %}
                     </div>
@@ -640,7 +753,7 @@
                     </div>
                     <hr style="border-top: 1px solid #848484">
                     <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Adicionar "{{palavra}}" às stop-words (a palavra aparecerá novamente para escolha de uma das opções acima):
-                        </div>
+                    </div>
                     <div style="margin-bottom: 20px">
                         <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
                     </div>
@@ -651,37 +764,39 @@
 
     {% endif %} {%if testa_sub %}
 
-   
-    
-    
-    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
-            <form action="{% url 'extrator:testa_substantivo_usuario'%}" method="POST" role="form" enctype="multipart/form-data">
 
-        <div class="modal-dialog" id="modal-dialog-mob">
-            <div class="modal-content">
-                {%for palav in palavras_faltantes %}  
-                       
-                <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
-                <div style="border:1px solid black;margin:10px 30px 10px 30px">
-                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%"><b>{{palav}}</b></div>
-                </div>
-                <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
-                <div style="padding:40px;display:block;margin-left:200px;">
-                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="sim"> Sim 
+
+
+    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+        <form action="{% url 'extrator:testa_substantivo_usuario'%}" method="POST" role="form" enctype="multipart/form-data">
+
+            <div class="modal-dialog" id="modal-dialog-mob">
+                <div class="modal-content">
+                    {%for palav in palavras_faltantes %}
+
+                    <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+                    <div style="border:1px solid black;margin:10px 30px 10px 30px">
+                        <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%">
+                            <b>{{palav}}</b>
+                        </div>
+                    </div>
+                    <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
+                    <div style="padding:40px;display:block;margin-left:200px;">
+                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="sim"> Sim
                         <input type="radio" name="checks_{{palav}}" {{check_c}} value="nao"> Não
-                   
+
+                    </div>
+                    {% endfor %}
+                    <div style="display:inline-block;position:relative;margin:10px;">
+                        <input type="submit" class="botao_enviar" value="Enviar">
+                    </div>
                 </div>
-                {% endfor %}
-                <div style="display:inline-block;position:relative;margin:10px;">    
-                        <input type="submit" class="botao_enviar" value="Enviar"> 
-                </div> 
-            </div>
-             
+
         </form>
-       
+
         </div>
     </div>
-  
+
     {% endif %}
 
 
@@ -702,149 +817,144 @@
 
     <!-- BS JavaScript -->
     <script type="text/javascript" src="{% static 'agora/js/bootstrap.js' %}"></script>
-    <script src="{% static 'agora/js/main.js' %}"></script>
-
-    {% if goto %}
+    <script src="{% static 'agora/js/main.js' %}"></script> {% if goto %}
     <script>
         window.location.hash = '#{{goto}}';
         3
-    </script>
-
-    {% endif %} {% if muda_logo %}
+    </script> {% endif %} {% if muda_logo %}
     <script>
         var classe = document.getElementById('{{muda_logo}}');
         classe.className = "glyphicon glyphicon-ok";
         classe.style.color = "#A1E570";
-    </script>
-    {% endif %} {% if muda_logo_error %}
+    </script> {% endif %} {% if muda_logo_error %}
     <script>
-         var classe = document.getElementById('{{muda_logo_error}}');
-         classe.className = "glyphicon glyphicon-remove";
-         classe.style.color = "red";
-    </script>
-    {% endif %}
+        var classe = document.getElementById('{{muda_logo_error}}');
+        classe.className = "glyphicon glyphicon-remove";
+        classe.style.color = "red";
+    </script> {% endif %}
 
     <script type="text/javascript">
-         function show_sidebar(name) {
-             var nome = name.attributes["name"].value;
-             document.getElementById(nome).style.visibility = "visible";
+        function show_sidebar(name) {
+            var nome = name.attributes["name"].value;
+            document.getElementById(nome).style.visibility = "visible";
 
-         }
+        }
 
-         function hide_sidebar(name) {
-             var nome = name.attributes["name"].value;
-             document.getElementById(nome).style.visibility = "hidden";
-         }
+        function hide_sidebar(name) {
+            var nome = name.attributes["name"].value;
+            document.getElementById(nome).style.visibility = "hidden";
+        }
 
-         function mostrar_paragrafo(name) {
-             var nome = name.attributes["name"].value;
-             cond = document.getElementById(nome);
+        function mostrar_paragrafo(name) {
+            var nome = name.attributes["name"].value;
+            cond = document.getElementById(nome);
 
-             if (cond.style.visibility == "hidden") {
-                 cond.style.visibility = "visible";
-                 name.style.background = "red";
-             }
-             else {
-                 cond.style.visibility = 'hidden';
-                 name.style.background = "#C30FFF";
-                 
-             }
-         }
+            if (cond.style.visibility == "hidden") {
+                cond.style.visibility = "visible";
+                name.style.background = "red";
+            }
+            else {
+                cond.style.visibility = 'hidden';
+                name.style.background = "#C30FFF";
+
+            }
+        }
     </script>
 
     <script>
- 
+
         var color = d3.scale.category10();
-        
+
         var width = 800,
             height = 500;
-        
+
         var canvas = d3.select("resultados").append("svg")
-              .attr("width", width)
-              .attr("height", height)         
-        
-  
+            .attr("width", width)
+            .attr("height", height)
+
+
         d3.json("{% static 'agora/json/p5_json_temas_subtemas.json' %}", function (data) {
-        
+
             var treemap = d3.layout.treemap()
-              .size([width, height])
-              .nodes(data)
-  
-            var parents = treemap.filter(function(d) {
-                return d.children;}); 
-            
+                .size([width, height])
+                .nodes(data)
+
+            var parents = treemap.filter(function (d) {
+                return d.children;
+            });
+
             var cells = canvas.selectAll("g")
-              .data(treemap)
-              .enter()
-              .append("g")
-              .attr("class","cell")       
-         
-            
+                .data(treemap)
+                .enter()
+                .append("g")
+                .attr("class", "cell")
+
+
             cells.append("rect")
-              .attr("x", function (d) { return d.x; })
-              .attr("y", function (d) { return d.y; })
-              .attr("width", function (d) { return d.dx; })
-              .attr("height", function (d) { return d.dy; })
-              .attr("fill", function (d) { return d.children ? null : color(d.parent.name);})
-              .attr("stroke","#fff")
-              .attr("ident", function (d) { return d.children ? null : d.parent.name + ' ' + d.parent.size + '%'})           
-             
-  
+                .attr("x", function (d) { return d.x; })
+                .attr("y", function (d) { return d.y; })
+                .attr("width", function (d) { return d.dx; })
+                .attr("height", function (d) { return d.dy; })
+                .attr("fill", function (d) { return d.children ? null : color(d.parent.name); })
+                .attr("stroke", "#fff")
+                .attr("ident", function (d) { return d.children ? null : d.parent.name + ' ' + d.parent.size + '%' })
+
+
             cells.append("text")
-              .attr("x", function (d) { return d.x + d.dx / 2 })
-              .attr("y", function (d) { return d.y + d.dy / 2 })
-              .attr("text-anchor", "middle")
-              .text(function (d) { return d.name + "\n\r" + d.size + '%' })            
-     
-              
+                .attr("x", function (d) { return d.x + d.dx / 2 })
+                .attr("y", function (d) { return d.y + d.dy / 2 })
+                .attr("text-anchor", "middle")
+                .text(function (d) { return d.name + "\n\r" + d.size + '%' })
+
+
             var i;
             parents_list = []
-            for (i = 0; i < parents.length; i++) { 
+            for (i = 0; i < parents.length; i++) {
                 parents_list.push(parents[i].name)
             }
-            
+
             cores_distintas = []
             cores_distintas_test = []
-            d3.selectAll("rect").each(function (d){    
-                var b = d3.select(this).attr("fill") 
-                var a = d3.select(this).attr("ident") 
-                
+            d3.selectAll("rect").each(function (d) {
+                var b = d3.select(this).attr("fill")
+                var a = d3.select(this).attr("ident")
+
                 if (cores_distintas_test.indexOf(b) >= 0) {
                     console.log(b)
                 } else {
-                    if (a){
-                    var tuple = [b,a]                 
-                    cores_distintas.push(tuple)
-                    cores_distintas_test.push(b)
+                    if (a) {
+                        var tuple = [b, a]
+                        cores_distintas.push(tuple)
+                        cores_distintas_test.push(b)
                     }
-                }        
-                
-            }) 
-            
-            var legenda = d3.select("#legend")
-            .selectAll('div')           
-            .data(cores_distintas) 
-            
-            legenda.enter('div')
-              .append('div') 
-              .style("position", "relative")
-              .style("width", 200 + "px")
-              .style("height", 30 + "px")  
-              .style("background", function (d) { { return d[0]} }) 
-              .style("text-align", "center") 
-              .style("vertical-align", "middle")
-              .style("color", "black")
-              .style("line-height", "30px");                
-              
-            legenda.append("text")          
-              .text(function (d) { { return d[1]} })
-              
-             
-        });       
-        
-      </script> 
+                }
 
-   
+            })
+
+            var legenda = d3.select("#legend")
+                .selectAll('div')
+                .data(cores_distintas)
+
+            legenda.enter('div')
+                .append('div')
+                .style("position", "relative")
+                .style("width", 200 + "px")
+                .style("height", 30 + "px")
+                .style("background", function (d) { { return d[0] } })
+                .style("text-align", "center")
+                .style("vertical-align", "middle")
+                .style("color", "black")
+                .style("line-height", "30px");
+
+            legenda.append("text")
+                .text(function (d) { { return d[1] } })
+
+
+        });
+
+    </script>
+
+
 </body>
 
 </html>

@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 646 parágrafos.
-Os dados de entrada possuem 4815 palavras.
-Os dados lematizados possuem 5145 palavras.
-Palavras não lematizadas: jae-in salva-lo jae-in jae-in jae-in jae-in jae-in sul-coreano = ex-diretor jae-in trump-kim norte-coreano = jae-in sul-coreano o-premio-nobel-da-paz sul-coreano jong-un pró-lula pró-lula pró-lula pró-lula pró-lula pró-lula < < libertá-los $ pró-lula = > 
-O documento lematizado e sem stopwords possui 2778 palavras.
+Os dados de entrada contém 311 parágrafos.
+Os dados de entrada possuem 2383 palavras.
+Os dados lematizados possuem 2563 palavras.
+Palavras não lematizadas: $ ex-ministros $ $ $ $ ex-ministros ri-di-cu-la $ pró-lula 
+O documento lematizado e sem stopwords possui 1427 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 42.3052959502 %.
-Em média, cada sentença do texto original possui 7 palavras.
-Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.
+Compressão do texto após pré-processamento: 40.1174989509 %.
+Em média, cada sentença do texto original possui 8 palavras.
+Em média, cada sentença do texto lematizado sem stop-words possui 5 palavras.
