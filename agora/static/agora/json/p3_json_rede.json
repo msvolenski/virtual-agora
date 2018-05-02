@@ -1,0 +1,6161 @@
+{
+    "nodes": [
+        {
+            "id": "lula",
+            "group": "0",
+            "other": "0"
+        },
+        {
+            "id": "preso",
+            "group": "0",
+            "other": "1"
+        },
+        {
+            "id": "político",
+            "group": "0",
+            "other": "2"
+        },
+        {
+            "id": "pgr",
+            "group": "0",
+            "other": "3"
+        },
+        {
+            "id": "apresentar",
+            "group": "0",
+            "other": "4"
+        },
+        {
+            "id": "novo",
+            "group": "0",
+            "other": "5"
+        },
+        {
+            "id": "denúncia",
+            "group": "0",
+            "other": "6"
+        },
+        {
+            "id": "gleisi",
+            "group": "0",
+            "other": "7"
+        },
+        {
+            "id": "palocci",
+            "group": "0",
+            "other": "8"
+        },
+        {
+            "id": "defeso",
+            "group": "0",
+            "other": "9"
+        },
+        {
+            "id": "pedir",
+            "group": "0",
+            "other": "10"
+        },
+        {
+            "id": "recorrer",
+            "group": "0",
+            "other": "11"
+        },
+        {
+            "id": "condenação",
+            "group": "0",
+            "other": "12"
+        },
+        {
+            "id": "tríplex",
+            "group": "0",
+            "other": "13"
+        },
+        {
+            "id": "liberdade",
+            "group": "0",
+            "other": "14"
+        },
+        {
+            "id": "ué",
+            "group": "0",
+            "other": "15"
+        },
+        {
+            "id": "esperar",
+            "group": "0",
+            "other": "16"
+        },
+        {
+            "id": "honesto",
+            "group": "0",
+            "other": "17"
+        },
+        {
+            "id": "perseguido",
+            "group": "0",
+            "other": "18"
+        },
+        {
+            "id": "querer",
+            "group": "0",
+            "other": "19"
+        },
+        {
+            "id": "ver",
+            "group": "0",
+            "other": "20"
+        },
+        {
+            "id": "abrir",
+            "group": "0",
+            "other": "21"
+        },
+        {
+            "id": "bico",
+            "group": "0",
+            "other": "22"
+        },
+        {
+            "id": "livre",
+            "group": "0",
+            "other": "23"
+        },
+        {
+            "id": "opinião",
+            "group": "0",
+            "other": "24"
+        },
+        {
+            "id": "denunciar",
+            "group": "0",
+            "other": "25"
+        },
+        {
+            "id": "três",
+            "group": "0",
+            "other": "26"
+        },
+        {
+            "id": "lava",
+            "group": "0",
+            "other": "27"
+        },
+        {
+            "id": "jato",
+            "group": "0",
+            "other": "28"
+        },
+        {
+            "id": "corrupção",
+            "group": "0",
+            "other": "29"
+        },
+        {
+            "id": "lavagem",
+            "group": "0",
+            "other": "30"
+        },
+        {
+            "id": "40",
+            "group": "0",
+            "other": "31"
+        },
+        {
+            "id": "milhão",
+            "group": "0",
+            "other": "32"
+        },
+        {
+            "id": "odebrecht",
+            "group": "0",
+            "other": "33"
+        },
+        {
+            "id": "gostar",
+            "group": "0",
+            "other": "34"
+        },
+        {
+            "id": "vídeo",
+            "group": "0",
+            "other": "35"
+        },
+        {
+            "id": "desmascarar",
+            "group": "0",
+            "other": "36"
+        },
+        {
+            "id": "vitimismo",
+            "group": "0",
+            "other": "37"
+        },
+        {
+            "id": "usado",
+            "group": "0",
+            "other": "38"
+        },
+        {
+            "id": "pt",
+            "group": "0",
+            "other": "39"
+        },
+        {
+            "id": "após",
+            "group": "0",
+            "other": "40"
+        },
+        {
+            "id": "tiro",
+            "group": "0",
+            "other": "41"
+        },
+        {
+            "id": "inocente",
+            "group": "0",
+            "other": "42"
+        },
+        {
+            "id": "brasil",
+            "group": "0",
+            "other": "43"
+        },
+        {
+            "id": "felicidade",
+            "group": "0",
+            "other": "44"
+        },
+        {
+            "id": "culpar",
+            "group": "0",
+            "other": "45"
+        },
+        {
+            "id": "morar",
+            "group": "0",
+            "other": "46"
+        },
+        {
+            "id": "vez",
+            "group": "0",
+            "other": "47"
+        },
+        {
+            "id": "ex-ministros",
+            "group": "0",
+            "other": "48"
+        },
+        {
+            "id": "paulo",
+            "group": "0",
+            "other": "49"
+        },
+        {
+            "id": "bernardo",
+            "group": "0",
+            "other": "50"
+        },
+        {
+            "id": "favorecer",
+            "group": "0",
+            "other": "51"
+        },
+        {
+            "id": "cadeia",
+            "group": "0",
+            "other": "52"
+        },
+        {
+            "id": "junto",
+            "group": "0",
+            "other": "53"
+        },
+        {
+            "id": "curtitiba",
+            "group": "0",
+            "other": "54"
+        },
+        {
+            "id": "poupancinha",
+            "group": "0",
+            "other": "55"
+        },
+        {
+            "id": "operário",
+            "group": "0",
+            "other": "56"
+        },
+        {
+            "id": "descoberto",
+            "group": "0",
+            "other": "57"
+        },
+        {
+            "id": "108",
+            "group": "0",
+            "other": "58"
+        },
+        {
+            "id": "luxemburgo",
+            "group": "0",
+            "other": "59"
+        },
+        {
+            "id": "jornal",
+            "group": "0",
+            "other": "60"
+        },
+        {
+            "id": "pai",
+            "group": "0",
+            "other": "61"
+        },
+        {
+            "id": "marcelo",
+            "group": "0",
+            "other": "62"
+        },
+        {
+            "id": "comitê",
+            "group": "0",
+            "other": "63"
+        },
+        {
+            "id": "luta",
+            "group": "0",
+            "other": "64"
+        },
+        {
+            "id": "golpe",
+            "group": "0",
+            "other": "65"
+        },
+        {
+            "id": "jardim",
+            "group": "0",
+            "other": "66"
+        },
+        {
+            "id": "piedade",
+            "group": "0",
+            "other": "67"
+        },
+        {
+            "id": "realizar",
+            "group": "0",
+            "other": "68"
+        },
+        {
+            "id": "panfletagem",
+            "group": "0",
+            "other": "69"
+        },
+        {
+            "id": "diário",
+            "group": "0",
+            "other": "70"
+        },
+        {
+            "id": "causa",
+            "group": "0",
+            "other": "71"
+        },
+        {
+            "id": "dilma",
+            "group": "0",
+            "other": "72"
+        },
+        {
+            "id": "propina",
+            "group": "0",
+            "other": "73"
+        },
+        {
+            "id": "loucura",
+            "group": "0",
+            "other": "74"
+        },
+        {
+            "id": "emprego",
+            "group": "0",
+            "other": "75"
+        },
+        {
+            "id": "salário",
+            "group": "0",
+            "other": "76"
+        },
+        {
+            "id": "nariz",
+            "group": "0",
+            "other": "77"
+        },
+        {
+            "id": "saber",
+            "group": "0",
+            "other": "78"
+        },
+        {
+            "id": "colocar",
+            "group": "0",
+            "other": "79"
+        },
+        {
+            "id": "aécio",
+            "group": "0",
+            "other": "80"
+        },
+        {
+            "id": "cela",
+            "group": "0",
+            "other": "81"
+        },
+        {
+            "id": "limpo",
+            "group": "0",
+            "other": "82"
+        },
+        {
+            "id": "presídio",
+            "group": "0",
+            "other": "83"
+        },
+        {
+            "id": "aspirar",
+            "group": "0",
+            "other": "84"
+        },
+        {
+            "id": "pó",
+            "group": "0",
+            "other": "85"
+        },
+        {
+            "id": "passa",
+            "group": "0",
+            "other": "86"
+        },
+        {
+            "id": "álcool",
+            "group": "0",
+            "other": "87"
+        },
+        {
+            "id": "doação",
+            "group": "0",
+            "other": "88"
+        },
+        {
+            "id": "respeito",
+            "group": "0",
+            "other": "89"
+        },
+        {
+            "id": "discordo",
+            "group": "0",
+            "other": "90"
+        },
+        {
+            "id": "prender",
+            "group": "0",
+            "other": "91"
+        },
+        {
+            "id": "levante",
+            "group": "0",
+            "other": "92"
+        },
+        {
+            "id": "mandar",
+            "group": "0",
+            "other": "93"
+        },
+        {
+            "id": "nome",
+            "group": "0",
+            "other": "94"
+        },
+        {
+            "id": "achar",
+            "group": "0",
+            "other": "95"
+        },
+        {
+            "id": "bandido",
+            "group": "0",
+            "other": "96"
+        },
+        {
+            "id": "enganado",
+            "group": "0",
+            "other": "97"
+        },
+        {
+            "id": "né",
+            "group": "0",
+            "other": "98"
+        },
+        {
+            "id": "organização",
+            "group": "0",
+            "other": "99"
+        },
+        {
+            "id": "criminoso",
+            "group": "0",
+            "other": "100"
+        },
+        {
+            "id": "tornar",
+            "group": "0",
+            "other": "101"
+        },
+        {
+            "id": "principal",
+            "group": "0",
+            "other": "102"
+        },
+        {
+            "id": "alvo",
+            "group": "0",
+            "other": "103"
+        },
+        {
+            "id": "operação",
+            "group": "0",
+            "other": "104"
+        },
+        {
+            "id": "esclarecimento",
+            "group": "0",
+            "other": "105"
+        },
+        {
+            "id": "ganho",
+            "group": "0",
+            "other": "106"
+        },
+        {
+            "id": "empresa",
+            "group": "0",
+            "other": "107"
+        },
+        {
+            "id": "enganar",
+            "group": "0",
+            "other": "108"
+        },
+        {
+            "id": "ninguém",
+            "group": "0",
+            "other": "109"
+        },
+        {
+            "id": "despistar",
+            "group": "0",
+            "other": "110"
+        },
+        {
+            "id": "perseguição",
+            "group": "0",
+            "other": "111"
+        },
+        {
+            "id": "dallagnol",
+            "group": "0",
+            "other": "112"
+        },
+        {
+            "id": "manda",
+            "group": "0",
+            "other": "113"
+        },
+        {
+            "id": "vistoriar",
+            "group": "0",
+            "other": "114"
+        },
+        {
+            "id": "celular",
+            "group": "0",
+            "other": "115"
+        },
+        {
+            "id": "defunto",
+            "group": "0",
+            "other": "116"
+        },
+        {
+            "id": "cunha",
+            "group": "0",
+            "other": "117"
+        },
+        {
+            "id": "caro",
+            "group": "0",
+            "other": "118"
+        },
+        {
+            "id": "entender",
+            "group": "0",
+            "other": "119"
+        },
+        {
+            "id": "lavajato",
+            "group": "0",
+            "other": "120"
+        },
+        {
+            "id": "intervencaomilitar",
+            "group": "0",
+            "other": "121"
+        },
+        {
+            "id": "primeiro",
+            "group": "0",
+            "other": "122"
+        },
+        {
+            "id": "colocado",
+            "group": "0",
+            "other": "123"
+        },
+        {
+            "id": "pesquisa",
+            "group": "0",
+            "other": "124"
+        },
+        {
+            "id": "começar",
+            "group": "0",
+            "other": "125"
+        },
+        {
+            "id": "calado",
+            "group": "0",
+            "other": "126"
+        },
+        {
+            "id": "lindberg",
+            "group": "0",
+            "other": "127"
+        },
+        {
+            "id": "bolsonaro",
+            "group": "0",
+            "other": "128"
+        },
+        {
+            "id": "digno",
+            "group": "0",
+            "other": "129"
+        },
+        {
+            "id": "representar",
+            "group": "0",
+            "other": "130"
+        },
+        {
+            "id": "povo",
+            "group": "0",
+            "other": "131"
+        },
+        {
+            "id": "falso",
+            "group": "0",
+            "other": "132"
+        },
+        {
+            "id": "moralista",
+            "group": "0",
+            "other": "133"
+        },
+        {
+            "id": "argumento",
+            "group": "0",
+            "other": "134"
+        },
+        {
+            "id": "foto",
+            "group": "0",
+            "other": "135"
+        },
+        {
+            "id": "nado",
+            "group": "0",
+            "other": "136"
+        },
+        {
+            "id": "triste",
+            "group": "0",
+            "other": "137"
+        },
+        {
+            "id": "tentar",
+            "group": "0",
+            "other": "138"
+        },
+        {
+            "id": "sinal",
+            "group": "0",
+            "other": "139"
+        },
+        {
+            "id": "hanglose",
+            "group": "0",
+            "other": "140"
+        },
+        {
+            "id": "caralho",
+            "group": "0",
+            "other": "141"
+        },
+        {
+            "id": "hoffmann",
+            "group": "0",
+            "other": "142"
+        },
+        {
+            "id": "esquema",
+            "group": "0",
+            "other": "143"
+        },
+        {
+            "id": "direito",
+            "group": "0",
+            "other": "144"
+        },
+        {
+            "id": "gente",
+            "group": "0",
+            "other": "145"
+        },
+        {
+            "id": "esquecer",
+            "group": "0",
+            "other": "146"
+        },
+        {
+            "id": "parecer",
+            "group": "0",
+            "other": "147"
+        },
+        {
+            "id": "quermesse",
+            "group": "0",
+            "other": "148"
+        },
+        {
+            "id": "cú",
+            "group": "0",
+            "other": "149"
+        },
+        {
+            "id": "aí",
+            "group": "0",
+            "other": "150"
+        },
+        {
+            "id": "lulma",
+            "group": "0",
+            "other": "151"
+        },
+        {
+            "id": "ultimamente",
+            "group": "0",
+            "other": "152"
+        },
+        {
+            "id": "minoria",
+            "group": "0",
+            "other": "153"
+        },
+        {
+            "id": "maioria",
+            "group": "0",
+            "other": "154"
+        },
+        {
+            "id": "datafalha",
+            "group": "0",
+            "other": "155"
+        },
+        {
+            "id": "votar",
+            "group": "0",
+            "other": "156"
+        },
+        {
+            "id": "condenado",
+            "group": "0",
+            "other": "157"
+        },
+        {
+            "id": "acreditar",
+            "group": "0",
+            "other": "158"
+        },
+        {
+            "id": "data",
+            "group": "0",
+            "other": "159"
+        },
+        {
+            "id": "folha",
+            "group": "0",
+            "other": "160"
+        },
+        {
+            "id": "globo",
+            "group": "0",
+            "other": "161"
+        },
+        {
+            "id": "tentativo",
+            "group": "0",
+            "other": "162"
+        },
+        {
+            "id": "demobilizar",
+            "group": "0",
+            "other": "163"
+        },
+        {
+            "id": "1º",
+            "group": "0",
+            "other": "164"
+        },
+        {
+            "id": "maio",
+            "group": "0",
+            "other": "165"
+        },
+        {
+            "id": "veicular",
+            "group": "0",
+            "other": "166"
+        },
+        {
+            "id": "vazio",
+            "group": "0",
+            "other": "167"
+        },
+        {
+            "id": "globomente",
+            "group": "0",
+            "other": "168"
+        },
+        {
+            "id": "intimado",
+            "group": "0",
+            "other": "169"
+        },
+        {
+            "id": "depor",
+            "group": "0",
+            "other": "170"
+        },
+        {
+            "id": "testemunha",
+            "group": "0",
+            "other": "171"
+        },
+        {
+            "id": "corrupto",
+            "group": "0",
+            "other": "172"
+        },
+        {
+            "id": "processo",
+            "group": "0",
+            "other": "173"
+        },
+        {
+            "id": "sítio",
+            "group": "0",
+            "other": "174"
+        },
+        {
+            "id": "atibaia",
+            "group": "0",
+            "other": "175"
+        },
+        {
+            "id": "jogo",
+            "group": "0",
+            "other": "176"
+        },
+        {
+            "id": "provar",
+            "group": "0",
+            "other": "177"
+        },
+        {
+            "id": "terrível",
+            "group": "0",
+            "other": "178"
+        },
+        {
+            "id": "foda",
+            "group": "0",
+            "other": "179"
+        },
+        {
+            "id": "curitiba",
+            "group": "0",
+            "other": "180"
+        },
+        {
+            "id": "virar",
+            "group": "0",
+            "other": "181"
+        },
+        {
+            "id": "palco",
+            "group": "0",
+            "other": "182"
+        },
+        {
+            "id": "mundo",
+            "group": "0",
+            "other": "183"
+        },
+        {
+            "id": "coisa",
+            "group": "0",
+            "other": "184"
+        },
+        {
+            "id": "juizéco",
+            "group": "0",
+            "other": "185"
+        },
+        {
+            "id": "conseguir",
+            "group": "0",
+            "other": "186"
+        },
+        {
+            "id": "lulalivre",
+            "group": "0",
+            "other": "187"
+        },
+        {
+            "id": "diretor",
+            "group": "0",
+            "other": "188"
+        },
+        {
+            "id": "brasileiro",
+            "group": "0",
+            "other": "189"
+        },
+        {
+            "id": "receber",
+            "group": "0",
+            "other": "190"
+        },
+        {
+            "id": "prêmio",
+            "group": "0",
+            "other": "191"
+        },
+        {
+            "id": "cinema",
+            "group": "0",
+            "other": "192"
+        },
+        {
+            "id": "méxico",
+            "group": "0",
+            "other": "193"
+        },
+        {
+            "id": "revisto",
+            "group": "0",
+            "other": "194"
+        },
+        {
+            "id": "fórum",
+            "group": "0",
+            "other": "195"
+        },
+        {
+            "id": "tava",
+            "group": "0",
+            "other": "196"
+        },
+        {
+            "id": "2",
+            "group": "0",
+            "other": "197"
+        },
+        {
+            "id": "°",
+            "group": "0",
+            "other": "198"
+        },
+        {
+            "id": "série",
+            "group": "0",
+            "other": "199"
+        },
+        {
+            "id": "autógrafo",
+            "group": "0",
+            "other": "200"
+        },
+        {
+            "id": "passeio",
+            "group": "0",
+            "other": "201"
+        },
+        {
+            "id": "escola",
+            "group": "0",
+            "other": "202"
+        },
+        {
+            "id": "perder",
+            "group": "0",
+            "other": "203"
+        },
+        {
+            "id": "supremo",
+            "group": "0",
+            "other": "204"
+        },
+        {
+            "id": "cobra",
+            "group": "0",
+            "other": "205"
+        },
+        {
+            "id": "fumar",
+            "group": "0",
+            "other": "206"
+        },
+        {
+            "id": "central",
+            "group": "0",
+            "other": "207"
+        },
+        {
+            "id": "sindical",
+            "group": "0",
+            "other": "208"
+        },
+        {
+            "id": "ato",
+            "group": "0",
+            "other": "209"
+        },
+        {
+            "id": "dia",
+            "group": "0",
+            "other": "210"
+        },
+        {
+            "id": "trabalho",
+            "group": "0",
+            "other": "211"
+        },
+        {
+            "id": "negociata",
+            "group": "0",
+            "other": "212"
+        },
+        {
+            "id": "participar",
+            "group": "0",
+            "other": "213"
+        },
+        {
+            "id": "pessoalmente",
+            "group": "0",
+            "other": "214"
+        },
+        {
+            "id": "amanhã",
+            "group": "0",
+            "other": "215"
+        },
+        {
+            "id": "tomar",
+            "group": "0",
+            "other": "216"
+        },
+        {
+            "id": "café",
+            "group": "0",
+            "other": "217"
+        },
+        {
+            "id": "atrasado",
+            "group": "0",
+            "other": "218"
+        },
+        {
+            "id": "lind",
+            "group": "0",
+            "other": "219"
+        },
+        {
+            "id": "pipocar",
+            "group": "0",
+            "other": "220"
+        },
+        {
+            "id": "grito",
+            "group": "0",
+            "other": "221"
+        },
+        {
+            "id": "vida",
+            "group": "0",
+            "other": "222"
+        },
+        {
+            "id": "longo",
+            "group": "0",
+            "other": "223"
+        },
+        {
+            "id": "luladrão",
+            "group": "0",
+            "other": "224"
+        },
+        {
+            "id": "cumprir",
+            "group": "0",
+            "other": "225"
+        },
+        {
+            "id": "terço",
+            "group": "0",
+            "other": "226"
+        },
+        {
+            "id": "pena",
+            "group": "0",
+            "other": "227"
+        },
+        {
+            "id": "agradecer",
+            "group": "0",
+            "other": "228"
+        },
+        {
+            "id": "ouvir",
+            "group": "0",
+            "other": "229"
+        },
+        {
+            "id": "bruno",
+            "group": "0",
+            "other": "230"
+        },
+        {
+            "id": "jonssen",
+            "group": "0",
+            "other": "231"
+        },
+        {
+            "id": "acampar",
+            "group": "0",
+            "other": "232"
+        },
+        {
+            "id": "sonhar",
+            "group": "0",
+            "other": "233"
+        },
+        {
+            "id": "sofrer",
+            "group": "0",
+            "other": "234"
+        },
+        {
+            "id": "ssgll",
+            "group": "0",
+            "other": "235"
+        },
+        {
+            "id": "síndrome",
+            "group": "0",
+            "other": "236"
+        },
+        {
+            "id": "saudade",
+            "group": "0",
+            "other": "237"
+        },
+        {
+            "id": "gato",
+            "group": "0",
+            "other": "238"
+        },
+        {
+            "id": "lindo",
+            "group": "0",
+            "other": "239"
+        },
+        {
+            "id": "condenar",
+            "group": "0",
+            "other": "240"
+        },
+        {
+            "id": "tr",
+            "group": "0",
+            "other": "241"
+        },
+        {
+            "id": "plex",
+            "group": "0",
+            "other": "242"
+        },
+        {
+            "id": "justiça",
+            "group": "0",
+            "other": "243"
+        },
+        {
+            "id": "negro",
+            "group": "0",
+            "other": "244"
+        },
+        {
+            "id": "visita",
+            "group": "0",
+            "other": "245"
+        },
+        {
+            "id": "sindicalista",
+            "group": "0",
+            "other": "246"
+        },
+        {
+            "id": "prisão",
+            "group": "0",
+            "other": "247"
+        },
+        {
+            "id": "véspera",
+            "group": "0",
+            "other": "248"
+        },
+        {
+            "id": "revigorar",
+            "group": "0",
+            "other": "249"
+        },
+        {
+            "id": "almo",
+            "group": "0",
+            "other": "250"
+        },
+        {
+            "id": "hidratação",
+            "group": "0",
+            "other": "251"
+        },
+        {
+            "id": "cabelo",
+            "group": "0",
+            "other": "252"
+        },
+        {
+            "id": "manter",
+            "group": "0",
+            "other": "253"
+        },
+        {
+            "id": "30",
+            "group": "0",
+            "other": "254"
+        },
+        {
+            "id": "voto",
+            "group": "0",
+            "other": "255"
+        },
+        {
+            "id": "denunciado",
+            "group": "0",
+            "other": "256"
+        },
+        {
+            "id": "renova",
+            "group": "0",
+            "other": "257"
+        },
+        {
+            "id": "mídia",
+            "group": "0",
+            "other": "258"
+        },
+        {
+            "id": "poder",
+            "group": "0",
+            "other": "259"
+        },
+        {
+            "id": "anulado",
+            "group": "0",
+            "other": "260"
+        },
+        {
+            "id": "dizer",
+            "group": "0",
+            "other": "261"
+        },
+        {
+            "id": "merval",
+            "group": "0",
+            "other": "262"
+        },
+        {
+            "id": "urgente",
+            "group": "0",
+            "other": "263"
+        },
+        {
+            "id": "petista",
+            "group": "0",
+            "other": "264"
+        },
+        {
+            "id": "advogado",
+            "group": "0",
+            "other": "265"
+        },
+        {
+            "id": "dever",
+            "group": "0",
+            "other": "266"
+        },
+        {
+            "id": "ganhar",
+            "group": "0",
+            "other": "267"
+        },
+        {
+            "id": "por+os",
+            "group": "0",
+            "other": "268"
+        },
+        {
+            "id": "resultado",
+            "group": "0",
+            "other": "269"
+        },
+        {
+            "id": "–",
+            "group": "0",
+            "other": "270"
+        },
+        {
+            "id": "money",
+            "group": "0",
+            "other": "271"
+        },
+        {
+            "id": "time",
+            "group": "0",
+            "other": "272"
+        },
+        {
+            "id": "conhecer",
+            "group": "0",
+            "other": "273"
+        },
+        {
+            "id": "parir",
+            "group": "0",
+            "other": "274"
+        },
+        {
+            "id": "londres",
+            "group": "0",
+            "other": "275"
+        },
+        {
+            "id": "roma",
+            "group": "0",
+            "other": "276"
+        },
+        {
+            "id": "berlim",
+            "group": "0",
+            "other": "277"
+        },
+        {
+            "id": "apoiar",
+            "group": "0",
+            "other": "278"
+        },
+        {
+            "id": "presidente",
+            "group": "0",
+            "other": "279"
+        },
+        {
+            "id": "terrorista",
+            "group": "0",
+            "other": "280"
+        },
+        {
+            "id": "atacar",
+            "group": "0",
+            "other": "281"
+        },
+        {
+            "id": "acampamento",
+            "group": "0",
+            "other": "282"
+        },
+        {
+            "id": "pm",
+            "group": "0",
+            "other": "283"
+        },
+        {
+            "id": "vitorioso",
+            "group": "0",
+            "other": "284"
+        },
+        {
+            "id": "dodzinha",
+            "group": "0",
+            "other": "285"
+        },
+        {
+            "id": "temer",
+            "group": "0",
+            "other": "286"
+        },
+        {
+            "id": "roteiro",
+            "group": "0",
+            "other": "287"
+        },
+        {
+            "id": "piada",
+            "group": "0",
+            "other": "288"
+        },
+        {
+            "id": "igual",
+            "group": "0",
+            "other": "289"
+        },
+        {
+            "id": "edition",
+            "group": "0",
+            "other": "290"
+        },
+        {
+            "id": "sergio",
+            "group": "0",
+            "other": "291"
+        },
+        {
+            "id": "proibir",
+            "group": "0",
+            "other": "292"
+        },
+        {
+            "id": "concorrer",
+            "group": "0",
+            "other": "293"
+        },
+        {
+            "id": "cargo",
+            "group": "0",
+            "other": "294"
+        },
+        {
+            "id": "públ",
+            "group": "0",
+            "other": "295"
+        },
+        {
+            "id": "simmm",
+            "group": "0",
+            "other": "296"
+        },
+        {
+            "id": "único",
+            "group": "0",
+            "other": "297"
+        },
+        {
+            "id": "mito",
+            "group": "0",
+            "other": "298"
+        },
+        {
+            "id": "19.30",
+            "group": "0",
+            "other": "299"
+        },
+        {
+            "id": "violinista",
+            "group": "0",
+            "other": "300"
+        },
+        {
+            "id": "toca",
+            "group": "0",
+            "other": "301"
+        },
+        {
+            "id": "músico",
+            "group": "0",
+            "other": "302"
+        },
+        {
+            "id": "prédio",
+            "group": "0",
+            "other": "303"
+        },
+        {
+            "id": "laranjeira",
+            "group": "0",
+            "other": "304"
+        },
+        {
+            "id": "rio",
+            "group": "0",
+            "other": "305"
+        },
+        {
+            "id": "janeiro",
+            "group": "0",
+            "other": "306"
+        },
+        {
+            "id": "fala",
+            "group": "0",
+            "other": "307"
+        },
+        {
+            "id": "molusco",
+            "group": "0",
+            "other": "308"
+        },
+        {
+            "id": "vário",
+            "group": "0",
+            "other": "309"
+        },
+        {
+            "id": "larápio",
+            "group": "0",
+            "other": "310"
+        },
+        {
+            "id": "ladrar",
+            "group": "0",
+            "other": "311"
+        },
+        {
+            "id": "vontade",
+            "group": "0",
+            "other": "312"
+        },
+        {
+            "id": "eleição",
+            "group": "0",
+            "other": "313"
+        },
+        {
+            "id": "nulidade",
+            "group": "0",
+            "other": "314"
+        },
+        {
+            "id": "jantar",
+            "group": "0",
+            "other": "315"
+        },
+        {
+            "id": "⭐",
+            "group": "0",
+            "other": "316"
+        },
+        {
+            "id": "falar",
+            "group": "0",
+            "other": "317"
+        },
+        {
+            "id": "chupa",
+            "group": "0",
+            "other": "318"
+        },
+        {
+            "id": "manga",
+            "group": "0",
+            "other": "319"
+        },
+        {
+            "id": "conferir",
+            "group": "0",
+            "other": "320"
+        },
+        {
+            "id": "delação",
+            "group": "0",
+            "other": "321"
+        },
+        {
+            "id": "arma",
+            "group": "0",
+            "other": "322"
+        },
+        {
+            "id": "mentira",
+            "group": "0",
+            "other": "323"
+        },
+        {
+            "id": "bombardear",
+            "group": "0",
+            "other": "324"
+        },
+        {
+            "id": "breve",
+            "group": "0",
+            "other": "325"
+        },
+        {
+            "id": "amante",
+            "group": "0",
+            "other": "326"
+        },
+        {
+            "id": "casa",
+            "group": "0",
+            "other": "327"
+        },
+        {
+            "id": "cair",
+            "group": "0",
+            "other": "328"
+        },
+        {
+            "id": "ri-di-cu-la",
+            "group": "0",
+            "other": "329"
+        },
+        {
+            "id": "haver",
+            "group": "0",
+            "other": "330"
+        },
+        {
+            "id": "jumento",
+            "group": "0",
+            "other": "331"
+        },
+        {
+            "id": "kd",
+            "group": "0",
+            "other": "332"
+        },
+        {
+            "id": "prova",
+            "group": "0",
+            "other": "333"
+        },
+        {
+            "id": "maclaro",
+            "group": "0",
+            "other": "334"
+        },
+        {
+            "id": "01",
+            "group": "0",
+            "other": "335"
+        },
+        {
+            "id": "golpista",
+            "group": "0",
+            "other": "336"
+        },
+        {
+            "id": "amigo",
+            "group": "0",
+            "other": "337"
+        },
+        {
+            "id": "coxa",
+            "group": "0",
+            "other": "338"
+        },
+        {
+            "id": "socialista",
+            "group": "0",
+            "other": "339"
+        },
+        {
+            "id": "3",
+            "group": "0",
+            "other": "340"
+        },
+        {
+            "id": "dinheiro",
+            "group": "0",
+            "other": "341"
+        },
+        {
+            "id": "stf",
+            "group": "0",
+            "other": "342"
+        },
+        {
+            "id": "radar",
+            "group": "0",
+            "other": "343"
+        },
+        {
+            "id": "repudiar",
+            "group": "0",
+            "other": "344"
+        },
+        {
+            "id": "ataque",
+            "group": "0",
+            "other": "345"
+        },
+        {
+            "id": "pró",
+            "group": "0",
+            "other": "346"
+        },
+        {
+            "id": "conta",
+            "group": "0",
+            "other": "347"
+        },
+        {
+            "id": "leve",
+            "group": "0",
+            "other": "348"
+        },
+        {
+            "id": "solto",
+            "group": "0",
+            "other": "349"
+        },
+        {
+            "id": "valor",
+            "group": "0",
+            "other": "350"
+        },
+        {
+            "id": "seguro",
+            "group": "0",
+            "other": "351"
+        },
+        {
+            "id": "desemprego",
+            "group": "0",
+            "other": "352"
+        },
+        {
+            "id": "cobrir",
+            "group": "0",
+            "other": "353"
+        },
+        {
+            "id": "rombo",
+            "group": "0",
+            "other": "354"
+        },
+        {
+            "id": "moçambique",
+            "group": "0",
+            "other": "355"
+        },
+        {
+            "id": "venezuela",
+            "group": "0",
+            "other": "356"
+        },
+        {
+            "id": "gleisinacadeia",
+            "group": "0",
+            "other": "357"
+        },
+        {
+            "id": "senadorasefudeu",
+            "group": "0",
+            "other": "358"
+        },
+        {
+            "id": "noite",
+            "group": "0",
+            "other": "359"
+        },
+        {
+            "id": "247",
+            "group": "0",
+            "other": "360"
+        },
+        {
+            "id": "levantar",
+            "group": "0",
+            "other": "361"
+        },
+        {
+            "id": "democracia",
+            "group": "0",
+            "other": "362"
+        },
+        {
+            "id": "mensaleiro",
+            "group": "0",
+            "other": "363"
+        },
+        {
+            "id": "josé",
+            "group": "0",
+            "other": "364"
+        },
+        {
+            "id": "dirceu",
+            "group": "0",
+            "other": "365"
+        },
+        {
+            "id": "deixar",
+            "group": "0",
+            "other": "366"
+        },
+        {
+            "id": "deve",
+            "group": "0",
+            "other": "367"
+        },
+        {
+            "id": "mistura",
+            "group": "0",
+            "other": "368"
+        },
+        {
+            "id": "coca-cola",
+            "group": "0",
+            "other": "369"
+        },
+        {
+            "id": "51",
+            "group": "0",
+            "other": "370"
+        },
+        {
+            "id": "adolescência",
+            "group": "0",
+            "other": "371"
+        },
+        {
+            "id": "chamar",
+            "group": "0",
+            "other": "372"
+        },
+        {
+            "id": "samba",
+            "group": "0",
+            "other": "373"
+        },
+        {
+            "id": "escrever",
+            "group": "0",
+            "other": "374"
+        },
+        {
+            "id": "mostrar",
+            "group": "0",
+            "other": "375"
+        },
+        {
+            "id": "carta",
+            "group": "0",
+            "other": "376"
+        },
+        {
+            "id": "escrito",
+            "group": "0",
+            "other": "377"
+        },
+        {
+            "id": "impressor",
+            "group": "0",
+            "other": "378"
+        },
+        {
+            "id": "tempo",
+            "group": "0",
+            "other": "379"
+        },
+        {
+            "id": "saído",
+            "group": "0",
+            "other": "380"
+        },
+        {
+            "id": "2030",
+            "group": "0",
+            "other": "381"
+        },
+        {
+            "id": "enlouquecer",
+            "group": "0",
+            "other": "382"
+        },
+        {
+            "id": "suposto",
+            "group": "0",
+            "other": "383"
+        },
+        {
+            "id": "juiz",
+            "group": "0",
+            "other": "384"
+        },
+        {
+            "id": "líder",
+            "group": "0",
+            "other": "385"
+        },
+        {
+            "id": "fase",
+            "group": "0",
+            "other": "386"
+        },
+        {
+            "id": "caetano",
+            "group": "0",
+            "other": "387"
+        },
+        {
+            "id": "mencionar",
+            "group": "0",
+            "other": "388"
+        },
+        {
+            "id": "aplauso",
+            "group": "0",
+            "other": "389"
+        },
+        {
+            "id": "escritor",
+            "group": "0",
+            "other": "390"
+        },
+        {
+            "id": "historiador",
+            "group": "0",
+            "other": "391"
+        },
+        {
+            "id": "casado",
+            "group": "0",
+            "other": "392"
+        },
+        {
+            "id": "ex",
+            "group": "0",
+            "other": "393"
+        },
+        {
+            "id": "secretário",
+            "group": "0",
+            "other": "394"
+        },
+        {
+            "id": "celso",
+            "group": "0",
+            "other": "395"
+        },
+        {
+            "id": "pitta",
+            "group": "0",
+            "other": "396"
+        },
+        {
+            "id": "morte",
+            "group": "0",
+            "other": "397"
+        },
+        {
+            "id": "livrar",
+            "group": "0",
+            "other": "398"
+        },
+        {
+            "id": "ex-presidente",
+            "group": "0",
+            "other": "399"
+        },
+        {
+            "id": "completar",
+            "group": "0",
+            "other": "400"
+        },
+        {
+            "id": "frase",
+            "group": "0",
+            "other": "401"
+        },
+        {
+            "id": "ladrão",
+            "group": "0",
+            "other": "402"
+        },
+        {
+            "id": "roubar",
+            "group": "0",
+            "other": "403"
+        },
+        {
+            "id": "coração",
+            "group": "0",
+            "other": "404"
+        },
+        {
+            "id": "repúblico",
+            "group": "0",
+            "other": "405"
+        },
+        {
+            "id": "abusivo",
+            "group": "0",
+            "other": "406"
+        },
+        {
+            "id": "humanidade",
+            "group": "0",
+            "other": "407"
+        },
+        {
+            "id": "vir",
+            "group": "0",
+            "other": "408"
+        },
+        {
+            "id": "urgência",
+            "group": "0",
+            "other": "409"
+        },
+        {
+            "id": "lindbergh",
+            "group": "0",
+            "other": "410"
+        },
+        {
+            "id": "merecer",
+            "group": "0",
+            "other": "411"
+        },
+        {
+            "id": "ficar",
+            "group": "0",
+            "other": "412"
+        },
+        {
+            "id": "patético",
+            "group": "0",
+            "other": "413"
+        },
+        {
+            "id": "discurso",
+            "group": "0",
+            "other": "414"
+        },
+        {
+            "id": "vitimização",
+            "group": "0",
+            "other": "415"
+        },
+        {
+            "id": "veloso",
+            "group": "0",
+            "other": "416"
+        },
+        {
+            "id": "grita",
+            "group": "0",
+            "other": "417"
+        },
+        {
+            "id": "continuum",
+            "group": "0",
+            "other": "418"
+        },
+        {
+            "id": "adorar",
+            "group": "0",
+            "other": "419"
+        },
+        {
+            "id": "pé",
+            "group": "0",
+            "other": "420"
+        },
+        {
+            "id": "frio",
+            "group": "0",
+            "other": "421"
+        },
+        {
+            "id": "trouxa",
+            "group": "0",
+            "other": "422"
+        },
+        {
+            "id": "et",
+            "group": "0",
+            "other": "423"
+        },
+        {
+            "id": "caterva",
+            "group": "0",
+            "other": "424"
+        },
+        {
+            "id": "blog",
+            "group": "0",
+            "other": "425"
+        },
+        {
+            "id": "eterno",
+            "group": "0",
+            "other": "426"
+        },
+        {
+            "id": "aprendiz",
+            "group": "0",
+            "other": "427"
+        },
+        {
+            "id": "procuradoria-geral",
+            "group": "0",
+            "other": "428"
+        },
+        {
+            "id": "pal",
+            "group": "0",
+            "other": "429"
+        },
+        {
+            "id": "1",
+            "group": "0",
+            "other": "430"
+        },
+        {
+            "id": "º",
+            "group": "0",
+            "other": "431"
+        },
+        {
+            "id": "testo",
+            "group": "0",
+            "other": "432"
+        },
+        {
+            "id": "popularidade",
+            "group": "0",
+            "other": "433"
+        },
+        {
+            "id": "sindicato",
+            "group": "0",
+            "other": "434"
+        },
+        {
+            "id": "leo",
+            "group": "0",
+            "other": "435"
+        },
+        {
+            "id": "quadrado",
+            "group": "0",
+            "other": "436"
+        },
+        {
+            "id": "decisivo",
+            "group": "0",
+            "other": "437"
+        },
+        {
+            "id": "país",
+            "group": "0",
+            "other": "438"
+        },
+        {
+            "id": "onda",
+            "group": "0",
+            "other": "439"
+        },
+        {
+            "id": "noticiar",
+            "group": "0",
+            "other": "440"
+        },
+        {
+            "id": "escalado",
+            "group": "0",
+            "other": "441"
+        },
+        {
+            "id": "fascista",
+            "group": "0",
+            "other": "442"
+        },
+        {
+            "id": "ocupacuritiba23odia",
+            "group": "0",
+            "other": "443"
+        },
+        {
+            "id": "jefferson",
+            "group": "0",
+            "other": "444"
+        },
+        {
+            "id": "vítima",
+            "group": "0",
+            "other": "445"
+        },
+        {
+            "id": "sai",
+            "group": "0",
+            "other": "446"
+        },
+        {
+            "id": "uti",
+            "group": "0",
+            "other": "447"
+        },
+        {
+            "id": "jornaldacultura",
+            "group": "0",
+            "other": "448"
+        },
+        {
+            "id": "favor",
+            "group": "0",
+            "other": "449"
+        },
+        {
+            "id": "trabalhar",
+            "group": "0",
+            "other": "450"
+        },
+        {
+            "id": "saqueador",
+            "group": "0",
+            "other": "451"
+        },
+        {
+            "id": "bndes",
+            "group": "0",
+            "other": "452"
+        },
+        {
+            "id": "quadrilheiro",
+            "group": "0",
+            "other": "453"
+        },
+        {
+            "id": "doce",
+            "group": "0",
+            "other": "454"
+        },
+        {
+            "id": "passar",
+            "group": "0",
+            "other": "455"
+        },
+        {
+            "id": "sentir",
+            "group": "0",
+            "other": "456"
+        },
+        {
+            "id": "alguém",
+            "group": "0",
+            "other": "457"
+        },
+        {
+            "id": "sol",
+            "group": "0",
+            "other": "458"
+        },
+        {
+            "id": "pôr",
+            "group": "0",
+            "other": "459"
+        },
+        {
+            "id": "popular",
+            "group": "0",
+            "other": "460"
+        },
+        {
+            "id": "enterrar",
+            "group": "0",
+            "other": "461"
+        },
+        {
+            "id": "responder",
+            "group": "0",
+            "other": "462"
+        },
+        {
+            "id": "pessoal",
+            "group": "0",
+            "other": "463"
+        },
+        {
+            "id": "perto",
+            "group": "0",
+            "other": "464"
+        },
+        {
+            "id": "sobreviver",
+            "group": "0",
+            "other": "465"
+        },
+        {
+            "id": "exército",
+            "group": "0",
+            "other": "466"
+        },
+        {
+            "id": "pf",
+            "group": "0",
+            "other": "467"
+        },
+        {
+            "id": "transferência",
+            "group": "0",
+            "other": "468"
+        },
+        {
+            "id": "lulapreso",
+            "group": "0",
+            "other": "469"
+        },
+        {
+            "id": "37",
+            "group": "0",
+            "other": "470"
+        },
+        {
+            "id": "ônibus",
+            "group": "0",
+            "other": "471"
+        },
+        {
+            "id": "apoiador",
+            "group": "0",
+            "other": "472"
+        },
+        {
+            "id": "vindo",
+            "group": "0",
+            "other": "473"
+        },
+        {
+            "id": "prf",
+            "group": "0",
+            "other": "474"
+        },
+        {
+            "id": "censurar",
+            "group": "0",
+            "other": "475"
+        },
+        {
+            "id": "tv",
+            "group": "0",
+            "other": "476"
+        },
+        {
+            "id": "soltar",
+            "group": "0",
+            "other": "477"
+        },
+        {
+            "id": "escuro",
+            "group": "0",
+            "other": "478"
+        },
+        {
+            "id": "mst",
+            "group": "0",
+            "other": "479"
+        },
+        {
+            "id": "invadir",
+            "group": "0",
+            "other": "480"
+        },
+        {
+            "id": "ensinar",
+            "group": "0",
+            "other": "481"
+        },
+        {
+            "id": "relatar",
+            "group": "0",
+            "other": "482"
+        },
+        {
+            "id": "vizinho",
+            "group": "0",
+            "other": "483"
+        },
+        {
+            "id": "liderar",
+            "group": "0",
+            "other": "484"
+        },
+        {
+            "id": "honradamente",
+            "group": "0",
+            "other": "485"
+        },
+        {
+            "id": "soltura",
+            "group": "0",
+            "other": "486"
+        },
+        {
+            "id": "precisar",
+            "group": "0",
+            "other": "487"
+        },
+        {
+            "id": "menino",
+            "group": "0",
+            "other": "488"
+        },
+        {
+            "id": "sala",
+            "group": "0",
+            "other": "489"
+        },
+        {
+            "id": "baixar",
+            "group": "0",
+            "other": "490"
+        },
+        {
+            "id": "comparar",
+            "group": "0",
+            "other": "491"
+        },
+        {
+            "id": "thanos",
+            "group": "0",
+            "other": "492"
+        },
+        {
+            "id": "buraco",
+            "group": "0",
+            "other": "493"
+        },
+        {
+            "id": "vice",
+            "group": "0",
+            "other": "494"
+        },
+        {
+            "id": "alencar",
+            "group": "0",
+            "other": "495"
+        },
+        {
+            "id": "maior",
+            "group": "0",
+            "other": "496"
+        },
+        {
+            "id": "devedor",
+            "group": "0",
+            "other": "497"
+        },
+        {
+            "id": "previdência",
+            "group": "0",
+            "other": "498"
+        },
+        {
+            "id": "social",
+            "group": "0",
+            "other": "499"
+        },
+        {
+            "id": "defender",
+            "group": "0",
+            "other": "500"
+        },
+        {
+            "id": "caber",
+            "group": "0",
+            "other": "501"
+        },
+        {
+            "id": "afirmação",
+            "group": "0",
+            "other": "502"
+        },
+        {
+            "id": "correspondência",
+            "group": "0",
+            "other": "503"
+        },
+        {
+            "id": "correio",
+            "group": "0",
+            "other": "504"
+        },
+        {
+            "id": "janot",
+            "group": "0",
+            "other": "505"
+        },
+        {
+            "id": "edinho",
+            "group": "0",
+            "other": "506"
+        },
+        {
+            "id": "mantega",
+            "group": "0",
+            "other": "507"
+        },
+        {
+            "id": "vaccari",
+            "group": "0",
+            "other": "508"
+        },
+        {
+            "id": "post",
+            "group": "0",
+            "other": "509"
+        },
+        {
+            "id": "primo",
+            "group": "0",
+            "other": "510"
+        },
+        {
+            "id": "campo",
+            "group": "0",
+            "other": "511"
+        },
+        {
+            "id": "psb",
+            "group": "0",
+            "other": "512"
+        },
+        {
+            "id": "surfar",
+            "group": "0",
+            "other": "513"
+        },
+        {
+            "id": "nordeste",
+            "group": "0",
+            "other": "514"
+        },
+        {
+            "id": "informepe",
+            "group": "0",
+            "other": "515"
+        },
+        {
+            "id": "reação",
+            "group": "0",
+            "other": "516"
+        },
+        {
+            "id": "descrédito",
+            "group": "0",
+            "other": "517"
+        },
+        {
+            "id": "mi",
+            "group": "0",
+            "other": "518"
+        },
+        {
+            "id": "certeza",
+            "group": "0",
+            "other": "519"
+        },
+        {
+            "id": "meter",
+            "group": "0",
+            "other": "520"
+        },
+        {
+            "id": "bala",
+            "group": "0",
+            "other": "521"
+        },
+        {
+            "id": "esquerdo",
+            "group": "0",
+            "other": "522"
+        },
+        {
+            "id": "semelhança",
+            "group": "0",
+            "other": "523"
+        },
+        {
+            "id": "marielle",
+            "group": "0",
+            "other": "524"
+        },
+        {
+            "id": "pró-lula",
+            "group": "0",
+            "other": "525"
+        },
+        {
+            "id": "podcast",
+            "group": "0",
+            "other": "526"
+        },
+        {
+            "id": "brasília",
+            "group": "0",
+            "other": "527"
+        },
+        {
+            "id": "nacional",
+            "group": "0",
+            "other": "528"
+        },
+        {
+            "id": "irmão",
+            "group": "0",
+            "other": "529"
+        },
+        {
+            "id": "morrer",
+            "group": "0",
+            "other": "530"
+        },
+        {
+            "id": "corredor",
+            "group": "0",
+            "other": "531"
+        },
+        {
+            "id": "hospital",
+            "group": "0",
+            "other": "532"
+        },
+        {
+            "id": "culpa",
+            "group": "0",
+            "other": "533"
+        },
+        {
+            "id": "inescrupuloso",
+            "group": "0",
+            "other": "534"
+        },
+        {
+            "id": "autorizar",
+            "group": "0",
+            "other": "535"
+        },
+        {
+            "id": "dificultar",
+            "group": "0",
+            "other": "536"
+        },
+        {
+            "id": "passo",
+            "group": "0",
+            "other": "537"
+        },
+        {
+            "id": "quebra",
+            "group": "0",
+            "other": "538"
+        },
+        {
+            "id": "pacto",
+            "group": "0",
+            "other": "539"
+        },
+        {
+            "id": "entrega",
+            "group": "0",
+            "other": "540"
+        },
+        {
+            "id": "chefão",
+            "group": "0",
+            "other": "541"
+        },
+        {
+            "id": "devastador",
+            "group": "0",
+            "other": "542"
+        },
+        {
+            "id": "raquel",
+            "group": "0",
+            "other": "543"
+        },
+        {
+            "id": "dodge",
+            "group": "0",
+            "other": "544"
+        },
+        {
+            "id": "ótimo",
+            "group": "0",
+            "other": "545"
+        },
+        {
+            "id": "mora",
+            "group": "0",
+            "other": "546"
+        },
+        {
+            "id": "tiririca",
+            "group": "0",
+            "other": "547"
+        },
+        {
+            "id": "tão",
+            "group": "0",
+            "other": "548"
+        },
+        {
+            "id": "empenhado",
+            "group": "0",
+            "other": "549"
+        },
+        {
+            "id": "visitar",
+            "group": "0",
+            "other": "550"
+        },
+        {
+            "id": "lado",
+            "group": "0",
+            "other": "551"
+        }
+    ],
+    "links": [
+        {
+            "source": "lula",
+            "target": "preso",
+            "value": 6
+        },
+        {
+            "source": "preso",
+            "target": "político",
+            "value": 1
+        },
+        {
+            "source": "pgr",
+            "target": "apresentar",
+            "value": 7
+        },
+        {
+            "source": "apresentar",
+            "target": "novo",
+            "value": 2
+        },
+        {
+            "source": "novo",
+            "target": "denúncia",
+            "value": 8
+        },
+        {
+            "source": "denúncia",
+            "target": "lula",
+            "value": 10
+        },
+        {
+            "source": "lula",
+            "target": "gleisi",
+            "value": 32
+        },
+        {
+            "source": "gleisi",
+            "target": "palocci",
+            "value": 24
+        },
+        {
+            "source": "defeso",
+            "target": "pedir",
+            "value": 4
+        },
+        {
+            "source": "pedir",
+            "target": "lula",
+            "value": 5
+        },
+        {
+            "source": "lula",
+            "target": "recorrer",
+            "value": 4
+        },
+        {
+            "source": "recorrer",
+            "target": "condenação",
+            "value": 3
+        },
+        {
+            "source": "condenação",
+            "target": "tríplex",
+            "value": 3
+        },
+        {
+            "source": "tríplex",
+            "target": "liberdade",
+            "value": 3
+        },
+        {
+            "source": "ué",
+            "target": "esperar",
+            "value": 1
+        },
+        {
+            "source": "honesto",
+            "target": "perseguido",
+            "value": 1
+        },
+        {
+            "source": "querer",
+            "target": "ver",
+            "value": 1
+        },
+        {
+            "source": "ver",
+            "target": "palocci",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "abrir",
+            "value": 1
+        },
+        {
+            "source": "abrir",
+            "target": "bico",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "livre",
+            "value": 16
+        },
+        {
+            "source": "pgr",
+            "target": "denunciar",
+            "value": 38
+        },
+        {
+            "source": "denunciar",
+            "target": "lula",
+            "value": 32
+        },
+        {
+            "source": "palocci",
+            "target": "três",
+            "value": 8
+        },
+        {
+            "source": "três",
+            "target": "lava",
+            "value": 8
+        },
+        {
+            "source": "lava",
+            "target": "jato",
+            "value": 11
+        },
+        {
+            "source": "jato",
+            "target": "corrupção",
+            "value": 8
+        },
+        {
+            "source": "corrupção",
+            "target": "lavagem",
+            "value": 13
+        },
+        {
+            "source": "palocci",
+            "target": "40",
+            "value": 4
+        },
+        {
+            "source": "40",
+            "target": "milhão",
+            "value": 4
+        },
+        {
+            "source": "milhão",
+            "target": "odebrecht",
+            "value": 4
+        },
+        {
+            "source": "gostar",
+            "target": "vídeo",
+            "value": 10
+        },
+        {
+            "source": "desmascarar",
+            "target": "vitimismo",
+            "value": 1
+        },
+        {
+            "source": "vitimismo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "usado",
+            "value": 1
+        },
+        {
+            "source": "usado",
+            "target": "gleisi",
+            "value": 1
+        },
+        {
+            "source": "gleisi",
+            "target": "pt",
+            "value": 1
+        },
+        {
+            "source": "pt",
+            "target": "após",
+            "value": 1
+        },
+        {
+            "source": "após",
+            "target": "tiro",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "inocente",
+            "value": 1
+        },
+        {
+            "source": "inocente",
+            "target": "brasil",
+            "value": 1
+        },
+        {
+            "source": "felicidade",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "culpar",
+            "target": "morar",
+            "value": 1
+        },
+        {
+            "source": "morar",
+            "target": "vez",
+            "value": 1
+        },
+        {
+            "source": "vez",
+            "target": "pgr",
+            "value": 2
+        },
+        {
+            "source": "gleisi",
+            "target": "ex-ministros",
+            "value": 1
+        },
+        {
+            "source": "ex-ministros",
+            "target": "palocci",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "paulo",
+            "value": 4
+        },
+        {
+            "source": "paulo",
+            "target": "bernardo",
+            "value": 14
+        },
+        {
+            "source": "bernardo",
+            "target": "favorecer",
+            "value": 1
+        },
+        {
+            "source": "favorecer",
+            "target": "odebrecht",
+            "value": 1
+        },
+        {
+            "source": "cadeia",
+            "target": "junto",
+            "value": 1
+        },
+        {
+            "source": "junto",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "curtitiba",
+            "value": 1
+        },
+        {
+            "source": "poupancinha",
+            "target": "operário",
+            "value": 1
+        },
+        {
+            "source": "descoberto",
+            "target": "108",
+            "value": 1
+        },
+        {
+            "source": "108",
+            "target": "milhão",
+            "value": 1
+        },
+        {
+            "source": "milhão",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "luxemburgo",
+            "value": 1
+        },
+        {
+            "source": "jornal",
+            "target": "pai",
+            "value": 1
+        },
+        {
+            "source": "bernardo",
+            "target": "marcelo",
+            "value": 6
+        },
+        {
+            "source": "marcelo",
+            "target": "odebrecht",
+            "value": 6
+        },
+        {
+            "source": "odebrecht",
+            "target": "corrupção",
+            "value": 1
+        },
+        {
+            "source": "comitê",
+            "target": "luta",
+            "value": 1
+        },
+        {
+            "source": "luta",
+            "target": "golpe",
+            "value": 1
+        },
+        {
+            "source": "golpe",
+            "target": "jardim",
+            "value": 1
+        },
+        {
+            "source": "jardim",
+            "target": "piedade",
+            "value": 1
+        },
+        {
+            "source": "piedade",
+            "target": "realizar",
+            "value": 1
+        },
+        {
+            "source": "realizar",
+            "target": "panfletagem",
+            "value": 1
+        },
+        {
+            "source": "panfletagem",
+            "target": "liberdade",
+            "value": 1
+        },
+        {
+            "source": "liberdade",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "diário",
+            "target": "causa",
+            "value": 1
+        },
+        {
+            "source": "causa",
+            "target": "operário",
+            "value": 1
+        },
+        {
+            "source": "denunciar",
+            "target": "dilma",
+            "value": 2
+        },
+        {
+            "source": "dilma",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "palocci",
+            "value": 19
+        },
+        {
+            "source": "palocci",
+            "target": "gleisi",
+            "value": 16
+        },
+        {
+            "source": "gleisi",
+            "target": "propina",
+            "value": 8
+        },
+        {
+            "source": "propina",
+            "target": "odebrecht",
+            "value": 9
+        },
+        {
+            "source": "lula",
+            "target": "loucura",
+            "value": 1
+        },
+        {
+            "source": "loucura",
+            "target": "emprego",
+            "value": 1
+        },
+        {
+            "source": "emprego",
+            "target": "salário",
+            "value": 1
+        },
+        {
+            "source": "nariz",
+            "target": "cadeia",
+            "value": 1
+        },
+        {
+            "source": "saber",
+            "target": "colocar",
+            "value": 1
+        },
+        {
+            "source": "colocar",
+            "target": "aécio",
+            "value": 1
+        },
+        {
+            "source": "aécio",
+            "target": "junto",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "cela",
+            "value": 2
+        },
+        {
+            "source": "cela",
+            "target": "limpo",
+            "value": 1
+        },
+        {
+            "source": "limpo",
+            "target": "presídio",
+            "value": 1
+        },
+        {
+            "source": "aspirar",
+            "target": "pó",
+            "value": 1
+        },
+        {
+            "source": "pó",
+            "target": "passa",
+            "value": 1
+        },
+        {
+            "source": "passa",
+            "target": "álcool",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "doação",
+            "value": 1
+        },
+        {
+            "source": "doação",
+            "target": "40",
+            "value": 1
+        },
+        {
+            "source": "respeito",
+            "target": "discordo",
+            "value": 1
+        },
+        {
+            "source": "prender",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "levante",
+            "value": 1
+        },
+        {
+            "source": "mandar",
+            "target": "colocar",
+            "value": 1
+        },
+        {
+            "source": "colocar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "nome",
+            "value": 1
+        },
+        {
+            "source": "achar",
+            "target": "bandido",
+            "value": 1
+        },
+        {
+            "source": "enganado",
+            "target": "né",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "dilma",
+            "value": 6
+        },
+        {
+            "source": "dilma",
+            "target": "ex-ministros",
+            "value": 1
+        },
+        {
+            "source": "ex-ministros",
+            "target": "organização",
+            "value": 1
+        },
+        {
+            "source": "organização",
+            "target": "criminoso",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "tornar",
+            "value": 1
+        },
+        {
+            "source": "tornar",
+            "target": "principal",
+            "value": 1
+        },
+        {
+            "source": "principal",
+            "target": "alvo",
+            "value": 1
+        },
+        {
+            "source": "alvo",
+            "target": "operação",
+            "value": 1
+        },
+        {
+            "source": "operação",
+            "target": "lava",
+            "value": 1
+        },
+        {
+            "source": "morar",
+            "target": "pedir",
+            "value": 1
+        },
+        {
+            "source": "pedir",
+            "target": "esclarecimento",
+            "value": 1
+        },
+        {
+            "source": "esclarecimento",
+            "target": "ganho",
+            "value": 1
+        },
+        {
+            "source": "ganho",
+            "target": "empresa",
+            "value": 1
+        },
+        {
+            "source": "empresa",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "enganar",
+            "target": "ninguém",
+            "value": 4
+        },
+        {
+            "source": "despistar",
+            "target": "perseguição",
+            "value": 4
+        },
+        {
+            "source": "perseguição",
+            "target": "lula",
+            "value": 4
+        },
+        {
+            "source": "lula",
+            "target": "dallagnol",
+            "value": 4
+        },
+        {
+            "source": "dallagnol",
+            "target": "manda",
+            "value": 4
+        },
+        {
+            "source": "manda",
+            "target": "vistoriar",
+            "value": 4
+        },
+        {
+            "source": "vistoriar",
+            "target": "celular",
+            "value": 4
+        },
+        {
+            "source": "celular",
+            "target": "defunto",
+            "value": 4
+        },
+        {
+            "source": "defunto",
+            "target": "cunha",
+            "value": 4
+        },
+        {
+            "source": "caro",
+            "target": "entender",
+            "value": 1
+        },
+        {
+            "source": "entender",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lavagem",
+            "target": "lavajato",
+            "value": 1
+        },
+        {
+            "source": "lavajato",
+            "target": "intervencaomilitar",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "primeiro",
+            "value": 1
+        },
+        {
+            "source": "primeiro",
+            "target": "colocado",
+            "value": 1
+        },
+        {
+            "source": "colocado",
+            "target": "pesquisa",
+            "value": 1
+        },
+        {
+            "source": "começar",
+            "target": "ver",
+            "value": 1
+        },
+        {
+            "source": "ver",
+            "target": "lula",
+            "value": 3
+        },
+        {
+            "source": "calado",
+            "target": "lindberg",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "bolsonaro",
+            "value": 1
+        },
+        {
+            "source": "bolsonaro",
+            "target": "digno",
+            "value": 1
+        },
+        {
+            "source": "digno",
+            "target": "representar",
+            "value": 1
+        },
+        {
+            "source": "representar",
+            "target": "povo",
+            "value": 1
+        },
+        {
+            "source": "povo",
+            "target": "falso",
+            "value": 1
+        },
+        {
+            "source": "falso",
+            "target": "moralista",
+            "value": 1
+        },
+        {
+            "source": "argumento",
+            "target": "foto",
+            "value": 1
+        },
+        {
+            "source": "foto",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "nado",
+            "value": 2
+        },
+        {
+            "source": "nado",
+            "target": "ver",
+            "value": 1
+        },
+        {
+            "source": "triste",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "tentar",
+            "value": 1
+        },
+        {
+            "source": "tentar",
+            "target": "sinal",
+            "value": 1
+        },
+        {
+            "source": "sinal",
+            "target": "hanglose",
+            "value": 1
+        },
+        {
+            "source": "hanglose",
+            "target": "saber",
+            "value": 1
+        },
+        {
+            "source": "saber",
+            "target": "nome",
+            "value": 1
+        },
+        {
+            "source": "nome",
+            "target": "caralho",
+            "value": 1
+        },
+        {
+            "source": "denunciar",
+            "target": "gleisi",
+            "value": 3
+        },
+        {
+            "source": "gleisi",
+            "target": "hoffmann",
+            "value": 1
+        },
+        {
+            "source": "hoffmann",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "esquema",
+            "value": 3
+        },
+        {
+            "source": "esquema",
+            "target": "criminoso",
+            "value": 3
+        },
+        {
+            "source": "criminoso",
+            "target": "direito",
+            "value": 1
+        },
+        {
+            "source": "esquecer",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "caro",
+            "target": "preso",
+            "value": 1
+        },
+        {
+            "source": "preso",
+            "target": "parecer",
+            "value": 1
+        },
+        {
+            "source": "parecer",
+            "target": "quermesse",
+            "value": 1
+        },
+        {
+            "source": "quermesse",
+            "target": "cú",
+            "value": 1
+        },
+        {
+            "source": "ultimamente",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "maioria",
+            "target": "datafalha",
+            "value": 1
+        },
+        {
+            "source": "datafalha",
+            "target": "votar",
+            "value": 1
+        },
+        {
+            "source": "votar",
+            "target": "condenado",
+            "value": 1
+        },
+        {
+            "source": "condenado",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "acreditar",
+            "target": "data",
+            "value": 1
+        },
+        {
+            "source": "data",
+            "target": "folha",
+            "value": 1
+        },
+        {
+            "source": "globo",
+            "target": "tentativo",
+            "value": 1
+        },
+        {
+            "source": "tentativo",
+            "target": "demobilizar",
+            "value": 1
+        },
+        {
+            "source": "demobilizar",
+            "target": "1º",
+            "value": 1
+        },
+        {
+            "source": "1º",
+            "target": "maio",
+            "value": 4
+        },
+        {
+            "source": "maio",
+            "target": "veicular",
+            "value": 1
+        },
+        {
+            "source": "veicular",
+            "target": "novo",
+            "value": 1
+        },
+        {
+            "source": "novo",
+            "target": "denunciar",
+            "value": 1
+        },
+        {
+            "source": "denunciar",
+            "target": "vazio",
+            "value": 1
+        },
+        {
+            "source": "vazio",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "gleisi",
+            "target": "globomente",
+            "value": 1
+        },
+        {
+            "source": "dilma",
+            "target": "intimado",
+            "value": 2
+        },
+        {
+            "source": "intimado",
+            "target": "depor",
+            "value": 2
+        },
+        {
+            "source": "depor",
+            "target": "testemunha",
+            "value": 2
+        },
+        {
+            "source": "testemunha",
+            "target": "bandido",
+            "value": 1
+        },
+        {
+            "source": "bandido",
+            "target": "corrupto",
+            "value": 1
+        },
+        {
+            "source": "corrupto",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "processo",
+            "value": 1
+        },
+        {
+            "source": "processo",
+            "target": "sítio",
+            "value": 1
+        },
+        {
+            "source": "sítio",
+            "target": "atibaia",
+            "value": 1
+        },
+        {
+            "source": "jogo",
+            "target": "provar",
+            "value": 3
+        },
+        {
+            "source": "provar",
+            "target": "jogo",
+            "value": 3
+        },
+        {
+            "source": "jogo",
+            "target": "lula",
+            "value": 3
+        },
+        {
+            "source": "lula",
+            "target": "terrível",
+            "value": 3
+        },
+        {
+            "source": "lula",
+            "target": "foda",
+            "value": 1
+        },
+        {
+            "source": "foda",
+            "target": "preso",
+            "value": 1
+        },
+        {
+            "source": "preso",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "curitiba",
+            "target": "virar",
+            "value": 1
+        },
+        {
+            "source": "virar",
+            "target": "palco",
+            "value": 1
+        },
+        {
+            "source": "palco",
+            "target": "mundo",
+            "value": 1
+        },
+        {
+            "source": "mundo",
+            "target": "coisa",
+            "value": 1
+        },
+        {
+            "source": "coisa",
+            "target": "juizéco",
+            "value": 1
+        },
+        {
+            "source": "juizéco",
+            "target": "conseguir",
+            "value": 1
+        },
+        {
+            "source": "diretor",
+            "target": "brasileiro",
+            "value": 1
+        },
+        {
+            "source": "brasileiro",
+            "target": "pedir",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "receber",
+            "value": 1
+        },
+        {
+            "source": "receber",
+            "target": "prêmio",
+            "value": 1
+        },
+        {
+            "source": "prêmio",
+            "target": "cinema",
+            "value": 1
+        },
+        {
+            "source": "cinema",
+            "target": "méxico",
+            "value": 1
+        },
+        {
+            "source": "revisto",
+            "target": "fórum",
+            "value": 1
+        },
+        {
+            "source": "saber",
+            "target": "tava",
+            "value": 1
+        },
+        {
+            "source": "tava",
+            "target": "2",
+            "value": 1
+        },
+        {
+            "source": "2",
+            "target": "°",
+            "value": 1
+        },
+        {
+            "source": "°",
+            "target": "série",
+            "value": 1
+        },
+        {
+            "source": "série",
+            "target": "conseguir",
+            "value": 1
+        },
+        {
+            "source": "conseguir",
+            "target": "autógrafo",
+            "value": 1
+        },
+        {
+            "source": "autógrafo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "passeio",
+            "value": 1
+        },
+        {
+            "source": "passeio",
+            "target": "escola",
+            "value": 1
+        },
+        {
+            "source": "escola",
+            "target": "perder",
+            "value": 1
+        },
+        {
+            "source": "apresentar",
+            "target": "supremo",
+            "value": 5
+        },
+        {
+            "source": "supremo",
+            "target": "novo",
+            "value": 5
+        },
+        {
+            "source": "gleisi",
+            "target": "paulo",
+            "value": 9
+        },
+        {
+            "source": "ninguém",
+            "target": "honesto",
+            "value": 1
+        },
+        {
+            "source": "honesto",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "cobra",
+            "target": "fumar",
+            "value": 1
+        },
+        {
+            "source": "defeso",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "central",
+            "value": 1
+        },
+        {
+            "source": "central",
+            "target": "sindical",
+            "value": 2
+        },
+        {
+            "source": "sindical",
+            "target": "realizar",
+            "value": 1
+        },
+        {
+            "source": "realizar",
+            "target": "ato",
+            "value": 1
+        },
+        {
+            "source": "ato",
+            "target": "dia",
+            "value": 1
+        },
+        {
+            "source": "dia",
+            "target": "trabalho",
+            "value": 1
+        },
+        {
+            "source": "trabalho",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "saber",
+            "value": 4
+        },
+        {
+            "source": "saber",
+            "target": "negociata",
+            "value": 3
+        },
+        {
+            "source": "negociata",
+            "target": "participar",
+            "value": 3
+        },
+        {
+            "source": "participar",
+            "target": "pessoalmente",
+            "value": 3
+        },
+        {
+            "source": "amanhã",
+            "target": "tomar",
+            "value": 1
+        },
+        {
+            "source": "tomar",
+            "target": "café",
+            "value": 1
+        },
+        {
+            "source": "café",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "atrasado",
+            "target": "lind",
+            "value": 1
+        },
+        {
+            "source": "lind",
+            "target": "pipocar",
+            "value": 1
+        },
+        {
+            "source": "pipocar",
+            "target": "denúncia",
+            "value": 1
+        },
+        {
+            "source": "grito",
+            "target": "vida",
+            "value": 1
+        },
+        {
+            "source": "vida",
+            "target": "longo",
+            "value": 1
+        },
+        {
+            "source": "longo",
+            "target": "luladrão",
+            "value": 1
+        },
+        {
+            "source": "luladrão",
+            "target": "cumprir",
+            "value": 1
+        },
+        {
+            "source": "cumprir",
+            "target": "terço",
+            "value": 1
+        },
+        {
+            "source": "terço",
+            "target": "pena",
+            "value": 1
+        },
+        {
+            "source": "agradecer",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "ouvir",
+            "target": "bruno",
+            "value": 2
+        },
+        {
+            "source": "bruno",
+            "target": "jonssen",
+            "value": 2
+        },
+        {
+            "source": "jonssen",
+            "target": "acampar",
+            "value": 2
+        },
+        {
+            "source": "acampar",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "sonhar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "sofrer",
+            "target": "ssgll",
+            "value": 1
+        },
+        {
+            "source": "ssgll",
+            "target": "síndrome",
+            "value": 1
+        },
+        {
+            "source": "síndrome",
+            "target": "saudade",
+            "value": 1
+        },
+        {
+            "source": "saudade",
+            "target": "gato",
+            "value": 1
+        },
+        {
+            "source": "gato",
+            "target": "lindo",
+            "value": 1
+        },
+        {
+            "source": "lindo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "recorrer",
+            "target": "condenar",
+            "value": 1
+        },
+        {
+            "source": "plex",
+            "target": "liberdade",
+            "value": 1
+        },
+        {
+            "source": "justiça",
+            "target": "negro",
+            "value": 4
+        },
+        {
+            "source": "negro",
+            "target": "visita",
+            "value": 5
+        },
+        {
+            "source": "visita",
+            "target": "sindicalista",
+            "value": 4
+        },
+        {
+            "source": "sindicalista",
+            "target": "lula",
+            "value": 4
+        },
+        {
+            "source": "lula",
+            "target": "prisão",
+            "value": 5
+        },
+        {
+            "source": "prisão",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "véspera",
+            "value": 4
+        },
+        {
+            "source": "véspera",
+            "target": "primeiro",
+            "value": 1
+        },
+        {
+            "source": "primeiro",
+            "target": "maio",
+            "value": 2
+        },
+        {
+            "source": "coisa",
+            "target": "revigorar",
+            "value": 1
+        },
+        {
+            "source": "revigorar",
+            "target": "almo",
+            "value": 1
+        },
+        {
+            "source": "almo",
+            "target": "saber",
+            "value": 1
+        },
+        {
+            "source": "saber",
+            "target": "hidratação",
+            "value": 1
+        },
+        {
+            "source": "hidratação",
+            "target": "cabelo",
+            "value": 1
+        },
+        {
+            "source": "cabelo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "prisão",
+            "target": "manter",
+            "value": 1
+        },
+        {
+            "source": "manter",
+            "target": "30",
+            "value": 1
+        },
+        {
+            "source": "30",
+            "target": "voto",
+            "value": 1
+        },
+        {
+            "source": "bernardo",
+            "target": "denunciado",
+            "value": 2
+        },
+        {
+            "source": "denunciado",
+            "target": "pgr",
+            "value": 1
+        },
+        {
+            "source": "renova",
+            "target": "mídia",
+            "value": 1
+        },
+        {
+            "source": "condenação",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "poder",
+            "value": 1
+        },
+        {
+            "source": "poder",
+            "target": "anulado",
+            "value": 1
+        },
+        {
+            "source": "anulado",
+            "target": "dizer",
+            "value": 1
+        },
+        {
+            "source": "dizer",
+            "target": "merval",
+            "value": 1
+        },
+        {
+            "source": "merval",
+            "target": "globo",
+            "value": 1
+        },
+        {
+            "source": "gleisi",
+            "target": "corrupção",
+            "value": 4
+        },
+        {
+            "source": "lula",
+            "target": "petista",
+            "value": 1
+        },
+        {
+            "source": "petista",
+            "target": "denunciado",
+            "value": 1
+        },
+        {
+            "source": "denunciado",
+            "target": "supremo",
+            "value": 1
+        },
+        {
+            "source": "advogado",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "dever",
+            "value": 1
+        },
+        {
+            "source": "dever",
+            "target": "ganhar",
+            "value": 1
+        },
+        {
+            "source": "ganhar",
+            "target": "por+os",
+            "value": 1
+        },
+        {
+            "source": "por+os",
+            "target": "resultado",
+            "value": 1
+        },
+        {
+            "source": "resultado",
+            "target": "apresentar",
+            "value": 1
+        },
+        {
+            "source": "prisão",
+            "target": "–",
+            "value": 1
+        },
+        {
+            "source": "–",
+            "target": "money",
+            "value": 1
+        },
+        {
+            "source": "money",
+            "target": "time",
+            "value": 1
+        },
+        {
+            "source": "denunciado",
+            "target": "novo",
+            "value": 1
+        },
+        {
+            "source": "lulalivre",
+            "target": "querer",
+            "value": 1
+        },
+        {
+            "source": "querer",
+            "target": "conhecer",
+            "value": 1
+        },
+        {
+            "source": "conhecer",
+            "target": "parir",
+            "value": 1
+        },
+        {
+            "source": "parir",
+            "target": "londres",
+            "value": 1
+        },
+        {
+            "source": "londres",
+            "target": "roma",
+            "value": 1
+        },
+        {
+            "source": "roma",
+            "target": "berlim",
+            "value": 1
+        },
+        {
+            "source": "querer",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "curitiba",
+            "target": "apoiar",
+            "value": 1
+        },
+        {
+            "source": "apoiar",
+            "target": "presidente",
+            "value": 1
+        },
+        {
+            "source": "presidente",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "urgente",
+            "target": "terrorista",
+            "value": 1
+        },
+        {
+            "source": "terrorista",
+            "target": "atacar",
+            "value": 1
+        },
+        {
+            "source": "atacar",
+            "target": "acampamento",
+            "value": 1
+        },
+        {
+            "source": "acampamento",
+            "target": "lula",
+            "value": 3
+        },
+        {
+            "source": "livre",
+            "target": "pm",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "vitorioso",
+            "value": 1
+        },
+        {
+            "source": "dodzinha",
+            "target": "temer",
+            "value": 1
+        },
+        {
+            "source": "temer",
+            "target": "cumprir",
+            "value": 1
+        },
+        {
+            "source": "cumprir",
+            "target": "roteiro",
+            "value": 1
+        },
+        {
+            "source": "roteiro",
+            "target": "globo",
+            "value": 1
+        },
+        {
+            "source": "globo",
+            "target": "denunciar",
+            "value": 1
+        },
+        {
+            "source": "pgr",
+            "target": "virar",
+            "value": 1
+        },
+        {
+            "source": "virar",
+            "target": "piada",
+            "value": 1
+        },
+        {
+            "source": "piada",
+            "target": "igual",
+            "value": 1
+        },
+        {
+            "source": "igual",
+            "target": "morar",
+            "value": 1
+        },
+        {
+            "source": "folha",
+            "target": "edition",
+            "value": 1
+        },
+        {
+            "source": "sergio",
+            "target": "morar",
+            "value": 1
+        },
+        {
+            "source": "morar",
+            "target": "proibir",
+            "value": 1
+        },
+        {
+            "source": "proibir",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "concorrer",
+            "value": 1
+        },
+        {
+            "source": "concorrer",
+            "target": "cargo",
+            "value": 1
+        },
+        {
+            "source": "cargo",
+            "target": "públ",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "simmm",
+            "value": 1
+        },
+        {
+            "source": "simmm",
+            "target": "único",
+            "value": 1
+        },
+        {
+            "source": "único",
+            "target": "mito",
+            "value": 1
+        },
+        {
+            "source": "mito",
+            "target": "político",
+            "value": 1
+        },
+        {
+            "source": "dia",
+            "target": "19.30",
+            "value": 2
+        },
+        {
+            "source": "19.30",
+            "target": "violinista",
+            "value": 2
+        },
+        {
+            "source": "violinista",
+            "target": "toca",
+            "value": 2
+        },
+        {
+            "source": "toca",
+            "target": "músico",
+            "value": 2
+        },
+        {
+            "source": "músico",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "prédio",
+            "value": 2
+        },
+        {
+            "source": "prédio",
+            "target": "laranjeira",
+            "value": 2
+        },
+        {
+            "source": "laranjeira",
+            "target": "rio",
+            "value": 2
+        },
+        {
+            "source": "rio",
+            "target": "janeiro",
+            "value": 2
+        },
+        {
+            "source": "fala",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "molusco",
+            "value": 1
+        },
+        {
+            "source": "denunciar",
+            "target": "larápio",
+            "value": 1
+        },
+        {
+            "source": "larápio",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "poder",
+            "target": "ladrar",
+            "value": 1
+        },
+        {
+            "source": "ladrar",
+            "target": "vontade",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "caro",
+            "value": 1
+        },
+        {
+            "source": "caro",
+            "target": "eleição",
+            "value": 1
+        },
+        {
+            "source": "eleição",
+            "target": "nulidade",
+            "value": 1
+        },
+        {
+            "source": "nulidade",
+            "target": "saber",
+            "value": 1
+        },
+        {
+            "source": "jantar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "⭐",
+            "value": 1
+        },
+        {
+            "source": "falar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "chupa",
+            "target": "manga",
+            "value": 1
+        },
+        {
+            "source": "delação",
+            "target": "palocci",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "arma",
+            "value": 1
+        },
+        {
+            "source": "arma",
+            "target": "mentira",
+            "value": 1
+        },
+        {
+            "source": "mentira",
+            "target": "bombardear",
+            "value": 1
+        },
+        {
+            "source": "bombardear",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "breve",
+            "value": 1
+        },
+        {
+            "source": "breve",
+            "target": "amante",
+            "value": 1
+        },
+        {
+            "source": "amante",
+            "target": "casa",
+            "value": 1
+        },
+        {
+            "source": "casa",
+            "target": "cair",
+            "value": 1
+        },
+        {
+            "source": "cair",
+            "target": "né",
+            "value": 1
+        },
+        {
+            "source": "né",
+            "target": "ri-di-cu-la",
+            "value": 1
+        },
+        {
+            "source": "haver",
+            "target": "jumento",
+            "value": 1
+        },
+        {
+            "source": "jumento",
+            "target": "dizer",
+            "value": 1
+        },
+        {
+            "source": "dizer",
+            "target": "kd",
+            "value": 1
+        },
+        {
+            "source": "kd",
+            "target": "prova",
+            "value": 1
+        },
+        {
+            "source": "dia",
+            "target": "01",
+            "value": 2
+        },
+        {
+            "source": "01",
+            "target": "maio",
+            "value": 2
+        },
+        {
+            "source": "maio",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "morar",
+            "value": 1
+        },
+        {
+            "source": "morar",
+            "target": "cadeia",
+            "value": 1
+        },
+        {
+            "source": "golpista",
+            "target": "amigo",
+            "value": 1
+        },
+        {
+            "source": "amigo",
+            "target": "coxa",
+            "value": 1
+        },
+        {
+            "source": "brasil",
+            "target": "socialista",
+            "value": 1
+        },
+        {
+            "source": "socialista",
+            "target": "dia",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "3",
+            "value": 1
+        },
+        {
+            "source": "3",
+            "target": "corrupção",
+            "value": 1
+        },
+        {
+            "source": "lavagem",
+            "target": "dinheiro",
+            "value": 2
+        },
+        {
+            "source": "denunciar",
+            "target": "stf",
+            "value": 3
+        },
+        {
+            "source": "stf",
+            "target": "lula",
+            "value": 3
+        },
+        {
+            "source": "bernardo",
+            "target": "corrupção",
+            "value": 4
+        },
+        {
+            "source": "repudiar",
+            "target": "ataque",
+            "value": 1
+        },
+        {
+            "source": "ataque",
+            "target": "acampamento",
+            "value": 2
+        },
+        {
+            "source": "acampamento",
+            "target": "pró",
+            "value": 1
+        },
+        {
+            "source": "pró",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "leve",
+            "value": 1
+        },
+        {
+            "source": "leve",
+            "target": "solto",
+            "value": 1
+        },
+        {
+            "source": "solto",
+            "target": "amanhã",
+            "value": 2
+        },
+        {
+            "source": "valor",
+            "target": "seguro",
+            "value": 1
+        },
+        {
+            "source": "seguro",
+            "target": "desemprego",
+            "value": 1
+        },
+        {
+            "source": "desemprego",
+            "target": "cobrir",
+            "value": 1
+        },
+        {
+            "source": "cobrir",
+            "target": "rombo",
+            "value": 1
+        },
+        {
+            "source": "rombo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "moçambique",
+            "target": "venezuela",
+            "value": 1
+        },
+        {
+            "source": "venezuela",
+            "target": "gleisinacadeia",
+            "value": 1
+        },
+        {
+            "source": "esperar",
+            "target": "ver",
+            "value": 1
+        },
+        {
+            "source": "gleisinacadeia",
+            "target": "amante",
+            "value": 1
+        },
+        {
+            "source": "amante",
+            "target": "senadorasefudeu",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "querer",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "amanhã",
+            "value": 1
+        },
+        {
+            "source": "noite",
+            "target": "247",
+            "value": 1
+        },
+        {
+            "source": "brasil",
+            "target": "levantar",
+            "value": 1
+        },
+        {
+            "source": "levantar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "democracia",
+            "value": 1
+        },
+        {
+            "source": "democracia",
+            "target": "primeiro",
+            "value": 1
+        },
+        {
+            "source": "bandido",
+            "target": "petista",
+            "value": 1
+        },
+        {
+            "source": "petista",
+            "target": "mensaleiro",
+            "value": 1
+        },
+        {
+            "source": "mensaleiro",
+            "target": "josé",
+            "value": 1
+        },
+        {
+            "source": "josé",
+            "target": "dirceu",
+            "value": 1
+        },
+        {
+            "source": "dirceu",
+            "target": "dizer",
+            "value": 1
+        },
+        {
+            "source": "dizer",
+            "target": "deixar",
+            "value": 1
+        },
+        {
+            "source": "deixar",
+            "target": "brasil",
+            "value": 1
+        },
+        {
+            "source": "brasil",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "deve",
+            "value": 1
+        },
+        {
+            "source": "deve",
+            "target": "mistura",
+            "value": 1
+        },
+        {
+            "source": "mistura",
+            "target": "coca-cola",
+            "value": 1
+        },
+        {
+            "source": "coca-cola",
+            "target": "51",
+            "value": 1
+        },
+        {
+            "source": "adolescência",
+            "target": "chamar",
+            "value": 1
+        },
+        {
+            "source": "chamar",
+            "target": "samba",
+            "value": 1
+        },
+        {
+            "source": "saber",
+            "target": "escrever",
+            "value": 1
+        },
+        {
+            "source": "mostrar",
+            "target": "carta",
+            "value": 1
+        },
+        {
+            "source": "carta",
+            "target": "escrito",
+            "value": 1
+        },
+        {
+            "source": "cadeia",
+            "target": "impressor",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "solto",
+            "value": 1
+        },
+        {
+            "source": "saído",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "2030",
+            "value": 1
+        },
+        {
+            "source": "enlouquecer",
+            "target": "morar",
+            "value": 1
+        },
+        {
+            "source": "morar",
+            "target": "lava",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "suposto",
+            "value": 1
+        },
+        {
+            "source": "suposto",
+            "target": "propina",
+            "value": 1
+        },
+        {
+            "source": "juiz",
+            "target": "negro",
+            "value": 1
+        },
+        {
+            "source": "visita",
+            "target": "líder",
+            "value": 1
+        },
+        {
+            "source": "líder",
+            "target": "central",
+            "value": 1
+        },
+        {
+            "source": "sindical",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "fase",
+            "target": "caetano",
+            "value": 1
+        },
+        {
+            "source": "caetano",
+            "target": "fase",
+            "value": 1
+        },
+        {
+            "source": "fase",
+            "target": "mencionar",
+            "value": 1
+        },
+        {
+            "source": "mencionar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "receber",
+            "value": 1
+        },
+        {
+            "source": "receber",
+            "target": "aplauso",
+            "value": 1
+        },
+        {
+            "source": "escritor",
+            "target": "historiador",
+            "value": 1
+        },
+        {
+            "source": "historiador",
+            "target": "casado",
+            "value": 1
+        },
+        {
+            "source": "casado",
+            "target": "ex",
+            "value": 1
+        },
+        {
+            "source": "ex",
+            "target": "secretário",
+            "value": 1
+        },
+        {
+            "source": "secretário",
+            "target": "celso",
+            "value": 1
+        },
+        {
+            "source": "celso",
+            "target": "pitta",
+            "value": 1
+        },
+        {
+            "source": "pitta",
+            "target": "dizer",
+            "value": 1
+        },
+        {
+            "source": "dizer",
+            "target": "morte",
+            "value": 1
+        },
+        {
+            "source": "morte",
+            "target": "livrar",
+            "value": 1
+        },
+        {
+            "source": "livrar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "ex-presidente",
+            "target": "dilma",
+            "value": 1
+        },
+        {
+            "source": "testemunha",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "completar",
+            "target": "frase",
+            "value": 1
+        },
+        {
+            "source": "ladrão",
+            "target": "roubar",
+            "value": 1
+        },
+        {
+            "source": "roubar",
+            "target": "coração",
+            "value": 1
+        },
+        {
+            "source": "repúblico",
+            "target": "abusivo",
+            "value": 1
+        },
+        {
+            "source": "abusivo",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "curitiba",
+            "target": "negro",
+            "value": 1
+        },
+        {
+            "source": "negro",
+            "target": "humanidade",
+            "value": 1
+        },
+        {
+            "source": "humanidade",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "esperar",
+            "target": "vir",
+            "value": 1
+        },
+        {
+            "source": "vir",
+            "target": "povo",
+            "value": 1
+        },
+        {
+            "source": "povo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "merecer",
+            "target": "ficar",
+            "value": 1
+        },
+        {
+            "source": "ficar",
+            "target": "livre",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "patético",
+            "value": 1
+        },
+        {
+            "source": "patético",
+            "target": "discurso",
+            "value": 1
+        },
+        {
+            "source": "discurso",
+            "target": "vitimização",
+            "value": 1
+        },
+        {
+            "source": "vitimização",
+            "target": "criminoso",
+            "value": 1
+        },
+        {
+            "source": "criminoso",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "caetano",
+            "target": "veloso",
+            "value": 1
+        },
+        {
+            "source": "veloso",
+            "target": "grita",
+            "value": 1
+        },
+        {
+            "source": "grita",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "ganho",
+            "value": 1
+        },
+        {
+            "source": "ganho",
+            "target": "denúncia",
+            "value": 1
+        },
+        {
+            "source": "denúncia",
+            "target": "pgr",
+            "value": 1
+        },
+        {
+            "source": "continuum",
+            "target": "caetano",
+            "value": 1
+        },
+        {
+            "source": "caetano",
+            "target": "adorar",
+            "value": 1
+        },
+        {
+            "source": "adorar",
+            "target": "pé",
+            "value": 1
+        },
+        {
+            "source": "pé",
+            "target": "frio",
+            "value": 1
+        },
+        {
+            "source": "trouxa",
+            "target": "acreditar",
+            "value": 1
+        },
+        {
+            "source": "acreditar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "et",
+            "value": 1
+        },
+        {
+            "source": "et",
+            "target": "caterva",
+            "value": 1
+        },
+        {
+            "source": "caterva",
+            "target": "inocente",
+            "value": 1
+        },
+        {
+            "source": "blog",
+            "target": "eterno",
+            "value": 1
+        },
+        {
+            "source": "eterno",
+            "target": "aprendiz",
+            "value": 1
+        },
+        {
+            "source": "procuradoria-geral",
+            "target": "repúblico",
+            "value": 1
+        },
+        {
+            "source": "repúblico",
+            "target": "denúncia",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "pal",
+            "value": 1
+        },
+        {
+            "source": "º",
+            "target": "maio",
+            "value": 1
+        },
+        {
+            "source": "maio",
+            "target": "testo",
+            "value": 1
+        },
+        {
+            "source": "testo",
+            "target": "popularidade",
+            "value": 1
+        },
+        {
+            "source": "popularidade",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "sindicato",
+            "value": 1
+        },
+        {
+            "source": "leo",
+            "target": "quadrado",
+            "value": 1
+        },
+        {
+            "source": "maio",
+            "target": "decisivo",
+            "value": 1
+        },
+        {
+            "source": "decisivo",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "país",
+            "value": 1
+        },
+        {
+            "source": "principal",
+            "target": "jornal",
+            "value": 2
+        },
+        {
+            "source": "jornal",
+            "target": "mundo",
+            "value": 2
+        },
+        {
+            "source": "mundo",
+            "target": "cair",
+            "value": 2
+        },
+        {
+            "source": "cair",
+            "target": "onda",
+            "value": 2
+        },
+        {
+            "source": "onda",
+            "target": "globo",
+            "value": 2
+        },
+        {
+            "source": "globo",
+            "target": "noticiar",
+            "value": 2
+        },
+        {
+            "source": "noticiar",
+            "target": "escalado",
+            "value": 2
+        },
+        {
+            "source": "escalado",
+            "target": "fascista",
+            "value": 2
+        },
+        {
+            "source": "fascista",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "denunciado",
+            "value": 1
+        },
+        {
+            "source": "denunciado",
+            "target": "vez",
+            "value": 1
+        },
+        {
+            "source": "jefferson",
+            "target": "vítima",
+            "value": 1
+        },
+        {
+            "source": "vítima",
+            "target": "tiro",
+            "value": 1
+        },
+        {
+            "source": "tiro",
+            "target": "acampamento",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "sai",
+            "value": 1
+        },
+        {
+            "source": "sai",
+            "target": "uti",
+            "value": 1
+        },
+        {
+            "source": "jornaldacultura",
+            "target": "acampar",
+            "value": 1
+        },
+        {
+            "source": "acampar",
+            "target": "favor",
+            "value": 1
+        },
+        {
+            "source": "favor",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "nado",
+            "target": "vida",
+            "value": 1
+        },
+        {
+            "source": "vida",
+            "target": "trabalhar",
+            "value": 1
+        },
+        {
+            "source": "saqueador",
+            "target": "bndes",
+            "value": 1
+        },
+        {
+            "source": "bndes",
+            "target": "gleisinacadeia",
+            "value": 1
+        },
+        {
+            "source": "gleisinacadeia",
+            "target": "quadrilheiro",
+            "value": 1
+        },
+        {
+            "source": "gente",
+            "target": "passar",
+            "value": 1
+        },
+        {
+            "source": "passar",
+            "target": "sentir",
+            "value": 1
+        },
+        {
+            "source": "sentir",
+            "target": "alguém",
+            "value": 1
+        },
+        {
+            "source": "alguém",
+            "target": "ver",
+            "value": 1
+        },
+        {
+            "source": "ver",
+            "target": "sol",
+            "value": 1
+        },
+        {
+            "source": "sol",
+            "target": "bolsonaro",
+            "value": 1
+        },
+        {
+            "source": "bolsonaro",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "pôr",
+            "target": "prisão",
+            "value": 1
+        },
+        {
+            "source": "prisão",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lula",
+            "target": "voto",
+            "value": 1
+        },
+        {
+            "source": "voto",
+            "target": "popular",
+            "value": 1
+        },
+        {
+            "source": "popular",
+            "target": "gente",
+            "value": 1
+        },
+        {
+            "source": "gente",
+            "target": "enterrar",
+            "value": 1
+        },
+        {
+            "source": "enterrar",
+            "target": "cadeia",
+            "value": 1
+        },
+        {
+            "source": "alguém",
+            "target": "poder",
+            "value": 1
+        },
+        {
+            "source": "poder",
+            "target": "responder",
+            "value": 1
+        },
+        {
+            "source": "responder",
+            "target": "pessoal",
+            "value": 1
+        },
+        {
+            "source": "pessoal",
+            "target": "acampar",
+            "value": 1
+        },
+        {
+            "source": "acampar",
+            "target": "perto",
+            "value": 1
+        },
+        {
+            "source": "perto",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "preso",
+            "target": "sobreviver",
+            "value": 1
+        },
+        {
+            "source": "sobreviver",
+            "target": "trabalhar",
+            "value": 1
+        },
+        {
+            "source": "exército",
+            "target": "curitiba",
+            "value": 2
+        },
+        {
+            "source": "curitiba",
+            "target": "após",
+            "value": 2
+        },
+        {
+            "source": "após",
+            "target": "pf",
+            "value": 1
+        },
+        {
+            "source": "pf",
+            "target": "pedir",
+            "value": 1
+        },
+        {
+            "source": "pedir",
+            "target": "transferência",
+            "value": 1
+        },
+        {
+            "source": "transferência",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "lulapreso",
+            "target": "37",
+            "value": 1
+        },
+        {
+            "source": "37",
+            "target": "ônibus",
+            "value": 1
+        },
+        {
+            "source": "ônibus",
+            "target": "apoiador",
+            "value": 1
+        },
+        {
+            "source": "apoiador",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "vindo",
+            "value": 1
+        },
+        {
+            "source": "vindo",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "curitiba",
+            "target": "dizer",
+            "value": 1
+        },
+        {
+            "source": "dizer",
+            "target": "prf",
+            "value": 1
+        },
+        {
+            "source": "pt",
+            "target": "censurar",
+            "value": 1
+        },
+        {
+            "source": "censurar",
+            "target": "tv",
+            "value": 1
+        },
+        {
+            "source": "tv",
+            "target": "justiça",
+            "value": 1
+        },
+        {
+            "source": "justiça",
+            "target": "soltar",
+            "value": 1
+        },
+        {
+            "source": "soltar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "escuro",
+            "value": 1
+        },
+        {
+            "source": "mst",
+            "target": "invadir",
+            "value": 1
+        },
+        {
+            "source": "invadir",
+            "target": "ensinar",
+            "value": 1
+        },
+        {
+            "source": "ensinar",
+            "target": "relatar",
+            "value": 1
+        },
+        {
+            "source": "relatar",
+            "target": "vizinho",
+            "value": 1
+        },
+        {
+            "source": "vizinho",
+            "target": "prisão",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "liderar",
+            "value": 1
+        },
+        {
+            "source": "liderar",
+            "target": "honradamente",
+            "value": 1
+        },
+        {
+            "source": "honradamente",
+            "target": "soltura",
+            "value": 1
+        },
+        {
+            "source": "soltura",
+            "target": "lulalivre",
+            "value": 1
+        },
+        {
+            "source": "precisar",
+            "target": "doação",
+            "value": 1
+        },
+        {
+            "source": "menino",
+            "target": "sala",
+            "value": 1
+        },
+        {
+            "source": "sala",
+            "target": "baixar",
+            "value": 1
+        },
+        {
+            "source": "baixar",
+            "target": "comparar",
+            "value": 1
+        },
+        {
+            "source": "comparar",
+            "target": "thanos",
+            "value": 1
+        },
+        {
+            "source": "thanos",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "achar",
+            "target": "buraco",
+            "value": 1
+        },
+        {
+            "source": "buraco",
+            "target": "negro",
+            "value": 1
+        },
+        {
+            "source": "negro",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "jornaldacultura",
+            "target": "vice",
+            "value": 1
+        },
+        {
+            "source": "vice",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "josé",
+            "value": 1
+        },
+        {
+            "source": "josé",
+            "target": "alencar",
+            "value": 1
+        },
+        {
+            "source": "alencar",
+            "target": "empresa",
+            "value": 1
+        },
+        {
+            "source": "empresa",
+            "target": "maior",
+            "value": 1
+        },
+        {
+            "source": "maior",
+            "target": "devedor",
+            "value": 1
+        },
+        {
+            "source": "devedor",
+            "target": "previdência",
+            "value": 1
+        },
+        {
+            "source": "previdência",
+            "target": "social",
+            "value": 1
+        },
+        {
+            "source": "defender",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "defender",
+            "value": 1
+        },
+        {
+            "source": "defender",
+            "target": "democracia",
+            "value": 1
+        },
+        {
+            "source": "democracia",
+            "target": "caber",
+            "value": 1
+        },
+        {
+            "source": "caber",
+            "target": "afirmação",
+            "value": 1
+        },
+        {
+            "source": "entender",
+            "target": "curitiba",
+            "value": 1
+        },
+        {
+            "source": "curitiba",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "tempo",
+            "value": 1
+        },
+        {
+            "source": "tempo",
+            "target": "preso",
+            "value": 1
+        },
+        {
+            "source": "preso",
+            "target": "correspondência",
+            "value": 1
+        },
+        {
+            "source": "correspondência",
+            "target": "correio",
+            "value": 1
+        },
+        {
+            "source": "janot",
+            "target": "denunciar",
+            "value": 1
+        },
+        {
+            "source": "dilma",
+            "target": "gleisi",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "edinho",
+            "value": 1
+        },
+        {
+            "source": "edinho",
+            "target": "mantega",
+            "value": 1
+        },
+        {
+            "source": "mantega",
+            "target": "paulo",
+            "value": 1
+        },
+        {
+            "source": "bernardo",
+            "target": "vaccari",
+            "value": 1
+        },
+        {
+            "source": "novo",
+            "target": "post",
+            "value": 1
+        },
+        {
+            "source": "primo",
+            "target": "campo",
+            "value": 1
+        },
+        {
+            "source": "psb",
+            "target": "surfar",
+            "value": 1
+        },
+        {
+            "source": "surfar",
+            "target": "popularidade",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "nordeste",
+            "value": 1
+        },
+        {
+            "source": "véspera",
+            "target": "1º",
+            "value": 3
+        },
+        {
+            "source": "lula",
+            "target": "reação",
+            "value": 1
+        },
+        {
+            "source": "reação",
+            "target": "pgr",
+            "value": 1
+        },
+        {
+            "source": "pgr",
+            "target": "descrédito",
+            "value": 1
+        },
+        {
+            "source": "gleisi",
+            "target": "lula",
+            "value": 2
+        },
+        {
+            "source": "criminoso",
+            "target": "lava",
+            "value": 1
+        },
+        {
+            "source": "40",
+            "target": "mi",
+            "value": 1
+        },
+        {
+            "source": "mi",
+            "target": "odebrecht",
+            "value": 1
+        },
+        {
+            "source": "certeza",
+            "target": "meter",
+            "value": 1
+        },
+        {
+            "source": "meter",
+            "target": "bala",
+            "value": 1
+        },
+        {
+            "source": "bala",
+            "target": "acampamento",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "povo",
+            "value": 1
+        },
+        {
+            "source": "povo",
+            "target": "esquerdo",
+            "value": 1
+        },
+        {
+            "source": "aí",
+            "target": "prova",
+            "value": 1
+        },
+        {
+            "source": "prova",
+            "target": "inocente",
+            "value": 1
+        },
+        {
+            "source": "semelhança",
+            "target": "marielle",
+            "value": 1
+        },
+        {
+            "source": "marielle",
+            "target": "ataque",
+            "value": 1
+        },
+        {
+            "source": "acampamento",
+            "target": "pró-lula",
+            "value": 1
+        },
+        {
+            "source": "apoiar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "brasília",
+            "value": 1
+        },
+        {
+            "source": "jornal",
+            "target": "nacional",
+            "value": 1
+        },
+        {
+            "source": "nacional",
+            "target": "pgr",
+            "value": 1
+        },
+        {
+            "source": "irmão",
+            "target": "brasileiro",
+            "value": 1
+        },
+        {
+            "source": "brasileiro",
+            "target": "morrer",
+            "value": 1
+        },
+        {
+            "source": "morrer",
+            "target": "corredor",
+            "value": 1
+        },
+        {
+            "source": "corredor",
+            "target": "hospital",
+            "value": 1
+        },
+        {
+            "source": "hospital",
+            "target": "culpa",
+            "value": 1
+        },
+        {
+            "source": "culpa",
+            "target": "corrupto",
+            "value": 1
+        },
+        {
+            "source": "corrupto",
+            "target": "inescrupuloso",
+            "value": 1
+        },
+        {
+            "source": "após",
+            "target": "juiz",
+            "value": 1
+        },
+        {
+            "source": "juiz",
+            "target": "autorizar",
+            "value": 1
+        },
+        {
+            "source": "autorizar",
+            "target": "transferência",
+            "value": 1
+        },
+        {
+            "source": "tentar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "dificultar",
+            "value": 1
+        },
+        {
+            "source": "dificultar",
+            "target": "passo",
+            "value": 1
+        },
+        {
+            "source": "passo",
+            "target": "gente",
+            "value": 1
+        },
+        {
+            "source": "palocci",
+            "target": "quebra",
+            "value": 1
+        },
+        {
+            "source": "quebra",
+            "target": "pacto",
+            "value": 1
+        },
+        {
+            "source": "pacto",
+            "target": "entrega",
+            "value": 1
+        },
+        {
+            "source": "entrega",
+            "target": "chefão",
+            "value": 1
+        },
+        {
+            "source": "chefão",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "lula",
+            "target": "delação",
+            "value": 1
+        },
+        {
+            "source": "delação",
+            "target": "devastador",
+            "value": 1
+        },
+        {
+            "source": "raquel",
+            "target": "dodge",
+            "value": 1
+        },
+        {
+            "source": "dodge",
+            "target": "denunciar",
+            "value": 1
+        },
+        {
+            "source": "caro",
+            "target": "fala",
+            "value": 1
+        },
+        {
+            "source": "livre",
+            "target": "mora",
+            "value": 1
+        },
+        {
+            "source": "mora",
+            "target": "país",
+            "value": 1
+        },
+        {
+            "source": "tão",
+            "target": "empenhado",
+            "value": 1
+        },
+        {
+            "source": "empenhado",
+            "target": "visitar",
+            "value": 1
+        },
+        {
+            "source": "visitar",
+            "target": "lula",
+            "value": 1
+        },
+        {
+            "source": "cela",
+            "target": "lado",
+            "value": 1
+        }
+    ]
+}

@@ -10,9 +10,30 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
+  <style>
+
+        .links line {
+          stroke: #999;
+          stroke-opacity: 0.6;
+        }
+        
+        .nodes circle {
+          stroke: #fff;
+          stroke-width: 1.5px;
+        }
+        
+        </style>
+  
   <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
+    <!-- Bootstrap core CSS -->
+  <link href="{% static 'agora/css/extrator.css' %}" rel="stylesheet">
 
   <title>Carousel Template for Bootstrap</title>
+  <!-- <style type="text/css">
+    .node {}
+
+    .link { stroke: #999; stroke-opacity: .6; stroke-width: 1px; }
+  </style> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="{% static 'agora/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -34,8 +55,8 @@
   <link href="{% static 'agora/bootstrap/docs/examples/carousel/carousel.css' %}" rel="stylesheet">
 
   <!--script src="https://d3js.org/d3-hierarchy.v1.min.js"></script-->
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="//d3plus.org/js/d3plus.js"></script>
+ 
+ 
 
 
 
@@ -45,128 +66,571 @@
 
 <body>
 
-    
+    <h1>D3.js - <a href="http://bl.ocks.org/mbostock/3048450">Histogram example</a> extended to show Multiple Histograms  with pre-computed histogram bins from JSON data</h1>
 
     
+    
+    
+    
+    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
- 
-      var color = d3.scale.category10();
-      
-      var width = 900,
-          height = 500;
-      
-      var canvas = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height)    
-      
-      var ledg = d3.select("body").append("div")
-            .style("position", "relative")
-            .style("width", 10 + "px")
-            .style("height", 10 + "px");
-      
-      
-
-      d3.json("{% static 'agora/json/p5_json_temas_subtemas.json' %}", function (data) {
-      
-          var treemap = d3.layout.treemap()
-            .size([width, height])
-            .nodes(data)
-
-          var parents = treemap.filter(function(d) {
-              return d.children;}); 
-          
-          var cells = canvas.selectAll("g")
-            .data(treemap)
-            .enter()
-            .append("g")
-            .attr("class","cell")       
-       
-          
-          cells.append("rect")
-            .attr("x", function (d) { return d.x; })
-            .attr("y", function (d) { return d.y; })
-            .attr("width", function (d) { return d.dx; })
-            .attr("height", function (d) { return d.dy; })
-            .attr("fill", function (d) { return d.children ? null : color(d.parent.name);})
-            .attr("stroke","#fff")
-            .attr("ident", function (d) { return d.children ? null : d.parent.name + ' ' + d.parent.size + '%'})           
-           
-
-          cells.append("text")
-            .attr("x", function (d) { return d.x + d.dx / 2 })
-            .attr("y", function (d) { return d.y + d.dy / 2 })
-            .attr("text-anchor", "middle")
-            .text(function (d) { return d.name + "\n\r" + d.size + '%' })
-          
+// Get pre-computed histogram data
+d3.json("{% static 'agora/json/p4_json_histograma.json' %}", function(json) {
+  
+    var maxBin = 3;
+    var binInc = 0.3;
+  
    
-            
-          var i;
-          parents_list = []
-          for (i = 0; i < parents.length; i++) { 
-              parents_list.push(parents[i].name)
+    for( var i = 0; i < json.length; i++) {
+      
+      // use the name of the group to initialize the array
+      var group = json[i].name;
+      var data = [];
+      
+      // we have a max bin for our histogram, must ensure
+      // that any bins > maximum bin are rolled into the 
+      // last bin that we have
+      var binCounts = {};
+      for( var j = 0; j < json[i].data.length; j++) {
+        var xValue = json[i].data[j].bin;
+        // bin cannot exceed the maximum bin
+        xValue = ( xValue > maxBin ? maxBin : xValue);
+        var yValue = json[i].data[j].count;
+        
+        if(binCounts[xValue] === undefined) {
+          binCounts[xValue] = 0;
+        }
+        binCounts[xValue] += yValue;
+      }
+      
+      // add the bin counts in
+      for( var bin in binCounts) {
+        data.push({"x": bin, "y": binCounts[bin]});
+      }
+      
+      // add the histogram
+      createHistogram(data, maxBin, binInc, group.toUpperCase())
+    }
+    
+  });
+  
+  var createHistogram = function(data, maxBin, binInc, title) {
+  
+    // A formatter for counts.
+    var formatCount = d3.format(",.0f");
+    var totalWidth = 480;
+    var totalHeight = 240;
+    var margin = {top: 40, right: 60, bottom: 50, left: 70},
+        width = totalWidth - margin.left - margin.right,
+        height = totalHeight - margin.top - margin.bottom;
+    
+    var binArray = [];
+    for (var i = 0; i <= maxBin + binInc; i += binInc) {
+      binArray.push(i);
+    }
+    var binTicks = [];
+    for (var i = 0; i < maxBin + binInc; i += binInc) {
+      binTicks.push(i);
+    }
+    
+    var x = d3.scale.linear()
+        .domain([0, maxBin + binInc])
+        .range([0, width]);
+    var binWidth = parseFloat(width / (binArray.length - 1)) - 1;
+    
+    var y = d3.scale.linear()
+        .domain([0, d3.max(data, function(d) { return d.y; })])
+        .range([height, 0]);
+    
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .tickValues(binTicks);
+        
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+    
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+          .call(d3.behavior.zoom().on("zoom", function () {
+    svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+  }))
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+    var bar = svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.x); })
+        .attr("width", binWidth)
+        .attr("y", function(d) { return y(d.y); })
+        .attr("height", function(d) { return height - y(d.y); })
+        .attr("seover", function(d) {
+          var barWidth = parseFloat(d3.select(this).attr("width"));
+          var xPosition = parseFloat(d3.select(this).attr("x")) + (barWidth / 2);
+          var yPosition = parseFloat(d3.select(this).attr("y")) - 10;
+          
+          svg.append("text")
+            .attr("id", "tooltip")
+            .attr("x", xPosition)
+            .attr("y", yPosition)
+            .attr("text-anchor", "middle")
+            .text(d.y);
+        })
+        
+    
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+        
+    svg.append("g")
+        .attr("class", "y axis")
+        //.attr("transform", "translate(0," + height + ")")
+        .call(yAxis);
+        
+    // Add axis labels
+    svg.append("text")
+        .attr("class", "x label")
+        .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.bottom - 15) + ")")
+        //.attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .text("Intervalo (IP)");
+        
+    svg.append("text")
+        .attr("class", "y label")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .text("Palavras");
+        
+    // Add title to chart
+    svg.append("text")
+        .attr("class", "title")
+        .attr("transform", "translate(" + (width / 2) + " ," + (-20) + ")")
+        //.attr("dy", "1em")
+        .attr("text-anchor", "middle")
+        .text(title);  
+  };
+
+
+
+
+
+
+
+
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <svg width="960" height="600"></svg>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script>
+        
+        var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height");
+        
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(10).strength(1))
+            .force("charge", d3.forceManyBody())
+            .force("center", d3.forceCenter(width / 2, height / 2));
+        
+              
+        d3.json("{% static 'agora/json/p3_json_rede.json' %}", function(error, graph) {
+          if (error) throw error;
+
+         
+          var link = svg.append("g")
+              .attr("class", "links")
+            .selectAll("line")      
+            .data(graph.links)
+            .enter().append("line")
+              .attr("stroke-width", function(d) { return Math.sqrt(d.value); })        
+              
+          var node = svg.append("g")
+              .attr("class", "nodes")
+            .selectAll("circle")
+            .data(graph.nodes)
+            .enter().append("circle")
+              .attr("r", 5)
+              .attr("fill", function(d) { return color(d.group); })
+              .call(d3.drag()
+                  .on("start", dragstarted)
+                  .on("drag", dragged)
+                  .on("end", dragended));
+        
+          node.append("title")
+              .text(function(d) { return d.id; });
+        
+          simulation
+              .nodes(graph.nodes)
+              .on("tick", ticked);
+        
+          simulation.force("link")
+              .links(graph.links);
+        
+          function ticked() {
+            link
+                .attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+        
+            node
+                .attr("cx", function(d) { return d.x; })
+                .attr("cy", function(d) { return d.y; });
+
+            layout
+                .charge(-10 / k)
+                .gravity(100 * k)
+          }
+        });
+
+              
+        function dragstarted(d) {
+          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        }
+        
+        function dragged(d) {
+          d.fx = d3.event.x;
+          d.fy = d3.event.y;
+        }
+        
+        function dragended(d) {
+          if (!d3.event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }
+
+       
+        
+        </script>
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <svg width="960" height="600"></svg>
+    <script type="text/javascript">
+        var colors = d3.scaleOrdinal(d3.schemeCategory20);
+    
+        var svg = d3.select("svg"),
+            width = +svg.attr("width"),
+            height = +svg.attr("height"),
+            node,
+            link;
+    
+        svg.append('defs').append('marker')
+            .attrs({'id':'arrowhead',
+                'viewBox':'-0 -5 10 10',
+                'refX':13,
+                'refY':0,
+                'orient':'auto',
+                'markerWidth':8,
+                'markerHeight':8,
+                'xoverflow':'visible'})
+            .append('svg:path')
+            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+            .attr('fill', '#999')
+            .style('stroke','none');
+    
+        var simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(50).strength(1))
+            .force("charge", d3.forceManyBody())
+            .force("center", d3.forceCenter(width / 2, height / 2));
+    
+        d3.json("{% static 'agora/json/p3_json_rede.json' %}", function (error, graph) {
+            if (error) throw error;
+            update(graph.links, graph.nodes);
+        })
+    
+        function update(links, nodes) {
+            link = svg.selectAll(".link")
+                .data(links)
+                .enter()
+                .append("line")
+                .attr("class", "link")
+                .attr('marker-end','url(#arrowhead)')
+    
+            link.append("title")
+                .text(function (d) {return d.type;});
+    
+            edgepaths = svg.selectAll(".edgepath")
+                .data(links)
+                .enter()
+                .append('path')
+                .attrs({
+                    'class': 'edgepath',
+                    'fill-opacity': 0,
+                    'stroke-opacity': 0,
+                    'id': function (d, i) {return 'edgepath' + i}
+                })
+                .style("pointer-events", "none");
+    
+            edgelabels = svg.selectAll(".edgelabel")
+                .data(links)
+                .enter()
+                .append('text')
+                .style("pointer-events", "none")
+                .attrs({
+                    'class': 'edgelabel',
+                    'id': function (d, i) {return 'edgelabel' + i},
+                    'font-size': 10,
+                    'fill': '#aaa'
+                });
+    
+            edgelabels.append('textPath')
+                .attr('xlink:href', function (d, i) {return '#edgepath' + i})
+                .style("text-anchor", "middle")
+                .style("pointer-events", "none")
+                .attr("startOffset", "50%")
+                .text(function (d) {return d.type});
+    
+            node = svg.selectAll(".node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        //.on("end", dragended)
+                );
+    
+            node.append("circle")
+                .attr("r", 5)
+                .style("fill", function (d, i) {return colors(i);})
+    
+            node.append("title")
+                .text(function (d) {return d.id;});
+    
+            node.append("text")
+                .attr("dy", -3)
+                .text(function (d) {return d.name;});
+    
+            simulation
+                .nodes(nodes)
+                .on("tick", ticked);
+    
+            simulation.force("link")
+                .links(links);
+        }
+    
+        function ticked() {
+            link
+                .attr("x1", function (d) {return d.source.x;})
+                .attr("y1", function (d) {return d.source.y;})
+                .attr("x2", function (d) {return d.target.x;})
+                .attr("y2", function (d) {return d.target.y;});
+    
+            node
+                .attr("transform", function (d) {return "translate(" + d.x + ", " + d.y + ")";});
+    
+            edgepaths.attr('d', function (d) {
+                return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
+            });
+    
+            edgelabels.attr('transform', function (d) {
+                if (d.target.x < d.source.x) {
+                    var bbox = this.getBBox();
+    
+                    rx = bbox.x + bbox.width / 2;
+                    ry = bbox.y + bbox.height / 2;
+                    return 'rotate(180 ' + rx + ' ' + ry + ')';
+                }
+                else {
+                    return 'rotate(0)';
+                }
+            });
+        }
+    
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart()
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+    
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+    
+    //    function dragended(d) {
+    //        if (!d3.event.active) simulation.alphaTarget(0);
+    //        d.fx = undefined;
+    //        d.fy = undefined;
+    //    }
+    
+    </script>
+    
+   -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <!-- <h1>Force Tutorial</h1>
+  <canvas id="network" width="500" height="500"></canvas> -->
+  <!-- <script>
+        /* global d3 */
+
+     
+
+        var canvas = d3.select("#network"),
+            width = canvas.attr("width"),
+            height = canvas.attr("height"),
+            r = 3,
+            color = d3.scaleOrdinal(d3.schemeCategory20);
+            ctx = canvas.node().getContext("2d"),
+            simulation = d3.forceSimulation()
+                .force("x", d3.forceX(width/2))
+                .force("y", d3.forceY(height/2))
+                .force("collide", d3.forceCollide(r + 2))
+                .force("charge", d3.forceManyBody()
+                    .strength(-20))
+                .force("link", d3.forceLink()
+                    .id(function (d) { return d.name; }))
+                
+
+//        graph.nodes.forEach(function(d) {
+//            d.x = Math.random() *width;
+//            d.y = Math.random() *height;
+ //       })  
+
+        d3.json("{% static 'agora/json/p3_json_rede.json' %}", function (err, graph) {
+            if (err) throw err;
+
+            simulation
+                .nodes(graph.nodes)
+                .on("tick", update)
+                .force("link")
+                    .links(graph.links);
+                
+            canvas
+                .call(d3.drag()
+                    .container(canvas.node())
+                    .subject(dragsubject)
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+              
+
+            function update() {
+                ctx.clearRect(0, 0, width, height);
+                
+                ctx.beginPath();
+                ctx.globalAlpha = 0.1;
+                ctx.strokeStyle = "#aaa"
+                graph.links.forEach(drawLink);
+                ctx.stroke();    
+                
+                ctx.globalAlpha = 1.0;
+                graph.nodes.forEach(drawNode);
+                
+            }
+
+            function dragsubject() {
+                return simulation.find(d3.event.x, d3.event.y);
+            }
+        });
+ 
+        
+
+       
+
+        function drawNode(d) {
+            ctx.beginPath();
+            ctx.fillStyle = color(d.party);
+            ctx.moveTo(d.x, d.y);
+            ctx.arc(d.x, d.y, r, 0, 2*Math.PI);
+            ctx.fill();
+        }
+        
+        function drawLink(l) {
+            ctx.moveTo(l.source.x, l.source.y);
+            ctx.lineTo(l.target.x, l.target.y);
+        }
+
+        function dragstarted() {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d3.event.subject.fx = d3.event.subject.x;
+            d3.event.subject.fy = d3.event.subject.y;
           }
           
-          cores_distintas = []
-          cores_distintas_test = []
-          d3.selectAll("rect").each(function (d){    
-              var b = d3.select(this).attr("fill") 
-              var a = d3.select(this).attr("ident") 
-              
-              if (cores_distintas_test.indexOf(b) >= 0) {
-                  console.log(b)
-              } else {
-                  if (a){
-                  var tuple = [b,a]                 
-                  cores_distintas.push(tuple)
-                  cores_distintas_test.push(b)
-                  }
-              }        
-              
-          }) 
+        function dragged() {
+            d3.event.subject.fx = d3.event.x;
+            d3.event.subject.fy = d3.event.y;
+          }
           
-          var legenda = d3.select("#legend")
-          .selectAll('div')           
-          .data(cores_distintas) 
-          
-          legenda.enter('div')
-            .append('div') 
-            .style("position", "relative")
-            .style("width", 200 + "px")
-            .style("height", 30 + "px")  
-            .style("background", function (d) { { return d[0]} }) 
-            .style("text-align", "center") 
-            .style("vertical-align", "middle")
-            .style("color", "black")
-            .style("line-height", "30px");  
-            
-           
-            
-            
-          legenda.append("text")          
-            .text(function (d) { { return d[1]} })
-            
-          
-         
-      
-         
-          
-     
-
-
-
-      });
+        function dragended() {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d3.event.subject.fx = null;
+            d3.event.subject.fy = null;
+          }
 
         
-      
 
 
-      
-      
-    </script> 
-
-    <div id="legend">
-     
-    </div>
+  </script> -->
+    
 
 
 
@@ -183,9 +647,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static 'agora/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js' %}"></script>
 
-    <script>
-      $('#myModal').modal('show')
-    </script>
+
 
 </body>
 

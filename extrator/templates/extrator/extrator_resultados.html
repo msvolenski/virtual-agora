@@ -10,15 +10,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <style>
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+
+        .nodes circle {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+    </style>
     <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <title>Resultados do ECC</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap core CSS -->
@@ -45,6 +53,9 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="{% static 'agora/bootstrap/docs/assets/js/ie-emulation-modes-warning.js' %}"></script>
     <script src="{% static 'agora/js/modernizr.js' %}"></script>
+
+
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -248,12 +259,12 @@
 
     <section id="extracao" class="container content-section text-center" style="position:relative;padding-top:0px">
 
-        <!-- INÍCIO DO PASSO 1 -->    
+        <!-- INÍCIO DO PASSO 1 -->
         <div class="inicio_timeline">
             <b>PASSO 1</b>
         </div>
 
-        <div id="cd-timeline" class="cd-container" style="position:relative;">            
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
             <div id="passo1">
 
                 <!-- cd-timeline-block -->
@@ -316,20 +327,18 @@
                         {% endif %}
                     </div>
                 </div>
-           
+
             </div>
         </div>
 
-        {% if documento %}        
+        {% if documento %}
         <!-- RESULTADOS DO PASSO 1  -->
         <div class="result-content" id="resultado-passo-1">
-              <div style="padding:50px">{{documento|linebreaks}}</div>  
+            <div style="padding:50px">{{documento|linebreaks}}</div>
         </div>
-        {% endif %}
-        
-        {% if not documento %}
+        {% endif %} {% if not documento %}
         <div class="sem_resultado" style="margin-top:100px">
-                <b>RESULTADOS</b>
+            <b>RESULTADOS</b>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 1 +++++++++++++++++++++++++ 1  -->
@@ -418,16 +427,14 @@
             </div>
         </div>
 
-        {% if documento_p2 %}        
         <!-- RESULTADOS DO PASSO 2  -->
+        {% if documento_p2 %}
         <div class="result-content" id="resultado-passo-2" style="margin-top:150px">
-              <div >{{documento_p2|linebreaks}}</div>  
+            <div>{{documento_p2|linebreaks}}</div>
         </div>
-        {% endif %}
-        
-        {% if not documento_p2 %}
+        {% endif %} {% if not documento_p2 %}
         <div class="sem_resultado" style="position:relative;margin-top:110px;">
-                <b>RESULTADOS</b>
+            <b>RESULTADOS</b>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 2 +++++++++++++++++++++++++ 1  -->
@@ -477,30 +484,42 @@
                         <span id="logo_rede" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #33e0a1">
-                        <h2>Gerar Rede Complexa</h2>
+                        <h2>Gerar Matriz</h2>
                         <a href="{% url 'extrator:matriz' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
                         {% if tempo_p3gr %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p3gr}} s</span>
                         {% endif %}
                     </div>
                 </div>
-            
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_rede" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content" style="background: #33e0a1">
+                        <h2>Gerar Rede Complexa</h2>
+                        <a href="{% url 'extrator:rede_complexa' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
+                        {% if tempo_p3gr %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p3gr}} s</span>
+                        {% endif %}
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        {% if documento %}        
-        <!-- RESULTADOS DO PASSO 2  -->
-        <div class="result-content" id="resultado-passo-2">
-              <div >{{documento|linebreaks}}</div>  
+        <!-- RESULTADOS DO PASSO 3  -->
+        {% if rede_p3 %}
+        <div class="result-content" id="resultado-passo-3" style="margin-top:109px;height:600px;">
+            <svg id="resultado_p3" width="960" height="600"></svg>
+        </div>
+        {% endif %} {% if not rede_p3 %}
+        <div class="sem_resultado" style="position:relative;margin-top:74px;">
+            <b>RESULTADOS</b>
         </div>
         {% endif %}
-        
-        {% if not documento %}
-        <div class="sem_resultado" style="position:relative;">
-                <b>RESULTADOS</b>
-        </div>
-        {% endif %}
-        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 1 +++++++++++++++++++++++++ 1  -->
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 3 +++++++++++++++++++++++++ 1  -->
 
 
 
@@ -508,7 +527,7 @@
 
         <!-- começa o PASSO 4  -->
         <div class="inicio_timeline">
-            <b>PASSO 4</b>
+            <a href="{% url 'extrator:executa_passo_4' %}" style="color:inherit;font-weight:bold">PASSO 4</a>
         </div>
 
         <div id="cd-timeline" class="cd-container" style="position:relative;">
@@ -553,8 +572,59 @@
                         {% if tempo_p4st %}
                         <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
                         {% endif %}
-                    </div>f
+                    </div>
                 </div>
+
+            </div>
+        </div>
+
+        <!-- RESULTADOS DO PASSO 4  -->
+        {% if histo_p4 %}
+        <div class="result-content" id="resultado-passo-4-histo" style="margin-top:70px;height:600px;">
+
+        </div>
+        {% endif %} {% if documento_p4 %}
+        <div class="result-content" id="resultado-passo-4-doc" style="margin-top:100px">
+            <div>{{documento_p4|linebreaks}}</div>
+        </div>
+        {% endif %} {% if not histo_p4 %}
+        <div class="sem_resultado" style="position:relative;margin-top:65px;">
+            <b>RESULTADOS</b>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 4 +++++++++++++++++++++++++ 1  -->
+
+
+
+
+
+        <!-- começa o PASSO 5  -->
+        <div class="inicio_timeline">
+            <b>PASSO 5</b>
+        </div>
+
+        <div id="cd-timeline" class="cd-container" style="position:relative;">
+            <div id="passo5">
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content">
+                        <h2 style="margin-bottom:15px">Clusters com os Temas Principais</h2>
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data">
+                            <input style="display:block;margin:0 auto;" type="number" name="valor_nc" placeholder="n. do cluster final">
+
+                            <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
+                        </form>
+                        {% if tempo_p1dt %}
+                        <span class="cd-date" style="margin-left:-185px;"> {{tempo_p1dt}} s - {{contador_nt}} tweets </span>
+                        {% endif %}
+                    </div>
+                </div>
+
 
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
@@ -586,18 +656,18 @@
 
             </div>
         </div>
+        <!-- fim dos passos  -->
 
 
 
 
-
-        <!-- começa o PASSO 5  -->
+        <!-- começa o PASSO 6  -->
         <div class="inicio_timeline">
-                <b>PASSO 5</b>
+            <b>PASSO 6</b>
         </div>
-    
+
         <div id="cd-timeline" class="cd-container" style="position:relative;">
-            <div id="passo5">
+            <div id="passo6">
 
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
@@ -644,7 +714,7 @@
 
             </div>
         </div>
-         <!-- fim dos passos  -->
+        <!-- fim dos passos  -->
 
 
         <div id="fim" class="botao_resultados_2">
@@ -817,7 +887,26 @@
 
     <!-- BS JavaScript -->
     <script type="text/javascript" src="{% static 'agora/js/bootstrap.js' %}"></script>
-    <script src="{% static 'agora/js/main.js' %}"></script> {% if goto %}
+
+    <script src="{% static 'agora/js/main.js' %}"></script>
+
+
+
+    <!-- MONTA RESULTADOS DO PASSO 3 -->
+    {%if rede_p3 %}
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+        var p3_json_rede = "{% static 'agora/json/p3_json_rede.json' %}";
+    </script>
+    <script src="{% static 'agora/js/p3_redecomplexa.js' %}"></script> {% endif %}
+
+    <!-- MONTA RESULTADOS DO PASSO 4 -->
+    {%if histo_p4 %}
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var p4_histograma_data = "{% static 'agora/json/p4_json_histograma.json' %}";
+    </script>
+    <script src="{% static 'agora/js/p4_histograma.js' %}"></script> {% endif %} {% if goto %}
     <script>
         window.location.hash = '#{{goto}}';
         3
@@ -827,132 +916,13 @@
         classe.className = "glyphicon glyphicon-ok";
         classe.style.color = "#A1E570";
     </script> {% endif %} {% if muda_logo_error %}
+
     <script>
         var classe = document.getElementById('{{muda_logo_error}}');
         classe.className = "glyphicon glyphicon-remove";
         classe.style.color = "red";
     </script> {% endif %}
 
-    <script type="text/javascript">
-        function show_sidebar(name) {
-            var nome = name.attributes["name"].value;
-            document.getElementById(nome).style.visibility = "visible";
-
-        }
-
-        function hide_sidebar(name) {
-            var nome = name.attributes["name"].value;
-            document.getElementById(nome).style.visibility = "hidden";
-        }
-
-        function mostrar_paragrafo(name) {
-            var nome = name.attributes["name"].value;
-            cond = document.getElementById(nome);
-
-            if (cond.style.visibility == "hidden") {
-                cond.style.visibility = "visible";
-                name.style.background = "red";
-            }
-            else {
-                cond.style.visibility = 'hidden';
-                name.style.background = "#C30FFF";
-
-            }
-        }
-    </script>
-
-    <script>
-
-        var color = d3.scale.category10();
-
-        var width = 800,
-            height = 500;
-
-        var canvas = d3.select("resultados").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-
-
-        d3.json("{% static 'agora/json/p5_json_temas_subtemas.json' %}", function (data) {
-
-            var treemap = d3.layout.treemap()
-                .size([width, height])
-                .nodes(data)
-
-            var parents = treemap.filter(function (d) {
-                return d.children;
-            });
-
-            var cells = canvas.selectAll("g")
-                .data(treemap)
-                .enter()
-                .append("g")
-                .attr("class", "cell")
-
-
-            cells.append("rect")
-                .attr("x", function (d) { return d.x; })
-                .attr("y", function (d) { return d.y; })
-                .attr("width", function (d) { return d.dx; })
-                .attr("height", function (d) { return d.dy; })
-                .attr("fill", function (d) { return d.children ? null : color(d.parent.name); })
-                .attr("stroke", "#fff")
-                .attr("ident", function (d) { return d.children ? null : d.parent.name + ' ' + d.parent.size + '%' })
-
-
-            cells.append("text")
-                .attr("x", function (d) { return d.x + d.dx / 2 })
-                .attr("y", function (d) { return d.y + d.dy / 2 })
-                .attr("text-anchor", "middle")
-                .text(function (d) { return d.name + "\n\r" + d.size + '%' })
-
-
-            var i;
-            parents_list = []
-            for (i = 0; i < parents.length; i++) {
-                parents_list.push(parents[i].name)
-            }
-
-            cores_distintas = []
-            cores_distintas_test = []
-            d3.selectAll("rect").each(function (d) {
-                var b = d3.select(this).attr("fill")
-                var a = d3.select(this).attr("ident")
-
-                if (cores_distintas_test.indexOf(b) >= 0) {
-                    console.log(b)
-                } else {
-                    if (a) {
-                        var tuple = [b, a]
-                        cores_distintas.push(tuple)
-                        cores_distintas_test.push(b)
-                    }
-                }
-
-            })
-
-            var legenda = d3.select("#legend")
-                .selectAll('div')
-                .data(cores_distintas)
-
-            legenda.enter('div')
-                .append('div')
-                .style("position", "relative")
-                .style("width", 200 + "px")
-                .style("height", 30 + "px")
-                .style("background", function (d) { { return d[0] } })
-                .style("text-align", "center")
-                .style("vertical-align", "middle")
-                .style("color", "black")
-                .style("line-height", "30px");
-
-            legenda.append("text")
-                .text(function (d) { { return d[1] } })
-
-
-        });
-
-    </script>
 
 
 </body>

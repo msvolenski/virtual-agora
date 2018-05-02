@@ -715,7 +715,7 @@ def executa_passo_2(request):
     
     return render(request, 'extrator/extrator_resultados.html', {'documento_p2':p2_relatorio,'goto': 'resultado-passo-2','muda_logo':'logo_gerar_rp2'})
 
-######### FIM PASSO 1 ################################################################################################################################################################
+######### FIM PASSO 2 ################################################################################################################################################################
 
 
 
@@ -834,56 +834,76 @@ def matriz(request):
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo3','muda_logo':'logo_rede'})
 
 
-def executa_passo_3(request):
-    print 'qqqqqqqqqqqqqqqqqqqqq'
-    
-    lista_de_vertices(request)
-    
-    mapear(request)
-
-    
-    
-    matriz(request)
-            
+def rede_complexa(request):
     #Lê arquivo que contém a lista de adjacenicas
     arq_listaAdjacencias = codecs.open("C:/virtual-agora/extrator/arquivos/p3_lista_adjacencias.txt","r","utf-8")
+    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p3_json_rede.json", 'w', 'utf-8') 
+
     listaAdjacencias = arq_listaAdjacencias.readlines()
 
     #carrega lista de vertices
     lista_de_vertices_t = ListaVertices.objects.all()
 
+    arq_json.write("{\n    \"nodes\": [\n        ")
+    
     #gera rede
     rede = nx.DiGraph()
-    for vertice in lista_de_vertices_t:
+    
+    #escreve os nós
+    for i , vertice in enumerate(lista_de_vertices_t):
+        idn = 1
+        #arq_json.write("{\n            \"name\": \"" + vertice.node + "\",\n            \"label\": \"0\",\n            \"id\": \"" + str(vertice.index)+ "\"\n        }")      
+        arq_json.write("{\n            \"id\": \"" + vertice.node + "\",\n            \"group\": \"0\",\n            \"other\": \"" + str(vertice.index)+ "\"\n        }")      
+
+        if i == (len(lista_de_vertices_t) -1):
+            arq_json.write("\n    ],\n    ")         
+        else:
+            arq_json.write(",\n        ")
         rede.add_node(vertice.node)
-    for bigrama in listaAdjacencias:                
+        idn = idn + 1
+    #escreve os links
+    arq_json.write("\"links\": [\n")         
+
+    for i, bigrama in enumerate(listaAdjacencias):                
         vertice_inicial = bigrama.split(' ')[0]
-        vertice_final =  bigrama.split(' ')[1]
-        peso =  float(bigrama.split(' ')[2])
-        rede.add_edge(vertice_inicial , vertice_final , weight = peso)
-
-    #Visualização da rede
-    pos = nx.spring_layout(rede)
-    labels = nx.get_edge_attributes(rede,'weight')
-    nx.draw_networkx_edge_labels(rede,pos,edge_labels=labels)
-    nx.draw(rede, pos,edge_labels=labels, with_labels = True)    
-    plt.savefig('extrator/arquivos/p3_rede.png')
-    plt.show()
-    plt.close()
-
+        vi_obj = ListaVertices.objects.get(node__exact=vertice_inicial)
+        vi_index = vi_obj.index
+        vertice_final = bigrama.split(' ')[1]
+        vf_obj = ListaVertices.objects.get(node__exact=vertice_final)
+        vf_index = vf_obj.index
+        peso = float(bigrama.split(' ')[2])
+        arq_json.write("        {\n            \"source\": \"" + vertice_inicial + "\",\n            \"target\": \"" + vertice_final + "\",\n            \"value\": " + str(int(peso)) + "\n        }" )         
+        if i == (len(listaAdjacencias) -1):
+            arq_json.write("\n    ]\n}")         
+        else:
+            arq_json.write(",\n")
+        rede.add_edge(vertice_inicial, vertice_final, weight=peso)
+        
     nx.write_gexf(rede, "extrator/p3_rede_complexa_gephi.gexf")
     
-    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3','dados_de_entrada': None, 'relatorio_preproc':None })    
+            
+    
+    return render(request, 'extrator/extrator_resultados.html', {'rede_p3':"rede",'goto': 'resultado-passo-3','dados_de_entrada': None, 'relatorio_preproc':None })    
 
 
-## PASSO 4. MÉTRICAS E RANKING  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def executa_passo_3(request):
+      
+    lista_de_vertices(request)
+    mapear(request)    
+    matriz(request)
+    rede_complexa(request)    
+    
+    return render(request, 'extrator/extrator_resultados.html', {'rede_p3':"doc",'goto': 'resultado-passo-3','dados_de_entrada': None, 'relatorio_preproc':None })    
+
+######### FIM PASSO 3 ################################################################################################################################################################
+
+
+
+
+########### PASSO 4 #############################################################################################################################################################################
 
 def metricas_e_ranking(request): 
  
-    
-    #inicia cronometro
-    inicio = time.time()
-
     #Objetivo: calcular as métricas de centralidade da rede e gerar tabelas    
     
     #carrega parametros de ajuste
@@ -932,14 +952,12 @@ def metricas_e_ranking(request):
         print "calculando métrica graus..."
         tabela_graus_t = nx.degree(rede, weight='weight')     
         tabela_graus = dict(tabela_graus_t)
-        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]
-        print maior_grau   
+        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]        
     
     if parametros.check_betw == 'sim':
         print "calculando métrica betweenness..."
         tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
-        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
-        print maior_betweenness
+        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]        
     
     if parametros.check_eigen == 'sim':    
         print "calculando métrica eigenvector..."
@@ -948,10 +966,9 @@ def metricas_e_ranking(request):
         except:
             tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
         maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
-        print maior_eigenvector 
+       
    
-    #GERA REDE GEPHI
-  
+    #GERA REDE GEPHI  
     nx.write_gexf(rede, "extrator/arquivos/p3_rede_complexa_gephi.gexf")
   
     #cria lista de vertices
@@ -1014,17 +1031,12 @@ def metricas_e_ranking(request):
     arq_tabela_betweenness.close()
     arq_tabela_eigenvector.close()
     arq_texto_vertices.close()  
-    
-    #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
-    
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4cm':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_metricas' }) 
+        
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_metricas' }) 
 
 
 def calcula_indice(request):
-    #inicia cronometro
-    inicio = time.time()
-    
+        
     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
         
     #Abre arquivo de dados a serem lidos
@@ -1071,26 +1083,7 @@ def calcula_indice(request):
     #fecha arquivo
     arq_tabela_potenciacao.close()
     
-    #  #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
-    
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
-
-
-def plota_figura(eixoY,eixoX,cor1,cor2,cor3,alpha,tipo,endereco):
-
-    #Lógica maluca
-    if tipo == 'salva_figura_1':        
-        pylab.savefig(endereco)       
-        plt.clf()
-        return
-    if tipo == 'plota_figura_1':       
-        pylab.plot(eixoY, eixoX, 'ro',  markersize = 1, color=(cor1/255.0,cor2/255.0,cor3/255.0), label=alpha)
-        return 
-    if tipo == 'plota_e_salva_figura_2':
-        pylab.plot(eixoY, eixoX, 'ro', markersize = 1, color=cor1)
-        pylab.savefig(endereco)       
-        return
 
 
 def selecionar_temas(request):
@@ -1115,6 +1108,7 @@ def selecionar_temas(request):
     arq_tabela_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt", 'w', 'utf-8')  
     arq_clusters = codecs.open("extrator/arquivos/p5_clusters.txt", 'w', 'utf-8') 
     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt", 'w')
+    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p4_json_histograma.json", 'w', 'utf-8') 
 
     #carrega tabela potenciação
     tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()    
@@ -1144,7 +1138,15 @@ def selecionar_temas(request):
     n, bins, patches = plt.hist(potenciacao_valores, intervalos, facecolor='blue', alpha=0.5)
     pylab.savefig('extrator/arquivos/p5_grafo_histograma.png')     
     
+    #inicializa json
+    arq_json.write("[\n    {\n        \"name\": \"Histograma Clusters\",\n        \"other\": " + str(parametros.faixa_histo) + ",\n        \"data\":[\n")
+    
     for idx,item in enumerate(n):
+        arq_json.write("            {\n                \"bin\": " + str(bins[idx]) + ",\n                \"count\": " + str(int(item)) + "\n            }")
+        if idx == (len(n) -1):
+            arq_json.write("\n        ]\n    }\n]")         
+        else:
+            arq_json.write(",\n")      
         tabela_histograma[bins[idx + 1]] = item
         arq_tabela_histo.write(str(idx) + ' ' + str(bins[idx]) + '->'+  str(bins[idx + 1]) + ' ' + str(item) + '\n')
         
@@ -1215,19 +1217,15 @@ def selecionar_temas(request):
     #carregas os temas ainda nao classificados
     palavras_faltantes = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)   
     
-    #manda as palavras para o usuário classificar
-    print palavras_faltantes
+    #manda as palavras para o usuário classificar    
     if palavras_faltantes:
         return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavras_faltantes':palavras_faltantes})
     
    
-    #cria vetor de vertices selecionados    
-    
-    temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
-  
+    #cria vetor de vertices selecionados      
+    temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')  
     temas_preselecionados = OrderedDict(temas_preselecionados)
 
-  
     #inicializa relatório
     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
     arq_relatorio.write('\n\n\n')
@@ -1278,13 +1276,6 @@ def selecionar_temas(request):
     for tem in temas_preselecionados.values():
         vertice = TabelaRanking.objects.get(vertice_nome__exact=tem)
         temas_selecionados[tem] = ((float(vertice.potenciacao))/3)*100
-
-    
-    print temas_excluidos
-    print temas_selecionados    
-    
-    #for tema in temas_excluidos:
-    #   temas_selecionados.remove(tema)
        
     for tema in temas_excluidos:
         del temas_selecionados[tema]
@@ -1304,8 +1295,31 @@ def selecionar_temas(request):
 
     #fecha arquvos
     arq_relatorio.close()
+    arq_json.close()
+
+    #LÊ relatório    
+    p4_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt","r","utf-8").read()
+  
+    return render(request, 'extrator/extrator_resultados.html', {'documento_p4':p4_relatorio,'histo_p4':'h','goto':'passo4', 'muda_logo':'logo_sel_temas' })
+
+def executa_passo_4(request):
+    
+    metricas_e_ranking(request)
+    calcula_indice(request)
+    selecionar_temas(request)
+
+    #LÊ relatório    
+    p4_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt","r","utf-8").read()     
    
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
+    
+    return render(request, 'extrator/extrator_resultados.html', {'histo_p4':"hp4",'documento_p4':p4_relatorio,'goto': 'resultado-passo-4-histo','dados_de_entrada': None, 'relatorio_preproc':None })    
+
+######### FIM PASSO 4 ################################################################################################################################################################
+
+
+
+
+########### PASSO 5 #############################################################################################################################################################################
    
 
 def agrupar_temas(request):
@@ -1450,11 +1464,12 @@ def agrupar_temas(request):
 
                     a = Clusters(etapa=etapa, q_nucleos=len(novos_nucleos),q_subtemas=len(novos_subtemas), nucleos=string_novos_nucleos, subtemas=string_novos_subtemas, situacao=situ)        
                     a.save()
+        
         grupos = Clusters.objects.filter(situacao='processando')
         etapa = etapa + 1      
     
 
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })
 
 def gerarMapaEResultados(request):
     #realtório

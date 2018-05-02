@@ -21,8 +21,10 @@ urlpatterns = [
     url(r'^extrator/relatorio$', views.gerar_relatorio, name='relatorio'),    
     url(r'^extrator/passos2a5$', views.executar_passos_2_a_5, name='executar_passos_2_a_5'),
     url(r'^extrator/passos2$', views.executa_passo_2, name='executa_passo_2'),
+    url(r'^extrator/passos4$', views.executa_passo_4, name='executa_passo_4'),
     url(r'^extrator/listavertices$', views.lista_de_vertices, name='lista_vertices'),
     url(r'^extrator/mapear$', views.mapear, name='mapear'),
+    url(r'^extrator/redecomplexa$', views.rede_complexa, name='rede_complexa'),
     url(r'^extrator/matriz$', views.matriz, name='matriz'),
     url(r'^extrator/corretor$', views.corretor_ortografico, name='corretor'),
     url(r'^extrator/atualizacorretor/(?P<palavra_correta>(.+))/(?P<posicao>(\d+))/(?P<opcao>[\w\-]+)$', views.atualiza_corretor_ortografico, name='atualiza_corretor'),
@@ -40,3 +42,5 @@ urlpatterns = [
     url(r'^extrator/testeuser/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario'),
     url(r'^extrator/mapaeresultadostemas/$', views.gerarMapaEResultados, name='gerar_mapa_resultados'),
 ]
+
+

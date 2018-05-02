@@ -4,62 +4,62 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.3
-- Critério de exclusão do cluster: posssuir 10% dos nós totais (105.5 de 1055)
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (55.2 de 552)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-262 lula 3.0
+0 lula 3.0
 
 Cluster 2
-6 trump 2.11244840026
+8 palocci 0.921931381646
+7 gleisi 0.91111707378
 
 Cluster 3
-56 dizer 1.07632428085
-
-Cluster 4
-17 presidente 0.833065791942
-
-Cluster 5
-559 livre 0.546689233683
-53 ganhar 0.538583060205
-51 donald 0.534162544381
-14 nobel 0.456346322701
-566 curitiba 0.45452478425
-136 mão 0.383588554948
-225 efeito 0.383066104637
-54 prêmio 0.376435661418
-102 negro 0.364764724957
-571 preso 0.348411994866
-228 saber 0.346577991187
-156 cu 0.335105521173
-103 achar 0.330266861527
-59 coreia 0.329910678903
-15 paz 0.321714461819
-155 dar 0.318314551556
+1 preso 0.506649599827
+180 curitiba 0.495050011293
+25 denunciar 0.490977273108
+256 denunciado 0.414359837503
+3 pgr 0.40764932237
+122 primeiro 0.401537841364
+23 livre 0.393210429672
+49 paulo 0.373759291706
+78 saber 0.359927487775
+321 delação 0.353326956069
+72 dilma 0.346289933697
+19 querer 0.336223784287
+190 receber 0.33369601566
+362 democracia 0.327276722437
+94 nome 0.322578697924
+247 prisão 0.320527781122
+42 inocente 0.319699416905
+29 corrupção 0.310875199881
+259 poder 0.300135442306
 
 TEMAS PRÉ-SELECIONADOS
 
 lula
-trump
-dizer
-presidente
-livre
-ganhar
-donald
-nobel
-curitiba
-mão
-efeito
-prêmio
-negro
+palocci
+gleisi
 preso
+curitiba
+denunciar
+denunciado
+pgr
+primeiro
+livre
+paulo
 saber
-cu
-achar
-coreia
-paz
-dar
+delação
+dilma
+querer
+receber
+democracia
+nome
+prisão
+inocente
+corrupção
+poder
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -70,44 +70,44 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> lula - 1/142 - 0.704225352113%
-lula -> presidente - 2/53 - 3.77358490566%
-lula -> curitiba - 1/13 - 7.69230769231%
-lula -> mão - 1/5 - 20.0%
-lula -> efeito - 1/3 - 33.3333333333%
-lula -> prêmio - 1/14 - 7.14285714286%
-lula -> negro - 1/6 - 16.6666666667%
+lula -> palocci - 19/46 - 41.3043478261%
+lula -> gleisi - 32/53 - 60.3773584906%
 lula -> preso - 6/9 - 66.6666666667%
-trump -> presidente - 3/53 - 5.66037735849%
-trump -> efeito - 1/3 - 33.3333333333%
-presidente -> lula - 4/142 - 2.81690140845%
-presidente -> coreia - 26/29 - 89.6551724138%
-donald -> trump - 57/136 - 41.9117647059%
-nobel -> paz - 34/37 - 91.8918918919%
-curitiba -> lula - 4/142 - 2.81690140845%
-mão -> trump - 1/136 - 0.735294117647%
-efeito -> lula - 1/142 - 0.704225352113%
-efeito -> trump - 1/136 - 0.735294117647%
-prêmio -> nobel - 10/34 - 29.4117647059%
-paz -> trump - 2/136 - 1.47058823529%
-paz -> donald - 1/47 - 2.12765957447%
+lula -> delação - 1/1 - 100.0%
+lula -> dilma - 6/9 - 66.6666666667%
+lula -> democracia - 1/2 - 50.0%
+lula -> prisão - 5/7 - 71.4285714286%
+lula -> inocente - 1/3 - 33.3333333333%
+palocci -> gleisi - 16/53 - 30.1886792453%
+palocci -> paulo - 4/14 - 28.5714285714%
+gleisi -> lula - 2/151 - 1.32450331126%
+gleisi -> palocci - 24/46 - 52.1739130435%
+gleisi -> paulo - 9/14 - 64.2857142857%
+gleisi -> corrupção - 4/18 - 22.2222222222%
+preso -> curitiba - 1/9 - 11.1111111111%
+curitiba -> lula - 1/151 - 0.662251655629%
+delação -> palocci - 1/46 - 2.17391304348%
+dilma -> lula - 2/151 - 1.32450331126%
+dilma -> gleisi - 1/53 - 1.88679245283%
+prisão -> lula - 2/151 - 1.32450331126%
+prisão -> curitiba - 1/9 - 11.1111111111%
 
-- Temas selecionados(11):
+- Temas selecionados(12):
 
 lula
-trump
-presidente
-donald
-nobel
-curitiba
-mão
-efeito
-prêmio
-negro
+palocci
+gleisi
 preso
+curitiba
+pgr
+paulo
+dilma
+democracia
+prisão
+inocente
+corrupção
 
 
-- Temas excluídos(2):
+- Temas excluídos(1):
 
-coreia
-paz
+delação
