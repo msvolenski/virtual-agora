@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^extrator/passos2a5$', views.executar_passos_2_a_5, name='executar_passos_2_a_5'),
     url(r'^extrator/passos2$', views.executa_passo_2, name='executa_passo_2'),
     url(r'^extrator/passos4$', views.executa_passo_4, name='executa_passo_4'),
+    url(r'^extrator/passos5$', views.executa_passo_5, name='executa_passo_5'),
     url(r'^extrator/listavertices$', views.lista_de_vertices, name='lista_vertices'),
     url(r'^extrator/mapear$', views.mapear, name='mapear'),
     url(r'^extrator/redecomplexa$', views.rede_complexa, name='rede_complexa'),

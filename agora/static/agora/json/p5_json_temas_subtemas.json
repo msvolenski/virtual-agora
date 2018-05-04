@@ -1,21 +1,254 @@
+[
 {
-"name": "Tema",
+"name": "Temas",
 "value": 2500,
-"size": 100,
+"size": 20,
+"parent": "null" ,
 "children": [
     {
-        "name": "lula",
-        "value": 1467.00747133,
-        "size": 100,
+        "name": "paulo",
+        "value": 3.0,
+        "size": 20.0,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "freire",
+             "value": 0.143661927394,
+             "size": 10.0,
+             "parent": "paulo"
+            },
+            {
+             "name": "dia",
+             "value": 0.0563531703251,
+             "size": 3.9226238536,
+             "parent": "paulo"
+            },
+            {
+             "name": "brasil",
+             "value": 0.0450208071248,
+             "size": 3.13380224959,
+             "parent": "paulo"
+            },
+            {
+             "name": "costa",
+             "value": 0.00998909689314,
+             "size": 0.695319704694,
+             "parent": "paulo"
+            }
+        ]
+    },
+    {
+        "name": "amigo",
+        "value": 0.524336488347,
+        "size": 3.49557658898,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "pai",
+             "value": 0.124633883075,
+             "size": 10.0,
+             "parent": "amigo"
+            },
+            {
+             "name": "verdade",
+             "value": 0.108225340165,
+             "size": 8.68346050804,
+             "parent": "amigo"
+            }
+        ]
+    },
+    {
+        "name": "deus",
+        "value": 0.521941825166,
+        "size": 3.47961216778,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "sair",
+             "value": 0.171772049012,
+             "size": 10.0,
+             "parent": "deus"
+            },
+            {
+             "name": "youtube",
+             "value": 0.131132239553,
+             "size": 7.63408484132,
+             "parent": "deus"
+            }
+        ]
+    },
+    {
+        "name": "bosta",
+        "value": 0.268512238681,
+        "size": 1.79008159121,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "cidade",
+             "value": 0.101453267381,
+             "size": 10.0,
+             "parent": "bosta"
+            }
+        ]
+    },
+    {
+        "name": "pessoa",
+        "value": 0.243806883952,
+        "size": 1.62537922635,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "atenção",
+             "value": 0.114269951704,
+             "size": 10.0,
+             "parent": "pessoa"
+            }
+        ]
+    },
+    {
+        "name": "vida",
+        "value": 0.18946229627,
+        "size": 1.26308197514,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "amor",
+             "value": 0.211636869602,
+             "size": 10.0,
+             "parent": "vida"
+            },
+            {
+             "name": "ano",
+             "value": 0.0385122205788,
+             "size": 1.81973115796,
+             "parent": "vida"
+            }
+        ]
+    },
+    {
+        "name": "jogo",
+        "value": 0.151758415548,
+        "size": 1.01172277032,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "companhia",
+             "value": 0.359648291594,
+             "size": 10.0,
+             "parent": "jogo"
+            }
+        ]
+    },
+    {
+        "name": "puta",
+        "value": 0.14247350001,
+        "size": 0.949823333397,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "motivo",
+             "value": 0.130160538025,
+             "size": 10.0,
+             "parent": "puta"
+            },
+            {
+             "name": "mundo",
+             "value": 0.0718397625404,
+             "size": 5.51931972856,
+             "parent": "puta"
+            }
+        ]
+    },
+    {
+        "name": "mulher",
+        "value": 0.129965248148,
+        "size": 0.866434987653,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "mãe",
+             "value": 0.17022845362,
+             "size": 10.0,
+             "parent": "mulher"
+            }
+        ]
+    },
+    {
+        "name": "irmão",
+        "value": 0.121534389014,
+        "size": 0.810229260092,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "mês",
+             "value": 0.263410725957,
+             "size": 10.0,
+             "parent": "irmão"
+            }
+        ]
+    },
+    {
+        "name": "prédio",
+        "value": 0.116937716176,
+        "size": 0.779584774509,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "centro",
+             "value": 0.0715690767373,
+             "size": 10.0,
+             "parent": "prédio"
+            },
+            {
+             "name": "vídeo",
+             "value": 0.0662337871877,
+             "size": 9.25452586608,
+             "parent": "prédio"
+            },
+            {
+             "name": "dinheiro",
+             "value": 0.0581246453248,
+             "size": 8.12147480092,
+             "parent": "prédio"
+            }
+        ]
+    },
+    {
+        "name": "inevitável",
+        "value": 0.109003415771,
+        "size": 0.726689438471,
+        "parent": "Temas",
         "children": [
         ]
     },
     {
-        "name": "trump",
-        "value": 1032.99252867,
-        "size": 70,
+        "name": "peito",
+        "value": 0.107482502307,
+        "size": 0.716550015383,
+        "parent": "Temas",
         "children": [
+            {
+             "name": "pau",
+             "value": 0.109003415771,
+             "size": 10.0,
+             "parent": "peito"
+            }
+        ]
+    },
+    {
+        "name": "faculdade",
+        "value": 0.10328202582,
+        "size": 0.688546838801,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "aula",
+             "value": 0.10078025319,
+             "size": 10.0,
+             "parent": "faculdade"
+            }
         ]
     }
     ]
 }
+]

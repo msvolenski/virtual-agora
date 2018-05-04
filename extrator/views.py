@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import MapasTemasESubtemas, Clusters, Subtemas, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import MapasTemasESubtemas, Clusters, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -1286,7 +1286,7 @@ def selecionar_temas(request):
         arq_relatorio.write(tema.encode('utf-8') + '\n')
 
     #Salva temas no BD via bulk e inicializa protofrases    
-    aList = [TemasNew(classificacao = 'a definir', tema = k, irt=v, irt_l=0.0) for k,v in temas_selecionados.iteritems()]    
+    aList = [TemasNew(classificacao = 'subtema', tema = k, irt=v) for k,v in temas_selecionados.iteritems()]    
     TemasNew.objects.bulk_create(aList)
    
     arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
@@ -1320,12 +1320,10 @@ def executa_passo_4(request):
 
 
 ########### PASSO 5 #############################################################################################################################################################################
-   
-
+ 
 def agrupar_temas(request):
 
-    #inicializa banco de dados     
-    Subtemas.objects.all().delete()
+    #inicializa banco de dados   
     Clusters.objects.all().delete()  
     
     #cria arquivos
@@ -1344,57 +1342,27 @@ def agrupar_temas(request):
     
     #carrega sentencas
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
-    cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
-
-    #carrega temas principais (nucleos) oriundos do parametro nucleos (quantidade)
-    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-    nc = parametros.nc + 1
-    nome = 'cluster ' + str(nc)
-    nucleos = []
-    string_nucleos = ''
-    cont = 0
-    for linha in cluster:
-        if 'cluster' in linha:                              
-            if nome in linha:
-                break
-        else:
-            try:
-                        
-                palav = linha.split(' ')
-                if palav[1] in temas:
-                    nucleos.append(palav[1])
-                    string_nucleos = string_nucleos + palav[1] + ' '      
-            except:
-                do = 'nothing'
-    
-    
-    #classifica os temas
-    temas_c = TemasNew.objects.all()
-    for tema_c in temas_c:
-        if tema_c.tema in nucleos:
-            tema_c.classificacao = 'tema'
-        else:
-            tema_c.classificacao = 'subtema'
-        tema_c.save()
+    cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()      
     
     #inicializa variaves de teste
     temas_separados = {}
 
     #inicializa grupos
-    a = Clusters(etapa =0, q_nucleos=len(nucleos) , q_subtemas=len(temas), nucleos=string_nucleos, subtemas=string_grupo, situacao='processando')
+    a = Clusters(fim_de_arvore='nao',etapa =0, ident='0', caminho='0', q_subtemas=len(temas), nucleos='a definir', subtemas=string_grupo, situacao='processando')
     a.save()
     etapa = 1
+    ident = 1
+    caminho = '0'
 
     #carrega grupos a serem testados
     grupos = Clusters.objects.filter(situacao='processando')
-   
+    
     while grupos: 
         for grupo in grupos:
             
             ######## GERA REDE #######################################################################
             #separa os temas do grupo
-            temas = grupo.subtemas.rstrip().split(' ')
-            nucleos = grupo.nucleos.rstrip().split(' ')
+            temas = grupo.subtemas.rstrip().split(' ')            
                 
             #inicializa rede
             rede = nx.Graph()
@@ -1425,49 +1393,34 @@ def agrupar_temas(request):
             
             #verifica em quantos grupos foi particionado
             quantidade_grupos = set(partition.values())
-            situ ="indefinido"
-        
+                    
             #se nao dividiu, termina
             if len(quantidade_grupos) == 1:
                 grupo.situacao = 'finalizado'
-                grupo.save()
+                grupo.fim_de_arvore = 'sim'
+                grupo.save()               
             
             #se nao, verifica se separou os nucleos   
             else:
-                grupo.situacao = 'descartado'
+                grupo.situacao = 'finalizado'
                 grupo.save()
                 #armazena nos grupos no BD
                 for numero in quantidade_grupos:
                     novos_subtemas =[]
                     string_novos_subtemas = ''
-                    novos_nucleos = []
-                    string_novos_nucleos = ''        
+                    caminho_novo = grupo.caminho + ' ' +str(ident)     
                     #cria novo conjunto de temas
                     for k,v in partition.iteritems():
                         if v == numero:
                             novos_subtemas.append(k)
-                            string_novos_subtemas = string_novos_subtemas + k + ' '
-                    #busca nucleso no novo conjunto
-                    for nt in novos_subtemas:
-                        if nt in nucleos:
-                            novos_nucleos.append(nt)
-                            string_novos_nucleos = string_novos_nucleos + nt + ' '
+                            string_novos_subtemas = string_novos_subtemas + k + ' '                  
 
-                    if len(novos_nucleos) == 0:
-                        situ = 'descartado'
-                    
-                    if len(novos_nucleos) == 1:
-                        situ == 'finalizado'
-                    
-                    if len(novos_nucleos) > 1:
-                        situ = 'processando'
-
-                    a = Clusters(etapa=etapa, q_nucleos=len(novos_nucleos),q_subtemas=len(novos_subtemas), nucleos=string_novos_nucleos, subtemas=string_novos_subtemas, situacao=situ)        
+                    a = Clusters(fim_de_arvore = 'nao', ident = ident, caminho = caminho_novo, etapa=etapa, q_subtemas=len(novos_subtemas), nucleos='a definir', subtemas=string_novos_subtemas, situacao='processando')        
                     a.save()
-        
-        grupos = Clusters.objects.filter(situacao='processando')
-        etapa = etapa + 1      
-    
+                    ident = ident + 1             
+      
+        grupos = Clusters.objects.filter(situacao='processando')     
+        etapa = etapa + 1       
 
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })
 
@@ -1484,7 +1437,7 @@ def gerarMapaEResultados(request):
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
     
     #carrega grupos
-    grupos = Clusters.objects.filter(situacao='finalizado')
+    grupos = Clusters.objects.filter(situacao='finalizado').filter(fim_de_arvore='sim')
 
     for grupo in grupos:
     
@@ -1514,160 +1467,119 @@ def gerarMapaEResultados(request):
 
         #cria tabelas
         tabela_graus = {}
-        tabela_betweenness = {}
-        tabela_eigenvector ={}
-
-        #gera metricas de centralidade
        
+        #gera metricas de centralidade       
         tabela_graus_t = nx.degree(rede, weight='weight')     
         tabela_graus = dict(tabela_graus_t)
-        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]       
-        tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False)    
-        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
-       
-        try:
-            tabela_eigenvector = nx.eigenvector_centrality(rede)
-        except:
-            tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
-        maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
-       
-        #cria lista de vertices
-        vertices = nx.nodes(rede)
-
-        #gera dicionarios de valores normalizados e cria um texto de vertices (para o próximo passo)
-        tabela_potenciacao ={} 
         
-        #gera conteudo das tabelas
-        for vertice in vertices:
-            try:
-                res_grau = tabela_graus.get(vertice)/maior_grau
-            except:
-                res_grau = 0
-            
-            try:
-                res_bet = tabela_betweenness.get(vertice)/maior_betweenness
-            except:
-                res_bet = 0
-            
-            try:
-                res_eig = tabela_eigenvector.get(vertice)/maior_eigenvector
-            except:
-                res_eig = 0
-           
+        tema_maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]
+        tema_selecionado = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[0]
+                      
+        #salvar dados e calucal indices
+        grupo.nucleos = tema_selecionado
+        grupo.save()
 
-            tabela_potenciacao[vertice] = res_grau +res_bet + res_eig
-            a = TemasNew.objects.get(tema__exact=vertice)
-            a.irt_l = res_grau +res_bet + res_eig
-            a.save()
+        o = TemasNew.objects.get(tema__exact=tema_selecionado)
+        o.classificacao = 'tema'
+        o.save()      
 
-    #calcula o IRT local referenciado e armazena no banco de dados de temas e subtemas
-    for grupo in grupos:
-        nucleos = grupo.nucleos.rstrip().split(' ')
-        palavras = grupo.subtemas.rstrip().split(' ')
-        for nucleo in nucleos:
-            nucleo_irt_l = TemasNew.objects.get(tema__exact=nucleo)
-            nucleo_irt_l_valor =  nucleo_irt_l.irt_l
-            maior = 0
-            for palavra in palavras:
-                palavra_irt_l = TemasNew.objects.get(tema__exact=palavra)
-                palavra_irt_l_valor = palavra_irt_l.irt_l
-                indice = palavra_irt_l_valor / nucleo_irt_l_valor
-                if indice > maior:
-                    maior = indice
-                
-            for palavra in palavras:
-                palavra_irt_l = TemasNew.objects.get(tema__exact=palavra)
-                palavra_irt_l_valor = palavra_irt_l.irt_l
-                indice = palavra_irt_l_valor / nucleo_irt_l_valor 
-                indice_n = 100 * (indice / maior)
-                if nucleo != palavra:
-                    b = MapasTemasESubtemas(tema=nucleo, subtema=palavra, irt_l=indice_n)
-                    b.save()            
-    
-    #escreve relatório    
-    arq_temas_subtemas.write("RELATORIO FINAL DE TEMAS E SUBTEMAS \n\n\n")
-    nucleos_w = TemasNew.objects.filter(classificacao='tema').order_by('-irt')
-    
-    for nuc in nucleos_w:
-        c = TemasNew.objects.get(tema__exact=nuc.tema)        
-        tema_irt = c.irt      
-        objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
+        for k, v in tabela_graus.iteritems():
+            obj = TabelaRanking.objects.get(vertice_nome__exact=k)
+            potenciacao = obj.potenciacao
+            if tema_maior_grau != 0:
+                grau = float(v) / float(tema_maior_grau)
+            else:
+                grau = 0
+
+            b = MapasTemasESubtemas(fim_de_arvore = grupo.fim_de_arvore, ident = grupo.ident, tema=tema_selecionado, subtema=k, grau=grau ,irt_l = potenciacao*grau)
+            b.save()
       
-        arq_temas_subtemas.write('TEMA: ' + nuc.tema + ' (' + str(tema_irt) + ') ' + '\n\n')
-        for obj in objs:            
-            arq_temas_subtemas.write(obj.subtema + ' (' + str(obj.irt_l) + ') '+ '\n')  
+    #escreve relatório    
+    arq_temas_subtemas.write("RELATORIO FINAL DE TEMAS E SUBTEMAS \n\n\n")    
+    temas = TemasNew.objects.filter(classificacao='tema').order_by('-irt') 
+    
+    for tema in temas:     
+        arq_temas_subtemas.write('TEMA: ' + tema.tema + ' (' + str(tema.irt) + ') ' + '\n\n')
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore='sim').order_by('-irt_l')
+        for obj in objs:
+            if obj.subtema != tema.tema:          
+                arq_temas_subtemas.write(obj.subtema + ' (' + str(obj.irt_l) + ') '+ '\n')  
         arq_temas_subtemas.write('\n')
+    
     arq_temas_subtemas.close()
 
-
-    #gera JSON files
-    soma_irt_temas = 0
-    for st in nucleos_w:
-        soma_irt_temas = soma_irt_temas + st.irt
-
-
     #cabeçalho
-    arq_json.write("{\n\"name\": \"Tema\",\n")
+    arq_json.write("[\n{\n\"name\": \"Temas\",\n")
     arq_json.write("\"value\": " + str(2500) + ",\n")
-    arq_json.write("\"size\": " + str(100) + ",\n")
+    arq_json.write("\"size\": " + str(20) + ",\n")
+    arq_json.write("\"parent\": \"null\" ,\n")
     arq_json.write("\"children\": [\n")
     arq_json.write("    {\n")
 
-    for j, nuc in enumerate(nucleos_w):
-        c = TemasNew.objects.get(tema__exact=nuc.tema)        
-        tema_irt = c.irt
-        xt = (tema_irt * 2500) / soma_irt_temas
-        
-        objs = MapasTemasESubtemas.objects.filter(tema__exact=nuc.tema).order_by('-irt_l')
-        
-        arq_json.write("        \"name\": \"" + nuc.tema + "\",\n")
-        arq_json.write("        \"value\": " + str(xt) + ",\n")
-        arq_json.write("        \"size\": " + str(int(c.irt)) + ",\n")
-        arq_json.write("        \"children\": [\n")
-        
-        soma_irt_subtemas = 0
-        for sst in objs:
-            soma_irt_subtemas = soma_irt_subtemas + sst.irt_l
-        
-        for i, obj in enumerate(objs):                   
-            
-            xs = (obj.irt_l * xt) / soma_irt_subtemas
-            refs = (obj.irt_l * 100) / soma_irt_subtemas
-            #subtema 
-            arq_json.write("            {\"name\": \"" + obj.subtema + "\", \"value\": " + str(xs) + ",  \"size\": " + str(int(refs)) + "}")    
-            if i == (len(objs) -1):
+    
+    for j, tema in enumerate(temas):
+        print tema.tema
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore__exact = 'sim').exclude(subtema__exact=tema.tema).order_by('-irt_l')
+        print objs
+        obj_irt = TabelaRanking.objects.get(vertice_nome__exact=tema.tema)
+        pot = obj_irt.potenciacao
+        arq_json.write("        \"name\": \"" + tema.tema + "\",\n")
+        arq_json.write("        \"value\": " + str(pot) + ",\n")
+        arq_json.write("        \"size\": " + str(tema.irt/5) + ",\n")
+        arq_json.write("        \"parent\": \"Temas\",\n")
+        arq_json.write("        \"children\": [\n")        
+     
+        if objs:
+            m = objs[0]            
+        else:
+            tam = 0
+             
+        for i, obj in enumerate(objs):
+            tam = obj.irt_l / m.irt_l          
+            if obj.subtema != tema.tema:                        
+                arq_json.write("            {\n")
+                arq_json.write("             \"name\": \"" + obj.subtema + "\",\n")    
+                arq_json.write("             \"value\": " + str(obj.irt_l) + ",\n")    
+                arq_json.write("             \"size\": " + str(tam*10) + ",\n")
+                arq_json.write("             \"parent\": \"" + tema.tema + "\"\n")              
+                arq_json.write("            }")
+            if i == (len(objs) - 1):
                 arq_json.write("\n")         
-            else:
+            else:                
                 arq_json.write(",\n")
         
-        #fecha tema
-        if j == (len(nucleos_w) -1):
+         #fecha tema
+        if j == (len(temas) -1):
             arq_json.write("        ]\n    }\n")         
         else:
             arq_json.write("        ]\n    },\n    {\n")
        
-    arq_json.write("    ]\n}")
-    #tema-pai o caro nao final
+    arq_json.write("    ]\n}\n]")
+    arq_json.close()    
+
+    #LÊ relatório    
+    p5_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt","r","utf-8").read() 
+          
+    return render(request, 'extrator/extrator_resultados.html', {'p5_relatorio':p5_relatorio,'resultados_p5':'res','goto':'passo5', 'muda_logo':'logo_gmr_temas' })
+
+def executa_passo_5(request):
+            
+    gerarMapaEResultados(request)
+    agrupar_temas(request)
+
+    #LÊ relatório    
+    p5_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt","r","utf-8").read()   
     
-    #arq_json.write("        \"name\": \"" + str(111) + "\",\n")
-    #arq_json.write("        \"value\": " + str(100) + ",\n")
-    #arq_json.write("        \"children\": [\n")
-    
-    #subtema 
-    #arq_json.write("            {\"name\": \"" + str(111) + "\", \"value\": " + str(111) + "}")    
-   
+    return render(request, 'extrator/extrator_resultados.html', {'p5_relatorio':p5_relatorio,'resultados_p5':'res','goto':'passo5', 'muda_logo':'logo_gmr_temas' })
 
-   
 
-       
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
+######### FIM PASSO 5 ################################################################################################################################################################
 
 
 
 
-
-
-##### PASSO 5 ###################################################################################################################################
+########### PASSO 6 #############################################################################################################################################################################
+ 
 
 def processarProtofrases(request):
     #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
@@ -2105,11 +2017,7 @@ def ajustar_parametro(request,opcao):
         if parametros.radio_r == 0.0:
             radios_5 = 'checked'                 
                   
-    if opcao == 'opcao10':
-        novo_parametro = request.POST['valor_nc']
-        parametros.nc = int(novo_parametro)
-        parametros.save()        
-    
+       
     
     if opcao == 'opcao4':
         if parametros.check_grau == 'sim':
@@ -2124,11 +2032,11 @@ def ajustar_parametro(request,opcao):
                     check_c = 'checked'
         else:
             check_c = 'off'        
-        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5, 'valor_nc':parametros.nc})
+        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})
 
     
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5, 'valor_nc':parametros.nc})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
 
 def resultados(request,arquivo):
     result = DadosPreproc.objects.get(id=1)
@@ -3331,4 +3239,151 @@ def limpar_palavras_ignoradas(request):
 #     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
 
 
+# def agrupar_temas(request):
+        
+#     #inicializa banco de dados     
+#     Subtemas.objects.all().delete()
+#     Clusters.objects.all().delete()  
+    
+#     #cria arquivos
+#     arq_lista_agp = codecs.open("extrator/arquivos/p5_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
+    
+#     #cria lista com os temas
+#     temas =[]
+#     temas_q = TemasNew.objects.all().values_list('tema', flat=True)
+#     string_grupo = ''
+#     for t in temas_q:
+#         temas.append(t)
+#         string_grupo = string_grupo + t + ' '    
+    
+#     #cria pares de temas distintos
+#     pairs = list(itertools.combinations(temas, 2))   
+    
+#     #carrega sentencas
+#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+#     cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
 
+#     #carrega temas principais (nucleos) oriundos do parametro nucleos (quantidade)
+#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+#     nc = parametros.nc + 1
+#     nome = 'cluster ' + str(nc)
+#     nucleos = []
+#     string_nucleos = ''
+#     cont = 0
+#     for linha in cluster:
+#         if 'cluster' in linha:                              
+#             if nome in linha:
+#                 break
+#         else:
+#             try:
+                        
+#                 palav = linha.split(' ')
+#                 if palav[1] in temas:
+#                     nucleos.append(palav[1])
+#                     string_nucleos = string_nucleos + palav[1] + ' '      
+#             except:
+#                 do = 'nothing'
+    
+    
+#     #classifica os temas
+#     temas_c = TemasNew.objects.all()
+#     for tema_c in temas_c:
+#         if tema_c.tema in nucleos:
+#             tema_c.classificacao = 'tema'
+#         else:
+#             tema_c.classificacao = 'subtema'
+#         tema_c.save()
+    
+#     #inicializa variaves de teste
+#     temas_separados = {}
+
+#     #inicializa grupos
+#     a = Clusters(etapa =0, q_nucleos=len(nucleos) , q_subtemas=len(temas), nucleos=string_nucleos, subtemas=string_grupo, situacao='processando')
+#     a.save()
+#     etapa = 1
+
+#     #carrega grupos a serem testados
+#     grupos = Clusters.objects.filter(situacao='processando')
+   
+#     while grupos: 
+#         for grupo in grupos:
+            
+#             ######## GERA REDE #######################################################################
+#             #separa os temas do grupo
+#             temas = grupo.subtemas.rstrip().split(' ')
+#             nucleos = grupo.nucleos.rstrip().split(' ')
+                
+#             #inicializa rede
+#             rede = nx.Graph()
+
+#             #gera os nos da rede
+#             for tema in temas:
+#                 rede.add_node(tema)
+            
+#             #cria pares de temas distintos
+#             pairs = list(itertools.combinations(temas, 2))
+        
+#             #cria lista de adjacencias
+#             for par in pairs:
+#                 cont = 0
+#                 for sentenca in sentencas:        
+#                     lista_sent = sentenca.rstrip( ).split(' ')
+#                     if par[0] in lista_sent and par[1] in lista_sent:
+#                         cont = cont + 1
+#                 arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
+#                 peso = float(cont)
+#                 if cont > 0:
+#                     rede.add_edge(par[0], par[1], weight=peso)    
+#             ###########################################################################################
+            
+#             ##### separa comunidade ###################################################################
+#             partition = community.best_partition(rede,weight='weight')
+#             ###########################################################################################
+            
+#             #verifica em quantos grupos foi particionado
+#             quantidade_grupos = set(partition.values())
+#             situ ="indefinido"
+        
+#             #se nao dividiu, termina
+#             if len(quantidade_grupos) == 1:
+#                 grupo.situacao = 'finalizado'
+#                 grupo.save()
+            
+#             #se nao, verifica se separou os nucleos   
+#             else:
+#                 grupo.situacao = 'descartado'
+#                 grupo.save()
+#                 #armazena nos grupos no BD
+#                 for numero in quantidade_grupos:
+#                     novos_subtemas =[]
+#                     string_novos_subtemas = ''
+#                     novos_nucleos = []
+#                     string_novos_nucleos = ''        
+#                     #cria novo conjunto de temas
+#                     for k,v in partition.iteritems():
+#                         if v == numero:
+#                             novos_subtemas.append(k)
+#                             string_novos_subtemas = string_novos_subtemas + k + ' '
+#                     #busca nucleso no novo conjunto
+#                     for nt in novos_subtemas:
+#                         if nt in nucleos:
+#                             novos_nucleos.append(nt)
+#                             string_novos_nucleos = string_novos_nucleos + nt + ' '
+
+#                     if len(novos_nucleos) == 0:
+#                         situ = 'descartado'
+                    
+#                     if len(novos_nucleos) == 1:
+#                         situ == 'finalizado'
+                    
+#                     if len(novos_nucleos) > 1:
+#                         situ = 'processando'
+
+#                     a = Clusters(etapa=etapa, q_nucleos=len(novos_nucleos),q_subtemas=len(novos_subtemas), nucleos=string_novos_nucleos, subtemas=string_novos_subtemas, situacao=situ)        
+#                     a.save()
+        
+#         grupos = Clusters.objects.filter(situacao='processando')
+#         etapa = etapa + 1      
+    
+
+#     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MapasTemasESubtemas, Clusters, Subtemas, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
 
 # Register your models here.
 
@@ -32,7 +32,7 @@ class PesosEAlphaAdmin(admin.ModelAdmin):
   list_display = ['alpha','alphaesp','erro','p_grau','p_betw','p_eigene']
 
 class TemasNewAdmin(admin.ModelAdmin):
-  list_display = ['tema','classificacao' ,'irt','irt_l']
+  list_display = ['tema','classificacao' ,'irt']
 
 class ListaDeSubstantivosAdmin(admin.ModelAdmin):
   list_display = ['palavra','substantivo']
@@ -47,20 +47,18 @@ class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
 
 class ParametrosDeAjusteAdmin(admin.ModelAdmin):
-  list_display = ['nc','radio_r', 'faixa_histo','check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
+  list_display = ['radio_r', 'faixa_histo','check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
 
 class DadosExtracaoNewAdmin(admin.ModelAdmin):
   list_display = ['tema', 'protofrase', 'sentenca', 'irse', 'irse_p', 'irgs', 'irgs_p']
   
-class SubtemasAdmin(admin.ModelAdmin):
-  list_display = ['temas', 'subtemas']
 
   
 class MapasTemasESubtemasAdmin(admin.ModelAdmin):
-  list_display = ['tema', 'subtema', 'irt_l']
+  list_display = ['ident','tema', 'subtema', 'grau','irt_l','fim_de_arvore']
   
 class ClustersAdmin(admin.ModelAdmin):
-  list_display = ['etapa','nucleos','q_nucleos','subtemas','q_subtemas', 'situacao']
+  list_display = ['etapa', 'ident','caminho','nucleos','subtemas','q_subtemas', 'situacao','fim_de_arvore']
 
 
 
@@ -79,7 +77,6 @@ admin.site.register(ExtracaoNew, ExtracaoNewAdmin)
 admin.site.register(DadosExtracaoNew, DadosExtracaoNewAdmin)
 admin.site.register(TestaPalavra, TestaPalavraAdmin)
 admin.site.register(ParametrosDeAjuste, ParametrosDeAjusteAdmin)
-admin.site.register(Subtemas, SubtemasAdmin)
 admin.site.register(Clusters, ClustersAdmin)
 admin.site.register(MapasTemasESubtemas, MapasTemasESubtemasAdmin)
 

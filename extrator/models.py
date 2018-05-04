@@ -88,7 +88,7 @@ class TemasNew(models.Model):
     tema = models.TextField('Tema')
     classificacao = models.TextField('Classificacao')
     irt = models.FloatField('IRT Global (%)')
-    irt_l = models.FloatField('IRT Local (Sem referência)')
+   
     
     def __str__(self):
         return self.tema
@@ -164,7 +164,6 @@ class ParametrosDeAjuste(models.Model):
     faixa_histo = models.FloatField('Faixa',default=0.2)
     exc_cluster = models.IntegerField('Exclusao_de_cluster')
     radio_r = models.FloatField('Representatividade_minima', default=0.0)
-    nc =  models.IntegerField('CLusters dos temas principais', default=1)
 
 class CorrigePalavra(models.Model):
     palavra_correta = models.TextField('palavra_correta')
@@ -174,29 +173,26 @@ class CorrigePalavra(models.Model):
         return self.palavra
 
 
-class Subtemas(models.Model):
-    temas = models.TextField('Temas')
-    subtemas = models.TextField('Subtemas')
-
-    def __str__(self):
-        return self.temas
-
-
 class Clusters(models.Model):
+    fim_de_arvore = models.TextField('Cluster Final?')
     etapa = models.IntegerField('Etapa', null=True)
-    nucleos = models.TextField('Nucleos')
-    q_nucleos = models.IntegerField('Qtdd de Núcleos', null=True)
+    nucleos = models.TextField('Nucleos')    
     subtemas = models.TextField('Subtemas')
     q_subtemas = models.IntegerField('Qtdd de subtemas', null=True)
     situacao = models.TextField('Situação')
+    caminho = models.TextField('Caminho')
+    ident = models.TextField('Identificacao')
 
     def __str__(self):
         return self.nucleos
 
 class MapasTemasESubtemas(models.Model):
+    fim_de_arvore = models.TextField('Cluster Final?')
+    ident = models.TextField('Id') 
     tema = models.TextField('Tema')
     subtema = models.TextField('Subtema')
-    irt_l = models.FloatField('IRT (subtema) Local Referênciado')
+    grau = models.FloatField('Grau local')
+    irt_l = models.FloatField('IRT local')
     
     def __str__(self):
         return self.tema

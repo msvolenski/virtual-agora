@@ -242,15 +242,7 @@
                                 <input type="submit" class="botao_enviar" value="Enviar">
                             </div>
                         </form>
-                    </div>
-                    <div class="titulo_ajuste">Quantidade de Cluster para os Temas Principais </div>
-                    <div class="form_ajuste">
-                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data">
-                            nc =
-                            <input style="width:50px" type="number" step="1" name="valor_nc" value={{valor_nc}} size="1"> Cluster(s)
-                            <input type="submit" class="botao_enviar" value="Enviar">
-                        </form>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -600,63 +592,53 @@
 
         <!-- começa o PASSO 5  -->
         <div class="inicio_timeline">
-            <b>PASSO 5</b>
+            <a href="{% url 'extrator:executa_passo_5' %}" style="color:inherit;font-weight:bold">PASSO 5</a>
         </div>
 
         <div id="cd-timeline" class="cd-container" style="position:relative;">
-            <div id="passo5">
-
-                <!-- cd-timeline-block -->
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img cd-picture">
-                        <span id="logo_twitter" class="fa fa-twitter" style="font-size:200%;margin-top:15px;"></span>
-                    </div>
-                    <!-- cd-timeline-img -->
-                    <div class="cd-timeline-content">
-                        <h2 style="margin-bottom:15px">Clusters com os Temas Principais</h2>
-                        <form action="{% url 'extrator:ajustar_parametro' 'opcao10' %}" method="POST" role="form" enctype="multipart/form-data">
-                            <input style="display:block;margin:0 auto;" type="number" name="valor_nc" placeholder="n. do cluster final">
-
-                            <input style="margin-top:15px;margin-left:35%" class="cd-read-more" type="submit" value="Carregar">
-                        </form>
-                        {% if tempo_p1dt %}
-                        <span class="cd-date" style="margin-left:-185px;"> {{tempo_p1dt}} s - {{contador_nt}} tweets </span>
-                        {% endif %}
-                    </div>
-                </div>
-
+            <div id="passo5">    
 
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
                         <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
                     </div>
-                    <div class="cd-timeline-content" style="background: #EFCEAA">
+                    <div class="cd-timeline-content" style="background: rgb(170, 192, 239)">
                         <h2>Agrupar Temas e Sub-temas</h2>
-                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>
-                        {% if tempo_p4st %}
-                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
-                        {% endif %}
+                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>                   
                     </div>
                 </div>
 
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
-                        <span id="logo_agp_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
+                        <span id="logo_gmr_temas" class="glyphicon glyphicon-th-list" style="font-size:200%;margin-top:15px;"></span>
                     </div>
-                    <div class="cd-timeline-content" style="background: #EFCEAA">
+                    <div class="cd-timeline-content" style="background: rgb(170, 192, 239)">
                         <h2>Gerar Mapas e Resultados</h2>
-                        <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                        {% if tempo_p4st %}
-                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p4st}} s</span>
-                        {% endif %}
+                        <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>                        
                     </div>
                 </div>
 
             </div>
         </div>
-        <!-- fim dos passos  -->
+       
+        <!-- RESULTADOS DO PASSO 5  -->
+       {% if resultados_p5 %}
+       <div class="result-content" id="resultado-passo-5-grafo" style="margin-top:-10px;height:600px;">
+
+       </div>
+       {% endif %} {% if resultados_p5 %}
+       <div class="result-content" id="resultado-passo-5-doc" style="margin-top:150px">
+           <div>{{p5_relatorio|linebreaks}}</div>
+       </div>
+       {% endif %} {% if not resultados_p5 %}
+       <div class="sem_resultado" style="position:relative;margin-top:-10px;">
+           <b>RESULTADOS</b>
+       </div>
+       {% endif %}
+       <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 5 +++++++++++++++++++++++++ 1  -
+
 
 
 
@@ -906,7 +888,20 @@
     <script>
         var p4_histograma_data = "{% static 'agora/json/p4_json_histograma.json' %}";
     </script>
-    <script src="{% static 'agora/js/p4_histograma.js' %}"></script> {% endif %} {% if goto %}
+    <script src="{% static 'agora/js/p4_histograma.js' %}"></script> 
+    {% endif %} 
+    
+    <!-- MONTA RESULTADOS DO PASSO 5 -->
+    {%if resultados_p5 %}
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var p5_data = "{% static 'agora/json/p5_json_temas_subtemas.json' %}";
+    </script>  
+    <script src="{% static 'agora/js/p5_mapa_temas_subtemas.js' %}"></script>  
+    {% endif %} 
+    
+   
+    {% if goto %}
     <script>
         window.location.hash = '#{{goto}}';
         3
