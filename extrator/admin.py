@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, SentencasAvaliadas, DadosExtracaoNew
 
 # Register your models here.
 
@@ -40,8 +40,11 @@ class ListaDeSubstantivosAdmin(admin.ModelAdmin):
 class ProtoFrasesNewAdmin(admin.ModelAdmin):
   list_display = ['protofrase','extracao','frase']
 
-class ExtracaoNewAdmin(admin.ModelAdmin):
-  list_display = ['protofrase', 'frase', 'peso','corte','irse','rep_tema','irgs','rep_geral']
+class SentencasAvaliadasAdmin(admin.ModelAdmin):
+  list_display = ['tema', 'subtema', 'proto', 'frase', 'peso', 'corte', 'irse']
+  
+class SentencasExtraidasAdmin(admin.ModelAdmin):
+  list_display = ['tema','subtema', 'frase', 'peso','corte','irse','representatividade']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
@@ -61,7 +64,6 @@ class ClustersAdmin(admin.ModelAdmin):
   list_display = ['etapa', 'ident','caminho','nucleos','subtemas','q_subtemas', 'situacao','fim_de_arvore']
 
 
-
 admin.site.register(CorrigePalavra, CorrigePalavraAdmin)
 admin.site.register(ListaDeAdjacencias, ListaDeAdjacenciasAdmin)
 admin.site.register(ListaDeSubstantivos, ListaDeSubstantivosAdmin)
@@ -73,10 +75,11 @@ admin.site.register(DadosSelecaoTemas, DadosSelecaoTemasAdmin)
 admin.site.register(PesosEAlpha, PesosEAlphaAdmin)
 admin.site.register(TemasNew, TemasNewAdmin)
 admin.site.register(ProtoFrasesNew, ProtoFrasesNewAdmin)
-admin.site.register(ExtracaoNew, ExtracaoNewAdmin)
+admin.site.register(SentencasAvaliadas, SentencasAvaliadasAdmin)
 admin.site.register(DadosExtracaoNew, DadosExtracaoNewAdmin)
 admin.site.register(TestaPalavra, TestaPalavraAdmin)
 admin.site.register(ParametrosDeAjuste, ParametrosDeAjusteAdmin)
 admin.site.register(Clusters, ClustersAdmin)
 admin.site.register(MapasTemasESubtemas, MapasTemasESubtemasAdmin)
+admin.site.register(SentencasExtraidas, SentencasExtraidasAdmin)
 

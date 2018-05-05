@@ -4,284 +4,112 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.1
-- Critério de exclusão do cluster: posssuir 10% dos nós totais (121.6 de 1216)
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (154.5 de 1545)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-6 paulo 3.0
+6 lula 2.94283481244
 
 Cluster 2
-464 ficar 0.657354022752
+310 temer 2.86153481838
 
 Cluster 3
-84 amigo 0.524336488347
-192 deus 0.521941825166
-64 dar 0.508808863235
+299 dizer 0.875032790722
 
 Cluster 4
-429 achar 0.434953931264
-67 saber 0.412095563131
-216 sp 0.411962608381
-92 querer 0.400104745276
+52 ver 0.594180221847
+164 falar 0.552256849935
+4 poder 0.520904297072
 
 Cluster 5
-18 aí 0.388617456146
-9 pai 0.373901649225
-136 ver 0.37007733236
-514 brasil 0.360166456998
-762 companhia 0.359648291594
-839 tipo 0.353380211639
-12 caro 0.347106203607
-16 vir 0.345713112041
-787 sair 0.343544098025
-248 falar 0.343298212862
-269 jogar 0.336510137159
-598 freire 0.328370119758
-747 apóstolo 0.32170254321
-95 né 0.320323301993
-791 parir 0.32007470358
-3 amor 0.317455304403
-448 cair 0.302981172097
-782 5 0.302499398694
+186 dar 0.496008357516
+16 dilma 0.463304543607
+30 presidente 0.442718456632
+126 dia 0.428721761096
 
 Cluster 6
-1120 pirraça 0.291511622381
-859 acabar 0.286646425916
-612 centro 0.286276306949
-968 veio 0.280978571287
-845 figueiredo 0.279125641025
-510 belo 0.278798462313
-1011 & 0.2743390412
-7 brazil 0.273761997769
-1089 andré 0.269593578315
-723 bosta 0.268512238681
-226 oferecer 0.265667118131
-460 usp 0.264076189174
-98 lembrar 0.264076189174
-45 mês 0.263410725957
-893 roberto 0.263080955173
-814 youtube 0.262264479106
-1190 lima 0.261941840314
-1118 direção 0.261777516503
-786 natália 0.260779309782
-467 motivo 0.260321076051
-775 coelho 0.260230035328
-1055 premiosmtvmiaw 0.26008918737
-979 tweta 0.260065126942
-1174 sugerir 0.259335214399
-1067 grt 0.258775347975
-751 chorar 0.258236534426
-950 tiefenthaler 0.258236534426
-890 ganhar 0.258236534426
-1059 treinar 0.258220494141
-988 gustavo 0.258167026523
-938 sony 0.256383881482
-966 ricardo 0.256383881482
-913 wiruleague 0.256383881482
-991 interior 0.256383881482
-810 aparentar 0.256383881482
-1162 mania 0.256291649842
-777 bóia 0.254531228538
-427 ttsnews 0.254531228538
-1133 afonso 0.250685074692
-1050 rezzutti 0.250685074692
-879 rj 0.250685074692
-1170 hotel 0.250685074692
-739 mrm 0.250685074692
-961 nnn 0.250685074692
-965 biacchi 0.250685074692
-1019 atlético-mg 0.250685074692
-1009 assis 0.250685074692
-758 frança 0.250685074692
-1021 henrique 0.250685074692
-769 ar 0.250685074692
-931 ferreiro 0.250685074692
-30 pessoa 0.243806883952
-666 dinheiro 0.232498581299
-788 alguém 0.218739722891
+315 filho 0.398028008258
+159 nado 0.392143125597
+378 reforma 0.38803374218
+65 gente 0.381143747199
+130 pf 0.372681720828
+12 brasil 0.358636477909
+150 deve 0.358137591082
+294 receber 0.354729026047
+308 fala 0.318925580207
+23 prisão 0.315153281399
+129 delegado 0.314077186544
+32 livre 0.310730420221
 
 Cluster 7
-528 bonito 0.196097473595
-196 vida 0.18946229627
-251 lindo 0.181420375494
-38 amo 0.181218011243
-237 mãe 0.17022845362
-179 pagar 0.16861777193
-140 nado 0.164124863851
-85 verdade 0.162338010247
-894 costa 0.15982555029
-391 poder 0.153124464322
-121 jogo 0.151758415548
-117 dia 0.150275120867
-61 coisa 0.145011106326
-139 mundo 0.143679525081
-359 puta 0.14247350001
-260 nó 0.141840273114
-585 ocar 0.139321132466
-320 gente 0.137692747916
-97 vão 0.133402492698
-395 pensar 0.132578673917
-105 vídeo 0.132467574375
-239 mulher 0.129965248148
-215 at 0.123076923086
-638 irmão 0.121534389014
-1189 unica 0.120149195881
-642 vontade 0.119963820707
-206 fala 0.118813026356
-465 guardado 0.117244656532
-100 prédio 0.116937716176
-567 ano 0.115536661736
-401 revestir 0.114269951704
-480 atenção 0.114269951704
-858 paulista 0.113390379292
-889 zoar 0.112239924248
-672 meio 0.111916670749
-193 livre 0.110643431078
-94 esquecer 0.109067336811
-929 inevitável 0.109003415771
-733 pau 0.109003415771
-302 engraçado 0.108727638074
-346 peito 0.107482502307
-1016 mulhe 0.107150762827
-111 tão 0.106079946126
-575 vê 0.105204077253
-774 esperar 0.10330460898
-186 faculdade 0.10328202582
-834 cidade 0.101453267381
-182 aula 0.10078025319
+50 preso 0.298390058931
+124 governo 0.292179187128
+167 caro 0.263388622166
+320 cadeia 0.261101318809
+556 aprender 0.256584758842
+309 michel 0.256537444475
+393 novo 0.256423921519
+166 coisa 0.252993536167
+165 cansar 0.252761505827
+81 nome 0.243759392169
+551 globo 0.231463725125
+919 virar 0.228196870885
+0 sair 0.221199318952
+148 aí 0.221000538386
+76 stf 0.220643144786
+146 saber 0.219214004933
+80 usar 0.217839720535
+1 país 0.207358514157
+1237 puta 0.206121656609
+1047 existir 0.202249483897
+901 cunha 0.201644032925
 
 TEMAS PRÉ-SELECIONADOS
 
-paulo
-ficar
-amigo
-deus
-dar
-achar
-saber
-sp
-querer
-aí
-pai
+lula
+temer
+dizer
 ver
-brasil
-companhia
-tipo
-caro
-vir
-sair
 falar
-jogar
-freire
-apóstolo
-né
-parir
-amor
-cair
-5
-pirraça
-acabar
-centro
-veio
-figueiredo
-belo
-&
-brazil
-andré
-bosta
-oferecer
-usp
-lembrar
-mês
-roberto
-youtube
-lima
-direção
-natália
-motivo
-coelho
-premiosmtvmiaw
-tweta
-sugerir
-grt
-chorar
-tiefenthaler
-ganhar
-treinar
-gustavo
-sony
-ricardo
-wiruleague
-interior
-aparentar
-mania
-bóia
-ttsnews
-afonso
-rezzutti
-rj
-hotel
-mrm
-nnn
-biacchi
-atlético-mg
-assis
-frança
-henrique
-ar
-ferreiro
-pessoa
-dinheiro
-alguém
-bonito
-vida
-lindo
-amo
-mãe
-pagar
-nado
-verdade
-costa
 poder
-jogo
+dar
+dilma
+presidente
 dia
-coisa
-mundo
-puta
-nó
-ocar
+filho
+nado
+reforma
 gente
-vão
-pensar
-vídeo
-mulher
-at
-irmão
-unica
-vontade
+pf
+brasil
+deve
+receber
 fala
-guardado
-prédio
-ano
-revestir
-atenção
-paulista
-zoar
-meio
+prisão
+delegado
 livre
-esquecer
-inevitável
-pau
-engraçado
-peito
-mulhe
-tão
-vê
-esperar
-faculdade
-cidade
-aula
+preso
+governo
+caro
+cadeia
+aprender
+michel
+novo
+coisa
+cansar
+nome
+globo
+virar
+sair
+aí
+stf
+saber
+usar
+país
+puta
+existir
+cunha
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -292,130 +120,80 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-paulo -> paulo - 3/132 - 2.27272727273%
-paulo -> amigo - 1/9 - 11.1111111111%
-paulo -> deus - 1/4 - 25.0%
-paulo -> sp - 33/37 - 89.1891891892%
-paulo -> pai - 1/4 - 25.0%
-paulo -> brasil - 1/6 - 16.6666666667%
-paulo -> companhia - 1/4 - 25.0%
-paulo -> sair - 1/3 - 33.3333333333%
-paulo -> freire - 4/7 - 57.1428571429%
-paulo -> apóstolo - 5/6 - 83.3333333333%
-paulo -> amor - 1/6 - 16.6666666667%
-paulo -> centro - 1/3 - 33.3333333333%
-paulo -> brazil - 7/7 - 100.0%
-paulo -> andré - 1/1 - 100.0%
-paulo -> bosta - 1/2 - 50.0%
-paulo -> usp - 2/2 - 100.0%
-paulo -> roberto - 1/1 - 100.0%
-paulo -> youtube - 1/2 - 50.0%
-paulo -> lima - 1/1 - 100.0%
-paulo -> natália - 1/1 - 100.0%
-paulo -> motivo - 1/2 - 50.0%
-paulo -> coelho - 2/2 - 100.0%
-paulo -> gustavo - 1/1 - 100.0%
-paulo -> sony - 1/1 - 100.0%
-paulo -> ricardo - 1/1 - 100.0%
-paulo -> interior - 1/1 - 100.0%
-paulo -> mania - 1/1 - 100.0%
-paulo -> bóia - 1/1 - 100.0%
-paulo -> afonso - 1/1 - 100.0%
-paulo -> rj - 1/1 - 100.0%
-paulo -> hotel - 1/1 - 100.0%
-paulo -> biacchi - 1/1 - 100.0%
-paulo -> atlético-mg - 1/1 - 100.0%
-paulo -> assis - 1/1 - 100.0%
-paulo -> frança - 1/1 - 100.0%
-paulo -> henrique - 1/1 - 100.0%
-paulo -> ferreiro - 1/1 - 100.0%
-amigo -> amigo - 1/9 - 11.1111111111%
-amigo -> verdade - 2/4 - 50.0%
-amigo -> paulista - 1/1 - 100.0%
-pai -> mãe - 1/3 - 33.3333333333%
-companhia -> jogo - 1/4 - 25.0%
-freire -> paulo - 2/132 - 1.51515151515%
-apóstolo -> paulo - 1/132 - 0.757575757576%
-amor -> deus - 1/4 - 25.0%
-amor -> vida - 2/8 - 25.0%
-bosta -> cidade - 1/2 - 50.0%
-mês -> paulo - 1/132 - 0.757575757576%
-roberto -> costa - 1/2 - 50.0%
-youtube -> deus - 1/4 - 25.0%
-natália -> sair - 1/3 - 33.3333333333%
-pessoa -> verdade - 1/4 - 25.0%
-jogo -> verdade - 1/4 - 25.0%
-irmão -> mãe - 1/3 - 33.3333333333%
-prédio -> paulo - 2/132 - 1.51515151515%
-prédio -> sp - 1/37 - 2.7027027027%
-atenção -> pessoa - 1/8 - 12.5%
-paulista -> paulo - 1/132 - 0.757575757576%
-peito -> peito - 1/3 - 33.3333333333%
+lula -> temer - 1/190 - 0.526315789474%
+lula -> poder - 2/17 - 11.7647058824%
+lula -> dilma - 3/16 - 18.75%
+lula -> presidente - 2/19 - 10.5263157895%
+lula -> reforma - 1/8 - 12.5%
+lula -> gente - 1/6 - 16.6666666667%
+lula -> prisão - 13/25 - 52.0%
+lula -> delegado - 1/9 - 11.1111111111%
+lula -> governo - 1/10 - 10.0%
+lula -> cadeia - 4/11 - 36.3636363636%
+lula -> stf - 2/8 - 25.0%
+temer -> lula - 1/219 - 0.456621004566%
+temer -> temer - 5/190 - 2.63157894737%
+temer -> poder - 1/17 - 5.88235294118%
+temer -> dilma - 1/16 - 6.25%
+temer -> presidente - 1/19 - 5.26315789474%
+temer -> dia - 1/24 - 4.16666666667%
+temer -> filho - 2/17 - 11.7647058824%
+temer -> reforma - 1/8 - 12.5%
+temer -> gente - 1/6 - 16.6666666667%
+temer -> brasil - 1/12 - 8.33333333333%
+temer -> globo - 2/7 - 28.5714285714%
+temer -> cunha - 2/3 - 66.6666666667%
+poder -> lula - 2/219 - 0.913242009132%
+dilma -> lula - 1/219 - 0.456621004566%
+dilma -> temer - 1/190 - 0.526315789474%
+presidente -> lula - 6/219 - 2.7397260274%
+presidente -> temer - 2/190 - 1.05263157895%
+presidente -> brasil - 1/12 - 8.33333333333%
+presidente -> michel - 1/19 - 5.26315789474%
+dia -> lula - 6/219 - 2.7397260274%
+dia -> temer - 1/190 - 0.526315789474%
+dia -> presidente - 1/19 - 5.26315789474%
+dia -> dia - 1/24 - 4.16666666667%
+dia -> prisão - 3/25 - 12.0%
+dia -> cadeia - 1/11 - 9.09090909091%
+filho -> lula - 2/219 - 0.913242009132%
+filho -> temer - 10/190 - 5.26315789474%
+gente -> gente - 2/6 - 33.3333333333%
+pf -> lula - 1/219 - 0.456621004566%
+prisão -> lula - 7/219 - 3.19634703196%
+delegado -> pf - 15/31 - 48.3870967742%
+governo -> lula - 2/219 - 0.913242009132%
+governo -> temer - 10/190 - 5.26315789474%
+governo -> dilma - 1/16 - 6.25%
+michel -> temer - 32/190 - 16.8421052632%
+nome -> lula - 2/219 - 0.913242009132%
+nome -> michel - 1/19 - 5.26315789474%
+stf -> poder - 2/17 - 11.7647058824%
 
-- Temas selecionados(36):
+- Temas selecionados(21):
 
-paulo
-amigo
-deus
-pai
-brasil
-companhia
-sair
-freire
-amor
-centro
-bosta
-mês
-youtube
-motivo
-pessoa
-dinheiro
-vida
-mãe
-verdade
-costa
-jogo
+lula
+temer
+poder
+dilma
+presidente
 dia
-mundo
-puta
-vídeo
-mulher
-irmão
-prédio
-ano
-atenção
-inevitável
-pau
-peito
-faculdade
-cidade
-aula
+filho
+reforma
+gente
+pf
+brasil
+prisão
+delegado
+governo
+cadeia
+michel
+nome
+globo
+stf
+país
+cunha
 
 
-- Temas excluídos(25):
+- Temas excluídos(0):
 
-sp
-apóstolo
-brazil
-andré
-usp
-roberto
-lima
-natália
-coelho
-gustavo
-sony
-ricardo
-interior
-mania
-bóia
-afonso
-rj
-hotel
-biacchi
-atlético-mg
-assis
-frança
-henrique
-ferreiro
-paulista

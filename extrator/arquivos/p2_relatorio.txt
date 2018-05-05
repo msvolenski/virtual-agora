@@ -1,12 +1,12 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
-Os dados de entrada contém 590 parágrafos.
-Os dados de entrada possuem 4486 palavras.
-Os dados lematizados possuem 4719 palavras.
-Palavras não lematizadas: $ ~ > post-it $ atlético-mg < $ a-i a-i 
-O documento lematizado e sem stopwords possui 2194 palavras.
+Os dados de entrada contém 979 parágrafos.
+Os dados de entrada possuem 7473 palavras.
+Os dados lematizados possuem 7975 palavras.
+Palavras não lematizadas: pró-lula pró-lula pró-lula in-justica pró-lula ex-presidente pró-lula lindinho-saqueiro-do-lula pró-lula pró-lula bom-básticas $ ex-presidente pró-lula ex-presidente ex-presidentes pró-lula $ $ pró-lula $ $ $ > $ $ $ tratá-los interditá-lo auto-estima compromete-lo 
+O documento lematizado e sem stopwords possui 4177 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 51.0922871155 %.
+Compressão do texto após pré-processamento: 44.1054462733 %.
 Em média, cada sentença do texto original possui 8 palavras.
 Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.

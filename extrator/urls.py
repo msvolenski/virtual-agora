@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^extrator/salvar$', views.salvar_dados, name='salvar'),
     url(r'^extrator/salvarDadosIniciais$', views.salvar_dados_iniciais, name='salvar_iniciais'),
     url(r'^extrator/limparIgnoradas$', views.limpar_palavras_ignoradas, name='limpar_ignoradas'),
+    url(r'^extrator/carregarls$', views.carregar_ls, name='carrega_ls'),
     url(r'^extrator/relatorio$', views.gerar_relatorio, name='relatorio'),    
     url(r'^extrator/passos2a5$', views.executar_passos_2_a_5, name='executar_passos_2_a_5'),
     url(r'^extrator/passos2$', views.executa_passo_2, name='executa_passo_2'),

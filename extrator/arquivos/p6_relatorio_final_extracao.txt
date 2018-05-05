@@ -4,107 +4,304 @@ RELATORIO FINAL DE EXTRACAO
 
 frase  \  representatividade 
 
-1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
-2 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-3 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-4 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
-5 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
+1 -  são paulo / sp  \  muito-alta
+2 -  in são paulo , sp  \  muito-alta
+3 -  i'm at in são paulo , sp  \  muito-alta
+4 -  i'm at in são paulo , sp w /  \  muito-alta
+5 -  i'm at santander in são paulo , sp  \  muito-alta
+6 -  i'm at portucho in são paulo , sp  \  muito-alta
+7 -  luara lugli ( são paulo , sp )  \  muito-alta
+8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
+9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
+10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
+11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
+12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
+13 -  i'm at rancho português in são paulo , sp  \  muito-alta
+14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
+15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
+16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
+17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
+18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
+19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
+20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
+21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
+22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
+23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
 
 
  2. RANKING POR TEMAS 
 
-Tema: lula
+Tema: paulo
 
 frase  \  representatividade 
 
-1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
-2 -  lula pode ser transferido de presídio  \  muito-alta
-3 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
-4 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
-5 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
-6 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-7 -  o setor de propina da odebrecht atuou entre a releição de lula e a de dilma rousseff  \  muito-alta
-8 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-9 -  juíza barra inspeção de deputados à área em que lula está preso  \  muito-alta
-10 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
-11 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
-12 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
-13 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
-14 -  pf pede a transferência de lula com urgência da carceragem da pf em curitiba  \  alta
+1 -  são paulo / sp  \  muito-alta
+2 -  in são paulo , sp  \  muito-alta
+3 -  i'm at in são paulo , sp  \  muito-alta
+4 -  i'm at in são paulo , sp w /  \  muito-alta
+5 -  i'm at santander in são paulo , sp  \  muito-alta
+6 -  i'm at portucho in são paulo , sp  \  muito-alta
+7 -  luara lugli ( são paulo , sp )  \  muito-alta
+8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
+9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
+10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
+11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
+12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
+13 -  i'm at rancho português in são paulo , sp  \  muito-alta
+14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
+15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
+16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
+17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
+18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
+19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
+20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
+21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
+22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
+23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
 
 
-Tema: dilma
-
-frase  \  representatividade 
-
-1 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
-2 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
-3 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
-4 -  o setor de propina da odebrecht atuou entre a releição de lula e a de dilma rousseff  \  muito-alta
-5 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
-
-
-Tema: poder
+Tema: amigo
 
 frase  \  representatividade 
 
-1 -  lula pode ser transferido de presídio  \  muito-alta
-2 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
+1 -  — se são “ supostas amigas ” é pq nunca foram amigas de verdade  \  muito-alta
 
 
-Tema: pf
-
-frase  \  representatividade 
-
-1 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
-2 -  pf pede a transferência de lula com urgência da carceragem da pf em curitiba  \  alta
-
-
-Tema: presidente
+Tema: deus
 
 frase  \  representatividade 
 
-1 -  lula presidente dilma vice a maior derrota que os golpistas podem sofrer e a volta de dilma  \  muito-alta
 
 
-Tema: pt
-
-frase  \  representatividade 
-
-1 -  padre léo fala sobre lula , dilma , pt , aborto e segundo turno  \  muito-alta
-2 -  ex-ministro de lula e dilma , lupi diz que pt ‘ roubou demais ’ e ‘ se esgotou ’ – lavajatonews  \  muito-alta
-
-
-Tema: prisão
+Tema: pai
 
 frase  \  representatividade 
 
-1 -  barrada ao tentar visitar lula , dilma cita ditadura e diz que prisão continua " golpe "  \  muito-alta
-2 -  pf pede transferência de lula e diz que já gastou r $ 150 mil com prisão  \  muito-alta
 
 
-Tema: stf
+Tema: brasil
 
 frase  \  representatividade 
 
-1 -  " ministros do stf admitem possibilidade de soltura e candidatura de lula " <--- também do marcola , beira-mar e quem mais  \  muito-alta
-2 -  ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-3 -  #lulalivre ministros do stf admitem possibilidade de soltura e candidatura de lula  \  muito-alta
-4 -  ministros do stf admitem possibilidade de soltura e até eventual candidatura de lula  \  muito-alta
-5 -  ministros do stf admitem possibilidade de soltura e de eventual candidatura de lula  \  muito-alta
 
 
-Tema: preso
+Tema: companhia
 
 frase  \  representatividade 
 
-1 -  juíza barra inspeção de deputados à área em que lula está preso  \  muito-alta
+1 -  i'm at companhia equilíbrio  \  muito-alta
 
 
-Tema: presídio
+Tema: sair
 
 frase  \  representatividade 
 
-1 -  lula pode ser transferido de presídio  \  muito-alta
+
+
+Tema: freire
+
+frase  \  representatividade 
+
+1 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
+2 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
+
+
+Tema: amor
+
+frase  \  representatividade 
+
+1 -  um #tbt cheio de fofura e amor  \  muito-alta
+2 -  ele e a jade c são os amores da minha vida  \  muito-alta
+3 -  são os amores da minha vida meixxmo ️  \  muito-alta
+
+
+Tema: centro
+
+frase  \  representatividade 
+
+
+
+Tema: bosta
+
+frase  \  representatividade 
+
+
+
+Tema: mês
+
+frase  \  representatividade 
+
+
+
+Tema: youtube
+
+frase  \  representatividade 
+
+
+
+Tema: motivo
+
+frase  \  representatividade 
+
+
+
+Tema: pessoa
+
+frase  \  representatividade 
+
+
+
+Tema: dinheiro
+
+frase  \  representatividade 
+
+
+
+Tema: vida
+
+frase  \  representatividade 
+
+1 -  ele e a jade c são os amores da minha vida  \  muito-alta
+2 -  são os amores da minha vida meixxmo ️  \  muito-alta
+
+
+Tema: mãe
+
+frase  \  representatividade 
+
+
+
+Tema: verdade
+
+frase  \  representatividade 
+
+1 -  — se são “ supostas amigas ” é pq nunca foram amigas de verdade  \  muito-alta
+
+
+Tema: costa
+
+frase  \  representatividade 
+
+
+
+Tema: jogo
+
+frase  \  representatividade 
+
+
+
+Tema: dia
+
+frase  \  representatividade 
+
+
+
+Tema: mundo
+
+frase  \  representatividade 
+
+
+
+Tema: puta
+
+frase  \  representatividade 
+
+
+
+Tema: vídeo
+
+frase  \  representatividade 
+
+1 -  novo vídeo mostra queda de morador junto com prédio que desabou em sp  \  muito-alta
+
+
+Tema: mulher
+
+frase  \  representatividade 
+
+
+
+Tema: irmão
+
+frase  \  representatividade 
+
+
+
+Tema: prédio
+
+frase  \  representatividade 
+
+1 -  novo vídeo mostra queda de morador junto com prédio que desabou em sp  \  muito-alta
+
+
+Tema: ano
+
+frase  \  representatividade 
+
+
+
+Tema: atenção
+
+frase  \  representatividade 
+
+
+
+Tema: inevitável
+
+frase  \  representatividade 
+
+
+
+Tema: pau
+
+frase  \  representatividade 
+
+1 -  são paulo / sp  \  muito-alta
+2 -  in são paulo , sp  \  muito-alta
+3 -  i'm at in são paulo , sp  \  muito-alta
+4 -  i'm at in são paulo , sp w /  \  muito-alta
+5 -  i'm at santander in são paulo , sp  \  muito-alta
+6 -  i'm at portucho in são paulo , sp  \  muito-alta
+7 -  luara lugli ( são paulo , sp )  \  muito-alta
+8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
+9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
+10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
+11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
+12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
+13 -  i'm at rancho português in são paulo , sp  \  muito-alta
+14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
+15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
+16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
+17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
+18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
+19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
+20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
+21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
+22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
+23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
+
+
+Tema: peito
+
+frase  \  representatividade 
+
+
+
+Tema: faculdade
+
+frase  \  representatividade 
+
+
+
+Tema: cidade
+
+frase  \  representatividade 
+
+
+
+Tema: aula
+
+frase  \  representatividade 
+
 
 

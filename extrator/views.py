@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import MapasTemasESubtemas, Clusters, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, ExtracaoNew, DadosExtracaoNew
+from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, SentencasAvaliadas, DadosExtracaoNew
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -12,9 +12,10 @@ from sklearn.neighbors.kde import KernelDensity
 from numpy import array, linspace
 from sklearn.cluster import KMeans
 from itertools import groupby
-from operator import itemgetter
+from operator import itemgetter, attrgetter
 from networkx.drawing.layout import kamada_kawai_layout
 from django.conf import settings as djangoSettings
+from django.db.models import Count
 import codecs
 import emoji
 import networkx as nx
@@ -808,10 +809,10 @@ def matriz(request):
     #cria lista de adjancecias
     lista_adjacencias = OrderedDict()
     for sentenca in sentencas:
-        palavras_sentenca = sentenca.split(' ')
+        bigrama = 'ok'
+        palavras_sentenca = sentenca.rstrip().split(' ')
         for i, palavra in enumerate(palavras_sentenca):
-            try:
-                palavras_sentenca[i+2]                            
+            try:                                            
                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
             except:
                 bigrama = 'fim' 
@@ -1583,12 +1584,9 @@ def executa_passo_5(request):
 
 def processarProtofrases(request):
     #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
-    
-    #inicia cronometro
-    inicio = time.time()
-
-#     #inicializa dados da extrcao
-    ExtracaoNew.objects.all().delete()
+   
+    #inicializa dados da extrcao
+    SentencasAvaliadas.objects.all().delete()
 
     #inicializa arquivo do relatório
     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')   
@@ -1599,13 +1597,14 @@ def processarProtofrases(request):
     arq_texto_preprocessado_vet = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","r",'utf-8').readlines()
     arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt", "r", 'utf-8').readlines()
     
-    #carrega os temas
-    temas = TemasNew.objects.all()
-
+    #carrega os grupos
+    grupos = Clusters.objects.filter(fim_de_arvore='sim')
+   
     #inicializa listas
-    sentencas_avaliadas = OrderedDict()
+    sentencas_avaliadas = []
+    sentencas_mapeadas = OrderedDict()
 
-    #mapeia as sentencas
+    ### mapeia as sentencas: busca a protofrase e sua frase original e armazena ambas em um dicionário ###############################################################################################
     sentencas_pp_vet = []
     senten = ''
     for linha in arq_texto_preprocessado_vet:
@@ -1618,78 +1617,156 @@ def processarProtofrases(request):
     print 'Esse valor ' + str(len(arq_sentencas)) + ' deve ser igual a este ' + str(len(sentencas_pp_vet)) + ' . Caso seja diferente, verificar linha 1450'
     
     if len(arq_sentencas) != len(sentencas_pp_vet):
-        return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
-
-    # avalia todas as sentenças do texto: atribui peso a todas as setenças conforme o peso das arestas da protofrase
-    lista_adjacencias = {}
-    contador = 0
-    for sentenca in sentencas:
-        peso = 0
-        maior_grau = 0.0
-        palavras_sentenca = sentenca.split(' ')
-        for i, palavra in enumerate(palavras_sentenca):
-            try:
-                palavras_sentenca[i+2]                              
-                bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
-                for linha in lista_de_adjacencias:
-                    if bigrama in linha and float(linha.split(' ')[2]) > maior_grau:
-                        maior_grau = float(linha.split(' ')[2])              
-            except:
-                bigrama = 'fim' 
-        
-        grau_corte = 0.1*maior_grau
-        if grau_corte < 1:
-            grau_corte = 1.0  
-        corte = 0
-        
-        for i, palavra in enumerate(palavras_sentenca):
-            try:
-                palavras_sentenca[i+2]                              
-                bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
-                for linha in lista_de_adjacencias:
-                    if bigrama in linha:
-                        if float(linha.split(' ')[2]) > grau_corte:
-                            peso = peso + float(linha.split(' ')[2])
-                        else:
-                            corte = corte + 1                
-            except:
-                bigrama = 'fim'     
-        
-        sentencas_avaliadas[str(contador) + ' ' + sentenca] = str(peso) + ' ' + str(corte)
-        contador = contador + 1
-        peso = 0     
-
-    #salva dados no BD
-    aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, rep_tema=0, irgs=0 , rep_geral=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
-    ExtracaoNew.objects.bulk_create(aList) 
+        return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
     
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':'x','goto': 'passo5', 'muda_logo':'logo_protofrases' })
+    for indx, linha in enumerate(arq_sentencas):
+        sentencas_mapeadas[linha] = sentencas_pp_vet[indx]
+
+    ##################################################################################################################################################################################
+    
+    string =[]
+    for grupo in grupos:
+        
+        #separa as palavras       
+        vertices = grupo.subtemas.rstrip().split(' ')
+       
+        #Separa as sentencas que contém as palavras do grupo
+        sentencas_grupo = []
+        sentencas_original = []
+        bag = []
+        for idx, linha in enumerate(arq_sentencas):
+            bag = linha.rstrip().split(' ')
+            if not set(vertices).isdisjoint(bag):
+                sentencas_grupo.append(linha.rstrip())
+                sentencas_original.append(sentencas_pp_vet[idx])
+       
+        #cria lista de adjancecias
+        lista_adjacencias = OrderedDict()
+        for sentenca in sentencas_grupo:           
+            bigrama = 'ok'
+            palavras_sentenca = sentenca.rstrip().split(' ')
+            for i, palavra in enumerate(palavras_sentenca):
+                try:                                             
+                    bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i + 1]                    
+                except:
+                    bigrama = 'fim' 
+                if bigrama != 'fim':
+                    try:   
+                        lista_adjacencias[bigrama] = lista_adjacencias[bigrama] + 1
+                    except:
+                        lista_adjacencias[bigrama] = 1            
+
+        for idx, sentenca in enumerate(sentencas_grupo):
+            peso = 0            
+            palavras_sentenca = sentenca.split(' ')
+            maior_grau = 0
+            corte = 0
+            bigrama = 'ok'
+            #acha o maior grau:
+            for i, palavra in enumerate(palavras_sentenca):
+                try:                                           
+                    bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]                      
+                except:
+                    bigrama = 'fim'
+                if bigrama != 'fim':
+                    for k,v in lista_adjacencias.iteritems():
+                        if bigrama in k and float(v) > maior_grau:
+                            maior_grau = float(v)                 
+            
+            grau_corte = 0.1*maior_grau
+            if grau_corte < 1:
+                grau_corte = 1.0             
+            
+            for i, palavra in enumerate(palavras_sentenca):
+                bigrama = 'ok'
+                try:                                            
+                    bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
+                except:
+                    bigrama = 'fim'
+                if bigrama != 'fim':
+                    for k,v in lista_adjacencias.iteritems():
+                        if bigrama == k:
+                            if float(v) > grau_corte:
+                                peso = peso + float(v)
+                            else:
+                                corte = corte + 1
+                                           
+            string.append([ grupo.nucleos, sentenca, sentencas_original[idx], str(peso), str(corte) ])
+    
+    #salva dados no BD
+    aList = [SentencasAvaliadas(tema=sent[0], subtema='a definir', proto=sent[1] , frase=sent[2] , peso=sent[3] , corte=sent[4], irse=0) for sent in string]    
+    SentencasAvaliadas.objects.bulk_create(aList) 
+    
+    return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
 
 
 def mapearEextrair(request):
-    #Apenas escreve o relatório de extração
+    #Separa as setencças por cluster e subtema
     
-    #carrega os temas
-    temas = TemasNew.objects.all()
+    #carrega sentanças já avaliadas
+    SentencasExtraidas.objects.all().delete()
 
-    #carrega frases
-    sentencas = ExtracaoNew.objects.all()
+    #carregas os temas
+    temas_subtemas = Clusters.objects.filter(fim_de_arvore='sim')
 
-    #escreve relatório
-    arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
+    #inicializa listas
+    sentencas_mapeadas = []
+    bag_protos =[]
+    
+    for itemm in temas_subtemas:        
+        palavras = itemm.subtemas.rstrip().split(' ')
+        for palavra in palavras:           
+            sentencas = SentencasAvaliadas.objects.filter(tema__exact=itemm.nucleos).filter(proto__icontains=palavra).order_by('peso').order_by('-corte')
+            obj_maior_peso = max(sentencas, key=attrgetter('peso'))
+            maior_peso = obj_maior_peso.peso         
+           
+            for sent in sentencas:
+                if (itemm.nucleos != palavra):
+                    if sent.proto not in bag_protos:
+                        if maior_peso == 0:
+                            irse = 0
+                        else:
+                            irse = int((sent.peso / maior_peso)*100)
+                        if irse > 80:
+                            representatividade = 'altissima'
+                        if irse > 60 and irse <= 80:
+                            representatividade = 'alta'
+                        if irse > 40 and irse <= 60:                                    
+                            representatividade = 'media'
+                        if irse > 20 and irse <= 40:
+                            representatividade = 'baixa'
+                        if irse >= 0 and irse <= 20:
+                            representatividade = 'baixissima'    
+                                     
+                        
+                        sentencas_mapeadas.append([itemm.nucleos, palavra, sent.frase, sent.peso, sent.corte, irse, representatividade])
+                        bag_protos.append(sent.proto)
+            bag_protos = []
+    
+    
+    #salva dados no BD
+    aList = [SentencasExtraidas(tema=sent[0], subtema=sent[1], frase=sent[2] , peso=sent[3] , corte=sent[4], irse=sent[5], representatividade=sent[6]) for sent in sentencas_mapeadas]    
+    SentencasExtraidas.objects.bulk_create(aList) 
+    
+    
+    
+    # sentencas = ExtracaoNew.objects.all()
+
+    # #escreve relatório
+    # arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
    
-    arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
+    # arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
 
-    for tema in temas:
-        arq_extracao.write('Tema: ' + tema.tema + '\n\n')
-        arq_extracao.write('protofrase / frase / peso / corte \n\n')
-        sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
-        for s in sentencas1:
-            arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
-        arq_extracao.write('\n')
+    # for tema in temas:
+    #     arq_extracao.write('Tema: ' + tema.tema + '\n\n')
+    #     arq_extracao.write('protofrase / frase / peso / corte \n\n')
+    #     sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
+    #     for s in sentencas1:
+    #         arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
+    #     arq_extracao.write('\n')
     
   
-    arq_extracao.close()
+    # arq_extracao.close()
     
     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
@@ -2288,6 +2365,22 @@ def limpar_palavras_ignoradas(request):
     lista.write('')
     lista.close()  
     return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+
+def carregar_ls(request):
+    
+    arq_subs = codecs.open("extrator/arquivos/lista_de_substantivos.txt", "r", 'utf-8')
+    lista_substantivos = arq_subs.readlines() 
+    
+    lista_obj = []
+    for linha in lista_substantivos:
+        lista_obj.append(linha)
+
+
+    #salva dados no BD
+    aList = [ListaDeSubstantivos(palavra=l,substantivo='sim') for l in lista_obj]    
+    ListaDeSubstantivos.objects.bulk_create(aList) 
+    
+    return render(request, 'extrator/extrator_resultados.html', {'dados_de_entrada': None})
 
 # def calcula_indice(request):
 #     #inicia cronometro
@@ -3387,3 +3480,261 @@ def limpar_palavras_ignoradas(request):
     
 
 #     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })
+
+# def processarProtofrases(request):
+#             #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
+   
+#     #inicializa dados da extrcao
+#     ExtracaoNew.objects.all().delete()
+
+#     #inicializa arquivo do relatório
+#     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')   
+  
+#     #carrega arquivos 
+#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
+#     lista_de_adjacencias = codecs.open("extrator/arquivos/p3_lista_adjacencias.txt","r",'utf-8').readlines()
+#     arq_texto_preprocessado_vet = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","r",'utf-8').readlines()
+#     arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt", "r", 'utf-8').readlines()
+    
+#     #carrega os temas
+#     temas = TemasNew.objects.all()
+
+#     #inicializa listas
+#     sentencas_avaliadas = OrderedDict()
+
+#     #mapeia as sentencas
+#     sentencas_pp_vet = []
+#     senten = ''
+#     for linha in arq_texto_preprocessado_vet:
+#         if linha.rstrip() != '.':
+#             senten = senten + ' ' + str(linha.encode('utf-8')).rstrip()
+#         if linha.rstrip() == '.':
+#             sentencas_pp_vet.append(senten)          
+#             senten = ''
+
+#     print 'Esse valor ' + str(len(arq_sentencas)) + ' deve ser igual a este ' + str(len(sentencas_pp_vet)) + ' . Caso seja diferente, verificar linha 1450'
+    
+#     if len(arq_sentencas) != len(sentencas_pp_vet):
+#         return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
+
+#     # avalia todas as sentenças do texto: atribui peso a todas as setenças conforme o peso das arestas da protofrase
+#     lista_adjacencias = {}
+#     contador = 0
+#     for sentenca in sentencas:
+#         peso = 0
+#         maior_grau = 0.0
+#         palavras_sentenca = sentenca.split(' ')
+#         for i, palavra in enumerate(palavras_sentenca):
+#             try:
+#                 palavras_sentenca[i+2]                              
+#                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
+#                 for linha in lista_de_adjacencias:
+#                     if bigrama in linha and float(linha.split(' ')[2]) > maior_grau:
+#                         maior_grau = float(linha.split(' ')[2])              
+#             except:
+#                 bigrama = 'fim' 
+        
+#         grau_corte = 0.1*maior_grau
+#         if grau_corte < 1:
+#             grau_corte = 1.0  
+#         corte = 0
+        
+#         for i, palavra in enumerate(palavras_sentenca):
+#             try:
+#                 palavras_sentenca[i+2]                              
+#                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
+#                 for linha in lista_de_adjacencias:
+#                     if bigrama in linha:
+#                         if float(linha.split(' ')[2]) > grau_corte:
+#                             peso = peso + float(linha.split(' ')[2])
+#                         else:
+#                             corte = corte + 1                
+#             except:
+#                 bigrama = 'fim'     
+        
+#         sentencas_avaliadas[str(contador) + ' ' + sentenca] = str(peso) + ' ' + str(corte)
+#         contador = contador + 1
+#         peso = 0     
+
+#     #salva dados no BD
+#     aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, rep_tema=0, irgs=0 , rep_geral=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
+#     ExtracaoNew.objects.bulk_create(aList) 
+    
+#     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
+
+
+# def mapearEextrair(request):
+#     #Apenas escreve o relatório de extração
+    
+#     #carrega os temas
+#     temas = TemasNew.objects.all()
+
+#     #carrega frases
+#     sentencas = ExtracaoNew.objects.all()
+
+#     #escreve relatório
+#     arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
+   
+#     arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
+
+#     for tema in temas:
+#         arq_extracao.write('Tema: ' + tema.tema + '\n\n')
+#         arq_extracao.write('protofrase / frase / peso / corte \n\n')
+#         sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
+#         for s in sentencas1:
+#             arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
+#         arq_extracao.write('\n')
+    
+  
+#     arq_extracao.close()
+    
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
+
+
+# def calcula_indice_representatividade(request):
+#     #inicia cronometro
+#     inicio = time.time()
+    
+#     #Abre arquivos
+#     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
+#     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","w")
+    
+#     #carrega os temas
+#     temas = TemasNew.objects.all()
+
+#     #inicializa banco de dados de senteças extraídas
+#     DadosExtracaoNew.objects.all().delete()
+
+#     #carrega parametros
+#     param = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    
+#     #carrega frases
+#     sentencas = ExtracaoNew.objects.all()
+
+#     #escreve relatório
+#     arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","w",'utf-8')
+
+#     #calcula indice geral de representatividade
+#     sentenca_maior_peso = ExtracaoNew.objects.order_by('-peso')[0]
+#     maior_peso = sentenca_maior_peso.peso
+
+#     #Calculo do indice de representatividade do tema
+#     ########################################################################
+#     #carrega sentenças
+#     sentencas_lem_strip = []
+#     texto_lematizado = arq_texto_lematizado.read()
+#     sentencas_lem = texto_lematizado.split('.')
+#     for sentenca in sentencas_lem:
+#         sentencas_lem_strip.append(sentenca.strip())
+
+
+#     numero_total_sentecas = 0
+#     numero_sentencas_tema = 0
+#     for tema in temas:
+#         for sentenca in sentencas_lem_strip:
+#             lista_tokens = sentenca.split(' ')
+#             if len(lista_tokens) == 1 and lista_tokens[0] == u'':             
+#                 'ignore'
+#             else:
+#                 numero_total_sentecas += 1
+#                 if tema.tema in lista_tokens:
+#                     numero_sentencas_tema += 1                    
+#         grau_tema = TabelaRanking.objects.get(vertice_nome__exact=tema.tema).grau_norm      
+#         irt = (float(grau_tema) + float(numero_sentencas_tema/numero_total_sentecas))/2
+#         irt_p = irt*100
+#         numero_sentencas_tema = 0
+#         numero_total_sentecas = 0
+#         tema.irt = irt        
+#         tema.irt_p = irt_p
+#         tema.save()
+
+#     ##############################################################################  
+    
+#     #Calculo do índice de representatividade dos parágrafos
+  
+#     for seten in sentencas:
+#         irgs = (seten.peso - 0.1*seten.corte) / maior_peso
+#         if irgs < 0:
+#             irgs = 0
+#         irgs_por = int(irgs * 100)
+#         if irgs_por > 90:
+#             seten.rep_geral = 'muito-alta' 
+#         if irgs_por > 80 and irgs_por <= 90:
+#             seten.rep_geral = 'alta'
+#         if irgs_por > 70 and irgs_por <= 80:
+#             seten.rep_geral = 'alta-baixa'
+#         if irgs_por > 50 and irgs_por <= 70:
+#             seten.rep_geral = 'media'
+#         if irgs_por <= 50:
+#             seten.rep_geral = 'baixa'         
+#         seten.irgs = irgs     
+#         seten.save()    
+    
+#     #calcula indice por tema de representatividade
+#     for tema in temas:
+#         sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema)
+#         sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]       
+#         maior_peso = sentenca_maior_peso.peso       
+#         if maior_peso > 0:
+#             for seten in sentencas:
+#                 irse = (seten.peso - 0.1*seten.corte) / maior_peso
+#                 if irse < 0:
+#                     irse = 0                   
+#                 irse_por = int(irse * 100)
+                                        
+#                 if irse_por > 90:
+#                     seten.rep_tema = 'muito-alta' 
+#                 if irse_por > 80 and irse_por <= 90:
+#                     seten.rep_tema = 'alta'
+#                 if irse_por > 70 and irse_por <= 80:
+#                     seten.rep_tema = 'alta-baixa'
+#                 if irse_por > 50 and irse_por <= 70:
+#                     seten.rep_tema = 'media'
+#                 if irse_por <= 50 :
+#                     seten.rep_tema = 'baixa'        
+#                 seten.irse = irse      
+#                 seten.save()
+#         else:
+#             for seten in sentencas:
+#                 seten.irse = 0
+#                 seten.rep_tema = 'baixa'  
+#                 seten.save()   
+  
+#     arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')     
+#     arq_extracao.write('1. RANKING GERAL \n\n')   
+#     arq_extracao.write('frase  \  representatividade \n\n')    
+#     bag = []
+#     sentencas = ExtracaoNew.objects.filter(irgs__gt=param.radio_r).order_by('-irgs')
+#     cont = 1
+#     for seten in sentencas:                
+#         if seten.frase not in bag:
+#             arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_geral + '\n')
+#             bag.append(seten.frase)
+#             cont = cont + 1
+   
+#     arq_extracao.write('\n\n 2. RANKING POR TEMAS \n\n')
+#     for tema in temas:
+#         arq_extracao.write('Tema: ' + tema.tema.encode('utf-8').decode('utf-8')  + '\n\n')   
+#         arq_extracao.write('frase  \  representatividade \n\n')    
+#         bag = []
+#         sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=param.radio_r).order_by('-irse')
+#         cont = 1
+#         for seten in sentencas:                
+#             if seten.frase not in bag:
+#                 arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_tema + '\n')
+#                 a = DadosExtracaoNew(irgs=seten.irgs, irgs_p=100*seten.irgs,irse=seten.irse,irse_p=100*seten.irse,tema=tema.tema, protofrase = seten.protofrase, quantidade = 0, sentenca=seten.frase)
+               
+#                 a.save()
+#                 bag.append(seten.frase)
+#                 cont = cont + 1
+#         arq_extracao.write('\n\n')
+        
+#         #corrige nao selecçao
+#         if cont == 1:
+#             a = DadosExtracaoNew(irgs=0, irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = 'null', quantidade = 0, sentenca='null')               
+#             a.save()                  
+
+#     arq_extracao.close()   
+     
+#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
+#     # 

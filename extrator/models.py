@@ -101,20 +101,17 @@ class ProtoFrasesNew(models.Model):
     def __str__(self):
         return self.protofrase
 
-class ExtracaoNew(models.Model):
-    protofrase = models.TextField('Proto Frase')
+class SentencasAvaliadas(models.Model):
+    tema = models.TextField('Tema')
+    subtema = models.TextField('SubTema')
+    proto = models.TextField('Proto Frase')
     frase = models.TextField('Frase')
     peso = models.FloatField('peso')
     corte = models.FloatField('corte')
-    irse = models.FloatField('IRSE')
-    rep_tema = models.TextField('Representativadade_tema')    
-    irgs = models.FloatField('IRGS')     
-    rep_geral = models.TextField('Representatividade_geral')
-
-    
+    irse = models.FloatField('IRSE')   
 
     def __str__(self):
-        return self.protofrase
+        return self.proto
 
 class DadosExtracaoNew(models.Model):
     tema  = models.TextField('Tema')
@@ -196,3 +193,16 @@ class MapasTemasESubtemas(models.Model):
     
     def __str__(self):
         return self.tema
+
+
+class SentencasExtraidas(models.Model):
+    tema = models.TextField('Tema')
+    subtema = models.TextField('SubTema')    
+    frase = models.TextField('Frase')
+    peso = models.FloatField('peso')
+    corte = models.FloatField('corte')
+    irse = models.FloatField('IRSE')
+    representatividade = models.TextField('Representatividade')   
+
+    def __str__(self):
+        return self.proto

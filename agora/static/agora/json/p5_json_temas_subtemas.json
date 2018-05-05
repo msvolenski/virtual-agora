@@ -6,246 +6,138 @@
 "parent": "null" ,
 "children": [
     {
-        "name": "paulo",
-        "value": 3.0,
-        "size": 20.0,
+        "name": "lula",
+        "value": 2.94283481244,
+        "size": 19.6188987496,
         "parent": "Temas",
         "children": [
             {
-             "name": "freire",
-             "value": 0.143661927394,
+             "name": "prisão",
+             "value": 0.137879560612,
              "size": 10.0,
-             "parent": "paulo"
+             "parent": "lula"
             },
             {
              "name": "dia",
-             "value": 0.0563531703251,
-             "size": 3.9226238536,
-             "parent": "paulo"
+             "value": 0.133975550342,
+             "size": 9.71685358931,
+             "parent": "lula"
             },
             {
-             "name": "brasil",
-             "value": 0.0450208071248,
-             "size": 3.13380224959,
-             "parent": "paulo"
+             "name": "cadeia",
+             "value": 0.040797081064,
+             "size": 2.95889259314,
+             "parent": "lula"
             },
             {
-             "name": "costa",
-             "value": 0.00998909689314,
-             "size": 0.695319704694,
-             "parent": "paulo"
-            }
-        ]
-    },
-    {
-        "name": "amigo",
-        "value": 0.524336488347,
-        "size": 3.49557658898,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "pai",
-             "value": 0.124633883075,
-             "size": 10.0,
-             "parent": "amigo"
+             "name": "stf",
+             "value": 0.0310279422356,
+             "size": 2.25036561604,
+             "parent": "lula"
             },
             {
-             "name": "verdade",
-             "value": 0.108225340165,
-             "size": 8.68346050804,
-             "parent": "amigo"
+             "name": "gente",
+             "value": 0.02977685525,
+             "size": 2.15962794759,
+             "parent": "lula"
             }
         ]
     },
     {
-        "name": "deus",
-        "value": 0.521941825166,
-        "size": 3.47961216778,
+        "name": "temer",
+        "value": 2.86153481838,
+        "size": 19.0768987892,
         "parent": "Temas",
         "children": [
             {
-             "name": "sair",
-             "value": 0.171772049012,
+             "name": "michel",
+             "value": 0.119717474089,
              "size": 10.0,
-             "parent": "deus"
+             "parent": "temer"
             },
             {
-             "name": "youtube",
-             "value": 0.131132239553,
-             "size": 7.63408484132,
-             "parent": "deus"
-            }
-        ]
-    },
-    {
-        "name": "bosta",
-        "value": 0.268512238681,
-        "size": 1.79008159121,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "cidade",
-             "value": 0.101453267381,
-             "size": 10.0,
-             "parent": "bosta"
-            }
-        ]
-    },
-    {
-        "name": "pessoa",
-        "value": 0.243806883952,
-        "size": 1.62537922635,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "atenção",
-             "value": 0.114269951704,
-             "size": 10.0,
-             "parent": "pessoa"
-            }
-        ]
-    },
-    {
-        "name": "vida",
-        "value": 0.18946229627,
-        "size": 1.26308197514,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "amor",
-             "value": 0.211636869602,
-             "size": 10.0,
-             "parent": "vida"
+             "name": "poder",
+             "value": 0.0868173828453,
+             "size": 7.25185554626,
+             "parent": "temer"
             },
             {
-             "name": "ano",
-             "value": 0.0385122205788,
-             "size": 1.81973115796,
-             "parent": "vida"
-            }
-        ]
-    },
-    {
-        "name": "jogo",
-        "value": 0.151758415548,
-        "size": 1.01172277032,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "companhia",
-             "value": 0.359648291594,
-             "size": 10.0,
-             "parent": "jogo"
-            }
-        ]
-    },
-    {
-        "name": "puta",
-        "value": 0.14247350001,
-        "size": 0.949823333397,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "motivo",
-             "value": 0.130160538025,
-             "size": 10.0,
-             "parent": "puta"
+             "name": "nome",
+             "value": 0.0595856291968,
+             "size": 4.97718730289,
+             "parent": "temer"
             },
             {
-             "name": "mundo",
-             "value": 0.0718397625404,
-             "size": 5.51931972856,
-             "parent": "puta"
-            }
-        ]
-    },
-    {
-        "name": "mulher",
-        "value": 0.129965248148,
-        "size": 0.866434987653,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "mãe",
-             "value": 0.17022845362,
-             "size": 10.0,
-             "parent": "mulher"
-            }
-        ]
-    },
-    {
-        "name": "irmão",
-        "value": 0.121534389014,
-        "size": 0.810229260092,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "mês",
-             "value": 0.263410725957,
-             "size": 10.0,
-             "parent": "irmão"
-            }
-        ]
-    },
-    {
-        "name": "prédio",
-        "value": 0.116937716176,
-        "size": 0.779584774509,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "centro",
-             "value": 0.0715690767373,
-             "size": 10.0,
-             "parent": "prédio"
+             "name": "dilma",
+             "value": 0.0566261108853,
+             "size": 4.72997875343,
+             "parent": "temer"
             },
             {
-             "name": "vídeo",
-             "value": 0.0662337871877,
-             "size": 9.25452586608,
-             "parent": "prédio"
+             "name": "governo",
+             "value": 0.0389572249503,
+             "size": 3.2540968014,
+             "parent": "temer"
             },
             {
-             "name": "dinheiro",
-             "value": 0.0581246453248,
-             "size": 8.12147480092,
-             "parent": "prédio"
+             "name": "país",
+             "value": 0.0138239009438,
+             "size": 1.15471037533,
+             "parent": "temer"
+            },
+            {
+             "name": "cunha",
+             "value": 0.00896195701887,
+             "size": 0.748592224076,
+             "parent": "temer"
             }
         ]
     },
     {
-        "name": "inevitável",
-        "value": 0.109003415771,
-        "size": 0.726689438471,
-        "parent": "Temas",
-        "children": [
-        ]
-    },
-    {
-        "name": "peito",
-        "value": 0.107482502307,
-        "size": 0.716550015383,
+        "name": "filho",
+        "value": 0.398028008258,
+        "size": 2.65352005505,
         "parent": "Temas",
         "children": [
             {
-             "name": "pau",
-             "value": 0.109003415771,
+             "name": "reforma",
+             "value": 0.232820245308,
              "size": 10.0,
-             "parent": "peito"
+             "parent": "filho"
+            },
+            {
+             "name": "globo",
+             "value": 0.0925854900501,
+             "size": 3.97669411987,
+             "parent": "filho"
             }
         ]
     },
     {
-        "name": "faculdade",
-        "value": 0.10328202582,
-        "size": 0.688546838801,
+        "name": "pf",
+        "value": 0.372681720828,
+        "size": 2.48454480552,
         "parent": "Temas",
         "children": [
             {
-             "name": "aula",
-             "value": 0.10078025319,
+             "name": "delegado",
+             "value": 0.314077186544,
              "size": 10.0,
-             "parent": "faculdade"
+             "parent": "pf"
+            }
+        ]
+    },
+    {
+        "name": "brasil",
+        "value": 0.358636477909,
+        "size": 2.39090985273,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "presidente",
+             "value": 0.442718456632,
+             "size": 10.0,
+             "parent": "brasil"
             }
         ]
     }
