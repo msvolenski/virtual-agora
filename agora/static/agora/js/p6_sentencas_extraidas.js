@@ -16,7 +16,7 @@ d3.json(p6_data, function (treeData) {
         
         // ************** Generate the tree diagram	 *****************
         var margin = {top: 20, right: 120, bottom: 20, left: 120},
-            width = 1500 - margin.right - margin.left,
+            width = 5000 - margin.right - margin.left,
             height = 20*count - margin.top - margin.bottom;
             
         var i = 0,

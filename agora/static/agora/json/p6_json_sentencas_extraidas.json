@@ -6,1207 +6,536 @@
 "parent": "#fff" ,
 "children": [
     {
-        "name": "lula",
-        "value": 2.94283481244,
-        "size": 19.6188987496,
+        "name": "voto",
+        "value": 2.88798833107,
+        "size": 19.2532555404,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "prisão",
-             "value": 0.137879560612,
+             "name": "brasil",
+             "value": 2.33875371002,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": " estou tranquilo e sereno , diz lula perto de completar 30 dias na prisão",
-                     "value": 0.137879560612,
+                     "name": " na esperança de dias melhores , em nome do povo do meu estado do rio grande do norte , que me concedeu 191 mil votos , em nome do povo do brasil , eu voto “ sim ”",
+                     "value": 2.33875371002,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "prisão"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
                 },
                 {
-                     "name": " pf desmente reportagem da revista veja sobre bastidores de lula na prisão",
-                     "value": 0.137879560612,
+                     "name": " por isso pelo povo do meu estado , pelo povo do rio de janeiro e pelo brasil , eu voto “ sim ” ao impeachment",
+                     "value": 2.33875371002,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
                 },
                 {
-                     "name": " policia federal desmentiu a reportagem da veja sobre rotina de lula na prisão",
-                     "value": 0.137879560612,
+                     "name": " em respeito ao meu querido povo de dourados , em respeito ao povo do mato grosso do sul , em respeito ao povo brasileiro , em nome da minha família e por um novo brasil , eu voto “ sim ”",
+                     "value": 2.33875371002,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
                 },
                 {
-                     "name": " luana piovani cumprindo  promessa  por prisão de lula em curitiba",
-                     "value": 0.137879560612,
+                     "name": " pela libertação do povo brasileiro , pela minha família , pelo saudoso celso daniel e por minas gerais , são paulo e todo o brasil , eu voto  sim ",
+                     "value": 2.33875371002,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " perto de completar um mês na prisão , lula coleciona derrotas na justiça",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " um big brother do lula na prisão , com as câmeras 24 horas focadas no molusco",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " quando comecei ver estas regalias do lula na prisão juro que lembrei do escobar",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " verdade como a que divulgou mentiras sobre lula na prisão aí na pf",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " a vida de lula na prisão",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " vamos supor q a publicou #fakenews sobre a prisão de lula c capa e tudo e a mentira da revista já foi desmentida pela pf",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " instituto agoniza após prisão de lula e faz brechó e vaquinha para sobreviver",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " prisão de lula mostra que exército assumiu papel-chave na política brasileira",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " ct a prisão de lula inocente sem provas vcs da oab nada fazem lamachia",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " nações se mobilizando indignadas contra prisão de lula , mas eu soube direito",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " lula agoniado na prisão",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
-                },
-                {
-                     "name": " seu lugar é na prisão",
-                     "value": 0.137879560612,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "prisão"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
                 }
                 ]
             },
             {
-             "name": "dia",
-             "value": 0.133975550342,
-             "size": 9.71685358931,
+             "name": "família",
+             "value": 0.938213244534,
+             "size": 4.01159489566,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": " lula livre é invadido em curitiba e lula acorda sem o bom dia dos",
-                     "value": 0.133975550342,
+                     "name": " em respeito ao meu querido povo de dourados , em respeito ao povo do mato grosso do sul , em respeito ao povo brasileiro , em nome da minha família e por um novo brasil , eu voto “ sim ”",
+                     "value": 0.938213244534,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "família"
                 },
                 {
-                     "name": " estou tranquilo e sereno , diz lula perto de completar 30 dias na prisão",
-                     "value": 0.133975550342,
+                     "name": " pela libertação do povo brasileiro , pela minha família , pelo saudoso celso daniel e por minas gerais , são paulo e todo o brasil , eu voto  sim ",
+                     "value": 0.938213244534,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
-                },
-                {
-                     "name": " vá lá dar bom dia pro lula pra ver só o que o delegado da pf vai fazer com as pecinhas do xilofone",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "dia"
-                },
-                {
-                     "name": " delegado da polícia federal acaba com o bom dia lula",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "dia"
-                },
-                {
-                     "name": " homem que atacou o bom dia lula sai livre",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "dia"
-                },
-                {
-                     "name": " petista se queixa do isolamento antes de completar 30 dias na cadeia",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "dia"
-                },
-                {
-                     "name": " vou gravar a dilma dando bom dia ao lula em mp3 e colocar como som do despertador",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " bom dia , presidente lula",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " se preparavam pro “ bom dia lula ”",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " álvaro dias dou para campanha de delegado que atacou acampamento pró-lula",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " todo dia só falam do lula , cansei de todo dia a mesma coisa , o cara já tá preso , e o povo não esquece do cara , oh god",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " todo santo dia alguma coisa envolvendo nosso digníssimo presidente vulgo temer puta que pariu",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " lula será solto dia 10 de maio",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " q nem o lula eu espero q como um bagulhinho da mamãe eu tenha um pão com mortadela um dia",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " durma bem e continue sonhando com um brasil mais justo q você nos proporcionou um dia",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " todo dia tem temer tentando falar o nome inteiro do corinthians k",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " rede globo começou a falar de temer , agora é todo dia e dia todo",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " raquel é contra arquivamento e pede mais 60 dias para inquérito dos portos",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": "  meu dia melhor tu és o motivo de eu me sentir cada vez mais vivo  r",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
-                },
-                {
-                     "name": " amanhã beberei em comemoração ao dia da cana",
-                     "value": 0.133975550342,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "família"
                 }
                 ]
             },
             {
-             "name": "cadeia",
-             "value": 0.040797081064,
-             "size": 2.95889259314,
+             "name": "estada",
+             "value": 0.917922902116,
+             "size": 3.92483782359,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": " comissão de direitos humanos do mercosul pede para visitar lula na cadeia",
-                     "value": 0.040797081064,
+                     "name": " na esperança de dias melhores , em nome do povo do meu estado do rio grande do norte , que me concedeu 191 mil votos , em nome do povo do brasil , eu voto “ sim ”",
+                     "value": 0.917922902116,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cadeia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "estada"
                 },
                 {
-                     "name": " pro lula na cadeia",
-                     "value": 0.040797081064,
+                     "name": " por isso pelo povo do meu estado , pelo povo do rio de janeiro e pelo brasil , eu voto “ sim ” ao impeachment",
+                     "value": 0.917922902116,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " muito legal saber que o lula aprendeu escrever na cadeia",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " lula tem que apodrecer na cadeia",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " lula vai sair da cadeia",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " ainda bem que o lula curtiu o primeiro mês na cadeia , por que ainda faltam 12 anos pra ele sair dela",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " temer , sua batata está assando , está quase pronta , o próximo corrupto a rir dentro de uma cadeia será vocês e seus capangas",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cadeia"
-                },
-                {
-                     "name": " cadeia nele , terrorista",
-                     "value": 0.040797081064,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cadeia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "estada"
                 }
                 ]
             },
             {
-             "name": "stf",
-             "value": 0.0310279422356,
-             "size": 2.25036561604,
+             "name": "rio",
+             "value": 0.102880224642,
+             "size": 0.439893367997,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": " a segunda turma do stf julgará a partir de hoje um pedido de liberdade apresentado pela defesa de lula",
-                     "value": 0.0310279422356,
+                     "name": " na esperança de dias melhores , em nome do povo do meu estado do rio grande do norte , que me concedeu 191 mil votos , em nome do povo do brasil , eu voto “ sim ”",
+                     "value": 0.102880224642,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "stf"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rio"
                 },
                 {
-                     "name": " julgamento virtual de recurso de lula no stf começa hoje",
-                     "value": 0.0310279422356,
+                     "name": " por isso pelo povo do meu estado , pelo povo do rio de janeiro e pelo brasil , eu voto “ sim ” ao impeachment",
+                     "value": 0.102880224642,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "stf"
-                },
-                {
-                     "name": " começou no stf o julgamento virtual que deve libertar lula",
-                     "value": 0.0310279422356,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "stf"
-                },
-                {
-                     "name": " cunha continua preso , pf x lula e temer sugere mudança na indicação do stf",
-                     "value": 0.0310279422356,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "stf"
-                },
-                {
-                     "name": " temer sugere que stf seja indicado pelos três poderes",
-                     "value": 0.0310279422356,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "stf"
-                },
-                {
-                     "name": " essas provas bom-básticas contra lula que o stf tentou tirar",
-                     "value": 0.0310279422356,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "stf"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rio"
                 }
                 ]
             },
             {
-             "name": "gente",
-             "value": 0.02977685525,
-             "size": 2.15962794759,
+             "name": "santo",
+             "value": 0.0663247514301,
+             "size": 0.283590149514,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": " to o próprio temer sendo aconselhado a sair mais de casa conhecer gente nova tomar um ar fora do caixão",
-                     "value": 0.02977685525,
+                     "name": " pelos meus filhos , bruno e felipe , pelo privilégio de ser de santa catarina , por entender que corrupção não combina com democracia , por santa catarina e pelo brasil , eu voto sim",
+                     "value": 0.0663247514301,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "gente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "santo"
                 },
                 {
-                     "name": " gente não gosto do trump nem do temer é um desafio não me deem unf plsss",
-                     "value": 0.02977685525,
+                     "name": " pela minha família , pelos meus amigos e colegas médicos , pelo povo do meu querido estado , o maranhão , que me deu a oportunidade de representá-lo hoje neste momento histórico , em especial pela minha querida santa inês e por vitorino freire , por um futuro melhor para o nosso brasil , meu voto é “ sim ”",
+                     "value": 0.0663247514301,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "gente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "santo"
                 },
                 {
-                     "name": " gente , primeiro mensário do lula",
-                     "value": 0.02977685525,
+                     "name": " em respeito às famílias brasileiras , em respeito ao meu querido espírito santo , em respeito à minha cidade natal , ibiraçu , pelos meus amigos e por toda a minha família , eu voto “ sim ” ao impeachment",
+                     "value": 0.0663247514301,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "gente"
-                },
-                {
-                     "name": " ainda tem gente que defende o muribundo lula",
-                     "value": 0.02977685525,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "gente"
-                },
-                {
-                     "name": " tem gente fingindo de esquecido",
-                     "value": 0.02977685525,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "gente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "santo"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "temer",
-        "value": 2.86153481838,
-        "size": 19.0768987892,
+        "name": "povo",
+        "value": 2.12475356598,
+        "size": 14.1650237732,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "michel",
-             "value": 0.119717474089,
+             "name": "país",
+             "value": 0.977655926356,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "temer",
+             "parent": "povo",
              "children": [
                 {
-                     "name": "nao foi possivel extrair frases",
-                     "value": 0,
+                     "name": " contra o desajuste das contas públicas , contra o aumento da inflação , contra o desemprego e a favor dos 10 milhões de desempregados do nosso país , em defesa dos 5.570 municípios e para restabelecer a esperança do povo do piauí e do povo brasileiro , eu voto “ sim ”",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "black",
-                     "repr2": "black",
-                     "parent": "gente"
-                }
-                ]
-            },
-            {
-             "name": "poder",
-             "value": 0.0868173828453,
-             "size": 7.25185554626,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "temer",
-             "children": [
-                {
-                     "name": " se a filha do temer pega empréstimo em banco pq eu não posso me endividar até o talo",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 },
                 {
-                     "name": " eles tem medo dos seus filhos verem casal gay na tv , eu tenho medo dos meus filhos verem temer no poder",
-                     "value": 0.0868173828453,
+                     "name": " celebrando a constituição cidadã de ulysses guimarães , as liberdades individuais com o povo nas ruas , o fortalecimento das instituições brasileiras , pelo brasil , por são paulo , por são josé do rio preto e região , por esta e pelas futuras gerações , para renovar as esperanças do povo brasileiro e pedindo a deus que abençoe este país , o meu voto é “ sim ”",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 },
                 {
-                     "name": " temer insinua que pode haver delito tolerável",
-                     "value": 0.0868173828453,
+                     "name": " em nome do povo brasileiro , por amor a este país , aos paranaenses de curitiba , londrina , cambé , rolândia , arapongas e ibiporã , que é a minha base eleitoral , e sabendo que este governo não tem maioria no parlamento — em qualquer parlamento do mundo , quando não se tem maioria , só se tem um terço , não tem como governar",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 },
                 {
-                     "name": " temer insinua que pode haver delito contornável",
-                     "value": 0.0868173828453,
+                     "name": " por são paulo , pelo fim dessa quadrilha que assaltou o país , pelo meu pai , que tanto sofreu na mão do pt , por mais dignidade às pessoas com deficiência , pelo meu povo brasileiro , eu voto “ sim ”",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 },
                 {
-                     "name": " agora articulação inconstitucional no stf pode tirar lula da ca",
-                     "value": 0.0868173828453,
+                     "name": " em defesa do povo cearense , em apoio aos milhares de fortalezenses que estão , neste momento , na praça portugal , pelo fortalecimento dos municípios brasileiros a partir de maranguape , maracanaú , na região metropolitana , e acima de tudo pela esperança do povo brasileiro , por um desenvolvimento socioeconômico justo para o nosso país , nós votamos “ sim ” pelo impeachment",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 },
                 {
-                     "name": " lava jato indica autonomia e independência entre poderes , diz temer",
-                     "value": 0.0868173828453,
+                     "name": " pelo resgate da esperança do povo brasileiro , pela reconstrução do nosso país , mas , sobretudo , em defesa da vida , da família e da fé , voto “ sim ”",
+                     "value": 0.977655926356,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "poder"
-                },
-                {
-                     "name": " temer admite que pode recorrer à omc sobre sobretaxas de aço e alumínio",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " poder em foco já vai abrir espaço pro temer",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " temer sugere que stf seja indicado pelos três poderes",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " o lula não pode tá preso , ele não matou ninguém",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " ja podem gritar  temer golpista ",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " lula pode ser assassinado",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " carro de som com propaganda pró lula , nas ruas de são bernardo do campo hoje 04/05 / 2018 isso pode",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " vive sugando o poder público e nada opina sobre a roubalheira do temer cherini votou com ele",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " ‘ julgamento virtual ’ que pode soltar lula será definido até 10 de maio",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " pessoas inseguras e com poder andam escoltados vide o vampirão do temer",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " nem deus pode ajudar o lula , dona glessi",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " cheguei eu aborrecido , pois comigo ninguém pode",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
-                },
-                {
-                     "name": " só pode estar brincando",
-                     "value": 0.0868173828453,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "poder"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "país"
                 }
                 ]
             },
             {
              "name": "nome",
-             "value": 0.0595856291968,
-             "size": 4.97718730289,
+             "value": 0.695348187049,
+             "size": 7.11240190239,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "temer",
+             "parent": "povo",
              "children": [
                 {
-                     "name": " cinismo tem nome , imaginem o quanto de nosso dinheiro foi investido para consertar a cara do michel temer e fhc",
-                     "value": 0.0595856291968,
+                     "name": " em respeito ao meu querido povo de dourados , em respeito ao povo do mato grosso do sul , em respeito ao povo brasileiro , em nome da minha família e por um novo brasil , eu voto “ sim ”",
+                     "value": 0.695348187049,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "nome"
                 },
                 {
-                     "name": " homem acusado de matar delegado usava celular com nome e cpf de michel temer",
-                     "value": 0.0595856291968,
+                     "name": " em nome do povo gaúcho , povo do meu estado , em nome do povo brasileiro , para votarmos a favor da mudança , a favor da esperança , sim ao impeachment",
+                     "value": 0.695348187049,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "nome"
                 },
                 {
-                     "name": " suspeito de matar delegado na bahia é detido com celular em nome de michel temer",
-                     "value": 0.0595856291968,
+                     "name": " na esperança de dias melhores , em nome do povo do meu estado do rio grande do norte , que me concedeu 191 mil votos , em nome do povo do brasil , eu voto “ sim ”",
+                     "value": 0.695348187049,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "nome"
-                },
-                {
-                     "name": " ' suspeito de matar delegado usava celular com nome e cpf de michel temer ' via",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "nome"
-                },
-                {
-                     "name": " temer comete gafe e confunde nome do corinthians novamente",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "nome"
-                },
-                {
-                     "name": " o cara dá um jeito de enfiar o nome do lula",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "nome"
-                },
-                {
-                     "name": " mas viu um que tirou e o nome dele é lula",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "nome"
-                },
-                {
-                     "name": " lula é tão tão que até ator sem futuro quer usar o nome dele para se promover",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "nome"
-                },
-                {
-                     "name": " mas ninguém é obrigado a decorar nome de time pequeno , nem o temer",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "nome"
-                },
-                {
-                     "name": " todo dia tem temer tentando falar o nome inteiro do corinthians k",
-                     "value": 0.0595856291968,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "nome"
                 }
                 ]
             },
             {
-             "name": "dilma",
-             "value": 0.0566261108853,
-             "size": 4.72997875343,
+             "name": "esperança",
+             "value": 0.438848553339,
+             "size": 4.4887832366,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "temer",
+             "parent": "povo",
              "children": [
                 {
-                     "name": " o dória é uma decepção e o lula , a dilma , dirceu é o que para você",
-                     "value": 0.0566261108853,
+                     "name": " em nome do povo gaúcho , povo do meu estado , em nome do povo brasileiro , para votarmos a favor da mudança , a favor da esperança , sim ao impeachment",
+                     "value": 0.438848553339,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
                 },
                 {
-                     "name": " #jornaldacultura temer tá aprendendo a discursar como a dilma",
-                     "value": 0.0566261108853,
+                     "name": " na esperança de dias melhores , em nome do povo do meu estado do rio grande do norte , que me concedeu 191 mil votos , em nome do povo do brasil , eu voto “ sim ”",
+                     "value": 0.438848553339,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
                 },
                 {
-                     "name": " lula ou dilma",
-                     "value": 0.0566261108853,
+                     "name": " em respeito ao povo de alagoas , em defesa da constituição federal , em nome da memória do meu avô , minha maior referência , o saudoso menestrel das alagoas , teotônio vilela ( palmas ) , para renovar a esperança do povo brasileiro , eu voto “ sim ”",
+                     "value": 0.438848553339,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
                 },
                 {
-                     "name": " vou gravar a dilma dando bom dia ao lula em mp3 e colocar como som do despertador",
-                     "value": 0.0566261108853,
+                     "name": " pelo povo da minha caxias do sul , da serra gaúcha , do rio grande do sul , do brasil , pela dignidade e pela esperança do povo brasileiro , eu voto sim",
+                     "value": 0.438848553339,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " o temer já tá começando a discursar quase igual a dilma , viajando numa nice k #jornaldacultura",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " breaking news a dilma está escrevendo os discursos do temer",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " temer é uma dilma melhorada na didática , mas com mesma linguagem",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " campello é a dilma e o roberto monteiro o temer",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " próximos deverão ser dilma e lula",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " votei na dilma não no temer k , coisa boa",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " o temer foi picado pela dilma",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " sucesso foi o governo dilma",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
-                },
-                {
-                     "name": " dilma",
-                     "value": 0.0566261108853,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "dilma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
                 }
                 ]
             },
+            {
+             "name": "momento",
+             "value": 0.197497140386,
+             "size": 2.02010886511,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": " em defesa do povo cearense , em apoio aos milhares de fortalezenses que estão , neste momento , na praça portugal , pelo fortalecimento dos municípios brasileiros a partir de maranguape , maracanaú , na região metropolitana , e acima de tudo pela esperança do povo brasileiro , por um desenvolvimento socioeconômico justo para o nosso país , nós votamos “ sim ” pelo impeachment",
+                     "value": 0.197497140386,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "momento"
+                },
+                {
+                     "name": " pelas baianas e baianos que querem um país decente , em nome da minha cidade , dias d'ávila , que me projetou para a vida pública , digo que o povo brasileiro não é refém deste momento , mas passageiro rumo ao futuro e ao seu melhor destino",
+                     "value": 0.197497140386,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "momento"
+                },
+                {
+                     "name": " neste momento histórico , nós somos o povo brasileiro , nós somos a pátria",
+                     "value": 0.197497140386,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "momento"
+                }
+                ]
+            },
+            {
+             "name": "rua",
+             "value": 0.123996282814,
+             "size": 1.26830185826,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": " celebrando a constituição cidadã de ulysses guimarães , as liberdades individuais com o povo nas ruas , o fortalecimento das instituições brasileiras , pelo brasil , por são paulo , por são josé do rio preto e região , por esta e pelas futuras gerações , para renovar as esperanças do povo brasileiro e pedindo a deus que abençoe este país , o meu voto é “ sim ”",
+                     "value": 0.123996282814,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                },
+                {
+                     "name": " com a ajuda de deus , pela minha família , pelo povo brasileiro , pelos evangélicos da nação toda , pelos meninos do mbl , pelo vem pra rua brasil — dizendo que o olavo tem razão , dizendo “ tchau ” para essa querida e para o pt , partido das trevas — , eu voto “ sim ” ao impeachment",
+                     "value": 0.123996282814,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                }
+                ]
+            },
+            {
+             "name": "mineiro",
+             "value": 0.0457825962474,
+             "size": 0.468289456578,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": " pelo futuro dos meus netos , pela minha cidade lavras , pelo meu querido povo mineiro e pela retomada do crescimento do brasil , meu voto é  sim ",
+                     "value": 0.0457825962474,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mineiro"
+                },
+                {
+                     "name": " pelos meus familiares , pela minha mulher , pelos meus filhos , pelos meus liderados , que me pediram que votasse , pelos mineiros e pelos demais brasileiros , o meu voto é  sim ",
+                     "value": 0.0457825962474,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mineiro"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "partido",
+        "value": 1.14854755988,
+        "size": 7.65698373253,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
             {
              "name": "governo",
-             "value": 0.0389572249503,
-             "size": 3.2540968014,
+             "value": 0.673099693688,
+             "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "temer",
+             "parent": "partido",
              "children": [
                 {
-                     "name": " o escândalo foi na loterj e joga no colo do governo lula , que jornalista ( jornalixo ) cretino",
-                     "value": 0.0389572249503,
+                     "name": " pelo combate à corrupção , que ficou cristalizada neste governo , em nome da força do meu maranhão , em nome da força da minha são luís , em nome da força da minha gente nordestina , eu voto “ sim ” ao impeachment",
+                     "value": 0.673099693688,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "governo"
                 },
                 {
-                     "name": " temer critica sobretaxa do aço , mas diz que governo deve aceitar cotas",
-                     "value": 0.0389572249503,
+                     "name": " em nome do povo brasileiro , por amor a este país , aos paranaenses de curitiba , londrina , cambé , rolândia , arapongas e ibiporã , que é a minha base eleitoral , e sabendo que este governo não tem maioria no parlamento — em qualquer parlamento do mundo , quando não se tem maioria , só se tem um terço , não tem como governar",
+                     "value": 0.673099693688,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "governo"
                 },
                 {
-                     "name": " aê foice de são paulo , bota os dados do governo lula",
-                     "value": 0.0389572249503,
+                     "name": " com a convicção de que este governo da presidenta dilma , corrupto e mentiroso , cometeu crime de responsabilidade fiscal e sonhando com um governo sem corrupção , na esperança de que o próximo presidente governe para o brasil e não para o seu partido , aproveitando para homenagear o ministério público , a polícia federal , o juiz sérgio moro e pedir que se prenda o resto dos corruptos , homenageando hélio bicudo , janaína paschoal e miguel reale júnior , pela minha querida mata de são joão , pela minha bahia , pelo brasil verde e amarelo , eu voto “ sim ”",
+                     "value": 0.673099693688,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "governo"
-                },
-                {
-                     "name": " vamos ter que pagar pelas cagadas que o lula fez governo separa r $ 1,5 bi para honrar calote da venezuela",
-                     "value": 0.0389572249503,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "governo"
-                },
-                {
-                     "name": " sob o desgoverno golpista temer , brasil virou cocô do cavalo do bandido",
-                     "value": 0.0389572249503,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "governo"
-                },
-                {
-                     "name": " sucesso foi o governo dilma",
-                     "value": 0.0389572249503,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "governo"
                 }
                 ]
             },
             {
-             "name": "país",
-             "value": 0.0138239009438,
-             "size": 1.15471037533,
+             "name": "político",
+             "value": 0.452566316342,
+             "size": 6.72361495015,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "temer",
+             "parent": "partido",
              "children": [
                 {
-                     "name": " #jornaldacultura temer não tem vergonha na cara , o país está as traças com o maior índice de desemprego da história e não há vagas",
-                     "value": 0.0138239009438,
+                     "name": " pelo meu estado de são paulo , governado há 20 anos por políticos honestos do meu partido , pela minha região , são josé do rio pardo , minha terra natal , pelos milhões de brasileiros que foram às ruas clamar por decência na vida pública , por uma nova história do brasil que vai varrer os corruptos que estão no governo e onde vão viver os meus filhos e os meus netos",
+                     "value": 0.452566316342,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "país"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
                 },
                 {
-                     "name": " #jornaldacultura temer e alice no país das maravilhas",
-                     "value": 0.0138239009438,
+                     "name": " e , hoje , com essa responsabilidade na minha mão , de representar os jovens que querem uma política séria , transparente , ética — e também representando o povo brasileiro — , venho aqui me manifestar",
+                     "value": 0.452566316342,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
                 },
                 {
-                     "name": " quando o temer fala que o país tá crescendo",
-                     "value": 0.0138239009438,
+                     "name": " para traduzir um sentimento majoritário do povo e da gente de santa catarina , e na esperança de que este momento inaugure um novo tempo na política brasileira , o meu voto é sim",
+                     "value": 0.452566316342,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
                 },
                 {
-                     "name": " datafolha reconhece que lula é o maior líder político do país",
-                     "value": 0.0138239009438,
+                     "name": " ao governador camilo santana , mas eu não posso deixar de atender aos pedidos que chegam a mim , pelas redes sociais ( palmas ) , para que nós demos uma nova oportunidade ao povo brasileiro , tão necessária , diante dessa crise política que levou a uma economia desastrada , desenfreada , desandada",
+                     "value": 0.452566316342,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " para temer , em vários lugares do país o estado é o exército",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " “ lula dirigia o país sob efeito de álcool ”",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " sair mais do país , com certeza",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " jn , esse é o país que eu não quero",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " este país é um hospício",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                },
-                {
-                     "name": " em que país você vive",
-                     "value": 0.0138239009438,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "país"
-                }
-                ]
-            },
-            {
-             "name": "cunha",
-             "value": 0.00896195701887,
-             "size": 0.748592224076,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "temer",
-             "children": [
-                {
-                     "name": " cunha continua preso , pf x lula e temer sugere mudança na indicação do stf",
-                     "value": 0.00896195701887,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "cunha"
-                },
-                {
-                     "name": " a globo torrando temer , cunha e aécio",
-                     "value": 0.00896195701887,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "cunha"
-                },
-                {
-                     "name": " já que alguém acredita q o temer ava chupando um picolé igual quando eu falei q o cunha tava num flat em moema",
-                     "value": 0.00896195701887,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "cunha"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
                 }
                 ]
             }
@@ -1214,16 +543,16 @@
     },
     {
         "name": "filho",
-        "value": 0.398028008258,
-        "size": 2.65352005505,
+        "value": 1.13274822962,
+        "size": 7.55165486416,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "reforma",
-             "value": 0.232820245308,
+             "name": "futuro",
+             "value": 0.32607421968,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
@@ -1231,473 +560,673 @@
              "parent": "filho",
              "children": [
                 {
-                     "name": " filha de temer admite que coronel lima atuou em sua reforma",
-                     "value": 0.232820245308,
+                     "name": " pelo futuro dos meus filhos , pelo futuro dos filhos de todos os brasileiros , pelo nosso querido estado de são paulo e pelo brasil , eu voto “ sim ”",
+                     "value": 0.32607421968,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "reforma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "futuro"
                 },
                 {
-                     "name": " capas de dizer que a reforma ná casa dá filha do temer foi normal , governo temer só vergonha",
-                     "value": 0.232820245308,
+                     "name": " em respeito à minha mulher , aos meus filhos e aos meus netos , pelo povo do meu querido estado do pará , por um futuro melhor para o brasil , eu voto sim",
+                     "value": 0.32607421968,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " filha de temer diz à pf que o pai não ajudou em reforma",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " maristela temer , filha do lula , reformando casa com uma puta grana e ninguém mais bate panela",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " #jornalnacional vocês acham q maristela temer ia falar q o pai deu dinheiro para pagar a reforma , ela foi orientada pelo advogados",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " raquel dodge tá botando no 12 o michel temer no caso da reforma da mansão da filhinha dele",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " reforma da previdência é tema obrigatório nas eleições , diz temer",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " prendeu lula por uma reforma que nunca existiu , mas é aliado de temer ,",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "reforma"
-                },
-                {
-                     "name": " então , a reforma não atendeu ao que se dispôs",
-                     "value": 0.232820245308,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "reforma"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "futuro"
                 }
                 ]
             },
             {
-             "name": "globo",
-             "value": 0.0925854900501,
-             "size": 3.97669411987,
+             "name": "pai",
+             "value": 0.193512977903,
+             "size": 5.93462979358,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
              "parent": "filho",
              "children": [
                 {
-                     "name": " jornal nacional todo eu disse todo falando mau do temer essa globo e maldita mentirosos filhos da puta",
-                     "value": 0.0925854900501,
+                     "name": " pela minha família , pelos meus filhos , pela minha esposa , pela minha neta , pelo meu pai , hoje ausente , mas sempre presente na minha vida , pela minha mãe , dona maria , os quais me ensinaram os valores que norteiam a minha vida pública , pelos meus irmãos , eu voto “ sim ”",
+                     "value": 0.193512977903,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "globo"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pai"
+                }
+                ]
+            },
+            {
+             "name": "neto",
+             "value": 0.178231472718,
+             "size": 5.46597866256,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": " mas , honrando o nosso pmdb com lealdade , na condição de secretário-geral do pmdb , junto com o nosso honrado presidente do partido , michel temer , acompanhando também a nossa bancada de minas gerais dos deputados federais , acompanhando também a bancada do pmdb da assembleia legislativa de minas gerais , pelo povo de minas gerais e também esperando o crescimento do transporte deste país , que está exatamente em uma situação agonizante , eu quero aqui dizer do fundo da minha alma , pensando na minha família , na minha esposa , nos meus filhos , nos meus netos e nos meus conterrâneos da minha querida caratinga , que eu voto “ sim ”",
+                     "value": 0.178231472718,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "neto"
                 },
                 {
-                     "name": " nossa a globo repetiu pela quarta vez temer fode essa filho da puta",
-                     "value": 0.0925854900501,
+                     "name": " em respeito à minha mulher , aos meus filhos e aos meus netos , pelo povo do meu querido estado do pará , por um futuro melhor para o brasil , eu voto sim",
+                     "value": 0.178231472718,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "globo"
-                },
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "neto"
+                }
+                ]
+            },
+            {
+             "name": "mulher",
+             "value": 0.0601052024199,
+             "size": 1.84329820612,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
                 {
-                     "name": " rede globo começou a falar de temer , agora é todo dia e dia todo",
-                     "value": 0.0925854900501,
+                     "name": " em respeito à minha mulher , aos meus filhos e aos meus netos , pelo povo do meu querido estado do pará , por um futuro melhor para o brasil , eu voto sim",
+                     "value": 0.0601052024199,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
-                },
-                {
-                     "name": " fachin que “ tem medo da globo ” leva ao pleno mais",
-                     "value": 0.0925854900501,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
-                },
-                {
-                     "name": " a globo torrando temer , cunha e aécio",
-                     "value": 0.0925854900501,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
-                },
-                {
-                     "name": " q raiva da globo , vai tomar no cu",
-                     "value": 0.0925854900501,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
-                },
-                {
-                     "name": " a globo quer por quer pegar o temer",
-                     "value": 0.0925854900501,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
-                },
-                {
-                     "name": " globo e quem manda sim",
-                     "value": 0.0925854900501,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "globo"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mulher"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "pf",
-        "value": 0.372681720828,
-        "size": 2.48454480552,
+        "name": "cidade",
+        "value": 0.944123201877,
+        "size": 6.29415467918,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "delegado",
-             "value": 0.314077186544,
+             "name": "paulo",
+             "value": 0.424499491223,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "pf",
+             "parent": "cidade",
              "children": [
                 {
-                     "name": " delegado da pf ataca acampamento lula livre em curitiba",
-                     "value": 0.314077186544,
+                     "name": " pelo futuro dos meus filhos , pelo futuro dos filhos de todos os brasileiros , pelo nosso querido estado de são paulo e pelo brasil , eu voto “ sim ”",
+                     "value": 0.424499491223,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "delegado"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "paulo"
                 },
                 {
-                     "name": " delegado da pf que atacou vigília pró-lula levou bomba no psicotécnico",
-                     "value": 0.314077186544,
+                     "name": " eu quero , em primeiro lugar , agradecer a deus , à minha família , aos meus amigos , à minha querida cidade de itu , à região , ao estado de são paulo e ao brasil",
+                     "value": 0.424499491223,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "delegado"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "paulo"
+                }
+                ]
+            },
+            {
+             "name": "região",
+             "value": 0.225100516538,
+             "size": 5.30272759313,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "cidade",
+             "children": [
+                {
+                     "name": " eu quero , em primeiro lugar , agradecer a deus , à minha família , aos meus amigos , à minha querida cidade de itu , à região , ao estado de são paulo e ao brasil",
+                     "value": 0.225100516538,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "região"
                 },
                 {
-                     "name": " em dia de fúria , delegado da pf quebra o som da vigília lula livre",
-                     "value": 0.314077186544,
+                     "name": " pelo futuro do meu filho , breno , pela minha família , pela minha cidade de ourinhos e região , pela minha querida polícia militar do estado de são paulo , pelo brasil , pela honestidade e pela ética , em homenagem aos policiais militares que deram a sua vida pela sociedade , eu voto “ sim ” , pelo impeachment",
+                     "value": 0.225100516538,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "delegado"
-                },
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "região"
+                }
+                ]
+            },
+            {
+             "name": "eleitor",
+             "value": 0.186341092721,
+             "size": 4.38966586707,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "cidade",
+             "children": [
                 {
-                     "name": " absurdo o que o delegado da pf fez no acampamento lula livre",
-                     "value": 0.314077186544,
+                     "name": " em nome do povo brasileiro , em nome do estado de são paulo , que me acolheu muito bem , em nome do prb , meu partido , especialmente da minha esposa e da minha filha , que tem 20 anos , as minhas principais eleitoras , que sabem da dignidade do meu trabalho , o nosso voto é “ sim ”",
+                     "value": 0.186341092721,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "delegado"
-                },
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "eleitor"
+                }
+                ]
+            },
+            {
+             "name": "homenagem",
+             "value": 0.138856599777,
+             "size": 3.27106634161,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "cidade",
+             "children": [
                 {
-                     "name": " ' suspeito de matar delegado usava celular com nome e cpf de michel temer ' via",
-                     "value": 0.314077186544,
+                     "name": " pelo futuro do meu filho , breno , pela minha família , pela minha cidade de ourinhos e região , pela minha querida polícia militar do estado de são paulo , pelo brasil , pela honestidade e pela ética , em homenagem aos policiais militares que deram a sua vida pela sociedade , eu voto “ sim ” , pelo impeachment",
+                     "value": 0.138856599777,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " delegado da pf quebra caixas de som de acampados pró-lula",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " homem acusado de matar delegado usava celular com nome e cpf de michel temer",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " vá lá dar bom dia pro lula pra ver só o que o delegado da pf vai fazer com as pecinhas do xilofone",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " suspeito de matar delegado na bahia é detido com celular em nome de michel temer",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " delegado que atacou acampamento de lula é suplente de deputado",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " delegado da polícia federal acaba com o bom dia lula",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " delegado da policia federal ataca acampamento dos apoiadores de lula e sai escoltado pela pf",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " álvaro dias dou para campanha de delegado que atacou acampamento pró-lula",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " delegado da empurra caixas de som e causa confusão em ato pró-lula em curitiba , diz pm",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "delegado"
-                },
-                {
-                     "name": " será que se a manifestação fosse contra o lula o delegado teria a mesma atitude",
-                     "value": 0.314077186544,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "delegado"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "homenagem"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "brasil",
-        "value": 0.358636477909,
-        "size": 2.39090985273,
+        "name": "presidente",
+        "value": 0.79987640185,
+        "size": 5.33250934567,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "presidente",
-             "value": 0.442718456632,
+             "name": "dilma",
+             "value": 0.353804140408,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "brasil",
+             "parent": "presidente",
              "children": [
                 {
-                     "name": " boa noite , presidente lula #lulalivre",
-                     "value": 0.442718456632,
+                     "name": " voto  sim  ao impeachment da presidente dilma rousseff",
+                     "value": 0.353804140408,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
                 },
                 {
-                     "name": " boa noite de hoje ao presidente lula",
-                     "value": 0.442718456632,
+                     "name": " presidente , ter uma luz no fim do túnel , eu voto “ sim ” ao impeachment da presidente dilma",
+                     "value": 0.353804140408,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                }
+                ]
+            },
+            {
+             "name": "impeachment",
+             "value": 0.295574598258,
+             "size": 8.35418709112,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": " voto  sim  ao impeachment da presidente dilma rousseff",
+                     "value": 0.295574598258,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "impeachment"
                 },
                 {
-                     "name": " nosso ex e futuro presidente lula",
-                     "value": 0.442718456632,
+                     "name": " presidente , ter uma luz no fim do túnel , eu voto “ sim ” ao impeachment da presidente dilma",
+                     "value": 0.295574598258,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "impeachment"
+                }
+                ]
+            },
+            {
+             "name": "responsabilidade",
+             "value": 0.190186524774,
+             "size": 5.37547481934,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": " em respeito ao meu povo , que me mandou para cá não para ser achincalhado , não para ser chamado de covarde , de picareta , de vendilhão do voto , mas para ter a honradez de um povo que precisa reconstruir a esperança , de um povo que foi enganado no castelo de mentiras que elegeu a presidenta dilma , no segundo mandato de um governo que cometeu erros que o advogado-geral da união não conseguiu defender , pois são indefensáveis , e para garantir o respeito à constituição brasileira e a responsabilidade fiscal , eu voto “ sim ” ao afastamento da presidenta dilma",
+                     "value": 0.190186524774,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " bom dia , presidente lula",
-                     "value": 0.442718456632,
+                     "name": " quando o presidente da república comete crime de responsabilidade , cabe aos representantes do povo — portanto , nós — tirar aquele que cometeu o crime do cargo que ocupa como presidente da república",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " o presidente lula",
-                     "value": 0.442718456632,
+                     "name": " com a convicção de que este governo da presidenta dilma , corrupto e mentiroso , cometeu crime de responsabilidade fiscal e sonhando com um governo sem corrupção , na esperança de que o próximo presidente governe para o brasil e não para o seu partido , aproveitando para homenagear o ministério público , a polícia federal , o juiz sérgio moro e pedir que se prenda o resto dos corruptos , homenageando hélio bicudo , janaína paschoal e miguel reale júnior , pela minha querida mata de são joão , pela minha bahia , pelo brasil verde e amarelo , eu voto “ sim ”",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " lula presidente , goleiro bruno deputado federal , nardoni deputado estadual e por aí vai",
-                     "value": 0.442718456632,
+                     "name": " meu voto está fundamentado no relatório que foi aprovado na comissão especial , o relatório que aponta crime de responsabilidade da presidente dilma rousseff",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": "  o planalto disse que o presidente michel temer nunca recebeu propina de ninguém  #jn",
-                     "value": 0.442718456632,
+                     "name": " demonstrada a existência de crime de responsabilidade , contra a corrupção estrutural e sistêmica , que ofende a probidade da administração , contra o desgoverno , a favor dos rondonienses e dos brasileiros , eu voto “ sim ” ao impeachment",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " todo santo dia alguma coisa envolvendo nosso digníssimo presidente vulgo temer puta que pariu",
-                     "value": 0.442718456632,
+                     "name": " a presidente dilma — ex-presidente dilma — cometeu crime de responsabilidade ao usar dinheiro público sem autorização desta casa",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " governo temer ' anda de lado ' há mais de um ano , diz presidente do insper",
-                     "value": 0.442718456632,
+                     "name": " a presidente dilma cometeu crime de responsabilidade",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
                 },
                 {
-                     "name": " #jornaldacultura construção civil é a saída para o presidente temer",
-                     "value": 0.442718456632,
+                     "name": " em respeito à constituição , de cuja promulgação eu tive o privilégio de participar , assinando-a , constituinte que fui em 1988 , sei que lá estão definidos os crimes de responsabilidade — a presidente dilma , através do parecer do relator jovair arantes , muito bem definiu esses crimes",
+                     "value": 0.190186524774,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "responsabilidade"
+                }
+                ]
+            },
+            {
+             "name": "deputado",
+             "value": 0.136638479732,
+             "size": 3.8619808003,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": " mas , honrando o nosso pmdb com lealdade , na condição de secretário-geral do pmdb , junto com o nosso honrado presidente do partido , michel temer , acompanhando também a nossa bancada de minas gerais dos deputados federais , acompanhando também a bancada do pmdb da assembleia legislativa de minas gerais , pelo povo de minas gerais e também esperando o crescimento do transporte deste país , que está exatamente em uma situação agonizante , eu quero aqui dizer do fundo da minha alma , pensando na minha família , na minha esposa , nos meus filhos , nos meus netos e nos meus conterrâneos da minha querida caratinga , que eu voto “ sim ”",
+                     "value": 0.136638479732,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "deputado"
                 },
                 {
-                     "name": " alguém avisa que lula não é presidente",
-                     "value": 0.442718456632,
+                     "name": " deputados , quero aqui me dirigir ao deputado josé guimarães que me perguntou se eu tinha raiva da presidente dilma rousseff",
+                     "value": 0.136638479732,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "deputado"
                 },
                 {
-                     "name": " pessoas que ignoram um hang lose merecem o inferno e temer presidente",
-                     "value": 0.442718456632,
+                     "name": " eu quero dizer que respeito muito os meus contrários , deputado glauber braga , mas , quanto à presidente dilma , eu tenho pena por ela não ter entendido que vale muito mais a pena insistir no empreendedorismo do brasil , insistir que cada cidadão e que cada cidadã construa sua própria vida do que fazer esse assistencialismo e esse populismo que assaltou o brasil",
+                     "value": 0.136638479732,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "deputado"
+                }
+                ]
+            },
+            {
+             "name": "casa",
+             "value": 0.130536314496,
+             "size": 3.68950782615,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": " eu , pela segunda vez , estou votando o impeachment de um presidente , e a presidente dilma rousseff vai receber o impeachment desta casa porque é incompetente administrativamente e porque não tem relação política com o congresso nacional",
+                     "value": 0.130536314496,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "casa"
                 },
                 {
-                     "name": " lula foi o maior presidente que o brasil já teve",
-                     "value": 0.442718456632,
+                     "name": " a presidente dilma — ex-presidente dilma — cometeu crime de responsabilidade ao usar dinheiro público sem autorização desta casa",
+                     "value": 0.130536314496,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "casa"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "corrupção",
+        "value": 0.713799126328,
+        "size": 4.75866084219,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "fim",
+             "value": 0.338888291639,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "corrupção",
+             "children": [
+                {
+                     "name": " por são paulo , pelo fim dessa quadrilha que assaltou o país , pelo meu pai , que tanto sofreu na mão do pt , por mais dignidade às pessoas com deficiência , pelo meu povo brasileiro , eu voto “ sim ”",
+                     "value": 0.338888291639,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "fim"
                 },
                 {
-                     "name": " entrevistas do presidente",
-                     "value": 0.442718456632,
+                     "name": " por um brasil melhor e mais decente , pelo futuro de nossos filhos , pelo fim da corrupção e dos fichas-sujas , por minha querida rio verde , pelo meu estado de goiás , eu voto “ sim ” ao impeachment",
+                     "value": 0.338888291639,
                      "size": 5,
                      "place": "end",
-                     "repr": "#6CE200",
-                     "repr2": "#6CE200",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "fim"
+                },
+                {
+                     "name": " presidente , ter uma luz no fim do túnel , eu voto “ sim ” ao impeachment da presidente dilma",
+                     "value": 0.338888291639,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "fim"
+                }
+                ]
+            },
+            {
+             "name": "poder",
+             "value": 0.275764263992,
+             "size": 8.13732049159,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "corrupção",
+             "children": [
+                {
+                     "name": " para corresponder às expectativas dos meus eleitores , dos brasileiros , às expectativas de um brasil melhor , para combater a corrupção , para possamos olhar para a frente , para um brasil diferente e separar o que é legal do que é ilegal e pela nossa constituição , o meu voto só poderia ser , e será , sim ao impeachment da presidente dilma",
+                     "value": 0.275764263992,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "poder"
+                },
+                {
+                     "name": " com serenidade e convicção , pelo meu estado de santa catarina , pelo fim da corrupção em todos os espaços de poder , eu voto sim",
+                     "value": 0.275764263992,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "poder"
+                }
+                ]
+            },
+            {
+             "name": "pt",
+             "value": 0.129181749204,
+             "size": 3.81192718636,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "corrupção",
+             "children": [
+                {
+                     "name": " com a ajuda de deus , pela minha família , pelo povo brasileiro , pelos evangélicos da nação toda , pelos meninos do mbl , pelo vem pra rua brasil — dizendo que o olavo tem razão , dizendo “ tchau ” para essa querida e para o pt , partido das trevas — , eu voto “ sim ” ao impeachment",
+                     "value": 0.129181749204,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pt"
+                },
+                {
+                     "name": " com a convicção de que este governo da presidenta dilma , corrupto e mentiroso , cometeu crime de responsabilidade fiscal e sonhando com um governo sem corrupção , na esperança de que o próximo presidente governe para o brasil e não para o seu partido , aproveitando para homenagear o ministério público , a polícia federal , o juiz sérgio moro e pedir que se prenda o resto dos corruptos , homenageando hélio bicudo , janaína paschoal e miguel reale júnior , pela minha querida mata de são joão , pela minha bahia , pelo brasil verde e amarelo , eu voto “ sim ”",
+                     "value": 0.129181749204,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pt"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "deus",
+        "value": 0.534283430533,
+        "size": 3.56188953689,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "nação",
+             "value": 0.369582856129,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "deus",
+             "children": [
+                {
+                     "name": " com a ajuda de deus , pela minha família , pelo povo brasileiro , pelos evangélicos da nação toda , pelos meninos do mbl , pelo vem pra rua brasil — dizendo que o olavo tem razão , dizendo “ tchau ” para essa querida e para o pt , partido das trevas — , eu voto “ sim ” ao impeachment",
+                     "value": 0.369582856129,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "nação"
+                },
+                {
+                     "name": " gostaria , em primeiro lugar , de agradecer a deus por este momento e pedir-lhe misericórdia para nossa nação",
+                     "value": 0.369582856129,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "nação"
+                }
+                ]
+            },
+            {
+             "name": "senhor",
+             "value": 0.247728918521,
+             "size": 6.70293316946,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "deus",
+             "children": [
+                {
+                     "name": " e feliz é a nação cujo deus é o senhor",
+                     "value": 0.247728918521,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "senhor"
+                },
+                {
+                     "name": " pela minhas filhas amanda dias e ana clara , pela minha esposa janaína , pela minha mãe , pelas famílias de cada um dos brasileiros — quero fazer uma menção especial à minha região do barreiro , à nossa querida belo horizonte — , levando em consideração também a legitimidade dos protestos , as vozes das ruas , a legalidade do processo e a governabilidade do nosso país , eu voto  sim  , senhor",
+                     "value": 0.247728918521,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "senhor"
+                }
+                ]
+            },
+            {
+             "name": "amor",
+             "value": 0.0764142974581,
+             "size": 2.06758230776,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "deus",
+             "children": [
+                {
+                     "name": " com esperança , com amor e com muita fé na restauração do brasil , eu voto como o povo quer que eu vote , como o povo do rio de janeiro , que eu amo , quer eu vote e como minha família me orientou a votar",
+                     "value": 0.0764142974581,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amor"
+                },
+                {
+                     "name": " por amor ao brasil , pela memória de meu pai , ricardo izar , por amor à minha filha e às futuras gerações , e por todos aqueles que exercem a cidadania na avenida paulista , o meu voto é  sim ",
+                     "value": 0.0764142974581,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amor"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "constituição",
+        "value": 0.362147383571,
+        "size": 2.41431589047,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "respeito",
+             "value": 0.724430990964,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "constituição",
+             "children": [
+                {
+                     "name": " em respeito à constituição , em respeito à grande maioria da população da minha querida cidade de são mateus , em respeito à grande maioria da população do norte do estado do espírito santo , em respeito à grande maioria da população capixaba , e para que nosso país encontre novamente o rumo do desenvolvimento , eu voto “ sim ”",
+                     "value": 0.724430990964,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "respeito"
+                },
+                {
+                     "name": " em respeito ao meu povo , que me mandou para cá não para ser achincalhado , não para ser chamado de covarde , de picareta , de vendilhão do voto , mas para ter a honradez de um povo que precisa reconstruir a esperança , de um povo que foi enganado no castelo de mentiras que elegeu a presidenta dilma , no segundo mandato de um governo que cometeu erros que o advogado-geral da união não conseguiu defender , pois são indefensáveis , e para garantir o respeito à constituição brasileira e a responsabilidade fiscal , eu voto “ sim ” ao afastamento da presidenta dilma",
+                     "value": 0.724430990964,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "respeito"
+                },
+                {
+                     "name": " em respeito ao meu querido povo de dourados , em respeito ao povo do mato grosso do sul , em respeito ao povo brasileiro , em nome da minha família e por um novo brasil , eu voto “ sim ”",
+                     "value": 0.724430990964,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "respeito"
                 }
                 ]
             }

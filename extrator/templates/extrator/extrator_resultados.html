@@ -178,7 +178,7 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
                             faixa =
-                            <input style="width:80px" type="number" name="faixa_histo" value={{xxxx}} , min="0" max="3">
+                            <input style="width:80px" type="number" name="faixa_histo" step="0.01" value={{xxxx}} , min="0" max="3">
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -615,7 +615,7 @@
         <div class="sem_resultado" style="position:relative;margin-top:-10px;">
             <b>RESULTADOS</b>
         </div>        
-        <div id="resultado-passo-5-grafo" style="margin-top:80px;height:600px;"></div>
+        <div id="resultado-passo-5-grafo" style="margin-top:80px;"></div>
         {% endif %} {% if resultados_p5 %}
         <div class="result-content" id="resultado-passo-5-doc" style="margin-top:150px">
             <div>{{p5_relatorio|linebreaks}}</div>
@@ -691,7 +691,7 @@
             <b>RESULTADOS</b>
         </div>
         {% endif %} {% if resultados_p6 %}
-        <div id="resultado-passo-6-grafo" style="margin-top:100px;"></div>
+        <div id="resultado-passo-6-grafo" style="margin-top:100px;overflow:auto;width:130%"></div>
         {% endif %} {% if resultados_p6 %}
         <div class="result-content" id="resultado-passo-6-doc" style="margin-top:150px">
             <div>{{relatorio_p6|linebreaks}}</div>

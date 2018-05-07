@@ -6,138 +6,272 @@
 "parent": "null" ,
 "children": [
     {
-        "name": "lula",
-        "value": 2.94283481244,
-        "size": 19.6188987496,
+        "name": "voto",
+        "value": 2.88798833107,
+        "size": 19.2532555404,
         "parent": "Temas",
         "children": [
             {
-             "name": "prisão",
-             "value": 0.137879560612,
+             "name": "brasil",
+             "value": 2.33875371002,
              "size": 10.0,
-             "parent": "lula"
+             "parent": "voto"
             },
             {
-             "name": "dia",
-             "value": 0.133975550342,
-             "size": 9.71685358931,
-             "parent": "lula"
+             "name": "família",
+             "value": 0.938213244534,
+             "size": 4.01159489566,
+             "parent": "voto"
             },
             {
-             "name": "cadeia",
-             "value": 0.040797081064,
-             "size": 2.95889259314,
-             "parent": "lula"
+             "name": "estada",
+             "value": 0.917922902116,
+             "size": 3.92483782359,
+             "parent": "voto"
             },
             {
-             "name": "stf",
-             "value": 0.0310279422356,
-             "size": 2.25036561604,
-             "parent": "lula"
+             "name": "rio",
+             "value": 0.102880224642,
+             "size": 0.439893367997,
+             "parent": "voto"
             },
             {
-             "name": "gente",
-             "value": 0.02977685525,
-             "size": 2.15962794759,
-             "parent": "lula"
+             "name": "santo",
+             "value": 0.0663247514301,
+             "size": 0.283590149514,
+             "parent": "voto"
             }
         ]
     },
     {
-        "name": "temer",
-        "value": 2.86153481838,
-        "size": 19.0768987892,
+        "name": "povo",
+        "value": 2.12475356598,
+        "size": 14.1650237732,
         "parent": "Temas",
         "children": [
             {
-             "name": "michel",
-             "value": 0.119717474089,
+             "name": "país",
+             "value": 0.977655926356,
              "size": 10.0,
-             "parent": "temer"
-            },
-            {
-             "name": "poder",
-             "value": 0.0868173828453,
-             "size": 7.25185554626,
-             "parent": "temer"
+             "parent": "povo"
             },
             {
              "name": "nome",
-             "value": 0.0595856291968,
-             "size": 4.97718730289,
-             "parent": "temer"
+             "value": 0.695348187049,
+             "size": 7.11240190239,
+             "parent": "povo"
             },
             {
-             "name": "dilma",
-             "value": 0.0566261108853,
-             "size": 4.72997875343,
-             "parent": "temer"
+             "name": "esperança",
+             "value": 0.438848553339,
+             "size": 4.4887832366,
+             "parent": "povo"
             },
+            {
+             "name": "momento",
+             "value": 0.197497140386,
+             "size": 2.02010886511,
+             "parent": "povo"
+            },
+            {
+             "name": "rua",
+             "value": 0.123996282814,
+             "size": 1.26830185826,
+             "parent": "povo"
+            },
+            {
+             "name": "mineiro",
+             "value": 0.0457825962474,
+             "size": 0.468289456578,
+             "parent": "povo"
+            }
+        ]
+    },
+    {
+        "name": "partido",
+        "value": 1.14854755988,
+        "size": 7.65698373253,
+        "parent": "Temas",
+        "children": [
             {
              "name": "governo",
-             "value": 0.0389572249503,
-             "size": 3.2540968014,
-             "parent": "temer"
+             "value": 0.673099693688,
+             "size": 10.0,
+             "parent": "partido"
             },
             {
-             "name": "país",
-             "value": 0.0138239009438,
-             "size": 1.15471037533,
-             "parent": "temer"
-            },
-            {
-             "name": "cunha",
-             "value": 0.00896195701887,
-             "size": 0.748592224076,
-             "parent": "temer"
+             "name": "político",
+             "value": 0.452566316342,
+             "size": 6.72361495015,
+             "parent": "partido"
             }
         ]
     },
     {
         "name": "filho",
-        "value": 0.398028008258,
-        "size": 2.65352005505,
+        "value": 1.13274822962,
+        "size": 7.55165486416,
         "parent": "Temas",
         "children": [
             {
-             "name": "reforma",
-             "value": 0.232820245308,
+             "name": "futuro",
+             "value": 0.32607421968,
              "size": 10.0,
              "parent": "filho"
             },
             {
-             "name": "globo",
-             "value": 0.0925854900501,
-             "size": 3.97669411987,
+             "name": "pai",
+             "value": 0.193512977903,
+             "size": 5.93462979358,
+             "parent": "filho"
+            },
+            {
+             "name": "neto",
+             "value": 0.178231472718,
+             "size": 5.46597866256,
+             "parent": "filho"
+            },
+            {
+             "name": "mulher",
+             "value": 0.0601052024199,
+             "size": 1.84329820612,
              "parent": "filho"
             }
         ]
     },
     {
-        "name": "pf",
-        "value": 0.372681720828,
-        "size": 2.48454480552,
+        "name": "cidade",
+        "value": 0.944123201877,
+        "size": 6.29415467918,
         "parent": "Temas",
         "children": [
             {
-             "name": "delegado",
-             "value": 0.314077186544,
+             "name": "paulo",
+             "value": 0.424499491223,
              "size": 10.0,
-             "parent": "pf"
+             "parent": "cidade"
+            },
+            {
+             "name": "região",
+             "value": 0.225100516538,
+             "size": 5.30272759313,
+             "parent": "cidade"
+            },
+            {
+             "name": "eleitor",
+             "value": 0.186341092721,
+             "size": 4.38966586707,
+             "parent": "cidade"
+            },
+            {
+             "name": "homenagem",
+             "value": 0.138856599777,
+             "size": 3.27106634161,
+             "parent": "cidade"
             }
         ]
     },
     {
-        "name": "brasil",
-        "value": 0.358636477909,
-        "size": 2.39090985273,
+        "name": "presidente",
+        "value": 0.79987640185,
+        "size": 5.33250934567,
         "parent": "Temas",
         "children": [
             {
-             "name": "presidente",
-             "value": 0.442718456632,
+             "name": "dilma",
+             "value": 0.353804140408,
              "size": 10.0,
-             "parent": "brasil"
+             "parent": "presidente"
+            },
+            {
+             "name": "impeachment",
+             "value": 0.295574598258,
+             "size": 8.35418709112,
+             "parent": "presidente"
+            },
+            {
+             "name": "responsabilidade",
+             "value": 0.190186524774,
+             "size": 5.37547481934,
+             "parent": "presidente"
+            },
+            {
+             "name": "deputado",
+             "value": 0.136638479732,
+             "size": 3.8619808003,
+             "parent": "presidente"
+            },
+            {
+             "name": "casa",
+             "value": 0.130536314496,
+             "size": 3.68950782615,
+             "parent": "presidente"
+            }
+        ]
+    },
+    {
+        "name": "corrupção",
+        "value": 0.713799126328,
+        "size": 4.75866084219,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "fim",
+             "value": 0.338888291639,
+             "size": 10.0,
+             "parent": "corrupção"
+            },
+            {
+             "name": "poder",
+             "value": 0.275764263992,
+             "size": 8.13732049159,
+             "parent": "corrupção"
+            },
+            {
+             "name": "pt",
+             "value": 0.129181749204,
+             "size": 3.81192718636,
+             "parent": "corrupção"
+            }
+        ]
+    },
+    {
+        "name": "deus",
+        "value": 0.534283430533,
+        "size": 3.56188953689,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "nação",
+             "value": 0.369582856129,
+             "size": 10.0,
+             "parent": "deus"
+            },
+            {
+             "name": "senhor",
+             "value": 0.247728918521,
+             "size": 6.70293316946,
+             "parent": "deus"
+            },
+            {
+             "name": "amor",
+             "value": 0.0764142974581,
+             "size": 2.06758230776,
+             "parent": "deus"
+            }
+        ]
+    },
+    {
+        "name": "constituição",
+        "value": 0.362147383571,
+        "size": 2.41431589047,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "respeito",
+             "value": 0.724430990964,
+             "size": 10.0,
+             "parent": "constituição"
             }
         ]
     }

@@ -3,113 +3,149 @@ RELATÓRIO FINAL - TEMAS
 
 PARÂMETROS DE CLUSTERIZAÇÃO
 
-- Faixa de divisão do histograma: 0.1
-- Critério de exclusão do cluster: posssuir 10% dos nós totais (154.5 de 1545)
+- Faixa de divisão do histograma: 0.3
+- Critério de exclusão do cluster: posssuir 10% dos nós totais (196.0 de 1960)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-6 lula 2.94283481244
+7 brasil 2.92344213753
+30 voto 2.88798833107
 
 Cluster 2
-310 temer 2.86153481838
+8 povo 2.12475356598
 
 Cluster 3
-299 dizer 0.875032790722
+48 estada 1.66175697797
+28 família 1.62383061554
+76 país 1.5363164557
+16 brasileiro 1.53477539344
 
 Cluster 4
-52 ver 0.594180221847
-164 falar 0.552256849935
-4 poder 0.520904297072
+37 por+os 1.30514993199
+58 nome 1.24878858082
 
 Cluster 5
-186 dar 0.496008357516
-16 dilma 0.463304543607
-30 presidente 0.442718456632
-126 dia 0.428721761096
+413 partido 1.14854755988
+13 filho 1.13274822962
+47 dizer 1.03566772954
+36 querido 1.02182834533
+211 cidade 0.944123201877
 
 Cluster 6
-315 filho 0.398028008258
-159 nado 0.392143125597
-378 reforma 0.38803374218
-65 gente 0.381143747199
-130 pf 0.372681720828
-12 brasil 0.358636477909
-150 deve 0.358137591082
-294 receber 0.354729026047
-308 fala 0.318925580207
-23 prisão 0.315153281399
-129 delegado 0.314077186544
-32 livre 0.310730420221
+225 querer 0.803564998197
+159 presidente 0.79987640185
+60 votar 0.751704967057
+42 governo 0.747888548542
+129 nó 0.738056854966
+18 respeito 0.724430990964
+22 corrupção 0.713799126328
+55 esperança 0.702157685342
+121 momento 0.620705298356
+61 impeachment 0.617229308127
+94 deputado 0.606333253811
 
 Cluster 7
-50 preso 0.298390058931
-124 governo 0.292179187128
-167 caro 0.263388622166
-320 cadeia 0.261101318809
-556 aprender 0.256584758842
-309 michel 0.256537444475
-393 novo 0.256423921519
-166 coisa 0.252993536167
-165 cansar 0.252761505827
-81 nome 0.243759392169
-551 globo 0.231463725125
-919 virar 0.228196870885
-0 sair 0.221199318952
-148 aí 0.221000538386
-76 stf 0.220643144786
-146 saber 0.219214004933
-80 usar 0.217839720535
-1 país 0.207358514157
-1237 puta 0.206121656609
-1047 existir 0.202249483897
-901 cunha 0.201644032925
+115 futuro 0.599976564212
+343 pai 0.556349811472
+1475 mina 0.547782011773
+91 grande 0.542294222696
+3 deus 0.534283430533
+97 casa 0.514893240511
+130 dar 0.504448367008
+128 político 0.502851462603
+168 novo 0.496533521088
+170 santo 0.474824925011
+160 dilma 0.465186925351
+50 pedir 0.465057885875
+489 paulo 0.443794922642
+49 rua 0.436466915505
+117 responsabilidade 0.435588492224
+90 rio 0.420873646261
+10 favor 0.416182661569
+52 poder 0.413646395987
+312 senhor 0.396366269633
+27 vir 0.379363156058
+136 representar 0.375483619011
+62 fim 0.369696318152
+35 nação 0.369582856129
+1474 mineiro 0.366260769979
+158 constituição 0.362147383571
+109 eleitor 0.357153761048
+4 possar 0.349980273229
+386 região 0.345154125358
+282 milhão 0.329168828606
+122 homenagem 0.319370179487
+292 parar 0.315537725759
+197 neto 0.315332605579
+45 pt 0.310036198089
+101 mulher 0.307204367924
+105 amor 0.305657189833
+671 especial 0.301545246774
 
 TEMAS PRÉ-SELECIONADOS
 
-lula
-temer
-dizer
-ver
-falar
-poder
-dar
-dilma
-presidente
-dia
-filho
-nado
-reforma
-gente
-pf
 brasil
-deve
-receber
-fala
-prisão
-delegado
-livre
-preso
-governo
-caro
-cadeia
-aprender
-michel
-novo
-coisa
-cansar
-nome
-globo
-virar
-sair
-aí
-stf
-saber
-usar
+voto
+povo
+estada
+família
 país
-puta
-existir
-cunha
+brasileiro
+por+os
+nome
+partido
+filho
+dizer
+querido
+cidade
+querer
+presidente
+votar
+governo
+nó
+respeito
+corrupção
+esperança
+momento
+impeachment
+deputado
+futuro
+pai
+mina
+grande
+deus
+casa
+dar
+político
+novo
+santo
+dilma
+pedir
+paulo
+rua
+responsabilidade
+rio
+favor
+poder
+senhor
+vir
+representar
+fim
+nação
+mineiro
+constituição
+eleitor
+possar
+região
+milhão
+homenagem
+parar
+neto
+pt
+mulher
+amor
+especial
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -120,79 +156,354 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> temer - 1/190 - 0.526315789474%
-lula -> poder - 2/17 - 11.7647058824%
-lula -> dilma - 3/16 - 18.75%
-lula -> presidente - 2/19 - 10.5263157895%
-lula -> reforma - 1/8 - 12.5%
-lula -> gente - 1/6 - 16.6666666667%
-lula -> prisão - 13/25 - 52.0%
-lula -> delegado - 1/9 - 11.1111111111%
-lula -> governo - 1/10 - 10.0%
-lula -> cadeia - 4/11 - 36.3636363636%
-lula -> stf - 2/8 - 25.0%
-temer -> lula - 1/219 - 0.456621004566%
-temer -> temer - 5/190 - 2.63157894737%
-temer -> poder - 1/17 - 5.88235294118%
-temer -> dilma - 1/16 - 6.25%
-temer -> presidente - 1/19 - 5.26315789474%
-temer -> dia - 1/24 - 4.16666666667%
-temer -> filho - 2/17 - 11.7647058824%
-temer -> reforma - 1/8 - 12.5%
-temer -> gente - 1/6 - 16.6666666667%
-temer -> brasil - 1/12 - 8.33333333333%
-temer -> globo - 2/7 - 28.5714285714%
-temer -> cunha - 2/3 - 66.6666666667%
-poder -> lula - 2/219 - 0.913242009132%
-dilma -> lula - 1/219 - 0.456621004566%
-dilma -> temer - 1/190 - 0.526315789474%
-presidente -> lula - 6/219 - 2.7397260274%
-presidente -> temer - 2/190 - 1.05263157895%
-presidente -> brasil - 1/12 - 8.33333333333%
-presidente -> michel - 1/19 - 5.26315789474%
-dia -> lula - 6/219 - 2.7397260274%
-dia -> temer - 1/190 - 0.526315789474%
-dia -> presidente - 1/19 - 5.26315789474%
-dia -> dia - 1/24 - 4.16666666667%
-dia -> prisão - 3/25 - 12.0%
-dia -> cadeia - 1/11 - 9.09090909091%
-filho -> lula - 2/219 - 0.913242009132%
-filho -> temer - 10/190 - 5.26315789474%
-gente -> gente - 2/6 - 33.3333333333%
-pf -> lula - 1/219 - 0.456621004566%
-prisão -> lula - 7/219 - 3.19634703196%
-delegado -> pf - 15/31 - 48.3870967742%
-governo -> lula - 2/219 - 0.913242009132%
-governo -> temer - 10/190 - 5.26315789474%
-governo -> dilma - 1/16 - 6.25%
-michel -> temer - 32/190 - 16.8421052632%
-nome -> lula - 2/219 - 0.913242009132%
-nome -> michel - 1/19 - 5.26315789474%
-stf -> poder - 2/17 - 11.7647058824%
+brasil -> brasil - 3/243 - 1.23456790123%
+brasil -> voto - 48/284 - 16.9014084507%
+brasil -> povo - 4/167 - 2.39520958084%
+brasil -> estada - 7/124 - 5.64516129032%
+brasil -> família - 5/100 - 5.0%
+brasil -> país - 1/109 - 0.917431192661%
+brasil -> nome - 4/64 - 6.25%
+brasil -> partido - 2/48 - 4.16666666667%
+brasil -> cidade - 1/48 - 2.08333333333%
+brasil -> corrupção - 1/45 - 2.22222222222%
+brasil -> esperança - 1/48 - 2.08333333333%
+brasil -> impeachment - 3/78 - 3.84615384615%
+brasil -> futuro - 2/37 - 5.40540540541%
+brasil -> pai - 3/27 - 11.1111111111%
+brasil -> deus - 1/35 - 2.85714285714%
+brasil -> santo - 1/26 - 3.84615384615%
+brasil -> paulo - 2/33 - 6.06060606061%
+brasil -> responsabilidade - 1/34 - 2.94117647059%
+brasil -> senhor - 1/22 - 4.54545454545%
+brasil -> nação - 2/23 - 8.69565217391%
+brasil -> pt - 1/18 - 5.55555555556%
+brasil -> amor - 1/12 - 8.33333333333%
+voto -> brasil - 10/243 - 4.11522633745%
+voto -> voto - 2/284 - 0.704225352113%
+voto -> povo - 3/167 - 1.79640718563%
+voto -> família - 1/100 - 1.0%
+voto -> nome - 2/64 - 3.125%
+voto -> partido - 1/48 - 2.08333333333%
+voto -> presidente - 1/61 - 1.6393442623%
+voto -> governo - 1/43 - 2.32558139535%
+voto -> corrupção - 2/45 - 4.44444444444%
+voto -> impeachment - 36/78 - 46.1538461538%
+voto -> deputado - 1/36 - 2.77777777778%
+voto -> futuro - 1/37 - 2.7027027027%
+voto -> poder - 2/23 - 8.69565217391%
+voto -> senhor - 3/22 - 13.6363636364%
+voto -> fim - 1/18 - 5.55555555556%
+voto -> homenagem - 2/15 - 13.3333333333%
+voto -> mulher - 1/15 - 6.66666666667%
+povo -> brasil - 6/243 - 2.46913580247%
+povo -> estada - 15/124 - 12.0967741935%
+povo -> partido - 1/48 - 2.08333333333%
+povo -> deus - 1/35 - 2.85714285714%
+povo -> santo - 2/26 - 7.69230769231%
+povo -> paulo - 2/33 - 6.06060606061%
+povo -> rua - 2/35 - 5.71428571429%
+povo -> rio - 6/36 - 16.6666666667%
+povo -> poder - 1/23 - 4.34782608696%
+povo -> mineiro - 4/17 - 23.5294117647%
+estada -> brasil - 1/243 - 0.411522633745%
+estada -> voto - 2/284 - 0.704225352113%
+estada -> povo - 1/167 - 0.59880239521%
+estada -> estada - 2/124 - 1.61290322581%
+estada -> família - 1/100 - 1.0%
+estada -> nome - 2/64 - 3.125%
+estada -> cidade - 3/48 - 6.25%
+estada -> esperança - 1/48 - 2.08333333333%
+estada -> santo - 2/26 - 7.69230769231%
+estada -> paulo - 14/33 - 42.4242424242%
+estada -> rio - 15/36 - 41.6666666667%
+família -> brasil - 4/243 - 1.64609053498%
+família -> voto - 7/284 - 2.46478873239%
+família -> povo - 3/167 - 1.79640718563%
+família -> estada - 3/124 - 2.41935483871%
+família -> família - 2/100 - 2.0%
+família -> nome - 3/64 - 4.6875%
+família -> partido - 1/48 - 2.08333333333%
+família -> filho - 5/75 - 6.66666666667%
+família -> cidade - 2/48 - 4.16666666667%
+família -> governo - 1/43 - 2.32558139535%
+família -> respeito - 2/36 - 5.55555555556%
+família -> momento - 1/27 - 3.7037037037%
+família -> pai - 3/27 - 11.1111111111%
+família -> nação - 2/23 - 8.69565217391%
+família -> mineiro - 1/17 - 5.88235294118%
+família -> constituição - 1/32 - 3.125%
+família -> eleitor - 1/28 - 3.57142857143%
+família -> amor - 1/12 - 8.33333333333%
+país -> brasil - 2/243 - 0.82304526749%
+país -> voto - 10/284 - 3.52112676056%
+país -> estada - 2/124 - 1.61290322581%
+país -> família - 1/100 - 1.0%
+país -> país - 2/109 - 1.83486238532%
+país -> nome - 2/64 - 3.125%
+país -> partido - 1/48 - 2.08333333333%
+país -> filho - 1/75 - 1.33333333333%
+país -> corrupção - 3/45 - 6.66666666667%
+país -> esperança - 1/48 - 2.08333333333%
+país -> momento - 1/27 - 3.7037037037%
+país -> impeachment - 1/78 - 1.28205128205%
+país -> futuro - 2/37 - 5.40540540541%
+país -> pai - 2/27 - 7.40740740741%
+país -> deus - 1/35 - 2.85714285714%
+país -> responsabilidade - 1/34 - 2.94117647059%
+país -> fim - 1/18 - 5.55555555556%
+nome -> brasil - 8/243 - 3.29218106996%
+nome -> povo - 18/167 - 10.7784431138%
+nome -> estada - 6/124 - 4.83870967742%
+nome -> família - 11/100 - 11.0%
+nome -> nome - 1/64 - 1.5625%
+nome -> partido - 2/48 - 4.16666666667%
+nome -> filho - 2/75 - 2.66666666667%
+nome -> cidade - 1/48 - 2.08333333333%
+nome -> deputado - 1/36 - 2.77777777778%
+nome -> deus - 1/35 - 2.85714285714%
+nome -> rua - 2/35 - 5.71428571429%
+nome -> senhor - 1/22 - 4.54545454545%
+nome -> nação - 1/23 - 4.34782608696%
+nome -> mineiro - 1/17 - 5.88235294118%
+nome -> região - 1/20 - 5.0%
+nome -> mulher - 1/15 - 6.66666666667%
+partido -> brasil - 1/243 - 0.411522633745%
+partido -> nome - 1/64 - 1.5625%
+partido -> partido - 1/48 - 2.08333333333%
+partido -> presidente - 1/61 - 1.6393442623%
+partido -> governo - 1/43 - 2.32558139535%
+partido -> respeito - 1/36 - 2.77777777778%
+partido -> pai - 1/27 - 3.7037037037%
+partido -> político - 1/36 - 2.77777777778%
+partido -> região - 1/20 - 5.0%
+filho -> povo - 1/167 - 0.59880239521%
+filho -> família - 4/100 - 4.0%
+filho -> país - 1/109 - 0.917431192661%
+filho -> filho - 2/75 - 2.66666666667%
+filho -> corrupção - 1/45 - 2.22222222222%
+filho -> futuro - 3/37 - 8.10810810811%
+filho -> pai - 1/27 - 3.7037037037%
+filho -> paulo - 1/33 - 3.0303030303%
+filho -> fim - 1/18 - 5.55555555556%
+filho -> constituição - 1/32 - 3.125%
+filho -> neto - 7/25 - 28.0%
+cidade -> estada - 3/124 - 2.41935483871%
+cidade -> santo - 1/26 - 3.84615384615%
+cidade -> paulo - 1/33 - 3.0303030303%
+cidade -> rio - 1/36 - 2.77777777778%
+presidente -> voto - 4/284 - 1.40845070423%
+presidente -> estada - 1/124 - 0.806451612903%
+presidente -> nome - 1/64 - 1.5625%
+presidente -> partido - 3/48 - 6.25%
+presidente -> presidente - 1/61 - 1.6393442623%
+presidente -> respeito - 1/36 - 2.77777777778%
+presidente -> esperança - 1/48 - 2.08333333333%
+presidente -> momento - 1/27 - 3.7037037037%
+presidente -> deputado - 2/36 - 5.55555555556%
+presidente -> dilma - 30/50 - 60.0%
+presidente -> responsabilidade - 1/34 - 2.94117647059%
+presidente -> poder - 1/23 - 4.34782608696%
+governo -> país - 1/109 - 0.917431192661%
+governo -> nome - 2/64 - 3.125%
+governo -> partido - 1/48 - 2.08333333333%
+governo -> presidente - 2/61 - 3.27868852459%
+governo -> corrupção - 1/45 - 2.22222222222%
+governo -> casa - 1/39 - 2.5641025641%
+governo -> santo - 1/26 - 3.84615384615%
+governo -> dilma - 1/50 - 2.0%
+governo -> pt - 1/18 - 5.55555555556%
+respeito -> povo - 8/167 - 4.79041916168%
+respeito -> estada - 1/124 - 0.806451612903%
+respeito -> família - 8/100 - 8.0%
+respeito -> país - 1/109 - 0.917431192661%
+respeito -> partido - 2/48 - 4.16666666667%
+respeito -> cidade - 1/48 - 2.08333333333%
+respeito -> rua - 1/35 - 2.85714285714%
+respeito -> nação - 1/23 - 4.34782608696%
+respeito -> constituição - 10/32 - 31.25%
+respeito -> eleitor - 3/28 - 10.7142857143%
+respeito -> mulher - 1/15 - 6.66666666667%
+corrupção -> brasil - 1/243 - 0.411522633745%
+corrupção -> voto - 5/284 - 1.76056338028%
+corrupção -> país - 2/109 - 1.83486238532%
+corrupção -> esperança - 1/48 - 2.08333333333%
+corrupção -> fim - 1/18 - 5.55555555556%
+esperança -> brasil - 4/243 - 1.64609053498%
+esperança -> povo - 11/167 - 6.58682634731%
+esperança -> família - 1/100 - 1.0%
+esperança -> país - 3/109 - 2.75229357798%
+esperança -> momento - 1/27 - 3.7037037037%
+esperança -> impeachment - 1/78 - 1.28205128205%
+esperança -> futuro - 4/37 - 10.8108108108%
+esperança -> amor - 1/12 - 8.33333333333%
+momento -> país - 1/109 - 0.917431192661%
+momento -> nome - 1/64 - 1.5625%
+momento -> casa - 1/39 - 2.5641025641%
+impeachment -> presidente - 13/61 - 21.3114754098%
+impeachment -> casa - 1/39 - 2.5641025641%
+impeachment -> dilma - 2/50 - 4.0%
+deputado -> família - 1/100 - 1.0%
+deputado -> partido - 1/48 - 2.08333333333%
+deputado -> deputado - 2/36 - 5.55555555556%
+deputado -> senhor - 1/22 - 4.54545454545%
+futuro -> brasil - 8/243 - 3.29218106996%
+futuro -> povo - 1/167 - 0.59880239521%
+futuro -> família - 1/100 - 1.0%
+futuro -> país - 5/109 - 4.5871559633%
+futuro -> filho - 8/75 - 10.6666666667%
+futuro -> esperança - 1/48 - 2.08333333333%
+futuro -> rio - 1/36 - 2.77777777778%
+futuro -> neto - 2/25 - 8.0%
+pai -> estada - 1/124 - 0.806451612903%
+pai -> filho - 2/75 - 2.66666666667%
+pai -> cidade - 1/48 - 2.08333333333%
+pai -> paulo - 1/33 - 3.0303030303%
+deus -> voto - 2/284 - 0.704225352113%
+deus -> povo - 1/167 - 0.59880239521%
+deus -> estada - 1/124 - 0.806451612903%
+deus -> família - 4/100 - 4.0%
+deus -> país - 1/109 - 0.917431192661%
+deus -> respeito - 1/36 - 2.77777777778%
+deus -> momento - 1/27 - 3.7037037037%
+deus -> senhor - 4/22 - 18.1818181818%
+deus -> homenagem - 1/15 - 6.66666666667%
+casa -> povo - 3/167 - 1.79640718563%
+casa -> casa - 1/39 - 2.5641025641%
+casa -> mineiro - 1/17 - 5.88235294118%
+político -> brasil - 1/243 - 0.411522633745%
+político -> voto - 1/284 - 0.352112676056%
+político -> povo - 1/167 - 0.59880239521%
+político -> poder - 1/23 - 4.34782608696%
+político -> fim - 1/18 - 5.55555555556%
+santo -> voto - 1/284 - 0.352112676056%
+santo -> cidade - 1/48 - 2.08333333333%
+santo -> respeito - 2/36 - 5.55555555556%
+santo -> casa - 1/39 - 2.5641025641%
+dilma -> brasil - 1/243 - 0.411522633745%
+dilma -> voto - 1/284 - 0.352112676056%
+dilma -> pt - 1/18 - 5.55555555556%
+paulo -> brasil - 9/243 - 3.7037037037%
+paulo -> voto - 1/284 - 0.352112676056%
+paulo -> estada - 1/124 - 0.806451612903%
+paulo -> família - 1/100 - 1.0%
+paulo -> cidade - 1/48 - 2.08333333333%
+paulo -> rua - 1/35 - 2.85714285714%
+paulo -> fim - 1/18 - 5.55555555556%
+paulo -> amor - 1/12 - 8.33333333333%
+rua -> brasil - 5/243 - 2.05761316872%
+rua -> país - 2/109 - 1.83486238532%
+rua -> rio - 1/36 - 2.77777777778%
+responsabilidade -> presidente - 3/61 - 4.91803278689%
+responsabilidade -> corrupção - 1/45 - 2.22222222222%
+responsabilidade -> deputado - 2/36 - 5.55555555556%
+responsabilidade -> dilma - 1/50 - 2.0%
+rio -> respeito - 1/36 - 2.77777777778%
+poder -> voto - 2/284 - 0.704225352113%
+poder -> corrupção - 1/45 - 2.22222222222%
+poder -> impeachment - 1/78 - 1.28205128205%
+senhor -> senhor - 1/22 - 4.54545454545%
+fim -> governo - 2/43 - 4.6511627907%
+fim -> corrupção - 6/45 - 13.3333333333%
+nação -> voto - 1/284 - 0.352112676056%
+nação -> estada - 1/124 - 0.806451612903%
+nação -> cidade - 1/48 - 2.08333333333%
+nação -> corrupção - 1/45 - 2.22222222222%
+nação -> deus - 4/35 - 11.4285714286%
+mineiro -> brasil - 1/243 - 0.411522633745%
+mineiro -> família - 1/100 - 1.0%
+mineiro -> região - 1/20 - 5.0%
+constituição -> brasil - 1/243 - 0.411522633745%
+constituição -> voto - 2/284 - 0.704225352113%
+constituição -> respeito - 1/36 - 2.77777777778%
+constituição -> impeachment - 1/78 - 1.28205128205%
+constituição -> rio - 1/36 - 2.77777777778%
+eleitor -> brasil - 1/243 - 0.411522633745%
+eleitor -> voto - 1/284 - 0.352112676056%
+eleitor -> povo - 1/167 - 0.59880239521%
+eleitor -> estada - 1/124 - 0.806451612903%
+eleitor -> país - 1/109 - 0.917431192661%
+eleitor -> cidade - 1/48 - 2.08333333333%
+eleitor -> respeito - 2/36 - 5.55555555556%
+eleitor -> paulo - 3/33 - 9.09090909091%
+eleitor -> fim - 1/18 - 5.55555555556%
+eleitor -> mineiro - 1/17 - 5.88235294118%
+região -> brasil - 1/243 - 0.411522633745%
+região -> voto - 3/284 - 1.05633802817%
+região -> estada - 1/124 - 0.806451612903%
+região -> família - 1/100 - 1.0%
+região -> país - 1/109 - 0.917431192661%
+região -> nome - 1/64 - 1.5625%
+região -> futuro - 1/37 - 2.7027027027%
+homenagem -> povo - 2/167 - 1.19760479042%
+homenagem -> estada - 1/124 - 0.806451612903%
+homenagem -> família - 2/100 - 2.0%
+homenagem -> presidente - 1/61 - 1.6393442623%
+homenagem -> momento - 1/27 - 3.7037037037%
+homenagem -> pai - 2/27 - 7.40740740741%
+neto -> brasil - 1/243 - 0.411522633745%
+neto -> voto - 2/284 - 0.704225352113%
+neto -> povo - 1/167 - 0.59880239521%
+neto -> cidade - 1/48 - 2.08333333333%
+neto -> pai - 1/27 - 3.7037037037%
+neto -> senhor - 1/22 - 4.54545454545%
+pt -> partido - 1/48 - 2.08333333333%
+pt -> fim - 1/18 - 5.55555555556%
+pt -> pt - 1/18 - 5.55555555556%
+mulher -> voto - 1/284 - 0.352112676056%
+mulher -> filho - 1/75 - 1.33333333333%
+mulher -> momento - 1/27 - 3.7037037037%
+mulher -> neto - 1/25 - 4.0%
+amor -> brasil - 2/243 - 0.82304526749%
+amor -> voto - 2/284 - 0.704225352113%
+amor -> país - 1/109 - 0.917431192661%
+amor -> filho - 1/75 - 1.33333333333%
+amor -> deus - 1/35 - 2.85714285714%
+amor -> nação - 1/23 - 4.34782608696%
 
-- Temas selecionados(21):
+- Temas selecionados(42):
 
-lula
-temer
-poder
-dilma
-presidente
-dia
-filho
-reforma
-gente
-pf
 brasil
-prisão
-delegado
-governo
-cadeia
-michel
-nome
-globo
-stf
+voto
+povo
+estada
+família
 país
-cunha
+nome
+partido
+filho
+cidade
+presidente
+governo
+respeito
+corrupção
+esperança
+momento
+impeachment
+deputado
+futuro
+pai
+deus
+casa
+político
+santo
+dilma
+paulo
+rua
+responsabilidade
+rio
+poder
+senhor
+fim
+nação
+mineiro
+constituição
+eleitor
+região
+homenagem
+neto
+pt
+mulher
+amor
 
 
 - Temas excluídos(0):
