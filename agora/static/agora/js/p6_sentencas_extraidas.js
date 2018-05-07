@@ -1,11 +1,23 @@
-d3.json(p5_data, function (treeData) {
+d3.json(p6_data, function (treeData) {
+        
+     
         //console.log(Object.keys(treeData.shareInfo[0]).length)
-        var tamanho = treeData[0].children.length
-       
+        var i;
+        var j;
+        var k;
+        var count = 0;
+        for (i = 0; i < treeData[0].children.length; i++){
+                for (j = 0; j < treeData[0].children[i].children.length; j++){
+                        for (k = 0; k < treeData[0].children[i].children[j].children.length; k++ ){
+                                count++;
+                        }                        
+                }                        
+        }       
+        
         // ************** Generate the tree diagram	 *****************
         var margin = {top: 20, right: 120, bottom: 20, left: 120},
-            width = 960 - margin.right - margin.left,
-            height = 100*tamanho - margin.top - margin.bottom;
+            width = 1500 - margin.right - margin.left,
+            height = 20*count - margin.top - margin.bottom;
             
         var i = 0,
             duration = 750,
@@ -17,7 +29,7 @@ d3.json(p5_data, function (treeData) {
         var diagonal = d3.svg.diagonal()
             .projection(function(d) { return [d.y, d.x]; });
     
-        var svg = d3.select("#resultado-passo-5-grafo").append("svg")
+        var svg = d3.select("#resultado-passo-6-grafo").append("svg")
             .attr("width", width + margin.right + margin.left)
             .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -56,14 +68,17 @@ d3.json(p5_data, function (treeData) {
     
         nodeEnter.append("circle")
             .attr("r", 1e-6)
-            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .attr("class", function (d) { return d.place })
+            .style("fill", function (d) { return d._children ? "lightsteelblue" : "#fff"; })
+            .style("stroke", function(d) { return d.repr2 });
+            
     
         nodeEnter.append("text")
             .attr("x", function(d) { return d.children || d._children ? -20 : 20; })
             .attr("dy", ".35em")
             .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
             .text(function(d) { return d.name; })
-            .style("fill-opacity", 1e-6);
+            .style("fill-opacity", 1e-6)             
     
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
@@ -72,7 +87,7 @@ d3.json(p5_data, function (treeData) {
     
         nodeUpdate.select("circle")
             .attr("r", function(d) { return d.size })
-            .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .style("fill", function(d) { return d.repr });
     
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
@@ -132,5 +147,8 @@ d3.json(p5_data, function (treeData) {
             d._children = null;
       }
       update(d);
+      
     }
-    });
+});
+
+

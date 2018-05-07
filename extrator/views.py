@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, DadosSelecaoTemas, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, PesosEAlpha, TemasNew, ProtoFrasesNew, SentencasAvaliadas, DadosExtracaoNew
+from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -37,14 +37,6 @@ import itertools
 import community
 import igraph
 import textwrap
-
-# Create your views here.
-class RelatorioPreprocHomeView(generic.ListView):
-  template_name = 'extrator/relatoriopreproc.html'
-  #model = Topic
-  def get_queryset(self):
-     #u = User.objects.get(user=self.request.user)
-     return #Topic.objects.filter(published='Sim',projeto__sigla=u.user.user.projeto).distinct()
 
 class GraphTestView(generic.ListView):
   template_name = 'extrator/graph_test.html'
@@ -89,7 +81,7 @@ def inserir_dados_de_entrada_twitter(request):
         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
         
     except ObjectDoesNotExist:
-        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,acuidade=100,num_tweets=100)
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,f_corte=10,f_min_bigramas=50,num_tweets=100)
         parametros.save()
     
     #define documento de entrada
@@ -211,12 +203,7 @@ def inserir_dados_de_entrada_twitter(request):
 
 
 def salvar_dados_iniciais(request):
-      
-    #inicializa as flags de controle
-    r = DadosPreproc.objects.get(id=1)
-    r.flag_testapalavra = 'nao'
-    r.flag_completo = 'nao'
-    r.save()
+    print "Salvando dados..."  
     
     #Separa tokens para processamento do documento
     entrada_original = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r", "utf-8")
@@ -284,17 +271,12 @@ def salvar_dados_iniciais(request):
         execucao.corretor = 'off'
         execucao.save()      
     except:
-        DadosPreproc.objects.create(id=1, corretor='off',flag_testapalavra='nao')
+        DadosPreproc.objects.create(id=1, corretor='off')
      
     return render(request, 'extrator/extrator_resultados.html', {'documento':documento_or,'goto':'resultado-passo-1','muda_logo':'logo_salvar_dados'})
 
 
-def corretor_ortografico(request):
-    #inicializa as flags de controle
-    r = DadosPreproc.objects.get(id=1)
-    r.flag_testapalavra = 'nao'
-    r.flag_completo = 'nao'
-    r.save()
+def corretor_ortografico(request):   
       
     # Lê documento a ser corrigido
     arquivo = codecs.open("extrator/arquivos/p2_texto_inicial_tokens_corrigido.txt", "r", "utf-8")
@@ -316,8 +298,7 @@ def corretor_ortografico(request):
     #inicia análise das palavras pelo corretor
     posicao = 0
     for palavra in palavras:
-
-        #print repr(palavra)   
+             
         #para a Biblia: testa se primeira palavra é maiúsculo
         flag_nomeproprio = 'nao'
         padrao = re.compile("^[ABCDEFGHIJKLMNOPQRSTUVWYZ]")
@@ -472,6 +453,7 @@ def atualiza_corretor_ortografico(request,palavra_correta,posicao,opcao):
 ########### PASSO 2 #############################################################################################################################################################################
 
 def pre_processamento(request):
+    print "Preparando dados..."
    
     #Tokeniza o texto e escreve em documento único.
     arq_texto_preproc = codecs.open('extrator/arquivos/p2_texto_preprocessado.txt','w','utf-8')
@@ -530,6 +512,7 @@ def pre_processamento(request):
 
 
 def lematizar(request):
+    print "Lematizando dados..."
     
     #Abre o Bash e executa o lematizador no texto inicial
     is32bit = (platform.architecture()[0] == '32bit')
@@ -586,15 +569,14 @@ def lematizar(request):
 
 
 def eliminar_stopwords(request):
-    #inicia cronometro
-    inicio = time.time()
+    print "Eliminando Stop-Words..."
 
     #Lê arquivo de stop-words e cria uma lista
     if os.path.exists("extrator/arquivos/p2_lista_stopwords.txt"):
         arq_stopwords = codecs.open("extrator/arquivos/p2_lista_stopwords.txt", "r", "utf-8")
         lista_de_stopwords = arq_stopwords.readlines()        
     else:        
-        return render(request, 'extrator/extrator_home_2.html', {'dados_de_entrada': None})
+        return render(request, 'extrator/extrator_home_2.html', {})
     
     stopwords = []
     for linha in lista_de_stopwords:
@@ -635,6 +617,7 @@ def eliminar_stopwords(request):
 
 
 def salvar_dados(request):
+    print "Salvando dados procesados..."
        
     #Pega objetos-texto e reinicializa o BD para receber novo texto
     texto_passo1 = TextoPreproc.objects.all()
@@ -656,6 +639,7 @@ def salvar_dados(request):
 
 
 def gerar_relatorio(request):
+    print "Gerando relatorio Passo 2..."
    
     #inicializações: cria arquivo do relatório e pega dados no BD
     dadosPreprocessamento = DadosPreproc.objects.get(id=1)
@@ -701,7 +685,7 @@ def gerar_relatorio(request):
     #LÊ relatório    
     p2_relatorio = codecs.open("extrator/arquivos/p2_relatorio.txt","r","utf-8").read()
 
-    return render(request, 'extrator/extrator_resultados.html', {'documento_p2':p2_relatorio,'goto': 'passo2','muda_logo':'logo_gerar_rp2'})
+    return render(request, 'extrator/extrator_resultados.html', {'documento_p2':p2_relatorio,'goto': 'resultado-passo-2','muda_logo':'logo_gerar_rp2'})
 
 def executa_passo_2(request):
     
@@ -724,6 +708,7 @@ def executa_passo_2(request):
 ########### PASSO 3 #############################################################################################################################################################################
 
 def lista_de_vertices(request):
+    print "Gerando Vertices da rede..."
     #Objtivo: Criar uma lista com todos os vertices distintos e associa-los a um número (indice)
     
     #Exclui todos os objetos da ListaVertices para receber novos objetos
@@ -747,11 +732,11 @@ def lista_de_vertices(request):
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3', 'muda_logo':'logo_def_vertices' })
 
 def mapear(request):
+    print "Indexando dados do documento..."
     #Objetivo: Associar cada palavra do texto lematizado ao seu respectivo indice
 
     #carrega objetos
-    palavras = TextoPreproc.objects.all().values_list('vertice','vertice_num')
-    #print palavras
+    palavras = TextoPreproc.objects.all().values_list('vertice','vertice_num')    
     vertices_nome = ListaVertices.objects.all().values_list('node', flat=True)
     vertices_nome = list(vertices_nome)
     vertices_numero = ListaVertices.objects.all().values_list('index',flat=True)
@@ -784,6 +769,7 @@ def mapear(request):
 
 
 def matriz(request):
+    print "Gerando lista de adjacencias..."        
     #Objetivo: gera a lista de adjacencias a partir de uma matriz de adjacências
 
     #Inicializa arquivos
@@ -836,6 +822,7 @@ def matriz(request):
 
 
 def rede_complexa(request):
+    print "Gerando Rede Complexa dos dados..."        
     #Lê arquivo que contém a lista de adjacenicas
     arq_listaAdjacencias = codecs.open("C:/virtual-agora/extrator/arquivos/p3_lista_adjacencias.txt","r","utf-8")
     arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p3_json_rede.json", 'w', 'utf-8') 
@@ -880,11 +867,9 @@ def rede_complexa(request):
             arq_json.write(",\n")
         rede.add_edge(vertice_inicial, vertice_final, weight=peso)
         
-    nx.write_gexf(rede, "extrator/p3_rede_complexa_gephi.gexf")
+    nx.write_gexf(rede, "extrator/p3_rede_complexa_gephi.gexf")           
     
-            
-    
-    return render(request, 'extrator/extrator_resultados.html', {'rede_p3':"rede",'goto': 'resultado-passo-3','dados_de_entrada': None, 'relatorio_preproc':None })    
+    return render(request, 'extrator/extrator_resultados.html', {'muda_logo':'logo_mat','rede_p3':"rede",'goto': 'resultado-passo-3'})    
 
 
 def executa_passo_3(request):
@@ -894,7 +879,7 @@ def executa_passo_3(request):
     matriz(request)
     rede_complexa(request)    
     
-    return render(request, 'extrator/extrator_resultados.html', {'rede_p3':"doc",'goto': 'resultado-passo-3','dados_de_entrada': None, 'relatorio_preproc':None })    
+    return render(request, 'extrator/extrator_resultados.html', {'muda_logo':'logo_mat','rede_p3':"doc",'goto': 'resultado-passo-3'})    
 
 ######### FIM PASSO 3 ################################################################################################################################################################
 
@@ -904,7 +889,7 @@ def executa_passo_3(request):
 ########### PASSO 4 #############################################################################################################################################################################
 
 def metricas_e_ranking(request): 
- 
+    print "Calculando metricas de centralidade..."
     #Objetivo: calcular as métricas de centralidade da rede e gerar tabelas    
     
     #carrega parametros de ajuste
@@ -912,7 +897,7 @@ def metricas_e_ranking(request):
         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
         
     except ObjectDoesNotExist:
-        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,f_corte=10,f_min_bigramas=50)
         parametros.save()
 
     #Lê arquivo que contém a lista de adjacenicas
@@ -949,24 +934,22 @@ def metricas_e_ranking(request):
     
     
     #gera tabelas
-    if parametros.check_grau == 'sim':
-        print "calculando métrica graus..."
-        tabela_graus_t = nx.degree(rede, weight='weight')     
-        tabela_graus = dict(tabela_graus_t)
-        maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]        
+   
+    #"calculando métrica graus...print"
+    tabela_graus_t = nx.degree(rede, weight='weight')     
+    tabela_graus = dict(tabela_graus_t)
+    maior_grau = max(tabela_graus.iteritems(), key=operator.itemgetter(1))[1]
     
-    if parametros.check_betw == 'sim':
-        print "calculando métrica betweenness..."
-        tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
-        maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]        
+    # "calculando métrica betweenness..."
+    tabela_betweenness = nx.betweenness_centrality(rede, weight='weight', normalized=False, k=int(float(parametros.k_betweenness/100)*len(rede.nodes())))    
+    maior_betweenness = max(tabela_betweenness.iteritems(), key=operator.itemgetter(1))[1]
     
-    if parametros.check_eigen == 'sim':    
-        print "calculando métrica eigenvector..."
-        try:
-            tabela_eigenvector = nx.eigenvector_centrality(rede)
-        except:
-            tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
-        maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
+    #"calculando métrica eigenvector..."
+    try:
+        tabela_eigenvector = nx.eigenvector_centrality(rede)
+    except:
+        tabela_eigenvector = nx.eigenvector_centrality_numpy(rede)
+    maior_eigenvector = max(tabela_eigenvector.iteritems(), key=operator.itemgetter(1))[1]
        
    
     #GERA REDE GEPHI  
@@ -982,27 +965,10 @@ def metricas_e_ranking(request):
     
     #gera conteudo das tabelas
     for vertice in vertices:        
-        arq_texto_vertices.write(vertice + ' ')
-        if parametros.check_grau == 'sim':
-            tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau
-        if parametros.check_betw == 'sim':
-            tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness
-        if parametros.check_eigen == 'sim':
-            tabela_eigenvector_normalizado[vertice] = tabela_eigenvector.get(vertice)/maior_eigenvector
-    
-      
-    for vertice in vertices:        
-        arq_texto_vertices.write(vertice + ' ')
-        if parametros.check_grau == 'nao':
-            tabela_graus[vertice] = 0
-            tabela_grau_normalizado[vertice] = 0
-        if parametros.check_betw == 'nao':
-            tabela_betweenness[vertice] = 0
-            tabela_betweenness_normalizado[vertice] = 0
-        if parametros.check_eigen == 'nao':
-            tabela_eigenvector[vertice] = 0
-            tabela_eigenvector_normalizado[vertice] = 0
-   
+        arq_texto_vertices.write(vertice + ' ')       
+        tabela_grau_normalizado[vertice] = tabela_graus.get(vertice)/maior_grau    
+        tabela_betweenness_normalizado[vertice] = tabela_betweenness.get(vertice)/maior_betweenness    
+        tabela_eigenvector_normalizado[vertice] = tabela_eigenvector.get(vertice)/maior_eigenvector   
     
     #Armazenando Tabelas no BD via Bulking 
     aList = [TabelaRanking(vertice_nome = vertice, vertice_numero=ListaVertices.objects.get(node__exact=vertice).index, grau=tabela_graus[vertice], grau_norm=tabela_grau_normalizado[vertice], 
@@ -1037,6 +1003,7 @@ def metricas_e_ranking(request):
 
 
 def calcula_indice(request):
+    print "Calculando Indice de Potenciacao..."
         
     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
         
@@ -1049,12 +1016,7 @@ def calcula_indice(request):
     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)    
     vertices_objs = ListaVertices.objects.all()
     tabela_ranking_completa = TabelaRanking.objects.all()
-    try:
-        td =  DadosSelecaoTemas.objects.get(id=1)                      
-    except:
-        DadosSelecaoTemas.objects.create(id=1,p_grau=0,p_bet=0,p_eigen=0)
-        td =  DadosSelecaoTemas.objects.get(id=1)
-           
+               
     #Inicializa arquivos a serem escritos
     arq_tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt", 'w', 'utf-8')    
     
@@ -1088,6 +1050,7 @@ def calcula_indice(request):
 
 
 def selecionar_temas(request):
+    print "Selecionando os Temas..."
             
     #carrega dados
     r =  DadosPreproc.objects.get(id=1)
@@ -1102,7 +1065,7 @@ def selecionar_temas(request):
         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
         
     except ObjectDoesNotExist:
-        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,faixa_histo=0.1)
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,f_corte=10,f_min_bigramas=50,faixa_histo=0.1)
         parametros.save()
             
     #cria arquivo de tabela para histograma
@@ -1151,8 +1114,7 @@ def selecionar_temas(request):
         tabela_histograma[bins[idx + 1]] = item
         arq_tabela_histo.write(str(idx) + ' ' + str(bins[idx]) + '->'+  str(bins[idx + 1]) + ' ' + str(item) + '\n')
         
-    arq_tabela_histo.close()   
-    #print tabela_histograma 
+    arq_tabela_histo.close()    
     
     dados_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt").readlines()
     lista_clusters = []
@@ -1313,7 +1275,7 @@ def executa_passo_4(request):
     p4_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt","r","utf-8").read()     
    
     
-    return render(request, 'extrator/extrator_resultados.html', {'histo_p4':"hp4",'documento_p4':p4_relatorio,'goto': 'resultado-passo-4-histo','dados_de_entrada': None, 'relatorio_preproc':None })    
+    return render(request, 'extrator/extrator_resultados.html', {'histo_p4':"hp4",'documento_p4':p4_relatorio,'goto': 'resultado-passo-4-histo'})    
 
 ######### FIM PASSO 4 ################################################################################################################################################################
 
@@ -1323,6 +1285,7 @@ def executa_passo_4(request):
 ########### PASSO 5 #############################################################################################################################################################################
  
 def agrupar_temas(request):
+    print "Selecionando os Subtemas..."
 
     #inicializa banco de dados   
     Clusters.objects.all().delete()  
@@ -1421,11 +1384,14 @@ def agrupar_temas(request):
                     ident = ident + 1             
       
         grupos = Clusters.objects.filter(situacao='processando')     
-        etapa = etapa + 1       
+        etapa = etapa + 1
+
+    arq_lista_agp.close()       
 
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })
 
 def gerarMapaEResultados(request):
+    print "Gerando resultados..."        
     #realtório
     arq_temas_subtemas = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt", 'w', 'utf-8')
     arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p5_json_temas_subtemas.json", 'w', 'utf-8') 
@@ -1518,10 +1484,8 @@ def gerarMapaEResultados(request):
     arq_json.write("    {\n")
 
     
-    for j, tema in enumerate(temas):
-        print tema.tema
-        objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore__exact = 'sim').exclude(subtema__exact=tema.tema).order_by('-irt_l')
-        print objs
+    for j, tema in enumerate(temas):    
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore__exact = 'sim').exclude(subtema__exact=tema.tema).order_by('-irt_l')        
         obj_irt = TabelaRanking.objects.get(vertice_nome__exact=tema.tema)
         pot = obj_irt.potenciacao
         arq_json.write("        \"name\": \"" + tema.tema + "\",\n")
@@ -1580,17 +1544,14 @@ def executa_passo_5(request):
 
 
 ########### PASSO 6 #############################################################################################################################################################################
- 
 
 def processarProtofrases(request):
+    print "Avaliando as protofrases..."
     #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
    
     #inicializa dados da extrcao
     SentencasAvaliadas.objects.all().delete()
 
-    #inicializa arquivo do relatório
-    arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')   
-  
     #carrega arquivos 
     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
     lista_de_adjacencias = codecs.open("extrator/arquivos/p3_lista_adjacencias.txt","r",'utf-8').readlines()
@@ -1701,6 +1662,7 @@ def processarProtofrases(request):
 
 
 def mapearEextrair(request):
+    print "Extraindo as frases..."
     #Separa as setencças por cluster e subtema
     
     #carrega sentanças já avaliadas
@@ -1718,8 +1680,7 @@ def mapearEextrair(request):
         for palavra in palavras:           
             sentencas = SentencasAvaliadas.objects.filter(tema__exact=itemm.nucleos).filter(proto__icontains=palavra).order_by('peso').order_by('-corte')
             obj_maior_peso = max(sentencas, key=attrgetter('peso'))
-            maior_peso = obj_maior_peso.peso         
-           
+            maior_peso = obj_maior_peso.peso           
             for sent in sentencas:
                 if (itemm.nucleos != palavra):
                     if sent.proto not in bag_protos:
@@ -1736,188 +1697,171 @@ def mapearEextrair(request):
                         if irse > 20 and irse <= 40:
                             representatividade = 'baixa'
                         if irse >= 0 and irse <= 20:
-                            representatividade = 'baixissima'    
-                                     
-                        
+                            representatividade = 'baixissima'                       
                         sentencas_mapeadas.append([itemm.nucleos, palavra, sent.frase, sent.peso, sent.corte, irse, representatividade])
                         bag_protos.append(sent.proto)
-            bag_protos = []
-    
+            bag_protos = []  
     
     #salva dados no BD
     aList = [SentencasExtraidas(tema=sent[0], subtema=sent[1], frase=sent[2] , peso=sent[3] , corte=sent[4], irse=sent[5], representatividade=sent[6]) for sent in sentencas_mapeadas]    
-    SentencasExtraidas.objects.bulk_create(aList) 
-    
-    
-    
-    # sentencas = ExtracaoNew.objects.all()
+    SentencasExtraidas.objects.bulk_create(aList)
 
-    # #escreve relatório
-    # arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
-   
-    # arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
-
-    # for tema in temas:
-    #     arq_extracao.write('Tema: ' + tema.tema + '\n\n')
-    #     arq_extracao.write('protofrase / frase / peso / corte \n\n')
-    #     sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
-    #     for s in sentencas1:
-    #         arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
-    #     arq_extracao.write('\n')
-    
-  
-    # arq_extracao.close()
-    
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
 
 def calcula_indice_representatividade(request):
-    #inicia cronometro
-    inicio = time.time()
+    print "Calculando representatividade e montando resultados finais..."
     
-    #Abre arquivos
-    arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
-    arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","w")
-    
-    #carrega os temas
-    temas = TemasNew.objects.all()
+    #iniccializacoes
+    temas = TemasNew.objects.filter(classificacao='tema').order_by('-irt') 
+    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p6_json_sentencas_extraidas.json", 'w', 'utf-8')
+    arq_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt", 'w', 'utf-8')
 
-    #inicializa banco de dados de senteças extraídas
-    DadosExtracaoNew.objects.all().delete()
-
-    #carrega parametros
-    param = ParametrosDeAjuste.objects.get(ident__iexact=1)
-    
-    #carrega frases
-    sentencas = ExtracaoNew.objects.all()
-
-    #escreve relatório
-    arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","w",'utf-8')
-
-    #calcula indice geral de representatividade
-    sentenca_maior_peso = ExtracaoNew.objects.order_by('-peso')[0]
-    maior_peso = sentenca_maior_peso.peso
-
-    #Calculo do indice de representatividade do tema
-    ########################################################################
-    #carrega sentenças
-    sentencas_lem_strip = []
-    texto_lematizado = arq_texto_lematizado.read()
-    sentencas_lem = texto_lematizado.split('.')
-    for sentenca in sentencas_lem:
-        sentencas_lem_strip.append(sentenca.strip())
-
-
-    numero_total_sentecas = 0
-    numero_sentencas_tema = 0
-    for tema in temas:
-        for sentenca in sentencas_lem_strip:
-            lista_tokens = sentenca.split(' ')
-            if len(lista_tokens) == 1 and lista_tokens[0] == u'':             
-                'ignore'
-            else:
-                numero_total_sentecas += 1
-                if tema.tema in lista_tokens:
-                    numero_sentencas_tema += 1                    
-        grau_tema = TabelaRanking.objects.get(vertice_nome__exact=tema.tema).grau_norm      
-        irt = (float(grau_tema) + float(numero_sentencas_tema/numero_total_sentecas))/2
-        irt_p = irt*100
-        numero_sentencas_tema = 0
-        numero_total_sentecas = 0
-        tema.irt = irt        
-        tema.irt_p = irt_p
-        tema.save()
-
-    ##############################################################################  
-    
-    #Calculo do índice de representatividade dos parágrafos
-  
-    for seten in sentencas:
-        irgs = (seten.peso - 0.1*seten.corte) / maior_peso
-        if irgs < 0:
-            irgs = 0
-        irgs_por = int(irgs * 100)
-        if irgs_por > 90:
-            seten.rep_geral = 'muito-alta' 
-        if irgs_por > 80 and irgs_por <= 90:
-            seten.rep_geral = 'alta'
-        if irgs_por > 70 and irgs_por <= 80:
-            seten.rep_geral = 'alta-baixa'
-        if irgs_por > 50 and irgs_por <= 70:
-            seten.rep_geral = 'media'
-        if irgs_por <= 50:
-            seten.rep_geral = 'baixa'         
-        seten.irgs = irgs     
-        seten.save()    
-    
-    #calcula indice por tema de representatividade
-    for tema in temas:
-        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema)
-        sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]       
-        maior_peso = sentenca_maior_peso.peso       
-        if maior_peso > 0:
-            for seten in sentencas:
-                irse = (seten.peso - 0.1*seten.corte) / maior_peso
-                if irse < 0:
-                    irse = 0                   
-                irse_por = int(irse * 100)
-                                        
-                if irse_por > 90:
-                    seten.rep_tema = 'muito-alta' 
-                if irse_por > 80 and irse_por <= 90:
-                    seten.rep_tema = 'alta'
-                if irse_por > 70 and irse_por <= 80:
-                    seten.rep_tema = 'alta-baixa'
-                if irse_por > 50 and irse_por <= 70:
-                    seten.rep_tema = 'media'
-                if irse_por <= 50 :
-                    seten.rep_tema = 'baixa'        
-                seten.irse = irse      
-                seten.save()
-        else:
-            for seten in sentencas:
-                seten.irse = 0
-                seten.rep_tema = 'baixa'  
-                seten.save()   
-  
-    arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')     
-    arq_extracao.write('1. RANKING GERAL \n\n')   
-    arq_extracao.write('frase  \  representatividade \n\n')    
-    bag = []
-    sentencas = ExtracaoNew.objects.filter(irgs__gt=param.radio_r).order_by('-irgs')
-    cont = 1
-    for seten in sentencas:                
-        if seten.frase not in bag:
-            arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_geral + '\n')
-            bag.append(seten.frase)
-            cont = cont + 1
-   
-    arq_extracao.write('\n\n 2. RANKING POR TEMAS \n\n')
-    for tema in temas:
-        arq_extracao.write('Tema: ' + tema.tema.encode('utf-8').decode('utf-8')  + '\n\n')   
-        arq_extracao.write('frase  \  representatividade \n\n')    
-        bag = []
-        sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=param.radio_r).order_by('-irse')
-        cont = 1
-        for seten in sentencas:                
-            if seten.frase not in bag:
-                arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_tema + '\n')
-                a = DadosExtracaoNew(irgs=seten.irgs, irgs_p=100*seten.irgs,irse=seten.irse,irse_p=100*seten.irse,tema=tema.tema, protofrase = seten.protofrase, quantidade = 0, sentenca=seten.frase)
-               
-                a.save()
-                bag.append(seten.frase)
-                cont = cont + 1
-        arq_extracao.write('\n\n')
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    par = parametros.radio_r
+    list_par = [int(x) for x in par.split(" ")]
         
-        #corrige nao selecçao
-        if cont == 1:
-            a = DadosExtracaoNew(irgs=0, irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = 'null', quantidade = 0, sentenca='null')               
-            a.save()                  
-
-    arq_extracao.close()   
+    #Inicializa relatório
+    arq_relatorio.write("RELATORIO FINAL DE EXTRACAO\n\n\n")    
+    
+    #cabeçalho
+    arq_json.write("[\n{\n\"name\": \"Temas\",\n")
+    arq_json.write("\"value\": " + str(2500) + ",\n")
+    arq_json.write("\"size\": " + str(20) + ",\n")
+    arq_json.write("\"parent\": \"#fff\" ,\n")
+    arq_json.write("\"children\": [\n")
+    arq_json.write("    {\n")
+    
+    for j, tema in enumerate(temas):
+        arq_relatorio.write('\nTEMA: ' + tema.tema + '\n\n')
+        arq_relatorio.write('subtema / frase / irse / representatividade \n')       
+        objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore__exact = 'sim').exclude(subtema__exact=tema.tema).order_by('-irt_l')
+        obj_irt = TabelaRanking.objects.get(vertice_nome__exact=tema.tema)
+        pot = obj_irt.potenciacao
+        arq_json.write("        \"name\": \"" + tema.tema + "\",\n")
+        arq_json.write("        \"value\": " + str(pot) + ",\n")
+        arq_json.write("        \"size\": " + str(tema.irt / 5) + ",\n")
+        arq_json.write("        \"place\": " + "\"meta\"" + ",\n")
+        arq_json.write("        \"repr\": " + "\"#fff\"" + ",\n")
+        arq_json.write("        \"repr2\": " + "\"steelblue\"" + ",\n")
+        arq_json.write("        \"parent\": \"Temas\",\n")
+        arq_json.write("        \"children\": [\n")        
      
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
-    # 
+        if objs:
+            m = objs[0]            
+        else:
+            tam = 0
+             
+        for i, obj in enumerate(objs):
+            tam = obj.irt_l / m.irt_l          
+            if obj.subtema != tema.tema:                        
+                arq_json.write("            {\n")
+                arq_json.write("             \"name\": \"" + obj.subtema + "\",\n")    
+                arq_json.write("             \"value\": " + str(obj.irt_l) + ",\n")    
+                arq_json.write("             \"size\": " + str(tam * 10) + ",\n")
+                arq_json.write("             \"place\": " + '\"meta\"' + ",\n")
+                arq_json.write("             \"repr\": " + '\"#fff\"' + ",\n")
+                arq_json.write("             \"repr2\": " + '\"steelblue\"' + ",\n")
+                arq_json.write("             \"parent\": \"" + tema.tema + "\",\n")
+                arq_json.write("             \"children\": [\n")
+                
+                lll = []
+                for num in list_par:
+                    if num == 5:
+                        lll.append('altissima')
+                    if num == 4:
+                        lll.append('alta')        
+                    if num == 3:
+                        lll.append('media')        
+                    if num == 2:
+                        lll.append('baixa')        
+                    if num == 1:
+                        lll.append('baixissima')         
+                lpk =[]
+                obj_children_pk = SentencasExtraidas.objects.filter(tema__exact=tema.tema).filter(subtema__exact=obj.subtema).order_by('-irse')
+                for obn in obj_children_pk:
+                    if obn.representatividade in lll:
+                        lpk.append(obn.pk)                              
+                
+                obj_children = SentencasExtraidas.objects.filter(pk__in=lpk).order_by('-irse')               
+                if obj_children:
+                    for p, obj_c in enumerate(obj_children):
+                        arq_relatorio.write(obj_c.subtema + '   /   ' + obj_c.frase + '   /   ' + str(obj_c.irse) + '   /   ' + obj_c.representatividade + '\n')
+                        
+                        if obj_c.representatividade == 'altissima':
+                            cor = '#FF0000'
+                        if obj_c.representatividade == 'alta':
+                            cor = '#B65B00'
+                        if obj_c.representatividade == 'media':
+                            cor = '#E67404'
+                        if obj_c.representatividade == 'baixa':
+                            cor = '#FEFE80'
+                        if obj_c.representatividade == 'baixissima':
+                            cor = '#6CE200'                     
+                        arq_json.write("                {\n")
+                        arq_json.write("                     \"name\": \"" + obj_c.frase.replace("\"", "") + "\",\n")    
+                        arq_json.write("                     \"value\": " + str(obj.irt_l) + ",\n")    
+                        arq_json.write("                     \"size\": " + str(5) + ",\n")
+                        arq_json.write("                     \"place\": " + '\"end\"' + ",\n")
+                        arq_json.write("                     \"repr\": \"" + cor + "\",\n")
+                        arq_json.write("                     \"repr2\": \"" + cor + "\",\n")
+                        arq_json.write("                     \"parent\": \"" + obj_c.subtema + "\"\n")
+                        arq_json.write("                }")
+                        
+                        if p == (len(obj_children) - 1):
+                            arq_json.write("\n                ]\n")         
+                        else:                
+                            arq_json.write(",\n")
+                else:
+                    arq_relatorio.write(obj.subtema + '   /   ' + "Nao foi possivel extrair frases\n")
+                    arq_json.write("                {\n")
+                    arq_json.write("                     \"name\": \"" + "nao foi possivel extrair frases" + "\",\n")    
+                    arq_json.write("                     \"value\": " + "0" + ",\n")    
+                    arq_json.write("                     \"size\": " + str(5) + ",\n")
+                    arq_json.write("                     \"place\": " + '\"end\"' + ",\n")
+                    arq_json.write("                     \"repr\": \"" + "black" + "\",\n")
+                    arq_json.write("                     \"repr2\": \"" + "black" + "\",\n")
+                    arq_json.write("                     \"parent\": \"" + obj_c.subtema + "\"\n")
+                    arq_json.write("                }")
+                    arq_json.write("\n                ]\n")  
+                
+                arq_relatorio.write('\n')           
+            
+            if i == (len(objs) - 1):
+                arq_json.write("            }\n")         
+            else:                
+                arq_json.write("            },\n")
+        
+         #fecha tema
+        if j == (len(temas) -1):
+            arq_json.write("        ]\n    }\n")         
+        else:
+            arq_json.write("        ]\n    },\n    {\n")
+       
+    arq_json.write("    ]\n}\n]")
+    arq_json.close()
+    arq_relatorio.close()
+
+    #LÊ relatório    
+    p6_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt", "r", "utf-8").read()
+    
+    return render(request, 'extrator/extrator_resultados.html', {'relatorio_p6':p6_relatorio,'resultados_p6':'p6','goto':'p6-result', 'muda_logo':'logo_repres','fim':'fim'})
+    
+def executa_passo_6(request):    
+    calcula_indice_representatividade(request)
+    mapearEextrair(request)
+    processarProtofrases(request)
+
+    #LÊ relatório    
+    p6_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","r","utf-8").read()  
+    
+    return render(request, 'extrator/extrator_resultados.html', {'relatorio_p6':p6_relatorio,'resultados_p6':'res','goto':'p6-result', 'muda_logo':'logo_gmr_temas' })
+
+######### FIM PASSO 6 ################################################################################################################################################################
+
+
+
+############### FUNCOES DE AUXILIO ##########################################################################################################################################################
 
 def testa_substantivo_usuario(request):
     #carrega palavras
@@ -1941,17 +1885,10 @@ def testa_substantivo_usuario(request):
             sub = ListaDeSubstantivos(palavra=pal.palavra, substantivo=resposta)
             sub.save()              
     
-    return selecionar_temas(request)   
-    
-    if r.flag_completo == 'nao':
-        return selecionar_temas(request)
-    else:
-        return executar_passos_2_a_5(request)
+    return selecionar_temas(request)     
 
 
-
-def limpar_lista_subtantivos(request,opcao):
-    
+def limpar_lista_subtantivos(request,opcao):    
     if opcao == 'opdois':    
         ListaDeSubstantivos.objects.all().delete()
     
@@ -1963,45 +1900,35 @@ def limpar_lista_subtantivos(request,opcao):
     return render(request, 'extrator/extrator_resultados.html', {'goto':'ajuste'})
     
 
-def ajustar_parametro(request,opcao):
-    
+def ajustar_parametro(request,opcao):    
     #carrega parametros de ajuste
     try:
         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
         
     except ObjectDoesNotExist:
-        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50)
-        parametros.save()
-    
-    if parametros.check_grau == 'sim':
-        check_g = 'checked'
-    else:
-        check_g = 'off'
-    if parametros.check_betw == 'sim':
-        check_b = 'checked'
-    else:
-        check_b = 'off'
-    if parametros.check_eigen == 'sim':
-        check_c = 'checked'
-    else:
-        check_c = 'off'        
+        parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,f_corte=10,f_min_bigramas=50)
+        parametros.save()  
     
     radios_1 = radios_2 = radios_3 = radios_4 = radios_5 = ''
-    if parametros.radio_r == 0.9:
-        radios_1 = 'checked'
-    if parametros.radio_r == 0.8:
-        radios_2 = 'checked'
-    if parametros.radio_r == 0.7:
-        radios_3 = 'checked'
-    if parametros.radio_r == 0.4:
-        radios_4 = 'checked'
-    if parametros.radio_r == 0.0:
-        radios_5 = 'checked'
+    stringp = parametros.radio_r
+    list_par = [int(x) for x in stringp.split(" ")]
 
+    for item in list_par:
+        if item == 5:
+            radios_1 = 'checked'
+        if item == 4:
+            radios_2 = 'checked'
+        if item == 3:
+            radios_3 = 'checked'
+        if item == 2:
+            radios_4 = 'checked'
+        if item == 1:
+            radios_5 = 'checked'
 
     if parametros.permitir_RT == 'sim':
             check_sim = 'checked'
             check_nao = 'off'
+
     if parametros.permitir_RT == 'nao':
             check_sim = 'off'
             check_nao = 'checked'
@@ -2009,38 +1936,29 @@ def ajustar_parametro(request,opcao):
     if opcao == 'opcao0':    
         novo_parametro = request.POST['valor_k']
         parametros.k_betweenness = int(novo_parametro)
-        parametros.save()
-        
+        parametros.save()        
     
     if opcao == 'opcao1':            
         novo_parametro = request.POST['faixa_histo']
         parametros.faixa_histo = float(novo_parametro)
-        parametros.save()
-      
+        parametros.save()      
     
     if opcao == 'opcao2':            
         novo_parametro = request.POST['valor_fc']
         parametros.f_corte = int(novo_parametro)
-        parametros.save()
-       
+        parametros.save()       
     
     if opcao == 'opcao3':            
         novo_parametro = request.POST['valor_fb']
         parametros.f_min_bigramas = int(novo_parametro)
         parametros.save() 
     
-    if opcao == 'opcao5':            
-        novo_parametro = request.POST['valor_ae']
-        parametros.acuidade = int(novo_parametro)
-        parametros.save()
-    
     if opcao == 'opcao6':            
         novo_parametro = request.POST['valor_nt']
         parametros.num_tweets = int(novo_parametro)
         parametros.save()
 
-    if opcao == 'opcao7':        
-             
+    if opcao == 'opcao7':              
         display_type = request.POST.get("display_type", None)
         parametros.permitir_RT = display_type
         parametros.save()
@@ -2049,325 +1967,40 @@ def ajustar_parametro(request,opcao):
             check_nao = 'off'
         if  display_type == 'nao':
             check_sim = 'off'
-            check_nao = 'checked'
+            check_nao = 'checked'    
     
-    if opcao == 'opcao8':
-        checkeds = request.POST.getlist('checks')
-        if 'grau' in checkeds:
-            parametros.check_grau = 'sim'
-            check_g = 'checked'
-        else:
-            parametros.check_grau = 'nao'
-            check_g = 'off'
-        
-        if 'betw' in checkeds:
-            parametros.check_betw = 'sim'
-            check_b = 'checked'
-        else:
-            parametros.check_betw = 'nao'
-            check_b = 'off' 
-        
-        if 'eigen' in checkeds:
-            parametros.check_eigen = 'sim'
-            check_c = 'checked'
-        else:
-            parametros.check_eigen = 'nao'
-            check_c = 'off'
-        parametros.save()  
-
     if opcao == 'opcao9':
         rad_checked = request.POST.getlist('radios')
-        for v in rad_checked:
-            number = float(v)       
-        parametros.radio_r = number
-        parametros.save()
-
-        radios_1 = radios_2 = radios_3 = radios_4 = radios_5 = ''
-        if parametros.radio_r == 0.9:
-            radios_1 = 'checked'
-        if parametros.radio_r == 0.8:
-            radios_2 = 'checked'
-        if parametros.radio_r == 0.7:
-            radios_3 = 'checked'
-        if parametros.radio_r == 0.4:
-            radios_4 = 'checked'
-        if parametros.radio_r == 0.0:
-            radios_5 = 'checked'                 
-                  
-       
-    
-    if opcao == 'opcao4':
-        if parametros.check_grau == 'sim':
-            check_g = 'checked'
-        else:
-            check_g = 'off'
-        if parametros.check_betw == 'sim':
-                    check_b = 'checked'
-        else:
-            check_b = 'off'
-        if parametros.check_eigen == 'sim':
-                    check_c = 'checked'
-        else:
-            check_c = 'off'        
-        return render(request, 'extrator/extrator_resultados.html', { 'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao, 'valorrt':parametros.permitir_RT,'valornt':parametros.num_tweets, 'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo,'goto':'ajuste','radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})
-
-    
+        list_check = []
+        radios_1 = radios_2 = radios_3 = radios_4 = radios_5 = ''        
+        for v in rad_checked:            
+            if v == '5':               
+                radios_1 = 'checked'
+            if v == '4':                
+                radios_2 = 'checked'
+            if v == '3':                
+                radios_3 = 'checked'
+            if v == '2':               
+                radios_4 = 'checked'
+            if v == '1':               
+                radios_5 = 'checked'
+            list_check.append(v)       
+        
+        str1 = ' '.join(list_check)
+        parametros.radio_r = str1
+        parametros.save()   
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_g':check_g,'check_b':check_b,'check_c':check_c,'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valorae':parametros.acuidade, 'valork':parametros.k_betweenness, 'valordelta':parametros.dr_delta_min, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':parametros.faixa_histo, 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
-
-def resultados(request,arquivo):
-    result = DadosPreproc.objects.get(id=1)
-    saco = 1   
-    if saco == 1: #pura preguiça de tirar a identacao        
-        temas = TemasNew.objects.all().values_list('tema', flat=True)
-        tabela_graus_n = TabelaRanking.objects.all().values_list('vertice_nome','grau_norm')
-        
-        #paramentros genericos (raios)
-        #raio do esfera parágrafo (deve ser igual ao definido no css)
-        raio_par = 15
-        raio_maximo_temas = 200
-        raio_minimo_temas = 5 
-        
-        #caclula tamanho do raio do tema central (max 100px) 
-        irt_central = TemasNew.objects.get(tema__exact=temas[0])
-        diametro_central = int(raio_maximo_temas*irt_central.irt)
-        raio_central = int(diametro_central/2)
-        tema_central = (temas[0], diametro_central, raio_central, irt_central.irt_p)
-        
-        #calcula passo angular dos parágrafos do tema central
-        tema_central_par = []
-        paragrafos = DadosExtracaoNew.objects.filter(tema__exact=temas[0])
-        delta = int(180/len(paragrafos))
-        posicao = 0
-        
-        #calcula distAncias do centro do tema central ate o centro dos parágrafos       
-        bias_central = 0        
-        for paragrafo in paragrafos:
-            if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                distancia = int(tema_central[2] + raio_par + (100 - paragrafo.irse_p))             
-                if distancia > bias_central:
-                    bias_central = distancia
-                pos_x = int(distancia*math.cos(math.radians(posicao)))
-                pos_y = int(distancia*math.sin(math.radians(posicao)))
-                posicao = posicao + delta
-                nome = (temas[0] + str(pos_x) + str(pos_y))
-                tema_central_par.append((temas[0], pos_x, pos_y, paragrafo.sentenca, nome, paragrafo.irse_p ))   
-        
-        # CALCULO DO BIAS ###############################################################################
-        #acha maior distancia entre subtema e paragrafo (bias_subtema)
-        # bias_subtema = 0
-        # vet_buf = []
-        # for i in xrange(1, len(temas)):            
-        #     #calcula parametros
-        #     tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
-        #     irt = TemasNew.objects.get(tema__exact=temas[i])
-        #     diametro_vertice = int(raio_vertices*irt.irt)
-        #     raio_vertice = int(diametro_vertice/2)
-        #     vet_buf.append((temas[i],raio_vertice))        
-        
-        # for tema in temas:
-        #     paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)       
-        #     for paragrafo in paragrafos:
-        #         if paragrafo.protofrase.strip() != 'tema nao convergiu':
-        #             distancia = 0
-        #             for vetor in vet_buf:
-        #                 if vetor[0] == tema:
-        #                     distancia = int(vetor[1] + raio_par + 80*(1-paragrafo.irse))
-        #                     if distancia > bias_subtema:
-        #                         bias_subtema = distancia
-
-        # bias = bias_central + bias_subtema
-        # if not paragrafos:
-        #     bias = 100             
-        ##########################################################################################        
-        
-        #Define os angulos dos temas e inicializa vetor
-        delta_grau = float(360/(len(temas) - 1))    
-        grau = delta_grau
-        vetor_temas =[]   
-        
-        #menor distancia do subtema ao raio centrol
-        distancia_do_centro = 330 #raio max central, diametro paragrafo, distancia máxima tema-paragrafo
-        
-        # #menor raio
-        # t = TemasNew.objects.all()
-        # diametro_2_vertice = int(raio_vertices*t[1].irt)
-        # raio_2_vertice = int(diametro_2_vertice/2)
-        # menor_distancia_do_tema = raio_central + raio_2_vertice + bias + 10
-        # tem = TabelaRanking.objects.get(vertice_nome__exact=t[1].tema)
-        
-        # distancia_do_centro = int(menor_distancia_do_tema/(1 - tem.grau_norm)) 
-        
-        for i in xrange(1, len(temas)):
-            
-            #calcula parametros
-            tema = TabelaRanking.objects.get(vertice_nome__exact=temas[i])
-            irt = TemasNew.objects.get(tema__exact=temas[i])
-            diametro_vertice = int(raio_maximo_temas*irt.irt)
-            raio_vertice = int(diametro_vertice/2)
-            distancia_centro = distancia_do_centro + (200 - 200*(tema.grau_norm))
-            pos_x = int(distancia_centro*math.cos(math.radians(grau)))
-            pos_y = int(distancia_centro*math.sin(math.radians(grau)))              
-
-            #carrega vetor      
-            vetor_temas.append((temas[i], distancia_centro ,pos_x, pos_y, diametro_vertice, raio_vertice, irt.irt_p ))
-            grau = grau + delta_grau
-
-        
-        #maior posição de y (para valores negativos)   
-        maior_distancia = 0
-        for v in vetor_temas:
-            if v[2] < maior_distancia:
-                maior_distancia = v[2]
-            
-        maior_distancia = int(math.fabs(maior_distancia)) + 100
-
-        #parêmetro de definição do tamanho dos vertices
-        
-        #define parametros dos paragrafos
-        vetor_paragrafos = []
-        
-        for tema in temas:
-            paragrafos = DadosExtracaoNew.objects.filter(tema__exact=tema)        
-            delta = int(180/len(paragrafos))
-            posicao = 0
-            for paragrafo in paragrafos:
-                if paragrafo.protofrase.strip() != 'tema nao convergiu':
-                    distancia = 0
-                    for vetor in vetor_temas:
-                        if vetor[0] == tema:
-                            distancia = int(vetor[5] + raio_par + (100 - paragrafo.irse_p))                                      
-                    pos_x = int(distancia*math.cos(math.radians(posicao)))
-                    pos_y = int(distancia*math.sin(math.radians(posicao)))
-                    posicao = posicao + delta
-                    nome = (tema + str(pos_x) + str(pos_y))                    
-                    vetor_paragrafos.append((tema, pos_x, pos_y, paragrafo.sentenca, nome, paragrafo.irse_p  ))    
-            
-             
-        #montagem da linha de extração
-        cont = 0
-        paragrafos_obj = DadosExtracaoNew.objects.all().values_list('sentenca','irgs_p').order_by('-irgs_p').distinct()
-        paragrafos_linha = []
-        for p in paragrafos_obj:
-            if p[0].strip() != 'null - nao convergiu':
-                nome = str(cont) + '_' + str(int(p[1]))
-                paragrafos_linha.append((p[0].strip(),int(p[1]), int(100 - p[1]),nome))    
-                cont += 1   
-       
-        #define a altura dos vertices na linha
-        maior_top = 0
-        paragrafos_linha_corrigido = []   
-        irgs_count = Counter(elem[2] for elem in paragrafos_linha)
-        for k,v in irgs_count.items():
-            top = 0
-            for p in paragrafos_linha:                
-                if p[2] == k:
-                    paragrafos_linha_corrigido.append((p[0],p[1],p[2],p[3],top))
-                    top = top + 40
-                    if top > maior_top:
-                        maior_top = top
-       
-        if arquivo == 'fig1':           
-            image = Image.open("extrator/arquivos/p4_grafico_alphas.png")
-            image.show()           
-            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top , 'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
-
-        if arquivo == 'fig2':
-            image = Image.open("extrator/arquivos/p4_grafico_alpha_selecionado.png")
-            image.show() 
-            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
-
-        if arquivo == 'fig3':
-            image = Image.open("extrator/arquivos/p4_grafico_distancias_relativas_potenciacao.png")
-            image.show() 
-            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
-     
-        if arquivo != 'none':
-            #Abre arquivo no notepad++    
-            programName = "C:/Program Files/Notepad++/notepad++.exe"
-            fileName = "extrator/arquivos/" + arquivo + '.txt'
-            subprocess.Popen([programName, fileName])
-            return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'dados'})
-    
-    return render(request, 'extrator/extrator_resultados.html', {'top':maior_top ,'vetor_temas':vetor_temas, 'temas':temas, 'tema_central':tema_central,'vetor_paragrafos':vetor_paragrafos,'tema_central_par': tema_central_par,'maior_distancia':maior_distancia, 'altura':2*maior_distancia,'paragrafos_linha':paragrafos_linha_corrigido, 'posicao_linha': int(maior_distancia/2), 'mostra_res':'mostra_res', 'goto':'resultados'})
-
-def executar_passos_2_a_5(request):
-    
-    #carrega flags de execução
-    r = DadosPreproc.objects.get(id=1)
-    r.flag_completo = 'sim'
-    r.save()
-    
-    #inicializa tempo
-    inicio = time.time() 
-    
-    if r.flag_testapalavra == 'nao':
-        #passo 2
-        print 'Passo 1:'
-        print 'executando o pré-processamento...'
-        pre_processamento(request)
-        print 'lematizando dados...'
-        lematizar(request)
-        print 'eliminando stop-words...'    
-        eliminar_stopwords(request)
-        print 'salvando dados...'
-        salvar_dados(request)
-        gerar_relatorio(request)
-    
-        #passo 22   
-        print 'Passo 2'
-        print 'separando os vértices da rede...'
-        lista_de_vertices(request)
-        print 'criando bigramas e lista de adjacências...'
-        mapear(request)
-        print 'gerando rede complexa dos dados...'
-        matriz(request)
- 
-        #passo 4
-        print 'Passo 4'
-        print 'calculando métricas e rankeando os vértices...'
-        metricas_e_ranking(request)
-        print 'calculando índice de potenciação dos vértices...'  
-        calcula_indice(request)   
-    
-    print 'selecionando os temas...'
-    p = selecionar_temas(request)
-    
-    if p != 'none':
-        return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':p}) 
-
-    #sai do modo testa substantivo
-    r.testapalavra = 'nao'
-    r.save()
-    
-    #passo 5 
-    print 'Passo 5'
-    print 'gerando as proto-frases...'
-    processarProtofrases(request)
-    print 'extraindo parágrafos...'
-    mapearEextrair(request)
-    print 'calculando índice de representatividade dos parágrafos extraídos...'
-    calcula_indice_representatividade(request)
-    print 'gerando resultados'
-    resultados(request,'none')     
-    
-    r.flag_completo = 'nao'
-    r.save()
-
-    #finaliza tempo
-    tempo_total =  ("{0:.4f}".format(time.time() - inicio))
-
-    return render(request, 'extrator/extrator_resultados.html', {'tempo_p2a5':tempo_total,'mostra_res':'mostra_res'})
+    return render(request, 'extrator/extrator_resultados.html', {'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valork':parametros.k_betweenness, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':str(parametros.faixa_histo), 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
 
 
 def limpar_palavras_ignoradas(request):
     lista = codecs.open("extrator/arquivos/p2_lista_palavrasIgnoradas.txt","w","utf-8")
     lista.write('')
     lista.close()  
-    return render(request, 'extrator/extrator_home.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_home.html', {})
 
-def carregar_ls(request):
-    
+
+def carregar_ls(request):    
     arq_subs = codecs.open("extrator/arquivos/lista_de_substantivos.txt", "r", 'utf-8')
     lista_substantivos = arq_subs.readlines() 
     
@@ -2375,1366 +2008,37 @@ def carregar_ls(request):
     for linha in lista_substantivos:
         lista_obj.append(linha)
 
-
     #salva dados no BD
     aList = [ListaDeSubstantivos(palavra=l,substantivo='sim') for l in lista_obj]    
     ListaDeSubstantivos.objects.bulk_create(aList) 
     
-    return render(request, 'extrator/extrator_resultados.html', {'dados_de_entrada': None})
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'ajuste'})
 
-# def calcula_indice(request):
-#     #inicia cronometro
-#     inicio = time.time()
-    
-#     #OBJETIVO: definir a forma de calcular a potenciacao (seus pesos) e gerar a tabela potenciacao
-#     matplotlib.use('agg')
-    
-#     #Abre arquivo de dados a serem lidos
-#     tabela_grau = codecs.open("extrator/arquivos/p4_tabela_graus.txt").readlines()
-#     tabela_betweenness = codecs.open("extrator/arquivos/p4_tabela_betweenness.txt").readlines()
-#     tabela_eigenvector = codecs.open("extrator/arquivos/p4_tabela_eigenvector.txt").readlines()
-    
-#     #Carrega dados do BD
-#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-    
-#     vertices_objs = ListaVertices.objects.all()
 
-#     tabela_ranking_completa = TabelaRanking.objects.all()
-#     try:
-#         td =  DadosSelecaoTemas.objects.get(id=1)                      
-#     except:
-#         DadosSelecaoTemas.objects.create(id=1,p_grau=0,p_bet=0,p_eigen=0)
-#         td =  DadosSelecaoTemas.objects.get(id=1)
-           
-#     #Inicializa arquivos a serem escritos
-#     arq_tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt", 'w', 'utf-8')    
-#     arq_matriz_pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt", 'w', 'utf-8')
-#     arq_relatorio = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt", 'w')   
-   
-#     #Prepara o BD para receber os novos pesos
-#     pesos = PesosEAlpha.objects.all()
-#     pesos.delete()
+def mostra_resutados(request,passo):            
+    if passo == '1':                 
+        entrada_original = codecs.open("extrator/arquivos/p1_texto_inicial_original.txt","r", "utf-8")     
+        documento = entrada_original.read()
+        return render(request, 'extrator/extrator_resultados.html', {'documento':documento,'goto':'resultado-passo-1'})
     
-#     #gera matriz de pesos para cada caso
-#     #var = 0.05
-#     #if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim': 
+    if passo == '2':
+        p2_relatorio = codecs.open("extrator/arquivos/p2_relatorio.txt","r","utf-8").read()       
+        return render(request, 'extrator/extrator_resultados.html', {'documento_p2':p2_relatorio,'goto': 'resultado-passo-2'})
+    
+    if passo == '3':
+        do = 'nothing'
+        return render(request, 'extrator/extrator_resultados.html', {'rede_p3':'doc','goto': 'resultado-passo-3'})    
+
+    if passo == '4':
+        p4_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt", "r", "utf-8").read()
+        return render(request, 'extrator/extrator_resultados.html', {'histo_p4':"hp4",'documento_p4':p4_relatorio,'goto': 'resultado-passo-4-histo'})    
+
+    if passo == '5':
+        p5_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas_subtemas.txt","r","utf-8").read() 
+        return render(request, 'extrator/extrator_resultados.html', {'p5_relatorio':p5_relatorio,'resultados_p5':'res','goto':'passo5'})
        
-#     #    for a1 in range(0,20):
-#     #        for a2 in range(0,20):
-#     #            a3 = 20 - a1 - a2                
-#     #            arq_matriz_pesos.write(str(a1*var) + ' ')
-#     #            arq_matriz_pesos.write(str(a2*var) + ' ')
-#     #            arq_matriz_pesos.write(str(a3*var) + ' ')
-#     #            arq_matriz_pesos.write('\n')
-#     #    arq_matriz_pesos.close()
-    
-#     #gera matriz de pesos para cada caso
-#     var = 0.1
-#     if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim': 
-       
-#         for a1 in range(0,12):
-#             for a2 in range(0,12):
-#                 a3 = 10 - a1 - a2
-#                 if a3 >= 0 and a1 != 0 and a2 != 0 and a3 != 0:
-#                     arq_matriz_pesos.write(str(a1*var) + ' ')
-#                     arq_matriz_pesos.write(str(a2*var) + ' ')
-#                     arq_matriz_pesos.write(str(a3*var) + ' ')
-#                     arq_matriz_pesos.write('\n')
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_eigen == 'nao':
-#         arq_matriz_pesos.write(str(1.0) + ' ' + str(0.0) + ' ' + str(0.0) + '\n')
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_eigen == 'nao': 
-#         arq_matriz_pesos.write(str(0.0) + ' ' + str(1.0) + ' ' + str(0.0) + '\n')
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'nao' and parametros.check_betw == 'nao' and parametros.check_eigen == 'sim':
-#         arq_matriz_pesos.write(str(0.0) + ' ' + str(0.0) + ' ' + str(1.0) + '\n')
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'sim' and parametros.check_betw == 'sim' and parametros.check_eigen == 'nao':
-#         for a1 in range(1,10):
-#             p1 = a1*var
-#             p2 = 1 - p1
-#             arq_matriz_pesos.write(str(p1) + ' ' + str(p2) + ' ' + str(0.0) + '\n')       
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'sim' and parametros.check_betw == 'nao' and parametros.check_eigen == 'sim':
-#         for a1 in range(1,10):
-#             p1 = a1*var
-#             p2 = 1 - p1
-#             arq_matriz_pesos.write(str(p1) + ' ' + str(0.0) + ' ' + str(p2) + '\n')       
-#         arq_matriz_pesos.close()
-    
-#     if parametros.check_grau == 'nao' and parametros.check_betw == 'sim' and parametros.check_eigen == 'sim':
-#         for a1 in range(1,10):
-#             p1 = a1*var
-#             p2 = 1 - p1
-#             arq_matriz_pesos.write(str(0.0) + ' ' + str(p1) + ' ' + str(p2) + '\n')       
-#         arq_matriz_pesos.close()
-    
-#     ## FIM ETAPA 2 ####################################################
-#     ## ETAPA 3: SELEÇÃO DOS PESOS DAS MÉTRICAS ########################
-
-#     # abre matriz de pesos
-#     pesos = codecs.open("extrator/arquivos/p4_matriz_pesos.txt").readlines()
-
-#     #inicializa matlibplot para duas figuras e cores
-#     rgb_a=5
-#     rgb_b=94
-#     rgb_c=200
-
-#     #calculo de alpha para cada conjunto de peso
-#     for peso in pesos:
-#         pgra = float(peso.split(' ')[0])
-#         pbet =  float(peso.split(' ')[1])
-#         peigen = float(peso.split(' ')[2])
-
-#         # CALCULA POTENCIAÇÃO
-#         tabela_potenciacao_temp = {}
-#         for vertice in vertices_objs:
-#             grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
-#             bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
-#             eigen_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).eigenvector_norm
-#             potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(peigen)*float(eigen_n)
-#             tabela_potenciacao_temp[vertice.node] = potenciacao
-        
-#         # Cria uma tabela vertice(nome)-indice
-#         tabela_potenciacao_temp_ordenada = {}
-#         tabela_potenciacao_temp_ordenada = sorted(tabela_potenciacao_temp.items(),key=lambda x: x[1], reverse=True)
-
-#         # exclui os 5% ultimos temas quando pertinente (n>0)
-#         corte = 0.00
-#         numero_vertices_excluidos = int(corte*len(tabela_potenciacao_temp_ordenada))
-#         if numero_vertices_excluidos > 0:            
-#             del tabela_potenciacao_temp_ordenada[-numero_vertices_excluidos:]
-        
-#         #exclui vertice de indice zero       
-#         flag = 'on'
-#         while flag == 'on':        
-#             for i,v in enumerate(tabela_potenciacao_temp_ordenada):
-#                 flag = 'off'
-#                 if v[1] == 0.0:
-#                     flag = 'on'
-#             if flag == 'on':
-#                 del tabela_potenciacao_temp_ordenada[-1:]
-
-#         #Faz a regressão linear e calcula alpha da tabela
-#         valores_potenciacao = [valor[1] for valor in tabela_potenciacao_temp_ordenada]  
-#         print valores_potenciacao      
-#         fit = powerlaw.Fit(valores_potenciacao, discrete=True)
-#         print fit.xmin
-
-#         data = valores_potenciacao
-#         ####
-#         figPDF = powerlaw.plot_pdf(data, color='b')
-#         powerlaw.plot_pdf(data, linear_bins=True, color='r', ax=figPDF)
-#         ####
-#         figPDF.set_ylabel("p(X)")
-#         figPDF.set_xlabel(r"Word Frequency")
-#         figname = 'FigPDF'
-#         pylab.savefig('extrator/arquivos/teste.png', bbox_inches='tight',  dpi=300)
-#         #savefig(figname+'.tiff', bbox_inches='tight', dpi=300)
-
-        
-
-       
-#         #calcula o MLF dos dados (o quão ajustados estão)
-#         # maximum likelihood fitting (MLF)
-#         soma = 0
-#         for p in valores_potenciacao:
-#             soma = soma + log(float(p)/float(fit.xmin))
-#         alpha_esperado = -1*(1 + len(tabela_potenciacao_temp_ordenada)*(1.0/soma))
-        
-#         # Caclula o erro entre alpha e MLF
-#         erro = (abs(fit.alpha - alpha_esperado)/fit.alpha)*100
-    
-#         #plota gráfico
-#         eixo_y = list(range(len(tabela_potenciacao_temp_ordenada)))
-        
-#         #CHAMA FUNÇÃO QUE PLOTA FIGURAS
-#         plota_figura(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')        
-        
-#         #_test_chart(eixo_y,valores_potenciacao,rgb_a,rgb_b,rgb_c,fit.alpha,'plota_figura_1','endereco')       
-#         rgb_a = (rgb_a + 50)%255
-#         rgb_b = (rgb_b + 10)%255
-#         rgb_c = (rgb_c+ 80)%255
-    
-#         #armazena os pesos, alpha, MLF e erro no BD
-#         resultado = PesosEAlpha(p_grau = pgra , p_betw = pbet, p_eigene = peigen , alpha = fit.alpha, alphaesp = alpha_esperado, erro = erro)
-#         resultado.save()        
-
-#     #CHAMA FUNÇÃO QUE SALVA FIGURAS   
-#     plota_figura('x','x','x','x','x','x','salva_figura_1','extrator/arquivos/p4_grafico_alphas.png')    
-  
-#     #Busca pesos de menor erro e maior valor alpha ( para erro < 1%)
-#     corte_erro = 0
-#     pesos_selecionados = []
-#     while not pesos_selecionados:
-#         lista_de_erros = []
-#         lista_de_erros = PesosEAlpha.objects.all().filter(erro__lt=corte_erro).order_by('alpha')
-#         pesos_selecionados = lista_de_erros.last()
-#         corte_erro = corte_erro + 1
-#         if pesos_selecionados:
-#             corte_erro = corte_erro - 1
-
-#     #salvar dados com parÂmetros escolhidos
-#     td.p_grau= pesos_selecionados.p_grau 
-#     td.p_eigen= pesos_selecionados.p_eigene
-#     td.p_bet = pesos_selecionados.p_betw
-#     td.save()
-
-#     #Monta a Tabela de Indices com o Peso encontrado e salva no BD
-#     pgra =  pesos_selecionados.p_grau
-#     pbet =   pesos_selecionados.p_betw
-#     peigen =  pesos_selecionados.p_eigene
-
-#     #CALCULA POTENCIAÇÃO
-#     tabela_potenciacao_temp = {}
-#     for vertice in vertices_objs:
-#         grau_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).grau_norm
-#         bet_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).betweenness_norm
-#         eigen_n = tabela_ranking_completa.get(vertice_nome__exact=vertice.node).eigenvector_norm
-#         potenciacao = float(pgra)*float(grau_n) + float(pbet)*float(bet_n) + float(peigen)*float(eigen_n)
-             
-#         #Salva na Tabela Ranking
-#         tabela = TabelaRanking.objects.get(vertice_nome__iexact = vertice.node)
-#         tabela.potenciacao = potenciacao
-#         tabela.save()    
-
-#     #salva a tabela de indice em um arquivo em ordem alfabética e cria figura
-#     tabela_potenciacao_ordenada = TabelaRanking.objects.all().order_by('-potenciacao')
-#     tabela_potenciacao_ordenada_valores = []
-#     eixo_y = list(range(len(tabela_potenciacao_ordenada)))   
-    
-#     for linha in tabela_potenciacao_ordenada:        
-#         index = ListaVertices.objects.get(node__exact=linha.vertice_nome).index
-#         arq_tabela_potenciacao.write(str(index) + ' ' + linha.vertice_nome + ' ' + str(linha.potenciacao) + ' ' + '\n')        
-#         tabela_potenciacao_ordenada_valores.append(linha.potenciacao)
- 
-#     #Chama função que plota o grafico  
-#     plota_figura(eixo_y,tabela_potenciacao_ordenada_valores,'black','x','x','x','plota_e_salva_figura_2','extrator/arquivos/p4_grafico_alpha_selecionado.png')   
-
-#     ## FIM ETAPA 3 #######################################################
-#     ## GERA RELATÒRIO ####################################################
-   
-#     arq_relatorio.write('RELATÓRIO FINAL - TABELA ÍNDICE\n\n\n')   
-#     arq_relatorio.write('ETAPA 1 - DETERMINANDO OS PESOS DAS MÉTRICAS\n')
-#     arq_relatorio.write('   - Método: Melhor ajuste à Lei da Potência\n')
-#     arq_relatorio.write('   - Entrada: Matriz de pesos-candidato\n')
-#     arq_relatorio.write('              Variação: 0.1 à 0.9 em ' + str(var) + '\n')
-#     arq_relatorio.write('              Restrição: soma dos pesos = 1\n\n')
-#     arq_relatorio.write('   - Ajuste à lei de potência\n')
-#     arq_relatorio.write('              Dados: Exclui os ' + str(corte*100) + '% últimos vértices - ' +  str(numero_vertices_excluidos) + ' vértices.\n')
-#     arq_relatorio.write('              Cálculo de Alpha: Métodos dos mínimos quadrados\n')
-#     arq_relatorio.write('              Alpha de ajuste:: Maximun Likelihood fitting\n')
-#     arq_relatorio.write('              Erro = |alpha de ajuste - alpha| \n\n')
-#     arq_relatorio.write('   - Resultado\n')
-#     arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
-#     lista_de_alphas = PesosEAlpha.objects.all().order_by('alpha')
-#     for la in lista_de_alphas:
-#         arq_relatorio.write('              ' + str(la.alpha) + ' / ' + str(la.alphaesp) + ' / ' + str(la.erro) + ' / ' + str(la.p_grau) + ' ' + str(la.p_betw) + ' ' + str(la.p_eigene) + ' \n')
-#     arq_relatorio.write('\n              Corte: erro > ' + str(corte_erro) + ' % \n\n')
-#     arq_relatorio.write('              Alpha / Alpha de ajuste / erro (%) / Pesos \n')
-#     for li in lista_de_erros:
-#         arq_relatorio.write('              ' + str(li.alpha) + ' / ' + str(li.alphaesp) + ' / ' + str(li.erro) + ' / ' + str(li.p_grau) + ' ' + str(li.p_betw) + ' ' + str(li.p_eigene) + ' \n')
-#     arq_relatorio.write('\n              Maior alpha: ' + str(pesos_selecionados.alpha) + ' \n')
-#     arq_relatorio.write('              Pesos selecionados: Graus: ' + str(pesos_selecionados.p_grau) + ' ; Betweeness: ' + str(pesos_selecionados.p_betw) + ' ; eigenvector: ' + str(pesos_selecionados.p_eigene) + ' \n\n')
-#     arq_relatorio.write('ETAPA 2 - TABELA RANKING\n')
-#     arq_relatorio.write('   palavra - índice\n\n')
-#     for linha in tabela_potenciacao_ordenada:
-#         arq_relatorio.write(linha.vertice_nome.encode('utf-8') + ' - ' + str(linha.potenciacao) + '\n')
-
-#     #fecha arquivos
-#     arq_relatorio.close()
-#     arq_tabela_potenciacao.close()
-    
-#     rel_ind = codecs.open("extrator/arquivos/p4_relatorio_potenciacao.txt","r",'utf-8').read()
-    
-#      #finaliza tempo
-#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))  
-    
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4ci':tempo_total,'goto': 'passo4', 'muda_logo':'logo_calc_indice'})
-
-# def processarProtofrases(request):
-#             #inicia cronometro
-#     inicio = time.time()
-
-#     #carrega parâmetros
-#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)        
-
-#     #inicializa arquivo do relatório
-#     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')
-#     arq_extracao = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w",'utf-8')
-
-#     #Inicializa BD de frases
-#     ExtracaoNew.objects.all().delete()
-    
-#     #carrega protofrases
-#     temas = TemasNew.objects.all()
-#     buffer_temas = []
-
-#     #Carrega texto lematizado
-#     tokens = TextoPreproc.objects.all()
-
-#     #gera arquivo do sub-docimento
-#     arq_subdocumento = codecs.open("extrator/arquivos/p5_texto_sub_preprocessado_sentencas.txt",'w','utf-8')
-    
-#     for token in tokens:       
-#         if token.vertice == '.':
-#             arq_subdocumento.write('\n')
-#         else:
-#             arq_subdocumento.write(token.vertice)
-#             arq_subdocumento.write(' ')
-#     arq_subdocumento.close()
-
-#     #inicia analise de cada tema
-#     for tema in temas:        
-#         print ('processando o tema ' + tema.tema.encode('utf-8') + '...')
-        
-#         #inicia relatórios
-#         arq_procedimento.write('TEMA: ' + tema.tema + '\n\n')
-#         arq_extracao.write('TEMA: ' + tema.tema + '\n\n')
-
-#         #armazena tema no BD de protofrases
-#         ProtoFrasesNew.objects.all().delete()
-#         pf = ProtoFrasesNew(protofrase = tema.tema, extracao='nao',frase='null')
-#         pf.save()
-                
-#         #flag de termino do procedomemto (off)
-#         flag = 'on'
-#         iteracao = 0
-#         convergiu_tema = 'nao'
-#         extracao = []      
-        
-#         while flag == 'on': 
-            
-#             print "carregando protofrases"
-#             #testa se todas as PFs já extrairam frases
-#             protofrases = ProtoFrasesNew.objects.filter(extracao = 'nao')
-#             if not protofrases:
-#                 flag = 'off'                 
-#                 break
-#             flag = 'on'   
-            
-#             #relatório                       
-#             arq_procedimento.write(' - ITERACAO ' + str(iteracao) + ':\n' + '          proto-frase / tamanho da rede (sentencas) / extraiu?\n ')    
-           
-#             #avalia as protofrases que ainda nao obtiveram extracao
-#             buffer_pfs = []
-#             pfn = 0
-#             memoria_pf = []
-#             memoria_st = []
-#             indx = 0
-            
-#             for protofrase in protofrases:
-                
-#                 print ('protofrase ' + str(pfn))                
-                
-#                 #separa palavras da protofrase e armazena em uma lista e atualiza subtenas
-#                 palavras = protofrase.protofrase.split(' ')
-#                 subtemas_pre_selecionados = []
-                
-#                 #reinicializa flag
-#                 convergiu_tema = 'nao'
-             
-#                 #gera sub-documento e recebe o numero de sentencas
-#                 numero_de_sentencas, seten, sentencas = GeraSubDocumento(palavras)                
-               
-#                 #relatorio
-#                 arq_procedimento.write('       '  + protofrase.protofrase + '     /     ' + str(numero_de_sentencas) + '    /    ')                  
-                
-#                 #print 'armazena protofrases e extração...'
-#                 if numero_de_sentencas == 1:
-#                     convergiu_tema = 'sim'
-#                     frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
-#                     extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
-#                     arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')
-#                     arq_procedimento.write('sim' + '\n')
-#                     pfn += 1
-#                 else:                  
-#                     #Se o conjunto de palavras da pf já foi executado, pega o resultado
-#                     if set(palavras) in memoria_pf:
-#                         ind = memoria_pf.index(set(palavras))                                    
-#                         subtemas_pre_selecionados = memoria_pf[ind] 
-#                     #senão, chama algoritmo de seleção de temas  
-#                     else:                                
-                      
-#                         #gera nova rede
-#                         tgo = GeraRede(request)
-                       
-#                         #seleciona os subtemas
-#                         subtemas_pre_selecionados = SelecionaSubTemas(tgo)
-                      
-#                         #atualiza memória de execuções   
-#                         memoria_pf.append(set(palavras))
-#                         memoria_st.append(set(subtemas_pre_selecionados))
-                    
-#                     #print subtemas_pre_selecionados
-#                     #adiciona novas protofrases no buffer 
-#                     convergiu = 'nao'                   
-#                     for subtema in subtemas_pre_selecionados:
-#                         if subtema not in palavras:
-#                             ultimo_tema = palavras[-1]
-#                             bigramas = ListaDeAdjacencias.objects.filter(vertice_i__exact=ultimo_tema)
-#                             possiveis_subtemas = bigramas.values_list('vertice_f', flat=True)                         
-#                             #só acrescenta subtema se ele for vertice de entrada da ultima palavra da protofrase
-#                             if subtema in list(possiveis_subtemas):
-#                                 convergiu = 'sim'
-#                                 pf_i = ' '.join(palavras)
-#                                 pf = pf_i + ' ' + subtema
-#                                 buffer_pfs.append(pf)                               
-#                     if convergiu == 'nao':                       
-#                         set_count = Counter(elem for elem in sentencas)                        
-#                         soma = sum(set_count.values())
-#                         for k,v in set_count.items():
-#                             per = int((float(v)/soma)*100)
-#                             if per >= parametros.acuidade:
-#                                 convergiu_tema = 'sim'
-#                                 arq_procedimento.write('sim - com repeticao' + '\n')
-#                                 frase = codecs.open('extrator/arquivos/p5_texto_tema.txt','r','utf-8').readlines()                  
-#                                 extracao.append((tema.tema, protofrase.protofrase,frase[0].strip()))
-#                                 arq_extracao.write(protofrase.protofrase + '      ' + frase[0] + '\n')  
-#                         if convergiu_tema == 'nao':                              
-#                             arq_procedimento.write('null' + '\n') 
-#                     else:
-#                         arq_procedimento.write(protofrase.extracao + '\n')                               
-#                     pfn += 1     
-
-#             print 'atualizando banco de dados...'
-
-#             #atualiza protofrases no BD
-#             arq_procedimento.write('\n\n\n')
-#             iteracao +=1
-#             print ('Iteração ' + str(iteracao) )
-#             if buffer_pfs:
-#                 ProtoFrasesNew.objects.all().delete()
-#                 aList = [ProtoFrasesNew(protofrase=pf, extracao='nao',frase='null') for pf in buffer_pfs]    
-#                 ProtoFrasesNew.objects.bulk_create(aList)
-#             else:
-#                 ProtoFrasesNew.objects.all().delete()
-                            
-        
-#         if convergiu_tema == 'nao':
-#             f = ExtracaoNew(tema = tema.tema, protofrase = 'tema nao convergiu', frase = 'tema nao convergiu')
-#             f.save()
-
-#         else:           
-#             aList = [ExtracaoNew(tema = linha[0], protofrase = linha[1] , frase = linha[2] ) for linha in extracao]    
-#             ExtracaoNew.objects.bulk_create(aList)
-        
-#         arq_procedimento.write('\n\n\n')
-#         arq_extracao.write('\n\n\n')      
-    
-#     #fecha arquivos
-#     arq_procedimento.close()
-#     arq_extracao.close()
-
-#     rel_proc = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt", 'r','utf-8').read()
-     
-#     #finaliza tempo
-#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))
-    
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5pr':tempo_total,'goto': 'passo5', 'muda_logo':'logo_protofrases' })
-
-
-# def mapearEextrair(request):
-#     #inicia cronometro
-#     inicio = time.time()
-
-#     #relatorio
-#     arq_relatorio =codecs.open("extrator/arquivos/p5_relatorio_extracao.txt","w")
-
-#     #carrega arquivos
-#     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
-#     arq_texto_preprocessado = codecs.open("extrator/arquivos/p2_texto_preprocessado.txt","r",'utf-8')
-    
-#     #carrega os temas
-#     temas = TemasNew.objects.all()
-
-#     #inicializa dados da extrcao
-#     DadosExtracaoNew.objects.all().delete()
-    
-#     #Verifica as repetições de cada protofrase
-#     for tema in temas:
-#         frases = Counter(ExtracaoNew.objects.filter(tema = tema.tema).values_list('frase', flat=True))        
-#         aList = [DadosExtracaoNew(irgs=0,rep_geral=0,irse=0,rep_tema=0,tema=tema.tema, protofrase = key, quantidade = value) for key,value in frases.items()]    
-#         DadosExtracaoNew.objects.bulk_create(aList)   
-            
-#     #Prepara textos do mapeamento separando as sentencas e tirando os espacoes em branco do começo e do fim (strip)
-#     sentencas_lem_strip = []
-#     texto_lematizado = arq_texto_lematizado.read()
-#     sentencas_lem = texto_lematizado.split('.')
-#     for sentenca in sentencas_lem:
-#         sentencas_lem_strip.append(sentenca.strip())
-          
-#     sentencas_pp_strip = [] 
-#     texto_preprocessado = arq_texto_preprocessado.read()
-#     sentencas_pp = texto_preprocessado.split('.') 
-#     for sentenca in sentencas_pp:
-#         sentencas_pp_strip.append(sentenca.strip())
-   
-#     #teste de mapeamento
-#     if len(sentencas_lem) != len(sentencas_pp):       
-#         return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo_error':'logo_map_extracao' })
-
-#     #inicializa relatorio
-#     arq_relatorio.write('   RELATÓRIO DE EXTRAÇÃO\n\n\n  tema   /   frase   /   repetições   /   sentença (texto original)\n\n')
-
-#     dados = DadosExtracaoNew.objects.all()
-
-#     for dado in dados:
-      
-#         try:        
-#             indice =  sentencas_lem_strip.index(dado.protofrase.strip())
-#             dado.sentenca = sentencas_pp_strip[indice].strip()
-#             dado.save()
-#             arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
-#         except:
-#             dado.sentenca = 'null - nao convergiu'
-#             dado.save()
-#             arq_relatorio.write('  ' + dado.tema.encode('utf-8') + '  /  ' + dado.protofrase.encode('utf-8') + '  /  ' + str(dado.quantidade) + '  /  ' + dado.sentenca.encode('utf-8') + '\n')
-
-#     arq_relatorio.close()
-
-#     rel_ext = codecs.open("extrator/arquivos/p5_relatorio_extracao.txt", 'r','utf-8').read()
-         
-#     #finaliza tempo
-#     tempo_total =  ("{0:.4f}".format(time.time() - inicio))
-    
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':tempo_total,'goto':'passo5', 'muda_logo':'logo_map_extracao'})
-
-# def selecionar_temas(request):
-            
-#     #carrega dados
-#     dados = DadosSelecaoTemas.objects.get(id=1)
-#     r =  DadosPreproc.objects.get(id=1)
-#     tabela_bigramas = ListaDeAdjacencias.objects.all()
-            
-#     #inicializa dados do BD
-#     TemasNew.objects.all().delete()
-    
-#     vertices_objs = ListaVertices.objects.all()
-            
-#     #carrega parametros de ajuste
-#     try:
-#         parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-        
-#     except ObjectDoesNotExist:
-#         parametros = ParametrosDeAjuste(ident=1,k_betweenness=100,dr_delta_min=5,f_corte=10,f_min_bigramas=50,faixa_histo=0.1)
-#         parametros.save()
-            
-#     #cria arquivo de tabela para histograma
-#     arq_tabela_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt", 'w', 'utf-8')  
-#     arq_clusters = codecs.open("extrator/arquivos/p5_clusters.txt", 'w', 'utf-8') 
-#     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_temas.txt", 'w')
-
-#     #carrega tabela potenciação
-#     tabela_potenciacao = codecs.open("extrator/arquivos/p4_tabela_potenciacao.txt").readlines()    
-
-#     #cria listas e dicionários
-#     tabela_potenciacao_numeros = OrderedDict()
-#     tabela_histograma = OrderedDict()
-#     clusters = OrderedDict()
-#     clusters_full = OrderedDict()
-#     cluster = []
-#     clusters_selecionados = OrderedDict()
-#     vertices_selecionados = OrderedDict()
-
-#     if r.flag_testapalavra.strip() == "nao":    
-    
-#         #print tabela_potenciacao
-#         #cria tabela com indice potenciação
-#         for linha in tabela_potenciacao:
-#             tabela_potenciacao_numeros[linha.split(' ')[0]] = float(linha.split(' ')[2].rstrip('\n'))     
-            
-#         #separa dados para o histograma
-#         potenciacao_valores = []
-#         for item in tabela_potenciacao_numeros.values():
-#             potenciacao_valores.append(item)
-        
-#         #gera histograma  
-#         maximo = parametros.faixa_histo + 3  
-#         intervalos = np.arange(0,maximo, parametros.faixa_histo)  
-    
-#         n, bins, patches = plt.hist(potenciacao_valores, intervalos, facecolor='blue', alpha=0.5)
-#         pylab.savefig('extrator/arquivos/p5_grafo_histograma.png')     
-       
-#         for idx,item in enumerate(n):
-#             tabela_histograma[bins[idx + 1]] = item
-#             arq_tabela_histo.write(str(idx) + ' ' + str(bins[idx]) + '->'+  str(bins[idx + 1]) + ' ' + str(item) + '\n')
-            
-#         arq_tabela_histo.close()   
-#         #print tabela_histograma 
-        
-#         dados_histo = codecs.open("extrator/arquivos/p5_tabela_histograma.txt").readlines()
-#         lista_clusters = []
-#         for linha in dados_histo:
-#             if float(linha.split(' ')[2]) != 0.0: 
-#                 lista_clusters.append(int(linha.split(' ')[0]))
-
-#         cont = 1
-#         for k, g in groupby(enumerate(reversed(lista_clusters)), lambda (i, x): i-x):
-#             clusters[cont] =  map(itemgetter(1), g)
-#             cont = cont + 1    
-        
-    
-#         cont = 1
-#         for item in clusters.values():
-#             limite_inferior = float(dados_histo[item[0]].split(' ')[1].split('->')[0])
-#             limite_superior = float(dados_histo[item[-1]].split(' ')[1].split('->')[1])
-#             arq_clusters.write('cluster ' + str(cont) + ' ' + str(limite_inferior) + ' ' + str(limite_superior) +'\n' )
-#             for linha in tabela_potenciacao:
-#                 tema_num = linha.split(' ')[0]
-#                 tema_nome = linha.split(' ')[1]
-#                 tema_indice_potenciacao = float(linha.split(' ')[2].rstrip('\n'))   
-#                 if (tema_indice_potenciacao >= limite_inferior) and (tema_indice_potenciacao <= limite_superior):
-#                     # como aegs
-#                     arq_clusters.write(str(tema_num).decode('utf-8') + ' ' + str(tema_nome).decode('utf-8') + ' ' + str(tema_indice_potenciacao) + '\n')
-#                     cluster.append(str(tema_num).decode('utf-8') + ' ' + str(tema_nome).decode('utf-8') + ' ' + str(tema_indice_potenciacao))
-#             arq_clusters.write('\n')
-#             clusters_full[cont] = cluster
-#             cluster = []       
-#             cont = cont + 1
-            
-        
-#         arq_clusters.close()
-        
-#         #seleciona os clusters segundo criterio de corte
-#         for item in clusters_full.items():
-#             if len(item[1]) < ((parametros.f_corte)/100)*len(vertices_objs):
-#                 clusters_selecionados[item[0]] = item[1]
-            
-#         #cria lista de vertices selecionados do cluster
-#         for item in clusters_selecionados.items():
-#             for linha in item[1]:
-#                 vertices_selecionados[linha.split(' ')[0]] = linha.split(' ')[1]      
-            
-#         #armazena palavras para iniciar o teste  
-#         if r.flag_testapalavra.strip() == 'nao': 
-#             TestaPalavra.objects.all().delete()
-#             aList = [TestaPalavra(palavra = nome, numero=int(numero), condicao='aguardando', resultado='null') for numero,nome in vertices_selecionados.items()]    
-#             TestaPalavra.objects.bulk_create(aList)
-#             r.flag_testapalavra = 'sim'
-#             r.save()       
-
-#     #inicializa flag de execucao
-#     flag_fim = 'nao'
-    
-#     #Verifica se há palavras a serem testadas
-#     palavras = TestaPalavra.objects.filter(condicao__exact='aguardando').values_list('palavra',flat=True)   
-    
-#     if not palavras:    
-#         flag_fim = 'sim'             
-        
-#     while flag_fim == 'nao':        
-#         lista_substantivos = ListaDeSubstantivos.objects.all().values_list('palavra','substantivo')
-#         lista_palavras = ListaDeSubstantivos.objects.all().values_list('palavra', flat=True)
-#         arq_lematizador = codecs.open('extrator/arquivos/p2_saida_lematizador.txt','r','utf-8')
-#         palavras_lematizadas = arq_lematizador.readlines()  
-      
-#         for palavra in palavras:
-#             tags = [] 
-#             pal = TestaPalavra.objects.get(palavra__exact=palavra)    
-          
-#             #Busca todas as tags possíveis para a palavra
-#             for linha in palavras_lematizadas:            
-#                 tokens = linha.strip().split(' ')            
-#                 if palavra in tokens:                           
-#                     for token in tokens:            
-#                         pattern = re.compile("^[A-Z].")
-#                         eh_tag = pattern.match(token)
-#                         if eh_tag:
-#                             tags.append(token)
-                  
-#             #verifica se todas as referências são à substantivo
-#             repeticoes = 0
-#             for tag in tags:
-#                 pattern = re.compile("^N|U")
-#                 eh_substantivo = pattern.match(tag)
-#                 if eh_substantivo:
-#                     repeticoes += 1        
-            
-#             #caso a palavra seja substantivo, atualiza BD 
-#             if palavra in lista_palavras:
-#                 #analise se a palavra esta na lista de substantivos
-#                 for key, value in lista_substantivos:
-#                     if palavra == key:
-#                         cond = value
-#                         pal.condicao = 'finalizado'
-#                         pal.resultado = cond
-#                         pal.save()                     
-            
-#             elif re.compile("[0-9]+").match(palavra):        
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='nao'
-#                 pal.save()
-#             elif len(tags) == repeticoes:            
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='sim'
-#                 pal.save()
-
-#             #caso nao haja classificação como sunstantivo, atualiza BD 
-#             elif repeticoes == 0:
-#                 pal.condicao = 'finalizado'
-#                 pal.resultado ='nao'
-#                 pal.save()
-            
-#             #Na impossibilidade de vertificar, pergunta ao usuário            
-#             else:                
-#                 if r.flag_completo == 'sim':
-#                     return palavra    
-#                 else:                           
-#                     return render(request, 'extrator/extrator_resultados.html', {'testa_sub':'sim' , 'palavra_candidata':palavra})
-#         flag_fim = 'sim'                
-
-#     #ao termino, atualiza execuçao para off    
-#     r.flag_testapalavra = 'nao'
-#     r.save()
- 
-#     #cria vetor de vertices selecionados
-#     temas_preselecionados = TestaPalavra.objects.filter(resultado='sim').values_list('numero','palavra')
-#     temas_preselecionados = OrderedDict(temas_preselecionados)
-
-#     #inicializa relatório
-#     arq_relatorio.write('RELATÓRIO FINAL - TEMAS')
-#     arq_relatorio.write('\n\n\n')
-#     arq_relatorio.write('PARÂMETROS DE CLUSTERIZAÇÃO')
-#     arq_relatorio.write('\n\n')
-#     arq_relatorio.write('- Faixa de divisão do histograma: ' + str(parametros.faixa_histo) + '\n' ) 
-#     arq_relatorio.write('- Critério de exclusão do cluster: posssuir ' + str(parametros.f_corte) + '% dos nós totais ' + '(' + str((parametros.f_corte/100)*len(vertices_objs)) + ' de ' + str(len(vertices_objs)) + ')' + '\n\n'  ) 
-#     arq_relatorio.write('CLUSTERS SELECIONADOS')
-#     arq_relatorio.write('\n\n')
-
-#     for item in clusters_selecionados.items():
-#         arq_relatorio.write('Cluster ' + str(item[0]) + '\n')
-#         for linha in item[1]:
-#             arq_relatorio.write(str(linha.split(' ')[0]) + ' ' +  str(linha.split(' ')[1].encode('utf-8')) + ' ' + str(linha.split(' ')[2]) + '\n')
-#         arq_relatorio.write('\n')    
-
-#     arq_relatorio.write('TEMAS PRÉ-SELECIONADOS')
-#     arq_relatorio.write('\n\n') 
-
-#     for item in clusters_selecionados.items():               
-#         for linha in item[1]:
-#             arq_relatorio.write(str(linha.split(' ')[1].encode('utf-8')) + '\n')
-
-    
-#     arq_relatorio.write('\n\nSELEÇÃO FINAL DOS TEMAS\n\n')
-#     arq_relatorio.write('- Metodologia: Vizinho grau-1 \ frequência relativa dos bi-gramas\n')
-#     arq_relatorio.write('- Parâmetro: fb(frequência mínima de bigramas): ' + str(parametros.f_min_bigramas) + "% do total de bigramas\n")
-#     arq_relatorio.write('- Resultados: \n\n')
-#     arq_relatorio.write('Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa \n\n')
-
-#     # calcula grau de entrada dos temas pre-selecionados      
-#     tabela_graus_entrada = OrderedDict()
-#     for tema in temas_preselecionados.values():
-       
-#         tema_entradas = tabela_bigramas.filter(vertice_f=tema)
-#         peso = 0
-    
-      
-#         for bigrama in tema_entradas:            
-#             peso = peso + bigrama.peso            
-#         tabela_graus_entrada[tema] = peso
-
-   
-    
-#     # verifica se o grau de entrada do vertice-destino é maior que 50% do peso do bigrama e cria lista de vertices a serem excluidos    
-#     temas_excluidos = [] 
-#     for tema_i in temas_preselecionados.values():
-#         for tema_f in temas_preselecionados.values():
-#             bigramas = tabela_bigramas.filter(vertice_i=tema_i,vertice_f=tema_f)            
-#             for bigrama in bigramas:  
-#                 arq_relatorio.write(bigrama.vertice_i.encode('utf-8') + ' -> ' + bigrama.vertice_f.encode('utf-8') + ' - ' + str(bigrama.peso) + '/' + str(tabela_graus_entrada[tema_f]) + ' - ' +  str((bigrama.peso/tabela_graus_entrada[tema_f])*100) + '%\n')            
-#                 if bigrama.peso >= (parametros.f_min_bigramas*tabela_graus_entrada[tema_f])/100:
-#                     temas_excluidos.append(tema_f)   
-#     temas_selecionados = temas_preselecionados.values()    
-    
-#     for tema in temas_excluidos:
-#        temas_selecionados.remove(tema)
-       
-#     #escreve relatório e armazena temas no BD
-#     arq_relatorio.write('\n- Temas selecionados' + '(' + str(len(temas_selecionados)) + '):' '\n\n')
-#     for tema in temas_selecionados:
-#         arq_relatorio.write(tema.encode('utf-8') + '\n')
-
-#     #Salva temas no BD via bulk e inicializa protofrases    
-#     aList = [TemasNew(tema = tema, irt=0.0, irt_p=0.0) for tema in temas_selecionados]    
-#     TemasNew.objects.bulk_create(aList)
-   
-#     arq_relatorio.write('\n\n- Temas excluídos' + '(' + str(len(temas_excluidos)) + '):' + '\n\n')
-#     for tema in temas_excluidos:
-#         arq_relatorio.write(tema.encode('utf-8') + '\n' )
-
-#     #fecha arquvos
-#     arq_relatorio.close()
-
-#     if r.flag_completo == 'sim':
-#         #return 'none'
-#         do = 'nothing' 
-#     else: 
-#         r.flag_testapalavra = 'nao'
-#         r.save()
-
-#         return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st': 'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
-   
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_sel_temas' })
-
-
-
-
-# def agrupar_temas(request):
-
-#     #inicializa banco de dados     
-#     Subtemas.objects.all().delete()  
-    
-#     #cria arquivos
-#     arq_lista_agp = codecs.open("extrator/arquivos/p5_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
-#     arq_temas_subtemas = codecs.open("extrator/arquivos/p5_temas_subtemas.txt", 'w', 'utf-8') 
-    
-#     #cria lista com os temas
-#     temas =[]
-#     temas_q = TemasNew.objects.all().values_list('tema', flat=True)
-#     for t in temas_q:
-#         temas.append(t)
-#     #cria pares de temas distintos
-#     pairs = list(itertools.combinations(temas, 2))
- 
-#     #carrega sentencas
-#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
-#     cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
-
-#     #carrega temas principais (nucleos) oriundos do primeiro cluster
-#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-#     nc = parametros.nc + 1
-#     nome = 'cluster ' + str(nc)
-#     nucleos = []
-#     cont = 0
-#     for linha in cluster:
-#         if 'cluster' in linha:                              
-#             if nome in linha:
-#                 break
-#         else:
-#             try:        
-#                 palav = linha.split(' ')
-#                 nucleos.append(palav[1])      
-#             except:
-#                 do = 'nothing'
-    
-#     #inicializa variaves de teste
-#     temas_separados = {}
-       
-#      #inicializa relatorio
-#     arq_temas_subtemas.write('RELATORIO TEMAS E SUBTEMAS \n\n')
-#     arq_temas_subtemas.write('TEMAS AVALIADOS: ')
-#     for n in nucleos:
-#         arq_temas_subtemas.write(n + ' ')
-#     arq_temas_subtemas.write('\n\n')
-#     arq_temas_subtemas.write('TEMA \ SUBTEMAS \n\n')
-    
-#     while(temas):
-       
-#         #gera rede
-#         rede = nx.Graph()   
-       
-#         #gera os nos da rede
-#         for tema in temas:
-#             rede.add_node(tema)
-
-#         #cria pares de temas distintos
-#         pairs = list(itertools.combinations(temas, 2))
-#         #print pairs
-
-#         #cria lista de adjacencias
-#         for par in pairs:
-#             cont = 0
-#             for sentenca in sentencas:        
-#                 lista_sent = sentenca.rstrip( ).split(' ')
-#                 if par[0] in lista_sent and par[1] in lista_sent:
-#                     cont = cont + 1
-#             arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
-#             peso = float(cont)
-#             if cont > 0:
-#                 rede.add_edge(par[0], par[1], weight=peso)            
-        
-#         #arq_lista_agp.close()
-#         nx.write_gexf(rede, "extrator/arquivos/p5_rede_temas_gephi.gexf")
-        
-#         #separa as comunidade
-#         partition = community.best_partition(rede,weight='weight')
-#         #print partition
-
-#         #agrupa temas com mesmo valor
-#         dict_nucleos = {}
-#         for k,v in partition.iteritems():
-#             for nuc in nucleos:
-#                 if k == nuc:
-#                     dict_nucleos[k] = v
-#         dif = {}
-#         for k,v in dict_nucleos.iteritems():
-#             if v not in dif.values():
-#                 dif[k] = v        
-#         temas_agrupados = dict()
-#         for k,v in dict_nucleos.iteritems():
-#             if v in temas_agrupados.keys():
-#                 temas_agrupados[v] = temas_agrupados[v] + ' ' + k
-#             else:
-#                 temas_agrupados[v] = k      
-       
-
-#         #testa se algum tema já está isolado        
-#         bag = []
-#         separou = 'nao'
-#         string = ''
-#         for k,v in temas_agrupados.iteritems():
-#             list_len = v.split(' ')
-#             if len(list_len) == 1:
-#                 separou = 'sim'               
-#                 arq_temas_subtemas.write(list_len[0] + ' \ ' )
-#                 for j,l in partition.iteritems():
-#                     if l == k:
-#                         if list_len[0] != j:
-#                             arq_temas_subtemas.write(j + ' ')
-#                             string = string + ' ' + j
-#                         bag.append(j)
-#                 arq_temas_subtemas.write('\n')
-#                 a = Subtemas(temas=list_len[0], subtemas=string)
-#                 a.save()
-#         arq_temas_subtemas.write('\n')
-
-#         if separou == 'nao':           
-#             #arq_temas_subtemas.write('Nao foi possivel isolar nenhum tema \n')
-#             arq_temas_subtemas.write('TEMAS AGRUPADOS \ SUBTEMAS \n')
-#             for p,o in temas_agrupados.iteritems():
-#                 list_len = o.split(' ')
-#                 arq_temas_subtemas.write(o + ' \ ')        
-#                 for j,l in partition.iteritems():
-#                     if l == p:
-#                         if list_len[0] != j and list_len[1] != j: 
-#                             arq_temas_subtemas.write(j + ' ')
-#                             string = string + ' ' + j
-#                 arq_temas_subtemas.write('\n')
-#                 a = Subtemas(temas=o, subtemas=string)
-#                 a.save()
-#             break
-
-#         #atualiza lista de temas                
-#         temas = set(temas) - set(bag)
-       
-#     #fecha arquivos
-#     arq_temas_subtemas.close()
-#     arq_lista_agp.close()   
-    
-   
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p4st':'x','goto':'passo4', 'muda_logo':'logo_agp_temas' })
-
-
-# def agrupar_temas(request):
-        
-#     #inicializa banco de dados     
-#     Subtemas.objects.all().delete()
-#     Clusters.objects.all().delete()  
-    
-#     #cria arquivos
-#     arq_lista_agp = codecs.open("extrator/arquivos/p5_lista_adjacencias_agrupamento.txt", 'w', 'utf-8')
-    
-#     #cria lista com os temas
-#     temas =[]
-#     temas_q = TemasNew.objects.all().values_list('tema', flat=True)
-#     string_grupo = ''
-#     for t in temas_q:
-#         temas.append(t)
-#         string_grupo = string_grupo + t + ' '    
-    
-#     #cria pares de temas distintos
-#     pairs = list(itertools.combinations(temas, 2))   
-    
-#     #carrega sentencas
-#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
-#     cluster = codecs.open("extrator/arquivos/p5_clusters.txt","r",'utf-8').readlines()     
-
-#     #carrega temas principais (nucleos) oriundos do parametro nucleos (quantidade)
-#     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
-#     nc = parametros.nc + 1
-#     nome = 'cluster ' + str(nc)
-#     nucleos = []
-#     string_nucleos = ''
-#     cont = 0
-#     for linha in cluster:
-#         if 'cluster' in linha:                              
-#             if nome in linha:
-#                 break
-#         else:
-#             try:
-                        
-#                 palav = linha.split(' ')
-#                 if palav[1] in temas:
-#                     nucleos.append(palav[1])
-#                     string_nucleos = string_nucleos + palav[1] + ' '      
-#             except:
-#                 do = 'nothing'
-    
-    
-#     #classifica os temas
-#     temas_c = TemasNew.objects.all()
-#     for tema_c in temas_c:
-#         if tema_c.tema in nucleos:
-#             tema_c.classificacao = 'tema'
-#         else:
-#             tema_c.classificacao = 'subtema'
-#         tema_c.save()
-    
-#     #inicializa variaves de teste
-#     temas_separados = {}
-
-#     #inicializa grupos
-#     a = Clusters(etapa =0, q_nucleos=len(nucleos) , q_subtemas=len(temas), nucleos=string_nucleos, subtemas=string_grupo, situacao='processando')
-#     a.save()
-#     etapa = 1
-
-#     #carrega grupos a serem testados
-#     grupos = Clusters.objects.filter(situacao='processando')
-   
-#     while grupos: 
-#         for grupo in grupos:
-            
-#             ######## GERA REDE #######################################################################
-#             #separa os temas do grupo
-#             temas = grupo.subtemas.rstrip().split(' ')
-#             nucleos = grupo.nucleos.rstrip().split(' ')
-                
-#             #inicializa rede
-#             rede = nx.Graph()
-
-#             #gera os nos da rede
-#             for tema in temas:
-#                 rede.add_node(tema)
-            
-#             #cria pares de temas distintos
-#             pairs = list(itertools.combinations(temas, 2))
-        
-#             #cria lista de adjacencias
-#             for par in pairs:
-#                 cont = 0
-#                 for sentenca in sentencas:        
-#                     lista_sent = sentenca.rstrip( ).split(' ')
-#                     if par[0] in lista_sent and par[1] in lista_sent:
-#                         cont = cont + 1
-#                 arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
-#                 peso = float(cont)
-#                 if cont > 0:
-#                     rede.add_edge(par[0], par[1], weight=peso)    
-#             ###########################################################################################
-            
-#             ##### separa comunidade ###################################################################
-#             partition = community.best_partition(rede,weight='weight')
-#             ###########################################################################################
-            
-#             #verifica em quantos grupos foi particionado
-#             quantidade_grupos = set(partition.values())
-#             situ ="indefinido"
-        
-#             #se nao dividiu, termina
-#             if len(quantidade_grupos) == 1:
-#                 grupo.situacao = 'finalizado'
-#                 grupo.save()
-            
-#             #se nao, verifica se separou os nucleos   
-#             else:
-#                 grupo.situacao = 'descartado'
-#                 grupo.save()
-#                 #armazena nos grupos no BD
-#                 for numero in quantidade_grupos:
-#                     novos_subtemas =[]
-#                     string_novos_subtemas = ''
-#                     novos_nucleos = []
-#                     string_novos_nucleos = ''        
-#                     #cria novo conjunto de temas
-#                     for k,v in partition.iteritems():
-#                         if v == numero:
-#                             novos_subtemas.append(k)
-#                             string_novos_subtemas = string_novos_subtemas + k + ' '
-#                     #busca nucleso no novo conjunto
-#                     for nt in novos_subtemas:
-#                         if nt in nucleos:
-#                             novos_nucleos.append(nt)
-#                             string_novos_nucleos = string_novos_nucleos + nt + ' '
-
-#                     if len(novos_nucleos) == 0:
-#                         situ = 'descartado'
-                    
-#                     if len(novos_nucleos) == 1:
-#                         situ == 'finalizado'
-                    
-#                     if len(novos_nucleos) > 1:
-#                         situ = 'processando'
-
-#                     a = Clusters(etapa=etapa, q_nucleos=len(novos_nucleos),q_subtemas=len(novos_subtemas), nucleos=string_novos_nucleos, subtemas=string_novos_subtemas, situacao=situ)        
-#                     a.save()
-        
-#         grupos = Clusters.objects.filter(situacao='processando')
-#         etapa = etapa + 1      
-    
-
-#     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_agp_temas' })
-
-# def processarProtofrases(request):
-#             #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
-   
-#     #inicializa dados da extrcao
-#     ExtracaoNew.objects.all().delete()
-
-#     #inicializa arquivo do relatório
-#     arq_procedimento = codecs.open("extrator/arquivos/p5_relatorio_procedimento.txt","w",'utf-8')   
-  
-#     #carrega arquivos 
-#     sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt","r",'utf-8').readlines()
-#     lista_de_adjacencias = codecs.open("extrator/arquivos/p3_lista_adjacencias.txt","r",'utf-8').readlines()
-#     arq_texto_preprocessado_vet = codecs.open("extrator/arquivos/p2_texto_preprocessado_vetorizado.txt","r",'utf-8').readlines()
-#     arq_sentencas = codecs.open("extrator/arquivos/p3_texto_sentencas.txt", "r", 'utf-8').readlines()
-    
-#     #carrega os temas
-#     temas = TemasNew.objects.all()
-
-#     #inicializa listas
-#     sentencas_avaliadas = OrderedDict()
-
-#     #mapeia as sentencas
-#     sentencas_pp_vet = []
-#     senten = ''
-#     for linha in arq_texto_preprocessado_vet:
-#         if linha.rstrip() != '.':
-#             senten = senten + ' ' + str(linha.encode('utf-8')).rstrip()
-#         if linha.rstrip() == '.':
-#             sentencas_pp_vet.append(senten)          
-#             senten = ''
-
-#     print 'Esse valor ' + str(len(arq_sentencas)) + ' deve ser igual a este ' + str(len(sentencas_pp_vet)) + ' . Caso seja diferente, verificar linha 1450'
-    
-#     if len(arq_sentencas) != len(sentencas_pp_vet):
-#         return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases','mess':'ERRO NA QUANTIDADE DE SENTENCAS' })
-
-#     # avalia todas as sentenças do texto: atribui peso a todas as setenças conforme o peso das arestas da protofrase
-#     lista_adjacencias = {}
-#     contador = 0
-#     for sentenca in sentencas:
-#         peso = 0
-#         maior_grau = 0.0
-#         palavras_sentenca = sentenca.split(' ')
-#         for i, palavra in enumerate(palavras_sentenca):
-#             try:
-#                 palavras_sentenca[i+2]                              
-#                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
-#                 for linha in lista_de_adjacencias:
-#                     if bigrama in linha and float(linha.split(' ')[2]) > maior_grau:
-#                         maior_grau = float(linha.split(' ')[2])              
-#             except:
-#                 bigrama = 'fim' 
-        
-#         grau_corte = 0.1*maior_grau
-#         if grau_corte < 1:
-#             grau_corte = 1.0  
-#         corte = 0
-        
-#         for i, palavra in enumerate(palavras_sentenca):
-#             try:
-#                 palavras_sentenca[i+2]                              
-#                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
-#                 for linha in lista_de_adjacencias:
-#                     if bigrama in linha:
-#                         if float(linha.split(' ')[2]) > grau_corte:
-#                             peso = peso + float(linha.split(' ')[2])
-#                         else:
-#                             corte = corte + 1                
-#             except:
-#                 bigrama = 'fim'     
-        
-#         sentencas_avaliadas[str(contador) + ' ' + sentenca] = str(peso) + ' ' + str(corte)
-#         contador = contador + 1
-#         peso = 0     
-
-#     #salva dados no BD
-#     aList = [ExtracaoNew(protofrase=sent[0], frase=sentencas_pp_vet[idx] , peso=sent[1].split(' ')[0] , corte=sent[1].split(' ')[1] , irse=0, rep_tema=0, irgs=0 , rep_geral=0) for idx, sent in enumerate(sentencas_avaliadas.items())]    
-#     ExtracaoNew.objects.bulk_create(aList) 
-    
-#     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
-
-
-# def mapearEextrair(request):
-#     #Apenas escreve o relatório de extração
-    
-#     #carrega os temas
-#     temas = TemasNew.objects.all()
-
-#     #carrega frases
-#     sentencas = ExtracaoNew.objects.all()
-
-#     #escreve relatório
-#     arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_extracao.txt","w",'utf-8')
-   
-#     arq_extracao.write('RELATORIO DE EXTRACAO \n\n')
-
-#     for tema in temas:
-#         arq_extracao.write('Tema: ' + tema.tema + '\n\n')
-#         arq_extracao.write('protofrase / frase / peso / corte \n\n')
-#         sentencas1 = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso','corte')
-#         for s in sentencas1:
-#             arq_extracao.write(s.protofrase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + s.frase.rstrip().encode('utf-8').decode('utf-8') + '  /  ' + str(s.peso) + '  /  ' + str(s.corte) + '\n')
-#         arq_extracao.write('\n')
-    
-  
-#     arq_extracao.close()
-    
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5ex':'x','goto':'passo5', 'muda_logo':'logo_map_extracao'})
-
-
-# def calcula_indice_representatividade(request):
-#     #inicia cronometro
-#     inicio = time.time()
-    
-#     #Abre arquivos
-#     arq_texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","r",'utf-8')
-#     arq_relatorio = codecs.open("extrator/arquivos/p5_relatorio_indices_representatividade.txt","w")
-    
-#     #carrega os temas
-#     temas = TemasNew.objects.all()
-
-#     #inicializa banco de dados de senteças extraídas
-#     DadosExtracaoNew.objects.all().delete()
-
-#     #carrega parametros
-#     param = ParametrosDeAjuste.objects.get(ident__iexact=1)
-    
-#     #carrega frases
-#     sentencas = ExtracaoNew.objects.all()
-
-#     #escreve relatório
-#     arq_extracao = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","w",'utf-8')
-
-#     #calcula indice geral de representatividade
-#     sentenca_maior_peso = ExtracaoNew.objects.order_by('-peso')[0]
-#     maior_peso = sentenca_maior_peso.peso
-
-#     #Calculo do indice de representatividade do tema
-#     ########################################################################
-#     #carrega sentenças
-#     sentencas_lem_strip = []
-#     texto_lematizado = arq_texto_lematizado.read()
-#     sentencas_lem = texto_lematizado.split('.')
-#     for sentenca in sentencas_lem:
-#         sentencas_lem_strip.append(sentenca.strip())
-
-
-#     numero_total_sentecas = 0
-#     numero_sentencas_tema = 0
-#     for tema in temas:
-#         for sentenca in sentencas_lem_strip:
-#             lista_tokens = sentenca.split(' ')
-#             if len(lista_tokens) == 1 and lista_tokens[0] == u'':             
-#                 'ignore'
-#             else:
-#                 numero_total_sentecas += 1
-#                 if tema.tema in lista_tokens:
-#                     numero_sentencas_tema += 1                    
-#         grau_tema = TabelaRanking.objects.get(vertice_nome__exact=tema.tema).grau_norm      
-#         irt = (float(grau_tema) + float(numero_sentencas_tema/numero_total_sentecas))/2
-#         irt_p = irt*100
-#         numero_sentencas_tema = 0
-#         numero_total_sentecas = 0
-#         tema.irt = irt        
-#         tema.irt_p = irt_p
-#         tema.save()
-
-#     ##############################################################################  
-    
-#     #Calculo do índice de representatividade dos parágrafos
-  
-#     for seten in sentencas:
-#         irgs = (seten.peso - 0.1*seten.corte) / maior_peso
-#         if irgs < 0:
-#             irgs = 0
-#         irgs_por = int(irgs * 100)
-#         if irgs_por > 90:
-#             seten.rep_geral = 'muito-alta' 
-#         if irgs_por > 80 and irgs_por <= 90:
-#             seten.rep_geral = 'alta'
-#         if irgs_por > 70 and irgs_por <= 80:
-#             seten.rep_geral = 'alta-baixa'
-#         if irgs_por > 50 and irgs_por <= 70:
-#             seten.rep_geral = 'media'
-#         if irgs_por <= 50:
-#             seten.rep_geral = 'baixa'         
-#         seten.irgs = irgs     
-#         seten.save()    
-    
-#     #calcula indice por tema de representatividade
-#     for tema in temas:
-#         sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema)
-#         sentenca_maior_peso = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).order_by('-peso')[0]       
-#         maior_peso = sentenca_maior_peso.peso       
-#         if maior_peso > 0:
-#             for seten in sentencas:
-#                 irse = (seten.peso - 0.1*seten.corte) / maior_peso
-#                 if irse < 0:
-#                     irse = 0                   
-#                 irse_por = int(irse * 100)
-                                        
-#                 if irse_por > 90:
-#                     seten.rep_tema = 'muito-alta' 
-#                 if irse_por > 80 and irse_por <= 90:
-#                     seten.rep_tema = 'alta'
-#                 if irse_por > 70 and irse_por <= 80:
-#                     seten.rep_tema = 'alta-baixa'
-#                 if irse_por > 50 and irse_por <= 70:
-#                     seten.rep_tema = 'media'
-#                 if irse_por <= 50 :
-#                     seten.rep_tema = 'baixa'        
-#                 seten.irse = irse      
-#                 seten.save()
-#         else:
-#             for seten in sentencas:
-#                 seten.irse = 0
-#                 seten.rep_tema = 'baixa'  
-#                 seten.save()   
-  
-#     arq_extracao.write('RELATORIO FINAL DE EXTRACAO \n\n')     
-#     arq_extracao.write('1. RANKING GERAL \n\n')   
-#     arq_extracao.write('frase  \  representatividade \n\n')    
-#     bag = []
-#     sentencas = ExtracaoNew.objects.filter(irgs__gt=param.radio_r).order_by('-irgs')
-#     cont = 1
-#     for seten in sentencas:                
-#         if seten.frase not in bag:
-#             arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_geral + '\n')
-#             bag.append(seten.frase)
-#             cont = cont + 1
-   
-#     arq_extracao.write('\n\n 2. RANKING POR TEMAS \n\n')
-#     for tema in temas:
-#         arq_extracao.write('Tema: ' + tema.tema.encode('utf-8').decode('utf-8')  + '\n\n')   
-#         arq_extracao.write('frase  \  representatividade \n\n')    
-#         bag = []
-#         sentencas = ExtracaoNew.objects.filter(protofrase__contains=tema.tema).filter(irse__gt=param.radio_r).order_by('-irse')
-#         cont = 1
-#         for seten in sentencas:                
-#             if seten.frase not in bag:
-#                 arq_extracao.write(str(cont) + ' - ' + seten.frase.encode('utf-8').decode('utf-8')  + '  \  ' + seten.rep_tema + '\n')
-#                 a = DadosExtracaoNew(irgs=seten.irgs, irgs_p=100*seten.irgs,irse=seten.irse,irse_p=100*seten.irse,tema=tema.tema, protofrase = seten.protofrase, quantidade = 0, sentenca=seten.frase)
-               
-#                 a.save()
-#                 bag.append(seten.frase)
-#                 cont = cont + 1
-#         arq_extracao.write('\n\n')
-        
-#         #corrige nao selecçao
-#         if cont == 1:
-#             a = DadosExtracaoNew(irgs=0, irgs_p=0,irse=0,irse_p=0,tema=tema.tema, protofrase = 'null', quantidade = 0, sentenca='null')               
-#             a.save()                  
-
-#     arq_extracao.close()   
-     
-#     return render(request, 'extrator/extrator_resultados.html', {'tempo_p5re':'x','goto':'logo_repres', 'muda_logo':'logo_repres','fim':'fim'})
-#     # 
+    if passo == '6':
+        p6_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","r","utf-8").read()             
+        return render(request, 'extrator/extrator_resultados.html', {'relatorio_p6':p6_relatorio,'resultados_p6':'res','goto':'p6-result'})
+
+    return render(request, 'extrator/extrator_resultados.html', {})

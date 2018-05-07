@@ -1,307 +1,202 @@
-RELATORIO FINAL DE EXTRACAO 
-
-1. RANKING GERAL 
-
-frase  \  representatividade 
-
-1 -  são paulo / sp  \  muito-alta
-2 -  in são paulo , sp  \  muito-alta
-3 -  i'm at in são paulo , sp  \  muito-alta
-4 -  i'm at in são paulo , sp w /  \  muito-alta
-5 -  i'm at santander in são paulo , sp  \  muito-alta
-6 -  i'm at portucho in são paulo , sp  \  muito-alta
-7 -  luara lugli ( são paulo , sp )  \  muito-alta
-8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
-9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
-10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
-11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
-12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
-13 -  i'm at rancho português in são paulo , sp  \  muito-alta
-14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
-15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
-16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
-17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
-18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
-19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
-20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
-21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
-22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
-23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
-
-
- 2. RANKING POR TEMAS 
-
-Tema: paulo
-
-frase  \  representatividade 
-
-1 -  são paulo / sp  \  muito-alta
-2 -  in são paulo , sp  \  muito-alta
-3 -  i'm at in são paulo , sp  \  muito-alta
-4 -  i'm at in são paulo , sp w /  \  muito-alta
-5 -  i'm at santander in são paulo , sp  \  muito-alta
-6 -  i'm at portucho in são paulo , sp  \  muito-alta
-7 -  luara lugli ( são paulo , sp )  \  muito-alta
-8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
-9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
-10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
-11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
-12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
-13 -  i'm at rancho português in são paulo , sp  \  muito-alta
-14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
-15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
-16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
-17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
-18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
-19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
-20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
-21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
-22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
-23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
-
-
-Tema: amigo
-
-frase  \  representatividade 
-
-1 -  — se são “ supostas amigas ” é pq nunca foram amigas de verdade  \  muito-alta
-
-
-Tema: deus
-
-frase  \  representatividade 
-
-
-
-Tema: pai
-
-frase  \  representatividade 
-
-
-
-Tema: brasil
-
-frase  \  representatividade 
-
-
-
-Tema: companhia
-
-frase  \  representatividade 
-
-1 -  i'm at companhia equilíbrio  \  muito-alta
-
-
-Tema: sair
-
-frase  \  representatividade 
-
-
-
-Tema: freire
-
-frase  \  representatividade 
-
-1 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
-2 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
-
-
-Tema: amor
-
-frase  \  representatividade 
-
-1 -  um #tbt cheio de fofura e amor  \  muito-alta
-2 -  ele e a jade c são os amores da minha vida  \  muito-alta
-3 -  são os amores da minha vida meixxmo ️  \  muito-alta
-
-
-Tema: centro
-
-frase  \  representatividade 
-
-
-
-Tema: bosta
-
-frase  \  representatividade 
-
-
-
-Tema: mês
-
-frase  \  representatividade 
-
-
-
-Tema: youtube
-
-frase  \  representatividade 
-
-
-
-Tema: motivo
-
-frase  \  representatividade 
-
-
-
-Tema: pessoa
-
-frase  \  representatividade 
-
-
-
-Tema: dinheiro
-
-frase  \  representatividade 
-
-
-
-Tema: vida
-
-frase  \  representatividade 
-
-1 -  ele e a jade c são os amores da minha vida  \  muito-alta
-2 -  são os amores da minha vida meixxmo ️  \  muito-alta
-
-
-Tema: mãe
-
-frase  \  representatividade 
-
-
-
-Tema: verdade
-
-frase  \  representatividade 
-
-1 -  — se são “ supostas amigas ” é pq nunca foram amigas de verdade  \  muito-alta
-
-
-Tema: costa
-
-frase  \  representatividade 
-
-
-
-Tema: jogo
-
-frase  \  representatividade 
-
-
-
-Tema: dia
-
-frase  \  representatividade 
-
-
-
-Tema: mundo
-
-frase  \  representatividade 
-
-
-
-Tema: puta
-
-frase  \  representatividade 
-
-
-
-Tema: vídeo
-
-frase  \  representatividade 
-
-1 -  novo vídeo mostra queda de morador junto com prédio que desabou em sp  \  muito-alta
-
-
-Tema: mulher
-
-frase  \  representatividade 
-
-
-
-Tema: irmão
-
-frase  \  representatividade 
-
-
-
-Tema: prédio
-
-frase  \  representatividade 
-
-1 -  novo vídeo mostra queda de morador junto com prédio que desabou em sp  \  muito-alta
-
-
-Tema: ano
-
-frase  \  representatividade 
-
-
-
-Tema: atenção
-
-frase  \  representatividade 
-
-
-
-Tema: inevitável
-
-frase  \  representatividade 
-
-
-
-Tema: pau
-
-frase  \  representatividade 
-
-1 -  são paulo / sp  \  muito-alta
-2 -  in são paulo , sp  \  muito-alta
-3 -  i'm at in são paulo , sp  \  muito-alta
-4 -  i'm at in são paulo , sp w /  \  muito-alta
-5 -  i'm at santander in são paulo , sp  \  muito-alta
-6 -  i'm at portucho in são paulo , sp  \  muito-alta
-7 -  luara lugli ( são paulo , sp )  \  muito-alta
-8 -  i'm at padaria aveiro in são paulo , sp w /  \  muito-alta
-9 -  academia e estúdio de pilates in são paulo , sp  \  muito-alta
-10 -  i'm at drogasil in são paulo , são paulo / sp  \  muito-alta
-11 -  ##bbmp ( @ porto madalena in são paulo , sp )  \  muito-alta
-12 -  ( @ terminal rodoviário tietê in são paulo , sp )  \  muito-alta
-13 -  i'm at rancho português in são paulo , sp  \  muito-alta
-14 -  i'm at boutique erótica in são paulo , sp w /  \  muito-alta
-15 -  academia e estúdio de pilates in são paulo , sp w /  \  muito-alta
-16 -  i'm at padaria piriquito in são paulo , sp w /  \  muito-alta
-17 -  i'm at dalva e dito in são paulo , sp  \  muito-alta
-18 -  i'm at rua oscar freire in são paulo , sp  \  muito-alta
-19 -  i'm at solare forno e grelha in são paulo , sp  \  muito-alta
-20 -  i'm at rua campina da taborda in são paulo , sp  \  muito-alta
-21 -  i'm at recanto doce casa de pães in são paulo , sp  \  muito-alta
-22 -  i'm at estação oscar freire ( metrô ) in são paulo , sp  \  muito-alta
-23 -  aos teus olhos #polêmico ( @ caixa belas artes in são paulo , sp )  \  muito-alta
-
-
-Tema: peito
-
-frase  \  representatividade 
-
-
-
-Tema: faculdade
-
-frase  \  representatividade 
-
-
-
-Tema: cidade
-
-frase  \  representatividade 
-
-
-
-Tema: aula
-
-frase  \  representatividade 
-
-
+RELATORIO FINAL DE EXTRACAO
+
+
+
+TEMA: lula
+
+subtema / frase / irse / representatividade 
+prisão   /    estou tranquilo e sereno , diz lula perto de completar 30 dias na prisão   /   62.0   /   alta
+prisão   /    pf desmente reportagem da revista veja sobre bastidores de lula na prisão   /   35.0   /   baixa
+prisão   /    policia federal desmentiu a reportagem da veja sobre rotina de lula na prisão   /   32.0   /   baixa
+prisão   /    luana piovani cumprindo " promessa " por prisão de lula em curitiba   /   28.0   /   baixa
+prisão   /    perto de completar um mês na prisão , lula coleciona derrotas na justiça   /   28.0   /   baixa
+prisão   /    um big brother do lula na prisão , com as câmeras 24 horas focadas no molusco   /   24.0   /   baixa
+prisão   /    quando comecei ver estas regalias do lula na prisão juro que lembrei do escobar   /   24.0   /   baixa
+prisão   /    verdade como a que divulgou mentiras sobre lula na prisão aí na pf   /   24.0   /   baixa
+prisão   /    a vida de lula na prisão   /   24.0   /   baixa
+prisão   /    vamos supor q a publicou #fakenews sobre a prisão de lula c capa e tudo e a mentira da revista já foi desmentida pela pf   /   13.0   /   baixissima
+prisão   /    instituto agoniza após prisão de lula e faz brechó e vaquinha para sobreviver   /   13.0   /   baixissima
+prisão   /    prisão de lula mostra que exército assumiu papel-chave na política brasileira   /   13.0   /   baixissima
+prisão   /    ct a prisão de lula inocente sem provas vcs da oab nada fazem lamachia   /   13.0   /   baixissima
+prisão   /    nações se mobilizando indignadas contra prisão de lula , mas eu soube direito   /   13.0   /   baixissima
+prisão   /    lula agoniado na prisão   /   0.0   /   baixissima
+prisão   /    seu lugar é na prisão   /   0.0   /   baixissima
+
+dia   /    lula livre é invadido em curitiba e lula acorda sem o bom dia dos   /   74.0   /   alta
+dia   /    estou tranquilo e sereno , diz lula perto de completar 30 dias na prisão   /   66.0   /   alta
+dia   /    vá lá dar bom dia pro lula pra ver só o que o delegado da pf vai fazer com as pecinhas do xilofone   /   32.0   /   baixa
+dia   /    delegado da polícia federal acaba com o bom dia lula   /   30.0   /   baixa
+dia   /    homem que atacou o bom dia lula sai livre   /   26.0   /   baixa
+dia   /    petista se queixa do isolamento antes de completar 30 dias na cadeia   /   24.0   /   baixa
+dia   /    vou gravar a dilma dando bom dia ao lula em mp3 e colocar como som do despertador   /   16.0   /   baixissima
+dia   /    bom dia , presidente lula   /   12.0   /   baixissima
+dia   /    se preparavam pro “ bom dia lula ”   /   12.0   /   baixissima
+dia   /    álvaro dias dou para campanha de delegado que atacou acampamento pró-lula   /   8.0   /   baixissima
+dia   /    todo dia só falam do lula , cansei de todo dia a mesma coisa , o cara já tá preso , e o povo não esquece do cara , oh god   /   4.0   /   baixissima
+dia   /    todo santo dia alguma coisa envolvendo nosso digníssimo presidente vulgo temer puta que pariu   /   4.0   /   baixissima
+dia   /    lula será solto dia 10 de maio   /   4.0   /   baixissima
+dia   /    q nem o lula eu espero q como um bagulhinho da mamãe eu tenha um pão com mortadela um dia   /   0.0   /   baixissima
+dia   /    durma bem e continue sonhando com um brasil mais justo q você nos proporcionou um dia   /   0.0   /   baixissima
+dia   /    todo dia tem temer tentando falar o nome inteiro do corinthians k   /   0.0   /   baixissima
+dia   /    rede globo começou a falar de temer , agora é todo dia e dia todo   /   0.0   /   baixissima
+dia   /    raquel é contra arquivamento e pede mais 60 dias para inquérito dos portos   /   0.0   /   baixissima
+dia   /    " meu dia melhor tu és o motivo de eu me sentir cada vez mais vivo " r   /   0.0   /   baixissima
+dia   /    amanhã beberei em comemoração ao dia da cana   /   0.0   /   baixissima
+
+cadeia   /    comissão de direitos humanos do mercosul pede para visitar lula na cadeia   /   75.0   /   alta
+cadeia   /    pro lula na cadeia   /   33.0   /   baixa
+cadeia   /    muito legal saber que o lula aprendeu escrever na cadeia   /   25.0   /   baixa
+cadeia   /    lula tem que apodrecer na cadeia   /   16.0   /   baixissima
+cadeia   /    lula vai sair da cadeia   /   16.0   /   baixissima
+cadeia   /    ainda bem que o lula curtiu o primeiro mês na cadeia , por que ainda faltam 12 anos pra ele sair dela   /   0.0   /   baixissima
+cadeia   /    temer , sua batata está assando , está quase pronta , o próximo corrupto a rir dentro de uma cadeia será vocês e seus capangas   /   0.0   /   baixissima
+cadeia   /    cadeia nele , terrorista   /   0.0   /   baixissima
+
+stf   /    a segunda turma do stf julgará a partir de hoje um pedido de liberdade apresentado pela defesa de lula   /   27.0   /   baixa
+stf   /    julgamento virtual de recurso de lula no stf começa hoje   /   27.0   /   baixa
+stf   /    começou no stf o julgamento virtual que deve libertar lula   /   16.0   /   baixissima
+stf   /    cunha continua preso , pf x lula e temer sugere mudança na indicação do stf   /   11.0   /   baixissima
+stf   /    temer sugere que stf seja indicado pelos três poderes   /   11.0   /   baixissima
+stf   /    essas provas bom-básticas contra lula que o stf tentou tirar   /   11.0   /   baixissima
+
+gente   /    to o próprio temer sendo aconselhado a sair mais de casa conhecer gente nova tomar um ar fora do caixão   /   0.0   /   baixissima
+gente   /    gente não gosto do trump nem do temer é um desafio não me deem unf plsss   /   0.0   /   baixissima
+gente   /    gente , primeiro mensário do lula   /   0.0   /   baixissima
+gente   /    ainda tem gente que defende o muribundo lula   /   0.0   /   baixissima
+gente   /    tem gente fingindo de esquecido   /   0.0   /   baixissima
+
+
+TEMA: temer
+
+subtema / frase / irse / representatividade 
+michel   /   Nao foi possivel extrair frases
+
+poder   /    se a filha do temer pega empréstimo em banco pq eu não posso me endividar até o talo   /   31.0   /   baixa
+poder   /    eles tem medo dos seus filhos verem casal gay na tv , eu tenho medo dos meus filhos verem temer no poder   /   25.0   /   baixa
+poder   /    temer insinua que pode haver delito tolerável   /   25.0   /   baixa
+poder   /    temer insinua que pode haver delito contornável   /   25.0   /   baixa
+poder   /    agora articulação inconstitucional no stf pode tirar lula da ca   /   25.0   /   baixa
+poder   /    lava jato indica autonomia e independência entre poderes , diz temer   /   21.0   /   baixa
+poder   /    temer admite que pode recorrer à omc sobre sobretaxas de aço e alumínio   /   12.0   /   baixissima
+poder   /    poder em foco já vai abrir espaço pro temer   /   9.0   /   baixissima
+poder   /    temer sugere que stf seja indicado pelos três poderes   /   6.0   /   baixissima
+poder   /    o lula não pode tá preso , ele não matou ninguém   /   6.0   /   baixissima
+poder   /    ja podem gritar " temer golpista "   /   6.0   /   baixissima
+poder   /    lula pode ser assassinado   /   6.0   /   baixissima
+poder   /    carro de som com propaganda pró lula , nas ruas de são bernardo do campo hoje 04/05 / 2018 isso pode   /   0.0   /   baixissima
+poder   /    vive sugando o poder público e nada opina sobre a roubalheira do temer cherini votou com ele   /   0.0   /   baixissima
+poder   /    ‘ julgamento virtual ’ que pode soltar lula será definido até 10 de maio   /   0.0   /   baixissima
+poder   /    pessoas inseguras e com poder andam escoltados vide o vampirão do temer   /   0.0   /   baixissima
+poder   /    nem deus pode ajudar o lula , dona glessi   /   0.0   /   baixissima
+poder   /    cheguei eu aborrecido , pois comigo ninguém pode   /   0.0   /   baixissima
+poder   /    só pode estar brincando   /   0.0   /   baixissima
+
+nome   /    cinismo tem nome , imaginem o quanto de nosso dinheiro foi investido para consertar a cara do michel temer e fhc   /   61.0   /   alta
+nome   /    homem acusado de matar delegado usava celular com nome e cpf de michel temer   /   61.0   /   alta
+nome   /    suspeito de matar delegado na bahia é detido com celular em nome de michel temer   /   61.0   /   alta
+nome   /    ' suspeito de matar delegado usava celular com nome e cpf de michel temer ' via   /   61.0   /   alta
+nome   /    temer comete gafe e confunde nome do corinthians novamente   /   23.0   /   baixa
+nome   /    o cara dá um jeito de enfiar o nome do lula   /   3.0   /   baixissima
+nome   /    mas viu um que tirou e o nome dele é lula   /   3.0   /   baixissima
+nome   /    lula é tão tão que até ator sem futuro quer usar o nome dele para se promover   /   0.0   /   baixissima
+nome   /    mas ninguém é obrigado a decorar nome de time pequeno , nem o temer   /   0.0   /   baixissima
+nome   /    todo dia tem temer tentando falar o nome inteiro do corinthians k   /   0.0   /   baixissima
+
+dilma   /    o dória é uma decepção e o lula , a dilma , dirceu é o que para você   /   18.0   /   baixissima
+dilma   /    #jornaldacultura temer tá aprendendo a discursar como a dilma   /   18.0   /   baixissima
+dilma   /    lula ou dilma   /   18.0   /   baixissima
+dilma   /    vou gravar a dilma dando bom dia ao lula em mp3 e colocar como som do despertador   /   0.0   /   baixissima
+dilma   /    o temer já tá começando a discursar quase igual a dilma , viajando numa nice k #jornaldacultura   /   0.0   /   baixissima
+dilma   /    breaking news a dilma está escrevendo os discursos do temer   /   0.0   /   baixissima
+dilma   /    temer é uma dilma melhorada na didática , mas com mesma linguagem   /   0.0   /   baixissima
+dilma   /    campello é a dilma e o roberto monteiro o temer   /   0.0   /   baixissima
+dilma   /    próximos deverão ser dilma e lula   /   0.0   /   baixissima
+dilma   /    votei na dilma não no temer k , coisa boa   /   0.0   /   baixissima
+dilma   /    o temer foi picado pela dilma   /   0.0   /   baixissima
+dilma   /    sucesso foi o governo dilma   /   0.0   /   baixissima
+dilma   /    dilma   /   0.0   /   baixissima
+
+governo   /    o escândalo foi na loterj e joga no colo do governo lula , que jornalista ( jornalixo ) cretino   /   8.0   /   baixissima
+governo   /    temer critica sobretaxa do aço , mas diz que governo deve aceitar cotas   /   8.0   /   baixissima
+governo   /    aê foice de são paulo , bota os dados do governo lula   /   8.0   /   baixissima
+governo   /    vamos ter que pagar pelas cagadas que o lula fez governo separa r $ 1,5 bi para honrar calote da venezuela   /   0.0   /   baixissima
+governo   /    sob o desgoverno golpista temer , brasil virou cocô do cavalo do bandido   /   0.0   /   baixissima
+governo   /    sucesso foi o governo dilma   /   0.0   /   baixissima
+
+país   /    #jornaldacultura temer não tem vergonha na cara , o país está as traças com o maior índice de desemprego da história e não há vagas   /   28.0   /   baixa
+país   /    #jornaldacultura temer e alice no país das maravilhas   /   9.0   /   baixissima
+país   /    quando o temer fala que o país tá crescendo   /   9.0   /   baixissima
+país   /    datafolha reconhece que lula é o maior líder político do país   /   0.0   /   baixissima
+país   /    para temer , em vários lugares do país o estado é o exército   /   0.0   /   baixissima
+país   /    “ lula dirigia o país sob efeito de álcool ”   /   0.0   /   baixissima
+país   /    sair mais do país , com certeza   /   0.0   /   baixissima
+país   /    jn , esse é o país que eu não quero   /   0.0   /   baixissima
+país   /    este país é um hospício   /   0.0   /   baixissima
+país   /    em que país você vive   /   0.0   /   baixissima
+
+cunha   /    cunha continua preso , pf x lula e temer sugere mudança na indicação do stf   /   40.0   /   baixa
+cunha   /    a globo torrando temer , cunha e aécio   /   40.0   /   baixa
+cunha   /    já que alguém acredita q o temer ava chupando um picolé igual quando eu falei q o cunha tava num flat em moema   /   0.0   /   baixissima
+
+
+TEMA: filho
+
+subtema / frase / irse / representatividade 
+reforma   /    filha de temer admite que coronel lima atuou em sua reforma   /   75.0   /   alta
+reforma   /    capas de dizer que a reforma ná casa dá filha do temer foi normal , governo temer só vergonha   /   62.0   /   alta
+reforma   /    filha de temer diz à pf que o pai não ajudou em reforma   /   62.0   /   alta
+reforma   /    maristela temer , filha do lula , reformando casa com uma puta grana e ninguém mais bate panela   /   37.0   /   baixa
+reforma   /    #jornalnacional vocês acham q maristela temer ia falar q o pai deu dinheiro para pagar a reforma , ela foi orientada pelo advogados   /   12.0   /   baixissima
+reforma   /    raquel dodge tá botando no 12 o michel temer no caso da reforma da mansão da filhinha dele   /   0.0   /   baixissima
+reforma   /    reforma da previdência é tema obrigatório nas eleições , diz temer   /   0.0   /   baixissima
+reforma   /    prendeu lula por uma reforma que nunca existiu , mas é aliado de temer ,   /   0.0   /   baixissima
+reforma   /    então , a reforma não atendeu ao que se dispôs   /   0.0   /   baixissima
+
+globo   /    jornal nacional todo eu disse todo falando mau do temer essa globo e maldita mentirosos filhos da puta   /   36.0   /   baixa
+globo   /    nossa a globo repetiu pela quarta vez temer fode essa filho da puta   /   36.0   /   baixa
+globo   /    rede globo começou a falar de temer , agora é todo dia e dia todo   /   0.0   /   baixissima
+globo   /    fachin que “ tem medo da globo ” leva ao pleno mais   /   0.0   /   baixissima
+globo   /    a globo torrando temer , cunha e aécio   /   0.0   /   baixissima
+globo   /    q raiva da globo , vai tomar no cu   /   0.0   /   baixissima
+globo   /    a globo quer por quer pegar o temer   /   0.0   /   baixissima
+globo   /    globo e quem manda sim   /   0.0   /   baixissima
+
+
+TEMA: pf
+
+subtema / frase / irse / representatividade 
+delegado   /    delegado da pf ataca acampamento lula livre em curitiba   /   80.0   /   alta
+delegado   /    delegado da pf que atacou vigília pró-lula levou bomba no psicotécnico   /   80.0   /   alta
+delegado   /    em dia de fúria , delegado da pf quebra o som da vigília lula livre   /   63.0   /   alta
+delegado   /    absurdo o que o delegado da pf fez no acampamento lula livre   /   61.0   /   alta
+delegado   /    ' suspeito de matar delegado usava celular com nome e cpf de michel temer ' via   /   40.0   /   baixa
+delegado   /    delegado da pf quebra caixas de som de acampados pró-lula   /   38.0   /   baixa
+delegado   /    homem acusado de matar delegado usava celular com nome e cpf de michel temer   /   36.0   /   baixa
+delegado   /    vá lá dar bom dia pro lula pra ver só o que o delegado da pf vai fazer com as pecinhas do xilofone   /   32.0   /   baixa
+delegado   /    suspeito de matar delegado na bahia é detido com celular em nome de michel temer   /   25.0   /   baixa
+delegado   /    delegado que atacou acampamento de lula é suplente de deputado   /   25.0   /   baixa
+delegado   /    delegado da polícia federal acaba com o bom dia lula   /   16.0   /   baixissima
+delegado   /    delegado da policia federal ataca acampamento dos apoiadores de lula e sai escoltado pela pf   /   14.0   /   baixissima
+delegado   /    álvaro dias dou para campanha de delegado que atacou acampamento pró-lula   /   14.0   /   baixissima
+delegado   /    delegado da empurra caixas de som e causa confusão em ato pró-lula em curitiba , diz pm   /   9.0   /   baixissima
+delegado   /    será que se a manifestação fosse contra o lula o delegado teria a mesma atitude   /   0.0   /   baixissima
+
+
+TEMA: brasil
+
+subtema / frase / irse / representatividade 
+presidente   /    boa noite , presidente lula #lulalivre   /   39.0   /   baixa
+presidente   /    boa noite de hoje ao presidente lula   /   39.0   /   baixa
+presidente   /    nosso ex e futuro presidente lula   /   26.0   /   baixa
+presidente   /    bom dia , presidente lula   /   26.0   /   baixa
+presidente   /    o presidente lula   /   26.0   /   baixa
+presidente   /    lula presidente , goleiro bruno deputado federal , nardoni deputado estadual e por aí vai   /   8.0   /   baixissima
+presidente   /    " o planalto disse que o presidente michel temer nunca recebeu propina de ninguém " #jn   /   8.0   /   baixissima
+presidente   /    todo santo dia alguma coisa envolvendo nosso digníssimo presidente vulgo temer puta que pariu   /   8.0   /   baixissima
+presidente   /    governo temer ' anda de lado ' há mais de um ano , diz presidente do insper   /   8.0   /   baixissima
+presidente   /    #jornaldacultura construção civil é a saída para o presidente temer   /   8.0   /   baixissima
+presidente   /    alguém avisa que lula não é presidente   /   8.0   /   baixissima
+presidente   /    pessoas que ignoram um hang lose merecem o inferno e temer presidente   /   0.0   /   baixissima
+presidente   /    lula foi o maior presidente que o brasil já teve   /   0.0   /   baixissima
+presidente   /    entrevistas do presidente   /   0.0   /   baixissima
 

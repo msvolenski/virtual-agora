@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, DadosSelecaoTemas, PesosEAlpha, TemasNew, ProtoFrasesNew, SentencasAvaliadas, DadosExtracaoNew
+from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 
 # Register your models here.
 
@@ -16,7 +16,7 @@ class CorrigePalavraAdmin(admin.ModelAdmin):
   actions = ['delete_selected']
 
 class DadosPreprocAdmin(admin.ModelAdmin):
-  list_display = ['flag_completo','flag_testapalavra','corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
+  list_display = ['corretor','id','palavras_por_sentenca_lssw', 'palavras_por_sentenca_org','quantidade_de_sentencas','palavras_texto_original', 'palavras_texto_lematizado','palavras_texto_lematizado_ssw','nome_rel_protofrase']
 
 class TabelaRankingAdmin(admin.ModelAdmin):
   list_display = ['vertice_nome','vertice_numero','grau', 'grau_norm', 'betweenness','betweenness_norm','eigenvector','eigenvector_norm', 'potenciacao']
@@ -24,21 +24,11 @@ class TabelaRankingAdmin(admin.ModelAdmin):
 class ListaDeAdjacenciasAdmin(admin.ModelAdmin):
   list_display = ['vertice_i','vertice_f','peso']
 
-
-class DadosSelecaoTemasAdmin(admin.ModelAdmin):
-  list_display = ['p_grau','p_bet','p_eigen']
-
-class PesosEAlphaAdmin(admin.ModelAdmin):
-  list_display = ['alpha','alphaesp','erro','p_grau','p_betw','p_eigene']
-
 class TemasNewAdmin(admin.ModelAdmin):
   list_display = ['tema','classificacao' ,'irt']
 
 class ListaDeSubstantivosAdmin(admin.ModelAdmin):
   list_display = ['palavra','substantivo']
-
-class ProtoFrasesNewAdmin(admin.ModelAdmin):
-  list_display = ['protofrase','extracao','frase']
 
 class SentencasAvaliadasAdmin(admin.ModelAdmin):
   list_display = ['tema', 'subtema', 'proto', 'frase', 'peso', 'corte', 'irse']
@@ -50,13 +40,8 @@ class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
 
 class ParametrosDeAjusteAdmin(admin.ModelAdmin):
-  list_display = ['radio_r', 'faixa_histo','check_grau','check_betw','check_eigen','permitir_RT','num_tweets', 'acuidade','ident','k_betweenness','dr_delta_min', 'f_corte','f_min_bigramas']
+  list_display = ['radio_r', 'faixa_histo','permitir_RT','num_tweets', 'ident','k_betweenness', 'f_corte','f_min_bigramas']
 
-class DadosExtracaoNewAdmin(admin.ModelAdmin):
-  list_display = ['tema', 'protofrase', 'sentenca', 'irse', 'irse_p', 'irgs', 'irgs_p']
-  
-
-  
 class MapasTemasESubtemasAdmin(admin.ModelAdmin):
   list_display = ['ident','tema', 'subtema', 'grau','irt_l','fim_de_arvore']
   
@@ -71,12 +56,8 @@ admin.site.register(TextoPreproc, TextoPreprocAdmin)
 admin.site.register(DadosPreproc, DadosPreprocAdmin)
 admin.site.register(ListaVertices, ListaVerticesAdmin)
 admin.site.register(TabelaRanking, TabelaRankingAdmin)
-admin.site.register(DadosSelecaoTemas, DadosSelecaoTemasAdmin)
-admin.site.register(PesosEAlpha, PesosEAlphaAdmin)
 admin.site.register(TemasNew, TemasNewAdmin)
-admin.site.register(ProtoFrasesNew, ProtoFrasesNewAdmin)
 admin.site.register(SentencasAvaliadas, SentencasAvaliadasAdmin)
-admin.site.register(DadosExtracaoNew, DadosExtracaoNewAdmin)
 admin.site.register(TestaPalavra, TestaPalavraAdmin)
 admin.site.register(ParametrosDeAjuste, ParametrosDeAjusteAdmin)
 admin.site.register(Clusters, ClustersAdmin)

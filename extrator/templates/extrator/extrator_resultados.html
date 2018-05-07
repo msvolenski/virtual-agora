@@ -9,18 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
-    <style>
-        .links line {
-            stroke: #999;
-            stroke-opacity: 0.6;
-        }
-
-        .nodes circle {
-            stroke: #fff;
-            stroke-width: 1.5px;
-        }
-    </style>
+    <meta name="author" content="">  
     <link rel="icon" href="{% static 'agora/bootstrap/docs/favicon.ico' %}">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -106,7 +95,7 @@
                         <a class="page-scroll" href="#passo5">Passo 5</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#resultados">Resultados</a>
+                        <a class="page-scroll" href="#passo6">Pass0 6</a>
                     </li>
 
                 </ul>
@@ -154,25 +143,11 @@
                     <a href="{% url 'extrator:carrega_ls' %}" class="botao_ajuste">Carregar Lista de Substantivos</a>
                     <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
 
-                    <div class="titulo_ajuste">Métricas</div>
-                    <div class="form_ajuste">
-                        <form action="{% url 'extrator:ajustar_parametro' 'opcao8' %}" method="POST" role="form" enctype="multipart/form-data">
-                            <div style="display:inline-block">
-                                <input type="checkbox" name="checks" {{check_g}} value="grau"> Graus
-                                <input type="checkbox" name="checks" {{check_b}} value="betw"> Betweenness
-                                <input type="checkbox" name="checks" {{check_c}} value="clos"> eigenvector
-                            </div>
-                            <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">
-                                <input type="submit" class="botao_enviar" value="Enviar">
-                            </div>
-                        </form>
-                    </div>
-
                     <div class="titulo_ajuste">Quantidade de Tweets </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao6' %}" method="POST" role="form" enctype="multipart/form-data">
                             n =
-                            <input style="width:100px" type="number" step="1" name="valor_nt" value={{valornt}} size="1"> Tweets
+                            <input style="width:100px" type="number" name="valor_nt" value={{valornt}} > Tweets
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -195,7 +170,7 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao0' %}" method="POST" role="form" enctype="multipart/form-data">
                             k =
-                            <input style="width:50px" type="number" step="1" name="valor_k" value={{valork}} size="1"> % dos nós da rede
+                            <input style="width:50px" type="number" name="valor_k" value={{valork}} > % dos nós da rede
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -203,7 +178,7 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
                             faixa =
-                            <input style="width:80px" type="number" step="any" name="faixa_histo" value={{xxxx}} size="1" , min="0" max="3">
+                            <input style="width:80px" type="number" name="faixa_histo" value={{xxxx}} , min="0" max="3">
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
@@ -211,39 +186,34 @@
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
                             fc =
-                            <input style="width:50px" type="number" step="1" name="valor_fc" value={{valorfc}} size="1"> % dos nós totais
+                            <input style="width:50px" type="number" name="valor_fc" value={{valorfc}}> % dos nós totais
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
                     <div class="titulo_ajuste">Frequência mínima do bigrama </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data"> fb =
-                            <input style="width:50px" type="number" step="1" name="valor_fb" value={{valorfb}} size="1"> % de todos os bigramas do tema
+                            <input style="width:50px" type="number" name="valor_fb" value={{valorfb}}> % de todos os bigramas do tema
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
-                    <div class="titulo_ajuste">Acuidade de Extração </div>
-                    <div class="form_ajuste">
-                        <form action="{% url 'extrator:ajustar_parametro' 'opcao5' %}" method="POST" role="form" enctype="multipart/form-data"> ae =
-                            <input style="width:50px" type="number" step="1" name="valor_ae" value={{valorae}} size="1"> % de todas as extrações
-                            <input type="submit" class="botao_enviar" value="Enviar">
-                        </form>
-                    </div>
+                 
                     <div class="titulo_ajuste">Representatividade mínima</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao9' %}" method="POST" role="form" enctype="multipart/form-data">
                             <div style="display:inline-block">
-                                <input type="radio" name="radios" {{radios_1}} value="0.9"> Muito Alta
-                                <input type="radio" name="radios" {{radios_2}} value="0.8"> Alta
-                                <input type="radio" name="radios" {{radios_3}} value="0.7"> Alta Baixa
-                                <input type="radio" name="radios" {{radios_4}} value="0.4"> Média
-                                <input type="radio" name="radios" {{radios_5}} value="0.0"> Baixa
+                                <input type="checkbox" name="radios" {{radios_1}} value="5"> Muito Alta
+                                <input type="checkbox" name="radios" {{radios_2}} value="4"> Alta
+                                <input type="checkbox" name="radios" {{radios_3}} value="3"> Media
+                                <input type="checkbox" name="radios" {{radios_4}} value="2"> Baixa
+                                <input type="checkbox" name="radios" {{radios_5}} value="1"> Muito Baixa
+
                             </div>
                             <div style="display:inline-block;position:absolute;margin-top:3px;margin-left:10px;">
                                 <input type="submit" class="botao_enviar" value="Enviar">
                             </div>
                         </form>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -322,16 +292,21 @@
                 </div>
 
             </div>
-        </div>
-
-        {% if documento %}
+        </div>       
+        
         <!-- RESULTADOS DO PASSO 1  -->
+        {% if documento %}        
+        <div class="sem_resultado" style="margin-top:100px">
+            <b>RESULTADOS</b>
+        </div>
         <div class="result-content" id="resultado-passo-1">
             <div style="padding:50px">{{documento|linebreaks}}</div>
         </div>
-        {% endif %} {% if not documento %}
+        {% endif %} 
+        
+        {% if not documento %}
         <div class="sem_resultado" style="margin-top:100px">
-            <b>RESULTADOS</b>
+            <a href="{% url 'extrator:mostra_resultados' '1' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 1 +++++++++++++++++++++++++ 1  -->
@@ -422,12 +397,16 @@
 
         <!-- RESULTADOS DO PASSO 2  -->
         {% if documento_p2 %}
+        <div class="sem_resultado" style="position:relative;margin-top:110px;">
+            <b>RESULTADOS</b>
+        </div>
         <div class="result-content" id="resultado-passo-2" style="margin-top:150px">
             <div>{{documento_p2|linebreaks}}</div>
         </div>
-        {% endif %} {% if not documento_p2 %}
+        {% endif %}
+         {% if not documento_p2 %}
         <div class="sem_resultado" style="position:relative;margin-top:110px;">
-            <b>RESULTADOS</b>
+            <a href="{% url 'extrator:mostra_resultados' '2' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 2 +++++++++++++++++++++++++ 1  -->
@@ -488,7 +467,7 @@
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
-                        <span id="logo_rede" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
+                        <span id="logo_mat" class="glyphicon glyphicon-cog" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #33e0a1">
                         <h2>Gerar Rede Complexa</h2>
@@ -504,12 +483,16 @@
 
         <!-- RESULTADOS DO PASSO 3  -->
         {% if rede_p3 %}
-        <div class="result-content" id="resultado-passo-3" style="margin-top:109px;height:600px;">
-            <svg id="resultado_p3" width="960" height="600"></svg>
-        </div>
-        {% endif %} {% if not rede_p3 %}
         <div class="sem_resultado" style="position:relative;margin-top:74px;">
             <b>RESULTADOS</b>
+        </div>
+        <div id="resultado-passo-3" style="margin-top:109px;height:800px;">
+            <svg id="resultado_p3" width="1200" height="800"></svg>
+        </div>
+        {% endif %}
+         {% if not rede_p3 %}
+        <div class="sem_resultado" style="position:relative;margin-top:74px;">
+            <a href="{% url 'extrator:mostra_resultados' '3' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 3 +++++++++++++++++++++++++ 1  -->
@@ -573,7 +556,10 @@
 
         <!-- RESULTADOS DO PASSO 4  -->
         {% if histo_p4 %}
-        <div class="result-content" id="resultado-passo-4-histo" style="margin-top:70px;height:600px;">
+        <div class="sem_resultado" style="position:relative;margin-top:65px;">
+            <b>RESULTADOS</b>
+        </div>
+        <div id="resultado-passo-4-histo" style="margin-top:70px;height:600px;">
 
         </div>
         {% endif %} {% if documento_p4 %}
@@ -582,7 +568,7 @@
         </div>
         {% endif %} {% if not histo_p4 %}
         <div class="sem_resultado" style="position:relative;margin-top:65px;">
-            <b>RESULTADOS</b>
+            <a href="{% url 'extrator:mostra_resultados' '4' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 4 +++++++++++++++++++++++++ 1  -->
@@ -597,7 +583,7 @@
         </div>
 
         <div id="cd-timeline" class="cd-container" style="position:relative;">
-            <div id="passo5">    
+            <div id="passo5">
 
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
@@ -606,7 +592,7 @@
                     </div>
                     <div class="cd-timeline-content" style="background: rgb(170, 192, 239)">
                         <h2>Agrupar Temas e Sub-temas</h2>
-                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>                   
+                        <a href="{% url 'extrator:agrupar_temas' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Agrupar</a>
                     </div>
                 </div>
 
@@ -617,28 +603,29 @@
                     </div>
                     <div class="cd-timeline-content" style="background: rgb(170, 192, 239)">
                         <h2>Gerar Mapas e Resultados</h2>
-                        <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>                        
+                        <a href="{% url 'extrator:gerar_mapa_resultados' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
                     </div>
                 </div>
 
             </div>
         </div>
-       
-        <!-- RESULTADOS DO PASSO 5  -->
-       {% if resultados_p5 %}
-       <div class="result-content" id="resultado-passo-5-grafo" style="margin-top:-10px;height:600px;">
 
-       </div>
-       {% endif %} {% if resultados_p5 %}
-       <div class="result-content" id="resultado-passo-5-doc" style="margin-top:150px">
-           <div>{{p5_relatorio|linebreaks}}</div>
-       </div>
-       {% endif %} {% if not resultados_p5 %}
-       <div class="sem_resultado" style="position:relative;margin-top:-10px;">
-           <b>RESULTADOS</b>
-       </div>
-       {% endif %}
-       <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 5 +++++++++++++++++++++++++ 1  -
+        <!-- RESULTADOS DO PASSO 5  -->
+        {% if resultados_p5 %}
+        <div class="sem_resultado" style="position:relative;margin-top:-10px;">
+            <b>RESULTADOS</b>
+        </div>        
+        <div id="resultado-passo-5-grafo" style="margin-top:80px;height:600px;"></div>
+        {% endif %} {% if resultados_p5 %}
+        <div class="result-content" id="resultado-passo-5-doc" style="margin-top:150px">
+            <div>{{p5_relatorio|linebreaks}}</div>
+        </div>
+        {% endif %} {% if not resultados_p5 %}
+        <div class="sem_resultado" style="position:relative;margin-top:-10px;">
+            <a href="{% url 'extrator:mostra_resultados' '5' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 5 +++++++++++++++++++++++++ 1  -->
 
 
 
@@ -646,7 +633,7 @@
 
         <!-- começa o PASSO 6  -->
         <div class="inicio_timeline">
-            <b>PASSO 6</b>
+            <a href="{% url 'extrator:executa_passo_6' %}" style="color:inherit;font-weight:bold">PASSO 6</a>
         </div>
 
         <div id="cd-timeline" class="cd-container" style="position:relative;">
@@ -697,227 +684,211 @@
 
             </div>
         </div>
+
+        <!-- RESULTADOS DO PASSO 6  -->
+        {% if resultados_p6 %}
+        <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:70px;">
+            <b>RESULTADOS</b>
+        </div>
+        {% endif %} {% if resultados_p6 %}
+        <div id="resultado-passo-6-grafo" style="margin-top:100px;"></div>
+        {% endif %} {% if resultados_p6 %}
+        <div class="result-content" id="resultado-passo-6-doc" style="margin-top:150px">
+            <div>{{relatorio_p6|linebreaks}}</div>
+        </div>
+
+        {% endif %} {% if not resultados_p6 %}
+        <div class="sem_resultado" style="position:relative;margin-top:70px;">
+            <a href="{% url 'extrator:mostra_resultados' '6' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
+        </div>
+        {% endif %}
+        <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 6 +++++++++++++++++++++++++ 1  -->
         <!-- fim dos passos  -->
 
-
-        <div id="fim" class="botao_resultados_2">
-            <a href="{% url 'extrator:resultados' 'none' %}" style="color:black">
-                <b>RESULTADOS</b>
-            </a>
-        </div>
-
-        {% if tempo_p2a5 %}
-        <span class="cd-date" style="margin-left:10px;">{{tempo_p2a5}} s</span>
-        {% endif %}
-
-    </section>
-
-
-
-
-
-    <!-- About Section -->
-    <section id="resultados" class="container content-section text-center" style="background:white;">
-
-        <div style="padding:30px;margin:0 auto;font-size:1.5em;font-weight:bold"> MAPA DE TEMAS</div>
-        <resultados style="margin: 0 auto"></resultados>
-        <div style="padding:10px;text-align:left"> LEGENDA </div>
-        <div id="legend" style="margin:0 auto;text-align:center"></div>
-
-    </section>
-
-
-
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contato</h2>
-                <p>Sinta-se livre para opinar e dar feedback sobre o projeto.
-                </p>
-                <p>
-                    <a href="mailto:tiagonovaesangelo@gmail.com">tiagonovaesangelo@gmail.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-
-                    <li>
-                        <a href="https://github.com/msvolenski/virtual-agora" class="btn btn-default btn-lg">
-                            <i class="fa fa-github fa-fw"></i>
-                            <span class="network-name">Github</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer>
-
-
-        <div class="container text-center">
-            <p>Copyright &copy; Agora Unicamp 2017</p>
-            {{popup}}
-        </div>
-    </footer>
-
-    {%if popup %}
-    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
-        <div class="modal-dialog" id="modal-dialog-mob" style="width: 40%;margin-bottom:10px;">
-            <div class="modal-content">
-                <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
-                <a class="glyphicon glyphicon-remove-circle" href="{% url 'extrator:atualiza_corretor' 'nones' 0 'opcao5' %}" style="display:inline;float:right;color:black;font-size:200%;margin-top:-40px;margin-right:30px"></a>
-                <div style="border:1px solid black;margin:10px 30px 10px 30px">
-                    <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%">
-                        <b>{{palavra}}</b>
-                    </div>
-                </div>
-                <div style="color:black;padding:10px;font-size:120%;margin:10px">Faça uma das 5 opções: </div>
-                <div style="border:0.5px solid black;margin:10px 30px 30px 30px">
-                    <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Ignorar "{{palavra}}": </div>
-                    <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao0' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Ignorar</a>
-                    <hr style="border-top: 1px solid #848484">
-
-                    <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Incluir "{{palavra}}" ao dicionário: </div>
-                    <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao1' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
-                    <hr style="border-top: 1px solid #848484">
-                    <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" por uma das sugestões: </div>
-                    <div style="margin:0px 20px 0px 20px">
-                        {% for sugestao in lista_de_sugestoes %}
-                        <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a> {% endfor %} {% if not lista_de_sugestoes %}
-                        <div style="margin-left:40%;">não há sugestões</div>
-                        {% endif %}
-                    </div>
-                    <hr style="border-top: 1px solid #848484">
-                    <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" e adicionar ao dicionário: </div>
-                    <div style="margin-left:5%;margin-bottom:20px">
-                        <form action="{% url 'extrator:atualiza_corretor' 'null' posicao 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">
-                            <input type="text" name="sugestao_usr" required="required">
-                            <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir"
-                                name="substituir">
-                            <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir todas as ocorrências"
-                                name="todas">
-                        </form>
-                    </div>
-                    <hr style="border-top: 1px solid #848484">
-                    <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Adicionar "{{palavra}}" às stop-words (a palavra aparecerá novamente para escolha de uma das opções acima):
-                    </div>
-                    <div style="margin-bottom: 20px">
-                        <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Contato</h2>
+                    <p>Sinta-se livre para opinar e dar feedback sobre o projeto.
+                    </p>
+                    <p>
+                        <a href="mailto:tiagonovaesangelo@gmail.com">tiagonovaesangelo@gmail.com</a>
+                    </p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://github.com/msvolenski/virtual-agora" class="btn btn-default btn-lg">
+                                <i class="fa fa-github fa-fw"></i>
+                                <span class="network-name">Github</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    {% endif %} {%if testa_sub %}
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <p>Copyright &copy; Agora Unicamp 2017</p>
+                {{popup}}
+            </div>
+        </footer>
 
-
-
-
-    <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
-        <form action="{% url 'extrator:testa_substantivo_usuario'%}" method="POST" role="form" enctype="multipart/form-data">
-
-            <div class="modal-dialog" id="modal-dialog-mob">
+        {%if popup %}
+        <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+            <div class="modal-dialog" id="modal-dialog-mob" style="width: 40%;margin-bottom:10px;">
                 <div class="modal-content">
-                    {%for palav in palavras_faltantes %}
-
-                    <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+                    <div style="color:black;padding:10px;margin:10px;font-size:120%">Palavra não reconhecida:</div>
+                    <a class="glyphicon glyphicon-remove-circle" href="{% url 'extrator:atualiza_corretor' 'nones' 0 'opcao5' %}" style="display:inline;float:right;color:black;font-size:200%;margin-top:-40px;margin-right:30px"></a>
                     <div style="border:1px solid black;margin:10px 30px 10px 30px">
                         <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%">
-                            <b>{{palav}}</b>
+                            <b>{{palavra}}</b>
                         </div>
                     </div>
-                    <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
-                    <div style="padding:40px;display:block;margin-left:200px;">
-                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="sim"> Sim
-                        <input type="radio" name="checks_{{palav}}" {{check_c}} value="nao"> Não
+                    <div style="color:black;padding:10px;font-size:120%;margin:10px">Faça uma das 5 opções: </div>
+                    <div style="border:0.5px solid black;margin:10px 30px 30px 30px">
+                        <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Ignorar "{{palavra}}": </div>
+                        <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao0' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Ignorar</a>
+                        <hr style="border-top: 1px solid #848484">
 
-                    </div>
-                    {% endfor %}
-                    <div style="display:inline-block;position:relative;margin:10px;">
-                        <input type="submit" class="botao_enviar" value="Enviar">
+                        <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Incluir "{{palavra}}" ao dicionário: </div>
+                        <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao1' %}" style="padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+                        <hr style="border-top: 1px solid #848484">
+                        <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" por uma das sugestões: </div>
+                        <div style="margin:0px 20px 0px 20px">
+                            {% for sugestao in lista_de_sugestoes %}
+                            <a href="{% url 'extrator:atualiza_corretor' sugestao posicao 'opcao2' %}" style="padding:8px;margin:5px;display:inline-block;color:black;text-align:center;background:#e07070">{{sugestao}}</a> {% endfor %} {% if not lista_de_sugestoes %}
+                            <div style="margin-left:40%;">não há sugestões</div>
+                            {% endif %}
+                        </div>
+                        <hr style="border-top: 1px solid #848484">
+                        <div style="color:black;padding:10px;font-size:120%;margin:10px">Substituir "{{palavra}}" e adicionar ao dicionário: </div>
+                        <div style="margin-left:5%;margin-bottom:20px">
+                            <form action="{% url 'extrator:atualiza_corretor' 'null' posicao 'opcao3' %}" method="POST" role="form" enctype="multipart/form-data">
+                                <input type="text" name="sugestao_usr" required="required">
+                                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir"
+                                    name="substituir">
+                                <input style="padding:10px;color:black;text-align:center;background:#e07070;border:none" type="submit" value="Substituir todas as ocorrências"
+                                    name="todas">
+                            </form>
+                        </div>
+                        <hr style="border-top: 1px solid #848484">
+                        <div style="color:black;padding:20px;font-size:16px;margin:0 auto">Adicionar "{{palavra}}" às stop-words (a palavra aparecerá novamente para escolha de uma das opções
+                            acima):
+                        </div>
+                        <div style="margin-bottom: 20px">
+                            <a href="{% url 'extrator:atualiza_corretor' palavra posicao 'opcao4' %}" style="margin-bottom:50px;padding:10px;margin-left:45%;color:black;text-align:center;background:#e07070;">Adicionar</a>
+                        </div>
                     </div>
                 </div>
-
-        </form>
-
+            </div>
         </div>
-    </div>
 
-    {% endif %}
+        {% endif %} {%if testa_sub %}
+
+        <div id="myModal" class="modal in fade" role="dialog" style="display:block;overflow:auto">
+            <form action="{% url 'extrator:testa_substantivo_usuario'%}" method="POST" role="form" enctype="multipart/form-data">
+
+                <div class="modal-dialog" id="modal-dialog-mob">
+                    <div class="modal-content">
+                        {%for palav in palavras_faltantes %}
+
+                        <div style="color:black;padding:10px;margin:10px;font-size:120%">A palavra:</div>
+                        <div style="border:1px solid black;margin:10px 30px 10px 30px">
+                            <div style="color:black;padding:5px;font-size:20px;text-align:center;margin-bottom:10px 10px 0px 10px;font-size:150%">
+                                <b>{{palav}}</b>
+                            </div>
+                        </div>
+                        <div style="color:black;padding:10px;font-size:120%;margin:10px">É um substantivo? </div>
+                        <div style="padding:40px;display:block;margin-left:200px;">
+                            <input type="radio" name="checks_{{palav}}" {{check_c}} value="sim"> Sim
+                            <input type="radio" name="checks_{{palav}}" {{check_c}} value="nao"> Não
+
+                        </div>
+                        {% endfor %}
+                        <div style="display:inline-block;position:relative;margin:10px;">
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </div>
+                    </div>
+
+            </form>
+
+            </div>
+        </div>
+
+        {% endif %}
 
 
-    <!-- jQuery -->
-    <script src="{% static 'agora/vendor/jquery/jquery.js' %}"></script>
+        <!-- jQuery -->
+        <script src="{% static 'agora/vendor/jquery/jquery.js' %}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'agora/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'agora/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+        <!-- Theme JavaScript -->
+        <script src="{% static 'agora/js/grayscale.min.js' %}"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="{% static 'agora/js/grayscale.min.js' %}"></script>
+        <!-- BS JavaScript -->
+        <script type="text/javascript" src="{% static 'agora/js/bootstrap.js' %}"></script>
 
-    <!-- BS JavaScript -->
-    <script type="text/javascript" src="{% static 'agora/js/bootstrap.js' %}"></script>
-
-    <script src="{% static 'agora/js/main.js' %}"></script>
+        <script src="{% static 'agora/js/main.js' %}"></script>
 
 
 
-    <!-- MONTA RESULTADOS DO PASSO 3 -->
-    {%if rede_p3 %}
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script>
-        var p3_json_rede = "{% static 'agora/json/p3_json_rede.json' %}";
-    </script>
-    <script src="{% static 'agora/js/p3_redecomplexa.js' %}"></script> {% endif %}
+        <!-- MONTA RESULTADOS DO PASSO 3 -->
+        {%if rede_p3 %}
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script>
+            var p3_json_rede = "{% static 'agora/json/p3_json_rede.json' %}";
+        </script>
+        <script src="{% static 'agora/js/p3_redecomplexa.js' %}"></script> {% endif %}
 
-    <!-- MONTA RESULTADOS DO PASSO 4 -->
-    {%if histo_p4 %}
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script>
-        var p4_histograma_data = "{% static 'agora/json/p4_json_histograma.json' %}";
-    </script>
-    <script src="{% static 'agora/js/p4_histograma.js' %}"></script> 
-    {% endif %} 
-    
-    <!-- MONTA RESULTADOS DO PASSO 5 -->
-    {%if resultados_p5 %}
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script>
-        var p5_data = "{% static 'agora/json/p5_json_temas_subtemas.json' %}";
-    </script>  
-    <script src="{% static 'agora/js/p5_mapa_temas_subtemas.js' %}"></script>  
-    {% endif %} 
-    
-   
-    {% if goto %}
-    <script>
-        window.location.hash = '#{{goto}}';
-        3
-    </script> {% endif %} {% if muda_logo %}
-    <script>
-        var classe = document.getElementById('{{muda_logo}}');
-        classe.className = "glyphicon glyphicon-ok";
-        classe.style.color = "#A1E570";
-    </script> {% endif %} {% if muda_logo_error %}
+        <!-- MONTA RESULTADOS DO PASSO 4 -->
+        {%if histo_p4 %}
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script>
+            var p4_histograma_data = "{% static 'agora/json/p4_json_histograma.json' %}";
+        </script>
+        <script src="{% static 'agora/js/p4_histograma.js' %}"></script> {% endif %}
 
-    <script>
-        var classe = document.getElementById('{{muda_logo_error}}');
-        classe.className = "glyphicon glyphicon-remove";
-        classe.style.color = "red";
-    </script> {% endif %}
+        <!-- MONTA RESULTADOS DO PASSO 5 -->
+        {%if resultados_p5 %}
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script>
+            var p5_data = "{% static 'agora/json/p5_json_temas_subtemas.json' %}";
+        </script>
+        <script src="{% static 'agora/js/p5_mapa_temas_subtemas.js' %}"></script> {% endif %}
+
+        <!-- MONTA RESULTADOS DO PASSO 6 -->
+        {%if resultados_p6 %}
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script>
+            var p6_data = "{% static 'agora/json/p6_json_sentencas_extraidas.json' %}";      
+        </script>
+        <script src="{% static 'agora/js/p6_sentencas_extraidas.js' %}"></script> {% endif %}
+
+        <!-- MONTA GOTO -->
+        {% if goto %}
+        <script>
+            window.location.hash = '#{{goto}}';
+            3
+        </script> {% endif %} {% if muda_logo %}
+        <script>
+            var classe = document.getElementById('{{muda_logo}}');
+            classe.className = "glyphicon glyphicon-ok";
+            classe.style.color = "#A1E570";
+        </script> {% endif %} {% if muda_logo_error %}
+
+        <!-- ALTERA ICONE DE PROCESSADO -->
+        <script>
+            var classe = document.getElementById('{{muda_logo_error}}');
+            classe.className = "glyphicon glyphicon-remove";
+            classe.style.color = "red";
+        </script> {% endif %}
 
 
 
