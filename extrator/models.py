@@ -69,7 +69,9 @@ class SentencasAvaliadas(models.Model):
     frase = models.TextField('Frase')
     peso = models.FloatField('peso')
     corte = models.FloatField('corte')
-    irse = models.FloatField('IRSE')   
+    irse = models.FloatField('IRSE')
+    string_graus = models.TextField('Graus da Protofrase')
+    
 
     def __str__(self):
         return self.proto
@@ -135,13 +137,29 @@ class MapasTemasESubtemas(models.Model):
 
 
 class SentencasExtraidas(models.Model):
+    ident = models.IntegerField('Ident')
     tema = models.TextField('Tema')
     subtema = models.TextField('SubTema')    
+    proto = models.TextField('Proto Frase')
     frase = models.TextField('Frase')
     peso = models.FloatField('peso')
+    string_graus = models.TextField('Graus da Protofrase')
     corte = models.FloatField('corte')
     irse = models.FloatField('IRSE')
     representatividade = models.TextField('Representatividade')   
 
     def __str__(self):
         return self.proto
+
+
+class SentencasNucleos(models.Model):
+    ident = models.IntegerField('Ident')      
+    proto = models.TextField('Proto Frase')
+    frase = models.TextField('Frase')
+    frase_l = models.TextField('Frase Lematizada')
+    peso = models.FloatField('peso')
+    string_graus = models.TextField('Graus da Protofrase')
+    nucleo = models.TextField('Núcleo da Frase')   
+
+    def __str__(self):
+        return self.ident

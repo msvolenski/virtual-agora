@@ -670,6 +670,21 @@
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
+                        <span id="logo_enucleos" class="glyphicon glyphicon-king" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content" style="background: #E04644">
+                        <h2>Extrair Núcleos das Sentenças</h2>
+                        <a href="{% url 'extrator:extrair_nucleos' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Extrair</a>
+                        {% if tempo_p5re %}
+                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5re}} s</span>
+                        {% endif %}
+                    </div>
+                    <div class="botao_resultados_1" style="height:0px;border:none;"></div>
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
                         <span id="logo_repres" class="glyphicon glyphicon-king" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">

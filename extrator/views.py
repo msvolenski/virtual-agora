@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
+from .models import SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -527,8 +527,7 @@ def lematizar(request):
     saida_lematizador = codecs.open("extrator/arquivos/p2_saida_lematizador.txt","r","utf-8")
     texto_lematizado = codecs.open("extrator/arquivos/p2_texto_lematizado.txt","w",'utf-8')
     texto_lematizado_vetor = codecs.open("extrator/arquivos/p2_texto_lematizado_vetor.txt","w",'utf-8')
-    file_tags = open("extrator/arquivos/arquivo_tags.txt","w")
-
+    
     #Pega a palavra lematizada no documento de saída do lematizador
     contador = 0
     for linha in saida_lematizador:
@@ -585,7 +584,7 @@ def eliminar_stopwords(request):
     #lê texto lematizado
     arq_texto = codecs.open("extrator/arquivos/p2_texto_lematizado.txt", "r", "utf-8")
     texto = arq_texto.read()
-    palavras = texto.split(' ')
+    palavras = texto.rstrip().split(' ')
     
     #gera arquivos de saída
     arq_saida = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","w", "utf-8")
@@ -593,7 +592,14 @@ def eliminar_stopwords(request):
     
     #verifica se a palavra é uma stop-word, grava palavras no arquvivo e conta número de palavras
     contador = 0
-    for palavra in palavras:        
+    cont_idx = 0
+    for palavra in palavras:
+        
+        # arq_saida_indx.write(palavra)
+        # arq_saida_indx.write(' ')
+        # arq_saida_vetor_indx.write(palavra)
+        # arq_saida_vetor_indx.write('\n')       ###########################################################################3
+        
         if palavra.strip() not in stopwords:
             arq_saida.write(palavra)
             arq_saida.write(' ')
@@ -762,7 +768,7 @@ def mapear(request):
     
     #armazena no BD
     TextoPreproc.objects.all().delete()
-    aList = [TextoPreproc(vertice=linha[0].strip(), vertice_num=linha[1]) for linha in lista_texto]    
+    aList = [TextoPreproc(vertice=linha[0].rstrip(), vertice_num=linha[1]) for linha in lista_texto]    
     TextoPreproc.objects.bulk_create(aList)    
         
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3' , 'muda_logo':'logo_indexar'})
@@ -1585,9 +1591,12 @@ def processarProtofrases(request):
 
     ##################################################################################################################################################################################
     
-    string =[]
+    string = []
+    
     for grupo in grupos:
-        
+        lista_de_nos = []
+        lista_de_nos_dist = []
+        tabela_graus = []        
         #separa as palavras       
         vertices = grupo.subtemas.rstrip().split(' ')
        
@@ -1603,10 +1612,11 @@ def processarProtofrases(request):
        
         #cria lista de adjancecias
         lista_adjacencias = OrderedDict()
-        for sentenca in sentencas_grupo:           
+        for sentenca in sentencas_grupo:             
             bigrama = 'ok'
             palavras_sentenca = sentenca.rstrip().split(' ')
             for i, palavra in enumerate(palavras_sentenca):
+                lista_de_nos.append(palavra)
                 try:                                             
                     bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i + 1]                    
                 except:
@@ -1617,14 +1627,30 @@ def processarProtofrases(request):
                     except:
                         lista_adjacencias[bigrama] = 1            
 
+        #gera rede e tabelade graus
+        rede = nx.DiGraph()
+        lista_de_nos_dist = list(set(lista_de_nos))
+        
+        for item in lista_de_nos_dist:
+            rede.add_node(item)
+        
+        for k, v in lista_adjacencias.iteritems():
+            nodes = k.split(' ')
+            rede.add_edge(nodes[0], nodes[1], weight=int(v))
+        
+        tabela_graus = nx.degree(rede, weight='weight')
+        
+        # faz aguma coisa 
         for idx, sentenca in enumerate(sentencas_grupo):
             peso = 0            
             palavras_sentenca = sentenca.split(' ')
             maior_grau = 0
             corte = 0
             bigrama = 'ok'
+            string_graus_l = []
+            
             #acha o maior grau:
-            for i, palavra in enumerate(palavras_sentenca):
+            for i, palavra in enumerate(palavras_sentenca):                
                 try:                                           
                     bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]                      
                 except:
@@ -1646,16 +1672,20 @@ def processarProtofrases(request):
                     bigrama = 'fim'
                 if bigrama != 'fim':
                     for k,v in lista_adjacencias.iteritems():
-                        if bigrama == k:
+                        if bigrama == k:                              
                             if float(v) > grau_corte:
+                                string_graus_l.append(str(v))         
                                 peso = peso + float(v)
                             else:
+                                string_graus_l.append(str(0))         
                                 corte = corte + 1
-                                           
-            string.append([ grupo.nucleos, sentenca, sentencas_original[idx], str(peso), str(corte) ])
+            if not string_graus_l:
+                string_graus_l.append(str(0))
+            string_graus = ' '.join(string_graus_l)                              
+            string.append([ grupo.nucleos, sentenca, sentencas_original[idx], str(peso), str(corte), string_graus ])
     
     #salva dados no BD
-    aList = [SentencasAvaliadas(tema=sent[0], subtema='a definir', proto=sent[1] , frase=sent[2] , peso=sent[3] , corte=sent[4], irse=0) for sent in string]    
+    aList = [SentencasAvaliadas(tema=sent[0], subtema='a definir', proto=sent[1] , frase=sent[2] , peso=sent[3] , corte=sent[4], irse=0, string_graus=sent[5]) for sent in string]    
     SentencasAvaliadas.objects.bulk_create(aList) 
     
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
@@ -1674,14 +1704,14 @@ def mapearEextrair(request):
     #inicializa listas
     sentencas_mapeadas = []
     bag_protos =[]
-    
+    ident = 0
     for itemm in temas_subtemas:        
         palavras = itemm.subtemas.rstrip().split(' ')
-        for palavra in palavras:           
+        for palavra in palavras:             
             sentencas = SentencasAvaliadas.objects.filter(tema__exact=itemm.nucleos).filter(proto__icontains=palavra).order_by('peso').order_by('-corte')
             obj_maior_peso = max(sentencas, key=attrgetter('peso'))
             maior_peso = obj_maior_peso.peso           
-            for sent in sentencas:
+            for sent in sentencas:            
                 if (itemm.nucleos != palavra):
                     if sent.proto not in bag_protos:
                         if maior_peso == 0:
@@ -1698,15 +1728,253 @@ def mapearEextrair(request):
                             representatividade = 'baixa'
                         if irse >= 0 and irse <= 20:
                             representatividade = 'baixissima'                       
-                        sentencas_mapeadas.append([itemm.nucleos, palavra, sent.frase, sent.peso, sent.corte, irse, representatividade])
+                        ident = ident + 1
+                        sentencas_mapeadas.append([itemm.nucleos, palavra, sent.frase, sent.peso, sent.corte, irse, representatividade, sent.proto, sent.string_graus, ident])
+                        
                         bag_protos.append(sent.proto)
             bag_protos = []  
     
     #salva dados no BD
-    aList = [SentencasExtraidas(tema=sent[0], subtema=sent[1], frase=sent[2] , peso=sent[3] , corte=sent[4], irse=sent[5], representatividade=sent[6]) for sent in sentencas_mapeadas]    
+    aList = [SentencasExtraidas(ident=sent[9], tema=sent[0], subtema=sent[1], frase=sent[2] , proto=sent[7], string_graus=sent[8], peso=sent[3] , corte=sent[4], irse=sent[5], representatividade=sent[6]) for sent in sentencas_mapeadas]    
     SentencasExtraidas.objects.bulk_create(aList)
 
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_map_extracao'})
+
+def extrairNucleos(request):
+    
+    arq_entrada_lematizador = codecs.open("extrator/arquivos/p6_entrada_lematizador.txt","w",'utf-8')
+    
+    #Carrega Objetos
+    objetos = SentencasExtraidas.objects.all()
+
+    #cria entrada do lematizador
+    for obj in objetos:
+        arq_entrada_lematizador.write(str(obj.ident) + ' ' + obj.frase.rstrip() + '.\n')
+        
+    arq_entrada_lematizador.close()   
+    
+    #Abre o Bash e executa o lematizador no texto inicial
+    is32bit = (platform.architecture()[0] == '32bit')
+    system32 = os.path.join(os.environ['SystemRoot'],
+                        'SysNative' if is32bit else 'System32')
+    bash = os.path.join(system32, 'bash.exe')   
+    p = subprocess.check_call('"%s" -c "cd Linguakit-master ; ./linguakit pt lem ../extrator/arquivos/p6_entrada_lematizador.txt > ../extrator/arquivos/p6_saida_lematizador.txt ; unix2dos ../extrator/arquivos/p2_saida_lematizador.txt"' % bash, shell=True)
+    
+    #processa saida do lematizador e gera arquivo com sequencias lematizadas
+    saida_lematizador = codecs.open("extrator/arquivos/p6_saida_lematizador.txt","r","utf-8")  
+    arq_sentencas_lematizadas = codecs.open("extrator/arquivos/p6_sentencas_lematizadas.txt", "w", 'utf-8')
+    arq_sentencas_org_lematizadas = codecs.open("extrator/arquivos/p6_sentencas_originais_lem.txt","w",'utf-8')    
+  
+    string = ''
+    string_org = ''
+    lista_strings_org =[]
+    lista_strings = []
+    cont = 0
+    for linha in saida_lematizador:            
+        
+        try:           
+            linha.split(' ')[2]
+            if linha[0] != ' ':    
+                word_lem = linha.split(' ')[1]
+                word_org = linha.split(' ')[0]
+                if word_lem == '.':
+                    arq_sentencas_lematizadas.write('. \n')
+                    arq_sentencas_org_lematizadas.write('. \n')
+
+                    lista_strings.append(string.rstrip())
+                    lista_strings_org.append(string_org.rstrip())
+
+                    string = ''
+                    string_org = ''
+                    #cont = 0
+                else:
+                    arq_sentencas_lematizadas.write(word_lem + ' ')
+                    arq_sentencas_org_lematizadas.write(word_org + ' ')
+                    
+                    string = string + word_lem + ' '
+                    string_org = string_org + word_org + ' '
+                    
+                    #cont = cont + 1
+        except:
+            if linha[0] != ' ':    
+                word_lem = linha.split(' ')[0]                
+                if word_lem == '.':
+                    arq_sentencas_lematizadas.write('. \n')
+                    arq_sentencas_org_lematizadas.write('. \n')
+                    
+                    lista_strings.append(string.rstrip())
+                    lista_strings_org.append(string_org.rstrip())
+                    
+                    string = ''
+                    string_org = ''
+                    #cont = 0
+                else:
+                    arq_sentencas_lematizadas.write(word_lem + ' ')
+                    arq_sentencas_org_lematizadas.write(word_lem + ' ')
+                    
+                    string = string + word_lem + ' '
+                    string_org = string_org + word_lem + ' '
+                    #cont = cont + 1
+    arq_sentencas_lematizadas.close()
+    arq_sentencas_org_lematizadas.close()
+    
+    
+    for obj in objetos:
+        lista_adjacencias_orig = OrderedDict()
+        palavras_proto_l =  obj.proto.rstrip().split(' ')
+        if len(palavras_proto_l) > 1:
+            # GERA LISTA DE ADJACENCIAS
+            lista_de_adjacencias = OrderedDict()
+            graus_l = obj.string_graus.rstrip().split(' ')
+             
+            if len(palavras_proto_l) != 1:           
+                for idx, palavra in enumerate(palavras_proto_l):                 
+                    fim = 'nao'
+                    bigrama = ''
+                    try:
+                        bigrama = palavras_proto_l[idx] + ' ' + palavras_proto_l[idx + 1]
+                    except:
+                        fim = 'fim'
+                    if fim == 'nao':               
+                        lista_de_adjacencias[bigrama] = graus_l[idx]
+            else:
+                lista_de_adjacencias[palavras_proto_l[0]] = graus_l[0]
+        
+            
+            # pega frase lematizada relativa à protofrase        
+            sentenca_l = OrderedDict()
+            for sent in lista_strings:
+                pals = sent.rstrip().split(' ')
+                if int(pals[0]) == obj.ident:               
+                    sentenca = sent
+            
+            
+            #Cria dicionario com as palavras de cada sentenca original
+            sentenca_l_l = sentenca.rstrip().split(' ')        
+            count = 0
+            for item in sentenca_l_l:
+                sentenca_l[count] = item
+                count = count + 1
+
+            #Cria lista de adjacencias com as palavras intermediarias: (A x y c Z -> 3...)
+            bigramas = lista_de_adjacencias.keys()
+        
+            for linha in bigramas:
+                palavras_bigrama = linha.split(' ')            
+                flag1 = 'no1'
+                flag2 = 'no2'                
+                string = ''
+                elim =[]
+                for ind, palavra in sentenca_l.iteritems():                                     
+                    if flag1 == 'ok' and flag2 == 'no2':
+                        string = string + palavra + ' '                     
+                    
+                    if palavra == palavras_bigrama[0] and flag1 == 'no1':
+                        string = string + palavra + ' ' 
+                        flag1 = 'ok'
+                        
+                    else:
+                        if palavra == palavras_bigrama[1] and flag1 == 'ok':
+                            flag2 = 'ok'                                 
+                            lista_adjacencias_orig[string] = lista_de_adjacencias[linha]                          
+                            
+                            for j in elim:
+                                del sentenca_l[j]                        
+
+                            break                               
+                    
+                    elim.append(int(ind))
+                    
+                    
+                            
+                
+                    
+                    
+           
+            #Extrai os trechos com peso maior que 0 
+            primeiro = 'sim'
+            string = ''
+            lista_extracao_l = []
+            cont = 0
+            tam = len(lista_adjacencias_orig)
+            for k,v in lista_adjacencias_orig.iteritems():                
+                #print k
+                if v == str(0):                    
+                    if string:
+                        lista_extracao_l.append(string.rstrip())
+                    string = ''
+                    primeiro = 'sim'
+                else:
+                    if primeiro == 'sim':
+                        string = string + k.rstrip() + ' '
+                        primeiro = 'nao'
+                        if (cont + 1) == tam :
+                            lista_extracao_l.append(string.rstrip())
+                    else:
+                        pls = k.rstrip().split(' ')
+                        del pls[0]
+                        nova_string = ' '.join(pls)
+                        string = string + nova_string.rstrip() + ' '
+                        if (cont + 1) == tam :
+                            lista_extracao_l.append(string.rstrip())
+            
+                cont = cont + 1
+                      
+
+            #print lista_extracao_l
+
+
+            #mapear os dados extraidos das frases originais
+            lista_extracao_o =[]
+            
+            arq_l = codecs.open("extrator/arquivos/p6_sentencas_lematizadas.txt","r","utf-8")
+            arq_o = codecs.open("extrator/arquivos/p6_sentencas_originais_lem.txt","r","utf-8") 
+            
+            set_lematizadas = arq_l.readlines()
+            set_originais = arq_o.readlines()
+
+            set_l_dict = OrderedDict()
+            set_o_dict = OrderedDict()
+           
+            
+            for item in set_lematizadas:                
+                num = item.rstrip().split(' ')[0]
+                if int(num) == obj.ident:
+                    set_l = item.rstrip().split(' ')
+                    cont = 0
+                    for i in set_l:
+                        set_l_dict[cont] = i
+                        cont = cont + 1
+           
+            for item in set_originais:
+                num = item.rstrip().split(' ')[0]
+                if int(num) == obj.ident:                  
+                    set_o = item.rstrip().split(' ')
+                    cont = 0
+                    for i in set_l:
+                        set_o_dict[cont] = i
+                        cont = cont + 1
+
+            #CONTINUAR A PARTIR DAQUI: TENHO A SENTENCA LEMATIZA INDEXADA, SENTENCA ORIGINAL INDEXADA E A EXTRACAO LEMATIZADA. PRECISO ACHAR O LUGAR EXATO NA SENTENCA LEMATIZADA E PEGAR OS INDICES E COM OS INDICES ACHAR NA SENTENA ORIGINAL
+            for j in lista_extracao_l:
+                test = j.rstrip.split(' ')
+                for palavra in test:
+                    for k,v in set_l_dict.iteritems():
+                        if palavra == v:
+                            excluir       
+
+
+
+
+
+        else:
+            ttt = 'to'
+        print '\n\n\n' 
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_enucleos'})    
+
+
+
+
 
 
 def calcula_indice_representatividade(request):

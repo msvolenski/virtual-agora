@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
+from .models import SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 
 # Register your models here.
 
@@ -31,10 +31,13 @@ class ListaDeSubstantivosAdmin(admin.ModelAdmin):
   list_display = ['palavra','substantivo']
 
 class SentencasAvaliadasAdmin(admin.ModelAdmin):
-  list_display = ['tema', 'subtema', 'proto', 'frase', 'peso', 'corte', 'irse']
+  list_display = ['tema', 'subtema', 'proto', 'frase', 'string_graus','peso', 'corte', 'irse']
   
 class SentencasExtraidasAdmin(admin.ModelAdmin):
-  list_display = ['tema','subtema', 'frase', 'peso','corte','irse','representatividade']
+  list_display = ['ident', 'tema', 'subtema', 'proto', 'frase', 'string_graus', 'peso', 'corte', 'irse', 'representatividade']
+
+class SentencasNucleosAdmin(admin.ModelAdmin):
+  list_display = ['ident','proto', 'frase_l', 'frase','string_graus','peso','nucleo']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']
@@ -63,4 +66,5 @@ admin.site.register(ParametrosDeAjuste, ParametrosDeAjusteAdmin)
 admin.site.register(Clusters, ClustersAdmin)
 admin.site.register(MapasTemasESubtemas, MapasTemasESubtemasAdmin)
 admin.site.register(SentencasExtraidas, SentencasExtraidasAdmin)
+admin.site.register(SentencasNucleos, SentencasNucleosAdmin)
 

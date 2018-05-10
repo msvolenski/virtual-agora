@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^extrator/ajustarparametro/(?P<opcao>[-\w]+)/$', views.ajustar_parametro, name='ajustar_parametro'),
     url(r'^extrator/testeuser/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario'),
     url(r'^extrator/mapaeresultadostemas/$', views.gerarMapaEResultados, name='gerar_mapa_resultados'),
+    url(r'^extrator/extrairnucleos/$', views.extrairNucleos, name='extrair_nucleos'),
 ]
 
 

@@ -1,0 +1,413 @@
+1 1 Z
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+flavinho flavinho UNK
+cultua cultuar VMIP3S0 cultuar VMM02S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+, , Fc
+zé zé NCMS000
+dirceu dirceu UNK
+, , Fc
+dilma dilma UNK
+, , Fc
+boulos boulos UNK
+. . Fp
+2 2 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entrevista entrevisto AQ0FS0 entrevista NCFS000 entrevistar VMIP3S0 entrevistar VMM02S0 entrever VMP00SF
+de de SPS00
+boulos boulos UNK
+ontem ontem RG
+em em SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+deu dar VMIS3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+dimensão dimensão NCFS000
+de de SPS00
+esse esse DD0MS0 esse PD0MS000
+vazio vazio AQ0MS0 vazio NCMS000 vaziar VMIP1S0
+discursivo discursivo AQ0MS0
+insuportável insuportável AQ0CS0
+. . Fp
+3 3 Z
+lula lula NCFS000
+é ser VMIP3S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+paizão paizão UNK
+amado amado AQ0MS0 amado NCMS000 amar VMP00SM
+, , Fc
+boulos boulos UNK
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+filho filho AQ0MS0 filho NCMS000 filhar VMIP1S0
+adotado adotado AQ0MS0 adotar VMP00SM
+. . Fp
+4 4 Z
+boulos boulos UNK
+tá tá I
+pedindo pedir VMG0000
+passagem passagem NCFS000
+, , Fc
+fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+é ser VMIP3S0
+melhor melhor AQ0CS0 melhor I melhor NCCS000 melhor RG
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+qualquer qualquer AQ0CS0 qualquer DI0CS0 qualquer PI0CS000
+quadro quadro NCMS000 quadrar VMIP1S0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+pt pt UNK
+. . Fp
+5 5 Z
+muitos muito AQ0MP0 muito DI0MP0 muito NCMP000 muito PI0MP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+votaram votar VMIM3P0 votar VMIS3P0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+e e CC e NCMS000
+se se CS se PP3CN000
+arrependeram arrepender VMIM3P0 arrepender VMIS3P0
+, , Fc
+com com SPS00
+certeza certeza NCFS000
+não não NCMS000 não RN
+votarão votar VMIF3P0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+boulos boulos UNK
+pois pois CS pois I
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+caráter caráter NCMS000
+é ser VMIP3S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+mesmo mesmo AQ0MS0 mesmo DD0MS0 mesmo NCMS000 mesmo PD0MS000 mesmo PI0MS000 mesmo RG
+. . Fp
+6 6 Z
+ver ver NCMS000 ver VMN0000 ver VMN01S0 ver VMN03S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+boulos boulos UNK
+ontem ontem RG
+me me PP1CS000
+deu dar VMIS3S0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+saudade saudade NCFS000
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+danada danado AQ0FS0 danar VMP00SF
+. . Fp
+7 7 Z
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+boulos boulos UNK
+está estar VMIP3S0 estar VMM02S0 estar VMN0000 estar VMN01S0 estar VMN03S0
+em em SPS00
+aquele aquele DD0MS0 aquele NCMS000 aquele PD0MS000 aquelar VMM03S0 aquelar VMSP1S0 aquelar VMSP3S0
+caminho caminho NCMS000 caminhar VMIP1S0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+paz paz NCFS000
+e e CC e NCMS000
+amor amor NCMS000
+. . Fp
+8 8 Z
+boulos boulos UNK
+é ser VMIP3S0
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+cínico cínico AQ0MS0 cínico NCMS000
+e e CC e NCMS000
+psicopata psicopata AQ0CS0 psicopata NCCS000
+, , Fc
+aprendeu aprender VMIS3S0
+com com SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+. . Fp
+9 9 Z
+lula lula NCFS000
+presidente presidente AQ0CS0 presidente NCCS000 presidente NCMS000
+, , Fc
+boulos boulos UNK
+vice vice AQ0CN0 vice NCCS000 viçar VMM03S0 viçar VMSP1S0 viçar VMSP3S0
+e e CC e NCMS000
+manu manu UNK
+ministra ministra NCFS000 ministrar VMIP3S0 ministrar VMM02S0
+. . Fp
+10 10 Z
+pergunta pergunta NCFS000 perguntar VMIP3S0 perguntar VMM02S0
+pra pra SPS00
+dona dom NCFS000
+odélia odélia UNK
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+votou votar VMIS3S0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+se se CS se PP3CN000
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+votaria votar VMIC1S0 votar VMIC3S0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+boulos boulos UNK
+. . Fp
+11 11 Z
+boulos boulos UNK
+, , Fc
+manuela manuela UNK
+, , Fc
+ciro ciro UNK
+. . Fp
+12 12 Z
+lula lula NCFS000
+, , Fc
+boulos boulos UNK
+e e CC e NCMS000
+gleisi gleisi UNK
+. . Fp
+13 13 Z
+boulos boulos UNK
+e e CC e NCMS000
+lula lula NCFS000
+. . Fp
+14 14 Z
+contra contra AQ0CN0 contra NCMS000 contra RG contra SPS00
+lula lula NCFS000
+, , Fc
+ciro ciro UNK
+gomes gomar VMM02S0 gomar VMSP2S0
+e e CC e NCMS000
+boulos boulos UNK
+k k NCMS000
+. . Fp
+15 15 Z
+boulos boulos UNK
+. . Fp
+16 16 Z
+ciro ciro UNK
+gomes gomar VMM02S0 gomar VMSP2S0
+chamou chamar VMIS3S0
+lula lula NCFS000
+de de SPS00
+ladrão ladrão AQ0MS0 ladrão NCMS000
+, , Fc
+mas mas CC mas NCMN000 me+as PP1CS000+PP3FPA00 mas RG
+entrou entrar VMIS3S0
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+justiça justiça NCFS000 justiçar VMIP3S0 justiçar VMM02S0
+com com SPS00
+pedido pedido AQ0MS0 pedido NCMS000 pedir VMP00SM
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+ver ver NCMS000 ver VMN0000 ver VMN01S0 ver VMN03S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+condenado condenado AQ0MS0 condenado NCMS000 condenar VMP00SM
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+. . Fp
+17 17 Z
+atos ato NCMP000
+por por SPS00
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+fracassam fracassar VMIP3P0
+em em SPS00
+todo todo AQ0MS0 todo DI0MS0 todo NCMS000 todo PI0MS000 todo RG
+país país NCMS000
+e e CC e NCMS000
+até até RG até SPS00
+jornalista jornalista NCCS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+veja ver VMM03S0 ver VMSP1S0 ver VMSP3S0
+admite admitir VMIP3S0 admitir VMM02S0
+. . Fp
+18 18 Z
+9 9 Z
+% % UNK
+têm ter VMIP3P0
+percepção percepção NCFS000
+de de SPS00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+país país NCMS000
+melhora melhora NCFS000 melhorar VMIP3S0 melhorar VMM02S0
+após após RG após SPS00
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+. . Fp
+19 19 Z
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+se se CS se PP3CN000
+incumbe incumbir VMIP3S0 incumbir VMM02S0
+de de SPS00
+banir banir VMN0000 banir VMN01S0 banir VMN03S0 banir VMSF1S0 banir VMSF3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+pobres pobre AQ0CP0 pobre NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+eleição eleição NCFS000
+. . Fp
+20 20 Z
+já já CS já RG
+cortou cortar VMIS3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+pulsos pulso NCMP000
+por por SPS00
+causa causa NCFS000 causar VMIP3S0 causar VMM02S0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+de de SPS00
+ele ele NCMS000 ele PP3MS000 elar VMM03S0 elar VMSP1S0 elar VMSP3S0
+. . Fp
+21 21 Z
+fernando fernando UNK
+morais moral AQ0CP0 moral NCCP000 moral NCFP000 moral NCMP000 morar VMIP2P0
+e e CC e NCMS000
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+30 30 Z
+dias dia NCMP000
+de de SPS00
+lula lula NCFS000
+prisão prisão NCFS000
+. . Fp
+22 22 Z
+armação armação NCFS000
+veja-polícia NC00000
+federal federal AQ0CS0
+sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+. . Fp
+23 23 Z
+boff boff UNK
+conta conta NCFS000 contar VMIP3S0 contar VMM02S0
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+foi ir VMIS3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+visita visita NCFS000 visitar VMIP3S0 visitar VMM02S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+lula lula NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+# # Fz
+lulalivre lulalivre UNK
+. . Fp
+24 24 Z
+macaco macaco AQ0MS0 macaco NCMS000 macacar VMIP1S0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+latino latino AQ0CN0 latino AQ0MS0 latino NCMS000 latinar VMIP1S0
+/ / Fh
+prisão prisão NCFS000
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+. . Fp
+25 25 Z
+mendes mendes UNK
+quer quer CC querer VMIP3S0 querer VMM02S0
+entrevistar entrevistar VMN0000 entrevistar VMN01S0 entrevistar VMN03S0 entrevistar VMSF1S0 entrevistar VMSF3S0
+lula lula NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+, , Fc
+diz dizer VMIP3S0 dizer VMM02S0
+colunista colunista AQ0CS0 colunista NCCS000
+. . Fp
+26 26 Z
+prisão prisão NCFS000
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+lula lula NCFS000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+vivo vivo AQ0MS0 vivo NCMS000 vivar VMIP1S0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+sbt sbt UNK
+. . Fp
+27 27 Z
+apenas apenas CC apenas RG apenar VMIP2S0
+9 9 Z
+% % UNK
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+brasileiros brasileiro AQ0MP0 brasileiro NCMP000
+acham achar VMIP3P0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
+melhorou melhorar VMIS3S0
+com com SPS00
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+. . Fp
+28 28 Z
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+mês mês NCMS000
+depois depois RG
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+de de SPS00
+lula lula NCFS000
+, , Fc
+vigília vigília NCFS000
+diminui diminuir VMIP3S0 diminuir VMM02S0 diminuir VMN0000 diminuir VMN01S0 diminuir VMN03S0
+e e CC e NCMS000
+tensão tensão NCFS000
+aumenta aumentar VMIP3S0 aumentar VMM02S0
+. . Fp
+29 29 Z
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+, , Fc
+lula lula NCFS000
+envia enviar VMIP3S0 enviar VMM02S0
+carta carta NCFS000 cartar VMIP3S0 cartar VMM02S0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+prefeitos prefeito NCMP000
+. . Fp
+30 30 Z
+gilmar gilmar UNK
+mendes mendes UNK
+quer quer CC querer VMIP3S0 querer VMM02S0
+visitar visitar VMN0000 visitar VMN01S0 visitar VMN03S0 visitar VMSF1S0 visitar VMSF3S0
+lula lula NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+. . Fp
+31 31 Z
+gilmar gilmar UNK
+mendes mendes UNK
+quer quer CC querer VMIP3S0 querer VMM02S0
+entrevistar entrevistar VMN0000 entrevistar VMN01S0 entrevistar VMN03S0 entrevistar VMSF1S0 entrevistar VMSF3S0
+lula lula NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+. . Fp
+32 32 Z
+conta conta NCFS000 contar VMIP3S0 contar VMM02S0
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+foi ir VMIS3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+visita visita NCFS000 visitar VMIP3S0 visitar VMM02S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+lula lula NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+prisão prisão NCFS000
+. . Fp
