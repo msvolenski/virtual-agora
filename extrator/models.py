@@ -154,9 +154,11 @@ class SentencasExtraidas(models.Model):
 
 class SentencasNucleos(models.Model):
     ident = models.IntegerField('Ident')      
+    tema = models.TextField('Tema')
     proto = models.TextField('Proto Frase')
+    subtema = models.TextField('SubTema') 
     frase = models.TextField('Frase')
-    frase_l = models.TextField('Frase Lematizada')
+    representatividade = models.TextField('Representatividade') 
     peso = models.FloatField('peso')
     string_graus = models.TextField('Graus da Protofrase')
     nucleo = models.TextField('Núcleo da Frase')   

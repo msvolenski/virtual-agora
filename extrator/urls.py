@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^extrator/testeuser/$', views.testa_substantivo_usuario, name='testa_substantivo_usuario'),
     url(r'^extrator/mapaeresultadostemas/$', views.gerarMapaEResultados, name='gerar_mapa_resultados'),
     url(r'^extrator/extrairnucleos/$', views.extrairNucleos, name='extrair_nucleos'),
+    #url(r'^extrator/testee/$', views.teste, name='teste'),
 ]
 
 

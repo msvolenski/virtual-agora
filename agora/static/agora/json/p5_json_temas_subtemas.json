@@ -12,16 +12,54 @@
         "parent": "Temas",
         "children": [
             {
-             "name": "prisão",
-             "value": 0.207442781039,
+             "name": "pt",
+             "value": 0.131115532914,
              "size": 10.0,
              "parent": "lula"
             },
             {
-             "name": "boulos",
-             "value": 0.132072943832,
-             "size": 6.36671679634,
+             "name": "prisão",
+             "value": 0.0453981144758,
+             "size": 3.46245127992,
              "parent": "lula"
+            },
+            {
+             "name": "candidato",
+             "value": 0.0382535000731,
+             "size": 2.91754144019,
+             "parent": "lula"
+            },
+            {
+             "name": "dilma",
+             "value": 0.0379710198149,
+             "size": 2.89599706235,
+             "parent": "lula"
+            },
+            {
+             "name": "brasil",
+             "value": 0.0367400493392,
+             "size": 2.80211265001,
+             "parent": "lula"
+            },
+            {
+             "name": "povo",
+             "value": 0.0137432911341,
+             "size": 1.04818176982,
+             "parent": "lula"
+            }
+        ]
+    },
+    {
+        "name": "dia",
+        "value": 0.217828839147,
+        "size": 1.45219226098,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "presidente",
+             "value": 0.242880342697,
+             "size": 10.0,
+             "parent": "dia"
             }
         ]
     }

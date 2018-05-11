@@ -37,7 +37,7 @@ class SentencasExtraidasAdmin(admin.ModelAdmin):
   list_display = ['ident', 'tema', 'subtema', 'proto', 'frase', 'string_graus', 'peso', 'corte', 'irse', 'representatividade']
 
 class SentencasNucleosAdmin(admin.ModelAdmin):
-  list_display = ['ident','proto', 'frase_l', 'frase','string_graus','peso','nucleo']
+  list_display = ['ident','tema', 'subtema','proto', 'frase', 'nucleo','string_graus','peso','representatividade']
 
 class TestaPalavraAdmin(admin.ModelAdmin):
   list_display = ['palavra','numero','condicao', 'resultado']

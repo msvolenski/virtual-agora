@@ -520,7 +520,7 @@ def lematizar(request):
                         'SysNative' if is32bit else 'System32')
     bash = os.path.join(system32, 'bash.exe')
     start_time = time.time()
-    p = subprocess.check_call('"%s" -c "cd Linguakit-master ; ./linguakit pt lem ../extrator/arquivos/p2_texto_preprocessado.txt > ../extrator/arquivos/p2_saida_lematizador.txt ; unix2dos ../extrator/arquivos/p2_saida_lematizador.txt"' % bash, shell=True)
+    p = subprocess.check_call('"%s" -c "cd Linguakit-master ; ./linguakit lem pt ../extrator/arquivos/p2_texto_preprocessado.txt > ../extrator/arquivos/p2_saida_lematizador.txt ; unix2dos ../extrator/arquivos/p2_saida_lematizador.txt"' % bash, shell=True)
     temp =  time.time() - start_time
     
     #abre o texto já lematizado e cria dois novos arquivos: um com o texto original e outro com o texto lematizado
@@ -531,31 +531,31 @@ def lematizar(request):
     #Pega a palavra lematizada no documento de saída do lematizador
     contador = 0
     for linha in saida_lematizador:
-                      
-        try:           
-            linha.split(' ')[2]
-            if linha[0] != ' ':    
-                word_lem = linha.split(' ')[1]
-                texto_lematizado.write(word_lem + ' '),
-                texto_lematizado_vetor.write(word_lem + '\n'),
+        if linha != "\n":                 
+            try:           
+                linha.split(' ')[2]
+                if linha[0] != ' ':    
+                    word_lem = linha.rstrip().split(' ')[1]
+                    texto_lematizado.write(word_lem + ' '),
+                    texto_lematizado_vetor.write(word_lem + '\n'),
+                    
+                    #contador de palavras
+                    pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
+                    eh_palavra = pattern.match(word_lem.encode('utf-8'))
+                    if eh_palavra:
+                        contador = contador + 1 
+        
+            except:
+                if linha[0] != ' ':    
+                    word_lem = linha.rstrip().split(' ')[0]           
+                    texto_lematizado.write(word_lem + ' '),
+                    texto_lematizado_vetor.write(word_lem + '\n'),
                 
-                #contador de palavras
-                pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
-                eh_palavra = pattern.match(word_lem.encode('utf-8'))
-                if eh_palavra:
-                    contador = contador + 1 
-     
-        except:
-            if linha[0] != ' ':    
-                word_lem = linha.split(' ')[0]           
-                texto_lematizado.write(word_lem + ' '),
-                texto_lematizado_vetor.write(word_lem + '\n'),
-            
-                #contador de palavras
-                pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
-                eh_palavra = pattern.match(word_lem.encode('utf-8'))
-                if eh_palavra:
-                    contador = contador + 1
+                    #contador de palavras
+                    pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
+                    eh_palavra = pattern.match(word_lem.encode('utf-8'))
+                    if eh_palavra:
+                        contador = contador + 1
     texto_lematizado_vetor.close()
     texto_lematizado.close()
     
@@ -593,13 +593,7 @@ def eliminar_stopwords(request):
     #verifica se a palavra é uma stop-word, grava palavras no arquvivo e conta número de palavras
     contador = 0
     cont_idx = 0
-    for palavra in palavras:
-        
-        # arq_saida_indx.write(palavra)
-        # arq_saida_indx.write(' ')
-        # arq_saida_vetor_indx.write(palavra)
-        # arq_saida_vetor_indx.write('\n')       ###########################################################################3
-        
+    for palavra in palavras:    
         if palavra.strip() not in stopwords:
             arq_saida.write(palavra)
             arq_saida.write(' ')
@@ -1742,6 +1736,8 @@ def mapearEextrair(request):
 
 def extrairNucleos(request):
     
+    SentencasNucleos.objects.all().delete()
+    
     arq_entrada_lematizador = codecs.open("extrator/arquivos/p6_entrada_lematizador.txt","w",'utf-8')
     
     #Carrega Objetos
@@ -1758,7 +1754,7 @@ def extrairNucleos(request):
     system32 = os.path.join(os.environ['SystemRoot'],
                         'SysNative' if is32bit else 'System32')
     bash = os.path.join(system32, 'bash.exe')   
-    p = subprocess.check_call('"%s" -c "cd Linguakit-master ; ./linguakit pt lem ../extrator/arquivos/p6_entrada_lematizador.txt > ../extrator/arquivos/p6_saida_lematizador.txt ; unix2dos ../extrator/arquivos/p2_saida_lematizador.txt"' % bash, shell=True)
+    p = subprocess.check_call('"%s" -c "cd Linguakit-master ; ./linguakit lem pt ../extrator/arquivos/p6_entrada_lematizador.txt > ../extrator/arquivos/p6_saida_lematizador.txt ; unix2dos ../extrator/arquivos/p2_saida_lematizador.txt"' % bash, shell=True)
     
     #processa saida do lematizador e gera arquivo com sequencias lematizadas
     saida_lematizador = codecs.open("extrator/arquivos/p6_saida_lematizador.txt","r","utf-8")  
@@ -1771,62 +1767,60 @@ def extrairNucleos(request):
     lista_strings = []
     cont = 0
     for linha in saida_lematizador:            
-        
-        try:           
-            linha.split(' ')[2]
-            if linha[0] != ' ':    
-                word_lem = linha.split(' ')[1]
-                word_org = linha.split(' ')[0]
-                if word_lem == '.':
-                    arq_sentencas_lematizadas.write('. \n')
-                    arq_sentencas_org_lematizadas.write('. \n')
+        if linha != "\n":
+            try:           
+                linha.rstrip().split(' ')[2]
+                if linha[0] != ' ':    
+                    word_lem = linha.rstrip().split(' ')[1]
+                    word_org = linha.rstrip().split(' ')[0]
+                    if word_lem == '.':
+                        arq_sentencas_lematizadas.write('.\n')
+                        arq_sentencas_org_lematizadas.write('.\n')
 
-                    lista_strings.append(string.rstrip())
-                    lista_strings_org.append(string_org.rstrip())
+                        lista_strings.append(string.rstrip())
+                        lista_strings_org.append(string_org.rstrip())
 
-                    string = ''
-                    string_org = ''
-                    #cont = 0
-                else:
-                    arq_sentencas_lematizadas.write(word_lem + ' ')
-                    arq_sentencas_org_lematizadas.write(word_org + ' ')
-                    
-                    string = string + word_lem + ' '
-                    string_org = string_org + word_org + ' '
-                    
-                    #cont = cont + 1
-        except:
-            if linha[0] != ' ':    
-                word_lem = linha.split(' ')[0]                
-                if word_lem == '.':
-                    arq_sentencas_lematizadas.write('. \n')
-                    arq_sentencas_org_lematizadas.write('. \n')
-                    
-                    lista_strings.append(string.rstrip())
-                    lista_strings_org.append(string_org.rstrip())
-                    
-                    string = ''
-                    string_org = ''
-                    #cont = 0
-                else:
-                    arq_sentencas_lematizadas.write(word_lem + ' ')
-                    arq_sentencas_org_lematizadas.write(word_lem + ' ')
-                    
-                    string = string + word_lem + ' '
-                    string_org = string_org + word_lem + ' '
-                    #cont = cont + 1
+                        string = ''
+                        string_org = ''
+                     
+                    else:
+                        arq_sentencas_lematizadas.write(word_lem.rstrip() + ' ')
+                        arq_sentencas_org_lematizadas.write(word_org.rstrip() + ' ')
+                        
+                        string = string + word_lem.rstrip() + ' '
+                        string_org = string_org.rstrip() + word_org.rstrip() + ' '
+
+            except:
+                if linha[0] != ' ':    
+                    word_lem = linha.rstrip().split(' ')[0]                
+                    if word_lem == '.':
+                        arq_sentencas_lematizadas.write('.\n')
+                        arq_sentencas_org_lematizadas.write('.\n')
+                        
+                        lista_strings.append(string.rstrip())
+                        lista_strings_org.append(string_org.rstrip())
+                        
+                        string = ''
+                        string_org = ''                      
+                    else:
+                        arq_sentencas_lematizadas.write(word_lem.rstrip() + ' ')
+                        arq_sentencas_org_lematizadas.write(word_lem.rstrip() + ' ')
+                        
+                        string = string + word_lem.rstrip() + ' '
+                        string_org = string_org.rstrip() + word_lem.rstrip() + ' '
+                     
     arq_sentencas_lematizadas.close()
     arq_sentencas_org_lematizadas.close()
     
-    
+    sentencas_nucleos = []
     for obj in objetos:
         lista_adjacencias_orig = OrderedDict()
         palavras_proto_l =  obj.proto.rstrip().split(' ')
         if len(palavras_proto_l) > 1:
+            
             # GERA LISTA DE ADJACENCIAS
             lista_de_adjacencias = OrderedDict()
-            graus_l = obj.string_graus.rstrip().split(' ')
-             
+            graus_l = obj.string_graus.rstrip().split(' ')             
             if len(palavras_proto_l) != 1:           
                 for idx, palavra in enumerate(palavras_proto_l):                 
                     fim = 'nao'
@@ -1838,8 +1832,7 @@ def extrairNucleos(request):
                     if fim == 'nao':               
                         lista_de_adjacencias[bigrama] = graus_l[idx]
             else:
-                lista_de_adjacencias[palavras_proto_l[0]] = graus_l[0]
-        
+                lista_de_adjacencias[palavras_proto_l[0]] = graus_l[0]        
             
             # pega frase lematizada relativa à protofrase        
             sentenca_l = OrderedDict()
@@ -1876,20 +1869,14 @@ def extrairNucleos(request):
                     else:
                         if palavra == palavras_bigrama[1] and flag1 == 'ok':
                             flag2 = 'ok'                                 
-                            lista_adjacencias_orig[string] = lista_de_adjacencias[linha]                          
+                            lista_adjacencias_orig[string] = lista_de_adjacencias[linha]                    
                             
                             for j in elim:
                                 del sentenca_l[j]                        
 
                             break                               
                     
-                    elim.append(int(ind))
-                    
-                    
-                            
-                
-                    
-                    
+                    elim.append(int(ind))         
            
             #Extrai os trechos com peso maior que 0 
             primeiro = 'sim'
@@ -1919,11 +1906,7 @@ def extrairNucleos(request):
                             lista_extracao_l.append(string.rstrip())
             
                 cont = cont + 1
-                      
-
-            #print lista_extracao_l
-
-
+       
             #mapear os dados extraidos das frases originais
             lista_extracao_o =[]
             
@@ -1934,8 +1917,7 @@ def extrairNucleos(request):
             set_originais = arq_o.readlines()
 
             set_l_dict = OrderedDict()
-            set_o_dict = OrderedDict()
-           
+            set_o_dict = OrderedDict()           
             
             for item in set_lematizadas:                
                 num = item.rstrip().split(' ')[0]
@@ -1951,30 +1933,65 @@ def extrairNucleos(request):
                 if int(num) == obj.ident:                  
                     set_o = item.rstrip().split(' ')
                     cont = 0
-                    for i in set_l:
+                    for i in set_o:
                         set_o_dict[cont] = i
                         cont = cont + 1
-
+            
             #CONTINUAR A PARTIR DAQUI: TENHO A SENTENCA LEMATIZA INDEXADA, SENTENCA ORIGINAL INDEXADA E A EXTRACAO LEMATIZADA. PRECISO ACHAR O LUGAR EXATO NA SENTENCA LEMATIZADA E PEGAR OS INDICES E COM OS INDICES ACHAR NA SENTENA ORIGINAL
+            f_o_extraidas = []
+            f_o_extraida_string = ''
             for j in lista_extracao_l:
-                test = j.rstrip.split(' ')
-                for palavra in test:
-                    for k,v in set_l_dict.iteritems():
-                        if palavra == v:
-                            excluir       
+                palavras_set_extraida = j.rstrip().split(' ')
+                primeira_palavra = palavras_set_extraida[0]
 
+                #procura primeira palavra na sentenca lematizada
+                pp_set_ext_indice = []
+                for k, v in set_l_dict.iteritems():
+                    if primeira_palavra == v:
+                        pp_set_ext_indice.append(k)
 
+                #caso haja apenas uma palavra, já mapeia e extrai a fase original
+                frase_orig_extraida = ''
+                if len(pp_set_ext_indice) == 1:
+                    tamanho = len(palavras_set_extraida)
+                    inicio = int(pp_set_ext_indice[0])
+                    fim = inicio + tamanho                     
+                    for g in range(inicio, fim):
+                        frase_orig_extraida = frase_orig_extraida + set_o_dict[g] + ' '
+                    f_o_extraidas.append(frase_orig_extraida)
+                else:
+                    for item in pp_set_ext_indice:                        
+                        tamanho = len(palavras_set_extraida)
+                        inicio = item
+                        fim = inicio + tamanho
+                        teste = []
+                        idt = 0
+                        for u in range(inicio, fim):                           
+                            if set_l_dict[u] == palavras_set_extraida[idt]:
+                                teste.append('ok')
+                            else:
+                                teste.append('dif')
+                            idt = idt + 1
+                        if not 'dif' in teste:
+                            for g in range(inicio, fim):
+                                frase_orig_extraida = frase_orig_extraida + set_o_dict[g] + ' '
+                            f_o_extraidas.append(frase_orig_extraida)
+                            break
+                f_o_extraida_string = '  */*  '.join(f_o_extraidas)
 
-
+            f_o_extraida_string_corrigida = unsplit(f_o_extraida_string)
+            print f_o_extraida_string.encode('utf-8')
+            print f_o_extraida_string_corrigida.encode('utf-8')     
+            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, f_o_extraida_string_corrigida, obj.string_graus, obj.peso, obj.representatividade])
 
         else:
-            ttt = 'to'
-        print '\n\n\n' 
+            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, obj.frase, obj.string_graus, obj.peso, obj.representatividade])
+
+    #salva dados no BD
+    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5], string_graus=sent[6], peso=sent[7] , representatividade=sent[8]) for sent in sentencas_nucleos]    
+    SentencasNucleos.objects.bulk_create(aList)
+    
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_enucleos'})    
-
-
-
-
 
 
 def calcula_indice_representatividade(request):
@@ -2130,6 +2147,121 @@ def executa_passo_6(request):
 
 
 ############### FUNCOES DE AUXILIO ##########################################################################################################################################################
+def unsplit(sentenca):  
+        
+    string = sentenca
+    
+    #do(s), da(s)
+    string = re.sub(r'\bde o\b', u'do', string)
+    string = re.sub(r'\bde a\b', u'da', string)
+    string = re.sub(r'\bde os\b', u'dos', string)
+    string = re.sub(r'\bde as\b', u'das', string)        
+
+    #ao, à, aos, às
+    string = re.sub(r'\ba o\b', u'ao', string)
+    string = re.sub(r'\ba a\b', u'à', string)
+    string = re.sub(r'\ba os\b', u'aos', string)
+    string = re.sub(r'\ba as\b', u'às', string)
+    
+    #àquele(s), àquela(s). àquilo, aonde
+    string = re.sub(r'\ba aquel\b', u'àquele', string)
+    string = re.sub(r'\ba aqueles\b', u'àqueles', string)
+    string = re.sub(r'\ba aquela\b', u'àquela', string)
+    string = re.sub(r'\ba aquelas\b', u'àquelas', string)
+    string = re.sub(r'\ba onde\b', u'aonde', string)
+    
+    #dele(s), dela(s)
+    string = re.sub(r'\bde ele\b', u'dele', string)
+    string = re.sub(r'\bde eles\b', u'deles', string)
+    string = re.sub(r'\bde ela\b', u'dela', string)
+    string = re.sub(r'\bde las\b', u'delas', string)
+    
+    # #deste(s), desta(s), desse(s), dessa(s), daquele(s), daquela(s), disto, disso, daquilo
+    string = re.sub(r'\bde estes\b', u'destes', string)
+    string = re.sub(r'\bde esta\b', u'desta', string)
+    string = re.sub(r'\bde estas\b', u'destas', string)
+    string = re.sub(r'\bde esse\b', u'desse', string)
+    string = re.sub(r'\bde esses\b', u'desses', string)
+    string = re.sub(r'\bde este\b', u'destes', string)
+    string = re.sub(r'\bde essa\b', u'dessa', string)
+    string = re.sub(r'\bde isso\b', u'disso', string)
+    string = re.sub(r'\bde aquele\b', u'daquele', string)
+    string = re.sub(r'\bde aquela\b', u'daquela', string)
+    string = re.sub(r'\bde aqueles\b', u'daqueles', string)
+    string = re.sub(r'\bde aquelas\b', u'daquelas', string)
+    string = re.sub(r'\bde aquilo\b', u'daquilo', string)
+
+    #daqui, daí, ali, acolá, donde, doutro(s), doutra(s)
+    string = re.sub(r'\bde aqui\b', u'daqui', string)
+    string = re.sub(r'\bde aí\b', u'daí', string)
+    string = re.sub(r'\bde acolá\b', u'dacolá', string)        
+    
+    #no(s), na(s)
+    string = re.sub(r'\bem o\b', u'no', string)
+    string = re.sub(r'\bem os\b', u'nos', string)
+    string = re.sub(r'\bem a\b', u'na', string)
+    string = re.sub(r'\bem as\b', u'nas', string)
+
+    #nele(s)
+    string = re.sub(r'\bem ele\b', u'nele', string)
+    string = re.sub(r'\bem eles\b', u'neles', string)       
+    
+    #neste(s), nesta(s), nesse(s), nessa(s), naquele(s), naquela(s), nisto, nisso, naquilo
+    string = re.sub(r'\bem este\b', u'neste', string)
+    string = re.sub(r'\bem estes\b', u'nestes', string)
+    string = re.sub(r'\bem esta\b', u'nesta', string)
+    string = re.sub(r'\bem estas\b', u'nestas', string)
+    string = re.sub(r'\bem isto\b', u'nisto', string)
+    string = re.sub(r'\bem esse\b', u'nesse', string)
+    string = re.sub(r'\bem esses\b', u'nesses', string)
+    string = re.sub(r'\bem essa\b', u'nessa', string)
+    string = re.sub(r'\bem essas\b', u'nessas', string)
+    string = re.sub(r'\bem isso\b', u'nisso', string)
+    string = re.sub(r'\bem aquele\b', u'naquele', string)
+    string = re.sub(r'\bem aquela\b', u'naquela', string)
+    string = re.sub(r'\bem aqueles\b', u'naqueles', string)
+    string = re.sub(r'\bem aquelas\b', u'naquelas', string)
+    string = re.sub(r'\bem aquilo\b', u'naquilo', string)       
+    
+    #pelo(a), polo(s)  TODOS AMBIGUOS menos pelos!
+    string = re.sub(r'\bpor o\b', u'pelo', string)
+    string = re.sub(r'\bpor a\b', u'pela', string)
+    string = re.sub(r'\bpor os\b', u'pelos', string)
+    string = re.sub(r'\bpor as\b', u'pelas', string)
+    
+    #dentre
+    string = re.sub(r'\bde entre\b', u'dentre', string)  
+
+    return string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def testa_substantivo_usuario(request):
     #carrega palavras
