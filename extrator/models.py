@@ -102,6 +102,8 @@ class ParametrosDeAjuste(models.Model):
     faixa_histo = models.FloatField('Faixa',default=0.2)
     exc_cluster = models.IntegerField('Exclusao_de_cluster')
     radio_r = models.TextField('Representatividade_minima', default=0.0)
+    execucao = models.TextField('Execucao', default='normal')
+    corte_n = models.IntegerField('Corte Extração dos Núcleos (%)',default=10)
 
 class CorrigePalavra(models.Model):
     palavra_correta = models.TextField('palavra_correta')
@@ -161,7 +163,18 @@ class SentencasNucleos(models.Model):
     representatividade = models.TextField('Representatividade') 
     peso = models.FloatField('peso')
     string_graus = models.TextField('Graus da Protofrase')
-    nucleo = models.TextField('Núcleo da Frase')   
+    nucleo = models.TextField('Núcleo da Frase') 
+    irse = models.FloatField('IRSE')  
+
+    def __str__(self):
+        return self.ident
+
+class SentencasGlobais(models.Model):
+    
+    representatividade = models.TextField('Representatividade') 
+    peso = models.FloatField('peso')    
+    nucleo = models.TextField('Núcleo da Frase') 
+    irseg = models.FloatField('IRSEG')  
 
     def __str__(self):
         return self.ident

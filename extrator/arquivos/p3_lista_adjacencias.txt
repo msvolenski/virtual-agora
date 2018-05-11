@@ -78,7 +78,7 @@ caravana paraíba 1.0
 paraíba prol 1.0
 prol lula 1.0
 chegar poder 1.0
-poder para-quedas 1.0
+poder paraquedas 1.0
 mentira dizer 1.0
 dizer governo 1.0
 governo lula 3.0
@@ -86,8 +86,8 @@ lula endividar 1.0
 endividar brasileiro 1.0
 corte supremo 8.0
 supremo brasil 8.0
-brasil niega 12.0
-niega recurso 12.0
+brasil negro 12.0
+negro recurso 14.0
 recurso liberar 12.0
 liberar lula 12.0
 lula naff 2.0
@@ -107,13 +107,12 @@ endividar absurdamente 1.0
 absurdamente governo 1.0
 falir bobagem 1.0
 gilmar negro 1.0
-negro recurso 2.0
 recurso pedir 1.0
 pedir liberdade 1.0
 liberdade lula 7.0
 tatuar carimbo 1.0
 carimbo lula 4.0
-lula livre 39.0
+lula livre 40.0
 livre marielle 1.0
 marielle presente 1.0
 presente coxa 1.0
@@ -146,7 +145,7 @@ blog liberato 4.0
 proner casar 1.0
 casar debater 1.0
 debater crise 1.0
-crise denocracia 1.0
+crise democracia 1.0
 interessante casa 1.0
 casa lula 2.0
 lula achar 2.0
@@ -243,7 +242,7 @@ prender dolly 1.0
 dolly falto 1.0
 falto chuck 1.0
 lula chancelar 1.0
-lula solto 3.0
+lula solto 4.0
 solto dia 1.0
 dia 10 1.0
 10 maio 1.0
@@ -325,7 +324,6 @@ mar marcola 1.0
 marcola ministro 1.0
 ministro justiça 1.0
 justiça economia 1.0
-aham claro 1.0
 errado lula 1.0
 mello quinta-feira 1.0
 quinta-feira julgar 1.0
@@ -373,7 +371,7 @@ portal uol 1.0
 uol sbt 3.0
 sbt excluir 1.0
 excluir lula 1.0
-lula pt 7.0
+lula pt 8.0
 pt sabatino 1.0
 sabatino eleitoral 1.0
 chato lula 1.0
@@ -423,7 +421,6 @@ baba ovo 1.0
 ovo lula 1.0
 lula super 1.0
 super pelego 1.0
-aham saber 1.0
 lula inocente 3.0
 inocente almo 1.0
 almo limpo 1.0
@@ -488,8 +485,7 @@ preciso desenhar 1.0
 lula ganho 1.0
 ganho síndico 1.0
 síndico prédio 1.0
-existir outro.lula 1.0
-outro.lula solto 1.0
+existir lula 1.0
 ver uol 1.0
 pt frito 12.0
 frito lula 12.0
@@ -650,8 +646,8 @@ verde oliva 1.0
 besta petista 1.0
 petista teimar 1.0
 teimar colocar 1.0
-colocar sobre-nome 1.0
-sobre-nome lula 1.0
+colocar sobrenome 1.0
+sobrenome lula 1.0
 lula ladrão 8.0
 corote ganho 2.0
 ganho licitação 2.0
@@ -755,12 +751,12 @@ esquerdo abandonar 2.0
 abandonar lula 6.0
 dê opinião 2.0
 opinião compartilhar 2.0
-lula enfrentarã 2.0
-enfrentarã ¡ 2.0
+lula enfrentar 3.0
+enfrentar ¡ 2.0
 ¡ inverno 2.0
 inverno rigoroso 3.0
-rigoroso atã 2.0
-atã © 2.0
+rigoroso atar 2.0
+atar © 2.0
 © eleição 2.0
 eleição § 2.0
 § ã 2.0
@@ -811,9 +807,9 @@ dizer advogado 1.0
 lula julgamento 1.0
 julgamento stf 2.0
 aux dilma 1.0
-dilma lula 4.0
-deve leiliado 1.0
-leiliado família 1.0
+dilma lula 5.0
+deve leiloado 1.0
+leiloado família 1.0
 dilma canalha 1.0
 canalha mandar 1.0
 mandar dinheiro 1.0
@@ -859,7 +855,7 @@ colocar pixuleco 1.0
 pixuleco lugar 1.0
 lugar lula 1.0
 lula curitiba 3.0
-entederam lula 1.0
+entender lula 2.0
 lula presidiário 4.0
 condenado vário 1.0
 vário instância 1.0
@@ -1053,8 +1049,8 @@ lula justo 1.0
 presidente haddad 1.0
 acabar decidir 1.0
 alucinar forte 1.0
-cobrador oinbos 1.0
-oinbos arengar 1.0
+cobrador ônibus 1.0
+ônibus arengar 1.0
 arengar motorista 1.0
 motorista causa 1.0
 causa lula 1.0
@@ -1078,7 +1074,7 @@ princípio corporativismo 2.0
 corporativismo manter 2.0
 fleixo lula 1.0
 globolixo abrir 1.0
-abrir excessão 1.0
+abrir exceção 1.0
 lula lula 6.0
 justiça df 3.0
 df marca 3.0
@@ -1101,8 +1097,7 @@ justo fato 1.0
 fato país 1.0
 ficar desonestidade 1.0
 fala bolsonaro 1.0
-toma ae 1.0
-ae 3 1.0
+toma 3 1.0
 3 opção 1.0
 mês lula 1.0
 lula prisioneiro 1.0
@@ -1139,8 +1134,8 @@ boneco inflável 1.0
 inflável – 1.0
 – representante 1.0
 oie toma 1.0
-toma litrao 1.0
-litrao falar 1.0
+toma litrão 1.0
+litrão falar 1.0
 gozo lula 1.0
 lula deve 2.0
 deve entender 1.0
@@ -1356,8 +1351,8 @@ preso globo 1.0
 silenciar calmaria 1.0
 calmaria estrategias 1.0
 estrategias baixar 1.0
-baixar pressao 1.0
-pressao facilitar 1.0
+baixar pressão 1.0
+pressão facilitar 1.0
 facilitar soltar 1.0
 soltar ladrão 1.0
 abarrotado gente 1.0
@@ -1367,7 +1362,7 @@ lula lugar 2.0
 lugar passa 1.0
 casado co 1.0
 co lula 1.0
-robo coração 1.0
+roubo coração 1.0
 roubalheira entender 1.0
 entender né 1.0
 né lula 1.0
@@ -1428,7 +1423,7 @@ passar brasil 1.0
 brasil limpo 1.0
 limpo limpar 1.0
 limpar dinheiro 1.0
-manifestacao valia 1.0
+manifestação valia 1.0
 valia favor 1.0
 favor liberdade 1.0
 liberdade candidatura 1.0
@@ -1461,8 +1456,8 @@ dar triplex 1.0
 político polêmico 2.0
 polêmico arma 2.0
 arma elite 2.0
-lulalivre eleiçao 1.0
-eleiçao lula 1.0
+lulalivre eleição 1.0
+eleição lula 2.0
 lula golpe 1.0
 adiantar chorar 1.0
 condenação lula 1.0
@@ -1540,8 +1535,7 @@ deve deixar 1.0
 deixar cadeia 1.0
 cadeia dia 1.0
 dia deficiente 1.0
-presidente paìs 1.0
-paìs jà 1.0
+presidente país 1.0
 olímpio acabar 2.0
 acabar sonho 2.0
 sonho petista 2.0
@@ -1626,8 +1620,8 @@ dollynho declarar 1.0
 declarar guerra 1.0
 preciso abrir 1.0
 abrir processo 1.0
-processo votra 1.0
-votra odebrecht 1.0
+processo votar 1.0
+votar odebrecht 1.0
 odebrecht favor 1.0
 favor lula 3.0
 lula suiça 1.0
@@ -1653,7 +1647,6 @@ cantor compositor 1.0
 compositor lula 1.0
 lula queiroga 2.0
 assistir vídeo 1.0
-lula livr 1.0
 caralho fio 1.0
 lula fraudar 1.0
 fraudar cagada 1.0
@@ -1703,8 +1696,8 @@ mandar reformar 1.0
 reformar dinheiro 1.0
 dinheiro desviado 1.0
 desviado empreiteiro 1.0
-busca aprensões 1.0
-aprensões domicílio 1.0
+busca apreensão 1.0
+apreensão domicílio 1.0
 domicílio ex-presidente 1.0
 ex-presidente luiz 2.0
 silva apartamento 1.0
@@ -1776,7 +1769,7 @@ permanecer junto 1.0
 lula dar 1.0
 dia tarde 1.0
 tarde noite 1.0
-noite soltatem 1.0
+noite soltar 1.0
 cobrir lula 1.0
 ozamigu ditadura 1.0
 ditadura palhaçada 1.0
@@ -1786,15 +1779,15 @@ defender soberania 1.0
 soberania nacional 1.0
 stf começar 2.0
 começar tomar 2.0
-tomar direçoes 2.0
-direçoes lula 2.0
+tomar direção 2.0
+direção lula 2.0
 igreja lula 1.0
 dizer final 1.0
 final suicídio 1.0
 suicídio coletivo 1.0
 coletivo tipo 1.0
-tipo jim 1.0
-jim jones 1.0
+tipo gim 1.0
+gim jones 1.0
 jones caro 1.0
 escolher soltar 1.0
 dolly escolher 1.0
@@ -1866,7 +1859,6 @@ delírio vingativo 3.0
 vingativo povoar 3.0
 povoar mente 3.0
 mente condenado 3.0
-lula enfrentar 1.0
 enfrentar inverno 1.0
 rigoroso eleição 1.0
 eleição crem 1.0
@@ -1920,7 +1912,7 @@ libertar presidente 1.0
 achar chimbinha 1.0
 chimbinha ficar 1.0
 ficar igual 2.0
-igual lula 2.0
+igual lula 3.0
 lula velho 1.0
 dever voltar 1.0
 voltar pijama 1.0
@@ -1963,7 +1955,7 @@ causa tripléx 1.0
 sané aderir 1.0
 campanha nobel 1.0
 verdade prova 1.0
-prova caracter 1.0
+prova carácter 1.0
 pensar rabo 1.0
 implicar pt 1.0
 continuar valer 1.0
@@ -1983,7 +1975,6 @@ participar ato 2.0
 ato defeso 1.0
 defeso lula 3.0
 tentar entender 1.0
-entender lula 1.0
 lula presídio 2.0
 presídio comum 1.0
 motivo gastar 1.0
@@ -2000,7 +1991,7 @@ lula totalmente 1.0
 totalmente embriagado 1.0
 embriagado gritar 1.0
 gritar amo 1.0
-amo lorinha 1.0
+amo loiro 1.0
 novo versão 1.0
 versão lula 1.0
 lula libertado 1.0
@@ -2053,8 +2044,8 @@ chapa lula 1.0
 presidente vice 1.0
 vice jair 1.0
 jair bolsonaro 1.0
-boulos rencarnação 1.0
-rencarnação lula 1.0
+boulos reencarnação 1.0
+reencarnação lula 1.0
 lula ano 1.0
 ano 80 1.0
 ficar olho 1.0
@@ -2067,7 +2058,6 @@ presidiário impedir 1.0
 impedir aliança 1.0
 aliança preocupar 2.0
 preocupar filiado 3.0
-enqt lula 1.0
 prisão permanecer 1.0
 permanecer consciência 1.0
 consciência limpo 1.0
@@ -2113,7 +2103,7 @@ abandonado 153 1.0
 153 milhão 1.0
 milhão banco 1.0
 banco português 1.0
-ditadura fajuda 1.0
+ditadura ajuda 1.0
 subversivo esquecer 1.0
 lula dirceu 1.0
 dirceu fhc 1.0
@@ -2157,7 +2147,6 @@ mendes negro 1.0
 canalha igual 1.0
 bolsonaro perder 3.0
 perder lula 3.0
-igaul lula 1.0
 molusco reclamar 1.0
 reclamar coisa 1.0
 mãe chama 1.0
@@ -2226,7 +2215,7 @@ usado ídolo 1.0
 lula 1954 1.0
 preso senhor 1.0
 lula 13 1.0
-mortandela aí 1.0
+mortadela aí 1.0
 aí votar 1.0
 lula final 1.0
 final lula 1.0
@@ -2285,7 +2274,6 @@ fogo please 1.0
 sentir lula 1.0
 lula shopping 1.0
 shopping conhecido 1.0
-conhecido lkkk 1.0
 mídia amigo 1.0
 amigo viver 1.0
 viver falar 1.0
@@ -2370,8 +2358,8 @@ racista homofóbico 1.0
 homofóbico fascista 1.0
 migux presidente 1.0
 parir usar 1.0
-usar dorgas 1.0
-dorgas plix 1.0
+usar droga 1.0
+droga plix 1.0
 parlamentar pedir 1.0
 pedir lula 1.0
 gleisi passar 1.0
@@ -2471,12 +2459,10 @@ sair olofotes 1.0
 olofotes morrer 1.0
 morrer lixo 1.0
 culpa votar 1.0
-votar aéssio 1.0
-diulma lula 1.0
-lula petê 1.0
+votar aécio 1.0
 vô bater 1.0
 bater panela 1.0
-grobo falar 1.0
+globo falar 1.0
 acampamento marisa 1.0
 marisa letícia 1.0
 inhale blade 1.0
@@ -2897,8 +2883,8 @@ brasileiro poder 1.0
 prova estudar 1.0
 estudar quantum 1.0
 stf deixar 1.0
-deixar clarissimo 1.0
-clarissimo lula 1.0
+deixar claro 1.0
+claro lula 1.0
 lula amor 1.0
 impor lula 1.0
 brasileiro vontade 1.0
@@ -3033,6 +3019,7 @@ pt conhecer 1.0
 conhecer partido 1.0
 ok candidato 1.0
 candidato preso 1.0
+impugnar próximo 1.0
 gilmar maioria 1.0
 maioria turma 1.0
 stf votar 1.0
@@ -3075,7 +3062,6 @@ rádiounifoa jornalismo 1.0
 morrer cadeia 1.0
 certeza brasil 1.0
 brasil querer 1.0
-eleição lula 1.0
 torcida grêmio 1.0
 grêmio revolto 1.0
 revolto arranca 1.0
@@ -3136,8 +3122,8 @@ mula hoffmann 1.0
 voto candidatura 1.0
 candidatura feminista 1.0
 feminista apoiar 1.0
-apoiar empoderamento 1.0
-empoderamento feminino 1.0
+apoiar emponderamento 1.0
+emponderamento feminino 1.0
 lula truque 1.0
 truque diabo 1.0
 ficar imaginado 1.0

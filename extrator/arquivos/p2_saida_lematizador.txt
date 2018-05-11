@@ -250,7 +250,7 @@ o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 poder poder NCMS000 poder VMN0000 poder VMN01S0 poder VMN03S0
 , , Fc
 de de SPS00
-para-quedas para-quedas NC00000
+paraquedas paraquedas UNK
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 não não RN
 foi ir VMIS3S0 ser VMIS3S0
@@ -273,7 +273,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -488,7 +488,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 crise crise AQ0FS0 crise NCFS000
 de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-denocracia denocracia UNK
+democracia democracia NCFS000
 em em SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 j j NCMS000
@@ -720,7 +720,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -1416,7 +1416,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -1653,7 +1653,6 @@ super super AQ0CN0
 pelego pelego AQ0MS0 pelego NCMS000 pelegar VMIP1S0
 . . Fp
 
-aham aham UNK
 sei saber VMIP1S0
 . . Fp
 
@@ -1960,7 +1959,8 @@ ele ele NCMS000 ele PP3MS000 elar VMM03S0 elar VMSP1S0 elar VMSP3S0
 
 não não RN
 existe existir VMIP3S0 existir VMM02S0
-outro.lula outro.lula UNK
+outro outro AQ0MS0 outro DI0MS0 outro PI0MS000
+lula lula NCFS000
 solto solto AQ0MS0 solto NCMS000 soltar VMIP1S0 soltar VMP00SM
 . . Fp
 
@@ -2643,7 +2643,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -2829,7 +2829,7 @@ teimam teimar VMIP3P0
 em em SPS00
 colocar colocar VMN0000 colocar VMN01S0 colocar VMN03S0 colocar VMSF1S0 colocar VMSF3S0
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-sobre-nome sobre-nome NC00000
+sobrenome sobrenome NCMS000
 de de SPS00
 lula lula NCFS000
 ladrão ladrão AQ0MS0 ladrão NCMS000
@@ -3289,13 +3289,13 @@ compartilhe compartilhar VMM03S0 compartilhar VMSP1S0 compartilhar VMSP3S0
 . . Fp
 
 lula lula NCFS000
-enfrentarã enfrentarã UNK
+enfrentarão enfrentar VMIF3P0
 ¡ ¡ Faa
 ' ' Fe
 inverno inverno NCMS000 invernar VMIP1S0
 rigoroso rigoroso AQ0MS0
 ' ' Fe
-atã atã UNK
+atá atar VMN0000 atar VMN01S0 atar VMN03S0
 © © UNK
 eleição eleição NCFS000
 § § UNK
@@ -3345,13 +3345,13 @@ lula lula NCFS000
 . . Fp
 
 lula lula NCFS000
-enfrentarã enfrentarã UNK
+enfrentarão enfrentar VMIF3P0
 ¡ ¡ Faa
 ' ' Fe
 inverno inverno NCMS000 invernar VMIP1S0
 rigoroso rigoroso AQ0MS0
 ' ' Fe
-atã atã UNK
+atá atar VMN0000 atar VMN01S0 atar VMN03S0
 © © UNK
 eleição eleição NCFS000
 § § UNK
@@ -3555,7 +3555,7 @@ lula lula NCFS000
 
 deve deve NCMS000 dever VMIP3S0 dever VMM02S0
 ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
-leiliado leiliado UNK
+leiloado leiloado AQ0MS0 leiloar VMP00SM
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 bens bem NCMP000
 de de SPS00
@@ -3784,7 +3784,7 @@ loucos louco AQ0MP0 louco NCMP000
 . . Fp
 
 não não RN
-entederam entederam UNK
+entenderam entender VMIM3P0 entender VMIS3P0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 lula lula NCFS000
 agora agora RG
@@ -4775,7 +4775,7 @@ o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 cobrador cobrador AQ0MS0 cobrador NCMS000
 de de SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-oinbos oinbos UNK
+ônibus ônibus NCMN000
 te te PP2CS000
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 arengando arengar VMG0000
@@ -4867,7 +4867,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 globolixo globolixo UNK
 abriria abrir VMIC1S0 abrir VMIC3S0
 uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-excessão excessão UNK
+exceção exceção NCFS000
 . . Fp
 
 deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
@@ -5229,7 +5229,7 @@ oie oie UNK
 vamos ir VMIP1P0 ir VMM01P0 ir VMSP1P0
 toma toma NCFS000 tomar VMIP3S0 tomar VMM02S0
 um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
-litrao litrao UNK
+litrão litrão UNK
 e e CC
 falar falar NCMS000 falar VMN0000 falar VMN01S0 falar VMN03S0 falar VMSF1S0 falar VMSF3S0
 de de SPS00
@@ -5991,7 +5991,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -6211,7 +6211,7 @@ supremo supremo AQ0MS0 supremo NCMS000
 tribunal tribunal NCMS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -6416,7 +6416,7 @@ estrategias estrategias UNK
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 baixar baixar VMN0000 baixar VMN01S0 baixar VMN03S0 baixar VMSF1S0 baixar VMSF3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-pressao pressao UNK
+pressão pressão NCFS000
 e e CC
 facilitar facilitar VMN0000 facilitar VMN01S0 facilitar VMN03S0 facilitar VMSF1S0 facilitar VMSF3S0
 soltar soltar VMN0000 soltar VMN01S0 soltar VMN03S0 soltar VMSF1S0 soltar VMSF3S0
@@ -6461,7 +6461,7 @@ co co AQ0CN0
 lula lula NCFS000
 . . Fp
 
-robo robo UNK
+roubo roubo NCMS000 roubar VMIP1S0
 meu meu DP1MSS meu NCMS000 meu PX1MS0S0
 coração coração NCCS000 coração NCMS000
 . . Fp
@@ -6616,7 +6616,7 @@ supremo supremo AQ0MS0 supremo NCMS000
 tribunal tribunal NCMS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -6727,7 +6727,7 @@ via via NCFS000 via SPS00 ver VMII1S0 ver VMII2S0 ver VMII3S0
 . . Fp
 
 essa esse DD0FS0 esse PD0FS000
-manifestacao manifestacao UNK
+manifestação manifestação NCFS000
 teria ter VMIC1S0 ter VMIC3S0
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 valia valia NCFS000 valer VMII1S0 valer VMII2S0 valer VMII3S0
@@ -6792,7 +6792,7 @@ grana grana NCFS000 granar VMIP3S0 granar VMM02S0 granir VMM03S0 granir VMSP1S0 
 pra pra SPS00
 comprar comprar VMN0000 comprar VMN01S0 comprar VMN03S0 comprar VMSF1S0 comprar VMSF3S0
 e e CC
-transforma transformar VMIP3S0 transformar VMM02S0
+transformá transformar VMN0000 transformar VMN01S0 transformar VMN03S0
 lo o PP3MSA00
 em em SPS00
 uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
@@ -6858,7 +6858,7 @@ supremo supremo AQ0MS0 supremo NCMS000
 tribunal tribunal NCMS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -6868,7 +6868,7 @@ lula lula NCFS000
 
 # # Fz
 lulalivre lulalivre UNK
-eleiçao eleiçao UNK
+eleição eleição NCFS000
 sem sem SPS00
 lula lula NCFS000
 e e CC
@@ -7478,8 +7478,8 @@ melhor melhor AQ0CS0 melhor I melhor NCCS000 melhor RG
 presidente presidente AQ0CS0 presidente NCCS000 presidente NCMS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 esse esse DD0MS0 esse NCMS000 esse PD0MS000
-paìs paìs UNK
-jà jà UNK
+país país NCMS000
+já já CS já RG
 teve ter VMIS3S0
 . . Fp
 
@@ -7872,7 +7872,7 @@ para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 abrir abrir NCMS000 abrir VMN0000 abrir VMN01S0 abrir VMN03S0 abrir VMSF1S0 abrir VMSF3S0
 um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
 processo processo NCMS000 processar VMIP1S0
-votra votra UNK
+votar votar VMN0000 votar VMN01S0 votar VMN03S0 votar VMSF1S0 votar VMSF3S0
 odebrecht odebrecht UNK
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 favor favor NCMS000
@@ -8035,7 +8035,7 @@ ha ha NCMN000
 . . Fp
 
 lula lula NCFS000
-livr livr UNK
+livre livre AQ0CS0 livre NCCS000 livre NCMS000 livre RG livrar VMM03S0 livrar VMP00P0 livrar VMSP1S0 livrar VMSP3S0
 . . Fp
 
 caralho caralho I caralho NCMS000
@@ -8337,7 +8337,7 @@ internacionais internacional AQ0CP0 internacional NCCP000 internacional NCFP000
 
 buscas busca NCFP000 buscar VMIP2S0
 e e CC
-aprensões aprensões UNK
+apreensões apreensão NCFP000
 em em SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 domicílio domicílio NCMS000
@@ -8647,7 +8647,7 @@ boa bom AQ0FS0 boa I boa NCFS000
 noite noite NCFS000
 até até RG até SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-soltatem soltatem UNK
+soltarem soltar VMN03P0 soltar VMSF3P0
 . . Fp
 
 cobrem cobrir VMIP3P0 cobrar VMM03P0 cobrar VMSP3P0
@@ -8700,7 +8700,7 @@ começa começar VMIP3S0 começar VMM02S0 comedir VMM03S0 comedir VMSP1S0 comedi
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 tomar tomar VMN0000 tomar VMN01S0 tomar VMN03S0 tomar VMSF1S0 tomar VMSF3S0
 as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-direçoes direçoes UNK
+direções direção NCFP000
 certas certo AQ0FP0 certo DI0FP0 certa NCFP000 certo PI0FP000 certar VMIP2S0
 em em SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
@@ -8727,7 +8727,7 @@ o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 suicídio suicídio NCMS000
 coletivo coletivo AQ0MS0
 tipo tipo NCMS000
-jim jim UNK
+gim gim NCMS000
 jones jones UNK
 cara caro AQ0FS0 cara NCCS000 cara NCFS000
 . . Fp
@@ -9665,7 +9665,7 @@ verdade verdade NCFS000
 prova prova NCFS000 provar VMIP3S0 provar VMM02S0
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 seu seu DP3MSS seu NCMS000 seu PX3MS0P0 seu PX3MS0S0
-caracter caracter NCMS000
+carácter carácter NCMS000
 . . Fp
 
 só só AQ0CS0 só NCCS000 só RG
@@ -9901,7 +9901,7 @@ gritando gritar VMG0000
 eu eu NCMS000 eu PP1CSN00
 te te PP2CS000
 amo amo NCMS000 amar VMIP1S0
-lorinha lorinha UNK
+loirinha loiro AQCFS0 loiro AQDFS0 loiro NCFS00D
 " " Fe
 . . Fp
 
@@ -10082,7 +10082,7 @@ boulos boulos UNK
 é ser VMIP3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 " " Fe
-rencarnação rencarnação UNK
+reencarnação reencarnação NCFS000
 " " Fe
 de de SPS00
 lula lula NCFS000
@@ -10146,7 +10146,7 @@ os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 filiados filiado AQ0MP0 filiar VMP00PM
 . . Fp
 
-enqt enqt UNK
+enquanto enquanto CS enquanto RG
 lula lula NCFS000
 em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -10312,7 +10312,7 @@ até até RG até SPS00
 nossa nosso DP1FSP nosso PX1FS0P0
 ditadura ditadura NCFS000
 foi ir VMIS3S0 ser VMIS3S0
-fajuda fajuda UNK
+ajuda ajuda NCFS000 ajudar VMIP3S0 ajudar VMM02S0
 . . Fp
 
 só só AQ0CS0 só NCCS000 só RG
@@ -10591,7 +10591,7 @@ lula lula NCFS000
 
 te te PP2CS000
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-igaul igaul UNK
+igual igual AQ0CS0 igual NCCS000
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 lula lula NCFS000
@@ -10647,7 +10647,7 @@ ele ele NCMS000 ele PP3MS000 elar VMM03S0 elar VMSP1S0 elar VMSP3S0
 vai ir VMIP3S0 ir VMM02S0
 ajudar ajudar VMN0000 ajudar VMN01S0 ajudar VMN03S0 ajudar VMSF1S0 ajudar VMSF3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-destrui destruir VMIP3S0 destruir VMM02S0 destruir VMN0000 destruir VMN01S0 destruir VMN03S0
+destruí destruir VMIP2P0 destruir VMIS1S0 destruir VMM02P0 destruir VMN0000
 esta este DD0FS0 este PD0FS000
 seita seita NCFS000
 quadrilha quadrilha NCFS000
@@ -10958,7 +10958,7 @@ presidente presidente AQ0CS0 presidente NCCS000 presidente NCMS000
 . . Fp
 
 sou ser VMIP1S0
-mortandela mortandela UNK
+mortadela mortadela NCFS000
 e e CC
 de de SPS00
 aí aí I aí NCMS000 aí RG
@@ -11308,7 +11308,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -11689,7 +11689,7 @@ começa começar VMIP3S0 começar VMM02S0 comedir VMM03S0 comedir VMSP1S0 comedi
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 tomar tomar VMN0000 tomar VMN01S0 tomar VMN03S0 tomar VMSF1S0 tomar VMSF3S0
 as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-direçoes direçoes UNK
+direções direção NCFP000
 certas certo AQ0FP0 certo DI0FP0 certa NCFP000 certo PI0FP000 certar VMIP2S0
 em em SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
@@ -11790,7 +11790,7 @@ suja sujo AQ0FS0 sujar VMIP3S0 sujar VMM02S0
 parem parir VMIP3P0 parar VMM03P0 parar VMSP3P0
 de de SPS00
 usar usar VMN0000 usar VMN01S0 usar VMN03S0 usar VMSF1S0 usar VMSF3S0
-dorgas dorgas UNK
+drogas droga NCFP000 drogar VMIP2S0
 plix plix UNK
 . . Fp
 
@@ -12280,20 +12280,20 @@ eu eu NCMS000 eu PP1CSN00
 votei votar VMIS1S0
 em em SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-aéssio aéssio UNK
+aécio aécio UNK
 . . Fp
 
 fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
-diulma diulma UNK
+dilma dilma UNK
 fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
 lula lula NCFS000
 fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
-petê petê UNK
+pt pt UNK
 . . Fp
 
 tem ter VMIP3S0 ter VMM02S0
 muita muito AQ0FS0 muito DI0FS0 muito NCFS000 muito PI0FS000
-corrupissaum corrupissaum UNK
+corrupção corrupção NCFS000
 . . Fp
 
 vô vô UNK
@@ -12302,7 +12302,7 @@ panela panela NCFS000
 . . Fp
 
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-grobo grobo UNK
+globo globo NCMS000
 falou falar VMIS3S0
 . . Fp
 
@@ -14811,7 +14811,7 @@ stf stf UNK
 também também CC também I também RG
 já já CS já RG
 deixou deixar VMIS3S0
-clarissimo clarissimo UNK
+claríssimo claro AQSMS0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 lula lula NCFS000
 e e CC
@@ -15509,7 +15509,7 @@ mas mas CC mas NCMN000 me+as PP1CS000+PP3FPA00 mas RG
 
 impugnado impugnar VMP00SM
 , , Fc
-proximo proximo UNK
+próximo próximo AQ0MS0 próximo NCMS000 próximo RG
 . . Fp
 
 pml pml UNK
@@ -15623,7 +15623,7 @@ supremo supremo AQ0MS0 supremo NCMS000
 tribunal tribunal NCMS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -15877,7 +15877,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0
@@ -16259,9 +16259,9 @@ candidaturas candidatura NCFP000
 feministas feminista AQ0CP0 feminista NCCP000
 e e CC
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-apóiem apoiar VMM03P0 apoiar VMSP3P0
+apoiem apoiar VMM03P0 apoiar VMSP3P0
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-empoderamento empoderamento UNK
+emponderamento emponderamento UNK
 feminino feminino AQ0MS0 feminino NCMS000
 . . Fp
 
@@ -16506,7 +16506,7 @@ corte corte NCCS000 corte NCFS000 corte NCMS000 cortar VMM03S0 cortar VMSP1S0 co
 suprema supremo AQ0FS0 supremo NCFS000
 de de SPS00
 brasil brasil AQ0CS0 brasil AQ0MS0 brasil NCMS000
-niega niega UNK
+nega negro AQ0FS0 nega NCFS000 negar VMIP3S0 negar VMM02S0
 recurso recurso NCMS000
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
 liberar liberar VMN0000 liberar VMN01S0 liberar VMN03S0 liberar VMSF1S0 liberar VMSF3S0

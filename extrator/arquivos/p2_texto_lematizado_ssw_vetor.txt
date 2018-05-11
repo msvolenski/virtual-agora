@@ -156,7 +156,7 @@ pergunta
 
 chegar
 poder
-para-quedas
+paraquedas
 .
 
 mentira
@@ -170,7 +170,7 @@ brasileiro
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -299,7 +299,7 @@ proner
 casar
 debater
 crise
-denocracia
+democracia
 .
 
 interessante
@@ -433,7 +433,7 @@ lula
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -724,7 +724,6 @@ aliado
 pt
 .
 
-aham
 claro
 .
 
@@ -863,7 +862,7 @@ facebook
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -1007,7 +1006,6 @@ super
 pelego
 .
 
-aham
 saber
 .
 
@@ -1199,7 +1197,7 @@ prédio
 .
 
 existir
-outro.lula
+lula
 solto
 .
 
@@ -1605,7 +1603,7 @@ lopes
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -1723,7 +1721,7 @@ besta
 petista
 teimar
 colocar
-sobre-nome
+sobrenome
 lula
 ladrão
 .
@@ -1995,11 +1993,11 @@ compartilhar
 .
 
 lula
-enfrentarã
+enfrentar
 ¡
 inverno
 rigoroso
-atã
+atar
 ©
 eleição
 §
@@ -2026,11 +2024,11 @@ lula
 .
 
 lula
-enfrentarã
+enfrentar
 ¡
 inverno
 rigoroso
-atã
+atar
 ©
 eleição
 §
@@ -2144,7 +2142,7 @@ lula
 .
 
 deve
-leiliado
+leiloado
 família
 lula
 dilma
@@ -2276,7 +2274,7 @@ pt
 louco
 .
 
-entederam
+entender
 lula
 presidiário
 .
@@ -2859,7 +2857,7 @@ forte
 .
 
 cobrador
-oinbos
+ônibus
 arengar
 motorista
 causa
@@ -2912,7 +2910,7 @@ lula
 
 globolixo
 abrir
-excessão
+exceção
 .
 
 deixar
@@ -3031,7 +3029,6 @@ fala
 bolsonaro
 lula
 toma
-ae
 3
 opção
 .
@@ -3124,7 +3121,7 @@ sabatino
 
 oie
 toma
-litrao
+litrão
 falar
 lula
 .
@@ -3566,7 +3563,7 @@ presidiário
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -3696,7 +3693,7 @@ molusco
 supremo
 tribunal
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -3820,7 +3817,7 @@ silenciar
 calmaria
 estrategias
 baixar
-pressao
+pressão
 facilitar
 soltar
 ladrão
@@ -3845,7 +3842,7 @@ co
 lula
 .
 
-robo
+roubo
 coração
 .
 
@@ -3943,7 +3940,7 @@ lula
 supremo
 tribunal
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -4000,7 +3997,7 @@ plano
 
 .
 
-manifestacao
+manifestação
 valia
 favor
 liberdade
@@ -4071,14 +4068,14 @@ elite
 supremo
 tribunal
 brasil
-niega
+negro
 recurso
 liberar
 lula
 .
 
 lulalivre
-eleiçao
+eleição
 lula
 golpe
 .
@@ -4430,8 +4427,7 @@ deficiente
 
 lula
 presidente
-paìs
-jà
+país
 .
 
 gostar
@@ -4647,7 +4643,7 @@ guerra
 preciso
 abrir
 processo
-votra
+votar
 odebrecht
 favor
 lula
@@ -4753,7 +4749,7 @@ posse
 .
 
 lula
-livr
+livre
 .
 
 caralho
@@ -4942,7 +4938,7 @@ internacional
 .
 
 busca
-aprensões
+apreensão
 domicílio
 ex-presidente
 luiz
@@ -5114,7 +5110,7 @@ dar
 dia
 tarde
 noite
-soltatem
+soltar
 .
 
 cobrir
@@ -5140,7 +5136,7 @@ lula
 stf
 começar
 tomar
-direçoes
+direção
 lula
 .
 
@@ -5151,7 +5147,7 @@ final
 suicídio
 coletivo
 tipo
-jim
+gim
 jones
 caro
 .
@@ -5722,7 +5718,7 @@ pt
 
 verdade
 prova
-caracter
+carácter
 .
 
 pensar
@@ -5872,7 +5868,7 @@ totalmente
 embriagado
 gritar
 amo
-lorinha
+loiro
 .
 
 novo
@@ -5983,7 +5979,7 @@ bolsonaro
 .
 
 boulos
-rencarnação
+reencarnação
 lula
 ano
 80
@@ -6023,7 +6019,6 @@ preocupar
 filiado
 .
 
-enqt
 lula
 prisão
 permanecer
@@ -6122,7 +6117,7 @@ fim
 .
 
 ditadura
-fajuda
+ajuda
 .
 
 subversivo
@@ -6295,7 +6290,7 @@ apoiar
 lula
 .
 
-igaul
+igual
 lula
 molusco
 reclamar
@@ -6514,7 +6509,7 @@ lula
 presidente
 .
 
-mortandela
+mortadela
 aí
 votar
 lula
@@ -6694,7 +6689,6 @@ sentir
 lula
 shopping
 conhecido
-lkkk
 .
 
 preso
@@ -6722,7 +6716,7 @@ livre
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -6958,7 +6952,7 @@ negado
 stf
 começar
 tomar
-direçoes
+direção
 lula
 .
 
@@ -7019,7 +7013,7 @@ sujo
 
 parir
 usar
-dorgas
+droga
 plix
 .
 
@@ -7292,15 +7286,15 @@ lixo
 
 culpa
 votar
-aéssio
+aécio
 .
 
-diulma
+dilma
 lula
-petê
+pt
 .
 
-corrupissaum
+corrupção
 .
 
 vô
@@ -7308,7 +7302,7 @@ bater
 panela
 .
 
-grobo
+globo
 falar
 .
 
@@ -8782,7 +8776,7 @@ zelote
 
 stf
 deixar
-clarissimo
+claro
 lula
 .
 
@@ -9181,6 +9175,7 @@ preso
 .
 
 impugnar
+próximo
 .
 
 pml
@@ -9246,7 +9241,7 @@ prisão
 supremo
 tribunal
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -9404,7 +9399,7 @@ preso
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula
@@ -9623,7 +9618,7 @@ voto
 candidatura
 feminista
 apoiar
-empoderamento
+emponderamento
 feminino
 .
 
@@ -9771,7 +9766,7 @@ lula
 corte
 supremo
 brasil
-niega
+negro
 recurso
 liberar
 lula

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
+from .models import SentencasGlobais, SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, TextoPreproc,ParametrosDeAjuste, ListaDeSubstantivos, DadosPreproc,TestaPalavra, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 
 # Register your models here.
 
@@ -36,6 +36,9 @@ class SentencasAvaliadasAdmin(admin.ModelAdmin):
 class SentencasExtraidasAdmin(admin.ModelAdmin):
   list_display = ['ident', 'tema', 'subtema', 'proto', 'frase', 'string_graus', 'peso', 'corte', 'irse', 'representatividade']
 
+class SentencasGlobaisAdmin(admin.ModelAdmin):
+  list_display = ['nucleo' , 'peso', 'irseg', 'representatividade']
+
 class SentencasNucleosAdmin(admin.ModelAdmin):
   list_display = ['ident','tema', 'subtema','proto', 'frase', 'nucleo','string_graus','peso','representatividade']
 
@@ -67,4 +70,6 @@ admin.site.register(Clusters, ClustersAdmin)
 admin.site.register(MapasTemasESubtemas, MapasTemasESubtemasAdmin)
 admin.site.register(SentencasExtraidas, SentencasExtraidasAdmin)
 admin.site.register(SentencasNucleos, SentencasNucleosAdmin)
+admin.site.register(SentencasGlobais, SentencasGlobaisAdmin)
+
 

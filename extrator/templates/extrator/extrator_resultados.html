@@ -141,7 +141,7 @@
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opum' %}" class="botao_ajuste">Limpar Palavras Ignoradas</a>
                     <a href="{% url 'extrator:limpar_lista_subtantivos' 'opdois' %}" class="botao_ajuste">Limpar lista de Substantivos</a>
                     <a href="{% url 'extrator:carrega_ls' %}" class="botao_ajuste">Carregar Lista de Substantivos</a>
-                    <a href="{% url 'extrator:ajustar_parametro' 'opcao4' %}" class="botao_ajuste">Carregar parâmetros</a>
+                    <a href="{% url 'extrator:ajustar_parametro' 'opcaox' %}" class="botao_ajuste">Carregar parâmetros</a>
 
                     <div class="titulo_ajuste">Quantidade de Tweets </div>
                     <div class="form_ajuste">
@@ -174,6 +174,7 @@
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
+                    
                     <div class="titulo_ajuste">Faixa de intervalo do Histograma</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao1' %}" method="POST" role="form" enctype="multipart/form-data">
@@ -182,6 +183,7 @@
                             <input type="submit" class="botao_enviar" value="Enviar">
                         </form>
                     </div>
+                    
                     <div class="titulo_ajuste">Porcentagem máxima de nós da rede para um cluster </div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao2' %}" method="POST" role="form" enctype="multipart/form-data">
@@ -198,6 +200,14 @@
                         </form>
                     </div>
                  
+                    <div class="titulo_ajuste">Corte na extração de núcleos </div>
+                    <div class="form_ajuste">
+                        <form action="{% url 'extrator:ajustar_parametro' 'opcao4' %}" method="POST" role="form" enctype="multipart/form-data"> corte =
+                            <input style="width:50px" type="number" name="valor_c" value={{valorC}}> % do maior peso
+                            <input type="submit" class="botao_enviar" value="Enviar">
+                        </form>
+                    </div>
+                    
                     <div class="titulo_ajuste">Representatividade mínima</div>
                     <div class="form_ajuste">
                         <form action="{% url 'extrator:ajustar_parametro' 'opcao9' %}" method="POST" role="form" enctype="multipart/form-data">
@@ -647,10 +657,7 @@
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Protofrases</h2>
-                        <a href="{% url 'extrator:processarpfs'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>
-                        {% if tempo_p5pr %}
-                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5pr}} s</span>
-                        {% endif %}
+                        <a href="{% url 'extrator:processarpfs'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>                       
                     </div>
                 </div>
 
@@ -661,10 +668,7 @@
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Extração</h2> {{mess}}
-                        <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>
-                        {% if tempo_p5ex %}
-                        <span class="cd-date">{{tempo_p5ex}} s</span>
-                        {% endif %}
+                        <a href="{% url 'extrator:mapear_e_extrair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Mapear</a>                        
                     </div>
                 </div>
 
@@ -675,12 +679,8 @@
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Extrair Núcleos das Sentenças</h2>
-                        <a href="{% url 'extrator:extrair_nucleos' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Extrair</a>
-                        {% if tempo_p5re %}
-                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5re}} s</span>
-                        {% endif %}
-                    </div>
-                    <div class="botao_resultados_1" style="height:0px;border:none;"></div>
+                        <a href="{% url 'extrator:extrair_nucleos' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Extrair</a>                    
+                    </div>                    
                 </div>
 
                 <!-- cd-timeline-block -->
@@ -690,12 +690,19 @@
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Representatividade</h2>
-                        <a href="{% url 'extrator:calculair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>
-                        {% if tempo_p5re %}
-                        <span class="cd-date" style="margin-left:-195px;">{{tempo_p5re}} s</span>
-                        {% endif %}
+                        <a href="{% url 'extrator:calculair' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>                  
+                    </div>                    
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_eglobais" class="glyphicon glyphicon-tasks" style="font-size:200%;margin-top:15px;"></span>
                     </div>
-                    <div class="botao_resultados_1" style="height:0px;border:none;"></div>
+                    <div class="cd-timeline-content" style="background: #E04644">
+                        <h2>Calcula Representatividade Global</h2>
+                        <a href="{% url 'extrator:eglobais'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>                      
+                    </div>
                 </div>
 
 

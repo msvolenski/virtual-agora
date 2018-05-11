@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
+from .models import SentencasGlobais, SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -16,6 +16,7 @@ from operator import itemgetter, attrgetter
 from networkx.drawing.layout import kamada_kawai_layout
 from django.conf import settings as djangoSettings
 from django.db.models import Count
+import aspell
 import codecs
 import emoji
 import networkx as nx
@@ -1547,6 +1548,7 @@ def executa_passo_5(request):
 
 def processarProtofrases(request):
     print "Avaliando as protofrases..."
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
     #Nesta etapa, todas as protofrases recebem um peso formado pela soma dos pesos das arestas e um cirtério de corte
    
     #inicializa dados da extrcao
@@ -1654,7 +1656,7 @@ def processarProtofrases(request):
                         if bigrama in k and float(v) > maior_grau:
                             maior_grau = float(v)                 
             
-            grau_corte = 0.1*maior_grau
+            grau_corte = (float(parametros.corte_n/100))*maior_grau
             if grau_corte < 1:
                 grau_corte = 1.0             
             
@@ -1681,7 +1683,7 @@ def processarProtofrases(request):
     #salva dados no BD
     aList = [SentencasAvaliadas(tema=sent[0], subtema='a definir', proto=sent[1] , frase=sent[2] , peso=sent[3] , corte=sent[4], irse=0, string_graus=sent[5]) for sent in string]    
     SentencasAvaliadas.objects.bulk_create(aList) 
-    
+
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo5', 'muda_logo':'logo_protofrases' })
 
 
@@ -1735,7 +1737,10 @@ def mapearEextrair(request):
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo5', 'muda_logo':'logo_map_extracao'})
 
 def extrairNucleos(request):
+    print 'Extraindo nucleos...'
     
+    #inicilaiza coisas do BD
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
     SentencasNucleos.objects.all().delete()
     
     arq_entrada_lematizador = codecs.open("extrator/arquivos/p6_entrada_lematizador.txt","w",'utf-8')
@@ -1979,23 +1984,26 @@ def extrairNucleos(request):
                             break
                 f_o_extraida_string = '  */*  '.join(f_o_extraidas)
 
-            f_o_extraida_string_corrigida = unsplit(f_o_extraida_string)
-            print f_o_extraida_string.encode('utf-8')
-            print f_o_extraida_string_corrigida.encode('utf-8')     
-            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, f_o_extraida_string_corrigida, obj.string_graus, obj.peso, obj.representatividade])
+            f_o_extraida_string_corrigida = unsplit(f_o_extraida_string)        
+            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, f_o_extraida_string_corrigida, obj.string_graus, obj.peso, obj.representatividade, obj.irse])
 
         else:
-            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, obj.frase, obj.string_graus, obj.peso, obj.representatividade])
+            sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, obj.frase, obj.string_graus, obj.peso, obj.representatividade, obj.irse])
 
     #salva dados no BD
-    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5], string_graus=sent[6], peso=sent[7] , representatividade=sent[8]) for sent in sentencas_nucleos]    
+    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5], string_graus=sent[6], peso=sent[7] , representatividade=sent[8], irse=sent[9]) for sent in sentencas_nucleos]    
     SentencasNucleos.objects.bulk_create(aList)
     
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_enucleos'})    
 
+def extraiSentencasGlobais(request):
+    print 1
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_eglobais'})    
+
 
 def calcula_indice_representatividade(request):
     print "Calculando representatividade e montando resultados finais..."
+
     
     #iniccializacoes
     temas = TemasNew.objects.filter(classificacao='tema').order_by('-irt') 
@@ -2019,9 +2027,10 @@ def calcula_indice_representatividade(request):
     
     for j, tema in enumerate(temas):
         arq_relatorio.write('\nTEMA: ' + tema.tema + '\n\n')
-        arq_relatorio.write('subtema / frase / irse / representatividade \n')       
+        arq_relatorio.write('subtema / frase / irse / nucleo / representatividade \n')       
         objs = MapasTemasESubtemas.objects.filter(tema__exact=tema.tema).filter(fim_de_arvore__exact = 'sim').exclude(subtema__exact=tema.tema).order_by('-irt_l')
         obj_irt = TabelaRanking.objects.get(vertice_nome__exact=tema.tema)
+        
         pot = obj_irt.potenciacao
         arq_json.write("        \"name\": \"" + tema.tema + "\",\n")
         arq_json.write("        \"value\": " + str(pot) + ",\n")
@@ -2030,8 +2039,7 @@ def calcula_indice_representatividade(request):
         arq_json.write("        \"repr\": " + "\"#fff\"" + ",\n")
         arq_json.write("        \"repr2\": " + "\"steelblue\"" + ",\n")
         arq_json.write("        \"parent\": \"Temas\",\n")
-        arq_json.write("        \"children\": [\n")        
-     
+        arq_json.write("        \"children\": [\n")       
         if objs:
             m = objs[0]            
         else:
@@ -2039,7 +2047,8 @@ def calcula_indice_representatividade(request):
              
         for i, obj in enumerate(objs):
             tam = obj.irt_l / m.irt_l          
-            if obj.subtema != tema.tema:                        
+            if obj.subtema != tema.tema:
+                                      
                 arq_json.write("            {\n")
                 arq_json.write("             \"name\": \"" + obj.subtema + "\",\n")    
                 arq_json.write("             \"value\": " + str(obj.irt_l) + ",\n")    
@@ -2062,16 +2071,19 @@ def calcula_indice_representatividade(request):
                         lll.append('baixa')        
                     if num == 1:
                         lll.append('baixissima')         
+                
                 lpk =[]
-                obj_children_pk = SentencasExtraidas.objects.filter(tema__exact=tema.tema).filter(subtema__exact=obj.subtema).order_by('-irse')
+                obj_children_pk = SentencasNucleos.objects.filter(tema__exact=tema.tema).filter(subtema__exact=obj.subtema).order_by('-irse')
                 for obn in obj_children_pk:
                     if obn.representatividade in lll:
                         lpk.append(obn.pk)                              
                 
-                obj_children = SentencasExtraidas.objects.filter(pk__in=lpk).order_by('-irse')               
+                obj_children = SentencasNucleos.objects.filter(pk__in=lpk).order_by('-irse')               
                 if obj_children:
                     for p, obj_c in enumerate(obj_children):
-                        arq_relatorio.write(obj_c.subtema + '   /   ' + obj_c.frase + '   /   ' + str(obj_c.irse) + '   /   ' + obj_c.representatividade + '\n')
+                        obj_nucleo = SentencasNucleos.objects.filter(ident__exact=obj.ident)
+                             
+                        arq_relatorio.write(obj_c.subtema + '   /   ' + obj_c.frase + '   /   ' + obj_c.nucleo + '   /   ' + str(obj_c.irse) + '   /   ' + obj_c.representatividade + '\n')
                         
                         if obj_c.representatividade == 'altissima':
                             cor = '#FF0000'
@@ -2084,7 +2096,7 @@ def calcula_indice_representatividade(request):
                         if obj_c.representatividade == 'baixissima':
                             cor = '#6CE200'                     
                         arq_json.write("                {\n")
-                        arq_json.write("                     \"name\": \"" + obj_c.frase.replace("\"", "") + "\",\n")    
+                        arq_json.write("                     \"name\": \"" + obj_c.nucleo.replace("\"", "") + "\",\n")    
                         arq_json.write("                     \"value\": " + str(obj.irt_l) + ",\n")    
                         arq_json.write("                     \"size\": " + str(5) + ",\n")
                         arq_json.write("                     \"place\": " + '\"end\"' + ",\n")
@@ -2129,13 +2141,15 @@ def calcula_indice_representatividade(request):
 
     #LÊ relatório    
     p6_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt", "r", "utf-8").read()
-    
+        
     return render(request, 'extrator/extrator_resultados.html', {'relatorio_p6':p6_relatorio,'resultados_p6':'p6','goto':'p6-result', 'muda_logo':'logo_repres','fim':'fim'})
     
-def executa_passo_6(request):    
+def executa_passo_6(request):  
+
     calcula_indice_representatividade(request)
     mapearEextrair(request)
     processarProtofrases(request)
+    extrairNucleos(request)
 
     #LÊ relatório    
     p6_relatorio = codecs.open("extrator/arquivos/p6_relatorio_final_extracao.txt","r","utf-8").read()  
@@ -2234,35 +2248,6 @@ def unsplit(sentenca):
 
     return string
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def testa_substantivo_usuario(request):
     #carrega palavras
     palavras = TestaPalavra.objects.filter(condicao__exact='aguardando')  
@@ -2343,6 +2328,11 @@ def ajustar_parametro(request,opcao):
         parametros.faixa_histo = float(novo_parametro)
         parametros.save()      
     
+    if opcao == 'opcao4':            
+        novo_parametro = request.POST['valor_c']
+        parametros.corte_n = int(novo_parametro)
+        parametros.save() 
+    
     if opcao == 'opcao2':            
         novo_parametro = request.POST['valor_fc']
         parametros.f_corte = int(novo_parametro)
@@ -2390,7 +2380,7 @@ def ajustar_parametro(request,opcao):
         parametros.radio_r = str1
         parametros.save()   
   
-    return render(request, 'extrator/extrator_resultados.html', {'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valork':parametros.k_betweenness, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':str(parametros.faixa_histo), 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5})      
+    return render(request, 'extrator/extrator_resultados.html', {'check_sim':check_sim,'check_nao':check_nao,'valorrt':parametros.permitir_RT, 'valornt':parametros.num_tweets,'valork':parametros.k_betweenness, 'valorfc':parametros.f_corte, 'valorfb':parametros.f_min_bigramas, 'xxxx':str(parametros.faixa_histo), 'goto':'ajuste', 'radios_1':radios_1,'radios_2':radios_2,'radios_3':radios_3,'radios_4':radios_4,'radios_5':radios_5, 'valorC':parametros.corte_n})      
 
 
 def limpar_palavras_ignoradas(request):

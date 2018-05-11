@@ -13,51 +13,51 @@
         "children": [
             {
              "name": "pt",
-             "value": 0.131115532914,
+             "value": 0.134341549549,
              "size": 10.0,
              "parent": "lula"
             },
             {
              "name": "prisão",
-             "value": 0.0453981144758,
-             "size": 3.46245127992,
-             "parent": "lula"
-            },
-            {
-             "name": "candidato",
-             "value": 0.0382535000731,
-             "size": 2.91754144019,
+             "value": 0.0448799599641,
+             "size": 3.34073561863,
              "parent": "lula"
             },
             {
              "name": "dilma",
-             "value": 0.0379710198149,
-             "size": 2.89599706235,
+             "value": 0.0394554001791,
+             "size": 2.93694693202,
+             "parent": "lula"
+            },
+            {
+             "name": "candidato",
+             "value": 0.0375706193216,
+             "size": 2.79664924572,
              "parent": "lula"
             },
             {
              "name": "brasil",
-             "value": 0.0367400493392,
-             "size": 2.80211265001,
+             "value": 0.0366351769266,
+             "size": 2.72701759429,
              "parent": "lula"
             },
             {
              "name": "povo",
-             "value": 0.0137432911341,
-             "size": 1.04818176982,
+             "value": 0.0136137088913,
+             "size": 1.01336548052,
              "parent": "lula"
             }
         ]
     },
     {
         "name": "dia",
-        "value": 0.217828839147,
-        "size": 1.45219226098,
+        "value": 0.215113803835,
+        "size": 1.43409202556,
         "parent": "Temas",
         "children": [
             {
              "name": "presidente",
-             "value": 0.242880342697,
+             "value": 0.244521241396,
              "size": 10.0,
              "parent": "dia"
             }

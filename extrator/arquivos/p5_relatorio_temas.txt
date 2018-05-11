@@ -4,7 +4,7 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.2
-- Critério de exclusão do cluster: posssuir 20% dos nós totais (396.0 de 1980)
+- Critério de exclusão do cluster: posssuir 20% dos nós totais (390.6 de 1953)
 
 CLUSTERS SELECIONADOS
 
@@ -12,19 +12,19 @@ Cluster 1
 7 lula 3.0
 
 Cluster 2
-10 pt 0.30923474744
-46 brasil 0.287031635463
-37 dizer 0.286621286246
-19 poder 0.265118673306
-24 preso 0.259382309572
-25 candidato 0.251667763639
-48 presidente 0.242880342697
-51 dia 0.217828839147
-8 dilma 0.215744430766
-31 prisão 0.214142049414
-99 falar 0.206861690257
-419 povo 0.20210722256
-94 dar 0.201075814871
+10 pt 0.313463615615
+46 brasil 0.288502018297
+37 dizer 0.28627045518
+19 poder 0.264750671247
+24 preso 0.258080442671
+25 candidato 0.249152528133
+48 presidente 0.244521241396
+8 dilma 0.216146974894
+51 dia 0.215113803835
+31 prisão 0.213391507754
+99 falar 0.208056605825
+416 povo 0.201803214153
+94 dar 0.200864361003
 
 TEMAS PRÉ-SELECIONADOS
 
@@ -36,8 +36,8 @@ poder
 preso
 candidato
 presidente
-dia
 dilma
+dia
 prisão
 falar
 povo
@@ -53,26 +53,26 @@ SELEÇÃO FINAL DOS TEMAS
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
 lula -> lula - 6/713 - 0.841514726508%
-lula -> pt - 7/56 - 12.5%
+lula -> pt - 8/57 - 14.0350877193%
 lula -> brasil - 1/41 - 2.43902439024%
 lula -> candidato - 16/29 - 55.1724137931%
 lula -> presidente - 13/34 - 38.2352941176%
-lula -> dia - 1/19 - 5.26315789474%
 lula -> dilma - 26/38 - 68.4210526316%
+lula -> dia - 1/19 - 5.26315789474%
 lula -> prisão - 7/43 - 16.2790697674%
 lula -> povo - 3/15 - 20.0%
 pt -> lula - 8/713 - 1.12201963534%
 brasil -> lula - 3/713 - 0.420757363254%
 brasil -> dilma - 1/38 - 2.63157894737%
 candidato -> lula - 1/713 - 0.140252454418%
-candidato -> pt - 6/56 - 10.7142857143%
+candidato -> pt - 6/57 - 10.5263157895%
 presidente -> lula - 15/713 - 2.10378681627%
-presidente -> pt - 2/56 - 3.57142857143%
+presidente -> pt - 2/57 - 3.50877192982%
 presidente -> brasil - 1/41 - 2.43902439024%
+dilma -> lula - 5/713 - 0.70126227209%
+dilma -> pt - 1/57 - 1.75438596491%
 dia -> lula - 4/713 - 0.561009817672%
 dia -> presidente - 5/34 - 14.7058823529%
-dilma -> lula - 4/713 - 0.561009817672%
-dilma -> pt - 1/56 - 1.78571428571%
 prisão -> lula - 15/713 - 2.10378681627%
 povo -> lula - 5/713 - 0.70126227209%
 
@@ -83,8 +83,8 @@ pt
 brasil
 candidato
 presidente
-dia
 dilma
+dia
 prisão
 povo
 

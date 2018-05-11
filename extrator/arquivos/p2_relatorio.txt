@@ -1,8 +1,8 @@
 RELATÓRIO DA ETAPA DE PRÉ-PROCESSAMENTO 
 
 Os dados de entrada contém 1649 parágrafos.
-Os dados de entrada possuem 12013 palavras.
-Os dados lematizados possuem 12833 palavras.
+Os dados de entrada possuem 12014 palavras.
+Os dados lematizados possuem 12834 palavras.
 Palavras não lematizadas: 
  
  
@@ -1663,9 +1663,9 @@ Palavras não lematizadas:
  
  
  
-O documento lematizado e sem stopwords possui 6738 palavras.
+O documento lematizado e sem stopwords possui 6734 palavras.
 
 CONCLUSãO:
-Compressão do texto após pré-processamento: 43.9107633397 %.
+Compressão do texto após pré-processamento: 43.9487264858 %.
 Em média, cada sentença do texto original possui 7 palavras.
 Em média, cada sentença do texto lematizado sem stop-words possui 4 palavras.

@@ -7,16 +7,16 @@
 "children": [
     {
         "name": "lula",
-        "value": 2.00000000371,
-        "size": 13.3333333581,
+        "value": 3.0,
+        "size": 20.0,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "vadio",
-             "value": 1.08333333333,
+             "name": "pt",
+             "value": 0.134341549549,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
@@ -24,9 +24,203 @@
              "parent": "lula",
              "children": [
                 {
-                     "name": "nao foi possivel extrair frases",
-                     "value": 0,
+                     "name": "lula , ciro investe em aliança com pc do b , tradicional aliado do pt ",
+                     "value": 0.134341549549,
                      "size": 5,
                      "place": "end",
-                     "repr": "black",
-                     "repr2": "black",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pt"
+                }
+                ]
+            },
+            {
+             "name": "prisão",
+             "value": 0.0448799599641,
+             "size": 3.34073561863,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "lula está implorando para sair da prisão petista desaba após derrota ",
+                     "value": 0.0448799599641,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "prisão"
+                },
+                {
+                     "name": "lula está implorando para sair da prisão petista desaba após derrota ",
+                     "value": 0.0448799599641,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "prisão"
+                },
+                {
+                     "name": "lula está implorando para sair da prisão ",
+                     "value": 0.0448799599641,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "prisão"
+                }
+                ]
+            },
+            {
+             "name": "dilma",
+             "value": 0.0394554001791,
+             "size": 2.93694693202,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "moro receberá delação da jbs com guido e ‘ contas de lula e dilma ",
+                     "value": 0.0394554001791,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                }
+                ]
+            },
+            {
+             "name": "candidato",
+             "value": 0.0375706193216,
+             "size": 2.79664924572,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "manter lula candidato , pt pode recorrer a tratados internacionais ",
+                     "value": 0.0375706193216,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "pt pode recorrer a tratados internacionais   */*  manter lula candidato ",
+                     "value": 0.0375706193216,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "manter lula como candidato nas eleições de outubro pt usará até tratados internacionais ",
+                     "value": 0.0375706193216,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "candidato"
+                }
+                ]
+            },
+            {
+             "name": "brasil",
+             "value": 0.0366351769266,
+             "size": 2.72701759429,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "corte suprema de brasil nega recurso para liberar a lula ",
+                     "value": 0.0366351769266,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
+                },
+                {
+                     "name": "supremo tribunal de brasil nega recurso para liberar a lula ",
+                     "value": 0.0366351769266,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "brasil"
+                }
+                ]
+            },
+            {
+             "name": "povo",
+             "value": 0.0136137088913,
+             "size": 1.01336548052,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "ex presidente lula , mais o povo ",
+                     "value": 0.0136137088913,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "povo"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "dia",
+        "value": 0.215113803835,
+        "size": 1.43409202556,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "presidente",
+             "value": 0.244521241396,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "dia",
+             "children": [
+                {
+                     "name": "guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli ",
+                     "value": 0.244521241396,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "guerreiros e guerreira dão bom dia , presidente lula ",
+                     "value": 0.244521241396,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "presidente"
+                }
+                ]
+            }
+        ]
+    }
+    ]
+}
+]

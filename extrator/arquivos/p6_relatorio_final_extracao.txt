@@ -4,5 +4,28 @@ RELATORIO FINAL DE EXTRACAO
 
 TEMA: lula
 
-subtema / frase / irse / representatividade 
-vadio   /   Nao foi possivel extrair frases
+subtema / frase / irse / nucleo / representatividade 
+pt   /    sem lula , ciro investe em aliança com pc do b , tradicional aliado do pt   /   lula , ciro investe em aliança com pc do b , tradicional aliado do pt    /   100.0   /   altissima
+
+prisão   /    lula está implorando para sair da prisão petista desaba após derrota de recurso no   /   lula está implorando para sair da prisão petista desaba após derrota    /   100.0   /   altissima
+prisão   /    lula está implorando para sair da prisão petista desaba após derrota de   /   lula está implorando para sair da prisão petista desaba após derrota    /   100.0   /   altissima
+prisão   /    lula está implorando para sair da prisão   /   lula está implorando para sair da prisão    /   81.0   /   altissima
+
+dilma   /    moro receberá delação da jbs com guido e ‘ contas de lula e dilma   /   moro receberá delação da jbs com guido e ‘ contas de lula e dilma    /   100.0   /   altissima
+
+candidato   /    para manter lula candidato , pt pode recorrer a tratados internacionais   /   manter lula candidato , pt pode recorrer a tratados internacionais    /   100.0   /   altissima
+candidato   /    pt pode recorrer a tratados internacionais para manter lula candidato   /   pt pode recorrer a tratados internacionais   */*  manter lula candidato    /   91.0   /   altissima
+candidato   /    para manter lula como candidato nas eleições de outubro pt usará até tratados internacionais   /   manter lula como candidato nas eleições de outubro pt usará até tratados internacionais    /   84.0   /   altissima
+
+brasil   /    corte suprema de brasil nega recurso para liberar a lula   /   corte suprema de brasil nega recurso para liberar a lula    /   100.0   /   altissima
+brasil   /    supremo tribunal de brasil nega recurso para liberar a lula   /   supremo tribunal de brasil nega recurso para liberar a lula    /   87.0   /   altissima
+
+povo   /    quanto mais dificultam para ex presidente lula , mais o povo o ama   /   ex presidente lula , mais o povo    /   100.0   /   altissima
+
+
+TEMA: dia
+
+subtema / frase / irse / nucleo / representatividade 
+presidente   /    guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli   /   guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli    /   100.0   /   altissima
+presidente   /    guerreiros e guerreira dão bom dia , presidente lula , orgulho imenso   /   guerreiros e guerreira dão bom dia , presidente lula    /   93.0   /   altissima
+
