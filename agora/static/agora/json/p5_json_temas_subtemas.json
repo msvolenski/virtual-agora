@@ -12,54 +12,46 @@
         "parent": "Temas",
         "children": [
             {
-             "name": "pt",
-             "value": 0.134341549549,
-             "size": 10.0,
-             "parent": "lula"
-            },
-            {
              "name": "prisão",
-             "value": 0.0448799599641,
-             "size": 3.34073561863,
-             "parent": "lula"
-            },
-            {
-             "name": "dilma",
-             "value": 0.0394554001791,
-             "size": 2.93694693202,
+             "value": 0.0688718259321,
+             "size": 10.0,
              "parent": "lula"
             },
             {
              "name": "candidato",
-             "value": 0.0375706193216,
-             "size": 2.79664924572,
+             "value": 0.0628391587594,
+             "size": 9.12407329253,
              "parent": "lula"
             },
             {
-             "name": "brasil",
-             "value": 0.0366351769266,
-             "size": 2.72701759429,
+             "name": "pt",
+             "value": 0.0527451874856,
+             "size": 7.6584563821,
              "parent": "lula"
             },
-            {
-             "name": "povo",
-             "value": 0.0136137088913,
-             "size": 1.01336548052,
-             "parent": "lula"
-            }
-        ]
-    },
-    {
-        "name": "dia",
-        "value": 0.215113803835,
-        "size": 1.43409202556,
-        "parent": "Temas",
-        "children": [
             {
              "name": "presidente",
-             "value": 0.244521241396,
-             "size": 10.0,
-             "parent": "dia"
+             "value": 0.0453950137756,
+             "size": 6.59123134333,
+             "parent": "lula"
+            },
+            {
+             "name": "político",
+             "value": 0.0422036928021,
+             "size": 6.1278603015,
+             "parent": "lula"
+            },
+            {
+             "name": "juiz",
+             "value": 0.0229766587843,
+             "size": 3.33614776047,
+             "parent": "lula"
+            },
+            {
+             "name": "foto",
+             "value": 0.0195552919558,
+             "size": 2.83937469221,
+             "parent": "lula"
             }
         ]
     }

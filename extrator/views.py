@@ -1991,14 +1991,97 @@ def extrairNucleos(request):
             sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, obj.frase, obj.string_graus, obj.peso, obj.representatividade, obj.irse])
 
     #salva dados no BD
-    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5], string_graus=sent[6], peso=sent[7] , representatividade=sent[8], irse=sent[9]) for sent in sentencas_nucleos]    
+    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5].rstrip(), string_graus=sent[6], peso=sent[7] , representatividade=sent[8], irse=sent[9]) for sent in sentencas_nucleos]    
     SentencasNucleos.objects.bulk_create(aList)
     
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_enucleos'})    
 
 def extraiSentencasGlobais(request):
-    print 1
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_eglobais'})    
+    
+    #prepara BD
+    SentencasGlobais.objects.all().delete()
+
+    #Inicializa arquivo TSV
+    arq_tsv = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p6_json_data_globais.tsv", 'w', 'utf-8') 
+    
+    #carega parametros
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    par = parametros.radio_r
+    list_par = [int(x) for x in par.split(" ")]
+
+    
+    #carrega dados e inicializa listas
+    objetos = SentencasNucleos.objects.all()
+    objetos_distintos = SentencasNucleos.objects.values_list('nucleo', flat=True).distinct()
+    resultados = OrderedDict()
+    resultados_rankeados = OrderedDict()
+    resultados_rankeados_norm = []
+    representatividade = ''
+    
+    for obj_d in objetos_distintos:
+        peso = 0
+        for obj in objetos:
+            if obj_d == obj.nucleo:
+                peso = peso + obj.peso
+        resultados[obj_d] = peso
+    
+    resultados_rankeados = sorted(resultados.iteritems(), key=operator.itemgetter(1))
+    
+    maior_peso = max(resultados.iteritems(), key=operator.itemgetter(1))[1]
+
+    for item in resultados_rankeados:
+        
+        peso_f = int(float(item[1])/float(maior_peso)*100)        
+         
+        if peso_f > 80:
+            representatividade = 'altissima'
+        if peso_f > 60 and peso_f <= 80:
+            representatividade = 'alta'
+        if peso_f > 40 and peso_f <= 60:                                    
+            representatividade = 'media'
+        if peso_f > 20 and peso_f <= 40:
+            representatividade = 'baixa'
+        if peso_f >= 0 and peso_f <= 20:
+            representatividade = 'baixissima'  
+
+        resultados_rankeados_norm.append([item[0], item[1], peso_f, representatividade])
+    
+    #salva dados no BD
+    aList = [SentencasGlobais(nucleo=sent[0], peso=sent[1], irseg=sent[2], representatividade=sent[3] ) for sent in resultados_rankeados_norm]    
+    SentencasGlobais.objects.bulk_create(aList)
+
+    #carrega objetos a serem exibidos    
+    lll = []
+    for num in list_par:
+        if num == 5:
+            lll.append('altissima')
+        if num == 4:
+            lll.append('alta')        
+        if num == 3:
+            lll.append('media')        
+        if num == 2:
+            lll.append('baixa')        
+        if num == 1:
+            lll.append('baixissima')         
+    
+    lpk =[]
+    obj_children_pk = SentencasGlobais.objects.all()
+    for obn in obj_children_pk:
+        if obn.representatividade in lll:
+            lpk.append(obn.pk)
+    
+    objetos = SentencasGlobais.objects.filter(pk__in=lpk).order_by('-irseg')
+
+    arq_tsv.write("Nucleo\tIrseg\tIdent\tRepresentatividade\n")
+    cont = 0
+    for obj in objetos:
+        ident = 'ident_' + str(cont)
+        arq_tsv.write(obj.nucleo + '\t' + str(float(obj.irseg)/100) + '\t' + ident + '\t' + obj.representatividade + '\n')          
+        cont = cont + 1
+
+
+    
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_eglobais','resultados_p7':'resultados_p7',})    
 
 
 def calcula_indice_representatividade(request):

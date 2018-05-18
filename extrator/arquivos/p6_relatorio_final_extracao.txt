@@ -5,27 +5,54 @@ RELATORIO FINAL DE EXTRACAO
 TEMA: lula
 
 subtema / frase / irse / nucleo / representatividade 
-pt   /    sem lula , ciro investe em aliança com pc do b , tradicional aliado do pt   /   lula , ciro investe em aliança com pc do b , tradicional aliado do pt    /   100.0   /   altissima
+prisão   /    ex-vereador e filho se entregam à polícia para cumprir prisão preventiva por agressão em frente ao instituto lula   /   ex-vereador e filho se entregam à polícia para cumprir prisão preventiva por agressão em frente ao instituto lula   /   100.0   /   altissima
+prisão   /    ex-vereador e filho se entregam para cumprir prisão preventiva por agressão em frente ao instituto lula   /   ex-vereador e filho se entregam   */*  cumprir prisão preventiva por agressão em frente ao instituto lula   /   84.0   /   altissima
 
-prisão   /    lula está implorando para sair da prisão petista desaba após derrota de recurso no   /   lula está implorando para sair da prisão petista desaba após derrota    /   100.0   /   altissima
-prisão   /    lula está implorando para sair da prisão petista desaba após derrota de   /   lula está implorando para sair da prisão petista desaba após derrota    /   100.0   /   altissima
-prisão   /    lula está implorando para sair da prisão   /   lula está implorando para sair da prisão    /   81.0   /   altissima
+candidato   /    líderes europeus pedem lula livre e candidato   /   líderes europeus pedem lula livre   /   100.0   /   altissima
+candidato   /    advogado eleitoral explica por que lula pode ser candidato   /   advogado eleitoral explica por que lula pode ser candidato   /   72.0   /   alta
+candidato   /    especialista em direito eleitoral explica por que lula pode ser candidato e fazer campanha , mesmo preso   /   direito eleitoral explica por que lula pode ser candidato   /   64.0   /   alta
+candidato   /    eleitoral explica por que lula pode ser candidato   /   eleitoral explica por que lula pode ser candidato   /   61.0   /   alta
+candidato   /    sim , é verdade , lula pode ser candidato a presidente do presídio   /   lula pode ser candidato a presidente   /   41.0   /   media
+candidato   /    lula pode ser candidato   /   lula pode ser candidato   /   38.0   /   baixa
+candidato   /    compartilhe se você acha que , se querem lula candidato , eles deveriam lançá-lo à presidência de seus países   /   compartilhe se você acha que , se querem lula candidato , eles deveriam lançá lo à presidência de seus países   /   28.0   /   baixa
+candidato   /    lula pode e deve ser candidato   /   lula pode   /   24.0   /   baixa
+candidato   /    ciro diz que lula não será candidato e aponta controvérsia sobre indulto clique e saiba mais   /   diz que lula não será candidato   /   22.0   /   baixa
+candidato   /    lula é o candidato anti-establishment , diz alberto carlos almeida   /   lula é o candidato anti-establishment , diz alberto carlos almeida   /   22.0   /   baixa
 
-dilma   /    moro receberá delação da jbs com guido e ‘ contas de lula e dilma   /   moro receberá delação da jbs com guido e ‘ contas de lula e dilma    /   100.0   /   altissima
+pt   /    ex-vereador do pt e filho que agrediram manifestante em frente ao instituto lula são presos   /   ex-vereador do pt e filho que agrediram manifestante em frente ao instituto lula são presos   /   100.0   /   altissima
+pt   /    ex-vereador do pt e filho que rentaram matar empresário em frente ao instituto lula são presos   /   ex-vereador do pt e filho   */*  frente ao instituto lula são presos   /   84.0   /   altissima
+pt   /    ex-vereador do pt e filho se entregam por agressão em frente ao instituto lula   /   ex-vereador do pt e filho se entregam   */*  agressão em frente ao instituto lula   /   84.0   /   altissima
+pt   /    " ex-vereador do pt se entrega por agressão no instituto lula "   /   ex-vereador do pt   */*  agressão no instituto lula   /   42.0   /   media
+pt   /    ex-vereador do pt que agrediu empresário no instituto lula se entrega   /   ex-vereador do pt   */*  instituto lula   /   36.0   /   baixa
 
-candidato   /    para manter lula candidato , pt pode recorrer a tratados internacionais   /   manter lula candidato , pt pode recorrer a tratados internacionais    /   100.0   /   altissima
-candidato   /    pt pode recorrer a tratados internacionais para manter lula candidato   /   pt pode recorrer a tratados internacionais   */*  manter lula candidato    /   91.0   /   altissima
-candidato   /    para manter lula como candidato nas eleições de outubro pt usará até tratados internacionais   /   manter lula como candidato nas eleições de outubro pt usará até tratados internacionais    /   84.0   /   altissima
+presidente   /    bom dia de hoje ao nosso presidente lula , vigília lula livre   /   presidente lula   */*  vigília lula livre   /   100.0   /   altissima
+presidente   /    lula será presidente da papuda , quero lula livre em 2030   /   lula será presidente   */*  lula livre   /   96.0   /   altissima
+presidente   /    camiseta da seleção só se tiver estampada o lula livre e o rosto do meu eterno presidente   /   lula livre   /   82.0   /   altissima
+presidente   /    sim , é verdade , lula pode ser candidato a presidente do presídio   /   lula pode ser candidato a presidente   /   58.0   /   media
+presidente   /    curtindo a vida boa e luxuosa filhos do ex-presidente lula colocam o pai em " enroscada "   /   curtindo a vida   */*  ex-presidente lula colocam o pai em " enroscada   /   45.0   /   media
+presidente   /    lula pode reverter o golpe , presidenta   /   lula pode   /   34.0   /   baixa
+presidente   /    caramba o lula ainda pode ser presidente   /   lula ainda pode   /   34.0   /   baixa
+presidente   /    #central das notícias lula será candidato a presidente , afirma lindbergh farias   /   central das notícias   */*  lula será candidato a presidente   /   27.0   /   baixa
+presidente   /    neto do ex-presidente lula é nomeado para gabinete de deputado federal do pt   /   ex-presidente lula é nomeado para gabinete de deputado federal do pt   /   27.0   /   baixa
+presidente   /    moro pode tirar foto com políticos , agora lula presidente não podia se encontrar com empresários , não podia assinar decretos   /   políticos , agora lula presidente   /   22.0   /   baixa
 
-brasil   /    corte suprema de brasil nega recurso para liberar a lula   /   corte suprema de brasil nega recurso para liberar a lula    /   100.0   /   altissima
-brasil   /    supremo tribunal de brasil nega recurso para liberar a lula   /   supremo tribunal de brasil nega recurso para liberar a lula    /   87.0   /   altissima
+político   /    ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula ․ por carlos fernandes   /   ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula   /   100.0   /   altissima
+político   /    ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula   /   ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula   /   100.0   /   altissima
+político   /    o mundo sabe que foi golpe e sabe que lula é preso político   /   sabe que lula é preso político   /   84.0   /   altissima
+político   /    onu declara que lula é preso político   /   lula é preso político   /   75.0   /   alta
+político   /    foi golpe e lula é preso político   /   lula é preso político   /   75.0   /   alta
+político   /    pedido de ex-políticos europeus , em fim de carreira , em favor de lula é rejeitado pelo brasil   /   favor de lula   /   53.0   /   media
+político   /    petroleiros condenam prisão política de lula e aprovam indicativo de greve   /   petroleiros condenam prisão política de lula e aprovam indicativo de greve   /   51.0   /   media
+político   /    gilmar solta operadores do mdb e psdb , enquanto lula segue preso político   /   gilmar solta operadores do mdb e psdb , enquanto lula segue preso político   /   45.0   /   media
+político   /    moro pode tirar foto com políticos , agora lula presidente não podia se encontrar com empresários , não podia assinar decretos   /   políticos , agora lula presidente   /   29.0   /   baixa
 
-povo   /    quanto mais dificultam para ex presidente lula , mais o povo o ama   /   ex presidente lula , mais o povo    /   100.0   /   altissima
+juiz   /    esse camisa 10 é o sonho dos eleitores de lula quando ele preso pelo juiz lá   /   lula quando ele preso   /   100.0   /   altissima
+juiz   /    defesa pede ao stf que delações da j & f nas quais lula é mencionado não sejam enviadas para o juiz sérgio moro   /   defesa pede ao stf que delações da j & f nas quais lula é mencionado não sejam enviadas para o juiz sérgio moro   /   53.0   /   media
+juiz   /    por favor não digam o juiz moro vendeu o triplex do lula   /   juiz moro   */*  triplex do lula   /   39.0   /   baixa
+juiz   /    esse triplex nunca foi do lula o juiz meketrefe fascista e tucano tirou fotos com joão doria   /   triplex nunca foi do lula   /   32.0   /   baixa
+juiz   /    o juiz tucano e o ex-prefake do psdb estavam comemorando mais uma etapa do golpe , a prisão de lula   /   juiz tucano   */*  golpe , a prisão de lula   /   27.0   /   baixa
 
-
-TEMA: dia
-
-subtema / frase / irse / nucleo / representatividade 
-presidente   /    guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli   /   guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli    /   100.0   /   altissima
-presidente   /    guerreiros e guerreira dão bom dia , presidente lula , orgulho imenso   /   guerreiros e guerreira dão bom dia , presidente lula    /   93.0   /   altissima
+foto   /    aos meus clientes , gostaria de salientar que estou recebendo normalmente as notas com foto ou carimbo do lula livre   /   lula livre   /   100.0   /   altissima
+foto   /    quer dizer se tiver uma foto como lindbergh , dirceu e lula posso pensar que é formação de quadrilha   /   lula posso   /   42.0   /   media
+foto   /    moro pode tirar foto com políticos , agora lula presidente não podia se encontrar com empresários , não podia assinar decretos   /   políticos , agora lula presidente   /   27.0   /   baixa
 

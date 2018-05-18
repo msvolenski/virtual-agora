@@ -4,7 +4,7 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.2
-- Critério de exclusão do cluster: posssuir 20% dos nós totais (390.6 de 1953)
+- Critério de exclusão do cluster: posssuir 20% dos nós totais (379.6 de 1898)
 
 CLUSTERS SELECIONADOS
 
@@ -12,36 +12,38 @@ Cluster 1
 7 lula 3.0
 
 Cluster 2
-10 pt 0.313463615615
-46 brasil 0.288502018297
-37 dizer 0.28627045518
-19 poder 0.264750671247
-24 preso 0.258080442671
-25 candidato 0.249152528133
-48 presidente 0.244521241396
-8 dilma 0.216146974894
-51 dia 0.215113803835
-31 prisão 0.213391507754
-99 falar 0.208056605825
-416 povo 0.201803214153
-94 dar 0.200864361003
+16 preso 0.384818358282
+218 dizer 0.358878727497
+184 poder 0.349719817462
+363 pt 0.274545463066
+43 juiz 0.274368337248
+230 candidato 0.260333657718
+93 prisão 0.258907049337
+130 presidente 0.25597743879
+328 político 0.244781418252
+200 ver 0.239501633154
+403 foto 0.233513192178
+85 livre 0.209317977937
+144 querer 0.208069490798
+444 ganhar 0.20495333424
 
 TEMAS PRÉ-SELECIONADOS
 
 lula
-pt
-brasil
+preso
 dizer
 poder
-preso
+pt
+juiz
 candidato
-presidente
-dilma
-dia
 prisão
-falar
-povo
-dar
+presidente
+político
+ver
+foto
+livre
+querer
+ganhar
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -52,41 +54,36 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-lula -> lula - 6/713 - 0.841514726508%
-lula -> pt - 8/57 - 14.0350877193%
-lula -> brasil - 1/41 - 2.43902439024%
-lula -> candidato - 16/29 - 55.1724137931%
-lula -> presidente - 13/34 - 38.2352941176%
-lula -> dilma - 26/38 - 68.4210526316%
-lula -> dia - 1/19 - 5.26315789474%
-lula -> prisão - 7/43 - 16.2790697674%
-lula -> povo - 3/15 - 20.0%
-pt -> lula - 8/713 - 1.12201963534%
-brasil -> lula - 3/713 - 0.420757363254%
-brasil -> dilma - 1/38 - 2.63157894737%
-candidato -> lula - 1/713 - 0.140252454418%
-candidato -> pt - 6/57 - 10.5263157895%
-presidente -> lula - 15/713 - 2.10378681627%
-presidente -> pt - 2/57 - 3.50877192982%
-presidente -> brasil - 1/41 - 2.43902439024%
-dilma -> lula - 5/713 - 0.70126227209%
-dilma -> pt - 1/57 - 1.75438596491%
-dia -> lula - 4/713 - 0.561009817672%
-dia -> presidente - 5/34 - 14.7058823529%
-prisão -> lula - 15/713 - 2.10378681627%
-povo -> lula - 5/713 - 0.70126227209%
+lula -> lula - 4/764 - 0.523560209424%
+lula -> pt - 5/36 - 13.8888888889%
+lula -> juiz - 1/14 - 7.14285714286%
+lula -> candidato - 16/46 - 34.7826086957%
+lula -> prisão - 1/44 - 2.27272727273%
+lula -> presidente - 12/29 - 41.3793103448%
+lula -> político - 1/27 - 3.7037037037%
+lula -> foto - 1/15 - 6.66666666667%
+pt -> prisão - 1/44 - 2.27272727273%
+juiz -> lula - 1/764 - 0.130890052356%
+candidato -> presidente - 4/29 - 13.7931034483%
+prisão -> lula - 7/764 - 0.916230366492%
+prisão -> presidente - 1/29 - 3.44827586207%
+prisão -> político - 6/27 - 22.2222222222%
+presidente -> lula - 7/764 - 0.916230366492%
+político -> lula - 7/764 - 0.916230366492%
+político -> pt - 1/36 - 2.77777777778%
+foto -> lula - 2/764 - 0.261780104712%
+foto -> político - 1/27 - 3.7037037037%
 
-- Temas selecionados(9):
+- Temas selecionados(8):
 
 lula
 pt
-brasil
+juiz
 candidato
-presidente
-dilma
-dia
 prisão
-povo
+presidente
+político
+foto
 
 
 - Temas excluídos(0):

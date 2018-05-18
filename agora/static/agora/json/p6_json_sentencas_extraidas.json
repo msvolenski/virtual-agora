@@ -15,8 +15,8 @@
         "parent": "Temas",
         "children": [
             {
-             "name": "pt",
-             "value": 0.134341549549,
+             "name": "prisão",
+             "value": 0.0688718259321,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
@@ -24,28 +24,8 @@
              "parent": "lula",
              "children": [
                 {
-                     "name": "lula , ciro investe em aliança com pc do b , tradicional aliado do pt ",
-                     "value": 0.134341549549,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pt"
-                }
-                ]
-            },
-            {
-             "name": "prisão",
-             "value": 0.0448799599641,
-             "size": 3.34073561863,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "lula",
-             "children": [
-                {
-                     "name": "lula está implorando para sair da prisão petista desaba após derrota ",
-                     "value": 0.0448799599641,
+                     "name": "ex-vereador e filho se entregam à polícia para cumprir prisão preventiva por agressão em frente ao instituto lula",
+                     "value": 0.0688718259321,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -53,57 +33,28 @@
                      "parent": "prisão"
                 },
                 {
-                     "name": "lula está implorando para sair da prisão petista desaba após derrota ",
-                     "value": 0.0448799599641,
+                     "name": "ex-vereador e filho se entregam   */*  cumprir prisão preventiva por agressão em frente ao instituto lula",
+                     "value": 0.0688718259321,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
                      "parent": "prisão"
-                },
-                {
-                     "name": "lula está implorando para sair da prisão ",
-                     "value": 0.0448799599641,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "prisão"
-                }
-                ]
-            },
-            {
-             "name": "dilma",
-             "value": 0.0394554001791,
-             "size": 2.93694693202,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "lula",
-             "children": [
-                {
-                     "name": "moro receberá delação da jbs com guido e ‘ contas de lula e dilma ",
-                     "value": 0.0394554001791,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "dilma"
                 }
                 ]
             },
             {
              "name": "candidato",
-             "value": 0.0375706193216,
-             "size": 2.79664924572,
+             "value": 0.0628391587594,
+             "size": 9.12407329253,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
              "parent": "lula",
              "children": [
                 {
-                     "name": "manter lula candidato , pt pode recorrer a tratados internacionais ",
-                     "value": 0.0375706193216,
+                     "name": "líderes europeus pedem lula livre",
+                     "value": 0.0628391587594,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -111,97 +62,156 @@
                      "parent": "candidato"
                 },
                 {
-                     "name": "pt pode recorrer a tratados internacionais   */*  manter lula candidato ",
-                     "value": 0.0375706193216,
+                     "name": "advogado eleitoral explica por que lula pode ser candidato",
+                     "value": 0.0628391587594,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
                      "parent": "candidato"
                 },
                 {
-                     "name": "manter lula como candidato nas eleições de outubro pt usará até tratados internacionais ",
-                     "value": 0.0375706193216,
+                     "name": "direito eleitoral explica por que lula pode ser candidato",
+                     "value": 0.0628391587594,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "eleitoral explica por que lula pode ser candidato",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "lula pode ser candidato a presidente",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "lula pode ser candidato",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "compartilhe se você acha que , se querem lula candidato , eles deveriam lançá lo à presidência de seus países",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "lula pode",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "diz que lula não será candidato",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "candidato"
+                },
+                {
+                     "name": "lula é o candidato anti-establishment , diz alberto carlos almeida",
+                     "value": 0.0628391587594,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
                      "parent": "candidato"
                 }
                 ]
             },
             {
-             "name": "brasil",
-             "value": 0.0366351769266,
-             "size": 2.72701759429,
+             "name": "pt",
+             "value": 0.0527451874856,
+             "size": 7.6584563821,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
              "parent": "lula",
              "children": [
                 {
-                     "name": "corte suprema de brasil nega recurso para liberar a lula ",
-                     "value": 0.0366351769266,
+                     "name": "ex-vereador do pt e filho que agrediram manifestante em frente ao instituto lula são presos",
+                     "value": 0.0527451874856,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "brasil"
+                     "parent": "pt"
                 },
                 {
-                     "name": "supremo tribunal de brasil nega recurso para liberar a lula ",
-                     "value": 0.0366351769266,
+                     "name": "ex-vereador do pt e filho   */*  frente ao instituto lula são presos",
+                     "value": 0.0527451874856,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "brasil"
+                     "parent": "pt"
+                },
+                {
+                     "name": "ex-vereador do pt e filho se entregam   */*  agressão em frente ao instituto lula",
+                     "value": 0.0527451874856,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pt"
+                },
+                {
+                     "name": "ex-vereador do pt   */*  agressão no instituto lula",
+                     "value": 0.0527451874856,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "pt"
+                },
+                {
+                     "name": "ex-vereador do pt   */*  instituto lula",
+                     "value": 0.0527451874856,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "pt"
                 }
                 ]
             },
-            {
-             "name": "povo",
-             "value": 0.0136137088913,
-             "size": 1.01336548052,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "lula",
-             "children": [
-                {
-                     "name": "ex presidente lula , mais o povo ",
-                     "value": 0.0136137088913,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "povo"
-                }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "dia",
-        "value": 0.215113803835,
-        "size": 1.43409202556,
-        "place": "meta",
-        "repr": "#fff",
-        "repr2": "steelblue",
-        "parent": "Temas",
-        "children": [
             {
              "name": "presidente",
-             "value": 0.244521241396,
-             "size": 10.0,
+             "value": 0.0453950137756,
+             "size": 6.59123134333,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "dia",
+             "parent": "lula",
              "children": [
                 {
-                     "name": "guerreiros e guerreiras dão bom dia , presidente lula , , na vigíli ",
-                     "value": 0.244521241396,
+                     "name": "presidente lula   */*  vigília lula livre",
+                     "value": 0.0453950137756,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -209,13 +219,271 @@
                      "parent": "presidente"
                 },
                 {
-                     "name": "guerreiros e guerreira dão bom dia , presidente lula ",
-                     "value": 0.244521241396,
+                     "name": "lula será presidente   */*  lula livre",
+                     "value": 0.0453950137756,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
                      "parent": "presidente"
+                },
+                {
+                     "name": "lula livre",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "lula pode ser candidato a presidente",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "curtindo a vida   */*  ex-presidente lula colocam o pai em  enroscada",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "lula pode",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "lula ainda pode",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "central das notícias   */*  lula será candidato a presidente",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "ex-presidente lula é nomeado para gabinete de deputado federal do pt",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "presidente"
+                },
+                {
+                     "name": "políticos , agora lula presidente",
+                     "value": 0.0453950137756,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "presidente"
+                }
+                ]
+            },
+            {
+             "name": "político",
+             "value": 0.0422036928021,
+             "size": 6.1278603015,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
+                },
+                {
+                     "name": "ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
+                },
+                {
+                     "name": "sabe que lula é preso político",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "político"
+                },
+                {
+                     "name": "lula é preso político",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "político"
+                },
+                {
+                     "name": "lula é preso político",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "político"
+                },
+                {
+                     "name": "favor de lula",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "político"
+                },
+                {
+                     "name": "petroleiros condenam prisão política de lula e aprovam indicativo de greve",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "político"
+                },
+                {
+                     "name": "gilmar solta operadores do mdb e psdb , enquanto lula segue preso político",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "político"
+                },
+                {
+                     "name": "políticos , agora lula presidente",
+                     "value": 0.0422036928021,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "político"
+                }
+                ]
+            },
+            {
+             "name": "juiz",
+             "value": 0.0229766587843,
+             "size": 3.33614776047,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "lula quando ele preso",
+                     "value": 0.0229766587843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "juiz"
+                },
+                {
+                     "name": "defesa pede ao stf que delações da j & f nas quais lula é mencionado não sejam enviadas para o juiz sérgio moro",
+                     "value": 0.0229766587843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "juiz"
+                },
+                {
+                     "name": "juiz moro   */*  triplex do lula",
+                     "value": 0.0229766587843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "juiz"
+                },
+                {
+                     "name": "triplex nunca foi do lula",
+                     "value": 0.0229766587843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "juiz"
+                },
+                {
+                     "name": "juiz tucano   */*  golpe , a prisão de lula",
+                     "value": 0.0229766587843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "juiz"
+                }
+                ]
+            },
+            {
+             "name": "foto",
+             "value": 0.0195552919558,
+             "size": 2.83937469221,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "lula",
+             "children": [
+                {
+                     "name": "lula livre",
+                     "value": 0.0195552919558,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "foto"
+                },
+                {
+                     "name": "lula posso",
+                     "value": 0.0195552919558,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "foto"
+                },
+                {
+                     "name": "políticos , agora lula presidente",
+                     "value": 0.0195552919558,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FEFE80",
+                     "repr2": "#FEFE80",
+                     "parent": "foto"
                 }
                 ]
             }

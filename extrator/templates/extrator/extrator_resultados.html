@@ -714,18 +714,36 @@
         <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:70px;">
             <b>RESULTADOS</b>
         </div>
-        {% endif %} {% if resultados_p6 %}
+        {% endif %} 
+
+        {% if resultados_p7 %}
+        <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:120px;">
+            <b>RESULTADOS</b>
+        </div>
+        {% endif %} 
+        
+        {% if resultados_p6 %}
         <div id="resultado-passo-6-grafo" style="margin-top:100px;overflow:auto;width:130%"></div>
-        {% endif %} {% if resultados_p6 %}
+        {% endif %} 
+        
+        {% if resultados_p6 %}
         <div class="result-content" id="resultado-passo-6-doc" style="margin-top:150px">
             <div>{{relatorio_p6|linebreaks}}</div>
         </div>
+        {% endif %}
 
-        {% endif %} {% if not resultados_p6 %}
+        {% if resultados_p7 %}
+        <div id="resultado-passo-6-globais" style="margin-top:100px;overflow:auto;width:150%"></div>
+            <div id="chart_p6"></div>
+        </div>
+        {% endif %}
+        
+        {% if not resultados_p6 and not resultados_p7 %}
         <div class="sem_resultado" style="position:relative;margin-top:70px;">
             <a href="{% url 'extrator:mostra_resultados' '6' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
+      
         <!-- +++++++++++++++++++++++++++++++++++++++ FIM DO PASSO 6 +++++++++++++++++++++++++ 1  -->
         <!-- fim dos passos  -->
 
@@ -895,6 +913,30 @@
         </script>
         <script src="{% static 'agora/js/p6_sentencas_extraidas.js' %}"></script> {% endif %}
 
+        {%if resultados_p7 %}
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="{% static 'agora/js/p6_sentencas_globais.js' %}"></script> {% endif %}
+
+        <script>
+            var donut = donutChart()
+                .width(1000)
+                .height(500)
+                .cornerRadius(3) // sets how rounded the corners are on each slice
+                .padAngle(0.015) // effectively dictates the gap between slices
+                .variable('Irseg')
+                .category('Nucleo')
+                .ident('Ident')
+                .rep('Representatividade');
+        
+            d3.tsv("{% static 'agora/json/p6_json_data_globais.tsv' %}", function(error, data) {
+                if (error) throw error;
+                d3.select('#chart_p6')
+                    .datum(data) // bind data to the div
+                    .call(donut); // draw chart in div
+            });
+        
+        </script>        
+        
         <!-- MONTA GOTO -->
         {% if goto %}
         <script>
