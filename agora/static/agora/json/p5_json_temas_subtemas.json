@@ -6,52 +6,382 @@
 "parent": "null" ,
 "children": [
     {
-        "name": "lula",
+        "name": "voto",
         "value": 3.0,
         "size": 20.0,
         "parent": "Temas",
         "children": [
             {
-             "name": "prisão",
-             "value": 0.0688718259321,
+             "name": "brasil",
+             "value": 2.13328858215,
              "size": 10.0,
-             "parent": "lula"
+             "parent": "voto"
             },
             {
-             "name": "candidato",
-             "value": 0.0628391587594,
-             "size": 9.12407329253,
-             "parent": "lula"
+             "name": "família",
+             "value": 0.696504266656,
+             "size": 3.26493223881,
+             "parent": "voto"
+            },
+            {
+             "name": "partido",
+             "value": 0.172634796413,
+             "size": 0.809242583761,
+             "parent": "voto"
+            },
+            {
+             "name": "mato",
+             "value": 0.0227941087066,
+             "size": 0.106849625959,
+             "parent": "voto"
+            },
+            {
+             "name": "pernambuco",
+             "value": 0.0170787785985,
+             "size": 0.080058454076,
+             "parent": "voto"
+            }
+        ]
+    },
+    {
+        "name": "povo",
+        "value": 2.00020233173,
+        "size": 13.3346822116,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "nome",
+             "value": 0.804519606565,
+             "size": 10.0,
+             "parent": "povo"
+            },
+            {
+             "name": "esperança",
+             "value": 0.294485825627,
+             "size": 3.6603933978,
+             "parent": "povo"
+            },
+            {
+             "name": "dignidade",
+             "value": 0.050495890899,
+             "size": 0.627652707118,
+             "parent": "povo"
+            }
+        ]
+    },
+    {
+        "name": "país",
+        "value": 1.51854711663,
+        "size": 10.1236474442,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "corrupção",
+             "value": 0.6338371482,
+             "size": 10.0,
+             "parent": "país"
+            },
+            {
+             "name": "governo",
+             "value": 0.396946569169,
+             "size": 6.26259553098,
+             "parent": "país"
+            },
+            {
+             "name": "pessoa",
+             "value": 0.10053252648,
+             "size": 1.58609394804,
+             "parent": "país"
             },
             {
              "name": "pt",
-             "value": 0.0527451874856,
-             "size": 7.6584563821,
-             "parent": "lula"
+             "value": 0.0766121142035,
+             "size": 1.20870344096,
+             "parent": "país"
             },
             {
-             "name": "presidente",
-             "value": 0.0453950137756,
-             "size": 6.59123134333,
-             "parent": "lula"
+             "name": "bahia",
+             "value": 0.0600682590977,
+             "size": 0.94769230974,
+             "parent": "país"
+            }
+        ]
+    },
+    {
+        "name": "estada",
+        "value": 1.32614354007,
+        "size": 8.84095693381,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "cidade",
+             "value": 0.602737295999,
+             "size": 10.0,
+             "parent": "estada"
             },
+            {
+             "name": "paulo",
+             "value": 0.151136734018,
+             "size": 2.50750592375,
+             "parent": "estada"
+            },
+            {
+             "name": "rio",
+             "value": 0.126733389769,
+             "size": 2.10263062549,
+             "parent": "estada"
+            },
+            {
+             "name": "eleitor",
+             "value": 0.112424519285,
+             "size": 1.86523249898,
+             "parent": "estada"
+            },
+            {
+             "name": "região",
+             "value": 0.0788942214684,
+             "size": 1.30893213332,
+             "parent": "estada"
+            },
+            {
+             "name": "amigo",
+             "value": 0.0530820528802,
+             "size": 0.88068306429,
+             "parent": "estada"
+            },
+            {
+             "name": "campo",
+             "value": 0.0479011238443,
+             "size": 0.794726395103,
+             "parent": "estada"
+            }
+        ]
+    },
+    {
+        "name": "presidente",
+        "value": 1.20499046585,
+        "size": 8.03326977231,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "dilma",
+             "value": 0.655333092999,
+             "size": 10.0,
+             "parent": "presidente"
+            },
+            {
+             "name": "impeachment",
+             "value": 0.35901170595,
+             "size": 5.47830881403,
+             "parent": "presidente"
+            },
+            {
+             "name": "processo",
+             "value": 0.13976336353,
+             "size": 2.13270724496,
+             "parent": "presidente"
+            }
+        ]
+    },
+    {
+        "name": "filho",
+        "value": 0.903617800829,
+        "size": 6.02411867219,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "futuro",
+             "value": 0.240845816477,
+             "size": 10.0,
+             "parent": "filho"
+            },
+            {
+             "name": "pai",
+             "value": 0.166064828595,
+             "size": 6.8950680159,
+             "parent": "filho"
+            },
+            {
+             "name": "neto",
+             "value": 0.126246456192,
+             "size": 5.24179568651,
+             "parent": "filho"
+            },
+            {
+             "name": "ano",
+             "value": 0.0400151232844,
+             "size": 1.66144149273,
+             "parent": "filho"
+            },
+            {
+             "name": "goiá",
+             "value": 0.030453506714,
+             "size": 1.26443992922,
+             "parent": "filho"
+            }
+        ]
+    },
+    {
+        "name": "democracia",
+        "value": 0.848535788589,
+        "size": 5.65690525726,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "golpe",
+             "value": 0.533566394225,
+             "size": 10.0,
+             "parent": "democracia"
+            },
+            {
+             "name": "rua",
+             "value": 0.3510398787,
+             "size": 6.57912272024,
+             "parent": "democracia"
+            },
+            {
+             "name": "trabalhador",
+             "value": 0.330254004479,
+             "size": 6.18955781423,
+             "parent": "democracia"
+            },
+            {
+             "name": "direito",
+             "value": 0.155676651162,
+             "size": 2.91766222249,
+             "parent": "democracia"
+            }
+        ]
+    },
+    {
+        "name": "casa",
+        "value": 0.664208685028,
+        "size": 4.42805790019,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "deputado",
+             "value": 0.338062701413,
+             "size": 10.0,
+             "parent": "casa"
+            },
+            {
+             "name": "mandato",
+             "value": 0.232460490305,
+             "size": 6.87625370484,
+             "parent": "casa"
+            }
+        ]
+    },
+    {
+        "name": "constituição",
+        "value": 0.526132976769,
+        "size": 3.50755317846,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "respeito",
+             "value": 0.823378902841,
+             "size": 10.0,
+             "parent": "constituição"
+            }
+        ]
+    },
+    {
+        "name": "responsabilidade",
+        "value": 0.414528998488,
+        "size": 2.76352665659,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "crime",
+             "value": 0.343422157843,
+             "size": 10.0,
+             "parent": "responsabilidade"
+            }
+        ]
+    },
+    {
+        "name": "homenagem",
+        "value": 0.409584375789,
+        "size": 2.73056250526,
+        "parent": "Temas",
+        "children": [
             {
              "name": "político",
-             "value": 0.0422036928021,
-             "size": 6.1278603015,
-             "parent": "lula"
+             "value": 0.461729105799,
+             "size": 10.0,
+             "parent": "homenagem"
             },
             {
-             "name": "juiz",
-             "value": 0.0229766587843,
-             "size": 3.33614776047,
-             "parent": "lula"
+             "name": "dia",
+             "value": 0.271225242357,
+             "size": 5.87412053844,
+             "parent": "homenagem"
             },
             {
-             "name": "foto",
-             "value": 0.0195552919558,
-             "size": 2.83937469221,
-             "parent": "lula"
+             "name": "vida",
+             "value": 0.19389867306,
+             "size": 4.19940330001,
+             "parent": "homenagem"
+            },
+            {
+             "name": "história",
+             "value": 0.14741957697,
+             "size": 3.19277201975,
+             "parent": "homenagem"
+            },
+            {
+             "name": "luta",
+             "value": 0.129542304978,
+             "size": 2.80559105654,
+             "parent": "homenagem"
+            },
+            {
+             "name": "ditadura",
+             "value": 0.055369682422,
+             "size": 1.19918111565,
+             "parent": "homenagem"
+            }
+        ]
+    },
+    {
+        "name": "nação",
+        "value": 0.327980079098,
+        "size": 2.18653386065,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "deus",
+             "value": 0.386115667629,
+             "size": 10.0,
+             "parent": "nação"
+            },
+            {
+             "name": "amor",
+             "value": 0.0588133229432,
+             "size": 1.52320477706,
+             "parent": "nação"
+            }
+        ]
+    },
+    {
+        "name": "juventude",
+        "value": 0.216925420214,
+        "size": 1.44616946809,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "mulher",
+             "value": 0.409478637463,
+             "size": 10.0,
+             "parent": "juventude"
+            },
+            {
+             "name": "população",
+             "value": 0.222487196172,
+             "size": 5.43342621121,
+             "parent": "juventude"
             }
         ]
     }

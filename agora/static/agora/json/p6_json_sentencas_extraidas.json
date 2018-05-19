@@ -6,7 +6,7 @@
 "parent": "#fff" ,
 "children": [
     {
-        "name": "lula",
+        "name": "voto",
         "value": 3.0,
         "size": 20.0,
         "place": "meta",
@@ -15,147 +15,655 @@
         "parent": "Temas",
         "children": [
             {
-             "name": "prisão",
-             "value": 0.0688718259321,
+             "name": "brasil",
+             "value": 2.13328858215,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": "ex-vereador e filho se entregam à polícia para cumprir prisão preventiva por agressão em frente ao instituto lula",
-                     "value": 0.0688718259321,
+                     "name": "respeito à constituição   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto “ não ” a esse golpe",
+                     "value": 2.13328858215,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "prisão"
+                     "parent": "brasil"
                 },
                 {
-                     "name": "ex-vereador e filho se entregam   */*  cumprir prisão preventiva por agressão em frente ao instituto lula",
-                     "value": 0.0688718259321,
+                     "name": "rio de janeiro   */*  brasil , eu voto “ sim ” ao impeachment",
+                     "value": 2.13328858215,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "prisão"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "brasil"
+                },
+                {
+                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
+                     "value": 2.13328858215,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "brasil"
+                },
+                {
+                     "name": "povo brasileiro   */*  minas gerais   */*  brasil , eu voto",
+                     "value": 2.13328858215,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "brasil"
                 }
                 ]
             },
             {
-             "name": "candidato",
-             "value": 0.0628391587594,
-             "size": 9.12407329253,
+             "name": "família",
+             "value": 0.696504266656,
+             "size": 3.26493223881,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "voto",
              "children": [
                 {
-                     "name": "líderes europeus pedem lula livre",
-                     "value": 0.0628391587594,
+                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
+                     "value": 0.696504266656,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "candidato"
+                     "parent": "família"
                 },
                 {
-                     "name": "advogado eleitoral explica por que lula pode ser candidato",
-                     "value": 0.0628391587594,
+                     "name": "povo brasileiro   */*  minas gerais   */*  brasil , eu voto",
+                     "value": 0.696504266656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "família"
+                },
+                {
+                     "name": "michel temer   */*  minas gerais   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
+                     "value": 0.696504266656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "família"
+                },
+                {
+                     "name": "nome da minha família   */*  brasil , voto   */*  presidente dilma",
+                     "value": 0.696504266656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "família"
+                },
+                {
+                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
+                     "value": 0.696504266656,
                      "size": 5,
                      "place": "end",
                      "repr": "#B65B00",
                      "repr2": "#B65B00",
-                     "parent": "candidato"
+                     "parent": "família"
                 },
                 {
-                     "name": "direito eleitoral explica por que lula pode ser candidato",
-                     "value": 0.0628391587594,
+                     "name": "nome da minha família   */*  povo brasileiro , o meu voto",
+                     "value": 0.696504266656,
                      "size": 5,
                      "place": "end",
                      "repr": "#B65B00",
                      "repr2": "#B65B00",
-                     "parent": "candidato"
+                     "parent": "família"
+                }
+                ]
+            },
+            {
+             "name": "partido",
+             "value": 0.172634796413,
+             "size": 0.809242583761,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "voto",
+             "children": [
+                {
+                     "name": "michel temer   */*  minas gerais   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
+                     "value": 0.172634796413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "partido"
                 },
                 {
-                     "name": "eleitoral explica por que lula pode ser candidato",
-                     "value": 0.0628391587594,
+                     "name": "brasil , eu voto  sim  , pelo impeachment",
+                     "value": 0.172634796413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "partido"
+                },
+                {
+                     "name": "povo brasileiro   */*  brasil , eu voto",
+                     "value": 0.172634796413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "partido"
+                },
+                {
+                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
+                     "value": 0.172634796413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "partido"
+                },
+                {
+                     "name": "voto contra o impeachment   */*  presidente dilma",
+                     "value": 0.172634796413,
                      "size": 5,
                      "place": "end",
                      "repr": "#B65B00",
                      "repr2": "#B65B00",
-                     "parent": "candidato"
+                     "parent": "partido"
                 },
                 {
-                     "name": "lula pode ser candidato a presidente",
-                     "value": 0.0628391587594,
+                     "name": "nome do povo brasileiro , eu voto",
+                     "value": 0.172634796413,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "candidato"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "partido"
                 },
                 {
-                     "name": "lula pode ser candidato",
-                     "value": 0.0628391587594,
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.172634796413,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "candidato"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "partido"
                 },
                 {
-                     "name": "compartilhe se você acha que , se querem lula candidato , eles deveriam lançá lo à presidência de seus países",
-                     "value": 0.0628391587594,
+                     "name": "nome do povo brasileiro   */*  estado de são paulo",
+                     "value": 0.172634796413,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "candidato"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "partido"
+                }
+                ]
+            },
+            {
+             "name": "mato",
+             "value": 0.0227941087066,
+             "size": 0.106849625959,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "voto",
+             "children": [
+                {
+                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
+                     "value": 0.0227941087066,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mato"
+                }
+                ]
+            },
+            {
+             "name": "pernambuco",
+             "value": 0.0170787785985,
+             "size": 0.080058454076,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "voto",
+             "children": [
+                {
+                     "name": "brasil , eu voto",
+                     "value": 0.0170787785985,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pernambuco"
                 },
                 {
-                     "name": "lula pode",
-                     "value": 0.0628391587594,
+                     "name": "voto “ não ” ao impeachment",
+                     "value": 0.0170787785985,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "candidato"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pernambuco"
                 },
                 {
-                     "name": "diz que lula não será candidato",
-                     "value": 0.0628391587594,
+                     "name": "querido estado   */*  presidente dilma",
+                     "value": 0.0170787785985,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "candidato"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "pernambuco"
                 },
                 {
-                     "name": "lula é o candidato anti-establishment , diz alberto carlos almeida",
-                     "value": 0.0628391587594,
+                     "name": "família brasileira   */*  esposa e pelos meus filhos   */*  digo  sim  ao impeachment",
+                     "value": 0.0170787785985,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "candidato"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "pernambuco"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "povo",
+        "value": 2.00020233173,
+        "size": 13.3346822116,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "nome",
+             "value": 0.804519606565,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto",
+                     "value": 0.804519606565,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "nome"
+                }
+                ]
+            },
+            {
+             "name": "esperança",
+             "value": 0.294485825627,
+             "size": 3.6603933978,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": "nome do povo   */*  nome do povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                },
+                {
+                     "name": "respeito ao meu povo   */*  esperança , de um povo   */*  presidenta dilma   */*  respeito à constituição brasileira   */*  presidenta dilma",
+                     "value": 0.294485825627,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "esperança"
+                }
+                ]
+            },
+            {
+             "name": "dignidade",
+             "value": 0.050495890899,
+             "size": 0.627652707118,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "povo",
+             "children": [
+                {
+                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto",
+                     "value": 0.050495890899,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dignidade"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "país",
+        "value": 1.51854711663,
+        "size": 10.1236474442,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "corrupção",
+             "value": 0.6338371482,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "país",
+             "children": [
+                {
+                     "name": "nome da minha família , em nome   */*  país , contra a corrupção   */*  brasil , voto   */*  afastamento da presidente dilma",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "eduardo cunha   */*  michel temer   */*  povo brasileiro",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "eduardo cunha , michel temer e aécio neves   */*  combate à corrupção   */*  constituição , que jurei cumprir",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "combate à corrupção representada por eduardo cunha e michel temer   */*  digo “ não ” a esta corrupção",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "nome da minha família , em nome do meu estado   */*  mato grosso   */*  nome do brasil , em nome do povo   */*  corrupção , o meu voto",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "brasileiros que , pelas ruas do país , do meu estado do espírito santo   */*  cidades do meu estado   */*  chamam para responder afirmativamente   */*  chamam para responder afirmativamente",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "povo brasileiro   */*  novas eleições",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                },
+                {
+                     "name": "pelos meus filhos   */*  santa catarina   */*  santa catarina   */*  brasil , eu voto",
+                     "value": 0.6338371482,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "corrupção"
+                }
+                ]
+            },
+            {
+             "name": "governo",
+             "value": 0.396946569169,
+             "size": 6.26259553098,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "país",
+             "children": [
+                {
+                     "name": "respeito ao meu povo   */*  esperança , de um povo   */*  presidenta dilma   */*  respeito à constituição   */*  afastamento da presidenta dilma",
+                     "value": 0.396946569169,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "governo"
+                },
+                {
+                     "name": "eduardo cunha   */*  michel temer   */*  povo brasileiro",
+                     "value": 0.396946569169,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "governo"
+                }
+                ]
+            },
+            {
+             "name": "pessoa",
+             "value": 0.10053252648,
+             "size": 1.58609394804,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "país",
+             "children": [
+                {
+                     "name": "nome da minha família , em nome   */*  país , contra a corrupção   */*  brasil , voto   */*  afastamento da presidente dilma",
+                     "value": 0.10053252648,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pessoa"
+                },
+                {
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.10053252648,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "pessoa"
+                },
+                {
+                     "name": "milhões de pessoas   */*  54 milhões de votos   */*  presidenta dilma",
+                     "value": 0.10053252648,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "pessoa"
                 }
                 ]
             },
             {
              "name": "pt",
-             "value": 0.0527451874856,
-             "size": 7.6584563821,
+             "value": 0.0766121142035,
+             "size": 1.20870344096,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "país",
              "children": [
                 {
-                     "name": "ex-vereador do pt e filho que agrediram manifestante em frente ao instituto lula são presos",
-                     "value": 0.0527451874856,
+                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
+                     "value": 0.0766121142035,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -163,8 +671,8 @@
                      "parent": "pt"
                 },
                 {
-                     "name": "ex-vereador do pt e filho   */*  frente ao instituto lula são presos",
-                     "value": 0.0527451874856,
+                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
+                     "value": 0.0766121142035,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -172,8 +680,8 @@
                      "parent": "pt"
                 },
                 {
-                     "name": "ex-vereador do pt e filho se entregam   */*  agressão em frente ao instituto lula",
-                     "value": 0.0527451874856,
+                     "name": "povo brasileiro , eu voto",
+                     "value": 0.0766121142035,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -181,138 +689,1550 @@
                      "parent": "pt"
                 },
                 {
-                     "name": "ex-vereador do pt   */*  agressão no instituto lula",
-                     "value": 0.0527451874856,
+                     "name": "povo brasileiro eu voto",
+                     "value": 0.0766121142035,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
                      "parent": "pt"
                 },
                 {
-                     "name": "ex-vereador do pt   */*  instituto lula",
-                     "value": 0.0527451874856,
+                     "name": "povo brasileiro",
+                     "value": 0.0766121142035,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "pt"
+                },
+                {
+                     "name": "pelos trabalhadores   */*  brasil , pelos   */*  10 milhões de pessoas   */*  boquinha do pt   */*  boquinha do pt",
+                     "value": 0.0766121142035,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
                      "parent": "pt"
                 }
                 ]
             },
             {
-             "name": "presidente",
-             "value": 0.0453950137756,
-             "size": 6.59123134333,
+             "name": "bahia",
+             "value": 0.0600682590977,
+             "size": 0.94769230974,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "país",
              "children": [
                 {
-                     "name": "presidente lula   */*  vigília lula livre",
-                     "value": 0.0453950137756,
+                     "name": "bahia e em nome do brasil , o meu voto   */*  impeachment da presidenta dilma",
+                     "value": 0.0600682590977,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "presidente"
+                     "parent": "bahia"
                 },
                 {
-                     "name": "lula será presidente   */*  lula livre",
-                     "value": 0.0453950137756,
+                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
+                     "value": 0.0600682590977,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "bahia"
+                },
+                {
+                     "name": "quero dizer   */*  brasil que voto   */*  pelos filhos   */*  pelos filhos   */*  pelos trabalhadores",
+                     "value": 0.0600682590977,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "bahia"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "estada",
+        "value": 1.32614354007,
+        "size": 8.84095693381,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "cidade",
+             "value": 0.602737295999,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "respeito à constituição   */*  respeito à grande maioria da população   */*  querida cidade   */*  respeito à grande maioria da população   */*  estado do espírito santo , em respeito à grande maioria da população capixaba   */*  desenvolvimento , eu voto",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "presidente"
+                     "parent": "cidade"
                 },
                 {
-                     "name": "lula livre",
-                     "value": 0.0453950137756,
+                     "name": "brasil , do meu estado do rio de janeiro",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "presidente"
+                     "parent": "cidade"
                 },
                 {
-                     "name": "lula pode ser candidato a presidente",
-                     "value": 0.0453950137756,
+                     "name": "quero dizer   */*  estado do rio de janeiro",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "presidente"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "curtindo a vida   */*  ex-presidente lula colocam o pai em  enroscada",
-                     "value": 0.0453950137756,
+                     "name": "estado do rio de janeiro   */*  representando aqui não só o estado",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "lula pode",
-                     "value": 0.0453950137756,
+                     "name": "respeito às famílias brasileiras   */*  respeito ao meu querido   */*  espírito santo , em respeito   */*  cidade natal   */*  pelos meus amigos   */*  família , eu voto “ sim ” ao impeachment",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "lula ainda pode",
-                     "value": 0.0453950137756,
+                     "name": "povo do meu estado   */*  brasil , voto",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "central das notícias   */*  lula será candidato a presidente",
-                     "value": 0.0453950137756,
+                     "name": "nome do povo brasileiro , eu voto",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "ex-presidente lula é nomeado para gabinete de deputado federal do pt",
-                     "value": 0.0453950137756,
+                     "name": "futuro do meu filho   */*  estado de são paulo , pelo brasil   */*  voto “ sim ” , pelo impeachment",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 },
                 {
-                     "name": "políticos , agora lula presidente",
-                     "value": 0.0453950137756,
+                     "name": "pelos meus eleitores   */*  família , pelos   */*  brasil , eu voto",
+                     "value": 0.602737295999,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "presidente"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
+                },
+                {
+                     "name": "estado do rio de janeiro",
+                     "value": 0.602737295999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
+                },
+                {
+                     "name": "estado do rio de janeiro",
+                     "value": 0.602737295999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
+                },
+                {
+                     "name": "estado do rio de janeiro",
+                     "value": 0.602737295999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
+                },
+                {
+                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
+                     "value": 0.602737295999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "cidade"
                 }
                 ]
             },
+            {
+             "name": "paulo",
+             "value": 0.151136734018,
+             "size": 2.50750592375,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "futuro dos meus filhos   */*  futuro dos filhos   */*  querido estado de são paulo e pelo brasil , eu voto",
+                     "value": 0.151136734018,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "paulo"
+                },
+                {
+                     "name": "povo brasileiro   */*  paulo e todo o brasil , eu voto",
+                     "value": 0.151136734018,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "paulo"
+                },
+                {
+                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo",
+                     "value": 0.151136734018,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "paulo"
+                }
+                ]
+            },
+            {
+             "name": "rio",
+             "value": 0.126733389769,
+             "size": 2.10263062549,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "nome do povo do meu estado do rio grande   */*  nome do povo   */*  brasil , eu voto",
+                     "value": 0.126733389769,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rio"
+                },
+                {
+                     "name": "povo do meu estado   */*  povo do rio de janeiro   */*  brasil , eu voto “ sim ” ao impeachment",
+                     "value": 0.126733389769,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rio"
+                },
+                {
+                     "name": "rio de janeiro   */*  nome do povo do rio de janeiro",
+                     "value": 0.126733389769,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "rio"
+                },
+                {
+                     "name": "família , pelos   */*  povo do estado do rio de janeiro",
+                     "value": 0.126733389769,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "rio"
+                }
+                ]
+            },
+            {
+             "name": "eleitor",
+             "value": 0.112424519285,
+             "size": 1.86523249898,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo",
+                     "value": 0.112424519285,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "eleitor"
+                },
+                {
+                     "name": "pelos meus eleitores   */*  família , pelos   */*  brasil , eu voto",
+                     "value": 0.112424519285,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "eleitor"
+                },
+                {
+                     "name": "brasil e pelo meu querido estado do amapá   */*  família , pelos meus amigos   */*  pelos meus eleitores   */*  estado do amapá",
+                     "value": 0.112424519285,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "eleitor"
+                },
+                {
+                     "name": "paulo e pelo brasil , voto",
+                     "value": 0.112424519285,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "eleitor"
+                }
+                ]
+            },
+            {
+             "name": "região",
+             "value": 0.0788942214684,
+             "size": 1.30893213332,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "nome da minha família   */*  brasil , voto   */*  presidente dilma",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "região"
+                },
+                {
+                     "name": "futuro do meu filho   */*  estado de são paulo , pelo brasil   */*  voto “ sim ” , pelo impeachment",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "região"
+                },
+                {
+                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "região"
+                },
+                {
+                     "name": "esperanças do povo brasileiro   */*  país , o meu voto",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "região"
+                },
+                {
+                     "name": "estado de são paulo   */*  milhões de brasileiros que foram às ruas   */*  vida pública",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "região"
+                },
+                {
+                     "name": "nome da minha família , em nome   */*  estado de são paulo   */*  cidade natal",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "região"
+                },
+                {
+                     "name": "milhões de brasileiros que foram às ruas   */*  impeachment da presidente dilma   */*  representando são paulo   */*  região , o meu voto",
+                     "value": 0.0788942214684,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "região"
+                }
+                ]
+            },
+            {
+             "name": "amigo",
+             "value": 0.0530820528802,
+             "size": 0.88068306429,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "respeito às famílias brasileiras   */*  respeito ao meu querido   */*  espírito santo , em respeito   */*  cidade natal   */*  pelos meus amigos   */*  família , eu voto “ sim ” ao impeachment",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amigo"
+                },
+                {
+                     "name": "família , pelos   */*  querido estado   */*  brasil , meu voto",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amigo"
+                },
+                {
+                     "name": "estado do rio de janeiro",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amigo"
+                },
+                {
+                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amigo"
+                },
+                {
+                     "name": "brasil e pelo meu querido estado do amapá   */*  família , pelos meus amigos   */*  pelos meus eleitores   */*  estado do amapá",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amigo"
+                },
+                {
+                     "name": "respeito à minha família   */*  brasil , meu voto",
+                     "value": 0.0530820528802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "amigo"
+                }
+                ]
+            },
+            {
+             "name": "campo",
+             "value": 0.0479011238443,
+             "size": 0.794726395103,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "estada",
+             "children": [
+                {
+                     "name": "estado do rio   */*  brasil , eu voto",
+                     "value": 0.0479011238443,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "campo"
+                },
+                {
+                     "name": "pelos trabalhadores do campo e da cidade   */*  pessoas com deficiência   */*  fim da corrupção e para que em nosso país a esperança   */*  vencendo o medo",
+                     "value": 0.0479011238443,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "campo"
+                },
+                {
+                     "name": "brasil , meu voto",
+                     "value": 0.0479011238443,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "campo"
+                },
+                {
+                     "name": "brasil , o voto",
+                     "value": 0.0479011238443,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "campo"
+                },
+                {
+                     "name": "brasil , eu voto",
+                     "value": 0.0479011238443,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "campo"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "presidente",
+        "value": 1.20499046585,
+        "size": 8.03326977231,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "dilma",
+             "value": 0.655333092999,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": "voto  sim  ao impeachment da presidente dilma rousseff",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "voto contra o impeachment da presidente dilma",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "voto “ sim ” ao impeachment da presidente dilma",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "presidenta dilma   */*  presidenta dilma",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "votar “ sim ” pelo impeachment da presidente dilma rousseff",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "presidenta dilma   */*  cometeu crime de responsabilidade",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "presidenta dilma   */*  cometeu nenhum crime de responsabilidade",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "presidente dilma   */*  cometeu crime de responsabilidade",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "presidente dilma   */*  cometeu crime de responsabilidade",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "crime de responsabilidade   */*  presidente dilma rousseff",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "votando o impeachment da presidente dilma",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                },
+                {
+                     "name": "votarei  sim  pelo impeachment da presidente dilma",
+                     "value": 0.655333092999,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dilma"
+                }
+                ]
+            },
+            {
+             "name": "impeachment",
+             "value": 0.35901170595,
+             "size": 5.47830881403,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": "voto  sim  ao impeachment da presidente dilma rousseff",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "voto contra o impeachment da presidente dilma",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "voto “ sim ” ao impeachment da presidente dilma",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "votar “ sim ” pelo impeachment da presidente dilma rousseff",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "votando o impeachment da presidente dilma",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "impeachment"
+                },
+                {
+                     "name": "votarei  sim  pelo impeachment da presidente dilma",
+                     "value": 0.35901170595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "impeachment"
+                }
+                ]
+            },
+            {
+             "name": "processo",
+             "value": 0.13976336353,
+             "size": 2.13270724496,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "presidente",
+             "children": [
+                {
+                     "name": "impeachment da presidente dilma",
+                     "value": 0.13976336353,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "processo"
+                },
+                {
+                     "name": "presidenta dilma",
+                     "value": 0.13976336353,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "processo"
+                },
+                {
+                     "name": "presidenta dilma",
+                     "value": 0.13976336353,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "processo"
+                },
+                {
+                     "name": "presidente dilma",
+                     "value": 0.13976336353,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "processo"
+                },
+                {
+                     "name": "presidente dilma",
+                     "value": 0.13976336353,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "processo"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "filho",
+        "value": 0.903617800829,
+        "size": 6.02411867219,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "futuro",
+             "value": 0.240845816477,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": "futuro dos meus filhos   */*  futuro dos filhos   */*  querido estado de são paulo e pelo brasil , eu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "futuro"
+                },
+                {
+                     "name": "filhos e aos meus netos   */*  querido estado   */*  futuro melhor para o brasil , eu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "futuro"
+                },
+                {
+                     "name": "família , pelos   */*  querido estado   */*  futuro melhor para o nosso brasil , meu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "futuro"
+                },
+                {
+                     "name": "pelos meus filhos   */*  brasil , eu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "futuro"
+                },
+                {
+                     "name": "família , pelos   */*  futuro do brasil , eu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "futuro"
+                },
+                {
+                     "name": "rio de janeiro   */*  nome do povo do rio de janeiro   */*  esperança das novas gerações , eu voto",
+                     "value": 0.240845816477,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "futuro"
+                }
+                ]
+            },
+            {
+             "name": "pai",
+             "value": 0.166064828595,
+             "size": 6.8950680159,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": "família , pelos meus filhos   */*  vida pública",
+                     "value": 0.166064828595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pai"
+                },
+                {
+                     "name": "filhas , pelo meu neto   */*  brasil , eu voto",
+                     "value": 0.166064828595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pai"
+                },
+                {
+                     "name": "família , por meus filhos   */*  esposa , pelos   */*  estado de goiás   */*  futuro do brasil",
+                     "value": 0.166064828595,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "pai"
+                }
+                ]
+            },
+            {
+             "name": "neto",
+             "value": 0.126246456192,
+             "size": 5.24179568651,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": "michel temer   */*  acompanhando também a nossa bancada   */*  minas gerais   */*  acompanhando também a bancada   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
+                     "value": 0.126246456192,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "neto"
+                },
+                {
+                     "name": "filhos e aos meus netos   */*  querido estado   */*  futuro melhor para o brasil , eu voto",
+                     "value": 0.126246456192,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "neto"
+                },
+                {
+                     "name": "estado de são paulo   */*  20 anos por políticos   */*  josé do rio   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  filhos e os meus netos",
+                     "value": 0.126246456192,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "neto"
+                },
+                {
+                     "name": "família , pela minha esposa   */*  pelos meus filhos , pelo meu neto",
+                     "value": 0.126246456192,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "neto"
+                }
+                ]
+            },
+            {
+             "name": "ano",
+             "value": 0.0400151232844,
+             "size": 1.66144149273,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": "estado de são paulo   */*  20 anos por políticos   */*  josé do rio   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  filhos e os meus netos",
+                     "value": 0.0400151232844,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "ano"
+                },
+                {
+                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo   */*  esposa e da minha filha   */*  20 anos",
+                     "value": 0.0400151232844,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "ano"
+                },
+                {
+                     "name": "pelos meus filhos   */*  minas gerais",
+                     "value": 0.0400151232844,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "ano"
+                },
+                {
+                     "name": "brasileiros que , pelas ruas   */*  país , do meu estado   */*  espírito santo   */*  cidades do meu estado   */*  especial a minha querida   */*  chamam para responder afirmativamente   */*  chamam para responder afirmativamente",
+                     "value": 0.0400151232844,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "ano"
+                }
+                ]
+            },
+            {
+             "name": "goiá",
+             "value": 0.030453506714,
+             "size": 1.26443992922,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "filho",
+             "children": [
+                {
+                     "name": "esposa , pelo meu filho   */*  filha , por toda a minha família   */*  brasil , o meu voto",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "goiá"
+                },
+                {
+                     "name": "povo do meu estado de goiás , que o povo brasileiro , que a juventude brasileira",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "goiá"
+                },
+                {
+                     "name": "futuro de nossos filhos   */*  fim da corrupção   */*  estado de goiás   */*  voto “ sim ” ao impeachment",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "goiá"
+                },
+                {
+                     "name": "família , por meus filhos   */*  esposa , pelos   */*  estado de goiás   */*  futuro do brasil",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "goiá"
+                },
+                {
+                     "name": "brasil , eu voto  sim  , pelo impeachment",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "goiá"
+                },
+                {
+                     "name": "estado democrático   */*  goiás , pelo brasil , por minha família   */*  povo brasileiro , por esperança , por dias",
+                     "value": 0.030453506714,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "goiá"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "democracia",
+        "value": 0.848535788589,
+        "size": 5.65690525726,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "golpe",
+             "value": 0.533566394225,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "democracia",
+             "children": [
+                {
+                     "name": "pelos trabalhadores e trabalhadoras do nosso brasil   */*  democracia e pelo respeito ao voto   */*  povo brasileiro   */*  presidenta dilma   */*  54 milhões votos   */*  voto é não a esse golpe",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "nome da democracia , em respeito à constituição   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro   */*  voto “ não ” a esse golpe",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "defesa da constituição , em defesa da democracia , voto “ não ” ao golpe , contra o impeachment",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "defesa da democracia   */*  presidenta dilma   */*  cometeu nenhum crime   */*  voto contra o golpe",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "nome da democracia   */*  lutando pela democracia e contra o golpe , que voto contra o golpe   */*  eduardo cunha , contra michel temer",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "golpe"
+                },
+                {
+                     "name": "defesa dos direitos   */*  defesa da democracia , eu voto contra o golpe , eu voto",
+                     "value": 0.533566394225,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "golpe"
+                }
+                ]
+            },
+            {
+             "name": "rua",
+             "value": 0.3510398787,
+             "size": 6.57912272024,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "democracia",
+             "children": [
+                {
+                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
+                     "value": 0.3510398787,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                },
+                {
+                     "name": "defesa da democracia , em defesa da constituição , em defesa   */*  defesa da democracia , o meu voto",
+                     "value": 0.3510398787,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                },
+                {
+                     "name": "respeito ao voto popular   */*  presidenta dilma   */*  cometeu nenhum crime de responsabilidade   */*  movimentos sociais   */*  reforma agrária   */*  povo que está nas ruas   */*  respeito à constituição",
+                     "value": 0.3510398787,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                },
+                {
+                     "name": "nome da democracia   */*  lutando pela democracia e contra o golpe , que voto contra o golpe   */*  eduardo cunha , contra michel temer",
+                     "value": 0.3510398787,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "rua"
+                }
+                ]
+            },
+            {
+             "name": "trabalhador",
+             "value": 0.330254004479,
+             "size": 6.18955781423,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "democracia",
+             "children": [
+                {
+                     "name": "pelos trabalhadores e trabalhadoras do nosso brasil   */*  democracia e pelo respeito ao voto   */*  povo brasileiro   */*  presidenta dilma   */*  54 milhões votos   */*  voto é não a esse golpe",
+                     "value": 0.330254004479,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "trabalhador"
+                },
+                {
+                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
+                     "value": 0.330254004479,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "trabalhador"
+                }
+                ]
+            },
+            {
+             "name": "direito",
+             "value": 0.155676651162,
+             "size": 2.91766222249,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "democracia",
+             "children": [
+                {
+                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
+                     "value": 0.155676651162,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "direito"
+                },
+                {
+                     "name": "defesa dos direitos   */*  defesa da democracia , eu voto contra o golpe , eu voto",
+                     "value": 0.155676651162,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "direito"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "casa",
+        "value": 0.664208685028,
+        "size": 4.42805790019,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "deputado",
+             "value": 0.338062701413,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "casa",
+             "children": [
+                {
+                     "name": "michel temer   */*  acompanhando também a nossa bancada   */*  minas gerais   */*  deputados federais   */*  acompanhando também a bancada   */*  minas gerais   */*  povo de minas gerais   */*  quero aqui dizer",
+                     "value": 0.338062701413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "deputado"
+                },
+                {
+                     "name": "quero dizer   */*  colegas deputadas e deputados   */*  casa o mandato   */*  povo de minas gerais",
+                     "value": 0.338062701413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "deputado"
+                },
+                {
+                     "name": "deputado eduardo cunha   */*  michel temer   */*  país , eu voto",
+                     "value": 0.338062701413,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "deputado"
+                }
+                ]
+            },
+            {
+             "name": "mandato",
+             "value": 0.232460490305,
+             "size": 6.87625370484,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "casa",
+             "children": [
+                {
+                     "name": "presidenta dilma   */*  respeito à constituição brasileira e a responsabilidade   */*  presidenta dilma",
+                     "value": 0.232460490305,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mandato"
+                },
+                {
+                     "name": "quero dizer   */*  colegas deputadas e deputados   */*  casa o mandato   */*  povo de minas gerais",
+                     "value": 0.232460490305,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mandato"
+                },
+                {
+                     "name": "defesa da democracia   */*  mandato da presidenta dilma   */*  legitimamente eleita   */*  cometeu nenhum crime   */*  voto contra o golpe",
+                     "value": 0.232460490305,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mandato"
+                },
+                {
+                     "name": "quero dizer   */*  amigos deputados e deputadas   */*  primeiro mandato",
+                     "value": 0.232460490305,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "mandato"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "constituição",
+        "value": 0.526132976769,
+        "size": 3.50755317846,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "respeito",
+             "value": 0.823378902841,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "constituição",
+             "children": [
+                {
+                     "name": "democracia , em respeito à constituição brasileira   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto “ não ” a esse golpe",
+                     "value": 0.823378902841,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "respeito"
+                },
+                {
+                     "name": "respeito ao meu povo   */*  presidenta dilma   */*  respeito à constituição brasileira   */*  presidenta dilma",
+                     "value": 0.823378902841,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "respeito"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "responsabilidade",
+        "value": 0.414528998488,
+        "size": 2.76352665659,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "crime",
+             "value": 0.343422157843,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "responsabilidade",
+             "children": [
+                {
+                     "name": "presidenta dilma , que não cometeu nenhum crime de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "presidente dilma   */*  dilma — cometeu crime de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "presidente dilma cometeu crime de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "crime de responsabilidade   */*  crime , sim , de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "comete crime de responsabilidade   */*  cometeu o crime",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "presidenta dilma   */*  cometeu crime de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "crime"
+                },
+                {
+                     "name": "cometeu um crime de responsabilidade",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "crime"
+                },
+                {
+                     "name": "crimes de responsabilidade   */*  presidente dilma",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "crime"
+                },
+                {
+                     "name": "crime de responsabilidade   */*  presidente dilma",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "crime"
+                },
+                {
+                     "name": "crimes de responsabilidade   */*  presidente dilma",
+                     "value": 0.343422157843,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "crime"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "homenagem",
+        "value": 0.409584375789,
+        "size": 2.73056250526,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
             {
              "name": "político",
-             "value": 0.0422036928021,
-             "size": 6.1278603015,
+             "value": 0.461729105799,
+             "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "homenagem",
              "children": [
                 {
-                     "name": "ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula",
-                     "value": 0.0422036928021,
+                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
+                     "value": 0.461729105799,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -320,26 +2240,8 @@
                      "parent": "político"
                 },
                 {
-                     "name": "ciro , o canto das sereias e o preço moral , ético e político de uma traição a lula",
-                     "value": 0.0422036928021,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "político"
-                },
-                {
-                     "name": "sabe que lula é preso político",
-                     "value": 0.0422036928021,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "político"
-                },
-                {
-                     "name": "lula é preso político",
-                     "value": 0.0422036928021,
+                     "name": "povo brasileiro",
+                     "value": 0.461729105799,
                      "size": 5,
                      "place": "end",
                      "repr": "#B65B00",
@@ -347,8 +2249,8 @@
                      "parent": "político"
                 },
                 {
-                     "name": "lula é preso político",
-                     "value": 0.0422036928021,
+                     "name": "povo brasileiro",
+                     "value": 0.461729105799,
                      "size": 5,
                      "place": "end",
                      "repr": "#B65B00",
@@ -356,134 +2258,458 @@
                      "parent": "político"
                 },
                 {
-                     "name": "favor de lula",
-                     "value": 0.0422036928021,
+                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff   */*  congresso nacional",
+                     "value": 0.461729105799,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "político"
-                },
-                {
-                     "name": "petroleiros condenam prisão política de lula e aprovam indicativo de greve",
-                     "value": 0.0422036928021,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "político"
-                },
-                {
-                     "name": "gilmar solta operadores do mdb e psdb , enquanto lula segue preso político",
-                     "value": 0.0422036928021,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "político"
-                },
-                {
-                     "name": "políticos , agora lula presidente",
-                     "value": 0.0422036928021,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
                      "parent": "político"
                 }
                 ]
             },
             {
-             "name": "juiz",
-             "value": 0.0229766587843,
-             "size": 3.33614776047,
+             "name": "dia",
+             "value": 0.271225242357,
+             "size": 5.87412053844,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "homenagem",
              "children": [
                 {
-                     "name": "lula quando ele preso",
-                     "value": 0.0229766587843,
+                     "name": "vida e da família   */*  povo brasileiro   */*  esperança , por dias",
+                     "value": 0.271225242357,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "juiz"
+                     "parent": "dia"
                 },
                 {
-                     "name": "defesa pede ao stf que delações da j & f nas quais lula é mencionado não sejam enviadas para o juiz sérgio moro",
-                     "value": 0.0229766587843,
+                     "name": "vida pública   */*  povo brasileiro",
+                     "value": 0.271225242357,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "juiz"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "dia"
                 },
                 {
-                     "name": "juiz moro   */*  triplex do lula",
-                     "value": 0.0229766587843,
+                     "name": "pelos brasileiros   */*  brasileiras que estão nas ruas   */*  impedimento da presidenta dilma",
+                     "value": 0.271225242357,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "juiz"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dia"
                 },
                 {
-                     "name": "triplex nunca foi do lula",
-                     "value": 0.0229766587843,
+                     "name": "povo brasileiro",
+                     "value": 0.271225242357,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "juiz"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dia"
                 },
                 {
-                     "name": "juiz tucano   */*  golpe , a prisão de lula",
-                     "value": 0.0229766587843,
+                     "name": "povo brasileiro",
+                     "value": 0.271225242357,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "juiz"
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dia"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.271225242357,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "dia"
                 }
                 ]
             },
             {
-             "name": "foto",
-             "value": 0.0195552919558,
-             "size": 2.83937469221,
+             "name": "vida",
+             "value": 0.19389867306,
+             "size": 4.19940330001,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "lula",
+             "parent": "homenagem",
              "children": [
                 {
-                     "name": "lula livre",
-                     "value": 0.0195552919558,
+                     "name": "vida e da família   */*  povo brasileiro   */*  esperança , por dias",
+                     "value": 0.19389867306,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "foto"
+                     "parent": "vida"
                 },
                 {
-                     "name": "lula posso",
-                     "value": 0.0195552919558,
+                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
+                     "value": 0.19389867306,
                      "size": 5,
                      "place": "end",
-                     "repr": "#E67404",
-                     "repr2": "#E67404",
-                     "parent": "foto"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "vida"
                 },
                 {
-                     "name": "políticos , agora lula presidente",
-                     "value": 0.0195552919558,
+                     "name": "vida pública   */*  povo brasileiro",
+                     "value": 0.19389867306,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FEFE80",
-                     "repr2": "#FEFE80",
-                     "parent": "foto"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "vida"
+                },
+                {
+                     "name": "vida pública   */*  anos , vida pública   */*  povo do meu estado do amazonas",
+                     "value": 0.19389867306,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "vida"
+                },
+                {
+                     "name": "defesa dos direitos   */*  indígenas e dos quilombolas   */*  reforma agrária   */*  casa , minha vida   */*  democracia , eu sou contra esse golpe   */*  michel temer",
+                     "value": 0.19389867306,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "vida"
+                },
+                {
+                     "name": "povo brasileiro   */*  vida , da família",
+                     "value": 0.19389867306,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "vida"
+                },
+                {
+                     "name": "crime de responsabilidade   */*  reforma agrária   */*  bolsa família   */*  casa , minha vida   */*  pelos direitos",
+                     "value": 0.19389867306,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "vida"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.19389867306,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "vida"
+                }
+                ]
+            },
+            {
+             "name": "história",
+             "value": 0.14741957697,
+             "size": 3.19277201975,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "homenagem",
+             "children": [
+                {
+                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
+                     "value": 0.14741957697,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "história"
+                },
+                {
+                     "name": "defesa da democracia   */*  presidente dilma   */*  cometeu nenhum crime   */*  casa , por toda a história do brasil   */*  digo não ao impeachment",
+                     "value": 0.14741957697,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "história"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.14741957697,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "história"
+                },
+                {
+                     "name": "povo brasileiro",
+                     "value": 0.14741957697,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "história"
+                }
+                ]
+            },
+            {
+             "name": "luta",
+             "value": 0.129542304978,
+             "size": 2.80559105654,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "homenagem",
+             "children": [
+                {
+                     "name": "voto será uma homenagem aos jovens   */*  lutaram contra a ditadura   */*  homenagem aos jovens   */*  ruas , lutando   */*  movimentos sociais   */*  presidenta dilma",
+                     "value": 0.129542304978,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "luta"
+                },
+                {
+                     "name": "crime de responsabilidade   */*  reforma agrária   */*  bolsa família   */*  casa , minha vida   */*  pelos direitos",
+                     "value": 0.129542304978,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "luta"
+                },
+                {
+                     "name": "redes sociais   */*  ruas , lutando pela democracia e contra o golpe   */*  voto contra o golpe   */*  eduardo cunha   */*  michel temer",
+                     "value": 0.129542304978,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "luta"
+                },
+                {
+                     "name": "brasil afora e ver   */*  milhões de brasileiros nas ruas   */*  filhos não fogem à luta",
+                     "value": 0.129542304978,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "luta"
+                }
+                ]
+            },
+            {
+             "name": "ditadura",
+             "value": 0.055369682422,
+             "size": 1.19918111565,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "homenagem",
+             "children": [
+                {
+                     "name": "voto será uma homenagem aos jovens   */*  lutaram contra a ditadura   */*  homenagem aos jovens   */*  ruas , lutando   */*  movimentos sociais   */*  presidenta dilma",
+                     "value": 0.055369682422,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "ditadura"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "nação",
+        "value": 0.327980079098,
+        "size": 2.18653386065,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "deus",
+             "value": 0.386115667629,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "nação",
+             "children": [
+                {
+                     "name": "futuras gerações   */*  povo brasileiro   */*  pedindo a deus que abençoe este país",
+                     "value": 0.386115667629,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "deus"
+                },
+                {
+                     "name": "pedir a deus que abençoe o brasil",
+                     "value": 0.386115667629,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "deus"
+                },
+                {
+                     "name": "primeiro lugar , agradecer a deus , à minha família , aos meus amigos   */*  estado de são paulo",
+                     "value": 0.386115667629,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "deus"
+                }
+                ]
+            },
+            {
+             "name": "amor",
+             "value": 0.0588133229432,
+             "size": 1.52320477706,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "nação",
+             "children": [
+                {
+                     "name": "amor ao brasil   */*  memória de meu pai   */*  filha e às futuras gerações",
+                     "value": 0.0588133229432,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amor"
+                },
+                {
+                     "name": "nome do povo brasileiro",
+                     "value": 0.0588133229432,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amor"
+                },
+                {
+                     "name": "povo brasileiro   */*  amor , o meu voto",
+                     "value": 0.0588133229432,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "amor"
+                },
+                {
+                     "name": "brasil , eu voto   */*  rio de janeiro   */*  vote e como minha família",
+                     "value": 0.0588133229432,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "amor"
+                },
+                {
+                     "name": "amor , esse voto   */*  filho , pelas futuras gerações",
+                     "value": 0.0588133229432,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "amor"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "juventude",
+        "value": 0.216925420214,
+        "size": 1.44616946809,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "mulher",
+             "value": 0.409478637463,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "juventude",
+             "children": [
+                {
+                     "name": "respeito à constituição   */*  povo brasileiro   */*  presidente dilma , que é uma mulher honrada   */*  povo brasileiro , eu voto “ não ” a esse golpe",
+                     "value": 0.409478637463,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mulher"
+                },
+                {
+                     "name": "defesa da democracia , em defesa   */*  homens e mulheres que estão nas ruas   */*  ruas em defesa da democracia , o meu voto",
+                     "value": 0.409478637463,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "mulher"
+                },
+                {
+                     "name": "vota pelos brasileiros e brasileiras que estão nas ruas   */*  presidenta dilma , uma mulher séria",
+                     "value": 0.409478637463,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "mulher"
+                },
+                {
+                     "name": "defesa da democracia   */*  presidenta dilma , uma mulher honesta   */*  voto contra o golpe",
+                     "value": 0.409478637463,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#B65B00",
+                     "repr2": "#B65B00",
+                     "parent": "mulher"
+                }
+                ]
+            },
+            {
+             "name": "população",
+             "value": 0.222487196172,
+             "size": 5.43342621121,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "juventude",
+             "children": [
+                {
+                     "name": "respeito à constituição   */*  respeito à grande maioria da população   */*  respeito à grande maioria da população   */*  estado do espírito santo   */*  respeito à grande maioria da população capixaba",
+                     "value": 0.222487196172,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "população"
                 }
                 ]
             }

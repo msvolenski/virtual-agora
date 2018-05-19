@@ -1,7 +1,7 @@
 function donutChart() {
     var width,
         height,
-        margin = {top: 10, right: 10, bottom: 10, left: 10},
+        margin = {top: 10, right: 100, bottom: 10, left: 100},
         //colour = d3.scaleOrdinal(d3.schemeCategory20c),
         colour = d3.scaleLinear()       
             .range(['#ddf9c2', '#6CE200', '#FEFE80', '#E67404', '#B65B00', '#ff0000'])
@@ -52,7 +52,7 @@ function donutChart() {
                 .attr('width', width + margin.left + margin.right)
                 .attr('height', height + margin.top + margin.bottom)
               .append('g')
-                .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+                .attr('transform', 'translate(' + (width + margin.left + margin.right) / 2 + ',' + height / 2 + ')');
             // ===========================================================================================
 
             // ===========================================================================================

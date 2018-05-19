@@ -711,35 +711,26 @@
 
         <!-- RESULTADOS DO PASSO 6  -->
         {% if resultados_p6 %}
-        <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:70px;">
+        <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:120px;">
             <b>RESULTADOS</b>
+        </div>
+        <div id="resultado-passo-6-grafo" style="margin-top:100px;overflow:auto;width:130%"></div>
+        <div class="result-content" id="resultado-passo-6-doc" style="margin-top:150px">
+            <div>{{relatorio_p6|linebreaks}}</div>
         </div>
         {% endif %} 
 
         {% if resultados_p7 %}
         <div class="sem_resultado" id="p6-result" style="position:relative;margin-top:120px;">
             <b>RESULTADOS</b>
-        </div>
-        {% endif %} 
-        
-        {% if resultados_p6 %}
-        <div id="resultado-passo-6-grafo" style="margin-top:100px;overflow:auto;width:130%"></div>
-        {% endif %} 
-        
-        {% if resultados_p6 %}
-        <div class="result-content" id="resultado-passo-6-doc" style="margin-top:150px">
-            <div>{{relatorio_p6|linebreaks}}</div>
-        </div>
-        {% endif %}
-
-        {% if resultados_p7 %}
-        <div id="resultado-passo-6-globais" style="margin-top:100px;overflow:auto;width:150%"></div>
+        </div>     
+        <div id="resultado-passo-6-globais" style="margin-top:100px;overflow:auto;width:200%"></div>
             <div id="chart_p6"></div>
         </div>
         {% endif %}
         
         {% if not resultados_p6 and not resultados_p7 %}
-        <div class="sem_resultado" style="position:relative;margin-top:70px;">
+        <div class="sem_resultado" style="position:relative;margin-top:120px;">
             <a href="{% url 'extrator:mostra_resultados' '6' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
         {% endif %}
