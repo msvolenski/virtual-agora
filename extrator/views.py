@@ -496,7 +496,13 @@ def pre_processamento(request):
         #1. procura por pontos no meio da palavra char-.-char
         pattern = re.compile(ur"\D+\.\D+")
         eh_palavra = pattern.match(item_l)
-        if eh_palavra:
+        if eh_palavra:                     
+            p =[]
+            print item_l
+            for i in item_l:
+                if i != '.':
+                    p.append(i)    
+            item_l = ''.join(p)  
             print item_l
 
         #procura por pontos no meio da palavra digito-.-char

@@ -6,138 +6,604 @@
 "parent": "#fff" ,
 "children": [
     {
-        "name": "voto",
-        "value": 3.0,
-        "size": 20.0,
+        "name": "docente",
+        "value": 2.94768635978,
+        "size": 19.6512423985,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "brasil",
-             "value": 2.13328858215,
+             "name": "unicamp",
+             "value": 0.798477244656,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "voto",
+             "parent": "docente",
              "children": [
                 {
-                     "name": "respeito à constituição   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto “ não ” a esse golpe",
-                     "value": 2.13328858215,
+                     "name": "defesa dos interesses dos docentes e da unicamp   */*  defesa de interesses",
+                     "value": 0.798477244656,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "brasil"
+                     "parent": "unicamp"
                 },
                 {
-                     "name": "rio de janeiro   */*  brasil , eu voto “ sim ” ao impeachment",
-                     "value": 2.13328858215,
+                     "name": "interesses dos docentes da unicamp   */*  político e partidário",
+                     "value": 0.798477244656,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "brasil"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "unicamp"
                 },
                 {
-                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
-                     "value": 2.13328858215,
+                     "name": "representem os interesses dos docentes da unicamp",
+                     "value": 0.798477244656,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "brasil"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "unicamp"
                 },
                 {
-                     "name": "povo brasileiro   */*  minas gerais   */*  brasil , eu voto",
-                     "value": 2.13328858215,
+                     "name": "gostaria que a adunicamp   */*  representasse os interesses dos docentes",
+                     "value": 0.798477244656,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "brasil"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "representar os docentes   */*  instâncias superiores   */*  representar os docentes   */*  andes e em outras associações docentes   */*  estado de sp",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "defesa dos interesses dos docentes",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "associados e não de partidos políticos   */*  representasse os interesses do professores da unicamp e não os interesses",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "defender os interesses de todos os docentes",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "representando os docentes da unicamp",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "defesa dos interesses   */*  docentes da unicamp",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "representa os docentes da unicamp",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
+                },
+                {
+                     "name": "representar os docentes da unicamp",
+                     "value": 0.798477244656,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "unicamp"
                 }
                 ]
             },
             {
-             "name": "família",
-             "value": 0.696504266656,
-             "size": 3.26493223881,
+             "name": "interesse",
+             "value": 0.774446460802,
+             "size": 9.69904234573,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "voto",
+             "parent": "docente",
              "children": [
                 {
-                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
-                     "value": 0.696504266656,
+                     "name": "defesa dos interesses dos docentes e da unicamp   */*  defesa de interesses",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "família"
+                     "parent": "interesse"
                 },
                 {
-                     "name": "povo brasileiro   */*  minas gerais   */*  brasil , eu voto",
-                     "value": 0.696504266656,
+                     "name": "interesses dos docentes da unicamp   */*  político e partidário",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "família"
+                     "parent": "interesse"
                 },
                 {
-                     "name": "michel temer   */*  minas gerais   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
-                     "value": 0.696504266656,
+                     "name": "representem os interesses dos docentes da unicamp",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "família"
+                     "parent": "interesse"
                 },
                 {
-                     "name": "nome da minha família   */*  brasil , voto   */*  presidente dilma",
-                     "value": 0.696504266656,
+                     "name": "político / partidária   */*  defesa dos interesses docentes",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "família"
+                     "parent": "interesse"
                 },
                 {
-                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
-                     "value": 0.696504266656,
+                     "name": "defesa dos interesses dos docentes   */*  política partidária",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "família"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "interesse"
                 },
                 {
-                     "name": "nome da minha família   */*  povo brasileiro , o meu voto",
-                     "value": 0.696504266656,
+                     "name": "gostaria que a adunicamp   */*  representasse os interesses dos docentes",
+                     "value": 0.774446460802,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "família"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defesa dos interesses dos docentes",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "representar os interesses dos associados e não de partidos políticos   */*  ação política   */*  instâncias superiores   */*  governo estadual",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defender o interesse dos docentes",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defenda os interesses dos docentes",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "associados e não de partidos políticos   */*  representasse os interesses do professores da unicamp e não os interesses",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defender os interesses dos docentes",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defender os interesses de todos os docentes",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "defesa dos interesses   */*  docentes da unicamp",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
+                },
+                {
+                     "name": "política partidária   */*  defesa dos interesses",
+                     "value": 0.774446460802,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "interesse"
                 }
                 ]
             },
+            {
+             "name": "associação",
+             "value": 0.495024367534,
+             "size": 6.1996051966,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "representar os docentes   */*  instâncias superiores   */*  representar os docentes   */*  andes e em outras associações docentes   */*  estado de sp",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "associação"
+                },
+                {
+                     "name": "associados e não de partidos políticos   */*  representasse os interesses do professores da unicamp e não os interesses",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "associação"
+                },
+                {
+                     "name": "defender os interesses dos docentes",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "associação"
+                },
+                {
+                     "name": "docente da unicamp",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "associação"
+                },
+                {
+                     "name": "defenda os interesses dos professores da unicamp , não os interesses",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "associação"
+                },
+                {
+                     "name": "docentes da unicamp",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "associação"
+                },
+                {
+                     "name": "político partidária",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "associação"
+                },
+                {
+                     "name": "associação dos docentes , que de fato   */*  governo estadual",
+                     "value": 0.495024367534,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "associação"
+                }
+                ]
+            },
+            {
+             "name": "entidade",
+             "value": 0.179364882382,
+             "size": 2.2463368065,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "defenda os interesses dos docentes",
+                     "value": 0.179364882382,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "entidade"
+                },
+                {
+                     "name": "defesa dos interesses   */*  docentes da unicamp",
+                     "value": 0.179364882382,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "entidade"
+                },
+                {
+                     "name": "representa os docentes da unicamp",
+                     "value": 0.179364882382,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "entidade"
+                },
+                {
+                     "name": "política partidária",
+                     "value": 0.179364882382,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "entidade"
+                },
+                {
+                     "name": "políticas partidárias",
+                     "value": 0.179364882382,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "entidade"
+                }
+                ]
+            },
+            {
+             "name": "professor",
+             "value": 0.142066123976,
+             "size": 1.77921318268,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "associados e não de partidos políticos   */*  representasse os interesses do professores da unicamp e não os interesses",
+                     "value": 0.142066123976,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "professor"
+                },
+                {
+                     "name": "política partidária",
+                     "value": 0.142066123976,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "professor"
+                },
+                {
+                     "name": "representar o interesse dos professores",
+                     "value": 0.142066123976,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "professor"
+                }
+                ]
+            },
+            {
+             "name": "sociedade",
+             "value": 0.0375879205215,
+             "size": 0.470745043432,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "docente da unicamp",
+                     "value": 0.0375879205215,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "sociedade"
+                },
+                {
+                     "name": "docentes da unicamp",
+                     "value": 0.0375879205215,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "sociedade"
+                }
+                ]
+            },
+            {
+             "name": "assunto",
+             "value": 0.0300710892046,
+             "size": 0.376605462533,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "representar os docentes",
+                     "value": 0.0300710892046,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "assunto"
+                },
+                {
+                     "name": "politica partidária   */*  docência e pesquisa",
+                     "value": 0.0300710892046,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "assunto"
+                }
+                ]
+            },
+            {
+             "name": "apoio",
+             "value": 0.0253327302008,
+             "size": 0.317263019959,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "interesses dos docentes",
+                     "value": 0.0253327302008,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "apoio"
+                },
+                {
+                     "name": "envolvimento da associação   */*  associação de docentes espero",
+                     "value": 0.0253327302008,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "apoio"
+                },
+                {
+                     "name": "associação docente também espero   */*  convênio médico",
+                     "value": 0.0253327302008,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "apoio"
+                }
+                ]
+            },
+            {
+             "name": "papel",
+             "value": 0.0183543488588,
+             "size": 0.229866899547,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "docente",
+             "children": [
+                {
+                     "name": "associação de docentes",
+                     "value": 0.0183543488588,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "papel"
+                },
+                {
+                     "name": "papel importante   */*  própria unicamp",
+                     "value": 0.0183543488588,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "papel"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "político",
+        "value": 2.25305026362,
+        "size": 15.0203350908,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
             {
              "name": "partido",
-             "value": 0.172634796413,
-             "size": 0.809242583761,
+             "value": 0.536422748508,
+             "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "voto",
+             "parent": "político",
              "children": [
                 {
-                     "name": "michel temer   */*  minas gerais   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
-                     "value": 0.172634796413,
+                     "name": "política partidária",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -145,8 +611,8 @@
                      "parent": "partido"
                 },
                 {
-                     "name": "brasil , eu voto  sim  , pelo impeachment",
-                     "value": 0.172634796413,
+                     "name": "associados e não de partidos políticos   */*  ação política",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
@@ -154,2562 +620,1570 @@
                      "parent": "partido"
                 },
                 {
-                     "name": "povo brasileiro   */*  brasil , eu voto",
-                     "value": 0.172634796413,
+                     "name": "partido político",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 },
                 {
-                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
-                     "value": 0.172634796413,
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 },
                 {
-                     "name": "voto contra o impeachment   */*  presidente dilma",
-                     "value": 0.172634796413,
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 },
                 {
-                     "name": "nome do povo brasileiro , eu voto",
-                     "value": 0.172634796413,
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 },
                 {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.172634796413,
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 },
                 {
-                     "name": "nome do povo brasileiro   */*  estado de são paulo",
-                     "value": 0.172634796413,
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "partido"
+                },
+                {
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "partido"
+                },
+                {
+                     "name": "partidos políticos",
+                     "value": 0.536422748508,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
                      "parent": "partido"
                 }
                 ]
             },
             {
-             "name": "mato",
-             "value": 0.0227941087066,
-             "size": 0.106849625959,
+             "name": "sindicato",
+             "value": 0.199621455063,
+             "size": 3.72134581575,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "voto",
+             "parent": "político",
              "children": [
                 {
-                     "name": "mato grosso   */*  povo brasileiro   */*  nome da minha família   */*  brasil , eu voto",
-                     "value": 0.0227941087066,
+                     "name": "político partidária",
+                     "value": 0.199621455063,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "mato"
+                     "parent": "sindicato"
+                },
+                {
+                     "name": "partidos políticos",
+                     "value": 0.199621455063,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "sindicato"
                 }
                 ]
             },
             {
-             "name": "pernambuco",
-             "value": 0.0170787785985,
-             "size": 0.080058454076,
+             "name": "representação",
+             "value": 0.0439240292096,
+             "size": 0.818832335725,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "voto",
+             "parent": "político",
              "children": [
                 {
-                     "name": "brasil , eu voto",
-                     "value": 0.0170787785985,
+                     "name": "interesses dos docentes   */*  político e partidário",
+                     "value": 0.0439240292096,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "pernambuco"
+                     "parent": "representação"
                 },
                 {
-                     "name": "voto “ não ” ao impeachment",
-                     "value": 0.0170787785985,
+                     "name": "partidos políticos",
+                     "value": 0.0439240292096,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pernambuco"
-                },
-                {
-                     "name": "querido estado   */*  presidente dilma",
-                     "value": 0.0170787785985,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pernambuco"
-                },
-                {
-                     "name": "família brasileira   */*  esposa e pelos meus filhos   */*  digo  sim  ao impeachment",
-                     "value": 0.0170787785985,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pernambuco"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "representação"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "povo",
-        "value": 2.00020233173,
-        "size": 13.3346822116,
+        "name": "associado",
+        "value": 2.08000444148,
+        "size": 13.8666962765,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "nome",
-             "value": 0.804519606565,
+             "name": "adunicamp",
+             "value": 2.29885538776,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "povo",
+             "parent": "associado",
              "children": [
                 {
-                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto",
-                     "value": 0.804519606565,
+                     "name": "gostaria que a adunicamp representasse os interesses dos docentes",
+                     "value": 2.29885538776,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "nome"
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "real necessidade dos associados   */*  gostaria de ver a adunicamp   */*  resolver “ problemas",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "adunicamp nações   */*  representem os interesses dos docentes da unicamp",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "adunicamp deve   */*  defender os interesses de todos os docentes",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "adunicamp deve   */*  representar seus associados e não partidos   */*  recursos arrecadados",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "representado pela adunicamp   */*  permanecerei associado   */*  continuidade de suas ações",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "gostaria que a adunicamp não se envolvesse em questões",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "permanecer associado independentemente",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "adunicamp precisa   */*  partido político",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "gostaria que a adunicamp   */*  representar seus associados",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "quero mais ver a adunicamp",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
+                },
+                {
+                     "name": "representar o interesse dos professores",
+                     "value": 2.29885538776,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "adunicamp"
                 }
                 ]
             },
             {
-             "name": "esperança",
-             "value": 0.294485825627,
-             "size": 3.6603933978,
+             "name": "efetivo",
+             "value": 0.16256170348,
+             "size": 0.707141929611,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "povo",
+             "parent": "associado",
              "children": [
                 {
-                     "name": "nome do povo   */*  nome do povo brasileiro",
-                     "value": 0.294485825627,
+                     "name": "gostaria de ver",
+                     "value": 0.16256170348,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "esperança"
+                     "parent": "efetivo"
                 },
                 {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.294485825627,
+                     "name": "adunicamp deveria   */*  instrumentos de consulta aos associados",
+                     "value": 0.16256170348,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "esperança"
+                     "parent": "efetivo"
                 },
                 {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.294485825627,
+                     "name": "transparência nas ações   */*  retorno para os associados",
+                     "value": 0.16256170348,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                },
-                {
-                     "name": "respeito ao meu povo   */*  esperança , de um povo   */*  presidenta dilma   */*  respeito à constituição brasileira   */*  presidenta dilma",
-                     "value": 0.294485825627,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "esperança"
-                }
-                ]
-            },
-            {
-             "name": "dignidade",
-             "value": 0.050495890899,
-             "size": 0.627652707118,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "povo",
-             "children": [
-                {
-                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto",
-                     "value": 0.050495890899,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "dignidade"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "efetivo"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "país",
-        "value": 1.51854711663,
-        "size": 10.1236474442,
+        "name": "transparência",
+        "value": 1.08850111001,
+        "size": 7.25667406675,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "corrupção",
-             "value": 0.6338371482,
+             "name": "ação",
+             "value": 0.503875489842,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "país",
+             "parent": "transparência",
              "children": [
                 {
-                     "name": "nome da minha família , em nome   */*  país , contra a corrupção   */*  brasil , voto   */*  afastamento da presidente dilma",
-                     "value": 0.6338371482,
+                     "name": "maior transparência na aplicação de recursos   */*  docentes , por exemplo   */*  meios eletrônicos",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "corrupção"
+                     "parent": "ação"
                 },
                 {
-                     "name": "eduardo cunha   */*  michel temer   */*  povo brasileiro",
-                     "value": 0.6338371482,
+                     "name": "adunicamp nações   */*  representem os interesses dos docentes da unicamp   */*  diz respeito",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "corrupção"
+                     "parent": "ação"
                 },
                 {
-                     "name": "eduardo cunha , michel temer e aécio neves   */*  combate à corrupção   */*  constituição , que jurei cumprir",
-                     "value": 0.6338371482,
+                     "name": "representar os interesses   */*  associados e não de partidos políticos   */*  ação política   */*  governo estadual",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "corrupção"
+                     "parent": "ação"
                 },
                 {
-                     "name": "combate à corrupção representada por eduardo cunha e michel temer   */*  digo “ não ” a esta corrupção",
-                     "value": 0.6338371482,
+                     "name": "gostaria de ver mais transparência na aplicação dos recursos",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "corrupção"
+                     "parent": "ação"
                 },
                 {
-                     "name": "nome da minha família , em nome do meu estado   */*  mato grosso   */*  nome do brasil , em nome do povo   */*  corrupção , o meu voto",
-                     "value": 0.6338371482,
+                     "name": "maior transparência   */*  prestação de contas",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 },
                 {
-                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
-                     "value": 0.6338371482,
+                     "name": "transparência nas ações   */*  uso do dinheiro do associado",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 },
                 {
-                     "name": "brasileiros que , pelas ruas do país , do meu estado do espírito santo   */*  cidades do meu estado   */*  chamam para responder afirmativamente   */*  chamam para responder afirmativamente",
-                     "value": 0.6338371482,
+                     "name": "transparência total   */*  uso dos recursos",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 },
                 {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.6338371482,
+                     "name": "interesse dos docentes   */*  ações políticas",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 },
                 {
-                     "name": "povo brasileiro   */*  novas eleições",
-                     "value": 0.6338371482,
+                     "name": "representar seus associados e não partidos   */*  recursos arrecadados",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 },
                 {
-                     "name": "pelos meus filhos   */*  santa catarina   */*  santa catarina   */*  brasil , eu voto",
-                     "value": 0.6338371482,
+                     "name": "transparência e uso   */*  recursos da adunicamp",
+                     "value": 0.503875489842,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "corrupção"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
+                },
+                {
+                     "name": "transparência e representatividade",
+                     "value": 0.503875489842,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
+                },
+                {
+                     "name": "transparência e menos partidarismo   */*  gostei bastante de ver",
+                     "value": 0.503875489842,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "ação"
                 }
                 ]
             },
             {
-             "name": "governo",
-             "value": 0.396946569169,
-             "size": 6.26259553098,
+             "name": "representatividade",
+             "value": 0.258061680161,
+             "size": 5.12153667648,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "país",
+             "parent": "transparência",
              "children": [
                 {
-                     "name": "respeito ao meu povo   */*  esperança , de um povo   */*  presidenta dilma   */*  respeito à constituição   */*  afastamento da presidenta dilma",
-                     "value": 0.396946569169,
+                     "name": "maior transparência no uso dos recursos financeiros   */*  representatividade dos docentes",
+                     "value": 0.258061680161,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "governo"
+                     "parent": "representatividade"
                 },
                 {
-                     "name": "eduardo cunha   */*  michel temer   */*  povo brasileiro",
-                     "value": 0.396946569169,
+                     "name": "agilidade , transparência e representatividade dos docentes",
+                     "value": 0.258061680161,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "governo"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "representatividade"
+                },
+                {
+                     "name": "agilidade , transparência e representatividade",
+                     "value": 0.258061680161,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "representatividade"
                 }
                 ]
             },
             {
-             "name": "pessoa",
-             "value": 0.10053252648,
-             "size": 1.58609394804,
+             "name": "recurso",
+             "value": 0.150323240304,
+             "size": 2.98334099066,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "país",
+             "parent": "transparência",
              "children": [
                 {
-                     "name": "nome da minha família , em nome   */*  país , contra a corrupção   */*  brasil , voto   */*  afastamento da presidente dilma",
-                     "value": 0.10053252648,
+                     "name": "uso dos recursos arrecadados   */*  maior transparência no uso desse recurso",
+                     "value": 0.150323240304,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "pessoa"
+                     "parent": "recurso"
                 },
                 {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.10053252648,
+                     "name": "maior transparência no uso dos recursos financeiros   */*  representatividade dos docentes",
+                     "value": 0.150323240304,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pessoa"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "recurso"
                 },
                 {
-                     "name": "milhões de pessoas   */*  54 milhões de votos   */*  presidenta dilma",
-                     "value": 0.10053252648,
+                     "name": "gostaria de ver mais transparência na aplicação dos recursos",
+                     "value": 0.150323240304,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pessoa"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "recurso"
+                },
+                {
+                     "name": "adunicamp tenha mais ações voltadas   */*  questões políticas   */*  recurso financeiro",
+                     "value": 0.150323240304,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "recurso"
                 }
                 ]
             },
             {
-             "name": "pt",
-             "value": 0.0766121142035,
-             "size": 1.20870344096,
+             "name": "exemplo",
+             "value": 0.0809217734387,
+             "size": 1.60598749235,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "país",
+             "parent": "transparência",
              "children": [
                 {
-                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
-                     "value": 0.0766121142035,
+                     "name": "maior transparência na aplicação de recursos   */*  docentes , por exemplo   */*  meios eletrônicos",
+                     "value": 0.0809217734387,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "pt"
-                },
-                {
-                     "name": "povo brasileiro   */*  voto “ sim ” ao impeachment",
-                     "value": 0.0766121142035,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pt"
-                },
-                {
-                     "name": "povo brasileiro , eu voto",
-                     "value": 0.0766121142035,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pt"
-                },
-                {
-                     "name": "povo brasileiro eu voto",
-                     "value": 0.0766121142035,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pt"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.0766121142035,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pt"
-                },
-                {
-                     "name": "pelos trabalhadores   */*  brasil , pelos   */*  10 milhões de pessoas   */*  boquinha do pt   */*  boquinha do pt",
-                     "value": 0.0766121142035,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "pt"
+                     "parent": "exemplo"
                 }
                 ]
             },
             {
-             "name": "bahia",
-             "value": 0.0600682590977,
-             "size": 0.94769230974,
+             "name": "fato",
+             "value": 0.0657761143219,
+             "size": 1.30540412558,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "país",
+             "parent": "transparência",
              "children": [
                 {
-                     "name": "bahia e em nome do brasil , o meu voto   */*  impeachment da presidenta dilma",
-                     "value": 0.0600682590977,
+                     "name": "associação que represente de fato os docentes da unicamp",
+                     "value": 0.0657761143219,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "bahia"
+                     "parent": "fato"
                 },
                 {
-                     "name": "governo da presidenta dilma   */*  crime de responsabilidade   */*  bahia , pelo brasil",
-                     "value": 0.0600682590977,
+                     "name": "partidos políticos   */*  represente de fato os docentes associados",
+                     "value": 0.0657761143219,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "bahia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "fato"
                 },
                 {
-                     "name": "quero dizer   */*  brasil que voto   */*  pelos filhos   */*  pelos filhos   */*  pelos trabalhadores",
-                     "value": 0.0600682590977,
+                     "name": "docente que ela de fato   */*  opinião da maioria dos docentes da unicamp",
+                     "value": 0.0657761143219,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "bahia"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "fato"
+                },
+                {
+                     "name": "gostaria de ver",
+                     "value": 0.0657761143219,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "fato"
+                },
+                {
+                     "name": "associação que me represente de fato",
+                     "value": 0.0657761143219,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "fato"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "estada",
-        "value": 1.32614354007,
-        "size": 8.84095693381,
+        "name": "universidade",
+        "value": 0.840177508632,
+        "size": 5.60118339088,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "cidade",
-             "value": 0.602737295999,
+             "name": "ensino",
+             "value": 0.246992492882,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "estada",
+             "parent": "universidade",
              "children": [
                 {
-                     "name": "respeito à constituição   */*  respeito à grande maioria da população   */*  querida cidade   */*  respeito à grande maioria da população   */*  estado do espírito santo , em respeito à grande maioria da população capixaba   */*  desenvolvimento , eu voto",
-                     "value": 0.602737295999,
+                     "name": "condições de trabalho   */*  docentes , por exemplo   */*  ensino e pesquisa",
+                     "value": 0.246992492882,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "brasil , do meu estado do rio de janeiro",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "quero dizer   */*  estado do rio de janeiro",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "estado do rio de janeiro   */*  representando aqui não só o estado",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "respeito às famílias brasileiras   */*  respeito ao meu querido   */*  espírito santo , em respeito   */*  cidade natal   */*  pelos meus amigos   */*  família , eu voto “ sim ” ao impeachment",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "povo do meu estado   */*  brasil , voto",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "nome do povo brasileiro , eu voto",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "futuro do meu filho   */*  estado de são paulo , pelo brasil   */*  voto “ sim ” , pelo impeachment",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "pelos meus eleitores   */*  família , pelos   */*  brasil , eu voto",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "estado do rio de janeiro",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "estado do rio de janeiro",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "estado do rio de janeiro",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
-                },
-                {
-                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
-                     "value": 0.602737295999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "cidade"
+                     "parent": "ensino"
                 }
                 ]
             },
             {
-             "name": "paulo",
-             "value": 0.151136734018,
-             "size": 2.50750592375,
+             "name": "participação",
+             "value": 0.181494099886,
+             "size": 7.34816260075,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "estada",
+             "parent": "universidade",
              "children": [
                 {
-                     "name": "futuro dos meus filhos   */*  futuro dos filhos   */*  querido estado de são paulo e pelo brasil , eu voto",
-                     "value": 0.151136734018,
+                     "name": "representasse os interesses   */*  participação ampla",
+                     "value": 0.181494099886,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "paulo"
+                     "parent": "participação"
                 },
                 {
-                     "name": "povo brasileiro   */*  paulo e todo o brasil , eu voto",
-                     "value": 0.151136734018,
+                     "name": "ensino e pesquisa",
+                     "value": 0.181494099886,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "paulo"
-                },
-                {
-                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo",
-                     "value": 0.151136734018,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "paulo"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "participação"
                 }
                 ]
             },
             {
-             "name": "rio",
-             "value": 0.126733389769,
-             "size": 2.10263062549,
+             "name": "administração",
+             "value": 0.0930501965763,
+             "size": 3.76732893744,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "estada",
+             "parent": "universidade",
              "children": [
                 {
-                     "name": "nome do povo do meu estado do rio grande   */*  nome do povo   */*  brasil , eu voto",
-                     "value": 0.126733389769,
+                     "name": "política partidária   */*  administrativa da unicamp",
+                     "value": 0.0930501965763,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "rio"
+                     "parent": "administração"
                 },
                 {
-                     "name": "povo do meu estado   */*  povo do rio de janeiro   */*  brasil , eu voto “ sim ” ao impeachment",
-                     "value": 0.126733389769,
+                     "name": "continuação da atividade   */*  continuação da atividade",
+                     "value": 0.0930501965763,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "rio"
+                     "parent": "administração"
                 },
                 {
-                     "name": "rio de janeiro   */*  nome do povo do rio de janeiro",
-                     "value": 0.126733389769,
+                     "name": "governos estadual",
+                     "value": 0.0930501965763,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "rio"
-                },
-                {
-                     "name": "família , pelos   */*  povo do estado do rio de janeiro",
-                     "value": 0.126733389769,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "rio"
-                }
-                ]
-            },
-            {
-             "name": "eleitor",
-             "value": 0.112424519285,
-             "size": 1.86523249898,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "estada",
-             "children": [
-                {
-                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo",
-                     "value": 0.112424519285,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "eleitor"
-                },
-                {
-                     "name": "pelos meus eleitores   */*  família , pelos   */*  brasil , eu voto",
-                     "value": 0.112424519285,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "eleitor"
-                },
-                {
-                     "name": "brasil e pelo meu querido estado do amapá   */*  família , pelos meus amigos   */*  pelos meus eleitores   */*  estado do amapá",
-                     "value": 0.112424519285,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "eleitor"
-                },
-                {
-                     "name": "paulo e pelo brasil , voto",
-                     "value": 0.112424519285,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "eleitor"
-                }
-                ]
-            },
-            {
-             "name": "região",
-             "value": 0.0788942214684,
-             "size": 1.30893213332,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "estada",
-             "children": [
-                {
-                     "name": "nome da minha família   */*  brasil , voto   */*  presidente dilma",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "região"
-                },
-                {
-                     "name": "futuro do meu filho   */*  estado de são paulo , pelo brasil   */*  voto “ sim ” , pelo impeachment",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "região"
-                },
-                {
-                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "região"
-                },
-                {
-                     "name": "esperanças do povo brasileiro   */*  país , o meu voto",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "região"
-                },
-                {
-                     "name": "estado de são paulo   */*  milhões de brasileiros que foram às ruas   */*  vida pública",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "região"
-                },
-                {
-                     "name": "nome da minha família , em nome   */*  estado de são paulo   */*  cidade natal",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "região"
-                },
-                {
-                     "name": "milhões de brasileiros que foram às ruas   */*  impeachment da presidente dilma   */*  representando são paulo   */*  região , o meu voto",
-                     "value": 0.0788942214684,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "região"
-                }
-                ]
-            },
-            {
-             "name": "amigo",
-             "value": 0.0530820528802,
-             "size": 0.88068306429,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "estada",
-             "children": [
-                {
-                     "name": "respeito às famílias brasileiras   */*  respeito ao meu querido   */*  espírito santo , em respeito   */*  cidade natal   */*  pelos meus amigos   */*  família , eu voto “ sim ” ao impeachment",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amigo"
-                },
-                {
-                     "name": "família , pelos   */*  querido estado   */*  brasil , meu voto",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amigo"
-                },
-                {
-                     "name": "estado do rio de janeiro",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amigo"
-                },
-                {
-                     "name": "família , aos meus amigos   */*  querida cidade   */*  estado de são paulo e ao brasil",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amigo"
-                },
-                {
-                     "name": "brasil e pelo meu querido estado do amapá   */*  família , pelos meus amigos   */*  pelos meus eleitores   */*  estado do amapá",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amigo"
-                },
-                {
-                     "name": "respeito à minha família   */*  brasil , meu voto",
-                     "value": 0.0530820528802,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "amigo"
-                }
-                ]
-            },
-            {
-             "name": "campo",
-             "value": 0.0479011238443,
-             "size": 0.794726395103,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "estada",
-             "children": [
-                {
-                     "name": "estado do rio   */*  brasil , eu voto",
-                     "value": 0.0479011238443,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "campo"
-                },
-                {
-                     "name": "pelos trabalhadores do campo e da cidade   */*  pessoas com deficiência   */*  fim da corrupção e para que em nosso país a esperança   */*  vencendo o medo",
-                     "value": 0.0479011238443,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "campo"
-                },
-                {
-                     "name": "brasil , meu voto",
-                     "value": 0.0479011238443,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "campo"
-                },
-                {
-                     "name": "brasil , o voto",
-                     "value": 0.0479011238443,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "campo"
-                },
-                {
-                     "name": "brasil , eu voto",
-                     "value": 0.0479011238443,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "campo"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "administração"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "presidente",
-        "value": 1.20499046585,
-        "size": 8.03326977231,
+        "name": "plano",
+        "value": 0.65467920155,
+        "size": 4.36452801034,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "dilma",
-             "value": 0.655333092999,
+             "name": "saúde",
+             "value": 0.243528380186,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "presidente",
+             "parent": "plano",
              "children": [
                 {
-                     "name": "voto  sim  ao impeachment da presidente dilma rousseff",
-                     "value": 0.655333092999,
+                     "name": "planos de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "dilma"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "voto contra o impeachment da presidente dilma",
-                     "value": 0.655333092999,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "dilma"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "voto “ sim ” ao impeachment da presidente dilma",
-                     "value": 0.655333092999,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "dilma"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "presidenta dilma   */*  presidenta dilma",
-                     "value": 0.655333092999,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "dilma"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "votar “ sim ” pelo impeachment da presidente dilma rousseff",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "presidenta dilma   */*  cometeu crime de responsabilidade",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "presidenta dilma   */*  cometeu nenhum crime de responsabilidade",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "presidente dilma   */*  cometeu crime de responsabilidade",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "presidente dilma   */*  cometeu crime de responsabilidade",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "crime de responsabilidade   */*  presidente dilma rousseff",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "povo brasileiro   */*  presidente dilma   */*  povo brasileiro",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "votando o impeachment da presidente dilma",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                },
-                {
-                     "name": "votarei  sim  pelo impeachment da presidente dilma",
-                     "value": 0.655333092999,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dilma"
-                }
-                ]
-            },
-            {
-             "name": "impeachment",
-             "value": 0.35901170595,
-             "size": 5.47830881403,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "presidente",
-             "children": [
-                {
-                     "name": "voto  sim  ao impeachment da presidente dilma rousseff",
-                     "value": 0.35901170595,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "impeachment"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "voto contra o impeachment da presidente dilma",
-                     "value": 0.35901170595,
+                     "name": "planos de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "impeachment"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "voto “ sim ” ao impeachment da presidente dilma",
-                     "value": 0.35901170595,
+                     "name": "planos de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "impeachment"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff",
-                     "value": 0.35901170595,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "impeachment"
-                },
-                {
-                     "name": "votar “ sim ” pelo impeachment da presidente dilma rousseff",
-                     "value": 0.35901170595,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "impeachment"
-                },
-                {
-                     "name": "votando o impeachment da presidente dilma",
-                     "value": 0.35901170595,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "impeachment"
-                },
-                {
-                     "name": "votarei  sim  pelo impeachment da presidente dilma",
-                     "value": 0.35901170595,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "impeachment"
-                }
-                ]
-            },
-            {
-             "name": "processo",
-             "value": 0.13976336353,
-             "size": 2.13270724496,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "presidente",
-             "children": [
-                {
-                     "name": "impeachment da presidente dilma",
-                     "value": 0.13976336353,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "processo"
+                     "parent": "saúde"
                 },
                 {
-                     "name": "presidenta dilma",
-                     "value": 0.13976336353,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "processo"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "saúde"
                 },
                 {
-                     "name": "presidenta dilma",
-                     "value": 0.13976336353,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "processo"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "saúde"
                 },
                 {
-                     "name": "presidente dilma",
-                     "value": 0.13976336353,
+                     "name": "plano de saúde",
+                     "value": 0.243528380186,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "processo"
-                },
-                {
-                     "name": "presidente dilma",
-                     "value": 0.13976336353,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "processo"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "saúde"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "filho",
-        "value": 0.903617800829,
-        "size": 6.02411867219,
+        "name": "problema",
+        "value": 0.507782872006,
+        "size": 3.38521914671,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "futuro",
-             "value": 0.240845816477,
+             "name": "questão",
+             "value": 0.489627717309,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "filho",
+             "parent": "problema",
              "children": [
                 {
-                     "name": "futuro dos meus filhos   */*  futuro dos filhos   */*  querido estado de são paulo e pelo brasil , eu voto",
-                     "value": 0.240845816477,
+                     "name": "adunicamp tenha mais ações   */*  envolvam questões políticas",
+                     "value": 0.489627717309,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "futuro"
+                     "parent": "questão"
                 },
                 {
-                     "name": "filhos e aos meus netos   */*  querido estado   */*  futuro melhor para o brasil , eu voto",
-                     "value": 0.240845816477,
+                     "name": "adunicamp nações   */*  docentes da unicamp   */*  diz respeito",
+                     "value": 0.489627717309,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "futuro"
+                     "parent": "questão"
                 },
                 {
-                     "name": "família , pelos   */*  querido estado   */*  futuro melhor para o nosso brasil , meu voto",
-                     "value": 0.240845816477,
+                     "name": "políticas acadêmicas   */*  questões nacionais",
+                     "value": 0.489627717309,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "futuro"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "questão"
                 },
                 {
-                     "name": "pelos meus filhos   */*  brasil , eu voto",
-                     "value": 0.240845816477,
+                     "name": "gostaria que a adunicamp   */*  envolvesse em questões",
+                     "value": 0.489627717309,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "futuro"
-                },
-                {
-                     "name": "família , pelos   */*  futuro do brasil , eu voto",
-                     "value": 0.240845816477,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "futuro"
-                },
-                {
-                     "name": "rio de janeiro   */*  nome do povo do rio de janeiro   */*  esperança das novas gerações , eu voto",
-                     "value": 0.240845816477,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "futuro"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "questão"
                 }
                 ]
             },
             {
-             "name": "pai",
-             "value": 0.166064828595,
-             "size": 6.8950680159,
+             "name": "acadêmico",
+             "value": 0.47387840409,
+             "size": 9.67834106072,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "filho",
+             "parent": "problema",
              "children": [
                 {
-                     "name": "família , pelos meus filhos   */*  vida pública",
-                     "value": 0.166064828595,
+                     "name": "resolver “ problemas   */*  envolvida em problema",
+                     "value": 0.47387840409,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "pai"
+                     "parent": "acadêmico"
                 },
                 {
-                     "name": "filhas , pelo meu neto   */*  brasil , eu voto",
-                     "value": 0.166064828595,
+                     "name": "questões políticas acadêmicas",
+                     "value": 0.47387840409,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "pai"
-                },
-                {
-                     "name": "família , por meus filhos   */*  esposa , pelos   */*  estado de goiás   */*  futuro do brasil",
-                     "value": 0.166064828595,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "pai"
+                     "parent": "acadêmico"
                 }
                 ]
             },
             {
-             "name": "neto",
-             "value": 0.126246456192,
-             "size": 5.24179568651,
+             "name": "discussão",
+             "value": 0.263960006793,
+             "size": 5.39103480994,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "filho",
+             "parent": "problema",
              "children": [
                 {
-                     "name": "michel temer   */*  acompanhando também a nossa bancada   */*  minas gerais   */*  acompanhando também a bancada   */*  minas gerais   */*  minas gerais   */*  quero aqui dizer   */*  família , na minha esposa , nos meus filhos , nos meus netos",
-                     "value": 0.126246456192,
+                     "name": "resolver “ problemas   */*  envolvida em problema",
+                     "value": 0.263960006793,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "neto"
-                },
-                {
-                     "name": "filhos e aos meus netos   */*  querido estado   */*  futuro melhor para o brasil , eu voto",
-                     "value": 0.126246456192,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "neto"
-                },
-                {
-                     "name": "estado de são paulo   */*  20 anos por políticos   */*  josé do rio   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  filhos e os meus netos",
-                     "value": 0.126246456192,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "neto"
-                },
-                {
-                     "name": "família , pela minha esposa   */*  pelos meus filhos , pelo meu neto",
-                     "value": 0.126246456192,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "neto"
-                }
-                ]
-            },
-            {
-             "name": "ano",
-             "value": 0.0400151232844,
-             "size": 1.66144149273,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "filho",
-             "children": [
-                {
-                     "name": "estado de são paulo   */*  20 anos por políticos   */*  josé do rio   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  filhos e os meus netos",
-                     "value": 0.0400151232844,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "ano"
-                },
-                {
-                     "name": "nome do povo brasileiro   */*  nome do estado de são paulo   */*  esposa e da minha filha   */*  20 anos",
-                     "value": 0.0400151232844,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "ano"
-                },
-                {
-                     "name": "pelos meus filhos   */*  minas gerais",
-                     "value": 0.0400151232844,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "ano"
-                },
-                {
-                     "name": "brasileiros que , pelas ruas   */*  país , do meu estado   */*  espírito santo   */*  cidades do meu estado   */*  especial a minha querida   */*  chamam para responder afirmativamente   */*  chamam para responder afirmativamente",
-                     "value": 0.0400151232844,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "ano"
-                }
-                ]
-            },
-            {
-             "name": "goiá",
-             "value": 0.030453506714,
-             "size": 1.26443992922,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "filho",
-             "children": [
-                {
-                     "name": "esposa , pelo meu filho   */*  filha , por toda a minha família   */*  brasil , o meu voto",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "goiá"
-                },
-                {
-                     "name": "povo do meu estado de goiás , que o povo brasileiro , que a juventude brasileira",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "goiá"
-                },
-                {
-                     "name": "futuro de nossos filhos   */*  fim da corrupção   */*  estado de goiás   */*  voto “ sim ” ao impeachment",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "goiá"
-                },
-                {
-                     "name": "família , por meus filhos   */*  esposa , pelos   */*  estado de goiás   */*  futuro do brasil",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "goiá"
-                },
-                {
-                     "name": "brasil , eu voto  sim  , pelo impeachment",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "goiá"
-                },
-                {
-                     "name": "estado democrático   */*  goiás , pelo brasil , por minha família   */*  povo brasileiro , por esperança , por dias",
-                     "value": 0.030453506714,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "goiá"
+                     "parent": "discussão"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "democracia",
-        "value": 0.848535788589,
-        "size": 5.65690525726,
+        "name": "unimed",
+        "value": 0.503823523061,
+        "size": 3.35882348707,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "golpe",
-             "value": 0.533566394225,
+             "name": "convênio",
+             "value": 0.232839912028,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "democracia",
+             "parent": "unimed",
              "children": [
                 {
-                     "name": "pelos trabalhadores e trabalhadoras do nosso brasil   */*  democracia e pelo respeito ao voto   */*  povo brasileiro   */*  presidenta dilma   */*  54 milhões votos   */*  voto é não a esse golpe",
-                     "value": 0.533566394225,
+                     "name": "permanecem associados à adunicamp   */*  convênio unimed",
+                     "value": 0.232839912028,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "golpe"
+                     "parent": "convênio"
                 },
                 {
-                     "name": "nome da democracia , em respeito à constituição   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro   */*  voto “ não ” a esse golpe",
-                     "value": 0.533566394225,
+                     "name": "permanecer associado à adunicamp   */*  convênio com a unimed",
+                     "value": 0.232839912028,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "golpe"
+                     "parent": "convênio"
                 },
                 {
-                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
-                     "value": 0.533566394225,
+                     "name": "permaneceria associado   */*  convênio unimed",
+                     "value": 0.232839912028,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "golpe"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "convênio"
                 },
                 {
-                     "name": "defesa da constituição , em defesa da democracia , voto “ não ” ao golpe , contra o impeachment",
-                     "value": 0.533566394225,
+                     "name": "convênios , unimed   */*  atividades culturais",
+                     "value": 0.232839912028,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "golpe"
-                },
-                {
-                     "name": "defesa da democracia   */*  presidenta dilma   */*  cometeu nenhum crime   */*  voto contra o golpe",
-                     "value": 0.533566394225,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "golpe"
-                },
-                {
-                     "name": "nome da democracia   */*  lutando pela democracia e contra o golpe , que voto contra o golpe   */*  eduardo cunha , contra michel temer",
-                     "value": 0.533566394225,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "golpe"
-                },
-                {
-                     "name": "defesa dos direitos   */*  defesa da democracia , eu voto contra o golpe , eu voto",
-                     "value": 0.533566394225,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "golpe"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "convênio"
                 }
                 ]
             },
             {
-             "name": "rua",
-             "value": 0.3510398787,
-             "size": 6.57912272024,
+             "name": "valor",
+             "value": 0.0602080806854,
+             "size": 2.58581444053,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "democracia",
+             "parent": "unimed",
              "children": [
                 {
-                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
-                     "value": 0.3510398787,
+                     "name": "permanecerei associado",
+                     "value": 0.0602080806854,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "rua"
+                     "parent": "valor"
                 },
                 {
-                     "name": "defesa da democracia , em defesa da constituição , em defesa   */*  defesa da democracia , o meu voto",
-                     "value": 0.3510398787,
+                     "name": "permaneça associado",
+                     "value": 0.0602080806854,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "rua"
-                },
-                {
-                     "name": "respeito ao voto popular   */*  presidenta dilma   */*  cometeu nenhum crime de responsabilidade   */*  movimentos sociais   */*  reforma agrária   */*  povo que está nas ruas   */*  respeito à constituição",
-                     "value": 0.3510398787,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "rua"
-                },
-                {
-                     "name": "nome da democracia   */*  lutando pela democracia e contra o golpe , que voto contra o golpe   */*  eduardo cunha , contra michel temer",
-                     "value": 0.3510398787,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "rua"
-                }
-                ]
-            },
-            {
-             "name": "trabalhador",
-             "value": 0.330254004479,
-             "size": 6.18955781423,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "democracia",
-             "children": [
-                {
-                     "name": "pelos trabalhadores e trabalhadoras do nosso brasil   */*  democracia e pelo respeito ao voto   */*  povo brasileiro   */*  presidenta dilma   */*  54 milhões votos   */*  voto é não a esse golpe",
-                     "value": 0.330254004479,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "trabalhador"
-                },
-                {
-                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
-                     "value": 0.330254004479,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "trabalhador"
-                }
-                ]
-            },
-            {
-             "name": "direito",
-             "value": 0.155676651162,
-             "size": 2.91766222249,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "democracia",
-             "children": [
-                {
-                     "name": "defesa da democracia , em defesa dos direitos   */*  defesa dos direitos   */*  trabalhadores que estão na rua   */*  defesa da democracia , meu voto",
-                     "value": 0.155676651162,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "direito"
-                },
-                {
-                     "name": "defesa dos direitos   */*  defesa da democracia , eu voto contra o golpe , eu voto",
-                     "value": 0.155676651162,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "direito"
+                     "parent": "valor"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "casa",
-        "value": 0.664208685028,
-        "size": 4.42805790019,
+        "name": "assembleia",
+        "value": 0.412135732174,
+        "size": 2.74757154783,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "deputado",
-             "value": 0.338062701413,
+             "name": "votação",
+             "value": 0.290181452194,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "casa",
+             "parent": "assembleia",
              "children": [
                 {
-                     "name": "michel temer   */*  acompanhando também a nossa bancada   */*  minas gerais   */*  deputados federais   */*  acompanhando também a bancada   */*  minas gerais   */*  povo de minas gerais   */*  quero aqui dizer",
-                     "value": 0.338062701413,
+                     "name": "adunicamp deveria   */*  opinião de seus associados   */*  tema , o que se pode   */*  sistemas de votação eletrônica",
+                     "value": 0.290181452194,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "deputado"
+                     "parent": "votação"
                 },
                 {
-                     "name": "quero dizer   */*  colegas deputadas e deputados   */*  casa o mandato   */*  povo de minas gerais",
-                     "value": 0.338062701413,
+                     "name": "votação eletrônica",
+                     "value": 0.290181452194,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "deputado"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "votação"
                 },
                 {
-                     "name": "deputado eduardo cunha   */*  michel temer   */*  país , eu voto",
-                     "value": 0.338062701413,
+                     "name": "decisão sobre greves , seja decididos   */*  votação pela internet",
+                     "value": 0.290181452194,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "deputado"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "votação"
+                },
+                {
+                     "name": "votação eletrônica",
+                     "value": 0.290181452194,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "votação"
+                },
+                {
+                     "name": "votação eletrônica",
+                     "value": 0.290181452194,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "votação"
                 }
                 ]
             },
             {
-             "name": "mandato",
-             "value": 0.232460490305,
-             "size": 6.87625370484,
+             "name": "opinião",
+             "value": 0.17125484874,
+             "size": 5.90164696762,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "casa",
+             "parent": "assembleia",
              "children": [
                 {
-                     "name": "presidenta dilma   */*  respeito à constituição brasileira e a responsabilidade   */*  presidenta dilma",
-                     "value": 0.232460490305,
+                     "name": "adunicamp deveria   */*  opinião de seus associados   */*  tema , o que se pode   */*  sistemas de votação eletrônica",
+                     "value": 0.17125484874,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "mandato"
-                },
+                     "parent": "opinião"
+                }
+                ]
+            },
+            {
+             "name": "tema",
+             "value": 0.113331475969,
+             "size": 3.90553824556,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "assembleia",
+             "children": [
                 {
-                     "name": "quero dizer   */*  colegas deputadas e deputados   */*  casa o mandato   */*  povo de minas gerais",
-                     "value": 0.232460490305,
+                     "name": "adunicamp deveria   */*  opinião de seus associados   */*  tema , o que se pode   */*  sistemas de votação eletrônica",
+                     "value": 0.113331475969,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "mandato"
+                     "parent": "tema"
                 },
                 {
-                     "name": "defesa da democracia   */*  mandato da presidenta dilma   */*  legitimamente eleita   */*  cometeu nenhum crime   */*  voto contra o golpe",
-                     "value": 0.232460490305,
+                     "name": "decisão sobre greves , seja decididos   */*  votação pela internet",
+                     "value": 0.113331475969,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "tema"
+                }
+                ]
+            },
+            {
+             "name": "forma",
+             "value": 0.112932507491,
+             "size": 3.89178931451,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "assembleia",
+             "children": [
+                {
+                     "name": "gostaria de ver   */*  decisões sobre greves   */*  votação eletrônica",
+                     "value": 0.112932507491,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "mandato"
-                },
-                {
-                     "name": "quero dizer   */*  amigos deputados e deputadas   */*  primeiro mandato",
-                     "value": 0.232460490305,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "mandato"
+                     "parent": "forma"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "constituição",
-        "value": 0.526132976769,
-        "size": 3.50755317846,
+        "name": "grupo",
+        "value": 0.406862162035,
+        "size": 2.71241441356,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "respeito",
-             "value": 0.823378902841,
+             "name": "diretoria",
+             "value": 0.459050529259,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "constituição",
+             "parent": "grupo",
              "children": [
                 {
-                     "name": "democracia , em respeito à constituição brasileira   */*  povo brasileiro   */*  presidente dilma   */*  povo brasileiro , eu voto “ não ” a esse golpe",
-                     "value": 0.823378902841,
+                     "name": "confundir a instituição   */*  diretorias eleitas   */*  confundir a instituição",
+                     "value": 0.459050529259,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "respeito"
-                },
-                {
-                     "name": "respeito ao meu povo   */*  presidenta dilma   */*  respeito à constituição brasileira   */*  presidenta dilma",
-                     "value": 0.823378902841,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "respeito"
+                     "parent": "diretoria"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "responsabilidade",
-        "value": 0.414528998488,
-        "size": 2.76352665659,
+        "name": "negociação",
+        "value": 0.379206421788,
+        "size": 2.52804281192,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "crime",
-             "value": 0.343422157843,
+             "name": "salarial",
+             "value": 0.277038267245,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "responsabilidade",
+             "parent": "negociação",
              "children": [
                 {
-                     "name": "presidenta dilma , que não cometeu nenhum crime de responsabilidade",
-                     "value": 0.343422157843,
+                     "name": "resolver problemas   */*  teto salarial   */*  resolver problemas",
+                     "value": 0.277038267245,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "crime"
+                     "parent": "salarial"
                 },
                 {
-                     "name": "presidente dilma   */*  dilma — cometeu crime de responsabilidade",
-                     "value": 0.343422157843,
+                     "name": "plano de saúde   */*  negociações salariais",
+                     "value": 0.277038267245,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "salarial"
+                },
+                {
+                     "name": "interesse dos docentes",
+                     "value": 0.277038267245,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "salarial"
+                },
+                {
+                     "name": "teto salarial",
+                     "value": 0.277038267245,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "salarial"
+                },
+                {
+                     "name": "teto salarial",
+                     "value": 0.277038267245,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "salarial"
+                }
+                ]
+            },
+            {
+             "name": "unidade",
+             "value": 0.100077582599,
+             "size": 3.61241006861,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "negociação",
+             "children": [
+                {
+                     "name": "plano de saúde   */*  negociações salariais",
+                     "value": 0.100077582599,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "crime"
-                },
-                {
-                     "name": "presidente dilma cometeu crime de responsabilidade",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "crime"
-                },
-                {
-                     "name": "crime de responsabilidade   */*  crime , sim , de responsabilidade",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "crime"
-                },
-                {
-                     "name": "comete crime de responsabilidade   */*  cometeu o crime",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "crime"
-                },
-                {
-                     "name": "presidenta dilma   */*  cometeu crime de responsabilidade",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "crime"
-                },
-                {
-                     "name": "cometeu um crime de responsabilidade",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "crime"
-                },
-                {
-                     "name": "crimes de responsabilidade   */*  presidente dilma",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "crime"
-                },
-                {
-                     "name": "crime de responsabilidade   */*  presidente dilma",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "crime"
-                },
-                {
-                     "name": "crimes de responsabilidade   */*  presidente dilma",
-                     "value": 0.343422157843,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "crime"
+                     "parent": "unidade"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "homenagem",
-        "value": 0.409584375789,
-        "size": 2.73056250526,
+        "name": "debate",
+        "value": 0.293118348438,
+        "size": 1.95412232292,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "político",
-             "value": 0.461729105799,
+             "name": "atividade",
+             "value": 0.577542623327,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "homenagem",
+             "parent": "debate",
              "children": [
                 {
-                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
-                     "value": 0.461729105799,
+                     "name": "continuação da atividade   */*  continuação das atividades culturais",
+                     "value": 0.577542623327,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "político"
+                     "parent": "atividade"
                 },
                 {
-                     "name": "povo brasileiro",
-                     "value": 0.461729105799,
+                     "name": "convênios , unimed   */*  atividades culturais",
+                     "value": 0.577542623327,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "político"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.461729105799,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "político"
-                },
-                {
-                     "name": "votando o impeachment de um presidente   */*  presidente dilma rousseff   */*  congresso nacional",
-                     "value": 0.461729105799,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "político"
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "atividade"
                 }
                 ]
             },
             {
-             "name": "dia",
-             "value": 0.271225242357,
-             "size": 5.87412053844,
+             "name": "trabalho",
+             "value": 0.218557401269,
+             "size": 3.78426444112,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "homenagem",
+             "parent": "debate",
              "children": [
                 {
-                     "name": "vida e da família   */*  povo brasileiro   */*  esperança , por dias",
-                     "value": 0.271225242357,
+                     "name": "condições de trabalho dos docentes   */*  melhoria das condições",
+                     "value": 0.218557401269,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "dia"
+                     "parent": "trabalho"
                 },
                 {
-                     "name": "vida pública   */*  povo brasileiro",
-                     "value": 0.271225242357,
+                     "name": "condições de trabalho",
+                     "value": 0.218557401269,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "dia"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "trabalho"
                 },
                 {
-                     "name": "pelos brasileiros   */*  brasileiras que estão nas ruas   */*  impedimento da presidenta dilma",
-                     "value": 0.271225242357,
+                     "name": "condições de trabalho",
+                     "value": 0.218557401269,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "trabalho"
                 },
                 {
-                     "name": "povo brasileiro",
-                     "value": 0.271225242357,
+                     "name": "condições de trabalho",
+                     "value": 0.218557401269,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.271225242357,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.271225242357,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "dia"
-                }
-                ]
-            },
-            {
-             "name": "vida",
-             "value": 0.19389867306,
-             "size": 4.19940330001,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "homenagem",
-             "children": [
-                {
-                     "name": "vida e da família   */*  povo brasileiro   */*  esperança , por dias",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "vida"
-                },
-                {
-                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "vida"
-                },
-                {
-                     "name": "vida pública   */*  povo brasileiro",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "vida"
-                },
-                {
-                     "name": "vida pública   */*  anos , vida pública   */*  povo do meu estado do amazonas",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "vida"
-                },
-                {
-                     "name": "defesa dos direitos   */*  indígenas e dos quilombolas   */*  reforma agrária   */*  casa , minha vida   */*  democracia , eu sou contra esse golpe   */*  michel temer",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "vida"
-                },
-                {
-                     "name": "povo brasileiro   */*  vida , da família",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "vida"
-                },
-                {
-                     "name": "crime de responsabilidade   */*  reforma agrária   */*  bolsa família   */*  casa , minha vida   */*  pelos direitos",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "vida"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.19389867306,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "vida"
-                }
-                ]
-            },
-            {
-             "name": "história",
-             "value": 0.14741957697,
-             "size": 3.19277201975,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "homenagem",
-             "children": [
-                {
-                     "name": "estado de são paulo   */*  20 anos por políticos   */*  milhões de brasileiros que foram às ruas   */*  vida pública   */*  história do brasil",
-                     "value": 0.14741957697,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "história"
-                },
-                {
-                     "name": "defesa da democracia   */*  presidente dilma   */*  cometeu nenhum crime   */*  casa , por toda a história do brasil   */*  digo não ao impeachment",
-                     "value": 0.14741957697,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "história"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.14741957697,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "história"
-                },
-                {
-                     "name": "povo brasileiro",
-                     "value": 0.14741957697,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "história"
-                }
-                ]
-            },
-            {
-             "name": "luta",
-             "value": 0.129542304978,
-             "size": 2.80559105654,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "homenagem",
-             "children": [
-                {
-                     "name": "voto será uma homenagem aos jovens   */*  lutaram contra a ditadura   */*  homenagem aos jovens   */*  ruas , lutando   */*  movimentos sociais   */*  presidenta dilma",
-                     "value": 0.129542304978,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "luta"
-                },
-                {
-                     "name": "crime de responsabilidade   */*  reforma agrária   */*  bolsa família   */*  casa , minha vida   */*  pelos direitos",
-                     "value": 0.129542304978,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "luta"
-                },
-                {
-                     "name": "redes sociais   */*  ruas , lutando pela democracia e contra o golpe   */*  voto contra o golpe   */*  eduardo cunha   */*  michel temer",
-                     "value": 0.129542304978,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "luta"
-                },
-                {
-                     "name": "brasil afora e ver   */*  milhões de brasileiros nas ruas   */*  filhos não fogem à luta",
-                     "value": 0.129542304978,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "luta"
-                }
-                ]
-            },
-            {
-             "name": "ditadura",
-             "value": 0.055369682422,
-             "size": 1.19918111565,
-             "place": "meta",
-             "repr": "#fff",
-             "repr2": "steelblue",
-             "parent": "homenagem",
-             "children": [
-                {
-                     "name": "voto será uma homenagem aos jovens   */*  lutaram contra a ditadura   */*  homenagem aos jovens   */*  ruas , lutando   */*  movimentos sociais   */*  presidenta dilma",
-                     "value": 0.055369682422,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "ditadura"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "trabalho"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "nação",
-        "value": 0.327980079098,
-        "size": 2.18653386065,
+        "name": "classe",
+        "value": 0.255338348664,
+        "size": 1.70225565776,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "deus",
-             "value": 0.386115667629,
+             "name": "minoria",
+             "value": 0.230327475298,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "nação",
+             "parent": "classe",
              "children": [
                 {
-                     "name": "futuras gerações   */*  povo brasileiro   */*  pedindo a deus que abençoe este país",
-                     "value": 0.386115667629,
+                     "name": "interesses dos docentes   */*  interesses políticos   */*  interesses políticos   */*  funcionários e alunos",
+                     "value": 0.230327475298,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "deus"
-                },
-                {
-                     "name": "pedir a deus que abençoe o brasil",
-                     "value": 0.386115667629,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "deus"
-                },
-                {
-                     "name": "primeiro lugar , agradecer a deus , à minha família , aos meus amigos   */*  estado de são paulo",
-                     "value": 0.386115667629,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "deus"
+                     "parent": "minoria"
                 }
                 ]
             },
             {
-             "name": "amor",
-             "value": 0.0588133229432,
-             "size": 1.52320477706,
+             "name": "funcionário",
+             "value": 0.193700638698,
+             "size": 8.40979298919,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "nação",
+             "parent": "classe",
              "children": [
                 {
-                     "name": "amor ao brasil   */*  memória de meu pai   */*  filha e às futuras gerações",
-                     "value": 0.0588133229432,
+                     "name": "interesses dos docentes   */*  interesses políticos   */*  interesses políticos   */*  funcionários e alunos",
+                     "value": 0.193700638698,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "amor"
+                     "parent": "funcionário"
                 },
                 {
-                     "name": "nome do povo brasileiro",
-                     "value": 0.0588133229432,
+                     "name": "representar os docentes   */*  representar os docentes",
+                     "value": 0.193700638698,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amor"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "funcionário"
                 },
                 {
-                     "name": "povo brasileiro   */*  amor , o meu voto",
-                     "value": 0.0588133229432,
+                     "name": "adunicamp defende   */*  funcionários e alunos",
+                     "value": 0.193700638698,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "amor"
-                },
-                {
-                     "name": "brasil , eu voto   */*  rio de janeiro   */*  vote e como minha família",
-                     "value": 0.0588133229432,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "amor"
-                },
-                {
-                     "name": "amor , esse voto   */*  filho , pelas futuras gerações",
-                     "value": 0.0588133229432,
-                     "size": 5,
-                     "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "amor"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "funcionário"
                 }
                 ]
             }
         ]
     },
     {
-        "name": "juventude",
-        "value": 0.216925420214,
-        "size": 1.44616946809,
+        "name": "membro",
+        "value": 0.221613685633,
+        "size": 1.47742457089,
         "place": "meta",
         "repr": "#fff",
         "repr2": "steelblue",
         "parent": "Temas",
         "children": [
             {
-             "name": "mulher",
-             "value": 0.409478637463,
+             "name": "atual",
+             "value": 0.297464141039,
              "size": 10.0,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "juventude",
+             "parent": "membro",
              "children": [
                 {
-                     "name": "respeito à constituição   */*  povo brasileiro   */*  presidente dilma , que é uma mulher honrada   */*  povo brasileiro , eu voto “ não ” a esse golpe",
-                     "value": 0.409478637463,
+                     "name": "atual diretoria   */*  maioria dos associados",
+                     "value": 0.297464141039,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "mulher"
+                     "parent": "atual"
                 },
                 {
-                     "name": "defesa da democracia , em defesa   */*  homens e mulheres que estão nas ruas   */*  ruas em defesa da democracia , o meu voto",
-                     "value": 0.409478637463,
+                     "name": "política partidária",
+                     "value": 0.297464141039,
                      "size": 5,
                      "place": "end",
-                     "repr": "#FF0000",
-                     "repr2": "#FF0000",
-                     "parent": "mulher"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
                 },
                 {
-                     "name": "vota pelos brasileiros e brasileiras que estão nas ruas   */*  presidenta dilma , uma mulher séria",
-                     "value": 0.409478637463,
+                     "name": "adunicamp representasse",
+                     "value": 0.297464141039,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "mulher"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
                 },
                 {
-                     "name": "defesa da democracia   */*  presidenta dilma , uma mulher honesta   */*  voto contra o golpe",
-                     "value": 0.409478637463,
+                     "name": "atual diretoria",
+                     "value": 0.297464141039,
                      "size": 5,
                      "place": "end",
-                     "repr": "#B65B00",
-                     "repr2": "#B65B00",
-                     "parent": "mulher"
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
+                },
+                {
+                     "name": "decisões tomadas",
+                     "value": 0.297464141039,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
+                },
+                {
+                     "name": "adunicamp não me representa",
+                     "value": 0.297464141039,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
+                },
+                {
+                     "name": "decisões tomadas",
+                     "value": 0.297464141039,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
+                },
+                {
+                     "name": "situação atual",
+                     "value": 0.297464141039,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
+                },
+                {
+                     "name": "situação atual",
+                     "value": 0.297464141039,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#E67404",
+                     "repr2": "#E67404",
+                     "parent": "atual"
                 }
                 ]
             },
             {
-             "name": "população",
-             "value": 0.222487196172,
-             "size": 5.43342621121,
+             "name": "gasto",
+             "value": 0.135784265754,
+             "size": 4.56472720642,
              "place": "meta",
              "repr": "#fff",
              "repr2": "steelblue",
-             "parent": "juventude",
+             "parent": "membro",
              "children": [
                 {
-                     "name": "respeito à constituição   */*  respeito à grande maioria da população   */*  respeito à grande maioria da população   */*  estado do espírito santo   */*  respeito à grande maioria da população capixaba",
-                     "value": 0.222487196172,
+                     "name": "adunicamp não me representa",
+                     "value": 0.135784265754,
                      "size": 5,
                      "place": "end",
                      "repr": "#FF0000",
                      "repr2": "#FF0000",
-                     "parent": "população"
+                     "parent": "gasto"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "programa",
+        "value": 0.208174408805,
+        "size": 1.38782939203,
+        "place": "meta",
+        "repr": "#fff",
+        "repr2": "steelblue",
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "gestão",
+             "value": 0.329362080087,
+             "size": 10.0,
+             "place": "meta",
+             "repr": "#fff",
+             "repr2": "steelblue",
+             "parent": "programa",
+             "children": [
+                {
+                     "name": "defesa dos interesses   */*  docentes e da unicamp   */*  defesa de interesses",
+                     "value": 0.329362080087,
+                     "size": 5,
+                     "place": "end",
+                     "repr": "#FF0000",
+                     "repr2": "#FF0000",
+                     "parent": "gestão"
                 }
                 ]
             }

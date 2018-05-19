@@ -1,6 +1,32 @@
 Nucleo	Irseg	Ident	Representatividade
-povo brasileiro	1.0	ident_0	altissima
-povo brasileiro , eu voto	0.49	ident_1	media
-presidente dilma	0.46	ident_2	media
-impeachment da presidente dilma	0.43	ident_3	media
-presidenta dilma	0.42	ident_4	media
+docentes da unicamp	1.0	ident_0	altissima
+política partidária	0.78	ident_1	alta
+partidos políticos	0.75	ident_2	alta
+interesses dos docentes	0.68	ident_3	alta
+defesa dos interesses dos docentes e da unicamp   */*  defesa de interesses	0.57	ident_4	media
+associados e não de partidos políticos   */*  representasse os interesses do professores da unicamp e não os interesses	0.56	ident_5	media
+interesses dos docentes da unicamp   */*  político e partidário	0.56	ident_6	media
+plano de saúde	0.5	ident_7	media
+representem os interesses dos docentes da unicamp	0.47	ident_8	media
+interesse dos docentes	0.42	ident_9	media
+gostaria que a adunicamp defendesse os interesses dos professores	0.42	ident_10	media
+defesa dos interesses   */*  docentes da unicamp	0.4	ident_11	baixa
+interesses dos docentes da unicamp	0.39	ident_12	baixa
+defenda os interesses dos professores da unicamp , não os interesses	0.36	ident_13	baixa
+gostaria que a adunicamp   */*  representasse os interesses dos docentes	0.35	ident_14	baixa
+político partidária	0.32	ident_15	baixa
+representar os docentes   */*  instâncias superiores   */*  representar os docentes   */*  andes e em outras associações docentes   */*  estado de sp	0.32	ident_16	baixa
+defesa dos interesses dos docentes	0.3	ident_17	baixa
+defenda os interesses dos docentes	0.28	ident_18	baixa
+defender os interesses dos docentes	0.28	ident_19	baixa
+defender os interesses de todos os docentes	0.28	ident_20	baixa
+docente da unicamp	0.27	ident_21	baixa
+representa os docentes da unicamp	0.27	ident_22	baixa
+maior transparência na aplicação de recursos   */*  docentes , por exemplo   */*  meios eletrônicos	0.27	ident_23	baixa
+adunicamp deveria   */*  opinião de seus associados   */*  tema , o que se pode   */*  sistemas de votação eletrônica	0.27	ident_24	baixa
+representar o interesse dos professores	0.26	ident_25	baixa
+transparência e representatividade	0.26	ident_26	baixa
+político / partidária   */*  defesa dos interesses docentes	0.23	ident_27	baixa
+defesa dos interesses dos docentes   */*  política partidária	0.23	ident_28	baixa
+maior transparência no uso dos recursos financeiros   */*  representatividade dos docentes	0.23	ident_29	baixa
+atividades culturais	0.21	ident_30	baixa

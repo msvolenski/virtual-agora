@@ -1,88 +1,90 @@
 RELATORIO FINAL DE TEMAS E SUBTEMAS 
 
 
-TEMA: voto (100.0) 
+TEMA: docente (98.2562119925) 
 
-brasil (2.13328858215) 
-família (0.696504266656) 
-partido (0.172634796413) 
-mato (0.0227941087066) 
-pernambuco (0.0170787785985) 
+unicamp (0.798477244656) 
+interesse (0.774446460802) 
+associação (0.495024367534) 
+entidade (0.179364882382) 
+professor (0.142066123976) 
+sociedade (0.0375879205215) 
+assunto (0.0300710892046) 
+apoio (0.0253327302008) 
+papel (0.0183543488588) 
 
-TEMA: povo (66.6734110578) 
+TEMA: político (75.1016754539) 
 
-nome (0.804519606565) 
-esperança (0.294485825627) 
-dignidade (0.050495890899) 
+partido (0.536422748508) 
+sindicato (0.199621455063) 
+representação (0.0439240292096) 
 
-TEMA: país (50.618237221) 
+TEMA: associado (69.3334813827) 
 
-corrupção (0.6338371482) 
-governo (0.396946569169) 
-pessoa (0.10053252648) 
-pt (0.0766121142035) 
-bahia (0.0600682590977) 
+adunicamp (2.29885538776) 
+efetivo (0.16256170348) 
 
-TEMA: estada (44.2047846691) 
+TEMA: transparência (36.2833703338) 
 
-cidade (0.602737295999) 
-paulo (0.151136734018) 
-rio (0.126733389769) 
-eleitor (0.112424519285) 
-região (0.0788942214684) 
-amigo (0.0530820528802) 
-campo (0.0479011238443) 
+ação (0.503875489842) 
+representatividade (0.258061680161) 
+recurso (0.150323240304) 
+exemplo (0.0809217734387) 
+fato (0.0657761143219) 
 
-TEMA: presidente (40.1663488616) 
+TEMA: universidade (28.0059169544) 
 
-dilma (0.655333092999) 
-impeachment (0.35901170595) 
-processo (0.13976336353) 
+ensino (0.246992492882) 
+participação (0.181494099886) 
+administração (0.0930501965763) 
 
-TEMA: filho (30.120593361) 
+TEMA: plano (21.8226400517) 
 
-futuro (0.240845816477) 
-pai (0.166064828595) 
-neto (0.126246456192) 
-ano (0.0400151232844) 
-goiá (0.030453506714) 
+saúde (0.243528380186) 
 
-TEMA: democracia (28.2845262863) 
+TEMA: problema (16.9260957335) 
 
-golpe (0.533566394225) 
-rua (0.3510398787) 
-trabalhador (0.330254004479) 
-direito (0.155676651162) 
+questão (0.489627717309) 
+acadêmico (0.47387840409) 
+discussão (0.263960006793) 
 
-TEMA: casa (22.1402895009) 
+TEMA: unimed (16.7941174354) 
 
-deputado (0.338062701413) 
-mandato (0.232460490305) 
+convênio (0.232839912028) 
+valor (0.0602080806854) 
 
-TEMA: constituição (17.5377658923) 
+TEMA: assembleia (13.7378577391) 
 
-respeito (0.823378902841) 
+votação (0.290181452194) 
+opinião (0.17125484874) 
+tema (0.113331475969) 
+forma (0.112932507491) 
 
-TEMA: responsabilidade (13.8176332829) 
+TEMA: grupo (13.5620720678) 
 
-crime (0.343422157843) 
+diretoria (0.459050529259) 
 
-TEMA: homenagem (13.6528125263) 
+TEMA: negociação (12.6402140596) 
 
-político (0.461729105799) 
-dia (0.271225242357) 
-vida (0.19389867306) 
-história (0.14741957697) 
-luta (0.129542304978) 
-ditadura (0.055369682422) 
+salarial (0.277038267245) 
+unidade (0.100077582599) 
 
-TEMA: nação (10.9326693033) 
+TEMA: debate (9.77061161461) 
 
-deus (0.386115667629) 
-amor (0.0588133229432) 
+atividade (0.577542623327) 
+trabalho (0.218557401269) 
 
-TEMA: juventude (7.23084734047) 
+TEMA: classe (8.5112782888) 
 
-mulher (0.409478637463) 
-população (0.222487196172) 
+minoria (0.230327475298) 
+funcionário (0.193700638698) 
+
+TEMA: membro (7.38712285444) 
+
+atual (0.297464141039) 
+gasto (0.135784265754) 
+
+TEMA: programa (6.93914696016) 
+
+gestão (0.329362080087) 
 

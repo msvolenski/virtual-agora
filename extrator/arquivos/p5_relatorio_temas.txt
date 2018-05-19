@@ -4,222 +4,262 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.2
-- Critério de exclusão do cluster: posssuir 20% dos nós totais (484.2 de 2421)
+- Critério de exclusão do cluster: posssuir 20% dos nós totais (256.0 de 1280)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-10 voto 3.0
+30 docente 2.94768635978
 
 Cluster 2
-7 brasil 2.61899267898
+15 adunicamp 2.48276381878
 
 Cluster 3
-8 povo 2.00020233173
+20 político 2.25305026362
 
 Cluster 4
-75 país 1.51854711663
+7 associado 2.08000444148
 
 Cluster 5
-9 brasileiro 1.39040487601
-47 estada 1.32614354007
-28 família 1.28549445188
-158 presidente 1.20499046585
+182 interesse 1.27783666032
+37 unicamp 1.23514448783
 
 Cluster 6
-36 por+os 1.1946846646
-57 nome 1.18849487333
+16 associação 1.16684315204
+4 ação 1.15171540535
+3 transparência 1.08850111001
 
 Cluster 7
-46 dizer 0.988398119098
-412 partido 0.949491380272
-14 filho 0.903617800829
-35 querido 0.879157075376
-210 cidade 0.853105095876
-224 querer 0.850184666163
-141 democracia 0.848535788589
-18 respeito 0.823378902841
-22 corrupção 0.804485611177
+55 representar 0.943179821209
+83 universidade 0.840177508632
+2 partidário 0.837820032358
 
 Cluster 8
-128 nó 0.756403832566
-59 votar 0.744447352693
-93 deputado 0.732469186394
-41 governo 0.727735376809
-159 dilma 0.69343385422
-60 impeachment 0.680626359198
-96 casa 0.664208685028
-48 rua 0.647229776353
+36 professor 0.740239277559
+266 atividade 0.693051147993
+34 entidade 0.657671235401
+18 sindicato 0.655899066635
+179 plano 0.65467920155
+38 maior 0.634991732979
+19 partido 0.616886160784
 
 Cluster 9
-54 esperança 0.580047838356
-51 poder 0.573218904481
-191 trabalhador 0.573087831301
-685 golpe 0.572371222896
-120 momento 0.565565727896
-127 político 0.564335573755
-157 constituição 0.526132976769
-129 dar 0.511625594094
-114 futuro 0.51059313093
-90 grande 0.499695832023
-100 mulher 0.491374364956
-409 processo 0.471054299305
-1470 mina 0.467285617002
-181 defeso 0.451093454582
-311 senhor 0.44243252113
-342 pai 0.419115995978
-3 deus 0.418291973265
-116 responsabilidade 0.414528998488
-121 homenagem 0.409584375789
+28 questão 0.571232336861
+59 poder 0.564414046079
+294 gostar 0.555575599226
+187 defeso 0.543659327353
+185 proposto 0.508919938369
+170 ideológico 0.50801802687
+373 problema 0.507782872006
+27 unimed 0.503823523061
+23 acadêmico 0.47387840409
+35 defender 0.469941943353
+57 decisão 0.467862606074
+201 diretoria 0.459050529259
+39 representatividade 0.458776320286
+41 opinião 0.45667959664
+280 forma 0.451730029966
+366 efetivo 0.438916599395
+146 deve 0.436166441344
+527 diferente 0.433686967622
+237 exemplo 0.431582791673
+68 interno 0.430102312004
+50 assembleia 0.412135732174
+385 grupo 0.406862162035
+396 recurso 0.400861974143
 
 Cluster 10
-108 eleitor 0.397809837469
-167 novo 0.39733984469
-169 santo 0.373678196838
-49 pedir 0.364995136459
-11 favor 0.361429631938
-488 paulo 0.356527680248
-235 dia 0.350997372462
-437 crime 0.343422157843
-281 milhão 0.337584510885
-89 rio 0.333127767394
-25 direito 0.32803294352
-34 nação 0.327980079098
-61 fim 0.31179747509
-206 maioria 0.307950562691
-27 vir 0.305270149712
-106 vida 0.304697914809
-73 pessoa 0.301597579441
-135 representar 0.299799189833
-1469 mineiro 0.291844076623
-430 saber 0.277540132061
-291 parar 0.27658874973
-1809 pernambuco 0.276274359682
-535 mandato 0.274726033997
-4 possar 0.269472532705
-446 população 0.266984635407
-82 lutar 0.262975114849
-385 região 0.259223870539
-122 amigo 0.257028887631
-104 amor 0.254857732754
-44 pt 0.252819976872
-196 neto 0.247817117711
-1681 bahia 0.247781568778
-1174 eduardo 0.244495344253
-203 vez 0.243180062393
-145 dignidade 0.234445207745
-513 mato 0.232162218308
-30 história 0.231659335239
-185 ninguém 0.231492844338
-670 especial 0.229382939095
-13 ver 0.229211568404
-37 chegar 0.227892771468
-406 campo 0.220345169684
-16 luta 0.219225439193
-521 juventude 0.216925420214
-296 ano 0.212080153407
-276 federal 0.203064374331
-505 ditadura 0.203022168881
-442 desenvolvimento 0.202086987647
-628 goiá 0.20175448198
+503 geral 0.395550073755
+154 ver 0.390600543185
+305 atualmente 0.386206246415
+99 – 0.384701499807
+691 negociação 0.379206421788
+12 eletrônico 0.376272895574
+282 continuar 0.375283692056
+90 sindical 0.371342113448
+866 envolvido 0.366621383283
+14 andar 0.365061663389
+105 novo 0.364768145934
+415 financeiro 0.362632977269
+69 externo 0.354984596607
+556 fato 0.35080594305
+327 ficar 0.344200625223
+231 atuação 0.343555370135
+78 sociedade 0.338291284693
+372 envolvimento 0.337538606459
+130 gestão 0.329362080087
+103 ensino 0.329323323842
+26 convênio 0.32597587684
+303 tomado 0.324793971733
+24 permanecer 0.315945857934
+566 frente 0.314219683329
+540 envolver 0.312849516327
+241 discussão 0.307953341258
+5 uso 0.304935037996
+60 contribuir 0.301364126757
+65 atual 0.297464141039
+54 dever 0.295713646669
+378 debate 0.293118348438
+183 funcionário 0.290550958047
+51 participação 0.290390559817
+276 votação 0.290181452194
+444 esquerdo 0.278643124541
+92 nacional 0.277663809435
+370 salarial 0.277038267245
+435 posição 0.272125869864
+359 assunto 0.270639802841
+300 modo 0.267057883181
+115 transparente 0.26553136066
+32 quantum 0.264282276775
+47 vez 0.263299687112
+45 trabalho 0.262268881523
+286 classe 0.255338348664
+324 representação 0.252563167955
+178 melhorar 0.251796875802
+114 administração 0.248133857537
+437 maioria 0.24646100026
+180 saúde 0.243528380186
+150 saber 0.233742819825
+284 minoria 0.230327475298
+82 apoio 0.227994571807
+198 feito 0.227866438986
+725 papel 0.227135067127
+518 tema 0.226662951939
+58 politicar 0.223675833685
+319 menor 0.222643993669
+67 membro 0.221613685633
+70 voltado 0.220530655369
+852 ligado 0.219238735817
+256 condição 0.217757973729
+10 consulto 0.217383563657
+199 querer 0.213219582909
+229 valor 0.210728282399
+218 programa 0.208174408805
+215 ativo 0.207059231242
+142 etc 0.207043413817
+923 participar 0.207011546149
+101 carreiro 0.205036723969
+380 além 0.204059598793
+602 gasto 0.20367639863
+202 unidade 0.200155165197
 
 TEMAS PRÉ-SELECIONADOS
 
-voto
-brasil
-povo
-país
-brasileiro
-estada
-família
-presidente
-por+os
-nome
-dizer
-partido
-filho
-querido
-cidade
-querer
-democracia
-respeito
-corrupção
-nó
-votar
-deputado
-governo
-dilma
-impeachment
-casa
-rua
-esperança
-poder
-trabalhador
-golpe
-momento
+docente
+adunicamp
 político
-constituição
-dar
-futuro
-grande
-mulher
-processo
-mina
-defeso
-senhor
-pai
-deus
-responsabilidade
-homenagem
-eleitor
-novo
-santo
-pedir
-favor
-paulo
-dia
-crime
-milhão
-rio
-direito
-nação
-fim
-maioria
-vir
-vida
-pessoa
+associado
+interesse
+unicamp
+associação
+ação
+transparência
 representar
-mineiro
-saber
-parar
-pernambuco
-mandato
-possar
-população
-lutar
-região
-amigo
-amor
-pt
-neto
-bahia
-eduardo
-vez
-dignidade
-mato
-história
-ninguém
-especial
+universidade
+partidário
+professor
+atividade
+entidade
+sindicato
+plano
+maior
+partido
+questão
+poder
+gostar
+defeso
+proposto
+ideológico
+problema
+unimed
+acadêmico
+defender
+decisão
+diretoria
+representatividade
+opinião
+forma
+efetivo
+deve
+diferente
+exemplo
+interno
+assembleia
+grupo
+recurso
+geral
 ver
-chegar
-campo
-luta
-juventude
-ano
-federal
-ditadura
-desenvolvimento
-goiá
+atualmente
+–
+negociação
+eletrônico
+continuar
+sindical
+envolvido
+andar
+novo
+financeiro
+externo
+fato
+ficar
+atuação
+sociedade
+envolvimento
+gestão
+ensino
+convênio
+tomado
+permanecer
+frente
+envolver
+discussão
+uso
+contribuir
+atual
+dever
+debate
+funcionário
+participação
+votação
+esquerdo
+nacional
+salarial
+posição
+assunto
+modo
+transparente
+quantum
+vez
+trabalho
+classe
+representação
+melhorar
+administração
+maioria
+saúde
+saber
+minoria
+apoio
+feito
+papel
+tema
+politicar
+menor
+membro
+voltado
+ligado
+condição
+consulto
+querer
+valor
+programa
+ativo
+etc
+participar
+carreiro
+além
+gasto
+unidade
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -230,589 +270,296 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-voto -> voto - 4/391 - 1.02301790281%
-voto -> brasil - 13/283 - 4.59363957597%
-voto -> povo - 4/212 - 1.88679245283%
-voto -> família - 1/111 - 0.900900900901%
-voto -> presidente - 2/114 - 1.75438596491%
-voto -> nome - 3/85 - 3.52941176471%
-voto -> partido - 2/57 - 3.50877192982%
-voto -> cidade - 1/58 - 1.72413793103%
-voto -> democracia - 2/94 - 2.12765957447%
-voto -> corrupção - 2/60 - 3.33333333333%
-voto -> deputado - 1/55 - 1.81818181818%
-voto -> governo - 1/52 - 1.92307692308%
-voto -> impeachment - 46/115 - 40.0%
-voto -> golpe - 17/64 - 26.5625%
-voto -> futuro - 1/39 - 2.5641025641%
-voto -> mulher - 1/33 - 3.0303030303%
-voto -> processo - 1/40 - 2.5%
-voto -> homenagem - 4/23 - 17.3913043478%
-voto -> eleitor - 1/33 - 3.0303030303%
-voto -> mato - 1/10 - 10.0%
-voto -> juventude - 1/12 - 8.33333333333%
-voto -> ditadura - 1/10 - 10.0%
-brasil -> voto - 50/391 - 12.7877237852%
-brasil -> brasil - 3/283 - 1.06007067138%
-brasil -> povo - 5/212 - 2.35849056604%
-brasil -> país - 1/144 - 0.694444444444%
-brasil -> estada - 7/145 - 4.8275862069%
-brasil -> família - 6/111 - 5.40540540541%
-brasil -> nome - 4/85 - 4.70588235294%
-brasil -> partido - 2/57 - 3.50877192982%
-brasil -> cidade - 1/58 - 1.72413793103%
-brasil -> democracia - 2/94 - 2.12765957447%
-brasil -> corrupção - 1/60 - 1.66666666667%
-brasil -> governo - 1/52 - 1.92307692308%
-brasil -> dilma - 1/93 - 1.0752688172%
-brasil -> impeachment - 3/115 - 2.60869565217%
-brasil -> rua - 1/58 - 1.72413793103%
-brasil -> esperança - 1/52 - 1.92307692308%
-brasil -> trabalhador - 1/46 - 2.17391304348%
-brasil -> futuro - 2/39 - 5.12820512821%
-brasil -> pai - 3/28 - 10.7142857143%
-brasil -> deus - 1/41 - 2.43902439024%
-brasil -> responsabilidade - 1/49 - 2.04081632653%
-brasil -> paulo - 2/35 - 5.71428571429%
-brasil -> nação - 2/25 - 8.0%
-brasil -> pernambuco - 1/16 - 6.25%
-brasil -> amor - 1/14 - 7.14285714286%
-brasil -> pt - 1/21 - 4.7619047619%
-brasil -> dignidade - 2/17 - 11.7647058824%
-brasil -> mato - 2/10 - 20.0%
-brasil -> ditadura - 1/10 - 10.0%
-povo -> voto - 1/391 - 0.255754475703%
-povo -> brasil - 7/283 - 2.47349823322%
-povo -> povo - 1/212 - 0.471698113208%
-povo -> estada - 15/145 - 10.3448275862%
-povo -> partido - 1/57 - 1.75438596491%
-povo -> rua - 4/58 - 6.89655172414%
-povo -> trabalhador - 1/46 - 2.17391304348%
-povo -> deus - 1/41 - 2.43902439024%
-povo -> paulo - 2/35 - 5.71428571429%
-povo -> rio - 6/37 - 16.2162162162%
-povo -> pernambuco - 1/16 - 6.25%
-povo -> bahia - 2/18 - 11.1111111111%
-povo -> mato - 1/10 - 10.0%
-povo -> campo - 1/20 - 5.0%
-povo -> luta - 1/20 - 5.0%
-povo -> goiá - 2/12 - 16.6666666667%
-país -> voto - 16/391 - 4.09207161125%
-país -> brasil - 2/283 - 0.706713780919%
-país -> país - 2/144 - 1.38888888889%
-país -> estada - 2/145 - 1.37931034483%
-país -> família - 1/111 - 0.900900900901%
-país -> nome - 2/85 - 2.35294117647%
-país -> partido - 1/57 - 1.75438596491%
-país -> filho - 2/84 - 2.38095238095%
-país -> democracia - 1/94 - 1.06382978723%
-país -> respeito - 1/58 - 1.72413793103%
-país -> corrupção - 3/60 - 5.0%
-país -> impeachment - 1/115 - 0.869565217391%
-país -> esperança - 2/52 - 3.84615384615%
-país -> trabalhador - 1/46 - 2.17391304348%
-país -> futuro - 2/39 - 5.12820512821%
-país -> mulher - 1/33 - 3.0303030303%
-país -> pai - 2/28 - 7.14285714286%
-país -> deus - 1/41 - 2.43902439024%
-país -> responsabilidade - 1/49 - 2.04081632653%
-país -> goiá - 1/12 - 8.33333333333%
-estada -> voto - 2/391 - 0.511508951407%
-estada -> brasil - 2/283 - 0.706713780919%
-estada -> povo - 1/212 - 0.471698113208%
-estada -> país - 2/144 - 1.38888888889%
-estada -> estada - 2/145 - 1.37931034483%
-estada -> família - 1/111 - 0.900900900901%
-estada -> nome - 2/85 - 2.35294117647%
-estada -> cidade - 3/58 - 5.1724137931%
-estada -> esperança - 1/52 - 1.92307692308%
-estada -> paulo - 14/35 - 40.0%
-estada -> rio - 15/37 - 40.5405405405%
-estada -> direito - 3/31 - 9.67741935484%
-estada -> pernambuco - 3/16 - 18.75%
-estada -> mato - 2/10 - 20.0%
-estada -> goiá - 6/12 - 50.0%
-família -> voto - 7/391 - 1.79028132992%
-família -> brasil - 4/283 - 1.41342756184%
-família -> povo - 5/212 - 2.35849056604%
-família -> estada - 3/145 - 2.06896551724%
-família -> família - 2/111 - 1.8018018018%
-família -> nome - 3/85 - 3.52941176471%
-família -> partido - 1/57 - 1.75438596491%
-família -> filho - 6/84 - 7.14285714286%
-família -> cidade - 2/58 - 3.44827586207%
-família -> respeito - 2/58 - 3.44827586207%
-família -> governo - 1/52 - 1.92307692308%
-família -> casa - 1/64 - 1.5625%
-família -> constituição - 2/68 - 2.94117647059%
-família -> pai - 3/28 - 10.7142857143%
-família -> eleitor - 1/33 - 3.0303030303%
-família -> nação - 2/25 - 8.0%
-família -> pessoa - 1/24 - 4.16666666667%
-família -> pernambuco - 1/16 - 6.25%
-família -> amigo - 4/19 - 21.0526315789%
-família -> amor - 1/14 - 7.14285714286%
-família -> dignidade - 1/17 - 5.88235294118%
-família -> mato - 2/10 - 20.0%
-família -> juventude - 1/12 - 8.33333333333%
-família -> goiá - 1/12 - 8.33333333333%
-presidente -> voto - 4/391 - 1.02301790281%
-presidente -> brasil - 1/283 - 0.353356890459%
-presidente -> país - 1/144 - 0.694444444444%
-presidente -> estada - 1/145 - 0.689655172414%
-presidente -> presidente - 1/114 - 0.877192982456%
-presidente -> nome - 1/85 - 1.17647058824%
-presidente -> partido - 3/57 - 5.26315789474%
-presidente -> respeito - 2/58 - 3.44827586207%
-presidente -> corrupção - 1/60 - 1.66666666667%
-presidente -> deputado - 2/55 - 3.63636363636%
-presidente -> dilma - 60/93 - 64.5161290323%
-presidente -> casa - 2/64 - 3.125%
-presidente -> esperança - 1/52 - 1.92307692308%
-presidente -> mulher - 1/33 - 3.0303030303%
-presidente -> responsabilidade - 1/49 - 2.04081632653%
-presidente -> homenagem - 1/23 - 4.34782608696%
-presidente -> mandato - 1/24 - 4.16666666667%
-nome -> brasil - 8/283 - 2.82685512367%
-nome -> povo - 18/212 - 8.49056603774%
-nome -> estada - 6/145 - 4.13793103448%
-nome -> família - 13/111 - 11.7117117117%
-nome -> nome - 1/85 - 1.17647058824%
-nome -> partido - 2/57 - 3.50877192982%
-nome -> filho - 2/84 - 2.38095238095%
-nome -> cidade - 2/58 - 3.44827586207%
-nome -> democracia - 5/94 - 5.31914893617%
-nome -> respeito - 1/58 - 1.72413793103%
-nome -> corrupção - 1/60 - 1.66666666667%
-nome -> deputado - 2/55 - 3.63636363636%
-nome -> rua - 2/58 - 3.44827586207%
-nome -> trabalhador - 1/46 - 2.17391304348%
-nome -> constituição - 1/68 - 1.47058823529%
-nome -> mulher - 1/33 - 3.0303030303%
-nome -> deus - 3/41 - 7.31707317073%
-nome -> direito - 1/31 - 3.22580645161%
-nome -> nação - 1/25 - 4.0%
-nome -> pessoa - 2/24 - 8.33333333333%
-nome -> população - 1/27 - 3.7037037037%
-nome -> região - 2/21 - 9.52380952381%
-nome -> bahia - 2/18 - 11.1111111111%
-nome -> dignidade - 2/17 - 11.7647058824%
-partido -> brasil - 1/283 - 0.353356890459%
-partido -> presidente - 1/114 - 0.877192982456%
-partido -> nome - 1/85 - 1.17647058824%
-partido -> partido - 1/57 - 1.75438596491%
-partido -> respeito - 1/58 - 1.72413793103%
-partido -> governo - 1/52 - 1.92307692308%
-partido -> trabalhador - 1/46 - 2.17391304348%
-partido -> político - 1/51 - 1.96078431373%
-partido -> pai - 1/28 - 3.57142857143%
-partido -> região - 1/21 - 4.7619047619%
-partido -> história - 1/22 - 4.54545454545%
-filho -> povo - 3/212 - 1.41509433962%
-filho -> país - 1/144 - 0.694444444444%
-filho -> família - 5/111 - 4.5045045045%
-filho -> filho - 2/84 - 2.38095238095%
-filho -> corrupção - 1/60 - 1.66666666667%
-filho -> constituição - 1/68 - 1.47058823529%
-filho -> futuro - 3/39 - 7.69230769231%
-filho -> mulher - 1/33 - 3.0303030303%
-filho -> pai - 1/28 - 3.57142857143%
-filho -> paulo - 1/35 - 2.85714285714%
-filho -> amigo - 1/19 - 5.26315789474%
-filho -> neto - 9/27 - 33.3333333333%
-cidade -> estada - 3/145 - 2.06896551724%
-cidade -> nome - 1/85 - 1.17647058824%
-cidade -> rua - 1/58 - 1.72413793103%
-cidade -> paulo - 1/35 - 2.85714285714%
-cidade -> dia - 1/29 - 3.44827586207%
-cidade -> rio - 1/37 - 2.7027027027%
-cidade -> pessoa - 1/24 - 4.16666666667%
-cidade -> campo - 1/20 - 5.0%
-democracia -> voto - 11/391 - 2.81329923274%
-democracia -> brasil - 4/283 - 1.41342756184%
-democracia -> povo - 2/212 - 0.943396226415%
-democracia -> país - 5/144 - 3.47222222222%
-democracia -> estada - 4/145 - 2.75862068966%
-democracia -> nome - 1/85 - 1.17647058824%
-democracia -> respeito - 5/58 - 8.62068965517%
-democracia -> corrupção - 1/60 - 1.66666666667%
-democracia -> golpe - 6/64 - 9.375%
-democracia -> constituição - 2/68 - 2.94117647059%
-democracia -> futuro - 1/39 - 2.5641025641%
-democracia -> processo - 1/40 - 2.5%
-democracia -> homenagem - 1/23 - 4.34782608696%
-democracia -> direito - 1/31 - 3.22580645161%
-democracia -> amor - 1/14 - 7.14285714286%
-respeito -> voto - 6/391 - 1.53452685422%
-respeito -> povo - 8/212 - 3.77358490566%
-respeito -> país - 1/144 - 0.694444444444%
-respeito -> estada - 1/145 - 0.689655172414%
-respeito -> família - 9/111 - 8.10810810811%
-respeito -> presidente - 1/114 - 0.877192982456%
-respeito -> nome - 1/85 - 1.17647058824%
-respeito -> partido - 2/57 - 3.50877192982%
-respeito -> cidade - 1/58 - 1.72413793103%
-respeito -> democracia - 5/94 - 5.31914893617%
-respeito -> rua - 1/58 - 1.72413793103%
-respeito -> trabalhador - 2/46 - 4.34782608696%
-respeito -> constituição - 20/68 - 29.4117647059%
-respeito -> mulher - 1/33 - 3.0303030303%
-respeito -> eleitor - 3/33 - 9.09090909091%
-respeito -> nação - 1/25 - 4.0%
-respeito -> vida - 1/40 - 2.5%
-respeito -> pessoa - 1/24 - 4.16666666667%
-respeito -> amigo - 1/19 - 5.26315789474%
-corrupção -> voto - 5/391 - 1.27877237852%
-corrupção -> brasil - 1/283 - 0.353356890459%
-corrupção -> país - 4/144 - 2.77777777778%
-corrupção -> presidente - 1/114 - 0.877192982456%
-corrupção -> esperança - 1/52 - 1.92307692308%
-deputado -> família - 1/111 - 0.900900900901%
-deputado -> partido - 1/57 - 1.75438596491%
-deputado -> deputado - 5/55 - 9.09090909091%
-deputado -> trabalhador - 1/46 - 2.17391304348%
-deputado -> paulo - 1/35 - 2.85714285714%
-governo -> país - 1/144 - 0.694444444444%
-governo -> presidente - 3/114 - 2.63157894737%
-governo -> nome - 2/85 - 2.35294117647%
-governo -> partido - 1/57 - 1.75438596491%
-governo -> corrupção - 1/60 - 1.66666666667%
-governo -> dilma - 1/93 - 1.0752688172%
-governo -> casa - 1/64 - 1.5625%
-governo -> pt - 1/21 - 4.7619047619%
-dilma -> voto - 2/391 - 0.511508951407%
-dilma -> brasil - 1/283 - 0.353356890459%
-dilma -> país - 1/144 - 0.694444444444%
-dilma -> presidente - 1/114 - 0.877192982456%
-dilma -> nome - 2/85 - 2.35294117647%
-dilma -> democracia - 1/94 - 1.06382978723%
-dilma -> impeachment - 1/115 - 0.869565217391%
-dilma -> esperança - 1/52 - 1.92307692308%
-dilma -> mulher - 5/33 - 15.1515151515%
-dilma -> crime - 1/53 - 1.88679245283%
-dilma -> mandato - 1/24 - 4.16666666667%
-dilma -> pt - 1/21 - 4.7619047619%
-dilma -> dignidade - 1/17 - 5.88235294118%
-impeachment -> presidente - 17/114 - 14.9122807018%
-impeachment -> dilma - 2/93 - 2.15053763441%
-impeachment -> casa - 1/64 - 1.5625%
-impeachment -> golpe - 2/64 - 3.125%
-impeachment -> processo - 1/40 - 2.5%
-impeachment -> crime - 4/53 - 7.54716981132%
-casa -> voto - 1/391 - 0.255754475703%
-casa -> povo - 3/212 - 1.41509433962%
-casa -> casa - 1/64 - 1.5625%
-casa -> político - 1/51 - 1.96078431373%
-casa -> crime - 1/53 - 1.88679245283%
-casa -> direito - 2/31 - 6.45161290323%
-casa -> vida - 6/40 - 15.0%
-casa -> mandato - 2/24 - 8.33333333333%
-casa -> história - 2/22 - 9.09090909091%
-rua -> brasil - 6/283 - 2.12014134276%
-rua -> país - 2/144 - 1.38888888889%
-rua -> rua - 1/58 - 1.72413793103%
-rua -> rio - 1/37 - 2.7027027027%
-esperança -> brasil - 4/283 - 1.41342756184%
-esperança -> povo - 11/212 - 5.18867924528%
-esperança -> país - 3/144 - 2.08333333333%
-esperança -> família - 1/111 - 0.900900900901%
-esperança -> impeachment - 1/115 - 0.869565217391%
-esperança -> futuro - 4/39 - 10.2564102564%
-esperança -> dia - 5/29 - 17.2413793103%
-esperança -> população - 1/27 - 3.7037037037%
-esperança -> amor - 1/14 - 7.14285714286%
-esperança -> luta - 1/20 - 5.0%
-trabalhador -> voto - 3/391 - 0.76726342711%
-trabalhador -> brasil - 4/283 - 1.41342756184%
-trabalhador -> respeito - 1/58 - 1.72413793103%
-trabalhador -> rua - 4/58 - 6.89655172414%
-trabalhador -> trabalhador - 6/46 - 13.0434782609%
-trabalhador -> constituição - 1/68 - 1.47058823529%
-trabalhador -> dia - 1/29 - 3.44827586207%
-trabalhador -> população - 1/27 - 3.7037037037%
-trabalhador -> campo - 5/20 - 25.0%
-golpe -> voto - 5/391 - 1.27877237852%
-golpe -> brasil - 1/283 - 0.353356890459%
-golpe -> estada - 5/145 - 3.44827586207%
-golpe -> presidente - 3/114 - 2.63157894737%
-golpe -> filho - 1/84 - 1.19047619048%
-golpe -> democracia - 3/94 - 3.1914893617%
-golpe -> impeachment - 4/115 - 3.47826086957%
-golpe -> casa - 1/64 - 1.5625%
-golpe -> político - 1/51 - 1.96078431373%
-golpe -> constituição - 1/68 - 1.47058823529%
-golpe -> homenagem - 1/23 - 4.34782608696%
-golpe -> direito - 1/31 - 3.22580645161%
-golpe -> luta - 1/20 - 5.0%
-político -> voto - 2/391 - 0.511508951407%
-político -> brasil - 1/283 - 0.353356890459%
-político -> povo - 1/212 - 0.471698113208%
-político -> crime - 1/53 - 1.88679245283%
-político -> mandato - 1/24 - 4.16666666667%
-constituição -> voto - 3/391 - 0.76726342711%
-constituição -> brasil - 1/283 - 0.353356890459%
-constituição -> povo - 1/212 - 0.471698113208%
-constituição -> democracia - 4/94 - 4.25531914894%
-constituição -> respeito - 2/58 - 3.44827586207%
-constituição -> impeachment - 1/115 - 0.869565217391%
-constituição -> crime - 1/53 - 1.88679245283%
-constituição -> rio - 1/37 - 2.7027027027%
-constituição -> mandato - 1/24 - 4.16666666667%
-futuro -> brasil - 8/283 - 2.82685512367%
-futuro -> povo - 1/212 - 0.471698113208%
-futuro -> país - 5/144 - 3.47222222222%
-futuro -> família - 1/111 - 0.900900900901%
-futuro -> filho - 8/84 - 9.52380952381%
-futuro -> esperança - 1/52 - 1.92307692308%
-futuro -> dia - 1/29 - 3.44827586207%
-futuro -> rio - 1/37 - 2.7027027027%
-futuro -> neto - 2/27 - 7.40740740741%
-mulher -> voto - 3/391 - 0.76726342711%
-mulher -> brasil - 1/283 - 0.353356890459%
-mulher -> presidente - 1/114 - 0.877192982456%
-mulher -> filho - 1/84 - 1.19047619048%
-mulher -> rua - 2/58 - 3.44827586207%
-mulher -> amigo - 1/19 - 5.26315789474%
-mulher -> neto - 1/27 - 3.7037037037%
-processo -> brasil - 1/283 - 0.353356890459%
-processo -> presidente - 1/114 - 0.877192982456%
-processo -> corrupção - 1/60 - 1.66666666667%
-processo -> dilma - 2/93 - 2.15053763441%
-processo -> impeachment - 8/115 - 6.95652173913%
-processo -> político - 1/51 - 1.96078431373%
-processo -> mulher - 1/33 - 3.0303030303%
-processo -> processo - 1/40 - 2.5%
-processo -> crime - 1/53 - 1.88679245283%
-pai -> estada - 1/145 - 0.689655172414%
-pai -> filho - 2/84 - 2.38095238095%
-pai -> cidade - 1/58 - 1.72413793103%
-pai -> paulo - 1/35 - 2.85714285714%
-pai -> história - 1/22 - 4.54545454545%
-deus -> voto - 2/391 - 0.511508951407%
-deus -> povo - 1/212 - 0.471698113208%
-deus -> país - 1/144 - 0.694444444444%
-deus -> estada - 1/145 - 0.689655172414%
-deus -> família - 4/111 - 3.6036036036%
-deus -> respeito - 1/58 - 1.72413793103%
-deus -> homenagem - 1/23 - 4.34782608696%
-deus -> vida - 1/40 - 2.5%
-responsabilidade -> presidente - 4/114 - 3.50877192982%
-responsabilidade -> corrupção - 1/60 - 1.66666666667%
-responsabilidade -> deputado - 2/55 - 3.63636363636%
-responsabilidade -> dilma - 1/93 - 1.0752688172%
-responsabilidade -> golpe - 1/64 - 1.5625%
-responsabilidade -> crime - 1/53 - 1.88679245283%
-responsabilidade -> mandato - 1/24 - 4.16666666667%
-homenagem -> povo - 7/212 - 3.30188679245%
-homenagem -> estada - 1/145 - 0.689655172414%
-homenagem -> família - 2/111 - 1.8018018018%
-homenagem -> presidente - 1/114 - 0.877192982456%
-homenagem -> trabalhador - 1/46 - 2.17391304348%
-homenagem -> pai - 2/28 - 7.14285714286%
-homenagem -> dia - 1/29 - 3.44827586207%
-homenagem -> juventude - 1/12 - 8.33333333333%
-eleitor -> voto - 1/391 - 0.255754475703%
-eleitor -> brasil - 1/283 - 0.353356890459%
-eleitor -> povo - 1/212 - 0.471698113208%
-eleitor -> país - 1/144 - 0.694444444444%
-eleitor -> estada - 1/145 - 0.689655172414%
-eleitor -> cidade - 1/58 - 1.72413793103%
-eleitor -> respeito - 2/58 - 3.44827586207%
-eleitor -> eleitor - 1/33 - 3.0303030303%
-eleitor -> paulo - 3/35 - 8.57142857143%
-paulo -> voto - 1/391 - 0.255754475703%
-paulo -> brasil - 9/283 - 3.18021201413%
-paulo -> estada - 1/145 - 0.689655172414%
-paulo -> família - 1/111 - 0.900900900901%
-paulo -> cidade - 1/58 - 1.72413793103%
-paulo -> rua - 1/58 - 1.72413793103%
-paulo -> amor - 1/14 - 7.14285714286%
-dia -> voto - 2/391 - 0.511508951407%
-dia -> brasil - 2/283 - 0.706713780919%
-dia -> país - 2/144 - 1.38888888889%
-dia -> nome - 1/85 - 1.17647058824%
-dia -> esperança - 1/52 - 1.92307692308%
-dia -> futuro - 1/39 - 2.5641025641%
-dia -> homenagem - 1/23 - 4.34782608696%
-dia -> dia - 1/29 - 3.44827586207%
-dia -> história - 2/22 - 9.09090909091%
-crime -> voto - 2/391 - 0.511508951407%
-crime -> dilma - 1/93 - 1.0752688172%
-crime -> golpe - 2/64 - 3.125%
-crime -> responsabilidade - 35/49 - 71.4285714286%
-rio -> respeito - 1/58 - 1.72413793103%
-direito -> brasil - 1/283 - 0.353356890459%
-direito -> povo - 1/212 - 0.471698113208%
-direito -> democracia - 1/94 - 1.06382978723%
-direito -> respeito - 1/58 - 1.72413793103%
-direito -> corrupção - 1/60 - 1.66666666667%
-direito -> rua - 1/58 - 1.72413793103%
-direito -> trabalhador - 2/46 - 4.34782608696%
-direito -> constituição - 2/68 - 2.94117647059%
-direito -> mulher - 1/33 - 3.0303030303%
-direito -> população - 2/27 - 7.40740740741%
-direito -> história - 1/22 - 4.54545454545%
-nação -> voto - 1/391 - 0.255754475703%
-nação -> brasil - 1/283 - 0.353356890459%
-nação -> estada - 1/145 - 0.689655172414%
-nação -> cidade - 1/58 - 1.72413793103%
-nação -> corrupção - 1/60 - 1.66666666667%
-nação -> deus - 4/41 - 9.75609756098%
-vida -> voto - 1/391 - 0.255754475703%
-vida -> povo - 1/212 - 0.471698113208%
-vida -> país - 2/144 - 1.38888888889%
-vida -> família - 4/111 - 3.6036036036%
-vida -> democracia - 2/94 - 2.12765957447%
-vida -> pessoa - 1/24 - 4.16666666667%
-vida -> amor - 1/14 - 7.14285714286%
-pessoa -> voto - 1/391 - 0.255754475703%
-pessoa -> presidente - 1/114 - 0.877192982456%
-pessoa -> nome - 2/85 - 2.35294117647%
-pessoa -> rua - 1/58 - 1.72413793103%
-pernambuco -> brasil - 1/283 - 0.353356890459%
-pernambuco -> família - 1/111 - 0.900900900901%
-pernambuco -> nome - 1/85 - 1.17647058824%
-pernambuco -> cidade - 1/58 - 1.72413793103%
-mandato -> voto - 1/391 - 0.255754475703%
-mandato -> povo - 1/212 - 0.471698113208%
-mandato -> estada - 1/145 - 0.689655172414%
-mandato -> família - 1/111 - 0.900900900901%
-mandato -> presidente - 2/114 - 1.75438596491%
-mandato -> governo - 1/52 - 1.92307692308%
-mandato -> casa - 2/64 - 3.125%
-população -> povo - 1/212 - 0.471698113208%
-região -> voto - 3/391 - 0.76726342711%
-região -> brasil - 1/283 - 0.353356890459%
-região -> país - 1/144 - 0.694444444444%
-região -> estada - 2/145 - 1.37931034483%
-região -> família - 1/111 - 0.900900900901%
-região -> nome - 1/85 - 1.17647058824%
-região -> futuro - 1/39 - 2.5641025641%
-região -> campo - 1/20 - 5.0%
-amigo -> estada - 2/145 - 1.37931034483%
-amigo -> família - 1/111 - 0.900900900901%
-amigo -> respeito - 1/58 - 1.72413793103%
-amigo -> deputado - 2/55 - 3.63636363636%
-amor -> voto - 2/391 - 0.511508951407%
-amor -> brasil - 3/283 - 1.06007067138%
-amor -> país - 1/144 - 0.694444444444%
-amor -> filho - 1/84 - 1.19047619048%
-amor -> deus - 1/41 - 2.43902439024%
-amor -> nação - 1/25 - 4.0%
-amor -> vida - 1/40 - 2.5%
-pt -> partido - 1/57 - 1.75438596491%
-pt -> pt - 1/21 - 4.7619047619%
-pt -> dignidade - 1/17 - 5.88235294118%
-neto -> voto - 2/391 - 0.511508951407%
-neto -> brasil - 1/283 - 0.353356890459%
-neto -> povo - 1/212 - 0.471698113208%
-neto -> cidade - 1/58 - 1.72413793103%
-neto -> pai - 1/28 - 3.57142857143%
-bahia -> brasil - 5/283 - 1.7667844523%
-bahia -> nome - 4/85 - 4.70588235294%
-bahia -> democracia - 1/94 - 1.06382978723%
-bahia -> respeito - 1/58 - 1.72413793103%
-dignidade -> povo - 2/212 - 0.943396226415%
-dignidade -> presidente - 1/114 - 0.877192982456%
-dignidade -> esperança - 1/52 - 1.92307692308%
-dignidade -> pessoa - 1/24 - 4.16666666667%
-história -> voto - 1/391 - 0.255754475703%
-história -> brasil - 2/283 - 0.706713780919%
-história -> país - 1/144 - 0.694444444444%
-história -> político - 2/51 - 3.92156862745%
-história -> história - 1/22 - 4.54545454545%
-história -> luta - 2/20 - 10.0%
-campo -> brasil - 1/283 - 0.353356890459%
-campo -> estada - 1/145 - 0.689655172414%
-campo -> partido - 1/57 - 1.75438596491%
-campo -> cidade - 5/58 - 8.62068965517%
-luta -> brasil - 2/283 - 0.706713780919%
-luta -> povo - 1/212 - 0.471698113208%
-luta -> político - 1/51 - 1.96078431373%
-luta -> vida - 1/40 - 2.5%
-juventude -> brasil - 2/283 - 0.706713780919%
-juventude -> país - 1/144 - 0.694444444444%
-juventude -> família - 1/111 - 0.900900900901%
-juventude -> futuro - 1/39 - 2.5641025641%
-juventude -> mulher - 1/33 - 3.0303030303%
-ano -> voto - 1/391 - 0.255754475703%
-ano -> partido - 1/57 - 1.75438596491%
-ano -> casa - 1/64 - 1.5625%
-ano -> político - 2/51 - 3.92156862745%
-ano -> pai - 1/28 - 3.57142857143%
-ano -> vida - 2/40 - 5.0%
-ano -> juventude - 1/12 - 8.33333333333%
-ano -> ano - 1/32 - 3.125%
-ditadura -> golpe - 1/64 - 1.5625%
-ditadura -> homenagem - 1/23 - 4.34782608696%
-goiá -> voto - 1/391 - 0.255754475703%
-goiá -> brasil - 3/283 - 1.06007067138%
-goiá -> povo - 2/212 - 0.943396226415%
-goiá -> país - 1/144 - 0.694444444444%
-goiá -> filho - 1/84 - 1.19047619048%
-goiá -> futuro - 1/39 - 2.5641025641%
+docente -> político - 2/72 - 2.77777777778%
+docente -> associado - 3/83 - 3.61445783133%
+docente -> interesse - 1/52 - 1.92307692308%
+docente -> unicamp - 16/49 - 32.6530612245%
+docente -> associação - 1/29 - 3.44827586207%
+docente -> ação - 1/27 - 3.7037037037%
+docente -> sindicato - 1/16 - 6.25%
+docente -> plano - 1/20 - 5.0%
+docente -> exemplo - 2/9 - 22.2222222222%
+docente -> negociação - 1/7 - 14.2857142857%
+docente -> fato - 2/9 - 22.2222222222%
+docente -> ensino - 1/7 - 14.2857142857%
+docente -> assunto - 1/6 - 16.6666666667%
+docente -> minoria - 2/3 - 66.6666666667%
+docente -> unidade - 1/4 - 25.0%
+adunicamp -> adunicamp - 1/81 - 1.23456790123%
+adunicamp -> político - 1/72 - 1.38888888889%
+adunicamp -> interesse - 1/52 - 1.92307692308%
+adunicamp -> associação - 1/29 - 3.44827586207%
+adunicamp -> ação - 3/27 - 11.1111111111%
+adunicamp -> entidade - 1/17 - 5.88235294118%
+adunicamp -> sindicato - 2/16 - 12.5%
+adunicamp -> forma - 1/10 - 10.0%
+adunicamp -> efetivo - 1/7 - 14.2857142857%
+adunicamp -> negociação - 1/7 - 14.2857142857%
+adunicamp -> fato - 1/9 - 11.1111111111%
+adunicamp -> sociedade - 1/9 - 11.1111111111%
+adunicamp -> convênio - 1/10 - 10.0%
+adunicamp -> discussão - 1/7 - 14.2857142857%
+adunicamp -> administração - 1/7 - 14.2857142857%
+adunicamp -> papel - 1/7 - 14.2857142857%
+político -> docente - 1/124 - 0.806451612903%
+político -> associado - 1/83 - 1.20481927711%
+político -> ação - 1/27 - 3.7037037037%
+político -> transparência - 1/31 - 3.22580645161%
+político -> entidade - 1/17 - 5.88235294118%
+político -> sindicato - 1/16 - 6.25%
+político -> partido - 1/21 - 4.7619047619%
+político -> questão - 1/19 - 5.26315789474%
+político -> acadêmico - 2/13 - 15.3846153846%
+político -> diretoria - 1/13 - 7.69230769231%
+político -> negociação - 1/7 - 14.2857142857%
+político -> gestão - 1/8 - 12.5%
+político -> classe - 1/7 - 14.2857142857%
+político -> minoria - 1/3 - 33.3333333333%
+associado -> docente - 1/124 - 0.806451612903%
+associado -> adunicamp - 5/81 - 6.17283950617%
+associado -> político - 1/72 - 1.38888888889%
+associado -> partido - 4/21 - 19.0476190476%
+associado -> questão - 1/19 - 5.26315789474%
+associado -> unimed - 1/18 - 5.55555555556%
+associado -> forma - 1/10 - 10.0%
+associado -> efetivo - 1/7 - 14.2857142857%
+associado -> exemplo - 1/9 - 11.1111111111%
+associado -> convênio - 1/10 - 10.0%
+associado -> discussão - 1/7 - 14.2857142857%
+associado -> funcionário - 1/5 - 20.0%
+associado -> tema - 1/8 - 12.5%
+associado -> membro - 1/7 - 14.2857142857%
+associado -> gasto - 1/6 - 16.6666666667%
+interesse -> docente - 19/124 - 15.3225806452%
+interesse -> político - 3/72 - 4.16666666667%
+interesse -> associado - 3/83 - 3.61445783133%
+interesse -> universidade - 1/25 - 4.0%
+interesse -> professor - 5/23 - 21.7391304348%
+interesse -> acadêmico - 1/13 - 7.69230769231%
+interesse -> efetivo - 1/7 - 14.2857142857%
+interesse -> grupo - 1/11 - 9.09090909091%
+interesse -> funcionário - 1/5 - 20.0%
+unicamp -> docente - 1/124 - 0.806451612903%
+unicamp -> interesse - 2/52 - 3.84615384615%
+unicamp -> associação - 1/29 - 3.44827586207%
+unicamp -> ação - 1/27 - 3.7037037037%
+unicamp -> transparência - 1/31 - 3.22580645161%
+unicamp -> universidade - 1/25 - 4.0%
+unicamp -> partido - 1/21 - 4.7619047619%
+unicamp -> grupo - 1/11 - 9.09090909091%
+unicamp -> sociedade - 1/9 - 11.1111111111%
+unicamp -> ensino - 1/7 - 14.2857142857%
+associação -> docente - 7/124 - 5.64516129032%
+associação -> ação - 1/27 - 3.7037037037%
+associação -> professor - 1/23 - 4.34782608696%
+associação -> sindicato - 1/16 - 6.25%
+associação -> opinião - 1/15 - 6.66666666667%
+associação -> assunto - 1/6 - 16.6666666667%
+associação -> classe - 1/7 - 14.2857142857%
+ação -> adunicamp - 2/81 - 2.46913580247%
+ação -> político - 3/72 - 4.16666666667%
+ação -> representatividade - 1/19 - 5.26315789474%
+ação -> efetivo - 1/7 - 14.2857142857%
+ação -> recurso - 1/16 - 6.25%
+transparência -> adunicamp - 1/81 - 1.23456790123%
+transparência -> ação - 3/27 - 11.1111111111%
+transparência -> representatividade - 7/19 - 36.8421052632%
+transparência -> forma - 1/10 - 10.0%
+transparência -> gestão - 1/8 - 12.5%
+transparência -> atual - 1/11 - 9.09090909091%
+transparência -> participação - 1/11 - 9.09090909091%
+transparência -> programa - 1/6 - 16.6666666667%
+transparência -> gasto - 1/6 - 16.6666666667%
+universidade -> político - 1/72 - 1.38888888889%
+universidade -> recurso - 1/16 - 6.25%
+universidade -> sociedade - 1/9 - 11.1111111111%
+universidade -> ensino - 1/7 - 14.2857142857%
+universidade -> debate - 1/12 - 8.33333333333%
+professor -> unicamp - 3/49 - 6.12244897959%
+professor -> atividade - 1/23 - 4.34782608696%
+professor -> problema - 1/17 - 5.88235294118%
+professor -> grupo - 1/11 - 9.09090909091%
+atividade -> adunicamp - 2/81 - 2.46913580247%
+atividade -> político - 1/72 - 1.38888888889%
+atividade -> interesse - 1/52 - 1.92307692308%
+atividade -> acadêmico - 2/13 - 15.3846153846%
+atividade -> ensino - 1/7 - 14.2857142857%
+atividade -> debate - 2/12 - 16.6666666667%
+entidade -> político - 1/72 - 1.38888888889%
+entidade -> associado - 1/83 - 1.20481927711%
+sindicato -> docente - 1/124 - 0.806451612903%
+sindicato -> atividade - 1/23 - 4.34782608696%
+sindicato -> partido - 1/21 - 4.7619047619%
+sindicato -> funcionário - 1/5 - 20.0%
+sindicato -> representação - 1/8 - 12.5%
+plano -> ação - 1/27 - 3.7037037037%
+plano -> unimed - 1/18 - 5.55555555556%
+plano -> gestão - 1/8 - 12.5%
+plano -> saúde - 11/15 - 73.3333333333%
+partido -> político - 13/72 - 18.0555555556%
+questão -> político - 3/72 - 4.16666666667%
+questão -> universidade - 1/25 - 4.0%
+questão -> plano - 1/20 - 5.0%
+questão -> trabalho - 1/13 - 7.69230769231%
+questão -> administração - 1/7 - 14.2857142857%
+problema -> docente - 1/124 - 0.806451612903%
+problema -> político - 1/72 - 1.38888888889%
+problema -> associado - 1/83 - 1.20481927711%
+problema -> unicamp - 1/49 - 2.04081632653%
+problema -> professor - 1/23 - 4.34782608696%
+problema -> acadêmico - 1/13 - 7.69230769231%
+problema -> sociedade - 1/9 - 11.1111111111%
+unimed -> adunicamp - 1/81 - 1.23456790123%
+unimed -> associado - 1/83 - 1.20481927711%
+unimed -> plano - 1/20 - 5.0%
+unimed -> valor - 1/7 - 14.2857142857%
+acadêmico -> docente - 1/124 - 0.806451612903%
+acadêmico -> universidade - 1/25 - 4.0%
+diretoria -> docente - 1/124 - 0.806451612903%
+diretoria -> unidade - 1/4 - 25.0%
+representatividade -> docente - 3/124 - 2.41935483871%
+representatividade -> associado - 1/83 - 1.20481927711%
+representatividade -> transparência - 3/31 - 9.67741935484%
+representatividade -> professor - 1/23 - 4.34782608696%
+representatividade -> representatividade - 1/19 - 5.26315789474%
+representatividade -> negociação - 1/7 - 14.2857142857%
+representatividade -> atual - 1/11 - 9.09090909091%
+opinião -> docente - 1/124 - 0.806451612903%
+opinião -> associado - 2/83 - 2.40963855422%
+opinião -> problema - 1/17 - 5.88235294118%
+forma -> recurso - 1/16 - 6.25%
+efetivo -> docente - 1/124 - 0.806451612903%
+efetivo -> representação - 1/8 - 12.5%
+exemplo -> transparência - 1/31 - 3.22580645161%
+exemplo -> professor - 1/23 - 4.34782608696%
+assembleia -> adunicamp - 1/81 - 1.23456790123%
+assembleia -> forma - 1/10 - 10.0%
+assembleia -> tema - 2/8 - 25.0%
+assembleia -> programa - 1/6 - 16.6666666667%
+grupo -> político - 1/72 - 1.38888888889%
+grupo -> associado - 1/83 - 1.20481927711%
+recurso -> adunicamp - 3/81 - 3.7037037037%
+negociação -> interesse - 1/52 - 1.92307692308%
+negociação -> plano - 1/20 - 5.0%
+negociação -> unimed - 2/18 - 11.1111111111%
+negociação -> salarial - 2/13 - 15.3846153846%
+fato -> docente - 2/124 - 1.61290322581%
+fato -> adunicamp - 1/81 - 1.23456790123%
+gestão -> acadêmico - 1/13 - 7.69230769231%
+convênio -> atividade - 1/23 - 4.34782608696%
+convênio -> unimed - 5/18 - 27.7777777778%
+discussão -> problema - 2/17 - 11.7647058824%
+discussão -> acadêmico - 1/13 - 7.69230769231%
+discussão -> efetivo - 1/7 - 14.2857142857%
+discussão -> assembleia - 1/20 - 5.0%
+discussão -> tema - 1/8 - 12.5%
+atual -> adunicamp - 1/81 - 1.23456790123%
+atual -> diretoria - 2/13 - 15.3846153846%
+atual -> gestão - 1/8 - 12.5%
+debate -> ação - 1/27 - 3.7037037037%
+debate -> acadêmico - 1/13 - 7.69230769231%
+funcionário -> unicamp - 1/49 - 2.04081632653%
+funcionário -> associação - 1/29 - 3.44827586207%
+participação -> docente - 2/124 - 1.61290322581%
+participação -> adunicamp - 1/81 - 1.23456790123%
+participação -> associado - 1/83 - 1.20481927711%
+participação -> entidade - 1/17 - 5.88235294118%
+votação -> assembleia - 2/20 - 10.0%
+votação -> atual - 1/11 - 9.09090909091%
+salarial -> universidade - 1/25 - 4.0%
+salarial -> trabalho - 1/13 - 7.69230769231%
+salarial -> representação - 1/8 - 12.5%
+assunto -> interesse - 1/52 - 1.92307692308%
+trabalho -> docente - 2/124 - 1.61290322581%
+trabalho -> unicamp - 1/49 - 2.04081632653%
+trabalho -> professor - 1/23 - 4.34782608696%
+trabalho -> atual - 1/11 - 9.09090909091%
+classe -> docente - 2/124 - 1.61290322581%
+classe -> funcionário - 1/5 - 20.0%
+representação -> docente - 2/124 - 1.61290322581%
+representação -> interesse - 1/52 - 1.92307692308%
+representação -> unicamp - 1/49 - 2.04081632653%
+representação -> transparência - 1/31 - 3.22580645161%
+representação -> opinião - 1/15 - 6.66666666667%
+administração -> unicamp - 1/49 - 2.04081632653%
+administração -> universidade - 1/25 - 4.0%
+administração -> plano - 1/20 - 5.0%
+saúde -> unimed - 1/18 - 5.55555555556%
+minoria -> político - 1/72 - 1.38888888889%
+apoio -> político - 1/72 - 1.38888888889%
+apoio -> sociedade - 1/9 - 11.1111111111%
+apoio -> convênio - 1/10 - 10.0%
+papel -> adunicamp - 1/81 - 1.23456790123%
+papel -> associação - 1/29 - 3.44827586207%
+papel -> sindicato - 1/16 - 6.25%
+tema -> interesse - 1/52 - 1.92307692308%
+membro -> diretoria - 1/13 - 7.69230769231%
+valor -> professor - 1/23 - 4.34782608696%
+valor -> unimed - 1/18 - 5.55555555556%
+valor -> acadêmico - 1/13 - 7.69230769231%
+programa -> gestão - 1/8 - 12.5%
+gasto -> associação - 1/29 - 3.44827586207%
+unidade -> unicamp - 1/49 - 2.04081632653%
 
-- Temas selecionados(59):
+- Temas selecionados(57):
 
-voto
-brasil
-povo
-país
-estada
-família
-presidente
-nome
-partido
-filho
-cidade
-democracia
-respeito
-corrupção
-deputado
-governo
-dilma
-impeachment
-casa
-rua
-esperança
-trabalhador
-golpe
+docente
+adunicamp
 político
-constituição
-futuro
-mulher
-processo
-pai
-deus
-responsabilidade
-homenagem
-eleitor
-paulo
-dia
-crime
-rio
-direito
-nação
-vida
-pessoa
-pernambuco
-mandato
-população
-região
-amigo
-amor
-pt
-neto
-bahia
-dignidade
-mato
-história
-campo
-luta
-juventude
-ano
-ditadura
-goiá
+associado
+interesse
+unicamp
+associação
+ação
+transparência
+universidade
+professor
+atividade
+entidade
+sindicato
+plano
+partido
+questão
+problema
+unimed
+acadêmico
+diretoria
+representatividade
+opinião
+forma
+efetivo
+exemplo
+assembleia
+grupo
+recurso
+negociação
+fato
+sociedade
+gestão
+ensino
+convênio
+discussão
+atual
+debate
+funcionário
+participação
+votação
+salarial
+assunto
+trabalho
+classe
+representação
+administração
+saúde
+minoria
+apoio
+papel
+tema
+membro
+valor
+programa
+gasto
+unidade
 
 
 - Temas excluídos(0):

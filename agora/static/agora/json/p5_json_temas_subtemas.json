@@ -6,382 +6,374 @@
 "parent": "null" ,
 "children": [
     {
-        "name": "voto",
-        "value": 3.0,
-        "size": 20.0,
+        "name": "docente",
+        "value": 2.94768635978,
+        "size": 19.6512423985,
         "parent": "Temas",
         "children": [
             {
-             "name": "brasil",
-             "value": 2.13328858215,
+             "name": "unicamp",
+             "value": 0.798477244656,
              "size": 10.0,
-             "parent": "voto"
+             "parent": "docente"
             },
             {
-             "name": "família",
-             "value": 0.696504266656,
-             "size": 3.26493223881,
-             "parent": "voto"
+             "name": "interesse",
+             "value": 0.774446460802,
+             "size": 9.69904234573,
+             "parent": "docente"
             },
+            {
+             "name": "associação",
+             "value": 0.495024367534,
+             "size": 6.1996051966,
+             "parent": "docente"
+            },
+            {
+             "name": "entidade",
+             "value": 0.179364882382,
+             "size": 2.2463368065,
+             "parent": "docente"
+            },
+            {
+             "name": "professor",
+             "value": 0.142066123976,
+             "size": 1.77921318268,
+             "parent": "docente"
+            },
+            {
+             "name": "sociedade",
+             "value": 0.0375879205215,
+             "size": 0.470745043432,
+             "parent": "docente"
+            },
+            {
+             "name": "assunto",
+             "value": 0.0300710892046,
+             "size": 0.376605462533,
+             "parent": "docente"
+            },
+            {
+             "name": "apoio",
+             "value": 0.0253327302008,
+             "size": 0.317263019959,
+             "parent": "docente"
+            },
+            {
+             "name": "papel",
+             "value": 0.0183543488588,
+             "size": 0.229866899547,
+             "parent": "docente"
+            }
+        ]
+    },
+    {
+        "name": "político",
+        "value": 2.25305026362,
+        "size": 15.0203350908,
+        "parent": "Temas",
+        "children": [
             {
              "name": "partido",
-             "value": 0.172634796413,
-             "size": 0.809242583761,
-             "parent": "voto"
+             "value": 0.536422748508,
+             "size": 10.0,
+             "parent": "político"
             },
             {
-             "name": "mato",
-             "value": 0.0227941087066,
-             "size": 0.106849625959,
-             "parent": "voto"
+             "name": "sindicato",
+             "value": 0.199621455063,
+             "size": 3.72134581575,
+             "parent": "político"
             },
             {
-             "name": "pernambuco",
-             "value": 0.0170787785985,
-             "size": 0.080058454076,
-             "parent": "voto"
+             "name": "representação",
+             "value": 0.0439240292096,
+             "size": 0.818832335725,
+             "parent": "político"
             }
         ]
     },
     {
-        "name": "povo",
-        "value": 2.00020233173,
-        "size": 13.3346822116,
+        "name": "associado",
+        "value": 2.08000444148,
+        "size": 13.8666962765,
         "parent": "Temas",
         "children": [
             {
-             "name": "nome",
-             "value": 0.804519606565,
+             "name": "adunicamp",
+             "value": 2.29885538776,
              "size": 10.0,
-             "parent": "povo"
+             "parent": "associado"
             },
             {
-             "name": "esperança",
-             "value": 0.294485825627,
-             "size": 3.6603933978,
-             "parent": "povo"
-            },
-            {
-             "name": "dignidade",
-             "value": 0.050495890899,
-             "size": 0.627652707118,
-             "parent": "povo"
+             "name": "efetivo",
+             "value": 0.16256170348,
+             "size": 0.707141929611,
+             "parent": "associado"
             }
         ]
     },
     {
-        "name": "país",
-        "value": 1.51854711663,
-        "size": 10.1236474442,
+        "name": "transparência",
+        "value": 1.08850111001,
+        "size": 7.25667406675,
         "parent": "Temas",
         "children": [
             {
-             "name": "corrupção",
-             "value": 0.6338371482,
+             "name": "ação",
+             "value": 0.503875489842,
              "size": 10.0,
-             "parent": "país"
+             "parent": "transparência"
             },
             {
-             "name": "governo",
-             "value": 0.396946569169,
-             "size": 6.26259553098,
-             "parent": "país"
+             "name": "representatividade",
+             "value": 0.258061680161,
+             "size": 5.12153667648,
+             "parent": "transparência"
             },
             {
-             "name": "pessoa",
-             "value": 0.10053252648,
-             "size": 1.58609394804,
-             "parent": "país"
+             "name": "recurso",
+             "value": 0.150323240304,
+             "size": 2.98334099066,
+             "parent": "transparência"
             },
             {
-             "name": "pt",
-             "value": 0.0766121142035,
-             "size": 1.20870344096,
-             "parent": "país"
+             "name": "exemplo",
+             "value": 0.0809217734387,
+             "size": 1.60598749235,
+             "parent": "transparência"
             },
             {
-             "name": "bahia",
-             "value": 0.0600682590977,
-             "size": 0.94769230974,
-             "parent": "país"
+             "name": "fato",
+             "value": 0.0657761143219,
+             "size": 1.30540412558,
+             "parent": "transparência"
             }
         ]
     },
     {
-        "name": "estada",
-        "value": 1.32614354007,
-        "size": 8.84095693381,
+        "name": "universidade",
+        "value": 0.840177508632,
+        "size": 5.60118339088,
         "parent": "Temas",
         "children": [
             {
-             "name": "cidade",
-             "value": 0.602737295999,
+             "name": "ensino",
+             "value": 0.246992492882,
              "size": 10.0,
-             "parent": "estada"
+             "parent": "universidade"
             },
             {
-             "name": "paulo",
-             "value": 0.151136734018,
-             "size": 2.50750592375,
-             "parent": "estada"
+             "name": "participação",
+             "value": 0.181494099886,
+             "size": 7.34816260075,
+             "parent": "universidade"
             },
             {
-             "name": "rio",
-             "value": 0.126733389769,
-             "size": 2.10263062549,
-             "parent": "estada"
-            },
-            {
-             "name": "eleitor",
-             "value": 0.112424519285,
-             "size": 1.86523249898,
-             "parent": "estada"
-            },
-            {
-             "name": "região",
-             "value": 0.0788942214684,
-             "size": 1.30893213332,
-             "parent": "estada"
-            },
-            {
-             "name": "amigo",
-             "value": 0.0530820528802,
-             "size": 0.88068306429,
-             "parent": "estada"
-            },
-            {
-             "name": "campo",
-             "value": 0.0479011238443,
-             "size": 0.794726395103,
-             "parent": "estada"
+             "name": "administração",
+             "value": 0.0930501965763,
+             "size": 3.76732893744,
+             "parent": "universidade"
             }
         ]
     },
     {
-        "name": "presidente",
-        "value": 1.20499046585,
-        "size": 8.03326977231,
+        "name": "plano",
+        "value": 0.65467920155,
+        "size": 4.36452801034,
         "parent": "Temas",
         "children": [
             {
-             "name": "dilma",
-             "value": 0.655333092999,
+             "name": "saúde",
+             "value": 0.243528380186,
              "size": 10.0,
-             "parent": "presidente"
-            },
-            {
-             "name": "impeachment",
-             "value": 0.35901170595,
-             "size": 5.47830881403,
-             "parent": "presidente"
-            },
-            {
-             "name": "processo",
-             "value": 0.13976336353,
-             "size": 2.13270724496,
-             "parent": "presidente"
+             "parent": "plano"
             }
         ]
     },
     {
-        "name": "filho",
-        "value": 0.903617800829,
-        "size": 6.02411867219,
+        "name": "problema",
+        "value": 0.507782872006,
+        "size": 3.38521914671,
         "parent": "Temas",
         "children": [
             {
-             "name": "futuro",
-             "value": 0.240845816477,
+             "name": "questão",
+             "value": 0.489627717309,
              "size": 10.0,
-             "parent": "filho"
+             "parent": "problema"
             },
             {
-             "name": "pai",
-             "value": 0.166064828595,
-             "size": 6.8950680159,
-             "parent": "filho"
+             "name": "acadêmico",
+             "value": 0.47387840409,
+             "size": 9.67834106072,
+             "parent": "problema"
             },
             {
-             "name": "neto",
-             "value": 0.126246456192,
-             "size": 5.24179568651,
-             "parent": "filho"
-            },
-            {
-             "name": "ano",
-             "value": 0.0400151232844,
-             "size": 1.66144149273,
-             "parent": "filho"
-            },
-            {
-             "name": "goiá",
-             "value": 0.030453506714,
-             "size": 1.26443992922,
-             "parent": "filho"
+             "name": "discussão",
+             "value": 0.263960006793,
+             "size": 5.39103480994,
+             "parent": "problema"
             }
         ]
     },
     {
-        "name": "democracia",
-        "value": 0.848535788589,
-        "size": 5.65690525726,
+        "name": "unimed",
+        "value": 0.503823523061,
+        "size": 3.35882348707,
         "parent": "Temas",
         "children": [
             {
-             "name": "golpe",
-             "value": 0.533566394225,
+             "name": "convênio",
+             "value": 0.232839912028,
              "size": 10.0,
-             "parent": "democracia"
+             "parent": "unimed"
             },
             {
-             "name": "rua",
-             "value": 0.3510398787,
-             "size": 6.57912272024,
-             "parent": "democracia"
-            },
-            {
-             "name": "trabalhador",
-             "value": 0.330254004479,
-             "size": 6.18955781423,
-             "parent": "democracia"
-            },
-            {
-             "name": "direito",
-             "value": 0.155676651162,
-             "size": 2.91766222249,
-             "parent": "democracia"
+             "name": "valor",
+             "value": 0.0602080806854,
+             "size": 2.58581444053,
+             "parent": "unimed"
             }
         ]
     },
     {
-        "name": "casa",
-        "value": 0.664208685028,
-        "size": 4.42805790019,
+        "name": "assembleia",
+        "value": 0.412135732174,
+        "size": 2.74757154783,
         "parent": "Temas",
         "children": [
             {
-             "name": "deputado",
-             "value": 0.338062701413,
+             "name": "votação",
+             "value": 0.290181452194,
              "size": 10.0,
-             "parent": "casa"
+             "parent": "assembleia"
             },
             {
-             "name": "mandato",
-             "value": 0.232460490305,
-             "size": 6.87625370484,
-             "parent": "casa"
+             "name": "opinião",
+             "value": 0.17125484874,
+             "size": 5.90164696762,
+             "parent": "assembleia"
+            },
+            {
+             "name": "tema",
+             "value": 0.113331475969,
+             "size": 3.90553824556,
+             "parent": "assembleia"
+            },
+            {
+             "name": "forma",
+             "value": 0.112932507491,
+             "size": 3.89178931451,
+             "parent": "assembleia"
             }
         ]
     },
     {
-        "name": "constituição",
-        "value": 0.526132976769,
-        "size": 3.50755317846,
+        "name": "grupo",
+        "value": 0.406862162035,
+        "size": 2.71241441356,
         "parent": "Temas",
         "children": [
             {
-             "name": "respeito",
-             "value": 0.823378902841,
+             "name": "diretoria",
+             "value": 0.459050529259,
              "size": 10.0,
-             "parent": "constituição"
+             "parent": "grupo"
             }
         ]
     },
     {
-        "name": "responsabilidade",
-        "value": 0.414528998488,
-        "size": 2.76352665659,
+        "name": "negociação",
+        "value": 0.379206421788,
+        "size": 2.52804281192,
         "parent": "Temas",
         "children": [
             {
-             "name": "crime",
-             "value": 0.343422157843,
+             "name": "salarial",
+             "value": 0.277038267245,
              "size": 10.0,
-             "parent": "responsabilidade"
+             "parent": "negociação"
+            },
+            {
+             "name": "unidade",
+             "value": 0.100077582599,
+             "size": 3.61241006861,
+             "parent": "negociação"
             }
         ]
     },
     {
-        "name": "homenagem",
-        "value": 0.409584375789,
-        "size": 2.73056250526,
+        "name": "debate",
+        "value": 0.293118348438,
+        "size": 1.95412232292,
         "parent": "Temas",
         "children": [
             {
-             "name": "político",
-             "value": 0.461729105799,
+             "name": "atividade",
+             "value": 0.577542623327,
              "size": 10.0,
-             "parent": "homenagem"
+             "parent": "debate"
             },
             {
-             "name": "dia",
-             "value": 0.271225242357,
-             "size": 5.87412053844,
-             "parent": "homenagem"
-            },
-            {
-             "name": "vida",
-             "value": 0.19389867306,
-             "size": 4.19940330001,
-             "parent": "homenagem"
-            },
-            {
-             "name": "história",
-             "value": 0.14741957697,
-             "size": 3.19277201975,
-             "parent": "homenagem"
-            },
-            {
-             "name": "luta",
-             "value": 0.129542304978,
-             "size": 2.80559105654,
-             "parent": "homenagem"
-            },
-            {
-             "name": "ditadura",
-             "value": 0.055369682422,
-             "size": 1.19918111565,
-             "parent": "homenagem"
+             "name": "trabalho",
+             "value": 0.218557401269,
+             "size": 3.78426444112,
+             "parent": "debate"
             }
         ]
     },
     {
-        "name": "nação",
-        "value": 0.327980079098,
-        "size": 2.18653386065,
+        "name": "classe",
+        "value": 0.255338348664,
+        "size": 1.70225565776,
         "parent": "Temas",
         "children": [
             {
-             "name": "deus",
-             "value": 0.386115667629,
+             "name": "minoria",
+             "value": 0.230327475298,
              "size": 10.0,
-             "parent": "nação"
+             "parent": "classe"
             },
             {
-             "name": "amor",
-             "value": 0.0588133229432,
-             "size": 1.52320477706,
-             "parent": "nação"
+             "name": "funcionário",
+             "value": 0.193700638698,
+             "size": 8.40979298919,
+             "parent": "classe"
             }
         ]
     },
     {
-        "name": "juventude",
-        "value": 0.216925420214,
-        "size": 1.44616946809,
+        "name": "membro",
+        "value": 0.221613685633,
+        "size": 1.47742457089,
         "parent": "Temas",
         "children": [
             {
-             "name": "mulher",
-             "value": 0.409478637463,
+             "name": "atual",
+             "value": 0.297464141039,
              "size": 10.0,
-             "parent": "juventude"
+             "parent": "membro"
             },
             {
-             "name": "população",
-             "value": 0.222487196172,
-             "size": 5.43342621121,
-             "parent": "juventude"
+             "name": "gasto",
+             "value": 0.135784265754,
+             "size": 4.56472720642,
+             "parent": "membro"
+            }
+        ]
+    },
+    {
+        "name": "programa",
+        "value": 0.208174408805,
+        "size": 1.38782939203,
+        "parent": "Temas",
+        "children": [
+            {
+             "name": "gestão",
+             "value": 0.329362080087,
+             "size": 10.0,
+             "parent": "programa"
             }
         ]
     }
