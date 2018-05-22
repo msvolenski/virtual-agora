@@ -178,3 +178,17 @@ class SentencasGlobais(models.Model):
 
     def __str__(self):
         return self.ident
+
+
+class FrasesGlobais(models.Model):
+            
+    representatividade = models.TextField('Representatividade') 
+    peso = models.FloatField('peso')    
+    esquerda = models.TextField('Esquerda') 
+    nucleo = models.TextField('Núcleo da Frase') 
+    direita = models.TextField('Direita')
+    cor = models.TextField('Cor')
+    size = models.TextField('Tamanho')
+
+    def __str__(self):
+        return self.nucleo

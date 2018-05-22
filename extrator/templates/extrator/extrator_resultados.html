@@ -745,7 +745,20 @@
             <b>RESULTADOS</b>
         </div>     
         <div id="resultado-passo-6-globais" style="margin-top:100px;overflow:auto;width:200%"></div>
-            <div id="chart_p8"></div>
+            <div id="chart_p8">
+                {% for nuc in nucleos %}
+                    <div style=" margin:50px;">
+                    <div style="font-size:160%;padding:55px;"><b>NÚCLEO: "{{nuc}}"</b></div>
+                    {% for item in frases %}
+                        {% if item.nucleo == nuc %}                         
+                        <div>
+                            <div title="{{item.peso}}" style="color:{{item.cor}};padding:20px;font-size:{{item.size}}"> {{item.esquerda}} {{item.nucleo}} {{item.direita}} </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endfor %}  
+            </div>
         </div>
         {% endif %}
         
@@ -913,7 +926,7 @@
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <script>
             var p5_data = "{% static 'agora/json/p5_json_temas_subtemas.json' %}";
-            var p5_data = "{% static 'agora/json/p6_json_frases_globais.json' %}";
+       
         </script>
         <script src="{% static 'agora/js/p5_mapa_temas_subtemas.js' %}"></script> {% endif %}
 
@@ -950,21 +963,7 @@
         </script>        
         
         {% endif %}
-        <!-- MONTA RESULTADOS DO PASSO 6 -->
-        {% if resultados_p8 %}
-        
-        <script src="https://d3js.org/d3.v3.min.js"></script>
-        <script>
-            var p8_data = "{% static 'agora/json/p6_json_frases_globais.json' %}";      
-        </script>
-        <script src="{% static 'agora/js/p6_frases_globais.js' %}"></script> 
-        
-        {% endif %}
-        
-        
-        
-        
-        
+        <!-- MONTA RESULTADOS DO PASSO 6 -->  
         
         
         <!-- MONTA GOTO -->

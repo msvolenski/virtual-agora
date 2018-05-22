@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from .models import SentencasGlobais, SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
+from .models import FrasesGlobais, SentencasGlobais, SentencasNucleos, SentencasExtraidas, MapasTemasESubtemas, Clusters, CorrigePalavra, ParametrosDeAjuste, TextoPreproc, ListaDeSubstantivos, TestaPalavra, DadosPreproc, ListaVertices, TabelaRanking, ListaDeAdjacencias, TemasNew, SentencasAvaliadas
 from collections import OrderedDict, Counter
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
@@ -2167,8 +2167,11 @@ def extraiSentencasGlobais(request):
 
 def gerarFrasesGlobais(request):
    
-    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p6_json_frases_globais.json", 'w', 'utf-8') 
-
+    #inicilaiza coisas do BD
+    parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
+    par = parametros.radio_r
+    list_par = [int(x) for x in par.split(" ")]
+    FrasesGlobais.objects.all().delete()
     objetos = SentencasGlobais.objects.all()
     objetos_nucleos = SentencasGlobais.objects.filter(representatividade__exact='altissima')
 
@@ -2197,9 +2200,7 @@ def gerarFrasesGlobais(request):
                 if div[0]:
                     esquerda[div[0].strip()] = obj.peso
                 if div[1]:
-                    direita[div[1].strip()] = obj.peso  
-
-            
+                    direita[div[1].strip()] = obj.peso              
     
         excluir_esquerda = []              
         for pt,v1 in esquerda.iteritems():
@@ -2223,8 +2224,7 @@ def gerarFrasesGlobais(request):
             del direita[j]
 
     #gera as frases
-    frases = []
-    
+    frases = []    
     for nuc in nucleos:
         maior_valor = 0
         for ke,ve in esquerda.iteritems():
@@ -2239,84 +2239,55 @@ def gerarFrasesGlobais(request):
                 peso_f = int(((int(ve) + int(vd)) / maior_valor) * 100)
                 if peso_f > 80:
                     representatividade = 'altissima'
+                    cor = '#FF0000'
+                    size = '200%'
                 if peso_f > 60 and peso_f <= 80:
                     representatividade = 'alta'
+                    cor = '#B65B00'
+                    size = '160%'
                 if peso_f > 40 and peso_f <= 60:                                    
                     representatividade = 'media'
+                    cor = '#E67404'
+                    size = '120%'
                 if peso_f > 20 and peso_f <= 40:
                     representatividade = 'baixa'
+                    cor = '#c0fa48'
+                    size = '100%'
                 if peso_f >= 0 and peso_f <= 20:
                     representatividade = 'baixissima' 
-                        
-                frases.append([ke,nuc,kd, int(((int(ve) + int(vd))/maior_valor)*100), representatividade]) 
+                    cor = '#6CE200'
+                    size = '80%'    
                 
-
-
-    for t in frases:
-        print t
-   
+                frases.append([ke,nuc,kd, int(((int(ve) + int(vd))/maior_valor)*100), representatividade, cor, size]) 
+                
     
     #salva dados no BD
-    #aList = [SentencasGlobais(nucleo=sent[0], peso=sent[1], irseg=sent[2], representatividade=sent[3] ) for sent in resultados_rankeados_norm]    
-    #SentencasGlobais.objects.bulk_create(aList)
+    aList = [FrasesGlobais(esquerda=sent[0], nucleo=sent[1], direita=sent[2], peso=sent[3], representatividade=sent[4], cor=sent[5], size=sent[6] ) for sent in frases]    
+    FrasesGlobais.objects.bulk_create(aList)
 
-
-
-
-
-
-
-
-
-
-        #cabeçalho
-    for ind, nuc in enumerate(nucleos):       
-        if ind == 0:
-            arq_json.write("\n")
-        else:
-            arq_json.write(",\n")
-        
-        arq_json.write("{\n    \"name\": \"" + nuc + "\",\n")
-        arq_json.write("    \"parents\": [")
-     
-        for idx, item in enumerate(esquerda):        
-            if idx == 0:
-                arq_json.write('\n')
-            else:                
-                arq_json.write(",\n")    
-            arq_json.write("        {\n            \"name\": \"" + item + "\",\n            \"value\": 1,\n            \"size\": 1\n        }")
-
-
-        arq_json.write("\n   ],\n")
-        arq_json.write("    \"children\": [")
-        
-        for idx, item in enumerate(direita):        
-            if idx == 0:
-                arq_json.write('\n')
-            else:                
-                arq_json.write(",\n")    
-            arq_json.write("        {\n            \"name\": \"" + item + "\",\n            \"value\": 1,\n            \"size\": 1\n        }")
-   
-        
-        arq_json.write("\n    ]\n")
-        arq_json.write("}")
-        
+    #seleciona objetos baseado na escolha do usuário sobre a representatividade
+    lll = []
+    for num in list_par:
+        if num == 5:
+            lll.append('altissima')
+        if num == 4:
+            lll.append('alta')        
+        if num == 3:
+            lll.append('media')        
+        if num == 2:
+            lll.append('baixa')        
+        if num == 1:
+            lll.append('baixissima')       
     
-    arq_json.close()    
-        
-        
-        #print esquerda_nucleos
+    lpk =[]
+    objs_pk = FrasesGlobais.objects.order_by('-peso')
+    for obn in objs_pk:
+        if obn.representatividade in lll:
+            lpk.append(obn.pk)                              
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    return render(request, 'extrator/extrator_resultados.html', {'goto':'p8-result', 'muda_logo':'logo_fglobais','resultados_p8':'resultados_p8',})    
+    obj_frases = FrasesGlobais.objects.filter(pk__in=lpk).order_by('-peso')
+
+    return render(request, 'extrator/extrator_resultados.html', {'nucleos':nucleos ,'frases':obj_frases,'goto':'p8-result', 'muda_logo':'logo_fglobais','resultados_p8':'resultados_p8',})    
 
 
 def calcula_indice_representatividade(request):
@@ -2377,7 +2348,7 @@ def calcula_indice_representatividade(request):
                 arq_json.write("             \"parent\": \"" + tema.tema + "\",\n")
                 arq_json.write("             \"children\": [\n")
                 
-                lll = []
+                lll = []cd..
                 for num in list_par:
                     if num == 5:
                         lll.append('altissima')

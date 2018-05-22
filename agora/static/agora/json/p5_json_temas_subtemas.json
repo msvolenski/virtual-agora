@@ -13,50 +13,56 @@
         "children": [
             {
              "name": "unicamp",
-             "value": 0.819095818244,
+             "value": 0.798477244656,
              "size": 10.0,
              "parent": "docente"
             },
             {
              "name": "interesse",
-             "value": 0.793603820622,
-             "size": 9.68877880886,
+             "value": 0.774446460802,
+             "size": 9.69904234573,
              "parent": "docente"
             },
             {
              "name": "associação",
-             "value": 0.479019820313,
-             "size": 5.84815365484,
+             "value": 0.495024367534,
+             "size": 6.1996051966,
              "parent": "docente"
             },
             {
              "name": "entidade",
-             "value": 0.179994232847,
-             "size": 2.19747468901,
+             "value": 0.179364882382,
+             "size": 2.2463368065,
              "parent": "docente"
             },
             {
              "name": "professor",
-             "value": 0.148047855512,
-             "size": 1.80745466177,
+             "value": 0.142066123976,
+             "size": 1.77921318268,
              "parent": "docente"
             },
             {
              "name": "sociedade",
-             "value": 0.0356096089151,
-             "size": 0.434742897253,
+             "value": 0.0375879205215,
+             "size": 0.470745043432,
              "parent": "docente"
             },
             {
              "name": "assunto",
-             "value": 0.031337240329,
-             "size": 0.382583327017,
+             "value": 0.0300710892046,
+             "size": 0.376605462533,
+             "parent": "docente"
+            },
+            {
+             "name": "apoio",
+             "value": 0.0253327302008,
+             "size": 0.317263019959,
              "parent": "docente"
             },
             {
              "name": "papel",
-             "value": 0.0191271635476,
-             "size": 0.233515580492,
+             "value": 0.0183543488588,
+             "size": 0.229866899547,
              "parent": "docente"
             }
         ]
@@ -153,14 +159,20 @@
         "children": [
             {
              "name": "ensino",
-             "value": 0.329323323842,
+             "value": 0.246992492882,
              "size": 10.0,
              "parent": "universidade"
             },
             {
              "name": "participação",
-             "value": 0.193593706545,
-             "size": 5.8785300806,
+             "value": 0.181494099886,
+             "size": 7.34816260075,
+             "parent": "universidade"
+            },
+            {
+             "name": "administração",
+             "value": 0.0930501965763,
+             "size": 3.76732893744,
              "parent": "universidade"
             }
         ]
@@ -328,20 +340,6 @@
              "value": 0.193700638698,
              "size": 8.40979298919,
              "parent": "classe"
-            }
-        ]
-    },
-    {
-        "name": "apoio",
-        "value": 0.227994571807,
-        "size": 1.51996381205,
-        "parent": "Temas",
-        "children": [
-            {
-             "name": "administração",
-             "value": 0.248133857537,
-             "size": 10.0,
-             "parent": "apoio"
             }
         ]
     },

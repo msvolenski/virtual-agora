@@ -417,52 +417,6 @@ andes andar VMM02S0 andar VMSP2S0
 . . Fp
 
 19 19 Z
-engajamento engajamento NCMS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-em em SPS00
-ações ação NCFP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-representem representar VMM03P0 representar VMSP3P0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-principalmente principalmente RG
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-diz dizer VMIP3S0 dizer VMM02S0
-respeito respeito NCMS000 respeitar VMIP1S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-questões questão NCFP000
-de de SPS00
-assistência assistência NCFS000
-médica médico AQ0FS0 médica NCFS000
-com com SPS00
-planos plano AQ0MP0 plano NCMP000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-competitivos competitivo AQ0MP0
-e e CC
-acessíveis acessível AQ0CP0
-, , Fc
-assistência assistência NCFS000
-jurídica jurídico AQ0FS0
-não não RN
-limitada limitado AQ0FS0 limitar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-consulta consulto AQ0FS0 consulta NCFS000 consultar VMIP3S0 consultar VMM02S0
-inicial inicial AQ0CS0 inicial NCCS000 inicial NCFS000
-. . Fp
-
-20 20 Z
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 atividades atividade NCFP000
 de de SPS00
@@ -517,7 +471,7 @@ que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 partidária partidário AQ0FS0 partidário NCFS000
 . . Fp
 
-21 21 Z
+20 20 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -558,6 +512,52 @@ participação participação NCFS000
 ampla amplo AQ0FS0
 . . Fp
 
+21 21 Z
+engajamento engajamento NCMS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+em em SPS00
+ações ação NCFP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+representem representar VMM03P0 representar VMSP3P0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+, , Fc
+principalmente principalmente RG
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+diz dizer VMIP3S0 dizer VMM02S0
+respeito respeito NCMS000 respeitar VMIP1S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+questões questão NCFP000
+de de SPS00
+assistência assistência NCFS000
+médica médico AQ0FS0 médica NCFS000
+com com SPS00
+planos plano AQ0MP0 plano NCMP000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+competitivos competitivo AQ0MP0
+e e CC
+acessíveis acessível AQ0CP0
+, , Fc
+assistência assistência NCFS000
+jurídica jurídico AQ0FS0
+não não RN
+limitada limitado AQ0FS0 limitar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+consulta consulto AQ0FS0 consulta NCFS000 consultar VMIP3S0 consultar VMM02S0
+inicial inicial AQ0CS0 inicial NCCS000 inicial NCFS000
+. . Fp
+
 22 22 Z
 apartidária apartidário AQ0FS0
 , , Fc
@@ -595,6 +595,260 @@ unicamp unicamp UNK
 . . Fp
 
 23 23 Z
+ações ação NCFP000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+voltadas voltado AQ0FP0 voltar VMP00PF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+corpo corpo NCMS000
+docente docente AQ0CS0 docente NCCS000
+e e CC
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+menor menor AQ0CS0 menor NCCS000 menor NCMS000
+atuação atuação NCFS000
+política político AQ0FS0 política NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
+de de SPS00
+sua seu DP3FSS seu PX3FS0S0 suar VMIP3S0 suar VMM02S0
+missão missão NCFS000
+principal principal AQ0CS0 principal NCCS000 principal NCMS000
+( ( Fpa
+envolvimento envolvimento NCMS000
+partidário partidário AQ0MS0 partidário NCMS000
+, , Fc
+por por SPS00
+exemplo exemplo NCMS000 exemplar VMIP1S0
+) ) Fpt
+. . Fp
+
+24 24 Z
+votação votação NCFS000
+online online RG
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+todas todo AQ0FP0 todo DI0FP0 todo NCFP000 todo PI0FP000
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+decisões decisão NCFP000
+sem sem SPS00
+necessidade necessidade NCFS000
+de de SPS00
+ir ir VMN0000 ir VMN01S0 ir VMN03S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+assembleia assembleia NCFS000
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+votar votar VMN0000 votar VMN01S0 votar VMN03S0 votar VMSF1S0 votar VMSF3S0
+promovesse promover VMSI1S0 promover VMSI3S0
+palestras palestra NCFP000 palestrar VMIP2S0
+de de SPS00
+interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
+acadêmico acadêmico AQ0MS0
+, , Fc
+filosófico filosófico AQ0MS0
+. . Fp
+
+25 25 Z
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+simplesmente simplesmente RG
+fique ficar VMM03S0 ficar VMSP1S0 ficar VMSP3S0
+atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
+, , Fc
+defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
+e e CC
+informe informe AQ0CS0 informe NCCS000 informe NCMS000 informar VMM03S0 informar VMSP1S0 informar VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+assuntos assunto NCMP000
+pertinentes pertinente AQ0CP0
+e e CC
+de de SPS00
+interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
+restrito restrito AQ0MS0 restringir VMP00SM
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+. . Fp
+
+26 26 Z
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+associada associado AQ0FS0 associado NCFS000 associar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+, , Fc
+estou estar VMIP1S0
+insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
+com com SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+rumos rumo NCMP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+tomou tomar VMIS3S0
+, , Fc
+e e CC
+sinto sentir VMIP1S0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+efetivos efetivo AQ0MP0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+não não RN
+estão estar VMIP3P0
+sendo ser VMG0000
+contemplados contemplar VMP00PM
+. . Fp
+
+27 27 Z
+diretoria diretoria NCFS000
+transparente transparente AQ0CS0 transparente NCCS000 transparente NCMS000 transparentar VMM03S0 transparentar VMSP1S0 transparentar VMSP3S0
+e e CC
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+lute lutar VMM03S0 lutar VMSP1S0 lutar VMSP3S0
+por por SPS00
+a o DA0FS0
+universidade universidade NCFS000
+pública público AQ0FS0
+e e CC
+gratuita gratuito AQ0FS0
+e e CC
+por por SPS00
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+recursos recurso NCMP000
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+sua seu DP3FSS seu PX3FS0S0 suar VMIP3S0 suar VMM02S0
+manutenção manutenção NCFS000
+lutar lutar VMN0000 lutar VMN01S0 lutar VMN03S0 lutar VMSF1S0 lutar VMSF3S0
+pelos por+os SPS00+*
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+reais real AQ0CP0 real NCMP000
+salariais salarial AQ0CP0 salariar VMIP2P0
+. . Fp
+
+28 28 Z
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+poder poder NCMS000 poder VMN0000 poder VMN01S0 poder VMN03S0
+desempenhar desempenhar VMN0000 desempenhar VMN01S0 desempenhar VMN03S0 desempenhar VMSF1S0 desempenhar VMSF3S0
+essas esse DD0FP0 esse PD0FP000
+funções função NCFP000
+, , Fc
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+deve deve NCMS000 dever VMIP3S0 dever VMM02S0
+ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
+independente independente AQ0CS0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+administração administração NCFS000
+, , Fc
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+governos governo NCMP000
+estadual estadual AQ0CS0
+e e CC
+federal federal AQ0CS0
+, , Fc
+e e CC
+de de SPS00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+partidários partidário AQ0MP0 partidário NCMP000
+/ / Fh
+eleitorais eleitoral AQ0CP0
+. . Fp
+
+29 29 Z
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+gerais geral AQ0CP0 geral NCCP000 geral NCFP000 gerais NCMP000 gerar VMIP2P0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+e e CC
+contribua contribuir VMM03S0 contribuir VMSP1S0 contribuir VMSP3S0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+transformar transformar VMN0000 transformar VMN01S0 transformar VMN03S0 transformar VMSF1S0 transformar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+em em SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+universidade universidade NCFS000
+de de SPS00
+excelência excelência NCFS000 excelência PP3CS000
+internacional internacional AQ0CS0 internacional NCCS000 internacional NCFS000
+. . Fp
+
+30 30 Z
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+dedicação dedicação NCFS000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+problemas problema NCMP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+maioria maioria NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+e e CC
+, , Fc
+sobretudo sobretudo NCMS000 sobretudo RG
+deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
+de de SPS00
+representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
+“ “ Fra
+exclusivamente exclusivamente RG
+” ” Frc
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+políticos político AQ0MP0 político NCMP000
+/ / Fh
+partidários partidário AQ0MP0 partidário NCMP000
+de de SPS00
+uns um AQ0MP0 um DI0MP0 um NCMP000 um PI0MP000
+poucos pouco AQ0MP0 pouco DI0MP0 pouco NCMP000 pouco PI0MP000
+membros membro NCMP000
+. . Fp
+
+31 31 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+política político AQ0FS0 política NCFS000
+partidária partidário AQ0FS0 partidário NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interessantes interessante AQ0CP0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+em em SPS00
+vez vez NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+funcionários funcionário NCMP000
+e e CC
+estudantes estudante NCCP000
+. . Fp
+
+32 32 Z
 defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -633,183 +887,48 @@ alunos aluno NCMP000
 ) ) Fpt
 . . Fp
 
-24 24 Z
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-dedicação dedicação NCFS000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-problemas problema NCMP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-maioria maioria NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-de de SPS00
+33 33 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
+parou parar VMIS3S0
+esta este DD0FS0 este PD0FS000
+luta luta NCFS000 lutar VMIP3S0 lutar VMM02S0
 e e CC
-, , Fc
-sobretudo sobretudo NCMS000 sobretudo RG
-deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
-de de SPS00
-representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
-“ “ Fra
-exclusivamente exclusivamente RG
-” ” Frc
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-políticos político AQ0MP0 político NCMP000
-/ / Fh
-partidários partidário AQ0MP0 partidário NCMP000
-de de SPS00
-uns um AQ0MP0 um DI0MP0 um NCMP000 um PI0MP000
-poucos pouco AQ0MP0 pouco DI0MP0 pouco NCMP000 pouco PI0MP000
-membros membro NCMP000
-. . Fp
-
-25 25 Z
-ações ação NCFP000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-voltadas voltado AQ0FP0 voltar VMP00PF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+agora agora RG
+fica ficar VMIP3S0 ficar VMM02S0
+atendendo atender VMG0000
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-corpo corpo NCMS000
-docente docente AQ0CS0 docente NCCS000
-e e CC
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-menor menor AQ0CS0 menor NCCS000 menor NCMS000
-atuação atuação NCFS000
-política político AQ0FS0 política NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
-de de SPS00
-sua seu DP3FSS seu PX3FS0S0 suar VMIP3S0 suar VMM02S0
-missão missão NCFS000
-principal principal AQ0CS0 principal NCCS000 principal NCMS000
-( ( Fpa
-envolvimento envolvimento NCMS000
-partidário partidário AQ0MS0 partidário NCMS000
-, , Fc
-por por SPS00
-exemplo exemplo NCMS000 exemplar VMIP1S0
-) ) Fpt
-. . Fp
-
-26 26 Z
-votação votação NCFS000
-online online RG
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-todas todo AQ0FP0 todo DI0FP0 todo NCFP000 todo PI0FP000
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-decisões decisão NCFP000
-sem sem SPS00
-necessidade necessidade NCFS000
-de de SPS00
-ir ir VMN0000 ir VMN01S0 ir VMN03S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-assembleia assembleia NCFS000
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-votar votar VMN0000 votar VMN01S0 votar VMN03S0 votar VMSF1S0 votar VMSF3S0
-promovesse promover VMSI1S0 promover VMSI3S0
-palestras palestra NCFP000 palestrar VMIP2S0
-de de SPS00
-interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
-acadêmico acadêmico AQ0MS0
-, , Fc
-filosófico filosófico AQ0MS0
-. . Fp
-
-27 27 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-simplesmente simplesmente RG
-fique ficar VMM03S0 ficar VMSP1S0 ficar VMSP3S0
-atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
-, , Fc
-defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
-e e CC
-informe informe AQ0CS0 informe NCCS000 informe NCMS000 informar VMM03S0 informar VMSP1S0 informar VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-assuntos assunto NCMP000
-pertinentes pertinente AQ0CP0
-e e CC
-de de SPS00
-interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
-restrito restrito AQ0MS0 restringir VMP00SM
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-28 28 Z
+grupo grupo NCMS000 grupar VMIP1S0
 como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-associada associado AQ0FS0 associado NCFS000 associar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-, , Fc
-estou estar VMIP1S0
-insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
-com com SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-rumos rumo NCMP000
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+conviver conviver VMN0000 conviver VMN01S0 conviver VMN03S0 conviver VMSF1S0 conviver VMSF3S0
+. . Fp
+
+34 34 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+esteja estar VMM03S0 estar VMSP1S0 estar VMSP3S0
+atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-tomou tomar VMIS3S0
-, , Fc
-e e CC
-sinto sentir VMIP1S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+nossos nosso DP1MPP nossos NCMP000 nosso PX1MP0P0
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-efetivos efetivo AQ0MP0
+e e CC
+participativa participativo AQ0FS0
+em em SPS00
+defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-não não RN
-estão estar VMIP3P0
-sendo ser VMG0000
-contemplados contemplar VMP00PM
+valores valor NCMP000 valorar VMM02S0 valorar VMSP2S0
+democráticos democrático AQ0MP0
+e e CC
+de de SPS00
+melhoria melhoria NCFS000
+social social AQ0CS0
 . . Fp
 
-29 29 Z
-diretoria diretoria NCFS000
-transparente transparente AQ0CS0 transparente NCCS000 transparente NCMS000 transparentar VMM03S0 transparentar VMSP1S0 transparentar VMSP3S0
-e e CC
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-lute lutar VMM03S0 lutar VMSP1S0 lutar VMSP3S0
-por por SPS00
-a o DA0FS0
-universidade universidade NCFS000
-pública público AQ0FS0
-e e CC
-gratuita gratuito AQ0FS0
-e e CC
-por por SPS00
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-recursos recurso NCMP000
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-sua seu DP3FSS seu PX3FS0S0 suar VMIP3S0 suar VMM02S0
-manutenção manutenção NCFS000
-lutar lutar VMN0000 lutar VMN01S0 lutar VMN03S0 lutar VMSF1S0 lutar VMSF3S0
-pelos por+os SPS00+*
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-reais real AQ0CP0 real NCMP000
-salariais salarial AQ0CP0 salariar VMIP2P0
-. . Fp
-
-30 30 Z
+35 35 Z
 lutasse lutar VMSI1S0 lutar VMSI3S0
 pelos por+os SPS00+*
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
@@ -834,171 +953,7 @@ o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 stu stu UNK
 . . Fp
 
-31 31 Z
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-poder poder NCMS000 poder VMN0000 poder VMN01S0 poder VMN03S0
-desempenhar desempenhar VMN0000 desempenhar VMN01S0 desempenhar VMN03S0 desempenhar VMSF1S0 desempenhar VMSF3S0
-essas esse DD0FP0 esse PD0FP000
-funções função NCFP000
-, , Fc
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-deve deve NCMS000 dever VMIP3S0 dever VMM02S0
-ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
-independente independente AQ0CS0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-administração administração NCFS000
-, , Fc
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-governos governo NCMP000
-estadual estadual AQ0CS0
-e e CC
-federal federal AQ0CS0
-, , Fc
-e e CC
-de de SPS00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-partidários partidário AQ0MP0 partidário NCMP000
-/ / Fh
-eleitorais eleitoral AQ0CP0
-. . Fp
-
-32 32 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-política político AQ0FS0 política NCFS000
-partidária partidário AQ0FS0 partidário NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interessantes interessante AQ0CP0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-em em SPS00
-vez vez NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-funcionários funcionário NCMP000
-e e CC
-estudantes estudante NCCP000
-. . Fp
-
-33 33 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-gerais geral AQ0CP0 geral NCCP000 geral NCFP000 gerais NCMP000 gerar VMIP2P0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-e e CC
-contribua contribuir VMM03S0 contribuir VMSP1S0 contribuir VMSP3S0
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-transformar transformar VMN0000 transformar VMN01S0 transformar VMN03S0 transformar VMSF1S0 transformar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-em em SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-universidade universidade NCFS000
-de de SPS00
-excelência excelência NCFS000 excelência PP3CS000
-internacional internacional AQ0CS0 internacional NCCS000 internacional NCFS000
-. . Fp
-
-34 34 Z
-em em SPS00
-primeiro primeiro AO0MS0 primeiro AQ0MS0 primeiro NCMS000 primeiro RG
-lugar lugar NCMS000
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-entidade entidade NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-e e CC
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-esteja estar VMM03S0 estar VMSP1S0 estar VMSP3S0
-realmente realmente RG
-preocupado preocupado AQ0MS0 preocupar VMP00SM
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-melhoria melhoria NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-classe classe NCFS000 classar VMM03S0 classar VMSP1S0 classar VMSP3S0
-docente docente AQ0CS0 docente NCCS000
-. . Fp
-
-35 35 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-parou parar VMIS3S0
-esta este DD0FS0 este PD0FS000
-luta luta NCFS000 lutar VMIP3S0 lutar VMM02S0
-e e CC
-agora agora RG
-fica ficar VMIP3S0 ficar VMM02S0
-atendendo atender VMG0000
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-grupo grupo NCMS000 grupar VMIP1S0
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-conviver conviver VMN0000 conviver VMN01S0 conviver VMN03S0 conviver VMSF1S0 conviver VMSF3S0
-. . Fp
-
 36 36 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-esteja estar VMM03S0 estar VMSP1S0 estar VMSP3S0
-atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-nossos nosso DP1MPP nossos NCMP000 nosso PX1MP0P0
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-e e CC
-participativa participativo AQ0FS0
-em em SPS00
-defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-valores valor NCMP000 valorar VMM02S0 valorar VMSP2S0
-democráticos democrático AQ0MP0
-e e CC
-de de SPS00
-melhoria melhoria NCFS000
-social social AQ0CS0
-. . Fp
-
-37 37 Z
-representatividade representatividade NCFS000
-em em SPS00
-negociações negociação NCFP000
-de de SPS00
-interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-melhorar melhorar VMN0000 melhorar VMN01S0 melhorar VMN03S0 melhorar VMSF1S0 melhorar VMSF3S0
-convênio convênio NCMS000
-médico médico AQ0MS0 médico NCMS000
-e e CC
-atividades atividade NCFP000
-sociais social AQ0CP0
-. . Fp
-
-38 38 Z
 segundo segundo AO0MS0 segundo AQ0MS0 segundo CC segundo NCMS000 segundo RG segundo SPS00 segundar VMIP1S0
 , , Fc
 atuar atuar VMN0000 atuar VMN01S0 atuar VMN03S0 atuar VMSF1S0 atuar VMSF3S0
@@ -1022,7 +977,7 @@ categoria categoria NCFS000
 docente docente AQ0CS0 docente NCCS000
 . . Fp
 
-39 39 Z
+37 37 Z
 maior maior AQ0CS0 maior NCCS000 maior NCMS000
 comunicação comunicação NCFS000
 ( ( Fpa
@@ -1044,7 +999,7 @@ enquanto enquanto CS enquanto RG
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-40 40 Z
+38 38 Z
 estimular estimular VMN0000 estimular VMN01S0 estimular VMN03S0 estimular VMSF1S0 estimular VMSF3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 participação participação NCFS000
@@ -1062,7 +1017,7 @@ viés viés NCMN000 viés NCMS000
 ideológico ideológico AQ0MS0
 . . Fp
 
-41 41 Z
+39 39 Z
 representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
@@ -1093,7 +1048,7 @@ governo governo NCMS000 governar VMIP1S0
 estadual estadual AQ0CS0
 . . Fp
 
-42 42 Z
+40 40 Z
 gestão gestão NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 concentrasse concentrar VMSI1S0 concentrar VMSI3S0
@@ -1124,7 +1079,7 @@ ou ou CC
 político-partidários político-partidário AQ0MP0
 . . Fp
 
-43 43 Z
+41 41 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 realmente realmente RG
 fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
@@ -1162,7 +1117,25 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 diretoria diretoria NCFS000
 . . Fp
 
-44 44 Z
+42 42 Z
+representatividade representatividade NCFS000
+em em SPS00
+negociações negociação NCFP000
+de de SPS00
+interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+melhorar melhorar VMN0000 melhorar VMN01S0 melhorar VMN03S0 melhorar VMSF1S0 melhorar VMSF3S0
+convênio convênio NCMS000
+médico médico AQ0MS0 médico NCMS000
+e e CC
+atividades atividade NCFP000
+sociais social AQ0CP0
+. . Fp
+
+43 43 Z
 apoio apoio NCMS000 apoiar VMIP1S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -1186,33 +1159,34 @@ sigla sigla NCFS000 siglar VMIP3S0 siglar VMM02S0
 adunicamp adunicamp UNK
 . . Fp
 
-45 45 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-ou ou CC
-nenhuma nenhum AQ0FS0 nenhum DI0FS0 nenhum PI0FS000
-militância militância NCFS000
-ou ou CC
-posicionamento posicionamento NCFS000 posicionamento NCMS000
-político político AQ0MS0 político NCMS000
-/ / Fh
-partidária partidário AQ0FS0 partidário NCFS000
-“ “ Fra
+44 44 Z
 em em SPS00
-nome nome NCMS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-” ” Frc
-e e CC
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
-de de SPS00
+primeiro primeiro AO0MS0 primeiro AQ0MS0 primeiro NCMS000 primeiro RG
+lugar lugar NCMS000
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+entidade entidade NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
+e e CC
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+esteja estar VMM03S0 estar VMSP1S0 estar VMSP3S0
+realmente realmente RG
+preocupado preocupado AQ0MS0 preocupar VMP00SM
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+melhoria melhoria NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+classe classe NCFS000 classar VMM03S0 classar VMSP1S0 classar VMSP3S0
+docente docente AQ0CS0 docente NCCS000
 . . Fp
 
-46 46 Z
+45 45 Z
 adunicamp adunicamp UNK
 sem sem SPS00
 vinculação vinculação NCFS000
@@ -1225,7 +1199,7 @@ alguns algum AQ0MP0 algum DI0MP0 algum PI0MP000
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-47 47 Z
+46 46 Z
 entidade entidade NCFS000
 realmente realmente RG
 representativa representativo AQ0FS0
@@ -1243,7 +1217,7 @@ seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 . . Fp
 
-48 48 Z
+47 47 Z
 ter ter VMN0000 ter VMN01S0 ter VMN03S0
 uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
 associação associação NCFS000
@@ -1262,7 +1236,7 @@ suma sumo AQ0FS0 suma NCFS000 sumir VMM03S0 sumir VMSP1S0 sumir VMSP3S0
 importância importância NCFS000
 . . Fp
 
-49 49 Z
+48 48 Z
 ) ) Fpt
 e e CC
 , , Fc
@@ -1283,30 +1257,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 categoria categoria NCFS000
 . . Fp
 
-50 50 Z
-cuidar cuidar VMN0000 cuidar VMN01S0 cuidar VMN03S0 cuidar VMSF1S0 cuidar VMSF3S0
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-e e CC
-tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-sede sede NCFS000 ser VMM02P0 sedar VMM03S0 sedar VMSP1S0 sedar VMSP3S0
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-convidativa convidativo AQ0FS0
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-esses esse DD0MP0 esse NCMP000 esse PD0MP000
-docentes docente AQ0CP0 docente NCCP000
-. . Fp
-
-51 51 Z
+49 49 Z
 atuar atuar VMN0000 atuar VMN01S0 atuar VMN03S0 atuar VMSF1S0 atuar VMSF3S0
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 em em SPS00
@@ -1332,7 +1283,7 @@ interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 partidários partidário AQ0MP0 partidário NCMP000
 . . Fp
 
-52 52 Z
+50 50 Z
 discussão discussão NCFS000
 de de SPS00
 temas tema NCMP000 temer VMM02S0 temer VMSP2S0
@@ -1347,7 +1298,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 sociedade sociedade NCFS000
 . . Fp
 
-53 53 Z
+51 51 Z
 adunicamp adunicamp UNK
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 cuidasse cuidar VMSI1S0 cuidar VMSI3S0
@@ -1365,7 +1316,7 @@ ou ou CC
 política político AQ0FS0 política NCFS000
 . . Fp
 
-54 54 Z
+52 52 Z
 associação associação NCFS000
 centrada centrado AQ0FS0 centrar VMP00SF
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -1378,6 +1329,55 @@ docentes docente AQ0CP0 docente NCCP000
 frente frente NCCS000 frente NCFS000
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 reitoria reitoria NCFS000
+. . Fp
+
+53 53 Z
+cuidar cuidar VMN0000 cuidar VMN01S0 cuidar VMN03S0 cuidar VMSF1S0 cuidar VMSF3S0
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+e e CC
+tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+sede sede NCFS000 ser VMM02P0 sedar VMM03S0 sedar VMSP1S0 sedar VMSP3S0
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+convidativa convidativo AQ0FS0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+esses esse DD0MP0 esse NCMP000 esse PD0MP000
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+54 54 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+ou ou CC
+nenhuma nenhum AQ0FS0 nenhum DI0FS0 nenhum PI0FS000
+militância militância NCFS000
+ou ou CC
+posicionamento posicionamento NCFS000 posicionamento NCMS000
+político político AQ0MS0 político NCMS000
+/ / Fh
+partidária partidário AQ0FS0 partidário NCFS000
+“ “ Fra
+em em SPS00
+nome nome NCMS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+” ” Frc
+e e CC
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
 55 55 Z
@@ -1469,35 +1469,6 @@ docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
 60 60 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-deve deve NCMS000 dever VMIP3S0 dever VMM02S0
-prioritariamente prioritariamente RG
-defender defender VMN0000 defender VMN01S0 defender VMN03S0 defender VMSF1S0 defender VMSF3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-todos todo AQ0MP0 todo DI0MP0 todo NCMP000 todo PI0MP000
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-. . Fp
-
-61 61 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-política político AQ0FS0 política NCFS000
-partidária partidário AQ0FS0 partidário NCFS000
-e e CC
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-. . Fp
-
-62 62 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -1513,21 +1484,36 @@ docentes docente AQ0CP0 docente NCCP000
 ) ) Fpt
 . . Fp
 
-63 63 Z
+61 61 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+deve deve NCMS000 dever VMIP3S0 dever VMM02S0
+prioritariamente prioritariamente RG
+defender defender VMN0000 defender VMN01S0 defender VMN03S0 defender VMSF1S0 defender VMSF3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+todos todo AQ0MP0 todo DI0MP0 todo NCMP000 todo PI0MP000
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+62 62 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+política político AQ0FS0 política NCFS000
+partidária partidário AQ0FS0 partidário NCFS000
+e e CC
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-e e CC
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-política político AQ0FS0 política NCFS000
-partidária partidário AQ0FS0 partidário NCFS000
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
 . . Fp
 
-64 64 Z
+63 63 Z
 eu eu NCMS000 eu PP1CSN00
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
@@ -1539,6 +1525,20 @@ interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
+. . Fp
+
+64 64 Z
+defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+e e CC
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+política político AQ0FS0 política NCFS000
+partidária partidário AQ0FS0 partidário NCFS000
 . . Fp
 
 65 65 Z
@@ -1740,52 +1740,6 @@ docente docente AQ0CS0 docente NCCS000
 . . Fp
 
 68 68 Z
-engajamento engajamento NCMS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-em em SPS00
-ações ação NCFP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-representem representar VMM03P0 representar VMSP3P0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-principalmente principalmente RG
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-diz dizer VMIP3S0 dizer VMM02S0
-respeito respeito NCMS000 respeitar VMIP1S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-questões questão NCFP000
-de de SPS00
-assistência assistência NCFS000
-médica médico AQ0FS0 médica NCFS000
-com com SPS00
-planos plano AQ0MP0 plano NCMP000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-competitivos competitivo AQ0MP0
-e e CC
-acessíveis acessível AQ0CP0
-, , Fc
-assistência assistência NCFS000
-jurídica jurídico AQ0FS0
-não não RN
-limitada limitado AQ0FS0 limitar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-consulta consulto AQ0FS0 consulta NCFS000 consultar VMIP3S0 consultar VMM02S0
-inicial inicial AQ0CS0 inicial NCCS000 inicial NCFS000
-. . Fp
-
-69 69 Z
 sem sem SPS00
 se se CS se PP3CN000
 sintonizar sintonizar VMN0000 sintonizar VMN01S0 sintonizar VMN03S0 sintonizar VMSF1S0 sintonizar VMSF3S0
@@ -1838,7 +1792,7 @@ vezes vez NCFP000 vezes RG vezar VMM02S0 vezar VMSP2S0
 majoritárias majoritário AQ0FP0
 . . Fp
 
-70 70 Z
+69 69 Z
 como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
 associação associação NCFS000
 de de SPS00
@@ -1891,7 +1845,7 @@ governo governo NCMS000 governar VMIP1S0
 estadual estadual AQ0CS0
 . . Fp
 
-71 71 Z
+70 70 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -1930,6 +1884,52 @@ de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 participação participação NCFS000
 ampla amplo AQ0FS0
+. . Fp
+
+71 71 Z
+engajamento engajamento NCMS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+em em SPS00
+ações ação NCFP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+representem representar VMM03P0 representar VMSP3P0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+, , Fc
+principalmente principalmente RG
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+diz dizer VMIP3S0 dizer VMM02S0
+respeito respeito NCMS000 respeitar VMIP1S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+questões questão NCFP000
+de de SPS00
+assistência assistência NCFS000
+médica médico AQ0FS0 médica NCFS000
+com com SPS00
+planos plano AQ0MP0 plano NCMP000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+competitivos competitivo AQ0MP0
+e e CC
+acessíveis acessível AQ0CP0
+, , Fc
+assistência assistência NCFS000
+jurídica jurídico AQ0FS0
+não não RN
+limitada limitado AQ0FS0 limitar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+consulta consulto AQ0FS0 consulta NCFS000 consultar VMIP3S0 consultar VMM02S0
+inicial inicial AQ0CS0 inicial NCCS000 inicial NCFS000
 . . Fp
 
 72 72 Z
@@ -2004,43 +2004,6 @@ nós nó NCMP000 nós PP1CP000
 . . Fp
 
 74 74 Z
-voltar voltar VMN0000 voltar VMN01S0 voltar VMN03S0 voltar VMSF1S0 voltar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-associação associação NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-representa representar VMIP3S0 representar VMM02S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-categoria categoria NCFS000
-docente docente AQ0CS0 docente NCCS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-se se CS se PP3CN000
-movimenta movimentar VMIP3S0 movimentar VMM02S0
-em em SPS00
-prol prol NCFS000 prol NCMS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-e e CC
-valorize valorizar VMM03S0 valorizar VMSP1S0 valorizar VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-atividade atividade NCFS000
-de de SPS00
-docência docência NCFS000
-e e CC
-pesquisa pesquisa NCFS000 pesquisar VMIP3S0 pesquisar VMM02S0
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-sociedade sociedade NCFS000
-brasileira brasileiro AQ0FS0 brasileiro NCFS000 brasileirar VMIP3S0 brasileirar VMM02S0
-. . Fp
-
-75 75 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 deve deve NCMS000 dever VMIP3S0 dever VMM02S0
@@ -2070,7 +2033,7 @@ são são AQ0MS0 são NCMS000 ser VMIP3P0
 empregados empregado AQ0MP0 empregado NCMP000 empregar VMP00PM
 . . Fp
 
-76 76 Z
+75 75 Z
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 iniciativas iniciativo AQ0FP0 iniciativa NCFP000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
@@ -2113,7 +2076,7 @@ e e CC
 pesquisa pesquisa NCFS000 pesquisar VMIP3S0 pesquisar VMM02S0
 . . Fp
 
-77 77 Z
+76 76 Z
 representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
@@ -2147,7 +2110,7 @@ concertos concerto NCMP000
 palestras palestra NCFP000 palestrar VMIP2S0
 . . Fp
 
-78 78 Z
+77 77 Z
 penso penso AQ0MS0 penso NCMS000 pensar VMIP1S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -2174,7 +2137,130 @@ esse esse DD0MP0 esse PD0MP000
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
+78 78 Z
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+entanto entanto CS entanto RG
+gostei gostar VMIS1S0
+muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+proposta proposto AQ0FS0 proposta NCFS000 propor VMP00SF
+apresentada apresentado AQ0FS0 apresentar VMP00SF
+e e CC
+acredito acreditar VMIP1S0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+representa representar VMIP3S0 representar VMM02S0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+contribuição contribuição NCFS000
+necessária necessário AQ0FS0 necessária NCFS000
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+se se CS se PP3CN000
+atualize atualizar VMM03S0 atualizar VMSP1S0 atualizar VMSP3S0
+e e CC
+desempene desempenar VMM03S0 desempenar VMSP1S0 desempenar VMSP3S0
+seu seu DP3MSS seu NCMS000 seu PX3MS0P0 seu PX3MS0S0
+papel papel NCMS000
+com com SPS00
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+eficácia eficácia NCFS000
+e e CC
+representatividade representatividade NCFS000
+. . Fp
+
 79 79 Z
+ação ação NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+prioritariamente prioritariamente RG
+em em SPS00
+prol prol NCFS000 prol NCMS000
+de de SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+demandas demanda NCFP000 demandar VMIP2S0
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+interna interno AQ0FS0 interno NCFS000 internar VMIP3S0 internar VMM02S0
+( ( Fpa
+inúmeras inúmero AQ0FP0
+) ) Fpt
+e e CC
+externamente externamente RG
+( ( Fpa
+mudança mudança NCFS000
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+teto teto NCMS000
+salarial salarial AQ0CS0
+, , Fc
+por por SPS00
+ex ex AQ0CN0 ex NCCN000
+. . Fp
+
+80 80 Z
+tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+( ( Fpa
+politicamente politicamente RG
+) ) Fpt
+apartidária apartidário AQ0FS0
+e e CC
+revigorar revigorar VMN0000 revigorar VMN01S0 revigorar VMN03S0 revigorar VMSF1S0 revigorar VMSF3S0
+seu seu DP3MSS seu NCMS000 seu PX3MS0P0 seu PX3MS0S0
+papel papel NCMS000
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+funcionamento funcionamento NCMS000
+geral geral AQ0CS0 geral NCCS000 geral NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+, , Fc
+dando dar VMG0000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+prerrogativas prerrogativa NCFP000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+81 81 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+politização politização NCFS000
+e e CC
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+empenho empenho NCMS000 empenhar VMIP1S0
+em em SPS00
+ajudar ajudar VMN0000 ajudar VMN01S0 ajudar VMN03S0 ajudar VMSF1S0 ajudar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+recuperar recuperar VMN0000 recuperar VMN01S0 recuperar VMN03S0 recuperar VMSF1S0 recuperar VMSF3S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+crescimento crescimento NCMS000
+econômico econômico AQ0MS0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+estado estada AQ0MS0 estado NCMS000 estar VMP00SM
+de de SPS00
+são são AQ0MS0 são NCMS000 ser VMIP3P0
+paulo paulo UNK
+, , Fc
+essencial essencial AQ0CS0 essencial NCCS000 essencial NCMS000
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+saúde saúde NCFS000 saudar VMM03S0 saudar VMSP1S0 saudar VMSP3S0
+financeira financeiro AQ0FS0 financeiro NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+. . Fp
+
+82 82 Z
 apartidária apartidário AQ0FS0
 , , Fc
 não não RN
@@ -2210,130 +2296,470 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
-80 80 Z
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-entanto entanto CS entanto RG
-gostei gostar VMIS1S0
-muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
+83 83 Z
+também também CC também I também RG
+considero considerar VMIP1S0
+importante importante AQ0CS0 importante NCCS000 importante NCMS000
+atividades atividade NCFP000
+socioculturais sociocultural AQ0CP0
 de de SPS00
+forma forma NCFS000 formar VMIP3S0 formar VMM02S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-proposta proposto AQ0FS0 proposta NCFS000 propor VMP00SF
-apresentada apresentado AQ0FS0 apresentar VMP00SF
-e e CC
-acredito acreditar VMIP1S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-representa representar VMIP3S0 representar VMM02S0
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-contribuição contribuição NCFS000
-necessária necessário AQ0FS0 necessária NCFS000
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-se se CS se PP3CN000
-atualize atualizar VMM03S0 atualizar VMSP1S0 atualizar VMSP3S0
-e e CC
-desempene desempenar VMM03S0 desempenar VMSP1S0 desempenar VMSP3S0
-seu seu DP3MSS seu NCMS000 seu PX3MS0P0 seu PX3MS0S0
-papel papel NCMS000
-com com SPS00
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-eficácia eficácia NCFS000
-e e CC
-representatividade representatividade NCFS000
-. . Fp
-
-81 81 Z
-ação ação NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-prioritariamente prioritariamente RG
-em em SPS00
-prol prol NCFS000 prol NCMS000
+integrar integrar VMN0000 integrar VMN01S0 integrar VMN03S0 integrar VMSF1S0 integrar VMSF3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
 de de SPS00
 as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-demandas demanda NCFP000 demandar VMIP2S0
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-interna interno AQ0FS0 interno NCFS000 internar VMIP3S0 internar VMM02S0
-( ( Fpa
-inúmeras inúmero AQ0FP0
-) ) Fpt
-e e CC
-externamente externamente RG
-( ( Fpa
-mudança mudança NCFS000
-de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-teto teto NCMS000
-salarial salarial AQ0CS0
-, , Fc
-por por SPS00
-ex ex AQ0CN0 ex NCCN000
-. . Fp
-
-82 82 Z
-tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-( ( Fpa
-politicamente politicamente RG
-) ) Fpt
-apartidária apartidário AQ0FS0
-e e CC
-revigorar revigorar VMN0000 revigorar VMN01S0 revigorar VMN03S0 revigorar VMSF1S0 revigorar VMSF3S0
-seu seu DP3MSS seu NCMS000 seu PX3MS0P0 seu PX3MS0S0
-papel papel NCMS000
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-funcionamento funcionamento NCMS000
-geral geral AQ0CS0 geral NCCS000 geral NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-dando dar VMG0000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-prerrogativas prerrogativa NCFP000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-. . Fp
-
-83 83 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-politização politização NCFS000
-e e CC
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-empenho empenho NCMS000 empenhar VMIP1S0
-em em SPS00
-ajudar ajudar VMN0000 ajudar VMN01S0 ajudar VMN03S0 ajudar VMSF1S0 ajudar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-recuperar recuperar VMN0000 recuperar VMN01S0 recuperar VMN03S0 recuperar VMSF1S0 recuperar VMSF3S0
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-crescimento crescimento NCMS000
-econômico econômico AQ0MS0
-de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-estado estada AQ0MS0 estado NCMS000 estar VMP00SM
-de de SPS00
-são são AQ0MS0 são NCMS000 ser VMIP3P0
-paulo paulo UNK
-, , Fc
-essencial essencial AQ0CS0 essencial NCCS000 essencial NCMS000
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-saúde saúde NCFS000 saudar VMM03S0 saudar VMSP1S0 saudar VMSP3S0
-financeira financeiro AQ0FS0 financeiro NCFS000
-de de SPS00
+diversas diverso AQ0FP0
+instituições instituição NCFP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+compreendem compreender VMIP3P0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
 84 84 Z
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+simplesmente simplesmente RG
+fique ficar VMM03S0 ficar VMSP1S0 ficar VMSP3S0
+atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
+, , Fc
+defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
+e e CC
+informe informe AQ0CS0 informe NCCS000 informe NCMS000 informar VMM03S0 informar VMSP1S0 informar VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+assuntos assunto NCMP000
+pertinentes pertinente AQ0CP0
+e e CC
+de de SPS00
+interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
+restrito restrito AQ0MS0 restringir VMP00SM
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+. . Fp
+
+85 85 Z
+qua qua UNK
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+lealdade lealdade NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
+dirigida dirigido AQ0FS0 dirigir VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+e e CC
+não não RN
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+ou ou CC
+agendas agenda NCFP000 agendar VMIP2S0
+ideológicas ideológico AQ0FP0
+ocultas oculto AQ0FP0 ocultas NCFP000 ocultar VMIP2S0 ocultar VMP00PF
+de de SPS00
+seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
+diretores diretor AQ0MP0 diretor NCMP000
+. . Fp
+
+86 86 Z
+transparência transparência NCFS000
+e e CC
+respeito respeito NCMS000 respeitar VMIP1S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+opinião opinião NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+maioria maioria NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+principalmente principalmente RG
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+concerne concernir VMIP3S0 concernir VMM02S0
+manifestações manifestação NCFP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+sociedade sociedade NCFS000
+e e CC
+em em SPS00
+posicionamento posicionamento NCFS000 posicionamento NCMS000
+em em SPS00
+momentos momento NCMP000
+históricos histórico AQ0MP0 histórico NCMP000
+. . Fp
+
+87 87 Z
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+associada associado AQ0FS0 associado NCFS000 associar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+, , Fc
+estou estar VMIP1S0
+insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
+com com SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+rumos rumo NCMP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+tomou tomar VMIS3S0
+, , Fc
+e e CC
+sinto sentir VMIP1S0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+efetivos efetivo AQ0MP0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+não não RN
+estão estar VMIP3P0
+sendo ser VMG0000
+contemplados contemplar VMP00PM
+. . Fp
+
+88 88 Z
+voltar voltar VMN0000 voltar VMN01S0 voltar VMN03S0 voltar VMSF1S0 voltar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+associação associação NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+representa representar VMIP3S0 representar VMM02S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+categoria categoria NCFS000
+docente docente AQ0CS0 docente NCCS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+se se CS se PP3CN000
+movimenta movimentar VMIP3S0 movimentar VMM02S0
+em em SPS00
+prol prol NCFS000 prol NCMS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
+e e CC
+valorize valorizar VMM03S0 valorizar VMSP1S0 valorizar VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+atividade atividade NCFS000
+de de SPS00
+docência docência NCFS000
+e e CC
+pesquisa pesquisa NCFS000 pesquisar VMIP3S0 pesquisar VMM02S0
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+sociedade sociedade NCFS000
+brasileira brasileiro AQ0FS0 brasileiro NCFS000 brasileirar VMIP3S0 brasileirar VMM02S0
+. . Fp
+
+89 89 Z
+também também CC também I também RG
+deve deve NCMS000 dever VMIP3S0 dever VMM02S0
+se se CS se PP3CN000
+envolver envolver VMN0000 envolver VMN01S0 envolver VMN03S0 envolver VMSF1S0 envolver VMSF3S0
+com com SPS00
+outros outro AQ0MP0 outro DI0MP0 outro PI0MP000
+sindicatos sindicato NCMP000
+, , Fc
+desde desde SPS00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+esses esse DD0MP0 esse NCMP000 esse PD0MP000
+estejam estar VMM03P0 estar VMSP3P0
+tratando tratar VMG0000
+de de SPS00
+problemas problema NCMP000
+comuns comum AQ0CP0 comum NCCP000 comum NCMP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+ou ou CC
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+ensino ensino NCMS000 ensinar VMIP1S0
+público público AQ0MS0 público NCMS000
+e e CC
+suas seu DP3FSP seu PX3FP0P0 seu PX3FP0S0 suar VMIP2S0
+condições condição NCFP000
+de de SPS00
+trabalho trabalho NCMS000 trabalhar VMIP1S0
+. . Fp
+
+90 90 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+não não RN
+é ser VMIP3S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+paladino paladino NCMS000 paladinar VMIP1S0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+justiça justiça NCFS000 justiçar VMIP3S0 justiçar VMM02S0
+, , Fc
+nem nem CC
+administradora administrador AQ0FS0 administrador NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+, , Fc
+mas mas CC mas NCMN000 me+as PP1CS000+PP3FPA00 mas RG
+deve deve NCMS000 dever VMIP3S0 dever VMM02S0
+estar estar VMN0000 estar VMN01S0 estar VMN03S0
+muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
+firmemente firmemente RG
+enfrentando enfrentar VMG0000
+esses esse DD0MP0 esse NCMP000 esse PD0MP000
+desafios desafio NCMP000
+. . Fp
+
+91 91 Z
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+gerais geral AQ0CP0 geral NCCP000 geral NCFP000 gerais NCMP000 gerar VMIP2P0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+e e CC
+contribua contribuir VMM03S0 contribuir VMSP1S0 contribuir VMSP3S0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+transformar transformar VMN0000 transformar VMN01S0 transformar VMN03S0 transformar VMSF1S0 transformar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+em em SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+universidade universidade NCFS000
+de de SPS00
+excelência excelência NCFS000 excelência PP3CS000
+internacional internacional AQ0CS0 internacional NCCS000 internacional NCFS000
+. . Fp
+
+92 92 Z
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+dedicação dedicação NCFS000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+problemas problema NCMP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+maioria maioria NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+e e CC
+, , Fc
+sobretudo sobretudo NCMS000 sobretudo RG
+deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
+de de SPS00
+representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
+“ “ Fra
+exclusivamente exclusivamente RG
+” ” Frc
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+políticos político AQ0MP0 político NCMP000
+/ / Fh
+partidários partidário AQ0MP0 partidário NCMP000
+de de SPS00
+uns um AQ0MP0 um DI0MP0 um NCMP000 um PI0MP000
+poucos pouco AQ0MP0 pouco DI0MP0 pouco NCMP000 pouco PI0MP000
+membros membro NCMP000
+. . Fp
+
+93 93 Z
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+participação participação NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+vida vida NCFS000 vidar VMIP3S0 vidar VMM02S0
+administrativa administrativo AQ0FS0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+, , Fc
+participando participar VMG0000
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+convidada convidado AQ0FS0 convidado NCFS000 convidar VMP00SF
+em em SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+reuniões reunião NCFP000
+de de SPS00
+cad cad UNK
+, , Fc
+cepe cepe UNK
+, , Fc
+consu consu UNK
+. . Fp
+
+94 94 Z
+deixo deixar VMIP1S0
+r r NCMS000
+$ 
+200,00 200,00 Z
+todos todo AQ0MP0 todo DI0MP0 todo NCMP000 todo PI0MP000
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+meses mês NCMP000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+conta conta NCFS000 contar VMIP3S0 contar VMM02S0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+ideologia ideologia NCFS000
+e e CC
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+atuação atuação NCFS000
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+papel papel NCMS000
+de de SPS00
+associação associação NCFS000
+de de SPS00
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+95 95 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+entidade entidade NCFS000
+politica politicar VMIP3S0 politicar VMM02S0
+tomando tomar VMG0000
+posição posição NCFS000
+sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
+politica politicar VMIP3S0 politicar VMM02S0
+nacional nacional AQ0CS0 nacional NCCS000 nacional NCMS000
+, , Fc
+não não RN
+fala fala NCFS000 falar VMIP3S0 falar VMM02S0 falir VMM03S0 falir VMSP1S0 falir VMSP3S0
+em em SPS00
+meu meu DP1MSS meu NCMS000 meu PX1MS0S0
+nome nome NCMS000
+. . Fp
+
+96 96 Z
+gostaria gostar VMIC1S0 gostar VMIC3S0
+de de SPS00
+receber receber VMN0000 receber VMN01S0 receber VMN03S0 receber VMSF1S0 receber VMSF3S0
+informes informe AQ0CP0 informe NCCP000 informe NCMP000 informar VMM02S0 informar VMSP2S0
+objetivos objetivo AQ0MP0 objetivo NCMP000
+e e CC
+atualizados atualizar VMP00PM
+sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+problemas problema NCMP000
+enfrentados enfrentado AQ0MP0 enfrentar VMP00PM
+por por SPS00
+a o DA0FS0
+unicamp unicamp UNK
+e e CC
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+ações ação NCFP000
+em em SPS00
+andamento andamento NCMS000
+. . Fp
+
+97 97 Z
+percebo perceber VMIP1S0
+hoje hoje RG
+nossa nosso DP1FSP nosso PX1FS0P0
+associação associação NCFS000
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+sindicato sindicato NCMS000
+, , Fc
+com com SPS00
+atividades atividade NCFP000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+político político AQ0MS0 político NCMS000
+partidária partidário AQ0FS0 partidário NCFS000
+, , Fc
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+envolvida envolvido AQ0FS0 envolver VMP00SF
+com com SPS00
+nossa nosso DP1FSP nosso PX1FS0P0
+realidade realidade NCFS000
+de de SPS00
+trabalho trabalho NCMS000 trabalhar VMIP1S0
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+. . Fp
+
+98 98 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+política político AQ0FS0 política NCFS000
+partidária partidário AQ0FS0 partidário NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interessantes interessante AQ0CP0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+em em SPS00
+vez vez NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+funcionários funcionário NCMP000
+e e CC
+estudantes estudante NCCP000
+. . Fp
+
+99 99 Z
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+houvesse haver VMSI1S0 haver VMSI3S0
+atividades atividade NCFP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+em em SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+faculdades faculdade NCFP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+se se CS se PP3CN000
+localizem localizar VMM03P0 localizar VMSP3P0
+fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+campus campus NCMN000 campus NCMS000
+unicamp unicamp UNK
+/ / Fh
+campinas campina AQ0CP0 campino AQ0FP0 campina NCCP000 campina NCFP000 campina NCMP000
+. . Fp
+
+100 100 Z
 defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -2372,315 +2798,47 @@ alunos aluno NCMP000
 ) ) Fpt
 . . Fp
 
-85 85 Z
-também também CC também I também RG
-considero considerar VMIP1S0
-importante importante AQ0CS0 importante NCCS000 importante NCMS000
-atividades atividade NCFP000
-socioculturais sociocultural AQ0CP0
-de de SPS00
-forma forma NCFS000 formar VMIP3S0 formar VMM02S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-integrar integrar VMN0000 integrar VMN01S0 integrar VMN03S0 integrar VMSF1S0 integrar VMSF3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
-de de SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-diversas diverso AQ0FP0
-instituições instituição NCFP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-compreendem compreender VMIP3P0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-86 86 Z
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-dedicação dedicação NCFS000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-problemas problema NCMP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-maioria maioria NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-de de SPS00
+101 101 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
+parou parar VMIS3S0
+esta este DD0FS0 este PD0FS000
+luta luta NCFS000 lutar VMIP3S0 lutar VMM02S0
 e e CC
-, , Fc
-sobretudo sobretudo NCMS000 sobretudo RG
-deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
-de de SPS00
-representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
-“ “ Fra
-exclusivamente exclusivamente RG
-” ” Frc
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+agora agora RG
+fica ficar VMIP3S0 ficar VMM02S0
+atendendo atender VMG0000
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-políticos político AQ0MP0 político NCMP000
-/ / Fh
-partidários partidário AQ0MP0 partidário NCMP000
 de de SPS00
-uns um AQ0MP0 um DI0MP0 um NCMP000 um PI0MP000
-poucos pouco AQ0MP0 pouco DI0MP0 pouco NCMP000 pouco PI0MP000
-membros membro NCMP000
-. . Fp
-
-87 87 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-simplesmente simplesmente RG
-fique ficar VMM03S0 ficar VMSP1S0 ficar VMSP3S0
-atenta atento AQ0FS0 atentar VMIP3S0 atentar VMM02S0 atentar VMN02S0 atentar VMP00SF
-, , Fc
-defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
-e e CC
-informe informe AQ0CS0 informe NCCS000 informe NCMS000 informar VMM03S0 informar VMSP1S0 informar VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-assuntos assunto NCMP000
-pertinentes pertinente AQ0CP0
-e e CC
-de de SPS00
-interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
-restrito restrito AQ0MS0 restringir VMP00SM
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-88 88 Z
-qua qua UNK
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-lealdade lealdade NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
-dirigida dirigido AQ0FS0 dirigir VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-e e CC
-não não RN
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-ou ou CC
-agendas agenda NCFP000 agendar VMIP2S0
-ideológicas ideológico AQ0FP0
-ocultas oculto AQ0FP0 ocultas NCFP000 ocultar VMIP2S0 ocultar VMP00PF
-de de SPS00
-seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
-diretores diretor AQ0MP0 diretor NCMP000
-. . Fp
-
-89 89 Z
-transparência transparência NCFS000
-e e CC
-respeito respeito NCMS000 respeitar VMIP1S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-opinião opinião NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-maioria maioria NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-principalmente principalmente RG
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-concerne concernir VMIP3S0 concernir VMM02S0
-manifestações manifestação NCFP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-sociedade sociedade NCFS000
-e e CC
-em em SPS00
-posicionamento posicionamento NCFS000 posicionamento NCMS000
-em em SPS00
-momentos momento NCMP000
-históricos histórico AQ0MP0 histórico NCMP000
-. . Fp
-
-90 90 Z
+grupo grupo NCMS000 grupar VMIP1S0
 como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-associada associado AQ0FS0 associado NCFS000 associar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-, , Fc
-estou estar VMIP1S0
-insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
-com com SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-rumos rumo NCMP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-tomou tomar VMIS3S0
-, , Fc
-e e CC
-sinto sentir VMIP1S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-efetivos efetivo AQ0MP0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-não não RN
-estão estar VMIP3P0
-sendo ser VMG0000
-contemplados contemplar VMP00PM
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+conviver conviver VMN0000 conviver VMN01S0 conviver VMN03S0 conviver VMSF1S0 conviver VMSF3S0
 . . Fp
 
-91 91 Z
-também também CC também I também RG
-deve deve NCMS000 dever VMIP3S0 dever VMM02S0
+102 102 Z
+cobra cobra NCFS000 cobrar VMIP3S0 cobrar VMM02S0
 se se CS se PP3CN000
-envolver envolver VMN0000 envolver VMN01S0 envolver VMN03S0 envolver VMSF1S0 envolver VMSF3S0
-com com SPS00
-outros outro AQ0MP0 outro DI0MP0 outro PI0MP000
-sindicatos sindicato NCMP000
-, , Fc
-desde desde SPS00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-esses esse DD0MP0 esse NCMP000 esse PD0MP000
-estejam estar VMM03P0 estar VMSP3P0
-tratando tratar VMG0000
-de de SPS00
-problemas problema NCMP000
-comuns comum AQ0CP0 comum NCCP000 comum NCMP000
+retidão retidão NCFS000
 de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-ou ou CC
-de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-ensino ensino NCMS000 ensinar VMIP1S0
-público público AQ0MS0 público NCMS000
-e e CC
-suas seu DP3FSP seu PX3FP0P0 seu PX3FP0S0 suar VMIP2S0
-condições condição NCFP000
-de de SPS00
-trabalho trabalho NCMS000 trabalhar VMIP1S0
-. . Fp
-
-92 92 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-não não RN
-é ser VMIP3S0
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-paladino paladino NCMS000 paladinar VMIP1S0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-justiça justiça NCFS000 justiçar VMIP3S0 justiçar VMM02S0
-, , Fc
-nem nem CC
-administradora administrador AQ0FS0 administrador NCFS000
+administração administração NCFS000
 de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 , , Fc
 mas mas CC mas NCMN000 me+as PP1CS000+PP3FPA00 mas RG
-deve deve NCMS000 dever VMIP3S0 dever VMM02S0
-estar estar VMN0000 estar VMN01S0 estar VMN03S0
-muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
-firmemente firmemente RG
-enfrentando enfrentar VMG0000
-esses esse DD0MP0 esse NCMP000 esse PD0MP000
-desafios desafio NCMP000
-. . Fp
-
-93 93 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-política político AQ0FS0 política NCFS000
-partidária partidário AQ0FS0 partidário NCFS000
+será ser VMIF3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interessantes interessante AQ0CP0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-em em SPS00
-vez vez NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-funcionários funcionário NCMP000
-e e CC
-estudantes estudante NCCP000
+associação associação NCFS000
+vem vir VMIP3S0 vir VMM02S0
+seguindo seguir VMG0000
+esta este DD0FS0 este PD0FS000
+cartilha cartilha NCFS000
 . . Fp
 
-94 94 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-gerais geral AQ0CP0 geral NCCP000 geral NCFP000 gerais NCMP000 gerar VMIP2P0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-e e CC
-contribua contribuir VMM03S0 contribuir VMSP1S0 contribuir VMSP3S0
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-transformar transformar VMN0000 transformar VMN01S0 transformar VMN03S0 transformar VMSF1S0 transformar VMSF3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-em em SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-universidade universidade NCFS000
-de de SPS00
-excelência excelência NCFS000 excelência PP3CS000
-internacional internacional AQ0CS0 internacional NCCS000 internacional NCFS000
-. . Fp
-
-95 95 Z
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-participação participação NCFS000
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-vida vida NCFS000 vidar VMIP3S0 vidar VMM02S0
-administrativa administrativo AQ0FS0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-participando participar VMG0000
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-convidada convidado AQ0FS0 convidado NCFS000 convidar VMP00SF
-em em SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-reuniões reunião NCFP000
-de de SPS00
-cad cad UNK
-, , Fc
-cepe cepe UNK
-, , Fc
-consu consu UNK
-. . Fp
-
-96 96 Z
+103 103 Z
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 ativa ativo AQ0FS0 ativa NCFS000 ativar VMIP3S0 ativar VMM02S0
 em em SPS00
@@ -2711,201 +2869,7 @@ própria próprio AQ0FS0 próprio NCFS000 próprio PD0FS000
 unicamp unicamp UNK
 . . Fp
 
-97 97 Z
-deixo deixar VMIP1S0
-r r NCMS000
-$ 
-200,00 200,00 Z
-todos todo AQ0MP0 todo DI0MP0 todo NCMP000 todo PI0MP000
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-meses mês NCMP000
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-conta conta NCFS000 contar VMIP3S0 contar VMM02S0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-ideologia ideologia NCFS000
-e e CC
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-atuação atuação NCFS000
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-papel papel NCMS000
-de de SPS00
-associação associação NCFS000
-de de SPS00
-docentes docente AQ0CP0 docente NCCP000
-. . Fp
-
-98 98 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-entidade entidade NCFS000
-politica politicar VMIP3S0 politicar VMM02S0
-tomando tomar VMG0000
-posição posição NCFS000
-sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
-politica politicar VMIP3S0 politicar VMM02S0
-nacional nacional AQ0CS0 nacional NCCS000 nacional NCMS000
-, , Fc
-não não RN
-fala fala NCFS000 falar VMIP3S0 falar VMM02S0 falir VMM03S0 falir VMSP1S0 falir VMSP3S0
-em em SPS00
-meu meu DP1MSS meu NCMS000 meu PX1MS0S0
-nome nome NCMS000
-. . Fp
-
-99 99 Z
-sim sim I sim NCMS000 sim RG
-, , Fc
-não não RN
-tem ter VMIP3S0 ter VMM02S0
-outra outro AQ0FS0 outro DI0FS0 outro PI0FS000
-opção opção NCFS000
-pro pro AQ0CN0
-docente docente AQ0CS0 docente NCCS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-de de SPS00
-fato fato NCMS000
-representasse representar VMSI1S0 representar VMSI3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-opinião opinião NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-maioria maioria NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-e e CC
-não não RN
-apenas apenas CC apenas RG apenar VMIP2S0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-parcela parcela NCFS000 parcelar VMIP3S0 parcelar VMM02S0
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-participativa participativo AQ0FS0
-. . Fp
-
-100 100 Z
-gostaria gostar VMIC1S0 gostar VMIC3S0
-de de SPS00
-receber receber VMN0000 receber VMN01S0 receber VMN03S0 receber VMSF1S0 receber VMSF3S0
-informes informe AQ0CP0 informe NCCP000 informe NCMP000 informar VMM02S0 informar VMSP2S0
-objetivos objetivo AQ0MP0 objetivo NCMP000
-e e CC
-atualizados atualizar VMP00PM
-sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-problemas problema NCMP000
-enfrentados enfrentado AQ0MP0 enfrentar VMP00PM
-por por SPS00
-a o DA0FS0
-unicamp unicamp UNK
-e e CC
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-ações ação NCFP000
-em em SPS00
-andamento andamento NCMS000
-. . Fp
-
-101 101 Z
-percebo perceber VMIP1S0
-hoje hoje RG
-nossa nosso DP1FSP nosso PX1FS0P0
-associação associação NCFS000
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
-sindicato sindicato NCMS000
-, , Fc
-com com SPS00
-atividades atividade NCFP000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-político político AQ0MS0 político NCMS000
-partidária partidário AQ0FS0 partidário NCFS000
-, , Fc
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-envolvida envolvido AQ0FS0 envolver VMP00SF
-com com SPS00
-nossa nosso DP1FSP nosso PX1FS0P0
-realidade realidade NCFS000
-de de SPS00
-trabalho trabalho NCMS000 trabalhar VMIP1S0
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-102 102 Z
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-houvesse haver VMSI1S0 haver VMSI3S0
-atividades atividade NCFP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-em em SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-faculdades faculdade NCFP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-se se CS se PP3CN000
-localizem localizar VMM03P0 localizar VMSP3P0
-fora fora I fora NCMS000 fora RG fora SPS00 ir VMIM1S0 ir VMIM2S0 ir VMIM3S0 ser VMIM1S0 ser VMIM3S0
-de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-campus campus NCMN000 campus NCMS000
-unicamp unicamp UNK
-/ / Fh
-campinas campina AQ0CP0 campino AQ0FP0 campina NCCP000 campina NCFP000 campina NCMP000
-. . Fp
-
-103 103 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-parou parar VMIS3S0
-esta este DD0FS0 este PD0FS000
-luta luta NCFS000 lutar VMIP3S0 lutar VMM02S0
-e e CC
-agora agora RG
-fica ficar VMIP3S0 ficar VMM02S0
-atendendo atender VMG0000
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-de de SPS00
-grupo grupo NCMS000 grupar VMIP1S0
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-conviver conviver VMN0000 conviver VMN01S0 conviver VMN03S0 conviver VMSF1S0 conviver VMSF3S0
-. . Fp
-
 104 104 Z
-cobra cobra NCFS000 cobrar VMIP3S0 cobrar VMM02S0
-se se CS se PP3CN000
-retidão retidão NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-administração administração NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-, , Fc
-mas mas CC mas NCMN000 me+as PP1CS000+PP3FPA00 mas RG
-será ser VMIF3S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-vem vir VMIP3S0 vir VMM02S0
-seguindo seguir VMG0000
-esta este DD0FS0 este PD0FS000
-cartilha cartilha NCFS000
-. . Fp
-
-105 105 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
 encontrasse encontrar VMSI1S0 encontrar VMSI3S0
@@ -2925,7 +2889,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
-106 106 Z
+105 105 Z
 gestão gestão NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 concentrasse concentrar VMSI1S0 concentrar VMSI3S0
@@ -2956,7 +2920,7 @@ ou ou CC
 político-partidários político-partidário AQ0MP0
 . . Fp
 
-107 107 Z
+106 106 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 realmente realmente RG
 fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
@@ -2994,7 +2958,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 diretoria diretoria NCFS000
 . . Fp
 
-108 108 Z
+107 107 Z
 menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
 politica politicar VMIP3S0 politicar VMM02S0
 partidária partidário AQ0FS0 partidário NCFS000
@@ -3016,7 +2980,7 @@ e e CC
 pesquisa pesquisa NCFS000 pesquisar VMIP3S0 pesquisar VMM02S0
 . . Fp
 
-109 109 Z
+108 108 Z
 destaco destacar VMIP1S0
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 item item NCMS000
@@ -3036,7 +3000,7 @@ universidade universidade NCFS000
 ” ” Frc
 . . Fp
 
-110 110 Z
+109 109 Z
 apoio apoio NCMS000 apoiar VMIP1S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -3060,7 +3024,7 @@ sigla sigla NCFS000 siglar VMIP3S0 siglar VMM02S0
 adunicamp adunicamp UNK
 . . Fp
 
-111 111 Z
+110 110 Z
 seria ser VMIC1S0 ser VMIC3S0 seriar VMIP3S0 seriar VMM02S0
 também também CC também I também RG
 uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
@@ -3076,7 +3040,7 @@ não não RN
 adunicamp adunicamp UNK
 . . Fp
 
-112 112 Z
+111 111 Z
 não não RN
 é ser VMIP3S0
 claro claro AQ0MS0 claro NCMS000 claro RG
@@ -3099,7 +3063,7 @@ de de SPS00
 associações associação NCFP000
 . . Fp
 
-113 113 Z
+112 112 Z
 adunicamp adunicamp UNK
 sem sem SPS00
 vinculação vinculação NCFS000
@@ -3112,7 +3076,7 @@ alguns algum AQ0MP0 algum DI0MP0 algum PI0MP000
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-114 114 Z
+113 113 Z
 entidade entidade NCFS000
 realmente realmente RG
 representativa representativo AQ0FS0
@@ -3130,7 +3094,7 @@ seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
 . . Fp
 
-115 115 Z
+114 114 Z
 permanecerei permanecer VMIF1S0
 em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -3157,7 +3121,7 @@ própria próprio AQ0FS0 próprio NCFS000 próprio PD0FS000
 unicamp unicamp UNK
 . . Fp
 
-116 116 Z
+115 115 Z
 há há NCMS000 haver VMIP3S0 haver VMM02S0
 muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
@@ -3177,7 +3141,7 @@ os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-117 117 Z
+116 116 Z
 representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
@@ -3206,7 +3170,7 @@ de de SPS00
 sp sp UNK
 . . Fp
 
-118 118 Z
+117 117 Z
 e e CC
 talvez talvez RG
 algum algum AQ0MS0 algum DI0MS0 algum PI0MS000
@@ -3232,7 +3196,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 . . Fp
 
-119 119 Z
+118 118 Z
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 ativa ativo AQ0FS0 ativa NCFS000 ativar VMIP3S0 ativar VMM02S0
 em em SPS00
@@ -3249,7 +3213,7 @@ conselhos conselho NCMP000
 municipais municipal AQ0CP0 municipal NCCP000
 . . Fp
 
-120 120 Z
+119 119 Z
 participação participação NCFS000
 em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -3265,7 +3229,7 @@ de de SPS00
 unicamp unicamp UNK
 . . Fp
 
-121 121 Z
+120 120 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -3287,30 +3251,43 @@ os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-122 122 Z
-cuidar cuidar VMN0000 cuidar VMN01S0 cuidar VMN03S0 cuidar VMSF1S0 cuidar VMSF3S0
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+121 121 Z
+sim sim I sim NCMS000 sim RG
+, , Fc
+não não RN
+tem ter VMIP3S0 ter VMM02S0
+outra outro AQ0FS0 outro DI0FS0 outro PI0FS000
+opção opção NCFS000
+pro pro AQ0CN0
+docente docente AQ0CS0 docente NCCS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
 de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+fato fato NCMS000
+representasse representar VMSI1S0 representar VMSI3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+opinião opinião NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+maioria maioria NCFS000
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
 de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
+, , Fc
 e e CC
-tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
+não não RN
+apenas apenas CC apenas RG apenar VMIP2S0
+de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-sede sede NCFS000 ser VMM02P0 sedar VMM03S0 sedar VMSP1S0 sedar VMSP3S0
+parcela parcela NCFS000 parcelar VMIP3S0 parcelar VMM02S0
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-convidativa convidativo AQ0FS0
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-esses esse DD0MP0 esse NCMP000 esse PD0MP000
-docentes docente AQ0CP0 docente NCCP000
+participativa participativo AQ0FS0
 . . Fp
 
-123 123 Z
+122 122 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 é ser VMIP3S0
@@ -3327,23 +3304,7 @@ partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
 políticos político AQ0MP0 político NCMP000
 . . Fp
 
-124 124 Z
-entidade entidade NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-representa representar VMIP3S0 representar VMM02S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-sem sem SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-agenda agenda NCFS000 agendar VMIP3S0 agendar VMM02S0
-partidária partidário AQ0FS0 partidário NCFS000
-externa externo AQ0FS0 externar VMIP3S0 externar VMM02S0
-. . Fp
-
-125 125 Z
+123 123 Z
 adunicamp adunicamp UNK
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 cuidasse cuidar VMSI1S0 cuidar VMSI3S0
@@ -3361,7 +3322,7 @@ ou ou CC
 política político AQ0FS0 política NCFS000
 . . Fp
 
-126 126 Z
+124 124 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 precisa preciso AQ0FS0 precisar VMIP3S0 precisar VMM02S0
@@ -3377,7 +3338,7 @@ de de SPS00
 eles ele NCMP000 ele PP3MP000 elar VMSP2S0
 . . Fp
 
-127 127 Z
+125 125 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
@@ -3401,7 +3362,7 @@ de de SPS00
 associados associado AQ0MP0 associado NCMP000 associar VMP00PM
 . . Fp
 
-128 128 Z
+126 126 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 refletir refletir VMN0000 refletir VMN01S0 refletir VMN03S0 refletir VMSF1S0 refletir VMSF3S0
@@ -3417,7 +3378,30 @@ corpo corpo NCMS000
 docente docente AQ0CS0 docente NCCS000
 . . Fp
 
-129 129 Z
+127 127 Z
+cuidar cuidar VMN0000 cuidar VMN01S0 cuidar VMN03S0 cuidar VMSF1S0 cuidar VMSF3S0
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+e e CC
+tornar tornar VMN0000 tornar VMN01S0 tornar VMN03S0 tornar VMSF1S0 tornar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+sede sede NCFS000 ser VMM02P0 sedar VMM03S0 sedar VMSP1S0 sedar VMSP3S0
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+convidativa convidativo AQ0FS0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+esses esse DD0MP0 esse NCMP000 esse PD0MP000
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+128 128 Z
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 envolvimento envolvimento NCMS000
 de de SPS00
@@ -3430,6 +3414,22 @@ ligados ligado AQ0MP0 ligado NCMP000 ligar VMP00PM
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
+. . Fp
+
+129 129 Z
+entidade entidade NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+representa representar VMIP3S0 representar VMM02S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+sem sem SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+agenda agenda NCFS000 agendar VMIP3S0 agendar VMM02S0
+partidária partidário AQ0FS0 partidário NCFS000
+externa externo AQ0FS0 externar VMIP3S0 externar VMM02S0
 . . Fp
 
 130 130 Z
@@ -3487,19 +3487,6 @@ docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
 133 133 Z
-associação associação NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
-de de SPS00
-fato fato NCMS000
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-134 134 Z
 menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
 política político AQ0FS0 política NCFS000
 partidária partidário AQ0FS0 partidário NCFS000
@@ -3514,7 +3501,7 @@ seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-135 135 Z
+134 134 Z
 sou ser VMIP1S0
 associado associado AQ0MS0 associado NCMS000 associar VMP00SM
 desde desde SPS00
@@ -3530,7 +3517,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
-136 136 Z
+135 135 Z
 atualmente atualmente RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
@@ -3546,7 +3533,7 @@ o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 docente docente AQ0CS0 docente NCCS000
 . . Fp
 
-137 137 Z
+136 136 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -3563,7 +3550,7 @@ de de SPS00
 professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
 . . Fp
 
-138 138 Z
+137 137 Z
 representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 interesse interesse NCMS000 interessar VMM03S0 interessar VMSP1S0 interessar VMSP3S0
@@ -3580,7 +3567,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 . . Fp
 
-139 139 Z
+138 138 Z
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -3593,6 +3580,23 @@ teto teto NCMS000
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
+. . Fp
+
+139 139 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+contribuiu contribuir VMIS3S0
+muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+hoje hoje RG
+ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
+é ser VMIP3S0
 . . Fp
 
 140 140 Z
@@ -3610,23 +3614,6 @@ docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
 141 141 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-contribuiu contribuir VMIS3S0
-muito muito AQ0MS0 muito DI0MS0 muito NCMS000 muito PI0MS000 muito RG
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-hoje hoje RG
-ela ela NCFS000 ele PP3FS000 elar VMIP3S0 elar VMM02S0
-é ser VMIP3S0
-. . Fp
-
-142 142 Z
 entidade entidade NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 defenda defender VMM03S0 defender VMSP1S0 defender VMSP3S0
@@ -3637,7 +3624,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
-143 143 Z
+142 142 Z
 discussão discussão NCFS000
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -3647,13 +3634,26 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
 . . Fp
 
-144 144 Z
+143 143 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 seja seja CS seja I ser VMM03S0 ser VMSP1S0 ser VMSP3S0
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 e e CC
 para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+. . Fp
+
+144 144 Z
+associação associação NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
+de de SPS00
+fato fato NCMS000
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 docentes docente AQ0CP0 docente NCCP000
 de de SPS00
@@ -4716,6 +4716,168 @@ acadêmica acadêmico AQ0FS0
 . . Fp
 
 185 185 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+se se CS se PP3CN000
+descaracterizou descaracterizar VMIS3S0
+, , Fc
+e e CC
+tornou tornar VMIS3S0
+se se CS se PP3CN000
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+centro centro NCMS000 centrar VMIP1S0
+de de SPS00
+militância militância NCFS000
+política político AQ0FS0 política NCFS000
+, , Fc
+agressiva agressivo AQ0FS0
+, , Fc
+aliás aliás CS aliá NCFP000 aliás RG
+, , Fc
+supostamente supostamente RG
+endossada endossado AQ0FS0 endossado NCFS000 endossar VMP00SF
+por por SPS00
+o o DA0MS0
+conjunto conjunto AQ0MS0 conjunto NCMS000 conjuntar VMIP1S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
+. . Fp
+
+186 186 Z
+não não RN
+adianta adiantar VMIP3S0 adiantar VMM02S0
+nada nado AQ0FS0 nada NCMS000 nada PI0CN000 nada PI0MS000 nada RN nadar VMIP3S0 nadar VMM02S0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+preceitos preceito NCMP000
+expostos exposto AQ0MP0 expor VMP00PM
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+e-mail e-mail NCMS000
+de de SPS00
+transparência transparência NCFS000
+e e CC
+etc etc NCMS000
+se se CS se PP3CN000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+não não RN
+funcionar funcionar VMN0000 funcionar VMN01S0 funcionar VMN03S0 funcionar VMSF1S0 funcionar VMSF3S0
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+187 187 Z
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+associada associado AQ0FS0 associado NCFS000 associar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+, , Fc
+estou estar VMIP1S0
+insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
+com com SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+rumos rumo NCMP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+tomou tomar VMIS3S0
+, , Fc
+e e CC
+sinto sentir VMIP1S0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+efetivos efetivo AQ0MP0
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+não não RN
+estão estar VMIP3P0
+sendo ser VMG0000
+contemplados contemplar VMP00PM
+. . Fp
+
+188 188 Z
+gostaria gostar VMIC1S0 gostar VMIC3S0
+de de SPS00
+saber saber NCMS000 saber VMN0000 saber VMN01S0 saber VMN03S0
+se se CS se PP3CN000
+constituem constituir VMIP3P0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+chapa chapa NCCS000 chapa NCFS000 chapar VMIP3S0 chapar VMM02S0
+alternativa alternativo AQ0FS0 alternativa NCFS000
+em em SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+próximas próximo AQ0FP0 próximo NCFP000
+eleições eleição NCFP000
+, , Fc
+ou ou CC
+se se CS se PP3CN000
+propõem propor VMIP3P0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+nova novo AQ0FS0 nova NCFS000 novar VMIP3S0 novar VMM02S0
+associação associação NCFS000
+. . Fp
+
+189 189 Z
+maior maior AQ0CS0 maior NCCS000 maior NCMS000
+envolvimento envolvimento NCMS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+com com SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+reforma reforma NCFS000 reformar VMIP3S0 reformar VMM02S0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+previdência previdência NCFS000
+de de SPS00
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+associação associação NCFS000
+de de SPS00
+docentes docente AQ0CP0 docente NCCP000
+espero esperar VMIP1S0
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+serviço serviço NCMS000
+de de SPS00
+apoio apoio NCMS000 apoiar VMIP1S0
+frente frente NCCS000 frente NCFS000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+questões questão NCFP000
+de de SPS00
+trabalho trabalho NCMS000 trabalhar VMIP1S0
+. . Fp
+
+190 190 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+associação associação NCFS000
+pode poder VMIP3S0 poder VMM02S0 podar VMM03S0 podar VMSP1S0 podar VMSP3S0
+ter ter VMN0000 ter VMN01S0 ter VMN03S0
+um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
+papel papel NCMS000
+importante importante AQ0CS0 importante NCCS000 importante NCMS000
+com com SPS00
+voz voz NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
+além além NCMS000 além RG
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+campanha campanha NCFS000
+salarial salarial AQ0CS0
+e e CC
+representação representação NCFS000
+sindical sindical AQ0CS0
+. . Fp
+
+191 191 Z
 voltar voltar VMN0000 voltar VMN01S0 voltar VMN03S0 voltar VMSF1S0 voltar VMSF3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
@@ -4750,168 +4912,6 @@ em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 sociedade sociedade NCFS000
 brasileira brasileiro AQ0FS0 brasileiro NCFS000 brasileirar VMIP3S0 brasileirar VMM02S0
-. . Fp
-
-186 186 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-se se CS se PP3CN000
-descaracterizou descaracterizar VMIS3S0
-, , Fc
-e e CC
-tornou tornar VMIS3S0
-se se CS se PP3CN000
-um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
-centro centro NCMS000 centrar VMIP1S0
-de de SPS00
-militância militância NCFS000
-política político AQ0FS0 política NCFS000
-, , Fc
-agressiva agressivo AQ0FS0
-, , Fc
-aliás aliás CS aliá NCFP000 aliás RG
-, , Fc
-supostamente supostamente RG
-endossada endossado AQ0FS0 endossado NCFS000 endossar VMP00SF
-por por SPS00
-o o DA0MS0
-conjunto conjunto AQ0MS0 conjunto NCMS000 conjuntar VMIP1S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
-. . Fp
-
-187 187 Z
-não não RN
-adianta adiantar VMIP3S0 adiantar VMM02S0
-nada nado AQ0FS0 nada NCMS000 nada PI0CN000 nada PI0MS000 nada RN nadar VMIP3S0 nadar VMM02S0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-preceitos preceito NCMP000
-expostos exposto AQ0MP0 expor VMP00PM
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-e-mail e-mail NCMS000
-de de SPS00
-transparência transparência NCFS000
-e e CC
-etc etc NCMS000
-se se CS se PP3CN000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-não não RN
-funcionar funcionar VMN0000 funcionar VMN01S0 funcionar VMN03S0 funcionar VMSF1S0 funcionar VMSF3S0
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-. . Fp
-
-188 188 Z
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-associada associado AQ0FS0 associado NCFS000 associar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-, , Fc
-estou estar VMIP1S0
-insatisfeita insatisfeito AQ0FS0 insatisfeito NCFS000
-com com SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-rumos rumo NCMP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-tomou tomar VMIS3S0
-, , Fc
-e e CC
-sinto sentir VMIP1S0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-efetivos efetivo AQ0MP0
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-não não RN
-estão estar VMIP3P0
-sendo ser VMG0000
-contemplados contemplar VMP00PM
-. . Fp
-
-189 189 Z
-gostaria gostar VMIC1S0 gostar VMIC3S0
-de de SPS00
-saber saber NCMS000 saber VMN0000 saber VMN01S0 saber VMN03S0
-se se CS se PP3CN000
-constituem constituir VMIP3P0
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-chapa chapa NCCS000 chapa NCFS000 chapar VMIP3S0 chapar VMM02S0
-alternativa alternativo AQ0FS0 alternativa NCFS000
-em em SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-próximas próximo AQ0FP0 próximo NCFP000
-eleições eleição NCFP000
-, , Fc
-ou ou CC
-se se CS se PP3CN000
-propõem propor VMIP3P0
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-nova novo AQ0FS0 nova NCFS000 novar VMIP3S0 novar VMM02S0
-associação associação NCFS000
-. . Fp
-
-190 190 Z
-maior maior AQ0CS0 maior NCCS000 maior NCMS000
-envolvimento envolvimento NCMS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-com com SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-reforma reforma NCFS000 reformar VMIP3S0 reformar VMM02S0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-previdência previdência NCFS000
-de de SPS00
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-associação associação NCFS000
-de de SPS00
-docentes docente AQ0CP0 docente NCCP000
-espero esperar VMIP1S0
-um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
-serviço serviço NCMS000
-de de SPS00
-apoio apoio NCMS000 apoiar VMIP1S0
-frente frente NCCS000 frente NCFS000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-questões questão NCFP000
-de de SPS00
-trabalho trabalho NCMS000 trabalhar VMIP1S0
-. . Fp
-
-191 191 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-associação associação NCFS000
-pode poder VMIP3S0 poder VMM02S0 podar VMM03S0 podar VMSP1S0 podar VMSP3S0
-ter ter VMN0000 ter VMN01S0 ter VMN03S0
-um um AQ0MS0 um DI0MS0 um NCMS000 um PI0MS000
-papel papel NCMS000
-importante importante AQ0CS0 importante NCCS000 importante NCMS000
-com com SPS00
-voz voz NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-para para CC para SPS00 parar VMIP2S0 parir VMM03S0 parir VMSP1S0 parir VMSP3S0
-além além NCMS000 além RG
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-campanha campanha NCFS000
-salarial salarial AQ0CS0
-e e CC
-representação representação NCFS000
-sindical sindical AQ0CS0
 . . Fp
 
 192 192 Z
@@ -5357,26 +5357,13 @@ similares similar AQ0CP0
 
 212 212 Z
 associação associação NCFS000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
-de de SPS00
-fato fato NCMS000
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-213 213 Z
-associação associação NCFS000
 isenta isento AQ0FS0 isentar VMIP3S0 isentar VMM02S0 isentar VMN02S0 isentar VMP00SF
 de de SPS00
 ações ação NCFP000
 partidárias partidário AQ0FP0 partidário NCFP000
 . . Fp
 
-214 214 Z
+213 213 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
@@ -5393,7 +5380,7 @@ de de SPS00
 professores professor NCMP000 professorar VMM02S0 professorar VMSP2S0
 . . Fp
 
-215 215 Z
+214 214 Z
 associação associação NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 me me PP1CS000
@@ -5410,7 +5397,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 andes andar VMM02S0 andar VMSP2S0
 . . Fp
 
-216 216 Z
+215 215 Z
 essas esse DD0FP0 esse PD0FP000
 benemerências benemerência NCFP000
 não não RN
@@ -5424,7 +5411,7 @@ de de SPS00
 docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
-217 217 Z
+216 216 Z
 como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
 associação associação NCFS000
 docente docente AQ0CS0 docente NCCS000
@@ -5436,7 +5423,7 @@ convênio convênio NCMS000
 médico médico AQ0MS0 médico NCMS000
 . . Fp
 
-218 218 Z
+217 217 Z
 aplicação aplicação NCFS000
 de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -5454,19 +5441,32 @@ outras outro AQ0FP0 outro DI0FP0 outro PI0FP000
 associações associação NCFP000
 . . Fp
 
-219 219 Z
+218 218 Z
 gostaria gostar VMIC1S0 gostar VMIC3S0
 de de SPS00
 uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
 associação associação NCFS000
 . . Fp
 
-220 220 Z
+219 219 Z
 menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
 sindicalismo sindicalismo NCMS000
 e e CC
 mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
 associação associação NCFS000
+. . Fp
+
+220 220 Z
+associação associação NCFS000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
+de de SPS00
+fato fato NCMS000
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
 . . Fp
 
 221 221 Z
@@ -5507,6 +5507,74 @@ sociedade sociedade NCFS000
 . . Fp
 
 222 222 Z
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+atuação atuação NCFS000
+promotora promotor AQ0FS0 promotor NCFS000
+de de SPS00
+debates debate NCMP000 debater VMIP2S0
+sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
+ciência ciência NCFS000
+, , Fc
+sociedade sociedade NCFS000
+, , Fc
+situação situação NCFS000
+de de SPS00
+trabalho trabalho NCMS000 trabalhar VMIP1S0
+de de SPS00
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+e e CC
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+inter-relações inter-relações NC00000
+com com SPS00
+outras outro AQ0FP0 outro DI0FP0 outro PI0FP000
+estaduais estadual AQ0CP0
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+país país NCMS000
+e e CC
+com com SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+federais federal AQ0CP0 federar VMIP2P0
+e e CC
+comunitárias comunitário AQ0FP0
+. . Fp
+
+223 223 Z
+transparência transparência NCFS000
+e e CC
+respeito respeito NCMS000 respeitar VMIP1S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+opinião opinião NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+maioria maioria NCFS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+, , Fc
+principalmente principalmente RG
+em em SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+concerne concernir VMIP3S0 concernir VMM02S0
+manifestações manifestação NCFP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+sociedade sociedade NCFS000
+e e CC
+em em SPS00
+posicionamento posicionamento NCFS000 posicionamento NCMS000
+em em SPS00
+momentos momento NCMP000
+históricos histórico AQ0MP0 histórico NCMP000
+. . Fp
+
+224 224 Z
 voltar voltar VMN0000 voltar VMN01S0 voltar VMN03S0 voltar VMSF1S0 voltar VMSF3S0
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
@@ -5541,74 +5609,6 @@ em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 sociedade sociedade NCFS000
 brasileira brasileiro AQ0FS0 brasileiro NCFS000 brasileirar VMIP3S0 brasileirar VMM02S0
-. . Fp
-
-223 223 Z
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-atuação atuação NCFS000
-promotora promotor AQ0FS0 promotor NCFS000
-de de SPS00
-debates debate NCMP000 debater VMIP2S0
-sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
-ciência ciência NCFS000
-, , Fc
-sociedade sociedade NCFS000
-, , Fc
-situação situação NCFS000
-de de SPS00
-trabalho trabalho NCMS000 trabalhar VMIP1S0
-de de SPS00
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-e e CC
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-inter-relações inter-relações NC00000
-com com SPS00
-outras outro AQ0FP0 outro DI0FP0 outro PI0FP000
-estaduais estadual AQ0CP0
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-país país NCMS000
-e e CC
-com com SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-federais federal AQ0CP0 federar VMIP2P0
-e e CC
-comunitárias comunitário AQ0FP0
-. . Fp
-
-224 224 Z
-transparência transparência NCFS000
-e e CC
-respeito respeito NCMS000 respeitar VMIP1S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-opinião opinião NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-maioria maioria NCFS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-, , Fc
-principalmente principalmente RG
-em em SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-concerne concernir VMIP3S0 concernir VMM02S0
-manifestações manifestação NCFP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-sociedade sociedade NCFS000
-e e CC
-em em SPS00
-posicionamento posicionamento NCFS000 posicionamento NCMS000
-em em SPS00
-momentos momento NCMP000
-históricos histórico AQ0MP0 histórico NCMP000
 . . Fp
 
 225 225 Z
@@ -5934,42 +5934,6 @@ entidade entidade NCFS000
 . . Fp
 
 235 235 Z
-apartidária apartidário AQ0FS0
-, , Fc
-não não RN
-filiada filiado AQ0FS0 filiar VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-qualquer qualquer AQ0CS0 qualquer DI0CS0 qualquer PI0CS000
-entidade entidade NCFS000
-sindical sindical AQ0CS0
-, , Fc
-neutra neutro AQ0FS0
-em em SPS00
-questões questão NCFP000
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-não não RN
-lhe lhe PP3CSD00
-dizem dizer VMIP3P0
-respeito respeito NCMS000 respeitar VMIP1S0
-e e CC
-firme firme AQ0CS0 firme RG firmar VMM03S0 firmar VMSP1S0 firmar VMSP3S0
-, , Fc
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
-legítimos legítimo AQ0MP0 legítimo NCMP000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-. . Fp
-
-236 236 Z
 maior maior AQ0CS0 maior NCCS000 maior NCMS000
 participação participação NCFS000
 de de SPS00
@@ -6010,7 +5974,7 @@ outras outro AQ0FP0 outro DI0FP0 outro PI0FP000
 demandas demanda NCFP000 demandar VMIP2S0
 . . Fp
 
-237 237 Z
+236 236 Z
 entidade entidade NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 me me PP1CS000
@@ -6049,6 +6013,42 @@ de de SPS00
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 meus meu DP1MPS meu NCMP000 meu PX1MP0S0
 colegas colega NCCP000
+. . Fp
+
+237 237 Z
+apartidária apartidário AQ0FS0
+, , Fc
+não não RN
+filiada filiado AQ0FS0 filiar VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+qualquer qualquer AQ0CS0 qualquer DI0CS0 qualquer PI0CS000
+entidade entidade NCFS000
+sindical sindical AQ0CS0
+, , Fc
+neutra neutro AQ0FS0
+em em SPS00
+questões questão NCFP000
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+não não RN
+lhe lhe PP3CSD00
+dizem dizer VMIP3P0
+respeito respeito NCMS000 respeitar VMIP1S0
+e e CC
+firme firme AQ0CS0 firme RG firmar VMM03S0 firmar VMSP1S0 firmar VMSP3S0
+, , Fc
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+defesa defeso AQ0FS0 defesa NCFS000 defender VMP00SF
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
+legítimos legítimo AQ0MP0 legítimo NCMP000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
 . . Fp
 
 238 238 Z
@@ -6254,6 +6254,93 @@ nome nome NCMS000
 . . Fp
 
 246 246 Z
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+não não RN
+oferece oferecer VMIP3S0 oferecer VMM02S0
+nada nado AQ0FS0 nada NCMS000 nada PI0CN000 nada PI0MS000 nada RN nadar VMIP3S0 nadar VMM02S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+campis campir VMIP2P0
+limeira limeira NCFS000
+e e CC
+piracicaba piracicaba NCFS000
+. . Fp
+
+247 247 Z
+transparência transparência NCFS000
+financeira financeiro AQ0FS0 financeiro NCFS000
+e e CC
+mecanismos mecanismo NCMP000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+democráticos democrático AQ0MP0
+em em SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+posicionamentos posicionamento NCFP000 posicionamento NCMP000
+oficiais oficial AQ0CP0 oficial NCCP000 oficiar VMIP2P0
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+. . Fp
+
+248 248 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+interferência interferência NCFS000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+de de SPS00
+políticas político AQ0FP0 política NCFP000
+partidárias partidário AQ0FP0 partidário NCFP000
+( ( Fpa
+independente independente AQ0CS0
+se se CS se PP3CN000
+é ser VMIP3S0
+de de SPS00
+esquerda esquerdo AQ0FS0 esquerda NCFS000 esquerdar VMIP3S0 esquerdar VMM02S0
+, , Fc
+centro centro NCMS000 centrar VMIP1S0
+ou ou CC
+direita direito AQ0FS0 direita NCFS000
+) ) Fpt
+. . Fp
+
+249 249 Z
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+entidade entidade NCFS000
+apartidária apartidário AQ0FS0
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+respeite respeitar VMM03S0 respeitar VMSP1S0 respeitar VMSP3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+diversidade diversidade NCFS000
+de de SPS00
+opiniões opinião NCFP000
+sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+problemas problema NCMP000
+nacionais nacional AQ0CP0 nacional NCCP000 nacional NCMP000
+. . Fp
+
+250 250 Z
+sim sim I sim NCMS000 sim RG
+é ser VMIP3S0
+hora hora NCFS000 horar VMIP3S0 horar VMM02S0
+de de SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+entidades entidade NCFP000
+nacionais nacional AQ0CP0 nacional NCCP000 nacional NCMP000
+se se CS se PP3CN000
+reinventarem reinventar VMN03P0 reinventar VMSF3P0
+ou ou CC
+sumirem sumir VMN03P0 sumir VMSF3P0
+de de SPS00
+vez vez NCFS000
+. . Fp
+
+251 251 Z
 em em SPS00
 primeiro primeiro AO0MS0 primeiro AQ0MS0 primeiro NCMS000 primeiro RG
 lugar lugar NCMS000
@@ -6278,93 +6365,6 @@ de de SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 classe classe NCFS000 classar VMM03S0 classar VMSP1S0 classar VMSP3S0
 docente docente AQ0CS0 docente NCCS000
-. . Fp
-
-247 247 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-não não RN
-oferece oferecer VMIP3S0 oferecer VMM02S0
-nada nado AQ0FS0 nada NCMS000 nada PI0CN000 nada PI0MS000 nada RN nadar VMIP3S0 nadar VMM02S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-campis campir VMIP2P0
-limeira limeira NCFS000
-e e CC
-piracicaba piracicaba NCFS000
-. . Fp
-
-248 248 Z
-transparência transparência NCFS000
-financeira financeiro AQ0FS0 financeiro NCFS000
-e e CC
-mecanismos mecanismo NCMP000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-democráticos democrático AQ0MP0
-em em SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-posicionamentos posicionamento NCFP000 posicionamento NCMP000
-oficiais oficial AQ0CP0 oficial NCCP000 oficiar VMIP2P0
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-. . Fp
-
-249 249 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-interferência interferência NCFS000
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-de de SPS00
-políticas político AQ0FP0 política NCFP000
-partidárias partidário AQ0FP0 partidário NCFP000
-( ( Fpa
-independente independente AQ0CS0
-se se CS se PP3CN000
-é ser VMIP3S0
-de de SPS00
-esquerda esquerdo AQ0FS0 esquerda NCFS000 esquerdar VMIP3S0 esquerdar VMM02S0
-, , Fc
-centro centro NCMS000 centrar VMIP1S0
-ou ou CC
-direita direito AQ0FS0 direita NCFS000
-) ) Fpt
-. . Fp
-
-250 250 Z
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-entidade entidade NCFS000
-apartidária apartidário AQ0FS0
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-respeite respeitar VMM03S0 respeitar VMSP1S0 respeitar VMSP3S0
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-diversidade diversidade NCFS000
-de de SPS00
-opiniões opinião NCFP000
-sobre sobre NCMS000 sobre SPS00 sobrar VMM03S0 sobrar VMSP1S0 sobrar VMSP3S0
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-problemas problema NCMP000
-nacionais nacional AQ0CP0 nacional NCCP000 nacional NCMP000
-. . Fp
-
-251 251 Z
-sim sim I sim NCMS000 sim RG
-é ser VMIP3S0
-hora hora NCFS000 horar VMIP3S0 horar VMM02S0
-de de SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-entidades entidade NCFP000
-nacionais nacional AQ0CP0 nacional NCCP000 nacional NCMP000
-se se CS se PP3CN000
-reinventarem reinventar VMN03P0 reinventar VMSF3P0
-ou ou CC
-sumirem sumir VMN03P0 sumir VMSF3P0
-de de SPS00
-vez vez NCFS000
 . . Fp
 
 252 252 Z
@@ -6404,6 +6404,19 @@ sindicais sindical AQ0CP0 sindicar VMIP2P0
 
 254 254 Z
 entidade entidade NCFS000
+mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
+presente presente AQ0CS0 presente NCMS000 presentar VMM03S0 presentar VMSP1S0 presentar VMSP3S0
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+vida vida NCFS000 vidar VMIP3S0 vidar VMM02S0
+profissional profissional AQ0CS0 profissional NCCS000
+de de SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+. . Fp
+
+255 255 Z
+entidade entidade NCFS000
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 representa representar VMIP3S0 representar VMM02S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -6416,19 +6429,6 @@ uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
 agenda agenda NCFS000 agendar VMIP3S0 agendar VMM02S0
 partidária partidário AQ0FS0 partidário NCFS000
 externa externo AQ0FS0 externar VMIP3S0 externar VMM02S0
-. . Fp
-
-255 255 Z
-entidade entidade NCFS000
-mais mais NCMN000 mais NCMS000 mais PI0CN000 mais RG
-presente presente AQ0CS0 presente NCMS000 presentar VMM03S0 presentar VMSP1S0 presentar VMSP3S0
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-vida vida NCFS000 vidar VMIP3S0 vidar VMM02S0
-profissional profissional AQ0CS0 profissional NCCS000
-de de SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
 . . Fp
 
 256 256 Z
@@ -6482,6 +6482,34 @@ empregados empregado AQ0MP0 empregado NCMP000 empregar VMP00PM
 . . Fp
 
 259 259 Z
+qua qua UNK
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+lealdade lealdade NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+adunicamp adunicamp UNK
+fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
+dirigida dirigido AQ0FS0 dirigir VMP00SF
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+unicamp unicamp UNK
+e e CC
+não não RN
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+ou ou CC
+agendas agenda NCFP000 agendar VMIP2S0
+ideológicas ideológico AQ0FP0
+ocultas oculto AQ0FP0 ocultas NCFP000 ocultar VMIP2S0 ocultar VMP00PF
+de de SPS00
+seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
+diretores diretor AQ0MP0 diretor NCMP000
+. . Fp
+
+260 260 Z
 representar representar VMN0000 representar VMN01S0 representar VMN03S0 representar VMSF1S0 representar VMSF3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 interesses interesse NCMP000 interessar VMM02S0 interessar VMSP2S0
@@ -6512,7 +6540,32 @@ governo governo NCMS000 governar VMIP1S0
 estadual estadual AQ0CS0
 . . Fp
 
-260 260 Z
+261 261 Z
+transparência transparência NCFS000
+e e CC
+representatividade representatividade NCFS000
+– – UNK
+ou ou CC
+seja seja CS seja I ser VMM03S0 ser VMSP1S0 ser VMSP3S0
+, , Fc
+não não RN
+usar usar VMN0000 usar VMN01S0 usar VMN03S0 usar VMSF1S0 usar VMSF3S0
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+entidade entidade NCFS000
+como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
+“ “ Fra
+correia correia NCFS000 correar VMIP3S0 correar VMM02S0
+de de SPS00
+transmissão transmissão NCFS000
+” ” Frc
+de de SPS00
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+ou ou CC
+posições posição NCFP000
+políticas político AQ0FP0 política NCFP000
+. . Fp
+
+262 262 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 realmente realmente RG
 fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
@@ -6550,35 +6603,7 @@ a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 diretoria diretoria NCFS000
 . . Fp
 
-261 261 Z
-qua qua UNK
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-lealdade lealdade NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-fosse ser VMSI1S0 ser VMSI3S0 fossar VMM03S0 ir VMSI1S0 ir VMSI3S0 fossar VMSP1S0 fossar VMSP3S0
-dirigida dirigido AQ0FS0 dirigir VMP00SF
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-unicamp unicamp UNK
-e e CC
-não não RN
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-ou ou CC
-agendas agenda NCFP000 agendar VMIP2S0
-ideológicas ideológico AQ0FP0
-ocultas oculto AQ0FP0 ocultas NCFP000 ocultar VMIP2S0 ocultar VMP00PF
-de de SPS00
-seus seu DP3MPS seu NCMP000 seu PX3MP0P0 seu PX3MP0S0
-diretores diretor AQ0MP0 diretor NCMP000
-. . Fp
-
-262 262 Z
+263 263 Z
 deve deve NCMS000 dever VMIP3S0 dever VMM02S0
 evitar evitar VMN0000 evitar VMN01S0 evitar VMN03S0 evitar VMSF1S0 evitar VMSF3S0
 questões questão NCFP000
@@ -6606,32 +6631,29 @@ universidade universidade NCFS000
 pública público AQ0FS0
 . . Fp
 
-263 263 Z
-transparência transparência NCFS000
-e e CC
-representatividade representatividade NCFS000
-– – UNK
-ou ou CC
-seja seja CS seja I ser VMM03S0 ser VMSP1S0 ser VMSP3S0
-, , Fc
-não não RN
-usar usar VMN0000 usar VMN01S0 usar VMN03S0 usar VMSF1S0 usar VMSF3S0
+264 264 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-entidade entidade NCFS000
-como como CS como I como PI0MS000 como PT0CN000 como RG comer VMIP1S0
-“ “ Fra
-correia correia NCFS000 correar VMIP3S0 correar VMM02S0
+adunicamp adunicamp UNK
+precisa preciso AQ0FS0 precisar VMIP3S0 precisar VMM02S0
+deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
 de de SPS00
-transmissão transmissão NCFS000
-” ” Frc
+ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
+uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
+sucursal sucursal AQ0CS0 sucursal NCCS000 sucursal NCFS000
+ideológica ideológico AQ0FS0
 de de SPS00
 partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+de de SPS00
+esquerda esquerdo AQ0FS0 esquerda NCFS000 esquerdar VMIP3S0 esquerdar VMM02S0
+, , Fc
 ou ou CC
-posições posição NCFP000
-políticas político AQ0FP0 política NCFP000
+de de SPS00
+qualquer qualquer AQ0CS0 qualquer DI0CS0 qualquer PI0CS000
+partido partido AQ0MS0 partido NCMS000 partir VMP00SM
+político político AQ0MS0 político NCMS000
 . . Fp
 
-264 264 Z
+265 265 Z
 transparência transparência NCFS000
 , , Fc
 sem sem SPS00
@@ -6657,29 +6679,38 @@ associados associado AQ0MP0 associado NCMP000 associar VMP00PM
 soluções solução NCFP000
 . . Fp
 
-265 265 Z
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-adunicamp adunicamp UNK
-precisa preciso AQ0FS0 precisar VMIP3S0 precisar VMM02S0
-deixar deixar VMN0000 deixar VMN01S0 deixar VMN03S0 deixar VMSF1S0 deixar VMSF3S0
-de de SPS00
-ser ser NCMS000 ser VMN0000 ser VMN01S0 ser VMN03S0
-uma um AQ0FS0 um DI0FS0 um NCFS000 um PI0FS000 umar VMIP3S0 umar VMM02S0
-sucursal sucursal AQ0CS0 sucursal NCCS000 sucursal NCFS000
-ideológica ideológico AQ0FS0
-de de SPS00
+266 266 Z
+menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
+política político AQ0FS0 política NCFS000
+partidária partidário AQ0FS0 partidário NCFS000
+e e CC
+maior maior AQ0CS0 maior NCCS000 maior NCMS000
+contato contato NCMS000 contatar VMIP1S0
+com com SPS00
+docentes docente AQ0CP0 docente NCCP000
+não não RN
+envolvidos envolvido AQ0MP0 envolver VMP00PM
+politicamente politicamente RG
+com com SPS00
 partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-de de SPS00
-esquerda esquerdo AQ0FS0 esquerda NCFS000 esquerdar VMIP3S0 esquerdar VMM02S0
-, , Fc
-ou ou CC
-de de SPS00
-qualquer qualquer AQ0CS0 qualquer DI0CS0 qualquer PI0CS000
-partido partido AQ0MS0 partido NCMS000 partir VMP00SM
-político político AQ0MS0 político NCMS000
 . . Fp
 
-266 266 Z
+267 267 Z
+desalinhamento desalinhamento UNK
+total total AQ0CS0 total NCCS000 total NCMS000
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+cut cut UNK
+e e CC
+braços braço NCMP000
+sindicais sindical AQ0CP0 sindicar VMIP2P0
+de de SPS00
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+políticos político AQ0MP0 político NCMP000
+quaisquer qualquer AQ0CP0 qualquer DI0CP0 qualquer PI0CN000 qualquer PI0CP000
+. . Fp
+
+268 268 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 representasse representar VMSI1S0 representar VMSI3S0
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
@@ -6700,53 +6731,7 @@ decisões decisão NCFP000
 conjuntas conjunto AQ0FP0 conjuntar VMIP2S0
 . . Fp
 
-267 267 Z
-menos menos DI0CN0 menos NCMN000 menos NCMS000 menos PI0CN000 menos RG menos SPS00
-política político AQ0FS0 política NCFS000
-partidária partidário AQ0FS0 partidário NCFS000
-e e CC
-maior maior AQ0CS0 maior NCCS000 maior NCMS000
-contato contato NCMS000 contatar VMIP1S0
-com com SPS00
-docentes docente AQ0CP0 docente NCCP000
-não não RN
-envolvidos envolvido AQ0MP0 envolver VMP00PM
-politicamente politicamente RG
-com com SPS00
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-. . Fp
-
-268 268 Z
-desalinhamento desalinhamento UNK
-total total AQ0CS0 total NCCS000 total NCMS000
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-cut cut UNK
-e e CC
-braços braço NCMP000
-sindicais sindical AQ0CP0 sindicar VMIP2P0
-de de SPS00
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-políticos político AQ0MP0 político NCMP000
-quaisquer qualquer AQ0CP0 qualquer DI0CP0 qualquer PI0CN000 qualquer PI0CP000
-. . Fp
-
 269 269 Z
-menor menor AQ0CS0 menor NCCS000 menor NCMS000
-influência influência NCFS000
-de de SPS00
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-políticos político AQ0MP0 político NCMP000
-em em SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-gestão gestão NCFS000
-financeira financeiro AQ0FS0 financeiro NCFS000
-e e CC
-de de SPS00
-metas meta NCFP000 meter VMM02S0 meter VMSP2S0
-. . Fp
-
-270 270 Z
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 adunicamp adunicamp UNK
 é ser VMIP3S0
@@ -6763,7 +6748,7 @@ partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
 políticos político AQ0MP0 político NCMP000
 . . Fp
 
-271 271 Z
+270 270 Z
 é ser VMIP3S0
 triste triste AQ0CS0 triste NCCS000
 ver ver NCMS000 ver VMN0000 ver VMN01S0 ver VMN03S0
@@ -6775,6 +6760,21 @@ filial filial AQ0CS0 filial NCCS000 filial NCFS000
 de de SPS00
 partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
 políticos político AQ0MP0 político NCMP000
+. . Fp
+
+271 271 Z
+menor menor AQ0CS0 menor NCCS000 menor NCMS000
+influência influência NCFS000
+de de SPS00
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+políticos político AQ0MP0 político NCMP000
+em em SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+gestão gestão NCFS000
+financeira financeiro AQ0FS0 financeiro NCFS000
+e e CC
+de de SPS00
+metas meta NCFP000 meter VMM02S0 meter VMSP2S0
 . . Fp
 
 272 272 Z
@@ -7076,32 +7076,6 @@ trabalho trabalho NCMS000 trabalhar VMIP1S0
 . . Fp
 
 285 285 Z
-transparência transparência NCFS000
-, , Fc
-sem sem SPS00
-ligações ligação NCFP000
-com com SPS00
-quaisquer qualquer AQ0CP0 qualquer DI0CP0 qualquer PI0CN000 qualquer PI0CP000
-partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
-políticos político AQ0MP0 político NCMP000
-e e CC
-sindicatos sindicato NCMP000
-( ( Fpa
-se se CS se PP3CN000
-possível possível AQ0CS0 possível NCCS000 possível NCMS000
-) ) Fpt
-e e CC
-que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
-represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
-de de SPS00
-fato fato NCMS000
-os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
-docentes docente AQ0CP0 docente NCCP000
-associados associado AQ0MP0 associado NCMP000 associar VMP00PM
-soluções solução NCFP000
-. . Fp
-
-286 286 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
 recursos recurso NCMP000
@@ -7129,7 +7103,7 @@ outras outro AQ0FP0 outro DI0FP0 outro PI0FP000
 organizações organização NCFP000
 . . Fp
 
-287 287 Z
+286 286 Z
 percebo perceber VMIP1S0
 hoje hoje RG
 nossa nosso DP1FSP nosso PX1FS0P0
@@ -7154,6 +7128,32 @@ trabalho trabalho NCMS000 trabalhar VMIP1S0
 em em SPS00
 a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
 unicamp unicamp UNK
+. . Fp
+
+287 287 Z
+transparência transparência NCFS000
+, , Fc
+sem sem SPS00
+ligações ligação NCFP000
+com com SPS00
+quaisquer qualquer AQ0CP0 qualquer DI0CP0 qualquer PI0CN000 qualquer PI0CP000
+partidos partido AQ0MP0 partido NCMP000 partir VMP00PM
+políticos político AQ0MP0 político NCMP000
+e e CC
+sindicatos sindicato NCMP000
+( ( Fpa
+se se CS se PP3CN000
+possível possível AQ0CS0 possível NCCS000 possível NCMS000
+) ) Fpt
+e e CC
+que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
+represente representar VMM03S0 representar VMSP1S0 representar VMSP3S0
+de de SPS00
+fato fato NCMS000
+os o DA0MP0 o NCMP000 o PD0MP000 o PP3MPA00
+docentes docente AQ0CP0 docente NCCP000
+associados associado AQ0MP0 associado NCMP000 associar VMP00PM
+soluções solução NCFP000
 . . Fp
 
 288 288 Z
@@ -16886,33 +16886,6 @@ unicamp unicamp UNK
 . . Fp
 
 640 640 Z
-continuação continuação NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-administração administração NCFS000
-de de SPS00
-o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
-plano plano AQ0MS0 plano NCMS000 planar VMIP1S0
-de de SPS00
-saúde saúde NCFS000 saudar VMM03S0 saudar VMSP1S0 saudar VMSP3S0
-continuação continuação NCFS000
-de de SPS00
-a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
-atividade atividade NCFS000
-em em SPS00
-torno torno NCMS000 tornar VMIP1S0
-de de SPS00
-moradia moradia NCFS000
-assistida assistido AQ0FS0 assistido NCFS000 assistir VMP00SF
-continuação continuação NCFS000
-de de SPS00
-as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
-atividades atividade NCFP000
-culturais cultural AQ0CP0
-transparência transparência NCFS000
-. . Fp
-
-641 641 Z
 que que CS que PE0CN000 que PI0CN000 que PR0CN000 que PT0CN000 que RG
 continue continuar VMM03S0 continuar VMSP1S0 continuar VMSP3S0
 oferecendo oferecer VMG0000
@@ -16940,6 +16913,33 @@ custo custo NCMS000 custar VMIP1S0
 de de SPS00
 o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
 atual atual AQ0CS0
+. . Fp
+
+641 641 Z
+continuação continuação NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+administração administração NCFS000
+de de SPS00
+o o DA0MS0 o NCMS000 o PD0MS000 o PP3MSA00
+plano plano AQ0MS0 plano NCMS000 planar VMIP1S0
+de de SPS00
+saúde saúde NCFS000 saudar VMM03S0 saudar VMSP1S0 saudar VMSP3S0
+continuação continuação NCFS000
+de de SPS00
+a o DA0FS0 a NCMS000 o PD0FS000 o PP3FSA00 a SPS00
+atividade atividade NCFS000
+em em SPS00
+torno torno NCMS000 tornar VMIP1S0
+de de SPS00
+moradia moradia NCFS000
+assistida assistido AQ0FS0 assistido NCFS000 assistir VMP00SF
+continuação continuação NCFS000
+de de SPS00
+as o DA0FP0 a NCMP000 o PD0FP000 o PP3FPA00
+atividades atividade NCFP000
+culturais cultural AQ0CP0
+transparência transparência NCFS000
 . . Fp
 
 642 642 Z
