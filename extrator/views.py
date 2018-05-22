@@ -254,12 +254,12 @@ def salvar_dados_iniciais(request):
         if test:
             token = '.'
 
-        entrada_tokenizada1.write(token.rstrip())
+        entrada_tokenizada1.write(token.strip())
         try:
-            correta = CorrigePalavra.objects.get(palavra=token.rstrip()) 
-            entrada_tokenizada2.write(correta.palavra_correta.rstrip())
+            correta = CorrigePalavra.objects.get(palavra=token.strip()) 
+            entrada_tokenizada2.write(correta.palavra_correta.strip())
         except:
-            entrada_tokenizada2.write(token.rstrip())
+            entrada_tokenizada2.write(token.strip())
         entrada_tokenizada1.write(' ')
         entrada_tokenizada2.write(' ')      
     entrada_original.close()
@@ -531,7 +531,7 @@ def pre_processamento(request):
                 flag = 'error'
                 print 'Erro de codificacao: ' + repr(item_l)
             if flag == 'ok':
-                lista_palavras.append(item_l.rstrip())
+                lista_palavras.append(item_l.strip())
                 flag = 'ok'
             flag = 'ok'
     
@@ -539,8 +539,8 @@ def pre_processamento(request):
     #lista_palavras.pop(-1)
 
     #armazena nos arquivos
-    arq_texto_preproc.write(' '.join(lista_palavras).rstrip())
-    arq_texto_preproc_vet.write('\n'.join(lista_palavras).rstrip())    
+    arq_texto_preproc.write(' '.join(lista_palavras).strip())
+    arq_texto_preproc_vet.write('\n'.join(lista_palavras).strip())    
 
     arq_texto_preproc.close()
     arq_texto_preproc_vet.close()
@@ -583,7 +583,7 @@ def lematizar(request):
             try:           
                 linha.split(' ')[2]
                 if linha[0] != ' ':    
-                    word_lem = linha.rstrip().split(' ')[1]
+                    word_lem = linha.strip().split(' ')[1]
                     if word_lem:
                         lista_palavras.append(word_lem)
                    
@@ -596,7 +596,7 @@ def lematizar(request):
         
             except:
                 if linha[0] != ' ':    
-                    word_lem = linha.rstrip().split(' ')[0]           
+                    word_lem = linha.strip().split(' ')[0]           
                     if word_lem:
                         lista_palavras.append(word_lem)
                 
@@ -607,8 +607,8 @@ def lematizar(request):
                         contador = contador + 1
     
     #armazena nos arquivos
-    texto_lematizado.write(' '.join(lista_palavras).rstrip())
-    texto_lematizado_vetor.write('\n'.join(lista_palavras).rstrip())    
+    texto_lematizado.write(' '.join(lista_palavras).strip())
+    texto_lematizado_vetor.write('\n'.join(lista_palavras).strip())    
     
     texto_lematizado_vetor.close()
     texto_lematizado.close()
@@ -639,7 +639,7 @@ def eliminar_stopwords(request):
     #lê texto lematizado
     arq_texto = codecs.open("extrator/arquivos/p2_texto_lematizado.txt", "r", "utf-8")
     texto = arq_texto.read()
-    palavras = texto.rstrip().split(' ')
+    palavras = texto.strip().split(' ')
     
     #gera arquivos de saída
     arq_saida = codecs.open("extrator/arquivos/p2_texto_lematizado_ssw.txt","w", "utf-8")
@@ -650,7 +650,7 @@ def eliminar_stopwords(request):
     cont_idx = 0
     for palavra in palavras:    
         if palavra.strip() not in stopwords:
-            lista_palavras.append(palavra.rstrip())            
+            lista_palavras.append(palavra.strip())            
             
             #contador de palavras
             pattern = re.compile("(?:[A-Za-z0-9áãõÃÕéóíúàèìòùêâîôûÂÊÎÔÛÁÉÍÓÚÀÈÌÒÙÇç-]+)$") #considera palavra os tokens que contém uma combinação destes caracteres       
@@ -659,8 +659,8 @@ def eliminar_stopwords(request):
                 contador = contador + 1 
     
     #armazena nos arquivos
-    arq_saida.write(' '.join(lista_palavras).rstrip())
-    arq_saida_vetor.write('\n'.join(lista_palavras).rstrip())  
+    arq_saida.write(' '.join(lista_palavras).strip())
+    arq_saida_vetor.write('\n'.join(lista_palavras).strip())  
     
     arq_saida.close()
     arq_saida_vetor.close() 
@@ -819,7 +819,7 @@ def mapear(request):
     
     #armazena no BD
     TextoPreproc.objects.all().delete()
-    aList = [TextoPreproc(vertice=linha[0].rstrip(), vertice_num=linha[1]) for linha in lista_texto]    
+    aList = [TextoPreproc(vertice=linha[0].strip(), vertice_num=linha[1]) for linha in lista_texto]    
     TextoPreproc.objects.bulk_create(aList)    
         
     return render(request, 'extrator/extrator_resultados.html', {'goto': 'passo3' , 'muda_logo':'logo_indexar'})
@@ -844,13 +844,13 @@ def matriz(request):
     string = ''
     for token in tokens:       
         if token.vertice == '.':            
-            string = string.rstrip()            
-            lista_strings.append(string.rstrip())
+            string = string.strip()            
+            lista_strings.append(string.strip())
             string = ''
         else:
-            string = string + token.vertice.rstrip() + ' '    
+            string = string + token.vertice.strip() + ' '    
     
-    arq_subdocumento.write('\n'.join(lista_strings).rstrip())   
+    arq_subdocumento.write('\n'.join(lista_strings).strip())   
     arq_subdocumento.close()   
    
     #lÊ documento de sentenças
@@ -860,7 +860,7 @@ def matriz(request):
     lista_adjacencias = OrderedDict()
     for sentenca in sentencas:
         bigrama = 'ok'
-        palavras_sentenca = sentenca.rstrip().split(' ')
+        palavras_sentenca = sentenca.strip().split(' ')
         for i, palavra in enumerate(palavras_sentenca):
             try:                                            
                 bigrama = palavras_sentenca[i] + ' ' + palavras_sentenca[i+1]
@@ -1152,7 +1152,7 @@ def selecionar_temas(request):
     
     #cria tabela com indice potenciação
     for linha in tabela_potenciacao:
-        tabela_potenciacao_numeros[linha.split(' ')[0]] = float(linha.split(' ')[2].rstrip('\n'))     
+        tabela_potenciacao_numeros[linha.split(' ')[0]] = float(linha.split(' ')[2].strip('\n'))     
         
     #separa dados para o histograma
     potenciacao_valores = []
@@ -1200,7 +1200,7 @@ def selecionar_temas(request):
         for linha in tabela_potenciacao:
             tema_num = linha.split(' ')[0]
             tema_nome = linha.split(' ')[1]
-            tema_indice_potenciacao = float(linha.split(' ')[2].rstrip('\n'))   
+            tema_indice_potenciacao = float(linha.split(' ')[2].strip('\n'))   
             if (tema_indice_potenciacao >= limite_inferior) and (tema_indice_potenciacao <= limite_superior):
                 # como aegs
                 arq_clusters.write(str(tema_num).decode('utf-8') + ' ' + str(tema_nome).decode('utf-8') + ' ' + str(tema_indice_potenciacao) + '\n')
@@ -1390,7 +1390,7 @@ def agrupar_temas(request):
             
             ######## GERA REDE #######################################################################
             #separa os temas do grupo
-            temas = grupo.subtemas.rstrip().split(' ')            
+            temas = grupo.subtemas.strip().split(' ')            
                 
             #inicializa rede
             rede = nx.Graph()
@@ -1406,7 +1406,7 @@ def agrupar_temas(request):
             for par in pairs:
                 cont = 0
                 for sentenca in sentencas:        
-                    lista_sent = sentenca.rstrip( ).split(' ')
+                    lista_sent = sentenca.strip( ).split(' ')
                     if par[0] in lista_sent and par[1] in lista_sent:
                         cont = cont + 1
                 arq_lista_agp.write(par[0] + ' ' + par[1] + ' ' + str(cont) + '\n')
@@ -1476,7 +1476,7 @@ def gerarMapaEResultados(request):
         rede = nx.DiGraph()
         
         #inicializa nós
-        temas = grupo.subtemas.rstrip().split(' ')
+        temas = grupo.subtemas.strip().split(' ')
         
         #gera os nos da rede
         for tema in temas:
@@ -1489,7 +1489,7 @@ def gerarMapaEResultados(request):
         for par in pairs:
             cont = 0
             for sentenca in sentencas:        
-                lista_sent = sentenca.rstrip( ).split(' ')
+                lista_sent = sentenca.strip( ).split(' ')
                 if par[0] in lista_sent and par[1] in lista_sent:
                     cont = cont + 1            
             peso = float(cont)
@@ -1635,14 +1635,14 @@ def processarProtofrases(request):
     senten = ''
    
     for linha in arq_texto_preprocessado_vet:
-        if linha.rstrip() != '.':
-            senten = senten + linha.rstrip() + ' '
+        if linha.strip() != '.':
+            senten = senten + linha.strip() + ' '
         
             
-            #senten = senten + ' ' + str(linha.encode('utf-8')).rstrip()
+            #senten = senten + ' ' + str(linha.encode('utf-8')).strip()
 
-        if linha.rstrip() == '.':
-            senten = senten.rstrip()
+        if linha.strip() == '.':
+            senten = senten.strip()
             sentencas_pp_vet.append(senten)           
             senten = ''
             
@@ -1663,23 +1663,23 @@ def processarProtofrases(request):
         lista_de_nos_dist = []
         tabela_graus = []        
         #separa as palavras       
-        vertices = grupo.subtemas.rstrip().split(' ')
+        vertices = grupo.subtemas.strip().split(' ')
        
         #Separa as sentencas que contém as palavras do grupo
         sentencas_grupo = []
         sentencas_original = []
         bag = []
         for idx, linha in enumerate(arq_sentencas):
-            bag = linha.rstrip().split(' ')
+            bag = linha.strip().split(' ')
             if not set(vertices).isdisjoint(bag):
-                sentencas_grupo.append(linha.rstrip())
+                sentencas_grupo.append(linha.strip())
                 sentencas_original.append(sentencas_pp_vet[idx])
        
         #cria lista de adjancecias
         lista_adjacencias = OrderedDict()
         for sentenca in sentencas_grupo:             
             bigrama = 'ok'
-            palavras_sentenca = sentenca.rstrip().split(' ')
+            palavras_sentenca = sentenca.strip().split(' ')
             for i, palavra in enumerate(palavras_sentenca):
                 lista_de_nos.append(palavra)
                 try:                                             
@@ -1771,7 +1771,7 @@ def mapearEextrair(request):
     bag_protos =[]
     ident = 0
     for itemm in temas_subtemas:        
-        palavras = itemm.subtemas.rstrip().split(' ')
+        palavras = itemm.subtemas.strip().split(' ')
         for palavra in palavras:             
             sentencas = SentencasAvaliadas.objects.filter(tema__exact=itemm.nucleos).filter(proto__icontains=palavra).order_by('peso').order_by('-corte')
             obj_maior_peso = max(sentencas, key=attrgetter('peso'))
@@ -1819,7 +1819,7 @@ def extrairNucleos(request):
 
     #cria entrada do lematizador
     for obj in objetos:
-        arq_entrada_lematizador.write(str(obj.ident) + ' ' + obj.frase.rstrip() + '.\n')
+        arq_entrada_lematizador.write(str(obj.ident) + ' ' + obj.frase.strip() + '.\n')
         
     arq_entrada_lematizador.close()   
     
@@ -1843,45 +1843,45 @@ def extrairNucleos(request):
     for linha in saida_lematizador:            
         if linha != "\n":
             try:           
-                linha.rstrip().split(' ')[2]
+                linha.strip().split(' ')[2]
                 if linha[0] != ' ':    
-                    word_lem = linha.rstrip().split(' ')[1]
-                    word_org = linha.rstrip().split(' ')[0]
+                    word_lem = linha.strip().split(' ')[1]
+                    word_org = linha.strip().split(' ')[0]
                     if word_lem == '.':
                         arq_sentencas_lematizadas.write('.\n')
                         arq_sentencas_org_lematizadas.write('.\n')
 
-                        lista_strings.append(string.rstrip())
-                        lista_strings_org.append(string_org.rstrip())
+                        lista_strings.append(string.strip())
+                        lista_strings_org.append(string_org.strip())
 
                         string = ''
                         string_org = ''
                      
                     else:
-                        arq_sentencas_lematizadas.write(word_lem.rstrip() + ' ')
-                        arq_sentencas_org_lematizadas.write(word_org.rstrip() + ' ')
+                        arq_sentencas_lematizadas.write(word_lem.strip() + ' ')
+                        arq_sentencas_org_lematizadas.write(word_org.strip() + ' ')
                         
-                        string = string + word_lem.rstrip() + ' '
-                        string_org = string_org.rstrip() + word_org.rstrip() + ' '
+                        string = string + word_lem.strip() + ' '
+                        string_org = string_org.strip() + word_org.strip() + ' '
 
             except:
                 if linha[0] != ' ':    
-                    word_lem = linha.rstrip().split(' ')[0]                
+                    word_lem = linha.strip().split(' ')[0]                
                     if word_lem == '.':
                         arq_sentencas_lematizadas.write('.\n')
                         arq_sentencas_org_lematizadas.write('.\n')
                         
-                        lista_strings.append(string.rstrip())
-                        lista_strings_org.append(string_org.rstrip())
+                        lista_strings.append(string.strip())
+                        lista_strings_org.append(string_org.strip())
                         
                         string = ''
                         string_org = ''                      
                     else:
-                        arq_sentencas_lematizadas.write(word_lem.rstrip() + ' ')
-                        arq_sentencas_org_lematizadas.write(word_lem.rstrip() + ' ')
+                        arq_sentencas_lematizadas.write(word_lem.strip() + ' ')
+                        arq_sentencas_org_lematizadas.write(word_lem.strip() + ' ')
                         
-                        string = string + word_lem.rstrip() + ' '
-                        string_org = string_org.rstrip() + word_lem.rstrip() + ' '
+                        string = string + word_lem.strip() + ' '
+                        string_org = string_org.strip() + word_lem.strip() + ' '
                      
     arq_sentencas_lematizadas.close()
     arq_sentencas_org_lematizadas.close()
@@ -1891,13 +1891,13 @@ def extrairNucleos(request):
        
         #lista_adjacencias_orig = OrderedDict()
         lista_adjacencias_orig = []
-        palavras_proto_l =  obj.proto.rstrip().split(' ')
+        palavras_proto_l =  obj.proto.strip().split(' ')
         if len(palavras_proto_l) > 1:
             
             # GERA LISTA DE ADJACENCIAS
             #lista_de_adjacencias = OrderedDict()
             lista_de_adjacencias = []
-            graus_l = obj.string_graus.rstrip().split(' ')             
+            graus_l = obj.string_graus.strip().split(' ')             
             if len(palavras_proto_l) != 1:           
                 for idx, palavra in enumerate(palavras_proto_l):                 
                     fim = 'nao'
@@ -1916,13 +1916,13 @@ def extrairNucleos(request):
             # pega frase lematizada relativa à protofrase        
             sentenca_l = OrderedDict()
             for sent in lista_strings:
-                pals = sent.rstrip().split(' ')
+                pals = sent.strip().split(' ')
                 if int(pals[0]) == obj.ident:               
                     sentenca = sent
             
             
             #Cria dicionario com as palavras de cada sentenca original
-            sentenca_l_l = sentenca.rstrip().split(' ')        
+            sentenca_l_l = sentenca.strip().split(' ')        
             count = 0
             for item in sentenca_l_l:
                 sentenca_l[count] = item
@@ -1973,22 +1973,22 @@ def extrairNucleos(request):
                 #print k
                 if linha_adj[1] == str(0):                    
                     if string:
-                        lista_extracao_l.append(string.rstrip())
+                        lista_extracao_l.append(string.strip())
                     string = ''
                     primeiro = 'sim'
                 else:
                     if primeiro == 'sim':
-                        string = string + linha_adj[0].rstrip() + ' '
+                        string = string + linha_adj[0].strip() + ' '
                         primeiro = 'nao'
                         if (cont + 1) == tam :
-                            lista_extracao_l.append(string.rstrip())
+                            lista_extracao_l.append(string.strip())
                     else:
-                        pls = linha_adj[0].rstrip().split(' ')
+                        pls = linha_adj[0].strip().split(' ')
                         del pls[0]
                         nova_string = ' '.join(pls)
-                        string = string + nova_string.rstrip() + ' '
+                        string = string + nova_string.strip() + ' '
                         if (cont + 1) == tam :
-                            lista_extracao_l.append(string.rstrip())
+                            lista_extracao_l.append(string.strip())
             
                 cont = cont + 1
        
@@ -2005,18 +2005,18 @@ def extrairNucleos(request):
             set_o_dict = OrderedDict()           
             
             for item in set_lematizadas:                
-                num = item.rstrip().split(' ')[0]
+                num = item.strip().split(' ')[0]
                 if int(num) == obj.ident:
-                    set_l = item.rstrip().split(' ')
+                    set_l = item.strip().split(' ')
                     cont = 0
                     for i in set_l:
                         set_l_dict[cont] = i
                         cont = cont + 1
            
             for item in set_originais:
-                num = item.rstrip().split(' ')[0]
+                num = item.strip().split(' ')[0]
                 if int(num) == obj.ident:                  
-                    set_o = item.rstrip().split(' ')
+                    set_o = item.strip().split(' ')
                     cont = 0
                     for i in set_o:
                         set_o_dict[cont] = i
@@ -2027,7 +2027,7 @@ def extrairNucleos(request):
             f_o_extraida_string = ''
             
             for j in lista_extracao_l:
-                palavras_set_extraida = j.rstrip().split(' ')
+                palavras_set_extraida = j.strip().split(' ')
                 primeira_palavra = palavras_set_extraida[0]
 
                 #procura primeira palavra na sentenca lematizada
@@ -2073,7 +2073,7 @@ def extrairNucleos(request):
             sentencas_nucleos.append([obj.ident, obj.tema, obj.subtema, obj.proto, obj.frase, obj.frase, obj.string_graus, obj.peso, obj.representatividade, obj.irse])
 
     #salva dados no BD
-    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5].rstrip(), string_graus=sent[6], peso=sent[7] , representatividade=sent[8], irse=sent[9]) for sent in sentencas_nucleos]    
+    aList = [SentencasNucleos(ident=sent[0], tema=sent[1], subtema=sent[2], frase=sent[4] , proto=sent[3], nucleo=sent[5].strip(), string_graus=sent[6], peso=sent[7] , representatividade=sent[8], irse=sent[9]) for sent in sentencas_nucleos]    
     SentencasNucleos.objects.bulk_create(aList)
     
     return render(request, 'extrator/extrator_resultados.html', {'goto':'passo6', 'muda_logo':'logo_enucleos'})    
@@ -2085,7 +2085,7 @@ def extraiSentencasGlobais(request):
 
     #Inicializa arquivo TSV
     arq_tsv = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p6_json_data_globais.tsv", 'w', 'utf-8') 
-    
+
     #carega parametros
     parametros = ParametrosDeAjuste.objects.get(ident__iexact=1)
     par = parametros.radio_r
@@ -2160,7 +2160,163 @@ def extraiSentencasGlobais(request):
         arq_tsv.write(obj.nucleo + '\t' + str(float(obj.irseg)/100) + '\t' + ident + '\t' + obj.representatividade + '\n')          
         cont = cont + 1
     
+    
     return render(request, 'extrator/extrator_resultados.html', {'goto':'p6-result', 'muda_logo':'logo_eglobais','resultados_p7':'resultados_p7',})    
+
+    ########### teste de formação de frases #############################
+
+def gerarFrasesGlobais(request):
+   
+    arq_json = codecs.open(djangoSettings.STATIC_ROOT + "\\agora\\json\\p6_json_frases_globais.json", 'w', 'utf-8') 
+
+    objetos = SentencasGlobais.objects.all()
+    objetos_nucleos = SentencasGlobais.objects.filter(representatividade__exact='altissima')
+
+    #cria lista de nucleos de alta pontuacao
+    nucleos = []
+    for obj_n in objetos_nucleos:
+        strs = obj_n.nucleo.split('*/*')
+        for item in strs:
+            nucleos.append(item.strip())
+    
+    for nuc in nucleos:
+        esquerda = OrderedDict()
+        direita = OrderedDict()
+        for obj in objetos:
+            str_l = []
+            str_l_strip = []         
+            str_l = obj.nucleo.split('*/*')
+            for item in str_l:
+                str_l_strip.append(item.strip())
+            frase = ' '.join(str_l_strip)            
+            pontas = []
+
+            if nuc in frase:
+                div = frase.split(nuc)
+                pontas.append(frase.split(nuc))
+                if div[0]:
+                    esquerda[div[0].strip()] = obj.peso
+                if div[1]:
+                    direita[div[1].strip()] = obj.peso  
+
+            
+    
+        excluir_esquerda = []              
+        for pt,v1 in esquerda.iteritems():
+            for psol,v2 in esquerda.iteritems():
+                if psol in pt and psol != pt:
+                    if psol not in excluir_esquerda:                       
+                        excluir_esquerda.append(psol)
+                        
+        excluir_direita = []              
+        for pp,v1 in direita.iteritems():
+            for mdb,v2 in direita.iteritems():
+                if mdb in pp and mdb != pp:
+                    if mdb not in excluir_direita:                       
+                        excluir_direita.append(mdb)
+                  
+        #elimina elementos repetidos
+        for j in excluir_esquerda:
+            del esquerda[j]
+        
+        for j in excluir_direita:
+            del direita[j]
+
+    #gera as frases
+    frases = []
+    
+    for nuc in nucleos:
+        maior_valor = 0
+        for ke,ve in esquerda.iteritems():
+            for kd, vd in direita.iteritems():
+                valor = int(vd) + int(ve)
+                if valor > maior_valor:
+                    maior_valor = valor        
+        print maior_valor
+        
+        for ke,ve in esquerda.iteritems():
+            for kd, vd in direita.iteritems():
+                peso_f = int(((int(ve) + int(vd)) / maior_valor) * 100)
+                if peso_f > 80:
+                    representatividade = 'altissima'
+                if peso_f > 60 and peso_f <= 80:
+                    representatividade = 'alta'
+                if peso_f > 40 and peso_f <= 60:                                    
+                    representatividade = 'media'
+                if peso_f > 20 and peso_f <= 40:
+                    representatividade = 'baixa'
+                if peso_f >= 0 and peso_f <= 20:
+                    representatividade = 'baixissima' 
+                        
+                frases.append([ke,nuc,kd, int(((int(ve) + int(vd))/maior_valor)*100), representatividade]) 
+                
+
+
+    for t in frases:
+        print t
+   
+    
+    #salva dados no BD
+    #aList = [SentencasGlobais(nucleo=sent[0], peso=sent[1], irseg=sent[2], representatividade=sent[3] ) for sent in resultados_rankeados_norm]    
+    #SentencasGlobais.objects.bulk_create(aList)
+
+
+
+
+
+
+
+
+
+
+        #cabeçalho
+    for ind, nuc in enumerate(nucleos):       
+        if ind == 0:
+            arq_json.write("\n")
+        else:
+            arq_json.write(",\n")
+        
+        arq_json.write("{\n    \"name\": \"" + nuc + "\",\n")
+        arq_json.write("    \"parents\": [")
+     
+        for idx, item in enumerate(esquerda):        
+            if idx == 0:
+                arq_json.write('\n')
+            else:                
+                arq_json.write(",\n")    
+            arq_json.write("        {\n            \"name\": \"" + item + "\",\n            \"value\": 1,\n            \"size\": 1\n        }")
+
+
+        arq_json.write("\n   ],\n")
+        arq_json.write("    \"children\": [")
+        
+        for idx, item in enumerate(direita):        
+            if idx == 0:
+                arq_json.write('\n')
+            else:                
+                arq_json.write(",\n")    
+            arq_json.write("        {\n            \"name\": \"" + item + "\",\n            \"value\": 1,\n            \"size\": 1\n        }")
+   
+        
+        arq_json.write("\n    ]\n")
+        arq_json.write("}")
+        
+    
+    arq_json.close()    
+        
+        
+        #print esquerda_nucleos
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return render(request, 'extrator/extrator_resultados.html', {'goto':'p8-result', 'muda_logo':'logo_fglobais','resultados_p8':'resultados_p8',})    
 
 
 def calcula_indice_representatividade(request):

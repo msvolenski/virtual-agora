@@ -3,15 +3,14 @@ RELATORIO FINAL DE TEMAS E SUBTEMAS
 
 TEMA: docente (98.2562119925) 
 
-unicamp (0.798477244656) 
-interesse (0.774446460802) 
-associação (0.495024367534) 
-entidade (0.179364882382) 
-professor (0.142066123976) 
-sociedade (0.0375879205215) 
-assunto (0.0300710892046) 
-apoio (0.0253327302008) 
-papel (0.0183543488588) 
+unicamp (0.819095818244) 
+interesse (0.793603820622) 
+associação (0.479019820313) 
+entidade (0.179994232847) 
+professor (0.148047855512) 
+sociedade (0.0356096089151) 
+assunto (0.031337240329) 
+papel (0.0191271635476) 
 
 TEMA: político (75.1016754539) 
 
@@ -34,9 +33,8 @@ fato (0.0657761143219)
 
 TEMA: universidade (28.0059169544) 
 
-ensino (0.246992492882) 
-participação (0.181494099886) 
-administração (0.0930501965763) 
+ensino (0.329323323842) 
+participação (0.193593706545) 
 
 TEMA: plano (21.8226400517) 
 
@@ -78,6 +76,10 @@ TEMA: classe (8.5112782888)
 
 minoria (0.230327475298) 
 funcionário (0.193700638698) 
+
+TEMA: apoio (7.59981906025) 
+
+administração (0.248133857537) 
 
 TEMA: membro (7.38712285444) 
 

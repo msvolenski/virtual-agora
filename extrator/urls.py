@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^extrator/processarprotofrases$', views.processarProtofrases, name='processarpfs'),      
     url(r'^extrator/calcularindice/$', views.calcula_indice, name='calularindice'),
     url(r'^extrator/selecionartemas/$', views.selecionar_temas, name='selecionar_temas'),
+    url(r'^extrator/gerafrasesglobais/$', views.gerarFrasesGlobais, name='fglobais'),
     url(r'^extrator/extraisglobais/$', views.extraiSentencasGlobais, name='eglobais'),
     url(r'^extrator/agrupartemas/$', views.agrupar_temas, name='agrupar_temas'),
     url(r'^extrator/limpasubstantivo/(?P<opcao>[-\w]+)/$', views.limpar_lista_subtantivos, name='limpar_lista_subtantivos'),

@@ -697,11 +697,22 @@
                 <!-- cd-timeline-block -->
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img cd-picture">
-                        <span id="logo_eglobais" class="glyphicon glyphicon-tasks" style="font-size:200%;margin-top:15px;"></span>
+                        <span id="logo_eglobais" class="glyphicon glyphicon-king" style="font-size:200%;margin-top:15px;"></span>
                     </div>
                     <div class="cd-timeline-content" style="background: #E04644">
                         <h2>Calcula Representatividade Global</h2>
-                        <a href="{% url 'extrator:eglobais'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>                      
+                        <a href="{% url 'extrator:eglobais' %}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Calcular</a>                  
+                    </div>                    
+                </div>
+
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
+                        <span id="logo_fglobais" class="glyphicon glyphicon-tasks" style="font-size:200%;margin-top:15px;"></span>
+                    </div>
+                    <div class="cd-timeline-content" style="background: #E04644">
+                        <h2>Monta frases representativas</h2>
+                        <a href="{% url 'extrator:fglobais'%}" class="cd-read-more" style="margin-top:0px;margin-left:45%">Gerar</a>                      
                     </div>
                 </div>
 
@@ -728,8 +739,17 @@
             <div id="chart_p6"></div>
         </div>
         {% endif %}
+
+        {% if resultados_p8 %}
+        <div class="sem_resultado" id="p8-result" style="position:relative;margin-top:120px;">
+            <b>RESULTADOS</b>
+        </div>     
+        <div id="resultado-passo-6-globais" style="margin-top:100px;overflow:auto;width:200%"></div>
+            <div id="chart_p8"></div>
+        </div>
+        {% endif %}
         
-        {% if not resultados_p6 and not resultados_p7 %}
+        {% if not resultados_p6 and not resultados_p7 and not resultados_p8 %}
         <div class="sem_resultado" style="position:relative;margin-top:120px;">
             <a href="{% url 'extrator:mostra_resultados' '6' %}" style="color:inherit;font-weight:bold">RESULTADOS</a>
         </div>
@@ -893,6 +913,7 @@
         <script src="https://d3js.org/d3.v3.min.js"></script>
         <script>
             var p5_data = "{% static 'agora/json/p5_json_temas_subtemas.json' %}";
+            var p5_data = "{% static 'agora/json/p6_json_frases_globais.json' %}";
         </script>
         <script src="{% static 'agora/js/p5_mapa_temas_subtemas.js' %}"></script> {% endif %}
 
@@ -906,7 +927,7 @@
 
         {%if resultados_p7 %}
         <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="{% static 'agora/js/p6_sentencas_globais.js' %}"></script> {% endif %}
+        <script src="{% static 'agora/js/p6_sentencas_globais.js' %}"></script>
 
         <script>
             var donut = donutChart()
@@ -927,6 +948,24 @@
             });
         
         </script>        
+        
+        {% endif %}
+        <!-- MONTA RESULTADOS DO PASSO 6 -->
+        {% if resultados_p8 %}
+        
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script>
+            var p8_data = "{% static 'agora/json/p6_json_frases_globais.json' %}";      
+        </script>
+        <script src="{% static 'agora/js/p6_frases_globais.js' %}"></script> 
+        
+        {% endif %}
+        
+        
+        
+        
+        
+        
         
         <!-- MONTA GOTO -->
         {% if goto %}
