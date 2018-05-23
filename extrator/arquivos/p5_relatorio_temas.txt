@@ -4,262 +4,58 @@ RELATÓRIO FINAL - TEMAS
 PARÂMETROS DE CLUSTERIZAÇÃO
 
 - Faixa de divisão do histograma: 0.2
-- Critério de exclusão do cluster: posssuir 20% dos nós totais (256.0 de 1280)
+- Critério de exclusão do cluster: posssuir 20% dos nós totais (582.2 de 2911)
 
 CLUSTERS SELECIONADOS
 
 Cluster 1
-30 docente 2.94768635978
+0 bolsonaro 3.0
 
 Cluster 2
-15 adunicamp 2.48276381878
+115 votar 0.444498327267
 
 Cluster 3
-20 político 2.25305026362
-
-Cluster 4
-7 associado 2.08000444148
-
-Cluster 5
-182 interesse 1.27783666032
-37 unicamp 1.23514448783
-
-Cluster 6
-16 associação 1.16684315204
-4 ação 1.15171540535
-3 transparência 1.08850111001
-
-Cluster 7
-55 representar 0.943179821209
-83 universidade 0.840177508632
-2 partidário 0.837820032358
-
-Cluster 8
-36 professor 0.740239277559
-266 atividade 0.693051147993
-34 entidade 0.657671235401
-18 sindicato 0.655899066635
-179 plano 0.65467920155
-38 maior 0.634991732979
-19 partido 0.616886160784
-
-Cluster 9
-28 questão 0.571232336861
-59 poder 0.564414046079
-294 gostar 0.555575599226
-187 defeso 0.543659327353
-185 proposto 0.508919938369
-170 ideológico 0.50801802687
-373 problema 0.507782872006
-27 unimed 0.503823523061
-23 acadêmico 0.47387840409
-35 defender 0.469941943353
-57 decisão 0.467862606074
-201 diretoria 0.459050529259
-39 representatividade 0.458776320286
-41 opinião 0.45667959664
-280 forma 0.451730029966
-366 efetivo 0.438916599395
-146 deve 0.436166441344
-527 diferente 0.433686967622
-237 exemplo 0.431582791673
-68 interno 0.430102312004
-50 assembleia 0.412135732174
-385 grupo 0.406862162035
-396 recurso 0.400861974143
-
-Cluster 10
-503 geral 0.395550073755
-154 ver 0.390600543185
-305 atualmente 0.386206246415
-99 – 0.384701499807
-691 negociação 0.379206421788
-12 eletrônico 0.376272895574
-282 continuar 0.375283692056
-90 sindical 0.371342113448
-866 envolvido 0.366621383283
-14 andar 0.365061663389
-105 novo 0.364768145934
-415 financeiro 0.362632977269
-69 externo 0.354984596607
-556 fato 0.35080594305
-327 ficar 0.344200625223
-231 atuação 0.343555370135
-78 sociedade 0.338291284693
-372 envolvimento 0.337538606459
-130 gestão 0.329362080087
-103 ensino 0.329323323842
-26 convênio 0.32597587684
-303 tomado 0.324793971733
-24 permanecer 0.315945857934
-566 frente 0.314219683329
-540 envolver 0.312849516327
-241 discussão 0.307953341258
-5 uso 0.304935037996
-60 contribuir 0.301364126757
-65 atual 0.297464141039
-54 dever 0.295713646669
-378 debate 0.293118348438
-183 funcionário 0.290550958047
-51 participação 0.290390559817
-276 votação 0.290181452194
-444 esquerdo 0.278643124541
-92 nacional 0.277663809435
-370 salarial 0.277038267245
-435 posição 0.272125869864
-359 assunto 0.270639802841
-300 modo 0.267057883181
-115 transparente 0.26553136066
-32 quantum 0.264282276775
-47 vez 0.263299687112
-45 trabalho 0.262268881523
-286 classe 0.255338348664
-324 representação 0.252563167955
-178 melhorar 0.251796875802
-114 administração 0.248133857537
-437 maioria 0.24646100026
-180 saúde 0.243528380186
-150 saber 0.233742819825
-284 minoria 0.230327475298
-82 apoio 0.227994571807
-198 feito 0.227866438986
-725 papel 0.227135067127
-518 tema 0.226662951939
-58 politicar 0.223675833685
-319 menor 0.222643993669
-67 membro 0.221613685633
-70 voltado 0.220530655369
-852 ligado 0.219238735817
-256 condição 0.217757973729
-10 consulto 0.217383563657
-199 querer 0.213219582909
-229 valor 0.210728282399
-218 programa 0.208174408805
-215 ativo 0.207059231242
-142 etc 0.207043413817
-923 participar 0.207011546149
-101 carreiro 0.205036723969
-380 além 0.204059598793
-602 gasto 0.20367639863
-202 unidade 0.200155165197
+207 falar 0.390720233084
+300 jair 0.329670965161
+125 saber 0.312596969596
+106 dizer 0.30903280926
+141 brasil 0.30111304537
+169 dar 0.295823390005
+198 poder 0.269726110958
+27 boulos 0.269619220007
+159 querer 0.259310235632
+10 caro 0.253736822339
+66 ver 0.250225477859
+118 pessoa 0.249683684982
+184 lula 0.248610088147
+49 apoiar 0.245400643751
+63 fala 0.244183298974
+172 ficar 0.222876916071
+348 gostar 0.212270736592
+261 eleitor 0.208026737295
 
 TEMAS PRÉ-SELECIONADOS
 
-docente
-adunicamp
-político
-associado
-interesse
-unicamp
-associação
-ação
-transparência
-representar
-universidade
-partidário
-professor
-atividade
-entidade
-sindicato
-plano
-maior
-partido
-questão
-poder
-gostar
-defeso
-proposto
-ideológico
-problema
-unimed
-acadêmico
-defender
-decisão
-diretoria
-representatividade
-opinião
-forma
-efetivo
-deve
-diferente
-exemplo
-interno
-assembleia
-grupo
-recurso
-geral
-ver
-atualmente
-–
-negociação
-eletrônico
-continuar
-sindical
-envolvido
-andar
-novo
-financeiro
-externo
-fato
-ficar
-atuação
-sociedade
-envolvimento
-gestão
-ensino
-convênio
-tomado
-permanecer
-frente
-envolver
-discussão
-uso
-contribuir
-atual
-dever
-debate
-funcionário
-participação
-votação
-esquerdo
-nacional
-salarial
-posição
-assunto
-modo
-transparente
-quantum
-vez
-trabalho
-classe
-representação
-melhorar
-administração
-maioria
-saúde
+bolsonaro
+votar
+falar
+jair
 saber
-minoria
-apoio
-feito
-papel
-tema
-politicar
-menor
-membro
-voltado
-ligado
-condição
-consulto
+dizer
+brasil
+dar
+poder
+boulos
 querer
-valor
-programa
-ativo
-etc
-participar
-carreiro
-além
-gasto
-unidade
+caro
+ver
+pessoa
+lula
+apoiar
+fala
+ficar
+gostar
+eleitor
 
 
 SELEÇÃO FINAL DOS TEMAS
@@ -270,296 +66,31 @@ SELEÇÃO FINAL DOS TEMAS
 
 Tema  ->  Vizinho  / Peso bigrama em relação ao vizinho / Frequência relativa 
 
-docente -> político - 2/72 - 2.77777777778%
-docente -> associado - 3/83 - 3.61445783133%
-docente -> interesse - 1/52 - 1.92307692308%
-docente -> unicamp - 16/49 - 32.6530612245%
-docente -> associação - 1/29 - 3.44827586207%
-docente -> ação - 1/27 - 3.7037037037%
-docente -> sindicato - 1/16 - 6.25%
-docente -> plano - 1/20 - 5.0%
-docente -> exemplo - 2/9 - 22.2222222222%
-docente -> negociação - 1/7 - 14.2857142857%
-docente -> fato - 2/9 - 22.2222222222%
-docente -> ensino - 1/7 - 14.2857142857%
-docente -> assunto - 1/6 - 16.6666666667%
-docente -> minoria - 2/3 - 66.6666666667%
-docente -> unidade - 1/4 - 25.0%
-adunicamp -> adunicamp - 1/81 - 1.23456790123%
-adunicamp -> político - 1/72 - 1.38888888889%
-adunicamp -> interesse - 1/52 - 1.92307692308%
-adunicamp -> associação - 1/29 - 3.44827586207%
-adunicamp -> ação - 3/27 - 11.1111111111%
-adunicamp -> entidade - 1/17 - 5.88235294118%
-adunicamp -> sindicato - 2/16 - 12.5%
-adunicamp -> forma - 1/10 - 10.0%
-adunicamp -> efetivo - 1/7 - 14.2857142857%
-adunicamp -> negociação - 1/7 - 14.2857142857%
-adunicamp -> fato - 1/9 - 11.1111111111%
-adunicamp -> sociedade - 1/9 - 11.1111111111%
-adunicamp -> convênio - 1/10 - 10.0%
-adunicamp -> discussão - 1/7 - 14.2857142857%
-adunicamp -> administração - 1/7 - 14.2857142857%
-adunicamp -> papel - 1/7 - 14.2857142857%
-político -> docente - 1/124 - 0.806451612903%
-político -> associado - 1/83 - 1.20481927711%
-político -> ação - 1/27 - 3.7037037037%
-político -> transparência - 1/31 - 3.22580645161%
-político -> entidade - 1/17 - 5.88235294118%
-político -> sindicato - 1/16 - 6.25%
-político -> partido - 1/21 - 4.7619047619%
-político -> questão - 1/19 - 5.26315789474%
-político -> acadêmico - 2/13 - 15.3846153846%
-político -> diretoria - 1/13 - 7.69230769231%
-político -> negociação - 1/7 - 14.2857142857%
-político -> gestão - 1/8 - 12.5%
-político -> classe - 1/7 - 14.2857142857%
-político -> minoria - 1/3 - 33.3333333333%
-associado -> docente - 1/124 - 0.806451612903%
-associado -> adunicamp - 5/81 - 6.17283950617%
-associado -> político - 1/72 - 1.38888888889%
-associado -> partido - 4/21 - 19.0476190476%
-associado -> questão - 1/19 - 5.26315789474%
-associado -> unimed - 1/18 - 5.55555555556%
-associado -> forma - 1/10 - 10.0%
-associado -> efetivo - 1/7 - 14.2857142857%
-associado -> exemplo - 1/9 - 11.1111111111%
-associado -> convênio - 1/10 - 10.0%
-associado -> discussão - 1/7 - 14.2857142857%
-associado -> funcionário - 1/5 - 20.0%
-associado -> tema - 1/8 - 12.5%
-associado -> membro - 1/7 - 14.2857142857%
-associado -> gasto - 1/6 - 16.6666666667%
-interesse -> docente - 19/124 - 15.3225806452%
-interesse -> político - 3/72 - 4.16666666667%
-interesse -> associado - 3/83 - 3.61445783133%
-interesse -> universidade - 1/25 - 4.0%
-interesse -> professor - 5/23 - 21.7391304348%
-interesse -> acadêmico - 1/13 - 7.69230769231%
-interesse -> efetivo - 1/7 - 14.2857142857%
-interesse -> grupo - 1/11 - 9.09090909091%
-interesse -> funcionário - 1/5 - 20.0%
-unicamp -> docente - 1/124 - 0.806451612903%
-unicamp -> interesse - 2/52 - 3.84615384615%
-unicamp -> associação - 1/29 - 3.44827586207%
-unicamp -> ação - 1/27 - 3.7037037037%
-unicamp -> transparência - 1/31 - 3.22580645161%
-unicamp -> universidade - 1/25 - 4.0%
-unicamp -> partido - 1/21 - 4.7619047619%
-unicamp -> grupo - 1/11 - 9.09090909091%
-unicamp -> sociedade - 1/9 - 11.1111111111%
-unicamp -> ensino - 1/7 - 14.2857142857%
-associação -> docente - 7/124 - 5.64516129032%
-associação -> ação - 1/27 - 3.7037037037%
-associação -> professor - 1/23 - 4.34782608696%
-associação -> sindicato - 1/16 - 6.25%
-associação -> opinião - 1/15 - 6.66666666667%
-associação -> assunto - 1/6 - 16.6666666667%
-associação -> classe - 1/7 - 14.2857142857%
-ação -> adunicamp - 2/81 - 2.46913580247%
-ação -> político - 3/72 - 4.16666666667%
-ação -> representatividade - 1/19 - 5.26315789474%
-ação -> efetivo - 1/7 - 14.2857142857%
-ação -> recurso - 1/16 - 6.25%
-transparência -> adunicamp - 1/81 - 1.23456790123%
-transparência -> ação - 3/27 - 11.1111111111%
-transparência -> representatividade - 7/19 - 36.8421052632%
-transparência -> forma - 1/10 - 10.0%
-transparência -> gestão - 1/8 - 12.5%
-transparência -> atual - 1/11 - 9.09090909091%
-transparência -> participação - 1/11 - 9.09090909091%
-transparência -> programa - 1/6 - 16.6666666667%
-transparência -> gasto - 1/6 - 16.6666666667%
-universidade -> político - 1/72 - 1.38888888889%
-universidade -> recurso - 1/16 - 6.25%
-universidade -> sociedade - 1/9 - 11.1111111111%
-universidade -> ensino - 1/7 - 14.2857142857%
-universidade -> debate - 1/12 - 8.33333333333%
-professor -> unicamp - 3/49 - 6.12244897959%
-professor -> atividade - 1/23 - 4.34782608696%
-professor -> problema - 1/17 - 5.88235294118%
-professor -> grupo - 1/11 - 9.09090909091%
-atividade -> adunicamp - 2/81 - 2.46913580247%
-atividade -> político - 1/72 - 1.38888888889%
-atividade -> interesse - 1/52 - 1.92307692308%
-atividade -> acadêmico - 2/13 - 15.3846153846%
-atividade -> ensino - 1/7 - 14.2857142857%
-atividade -> debate - 2/12 - 16.6666666667%
-entidade -> político - 1/72 - 1.38888888889%
-entidade -> associado - 1/83 - 1.20481927711%
-sindicato -> docente - 1/124 - 0.806451612903%
-sindicato -> atividade - 1/23 - 4.34782608696%
-sindicato -> partido - 1/21 - 4.7619047619%
-sindicato -> funcionário - 1/5 - 20.0%
-sindicato -> representação - 1/8 - 12.5%
-plano -> ação - 1/27 - 3.7037037037%
-plano -> unimed - 1/18 - 5.55555555556%
-plano -> gestão - 1/8 - 12.5%
-plano -> saúde - 11/15 - 73.3333333333%
-partido -> político - 13/72 - 18.0555555556%
-questão -> político - 3/72 - 4.16666666667%
-questão -> universidade - 1/25 - 4.0%
-questão -> plano - 1/20 - 5.0%
-questão -> trabalho - 1/13 - 7.69230769231%
-questão -> administração - 1/7 - 14.2857142857%
-problema -> docente - 1/124 - 0.806451612903%
-problema -> político - 1/72 - 1.38888888889%
-problema -> associado - 1/83 - 1.20481927711%
-problema -> unicamp - 1/49 - 2.04081632653%
-problema -> professor - 1/23 - 4.34782608696%
-problema -> acadêmico - 1/13 - 7.69230769231%
-problema -> sociedade - 1/9 - 11.1111111111%
-unimed -> adunicamp - 1/81 - 1.23456790123%
-unimed -> associado - 1/83 - 1.20481927711%
-unimed -> plano - 1/20 - 5.0%
-unimed -> valor - 1/7 - 14.2857142857%
-acadêmico -> docente - 1/124 - 0.806451612903%
-acadêmico -> universidade - 1/25 - 4.0%
-diretoria -> docente - 1/124 - 0.806451612903%
-diretoria -> unidade - 1/4 - 25.0%
-representatividade -> docente - 3/124 - 2.41935483871%
-representatividade -> associado - 1/83 - 1.20481927711%
-representatividade -> transparência - 3/31 - 9.67741935484%
-representatividade -> professor - 1/23 - 4.34782608696%
-representatividade -> representatividade - 1/19 - 5.26315789474%
-representatividade -> negociação - 1/7 - 14.2857142857%
-representatividade -> atual - 1/11 - 9.09090909091%
-opinião -> docente - 1/124 - 0.806451612903%
-opinião -> associado - 2/83 - 2.40963855422%
-opinião -> problema - 1/17 - 5.88235294118%
-forma -> recurso - 1/16 - 6.25%
-efetivo -> docente - 1/124 - 0.806451612903%
-efetivo -> representação - 1/8 - 12.5%
-exemplo -> transparência - 1/31 - 3.22580645161%
-exemplo -> professor - 1/23 - 4.34782608696%
-assembleia -> adunicamp - 1/81 - 1.23456790123%
-assembleia -> forma - 1/10 - 10.0%
-assembleia -> tema - 2/8 - 25.0%
-assembleia -> programa - 1/6 - 16.6666666667%
-grupo -> político - 1/72 - 1.38888888889%
-grupo -> associado - 1/83 - 1.20481927711%
-recurso -> adunicamp - 3/81 - 3.7037037037%
-negociação -> interesse - 1/52 - 1.92307692308%
-negociação -> plano - 1/20 - 5.0%
-negociação -> unimed - 2/18 - 11.1111111111%
-negociação -> salarial - 2/13 - 15.3846153846%
-fato -> docente - 2/124 - 1.61290322581%
-fato -> adunicamp - 1/81 - 1.23456790123%
-gestão -> acadêmico - 1/13 - 7.69230769231%
-convênio -> atividade - 1/23 - 4.34782608696%
-convênio -> unimed - 5/18 - 27.7777777778%
-discussão -> problema - 2/17 - 11.7647058824%
-discussão -> acadêmico - 1/13 - 7.69230769231%
-discussão -> efetivo - 1/7 - 14.2857142857%
-discussão -> assembleia - 1/20 - 5.0%
-discussão -> tema - 1/8 - 12.5%
-atual -> adunicamp - 1/81 - 1.23456790123%
-atual -> diretoria - 2/13 - 15.3846153846%
-atual -> gestão - 1/8 - 12.5%
-debate -> ação - 1/27 - 3.7037037037%
-debate -> acadêmico - 1/13 - 7.69230769231%
-funcionário -> unicamp - 1/49 - 2.04081632653%
-funcionário -> associação - 1/29 - 3.44827586207%
-participação -> docente - 2/124 - 1.61290322581%
-participação -> adunicamp - 1/81 - 1.23456790123%
-participação -> associado - 1/83 - 1.20481927711%
-participação -> entidade - 1/17 - 5.88235294118%
-votação -> assembleia - 2/20 - 10.0%
-votação -> atual - 1/11 - 9.09090909091%
-salarial -> universidade - 1/25 - 4.0%
-salarial -> trabalho - 1/13 - 7.69230769231%
-salarial -> representação - 1/8 - 12.5%
-assunto -> interesse - 1/52 - 1.92307692308%
-trabalho -> docente - 2/124 - 1.61290322581%
-trabalho -> unicamp - 1/49 - 2.04081632653%
-trabalho -> professor - 1/23 - 4.34782608696%
-trabalho -> atual - 1/11 - 9.09090909091%
-classe -> docente - 2/124 - 1.61290322581%
-classe -> funcionário - 1/5 - 20.0%
-representação -> docente - 2/124 - 1.61290322581%
-representação -> interesse - 1/52 - 1.92307692308%
-representação -> unicamp - 1/49 - 2.04081632653%
-representação -> transparência - 1/31 - 3.22580645161%
-representação -> opinião - 1/15 - 6.66666666667%
-administração -> unicamp - 1/49 - 2.04081632653%
-administração -> universidade - 1/25 - 4.0%
-administração -> plano - 1/20 - 5.0%
-saúde -> unimed - 1/18 - 5.55555555556%
-minoria -> político - 1/72 - 1.38888888889%
-apoio -> político - 1/72 - 1.38888888889%
-apoio -> sociedade - 1/9 - 11.1111111111%
-apoio -> convênio - 1/10 - 10.0%
-papel -> adunicamp - 1/81 - 1.23456790123%
-papel -> associação - 1/29 - 3.44827586207%
-papel -> sindicato - 1/16 - 6.25%
-tema -> interesse - 1/52 - 1.92307692308%
-membro -> diretoria - 1/13 - 7.69230769231%
-valor -> professor - 1/23 - 4.34782608696%
-valor -> unimed - 1/18 - 5.55555555556%
-valor -> acadêmico - 1/13 - 7.69230769231%
-programa -> gestão - 1/8 - 12.5%
-gasto -> associação - 1/29 - 3.44827586207%
-unidade -> unicamp - 1/49 - 2.04081632653%
+bolsonaro -> bolsonaro - 4/1442 - 0.277392510402%
+bolsonaro -> jair - 2/114 - 1.75438596491%
+bolsonaro -> brasil - 5/62 - 8.06451612903%
+bolsonaro -> boulos - 6/48 - 12.5%
+bolsonaro -> pessoa - 1/33 - 3.0303030303%
+bolsonaro -> lula - 9/47 - 19.1489361702%
+jair -> bolsonaro - 133/1442 - 9.22330097087%
+brasil -> bolsonaro - 4/1442 - 0.277392510402%
+brasil -> jair - 1/114 - 0.877192982456%
+brasil -> brasil - 1/62 - 1.61290322581%
+boulos -> bolsonaro - 14/1442 - 0.970873786408%
+boulos -> lula - 1/47 - 2.12765957447%
+lula -> bolsonaro - 13/1442 - 0.901525658807%
+eleitor -> bolsonaro - 48/1442 - 3.32871012483%
+eleitor -> lula - 2/47 - 4.25531914894%
 
-- Temas selecionados(57):
+- Temas selecionados(7):
 
-docente
-adunicamp
-político
-associado
-interesse
-unicamp
-associação
-ação
-transparência
-universidade
-professor
-atividade
-entidade
-sindicato
-plano
-partido
-questão
-problema
-unimed
-acadêmico
-diretoria
-representatividade
-opinião
-forma
-efetivo
-exemplo
-assembleia
-grupo
-recurso
-negociação
-fato
-sociedade
-gestão
-ensino
-convênio
-discussão
-atual
-debate
-funcionário
-participação
-votação
-salarial
-assunto
-trabalho
-classe
-representação
-administração
-saúde
-minoria
-apoio
-papel
-tema
-membro
-valor
-programa
-gasto
-unidade
+bolsonaro
+jair
+brasil
+boulos
+pessoa
+lula
+eleitor
 
 
 - Temas excluídos(0):

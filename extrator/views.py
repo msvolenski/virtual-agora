@@ -1633,19 +1633,27 @@ def processarProtofrases(request):
     ### mapeia as sentencas: busca a protofrase e sua frase original e armazena ambas em um dicionário ###############################################################################################
     sentencas_pp_vet = []
     senten = ''
-   
+    #cont = 1
     for linha in arq_texto_preprocessado_vet:
         if linha.strip() != '.':
             senten = senten + linha.strip() + ' '
         
             
             #senten = senten + ' ' + str(linha.encode('utf-8')).strip()
-
+        
         if linha.strip() == '.':
             senten = senten.strip()
+            #print cont 
+            #print repr(senten)
+            #cont = cont + 1
             sentencas_pp_vet.append(senten)           
             senten = ''
-            
+
+    #ajusta arquivo para o caso da ultima frase ter sido excluida pelas stop-words
+    
+    if len(arq_sentencas) < len(sentencas_pp_vet):
+        arq_sentencas.append('error')      
+   
     print 'Esse valor ' + str(len(arq_sentencas)) + ' deve ser igual a este ' + str(len(sentencas_pp_vet)) + ' . Caso seja diferente, verificar linha 1450'
     
     if len(arq_sentencas) != len(sentencas_pp_vet):
@@ -2182,6 +2190,7 @@ def gerarFrasesGlobais(request):
         for item in strs:
             nucleos.append(item.strip())
     
+    frases = []  
     for nuc in nucleos:
         esquerda = OrderedDict()
         direita = OrderedDict()
@@ -2191,24 +2200,33 @@ def gerarFrasesGlobais(request):
             str_l = obj.nucleo.split('*/*')
             for item in str_l:
                 str_l_strip.append(item.strip())
-            frase = ' '.join(str_l_strip)            
+            frase = ' '.join(str_l_strip)                
             pontas = []
 
             if nuc in frase:
-                div = frase.split(nuc)
+                div = frase.split(nuc)              
                 pontas.append(frase.split(nuc))
                 if div[0]:
                     esquerda[div[0].strip()] = obj.peso
                 if div[1]:
                     direita[div[1].strip()] = obj.peso              
     
+        #print '\n\n'
+        #print esquerda
+        #print direita
+        #print '\n\n'
+        
         excluir_esquerda = []              
+        
+        
         for pt,v1 in esquerda.iteritems():
             for psol,v2 in esquerda.iteritems():
                 if psol in pt and psol != pt:
                     if psol not in excluir_esquerda:                       
                         excluir_esquerda.append(psol)
-                        
+        #print '\n\n'
+        #print len(esquerda)        
+        
         excluir_direita = []              
         for pp,v1 in direita.iteritems():
             for mdb,v2 in direita.iteritems():
@@ -2223,9 +2241,13 @@ def gerarFrasesGlobais(request):
         for j in excluir_direita:
             del direita[j]
 
+        #print esquerda   
+        #print len(esquerda)        
+        #print len(excluir_esquerda)                
+        #print '\n\n'
+    
     #gera as frases
-    frases = []    
-    for nuc in nucleos:
+                
         maior_valor = 0
         for ke,ve in esquerda.iteritems():
             for kd, vd in direita.iteritems():
@@ -2348,7 +2370,7 @@ def calcula_indice_representatividade(request):
                 arq_json.write("             \"parent\": \"" + tema.tema + "\",\n")
                 arq_json.write("             \"children\": [\n")
                 
-                lll = []cd..
+                lll = []
                 for num in list_par:
                     if num == 5:
                         lll.append('altissima')
