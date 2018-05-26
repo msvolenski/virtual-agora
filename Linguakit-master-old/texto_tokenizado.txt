@@ -1,8 +1,0 @@
-﻿Cidade
-
-
-Carro
-
-
-Vida
-

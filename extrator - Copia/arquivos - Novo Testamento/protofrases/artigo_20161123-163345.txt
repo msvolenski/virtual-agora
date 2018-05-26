@@ -1,6 +1,0 @@
-Foram extraídas 5 proto-frases.
-3 proto-frases distintas, sendo:
-
-3 vezes (60.0 %): artigo mostrar alegre feliz 
-1 vezes (20.0 %): artigo mostrar feliz mostrar 
-1 vezes (20.0 %): artigo mostrar triste feliz 

@@ -1,7 +1,6 @@
 {% extends 'agoraunicamp/base.html' %}
 {% load staticfiles %}
 {% load set_var %}
-
 {% block content12 %}
 
 
@@ -10,10 +9,10 @@
     {% if nickname %}
     {{nickname}}.
     {% else %}
-    {{user.user.primeiro_nome}}{{user.primeiro_nome}}.
+    {{user.primeiro_nome}}.
     {% endif %} Seja bem-vindx ao projeto
   </div>
-  <div class="agora-title"><img id="unicamp6" class="agora-image" src="{% static "agora/images/agora-unicamp-logo.png" %}" alt="logo agora"/></div>
+  <div class="agora-title"><img id="unicamp6" class="agora-image" src="{% static "agoraunicamp/images/agora-unicamp-logo.png" %}" alt="logo agora"/></div>
   <div class="agora-subtitle"> Um espaço de debate, consulta e participação política da comunidade. </div>
   <div class="agora-subtitle"> Escolha um projeto, conheça, debata, vote e decida: </div>
   <ul class="nav">
@@ -31,7 +30,7 @@
 <div id="tutorial1" class="modal fade" role="dialog">
   <div class="modal-dialog" id="modal-dialog-mob">
     <div style="  text-align: center;" >
-    <img id="tutorial1img" class="tutorial-image" src="{% static "agora/images/tutorial/1.png" %}" alt="tutorial 1"/>
+    <img id="tutorial1img" class="tutorial-image" src="{% static "agoraunicamp/images/tutorial/1.png" %}" alt="tutorial 1"/>
     </div>
     <div class="modal-footer" style="border-top:0px;">
       <button style="display:block;float:right;" id="tutorial1-button" type="button" class="btn-sm btn-default" onclick="proximo()">Próximo</button>

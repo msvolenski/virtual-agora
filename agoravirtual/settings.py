@@ -32,24 +32,18 @@ SITE_URL = 'http://127.0.0.1:8000/'
 
 # Application definition
 INSTALLED_APPS = [
-    'agora.apps.AgoraConfig',
-    'agora.templatetags',
+    'agoraunicamp.templatetags',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'forum',
     'taggit',
-    'conheca',
     'ckeditor',
-    'ckeditor_uploader',
-    'resultados',
+    'ckeditor_uploader',  
     'smart_selects',
-    'agoraunicamp',
-    'projetos',
-    'extrator',
+    'agoraunicamp',   
 ]
 
 
@@ -133,13 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/agora/static/'
+STATIC_URL = '/static/'
 #STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 # ESQUEMA DE LOGIN
 
-AUTH_PROFILE_MODULE = "agora.UserProfile"
+AUTH_PROFILE_MODULE = "agoraunicamp.User"
 LOGIN_URL = 'Login'
 
 LOGIN_REDIRECT_URL = "../"
@@ -147,7 +141,7 @@ LOGOUT_URL = 'login'
 
 # CK EDITOR
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'agora/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'

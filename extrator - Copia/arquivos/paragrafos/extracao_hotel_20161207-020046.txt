@@ -1,9 +1,0 @@
-Foi extraído 1 parágrafo.
-Etapa de extração: 1
-
-Proto-frase original: hotel novo localização bom avaliação melhor
-Proto-frase utilizada: hotel novo localização bom
-
-Parágrafo:
-
- este hotel é totalmente novo , a localização é boa , cerca de 3 quadras da praia , com uma relativamente calma rua 

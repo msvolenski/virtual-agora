@@ -5,9 +5,6 @@ from . import views
 app_name = 'agoraunicamp'
 urlpatterns = [
   url(r'^$', views.AgoraView.as_view(), name='agora'),
-  url(r'^mural/$', views.MuralView.as_view(), name='mural'),
-  url(r'^encerratutorial/$', views.encerraTutorial, name='encerra_tutorial'),
-  url(r'^refazertutorial/$', views.refazerTutorial, name='re_tutorial'),
   url(r'^login/$', auth_views.login, name='login'),
   url(r'^logout/$', auth_views.logout, {'next_page':'/login/'}, name='logout'),
   url(r'^search/(?P<tag_name>\w+)/$', views.tag_search, name='search'),
@@ -28,7 +25,9 @@ urlpatterns = [
   url(r'^meuespacooutros/envia/$', views.enviaDadosMeuEspacoOutros, name='envia-espaco-outros'),
   url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
   url(r'^atprojeto/(?P<projeto_nome>[-\w]+)/$', views.atualizaProjeto, name='atualiza-projeto'),
-
-  #url(r'pdpu/conheca/$', views.TemplatePDPUConhecaView.as_view(template_name="conheca/pdpu-conheca.html"), name='pdpu-conheca'),
-  #url(r'^pdpu/conheca/artigos/(?P<pk>[0-9]+)/$', views.ArticlePageView.as_view(), name='article_page'),
+  url(r'^forum/(?P<topic_id>[0-9]+)/answerhome/$', views.save_topic_answer_home, name='answer_home'),
+  url(r'^forum/(?P<topic_id>[0-9]+)/answerhomeedit/$', views.save_topic_answer_home_edit, name='answer_home_edit'),
+  url(r'^participe/(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
+  url(r'^participe/(?P<question_id>[0-9]+)/voteinitial/$', views.vote_initial, name='vote_initial'),
+  url(r'^participe/(?P<question_id>[0-9]+)/votetimeline/$', views.vote_timeline, name='vote_timeline'),
 ]

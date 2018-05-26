@@ -6,11 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.shortcuts import render
 from django.contrib.auth.models import User as AuthUser
-from agora.models import Choice, Question, InitialListQuestion
 from .decorators import term_required
 from django.views import generic
-from .models import Termo, User, Answer, MeuEspaco, Message, Tutorial
-from projetos.models import Projeto
+from .models import *
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.core.urlresolvers import reverse
@@ -19,58 +17,7 @@ from .forms import DocumentForm
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from conheca.models import Article
-from resultados.models import Relatorio
 from itertools import chain
-from agora.models import Choice, Question, InitialListQuestion
-from forum.models import Topic, TopicAnswer
-from forum.models import User as Userf
-
-
-@method_decorator(login_required(login_url='agoraunicamp:login'), name='dispatch')
-@method_decorator(term_required, name='dispatch')
-class MuralView(generic.ListView):
-  template_name = 'agoraunicamp/agora-mural.html'
-
-  def get_context_data(self, **kwargs):
-    context = super(MuralView, self).get_context_data(**kwargs)
-    user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(exp_date__gt=timezone.now(),question_status='p')
-    answered = Answer.objects.filter(user=user)
-    answered_questions = [a.question for a in answered]
-    not_answered = list(set(questions) - set(answered_questions))
-    try:
-        initial = InitialListQuestion.objects.filter(select=1,projeto__sigla=user.projeto).first() #pega a lista
-        initial_list = [c.name for c in initial.questions.all()]
-    except:
-        initial_list=[0]
-    not_answered_list=[str(f.id) for f in not_answered]
-    initial_list_user = list(set(initial_list).intersection(not_answered_list))
-    if not initial_list_user:
-        first_question = 'none'
-    else:
-        first_question = initial_list_user[0]
-    projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
-    t = Tutorial.objects.get(user=user)
-    context['tutorial'] = t.status
-    context['question'] = Question.objects.filter(question_status='p')
-    context['not_answered'] = list(set(questions) - set(answered_questions))
-    context['not_answered'].reverse()
-    context['message_participe'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).order_by('-publ_date')
-    context['message_participe_count'] =  Message.objects.filter(published='Sim',kind='4',projeto__sigla=user.projeto).count()
-    context['message_conheca'] =  Message.objects.filter(published='Sim',kind='1',projeto__sigla=user.projeto).order_by('-publ_date')
-    context['message_conheca_count'] =  Message.objects.filter(published='Sim',kind='1',projeto__sigla=user.projeto).count()
-    context['message_resultados'] =  Message.objects.filter(published='Sim',kind='2',projeto__sigla=user.projeto).order_by('-publ_date')
-    context['message_resultados_count'] =  Message.objects.filter(published='Sim',kind='2',projeto__sigla=user.projeto).count()
-    context['message_comunidade'] =  Message.objects.filter(published='Sim',kind='3',projeto__sigla=user.projeto).order_by('-publ_date')
-    context['message_comunidade_count'] =  Message.objects.filter(published='Sim',kind='3',projeto__sigla=user.projeto).count()
-    context['nickname'] = user.nickname
-    context['projeto'] = projeto_nome.projeto
-    context['sigla'] = user.projeto
-    return context
-
-  def get_queryset(self):
-    return Question.objects.filter(question_status='p')
 
 
 
@@ -163,8 +110,6 @@ class AgoraConfiguracaoView(generic.ListView):
   def get_context_data(self, **kwargs):
     context = super(AgoraConfiguracaoView, self).get_context_data(**kwargs)
     u = User.objects.get(user=self.request.user)
-    t = Tutorial.objects.get(user=u)
-    context['tutorial'] = t.status
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     return context
@@ -177,15 +122,15 @@ class AgoraConfiguracaoView(generic.ListView):
 @method_decorator(term_required, name='dispatch')
 class AgoraView(generic.ListView):
   template_name = 'agoraunicamp/agora-projetos.html'
-
+  #usua = User.objects.all()
+  #for i in usua:
+  #    print i.nickname
   def get_queryset(self):
     return
 
   def get_context_data(self, **kwargs):
     context = super(AgoraView, self).get_context_data(**kwargs)
-    u = User.objects.get(user=self.request.user)
-    t = Tutorial.objects.get(user=u)
-    context['tutorial'] = t.status
+    u = User.objects.get(user=self.request.user) 
     context['user'] = User.objects.get(user=self.request.user)
     context['nickname'] = u.nickname
     context['projetos'] = Projeto.objects.all()
@@ -211,32 +156,24 @@ class PaginaInicialView(generic.ListView):
     return
 
   def get_context_data(self, **kwargs):
-
-
-
-
-
-
-
-
-
-
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     auth_user = self.request.user
+    
     topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
     article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
     relatorio = Relatorio.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
     not_answered = list(set(questions) - set(answered_questions))
+    
     result_list = sorted(
         chain(relatorio, article, not_answered, topics),
         key=lambda instance: instance.publ_date, reverse=True)
 
     projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
-    t = Tutorial.objects.get(user=user)
+   
     try:
         initial = InitialListQuestion.objects.filter(select=1,projeto__sigla=user.projeto).first() #pega a lista
         initial_list = [c.name for c in initial.questions.all()]
@@ -248,7 +185,7 @@ class PaginaInicialView(generic.ListView):
         first_question = 'none'
     else:
         first_question = initial_list_user[0]
-    context['tutorial'] = t.status
+
     context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
     context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
     context['question'] = Question.objects.filter(projeto__sigla=user.projeto)
@@ -259,7 +196,7 @@ class PaginaInicialView(generic.ListView):
     context['projeto'] = projeto_nome.projeto
     context['sigla'] = user.projeto
     context['categories'] = Topic.objects.filter(projeto__sigla=user.projeto)
-    context['topic_user'] = Userf.objects.get(user=auth_user)
+    context['topic_user'] = User.objects.get(user=auth_user)
     context['topic_users'] = TopicAnswer.objects.all()
     context['initial_list'] = initial_list
     context['not_answered_list'] = not_answered_list
@@ -270,13 +207,11 @@ class PaginaInicialView(generic.ListView):
 
 
 def agoraconfiguracaoapelido(request):
-    username = AuthUser.objects.get(username=request.user)
-    user = username.user
+    user = User.objects.get(user=request.user)    
     apelido = request.POST['text-apelido']
     if apelido:
-        apelido_user = User.objects.get(user=user)
-        apelido_user.nickname = apelido
-        apelido_user.save()
+        user.nickname = apelido
+        user.save()
         success = True
     else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
@@ -289,13 +224,11 @@ def agoraconfiguracaoapelido(request):
         return redirect(request.META['HTTP_REFERER'])
 
 def agoraconfiguracaoemail(request):
-    us = User.objects.get(user=request.user)
-    user = us.user
+    user = User.objects.get(user=request.user)    
     email = request.POST['text-email']
-    if email:
-        email_user = User.objects.get(user=user)
-        email_user.email = email
-        email_user.save()
+    if email:        
+        user.email = email
+        user.save()
         success = True
     else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
@@ -308,12 +241,9 @@ def agoraconfiguracaoemail(request):
         return redirect(request.META['HTTP_REFERER'])
 
 def agoraconfiguracaoapelidoremove(request):
-    us = User.objects.get(user=request.user)
-    user = us.user
-    apelido_user = User.objects.get(user=user)
-    apelido_user.nickname = user.user.primeiro_nome
-    apelido_user.save()
-
+    user = User.objects.get(user=request.user)   
+    user.nickname = user.primeiro_nome
+    user.save()
     success = True
     if success == True:
         messages.success(request, "Apelido excluido com sucesso")
@@ -321,7 +251,6 @@ def agoraconfiguracaoapelidoremove(request):
     else:
         messages.error(request, error_message)
         return redirect(request.META['HTTP_REFERER'])
-
 
 def term_accepted(request):
     username = AuthUser.objects.get(username=request.user)
@@ -335,11 +264,9 @@ def term_accepted(request):
 def term_not_accepted(request):
     return HttpResponseRedirect(reverse('agoraunicamp:login'))
 
-
-
-def enviaDadosMeuEspaco(request):
-    us = User.objects.get(user=request.user)
-    user = us.user
+def enviaDadosMeuEspaco(request):    
+    user = User.objects.get(user=request.user)   
+    nome = user.primeiro_nome + ' ' + user.ultimo_nome
     if request.method == 'POST':
         projeto = request.POST['categoriaproj']
         categoria = request.POST['categoriatag']
@@ -356,7 +283,7 @@ def enviaDadosMeuEspaco(request):
 
         if form.is_valid():
             if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'], projeto=projeto)
+                x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'], projeto=projeto)
                 x.save()
                 success = True
                 if success == True:
@@ -365,9 +292,10 @@ def enviaDadosMeuEspaco(request):
             else:
                 messages.error(request, "Arquivo não enviado. Apenas arquivos PDF são aceitos.")
                 return redirect(request.META['HTTP_REFERER'])
+        
         if link !='':
             form = DocumentForm() #A empty, unbound form
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo',projeto=projeto)
+            x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo',projeto=projeto)
             x.save()
             messages.success(request, "Link enviado com sucesso")
             return redirect(request.META['HTTP_REFERER'])
@@ -379,8 +307,8 @@ def enviaDadosMeuEspaco(request):
 
 
 def enviaDadosMeuEspacoDebate(request):
-        us = User.objects.get(user=request.user)
-        user = us.user
+        user = User.objects.get(user=request.user)
+        nome = user.primeiro_nome + ' ' + user.ultimo_nome
         if request.method == 'POST':
             projeto = request.POST['categoriaproj']
             categoria = request.POST['categoriatag']
@@ -393,7 +321,7 @@ def enviaDadosMeuEspacoDebate(request):
                 except:
                     messages.error(request, "URL incorreta. Envie novamente.")
                     return redirect(request.META['HTTP_REFERER'])
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Debate', projeto=projeto)
+            x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Debate', projeto=projeto)
             x.save()
             success = True
             if success == True and comentario !='' or link !='':
@@ -407,7 +335,7 @@ def enviaDadosMeuEspacoDebate(request):
 
 def enviaDadosMeuEspacoQuestao(request):
         us = User.objects.get(user=request.user)
-        user = us.user
+        nome = user.primeiro_nome + ' ' + user.ultimo_nome
         if request.method == 'POST':
             projeto = request.POST['categoriaproj']
             categoria = request.POST['categoriatag']
@@ -420,7 +348,7 @@ def enviaDadosMeuEspacoQuestao(request):
                 except:
                     messages.error(request, "URL incorreta. Envie novamente.")
                     return redirect(request.META['HTTP_REFERER'])
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Questão',projeto=projeto)
+            x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Questão',projeto=projeto)
             x.save()
             success = True
             if success == True and comentario !='' or link !='':
@@ -433,8 +361,8 @@ def enviaDadosMeuEspacoQuestao(request):
             return redirect(request.META['HTTP_REFERER'])
 
 def enviaDadosMeuEspacoOutros(request):
-    us = User.objects.get(user=request.user)
-    user = us.user
+    user = User.objects.get(user=request.user)
+    nome = user.primeiro_nome + ' ' + user.ultimo_nome
     if request.method == 'POST':
         projeto = request.POST['categoriaproj']
         categoria = request.POST['categoriatag']
@@ -450,7 +378,7 @@ def enviaDadosMeuEspacoOutros(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'], projeto=projeto)
+                x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'], projeto=projeto)
                 x.save()
                 success = True
                 if success == True:
@@ -458,7 +386,7 @@ def enviaDadosMeuEspacoOutros(request):
                     return redirect(request.META['HTTP_REFERER'])
 
         else:
-            x = MeuEspaco(user=user.username, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', projeto=projeto)
+            x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', projeto=projeto)
             x.save()
             messages.success(request, "Dados enviados com sucesso.")
             return redirect(request.META['HTTP_REFERER'])
@@ -492,7 +420,7 @@ def tag_search(request, tag_name):
       'not_answered_tag': answered_questions_tag,
       'timeline': result_list,
       'tag' : tag_name,
-      'topic_user' : Userf.objects.get(user=auth_user),
+      'topic_user' : User.objects.get(user=auth_user),
       'topic_users' : TopicAnswer.objects.all(),
       'projeto' : projeto_nome.projeto,
       'sigla' : user.projeto,
@@ -500,19 +428,184 @@ def tag_search(request, tag_name):
     })
 
 def atualizaProjeto(request, projeto_nome):
-    #us = User.objects.get(user=request.user)
-    #user = us.user
-    #user.set(projeto=projeto_nome)
     User.objects.filter(user=request.user).update(projeto=projeto_nome)
     return redirect('agoraunicamp:paginainicial')
 
+def save_topic_answer_home(request, topic_id):
+  topic = get_object_or_404(Topic, pk=topic_id)
+  auth_user = AuthUser.objects.get(username=request.user)
+  topic_user = User.objects.get(user=auth_user)
+  answered_topic = TopicAnswer.objects.filter(user=topic_user, topic=topic).count()
+  if answered_topic:
+    error_message = 'Você já respondeu este tópico.'
+    messages.error(request, error_message)
+  else:
+    answer = request.POST['text']
+    if answer:
+      answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
+      answer_model.save()
+    else:
+      messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
+    return redirect(request.META['HTTP_REFERER']+"#area%s"%(topic_id))
 
-def encerraTutorial(request):
-    us = User.objects.get(user=request.user)
-    Tutorial.objects.filter(user=us).update(status='sim')
-    return redirect('agoraunicamp:agora')
+def save_topic_answer_home_edit(request, topic_id):
+  topic = get_object_or_404(Topic, pk=topic_id)
+  auth_user = AuthUser.objects.get(username=request.user)
+  topic_user = User.objects.get(user=auth_user)
+  answered_topic = TopicAnswer.objects.filter(user=topic_user, topic=topic).delete()
+  answer = request.POST['text']
+  if answer:
+      answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
+      answer_model.save()
+  else:
+      messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
 
-def refazerTutorial(request):
-    us = User.objects.get(user=request.user)
-    Tutorial.objects.filter(user=us).update(status='nao')
-    return redirect('agoraunicamp:agora')
+  return redirect(request.META['HTTP_REFERER'] + "#area%s"%(topic_id))
+  
+def vote(request, question_id):
+  question = get_object_or_404(Question, pk=question_id)
+  username = AuthUser.objects.get(username=request.user)
+  user = username.user
+  question_type = question.question_type
+  success = False
+  # Query over the voted questions
+  answered_question = Answer.objects.filter(user=user, question=question).count()
+  if answered_question:
+    error_message = 'Você já votou nesta questão.'
+    messages.error(request, error_message)
+    return HttpResponseRedirect(reverse('agora:participe'))
+  try:
+    # Save the answer
+    if question_type == '1':
+      answer = question.choice_set.get(pk=request.POST['choice'])
+      if answer:
+        answer_model = Answer(user=user, question=question, choice=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '2':
+      answer = request.POST.getlist('choice')
+      if answer:
+        for choice_id in answer:
+          choice = question.choice_set.get(pk=choice_id)
+          answer_model = Answer(user=user, question=question, choice=choice)
+          answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '3':
+      answer = request.POST['text']
+      if answer:
+        answer_model = Answer(user=user, question=question, text=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+    if success == True:
+      messages.success(request, "Obrigado por participar!")
+    else:
+      messages.error(request, error_message)
+    return HttpResponseRedirect(reverse('agora:participe'))
+  except (KeyError, Choice.DoesNotExist):
+    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
+    return HttpResponseRedirect(reverse('agora:participe'))
+
+
+def vote_initial(request, question_id):
+  question = get_object_or_404(Question, pk=question_id)
+  username = AuthUser.objects.get(username=request.user)
+  user = username.user
+  question_type = question.question_type
+  success = False
+  # Query over the voted questions
+  answered_question = Answer.objects.filter(user=user, question=question).count()
+  if answered_question:
+    error_message = 'Você já votou nesta questão.'
+    messages.error(request, error_message)
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  try:
+    # Save the answer
+    if question_type == '1':
+      answer = question.choice_set.get(pk=request.POST['choice'])
+      if answer:
+        answer_model = Answer(user=user, question=question, choice=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '2':
+      answer = request.POST.getlist('choice')
+      if answer:
+        for choice_id in answer:
+          choice = question.choice_set.get(pk=choice_id)
+          answer_model = Answer(user=user, question=question, choice=choice)
+          answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '3':
+      answer = request.POST['text']
+      if answer:
+        answer_model = Answer(user=user, question=question, text=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+    if success == True:
+      messages.success(request, "Obrigado por participar!")
+    else:
+      messages.error(request, error_message)
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  except (KeyError, Choice.DoesNotExist):
+    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+
+def vote_timeline(request, question_id):
+  question = get_object_or_404(Question, pk=question_id)
+  username = AuthUser.objects.get(username=request.user)
+  user = username.user
+  question_type = question.question_type
+  success = False
+  # Query over the voted questions
+  answered_question = Answer.objects.filter(user=user, question=question).count()
+  if answered_question:
+    error_message = 'Você já votou nesta questão.'
+    messages.error(request, error_message)
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  try:
+    # Save the answer
+    if question_type == '1':
+      answer = question.choice_set.get(pk=request.POST['choice'])
+      if answer:
+        answer_model = Answer(user=user, question=question, choice=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '2':
+      answer = request.POST.getlist('choice')
+      if answer:
+        for choice_id in answer:
+          choice = question.choice_set.get(pk=choice_id)
+          answer_model = Answer(user=user, question=question, choice=choice)
+          answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+    elif question_type == '3':
+      answer = request.POST['text']
+      if answer:
+        answer_model = Answer(user=user, question=question, text=answer)
+        answer_model.save()
+        success = True
+      else:
+        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+    if success == True:
+      messages.success(request, "Obrigado por participar!")
+    else:
+      messages.error(request, error_message)
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  except (KeyError, Choice.DoesNotExist):
+    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
+    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))

@@ -9,20 +9,20 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <link href="{% static "agora/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
-  <link href="{% static "agora/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"/>
-  <link href="{% static "agora/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css"/>
-  <link href="{% static "agora/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css"/>
-  <link href="{% static "agora/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
+  <link href="{% static "agoraunicamp/bootstrap/css/bootstrap.css" %}" rel="stylesheet">
+  <link href="{% static "agoraunicamp/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agoraunicamp/css/daterangepicker/daterangepicker-bs3.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agoraunicamp/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" %}" rel="stylesheet" type="text/css"/>
+  <link href="{% static "agoraunicamp/css/AdminLTE.css" %}" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-  <link rel="stylesheet" href="{% static "agora/assets/bootstrap/css/bootstrap.min.css" %}">
-  <link rel="stylesheet" href="{% static "agora/assets/font-awesome/css/font-awesome.min.css" %}">
-  <link rel="stylesheet" href="{% static "agora/assets/css/form-elements.css" %}">
-  <link rel="shortcut icon" href="{% static "agora/assets/ico/favicon.png" %}">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "agora/assets/ico/apple-touch-icon-144-precomposed.png" %}">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "agora/assets/ico/apple-touch-icon-114-precomposed.png" %}">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "agora/assets/ico/apple-touch-icon-72-precomposed.png" %}">
-  <link rel="apple-touch-icon-precomposed" href="{% static "agora/assets/ico/apple-touch-icon-57-precomposed.png" %}">
+  <link rel="stylesheet" href="{% static "agoraunicamp/assets/bootstrap/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "agoraunicamp/assets/font-awesome/css/font-awesome.min.css" %}">
+  <link rel="stylesheet" href="{% static "agoraunicamp/assets/css/form-elements.css" %}">
+  <link rel="shortcut icon" href="{% static "agoraunicamp/assets/ico/favicon.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "agoraunicamp/assets/ico/apple-touch-icon-144-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "agoraunicamp/assets/ico/apple-touch-icon-114-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "agoraunicamp/assets/ico/apple-touch-icon-72-precomposed.png" %}">
+  <link rel="apple-touch-icon-precomposed" href="{% static "agoraunicamp/assets/ico/apple-touch-icon-57-precomposed.png" %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -33,7 +33,7 @@
     {% if nickname %}
     <strong>{{nickname}}</strong>,
     {% else %}
-    <strong>{{user.user.primeiro_nome}}{{user.primeiro_nome}}</strong>,
+    <strong>{{user.primeiro_nome}}{{user.primeiro_nome}}</strong>,
     {% endif %}
     gostaria de sugerir um debate?
   </div>

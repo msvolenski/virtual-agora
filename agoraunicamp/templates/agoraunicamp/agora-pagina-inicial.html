@@ -7,11 +7,6 @@
   <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
   <h1>{{projeto}} - {{sigla}}</h1>
   <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
-  <ul class="nav">
-    <li style="background: #e2e0e0"><a href="{% url 'agoraunicamp:mural' %}">Home</a></li>
-    <li style="background: #f7f7f7"><a href="{% url 'agoraunicamp:paginainicial' %}">Página Inicial</a></li>
-    <li style="background: #00c0ef"><a href="{% url 'conheca:conheca' %}">Conheça</a></li>
-    <li style="background: #12d673"><a href="{% url 'agora:participe' %}">Participe</a></li>
     <li style="background: #f39c12"><a href="{% url 'resultados:resultados' %}">Resultados</a></li>
     <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
   </ul>
@@ -58,8 +53,8 @@
     <div style="display:none;" class="open{{t.id}}">
       {% for answer in t.topicanswer_set.all %}
       <div class="render-response">
-        <div class="forum-username">{{ answer.user}}{% if answer.user.user.user.nickname %}
-          ({{answer.user.user.user.nickname}})
+        <div class="forum-username">{{ answer.user}}{% if answer.user.nickname %}
+          ({{answer.user.nickname}})
           {% endif %}&nbsp;&nbsp;
         </div>
         <div>{{ answer.text|safe|linebreaks }}
@@ -74,7 +69,7 @@
 
 
         <div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
-          <form action="{% url 'forum:answer_home_edit' t.id  %}" method="post">
+          <form action="{% url 'agoraunicamp:answer_home_edit' t.id  %}" method="post">
             <textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
             </textarea>
             <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
@@ -117,7 +112,7 @@
       {% if flag == 0 %}
 
       <div id="area{{t.id}}" class="response-area" >
-        <form action="{% url 'forum:answer_home' t.id %}" method="post">
+        <form action="{% url 'agoraunicamp:answer_home' t.id %}" method="post">
           <textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
           <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder"/></center>
         </form>
@@ -216,7 +211,7 @@
         {% if t.image %}
         <img src="{{ t.image.url }}" width="350px" height="250px" /></br></br>
         {% endif %}
-        <form action="{% url 'agora:vote_timeline' t.id %}" method="post">
+        <form action="{% url 'agoraunicamp:vote_timeline' t.id %}" method="post">
           {% csrf_token %}
           {% if t.question_type == '1' %}
           <ul class="list-group">
@@ -272,11 +267,6 @@
       <br>
       <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
       </div>
-      &nbsp;&nbsp;
-      <form  style="display:inline-block;" action="{% url 'resultados:like' t.id %}" method="post">
-        {% csrf_token %}
-        <input  id="like" name="like1" type="image" src="{% static "resultados/like.jpg" %}" alt="like"  value="Vote" height="22" width="22" />&nbsp;{{t.like}}
-      </form>
       &nbsp;
       <form style="display:inline-block;" action="{% url 'resultados:dislike' t.id %}" method="post">
         {% csrf_token %}
@@ -350,7 +340,7 @@ $('#tutorial2').modal('show')
           {% if question.image %}
           <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
           {% endif %}
-          <form action="{% url 'agora:vote_initial' question.id %}" method="post">
+          <form action="{% url 'agoraunicamp:vote_initial' question.id %}" method="post">
             {% csrf_token %}
             {% if question.question_type == '1' %}
             <ul class="list-group">

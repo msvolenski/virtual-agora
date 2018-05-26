@@ -1,9 +1,0 @@
-Foi extraído 1 parágrafo.
-Etapa de extração: 2
-
-Proto-frase original: caminho pedra pedra pedra meio caminho pedra meio
-Proto-frase utilizada: pedra pedra meio caminho pedra meio
-
-Parágrafo:
-
-no meio do caminho tinha uma pedra tinha uma pedra no meio do caminho tinha uma pedra no meio do caminho tinha uma pedra 

@@ -1,9 +1,0 @@
-Foi extraído 1 parágrafo.
-Etapa de extração: 3
-
-Proto-frase original: famoso praia copacabana altura copacabana perto
-Proto-frase utilizada: copacabana
-
-Parágrafo:
-
- o hotel está muito bem localizado a apenas duas quadras da praia de copacabana na altura do copacabana palace e bem perto da estação do metro 

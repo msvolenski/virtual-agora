@@ -1,7 +1,0 @@
-Foram extraídas 5 proto-frases.
-4 proto-frases distintas, sendo:
-
-2 vezes (40.0 %): g c d f 
-1 vezes (20.0 %): g b c d t 
-1 vezes (20.0 %): g b t d f 
-1 vezes (20.0 %): g c b t f 
