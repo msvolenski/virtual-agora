@@ -12,7 +12,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Projeto(models.Model):
     projeto = models.CharField('Projeto',max_length=100,blank=True, null=True)
-    sigla = models.CharField('Sigla',max_length=50,blank=True, null=True)
+    sigla = models.CharField('Sigla', max_length=50, blank=True, null=True)
+    etapa_prj = models.CharField("Etapa", max_length=1, default='1')
 
     def __str__(self):
         return '%s %s' % (self.sigla, self.projeto)
@@ -37,7 +38,6 @@ class Topic(models.Model):
   class Meta:
     verbose_name = 'debate'
     verbose_name_plural = 'debates'
-
 
 
 class Question(models.Model):
@@ -121,7 +121,6 @@ class Question(models.Model):
         verbose_name_plural = 'questões'
 
 
-
 class User(models.Model):
   user = models.OneToOneField(
     AuthUser,
@@ -159,7 +158,6 @@ class User(models.Model):
     through_fields=('user', 'topic'),
     related_name='topic_answer',
   )
-
 
   class Meta:
     verbose_name = 'usuário'
@@ -246,6 +244,7 @@ class Termo(models.Model):
     def userd(self):
         return self.user.user
 
+
 class MeuEspaco(models.Model):
     projeto = models.CharField('Projeto',max_length=100, blank=False)
     user = models.CharField('Usuario',max_length=200, blank=True)
@@ -257,10 +256,6 @@ class MeuEspaco(models.Model):
     arquivo = models.FileField (upload_to = settings.MEDIA_ROOT, max_length=2000000, blank=True)
 
 
-####### VEIO DA AGORA ########################################################################################3
-
-
-#projeto-foregnkey
 class Choice(models.Model):
   question = models.ForeignKey(Question, on_delete=models.CASCADE)
   choice_text = models.CharField(max_length=200)
@@ -273,12 +268,7 @@ class Choice(models.Model):
     verbose_name_plural = 'escolhas'
 
 
-#################### FIM AGORA ########################################################################
-
-################ VINDO DO CONHEÇA #########################
-
-class Article(models.Model):
-        
+class Article(models.Model):        
     projeto = models.ForeignKey('Projeto')
     title = models.CharField('Título do artigo',max_length=200)
     tags = TaggableManager()
@@ -303,15 +293,7 @@ class Article(models.Model):
         verbose_name = 'Artigo'
         verbose_name_plural = 'Artigos'
 
-  
-  ############ FIM CONHECA #######################
 
-  ############ VINDO DO PROJETOS #############
-
-
-
-   ################### FIM PROJETOS ###################################
-  ### VINDO DE RELATORIO ###########3
 class Relatorio(models.Model):
         
     TIPOS = (
@@ -340,4 +322,12 @@ class Relatorio(models.Model):
         self.address = "{SITE_URL}agora/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
         return super(Relatorio, self).save(*args, **kwargs)
 
-        ############################# FIM RELATORIO ####################
+
+class Etapa(models.Model):
+    project = models.ForeignKey(Projeto, on_delete=models.CASCADE, verbose_name='Projeto')
+    etapa = models.CharField("Etapa", max_length=1, default='1')
+    name = models.CharField("Nome da etapa", max_length=100, default='Ideias')
+    header_txt = models.TextField("Cabeçalho", default='null')
+    objetivo_txt = models.TextField("Objetivo", default='null')
+    participar_txt = models.TextField("Como participar", default='null')
+    resultado_txt = models.TextField("Resultado", default='null')

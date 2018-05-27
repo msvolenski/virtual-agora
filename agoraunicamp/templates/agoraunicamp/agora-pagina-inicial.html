@@ -3,140 +3,196 @@
 {% load set_var %}
 {% block content12 %}
 
-<div class="project-header">
-  <label class="toogle-menu" for="toogle-menu-check"><span class="hamburger"></span></label>
-  <h1>{{projeto}} - {{sigla}}</h1>
-  <input id="toogle-menu-check" name="toogle-menu-check" type="checkbox" />
-    <li style="background: #f39c12"><a href="{% url 'resultados:resultados' %}">Resultados</a></li>
-    <li style="background: #f56954"><a href="{% url 'forum:home' %}">Comunidade</a></li>
-  </ul>
-</div>
+
+<div class="center-column">
+	
+	<div class="project-header">  
+		<div>Você está no projeto</div>
+		<div class="project-name">{{projeto}}</div>
+	</div>
+	
+	<div class="project-header" style="margin-bottom:0px">  
+			<div>Esta projeto está na etapa:</div>			
+	</div>
+	
+	<div style="width:100%;background:white;">
+		<div class="phases"> 		        
+			<div class="phase {{etapas.0}}-phase">
+				<div class="phase-number">
+					1
+				</div>
+				<div class="phase-name">
+					Ideias
+				</div>
+			</div>
+			<div class="phase {{etapas.1}}-phase">
+				<div class="phase-number">
+					2
+				</div>
+				<div class="phase-name">
+					Temáticas
+				</div>
+			</div>
+			<div class="phase {{etapas.2}}-phase">
+				<div class="phase-number">
+					3
+				</div>
+				<div class="phase-name">
+					Debates
+				</div>
+			</div>
+			<div class="phase {{etapas.3}}-phase">
+				<div class="phase-number">
+					4
+				</div>
+				<div class="phase-name">
+					Propostas
+				</div>
+			</div>
+			<div class="phase {{etapas.4}}-phase">
+				<div class="phase-number">
+					5
+				</div>
+				<div class="phase-name">
+					Resultados
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="etapa-content">         
+			<div style="text-align:center;font-size:150%;font-weight:bold">{{etapas_txt.name}}</div>
+			<div class="etapa-text" style="text-align:center">{{etapas_txt.header_txt}}</div>
+			<div class="etapa-text"><b>Objetivo</b>: {{etapas_txt.objetivo_txt}}</div>
+			<div class="etapa-text"><b>Como participar</b>: {{etapas_txt.participar_txt}}</div>
+			<div class="etapa-text"><b>Resultados</b>: {{etapas_txt.resultado_txt}}</div>
+	</div>
 
 
 
-<div class="time-line-page">
-  {% for message in messages %}
-  <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
-    <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    {{ message }}
-  </div></br>
-  {% endfor %}
-  {% for t in timeline %}
-  {% if t|to_class_name == 'Topic' %}
+	<div class="time-line-page">
+	{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
+		<button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		{{ message }}
+	</div></br>
+	{% endfor %}
+	{% for t in timeline %}
+	{% if t|to_class_name == 'Topic' %}
 
-  <div class="forum-topic-tm" >
-    {% if t %}
-    <div id="area{{t.id}}" class="header-topic">
-      <div style="font-weight:bold;font-size:25px;">{{ t }}
-      </div>
-      {% for tag in t.tags.all %}
-      <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-        <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-      </form>
-      {% endfor %}
-      <div class="pub-style"><strong>Publicado em: </strong>{{ t.publ_date }}</div></br>
-      <p>{{ t.text|safe }}</p>
-      <center><input name="open{{t.id}}" id="open{{t.id}}" class="btn btn-default" type="submit" value="Abrir comentários" style="visibility:visible;margin:10px;" onClick="openc(this.name)" /></center>
+	<div class="forum-topic-tm" >
+		{% if t %}
+		<div id="area{{t.id}}" class="header-topic">
+			<div style="font-weight:bold;font-size:25px;">{{ t }}
+			</div>
+			{% for tag in t.tags.all %}
+			<form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+				<input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+			</form>
+			{% endfor %}
+			<div class="pub-style"><strong>Publicado em: </strong>{{ t.publ_date }}</div></br>
+			<p>{{ t.text|safe }}</p>
+			<center><input name="open{{t.id}}" id="open{{t.id}}" class="btn btn-default" type="submit" value="Abrir comentários" style="visibility:visible;margin:10px;" onClick="openc(this.name)" /></center>
 
-      <script>
-      function openc(el) {
-        document.getElementById(el).style.visibility = 'hidden';
-        document.getElementsByClassName(el)[0].style.display = 'block';
+			<script>
+			function openc(el) {
+				document.getElementById(el).style.visibility = 'hidden';
+				document.getElementsByClassName(el)[0].style.display = 'block';
 
-      }
-      </script>
+			}
+			</script>
 
-    </div>
-    <div class="plainlinks hlist">
-    </div>
+		</div>
+		<div class="plainlinks hlist">
+		</div>
 
-    <div style="display:none;" class="open{{t.id}}">
-      {% for answer in t.topicanswer_set.all %}
-      <div class="render-response">
-        <div class="forum-username">{{ answer.user}}{% if answer.user.nickname %}
-          ({{answer.user.nickname}})
-          {% endif %}&nbsp;&nbsp;
-        </div>
-        <div>{{ answer.text|safe|linebreaks }}
-        </div>
-        <div style="color:#9197a3">{{answer.answer_date}}
-        </div>
+		<div style="display:none;" class="open{{t.id}}">
+			{% for answer in t.topicanswer_set.all %}
+			<div class="render-response">
+				<div class="forum-username">{{ answer.user}}{% if answer.user.nickname %}
+					({{answer.user.nickname}})
+					{% endif %}&nbsp;&nbsp;
+				</div>
+				<div>{{ answer.text|safe|linebreaks }}
+				</div>
+				<div style="color:#9197a3">{{answer.answer_date}}
+				</div>
 
-        {% if answer.user == topic_user %}
-        <div style="float:right">
-          <input id="botao" name="div{{answer.text}}{{answer.answer_date}}" type="button" style="display:visible"  value="editar" onClick="ativa(this.name)" />
-        </div>
-
-
-        <div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
-          <form action="{% url 'agoraunicamp:answer_home_edit' t.id  %}" method="post">
-            <textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
-            </textarea>
-            <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
-          </form>
-        </div>
-
-        <script>
-        function ativa(x){
-          var div = document.getElementById(x);
-          /* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
-          if (div.style.display == 'none') {
-
-            div.style.display = "inline"
-          } else {
-            /* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
-            div.style.display = 'none'
-            document.getElementById("botao").value='editar'
-          }
-        }
-        </script>
-
-        {% endif %}
-      </div>
-
-      {% endfor %}
-      {% endif %}
-      <br/><br/>
-
-      {% set flag = 0 %}
-      {% for ti in topic_users %}
-      {% if ti.topic == t %}
-      {% if ti.user == topic_user %}
-      {% set flag = 1 %}
-      {% endif %}
-      {% endif %}
-      {% endfor %}
+				{% if answer.user == topic_user %}
+				<div style="float:right">
+					<input id="botao" name="div{{answer.text}}{{answer.answer_date}}" type="button" style="display:visible"  value="editar" onClick="ativa(this.name)" />
+				</div>
 
 
+				<div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
+					<form action="{% url 'agoraunicamp:answer_home_edit' t.id  %}" method="post">
+						<textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
+						</textarea>
+						<center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
+					</form>
+				</div>
 
-      {% if flag == 0 %}
+				<script>
+				function ativa(x){
+					var div = document.getElementById(x);
+					/* se conteúdo está escondido, mostra e troca o valor do botão para: esconde */
+					if (div.style.display == 'none') {
 
-      <div id="area{{t.id}}" class="response-area" >
-        <form action="{% url 'agoraunicamp:answer_home' t.id %}" method="post">
-          <textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
-          <center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder"/></center>
-        </form>
-      </div>
-      <!--<button id="b" style="visibility:visible;margin:5px" type="button" onclick="Mudarestado('minhaDiv{{topic.id}}')">Comentar</button>-->
+						div.style.display = "inline"
+					} else {
+						/* se conteúdo está a mostra, esconde o conteúdo e troca o valor do botão para: mostra */
+						div.style.display = 'none'
+						document.getElementById("botao").value='editar'
+					}
+				}
+				</script>
 
-      <script>
-      function Mudarestado(el) {
-        var display = document.getElementById(el).style.display;
-        if(display == "none")
-        document.getElementById(el).style.display = 'block';
-        document.getElementById(b).style.visibility = 'hidden';
-        else
-        document.getElementById(el).style.display = 'none';
-        document.getElementById(b).style.visibility = 'visible';
-      }
-      </script>
+				{% endif %}
+			</div>
+
+			{% endfor %}
+			{% endif %}
+			<br/><br/>
+
+			{% set flag = 0 %}
+			{% for ti in topic_users %}
+			{% if ti.topic == t %}
+			{% if ti.user == topic_user %}
+			{% set flag = 1 %}
+			{% endif %}
+			{% endif %}
+			{% endfor %}
 
 
 
-      {% endif %}
+			{% if flag == 0 %}
 
-    </div>
-  </div>
+			<div id="area{{t.id}}" class="response-area" >
+				<form action="{% url 'agoraunicamp:answer_home' t.id %}" method="post">
+					<textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
+					<center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder"/></center>
+				</form>
+			</div>
+			<!--<button id="b" style="visibility:visible;margin:5px" type="button" onclick="Mudarestado('minhaDiv{{topic.id}}')">Comentar</button>-->
+
+			<script>
+			function Mudarestado(el) {
+				var display = document.getElementById(el).style.display;
+				if(display == "none")
+				document.getElementById(el).style.display = 'block';
+				document.getElementById(b).style.visibility = 'hidden';
+				else
+				document.getElementById(el).style.display = 'none';
+				document.getElementById(b).style.visibility = 'visible';
+			}
+			</script>
+
+
+
+			{% endif %}
+
+		</div>
+	</div>
 
 
 
@@ -147,44 +203,44 @@
 
 {%if t|to_class_name == 'Article' %}
 <div class="header-tm-article">
-  <div class="box-article">
+	<div class="box-article">
 
-    <div class="box-article-content">
-      <p>
-        {% for tag in t.tags.all %}
-        <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-          <input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-        </form>
-        {% endfor %}
-        <div class="pub-style"><strong>Publicado em:</strong>{{ t.publ_date }}</div>
-      </form>
-    </p>
-    <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
-    </div>
-    <div class="box-article-title">{{ t.title|safe  }}</div>
+		<div class="box-article-content">
+			<p>
+				{% for tag in t.tags.all %}
+				<form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+					<input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+				</form>
+				{% endfor %}
+				<div class="pub-style"><strong>Publicado em:</strong>{{ t.publ_date }}</div>
+			</form>
+		</p>
+		<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em;">
+		</div>
+		<div class="box-article-title">{{ t.title|safe  }}</div>
 
-    {% if t.article|linebreaks|length > 600 %}
-    <div class="article">{{t.article|truncatechars_html:590|safe}}
-      <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a></div>
-      {% else %}
-      <div class="article">{{t.article|safe}}</div>
-      {% endif %}
-      <br>
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
-      </div>
-      {% for questao_associada in Article.split_numbers %}
-      {% for question in not_answered %}
-      {% set x == 0 %}
-      {% if questao_associada == question.id|slugify %}
-      {% set x = 1 %}
-      {% if x == 1 %}
-      Leu o artigo? Talvez possa se interessar em responder:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
-      {%endif%}
-      {% endif %}
-      {% endfor %}
-      {% endfor %}
-    </div>
-  </div>
+		{% if t.article|linebreaks|length > 600 %}
+		<div class="article">{{t.article|truncatechars_html:590|safe}}
+			<a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a></div>
+			{% else %}
+			<div class="article">{{t.article|safe}}</div>
+			{% endif %}
+			<br>
+			<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #00c0ef; padding-top:0.4em; margin-top:0.8em; font-size:95%; font-weight:bold;">
+			</div>
+			{% for questao_associada in Article.split_numbers %}
+			{% for question in not_answered %}
+			{% set x == 0 %}
+			{% if questao_associada == question.id|slugify %}
+			{% set x = 1 %}
+			{% if x == 1 %}
+			Leu o artigo? Talvez possa se interessar em responder:  <a href="#" onclick="window.open('{{question.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">{{ question.question_text }}</a>
+			{%endif%}
+			{% endif %}
+			{% endfor %}
+			{% endfor %}
+		</div>
+	</div>
 </div>
 </br>
 {% endif %}
@@ -193,198 +249,92 @@
 
 {%if t|to_class_name == 'Question' %}
 <div class="header-tm-article">
-  <div class="box-question-tm">
+	<div class="box-question-tm">
 
-    <div class="box-question-header">
-      <p>
-        {% for tag in t.tags.all %}
-        <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-          <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-        </form>
-        {% endfor %}
-        <div class="pub-style"><strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
-          <strong>Expira em:</strong> {{ t.exp_date }}</div>
-        </p>
-        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em;">
-        </div>
-        <div class="question-title">{{ t }}</div>
-        {% if t.image %}
-        <img src="{{ t.image.url }}" width="350px" height="250px" /></br></br>
-        {% endif %}
-        <form action="{% url 'agoraunicamp:vote_timeline' t.id %}" method="post">
-          {% csrf_token %}
-          {% if t.question_type == '1' %}
-          <ul class="list-group">
-            {% for choice in t.choice_set.all %}
-            <div class="list-group-item">
-              <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-              <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-            </div>
-            {% endfor %}
-          </ul>
-          {% elif t.question_type == '2' %}
-          <ul class="list-group">
-            {% for choice in t.choice_set.all %}
-            <div class="list-group-item">
-              <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-              <label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-            </div>
-            {% endfor %}
-          </ul>
-          {% elif t.question_type == '3' %}
-          <textarea class="form-control" name="text" id="question_text{{ t.id }}" value="" rows="3"></textarea><br/>
-          {% endif %}
-          <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-        </form>
-        <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
-      </div>
-    </div>
-  </div></br>
-  {% endif %}
+		<div class="box-question-header">
+			<p>
+				{% for tag in t.tags.all %}
+				<form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+					<input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+				</form>
+				{% endfor %}
+				<div class="pub-style"><strong>Publicado em:</strong> {{ t.publ_date }}&nbsp;&nbsp;&nbsp;
+					<strong>Expira em:</strong> {{ t.exp_date }}</div>
+				</p>
+				<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #67dca1; padding-top:0.4em; margin-top:0.8em;">
+				</div>
+				<div class="question-title">{{ t }}</div>
+				{% if t.image %}
+				<img src="{{ t.image.url }}" width="350px" height="250px" /></br></br>
+				{% endif %}
+				<form action="{% url 'agoraunicamp:vote_timeline' t.id %}" method="post">
+					{% csrf_token %}
+					{% if t.question_type == '1' %}
+					<ul class="list-group">
+						{% for choice in t.choice_set.all %}
+						<div class="list-group-item">
+							<input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+							<label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+						</div>
+						{% endfor %}
+					</ul>
+					{% elif t.question_type == '2' %}
+					<ul class="list-group">
+						{% for choice in t.choice_set.all %}
+						<div class="list-group-item">
+							<input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
+							<label for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
+						</div>
+						{% endfor %}
+					</ul>
+					{% elif t.question_type == '3' %}
+					<textarea class="form-control" name="text" id="question_text{{ t.id }}" value="" rows="3"></textarea><br/>
+					{% endif %}
+					<br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
+				</form>
+				<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
+			</div>
+		</div>
+	</div></br>
+	{% endif %}
 
 
-  {%if t|to_class_name == 'Relatorio' %}
+	{%if t|to_class_name == 'Relatorio' %}
 
-  <div class="box-result-tm">
+	<div class="box-result-tm">
 
-    <div id="relatorio{{t.id}}" class="box-result-content">
-      <p>
-        {% for tag in t.tags.all %}
-        <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-          <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-        </form>
-        {% endfor %}
-        <div class="pub-style"><strong>Publicado em:</strong> {{ t.publ_date }}</div>
-      </p>
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
-      </div>
-      {% if t.conteudo|linebreaks|length > 600 %}
-      {{t.conteudo|truncatechars_html:590|safe}}
-      <a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
-      {% else %}
-      {{t.conteudo|safe}}
-      {% endif %}
-      <br>
-      <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
-      </div>
-      &nbsp;
-      <form style="display:inline-block;" action="{% url 'resultados:dislike' t.id %}" method="post">
-        {% csrf_token %}
-        <input  id="dislike" name="dislike1" type="image" src="{% static "resultados/dislike.jpg" %}" alt="dislike"  value="Vote" height="22" width="22" />&nbsp;{{t.dislike}}
-      </form>
-    </div>
-  </div>
+		<div id="relatorio{{t.id}}" class="box-result-content">
+			<p>
+				{% for tag in t.tags.all %}
+				<form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
+					<input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
+				</form>
+				{% endfor %}
+				<div class="pub-style"><strong>Publicado em:</strong> {{ t.publ_date }}</div>
+			</p>
+			<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+			</div>
+			{% if t.conteudo|linebreaks|length > 600 %}
+			{{t.conteudo|truncatechars_html:590|safe}}
+			<a href="#" onclick="window.open('{{t.address}}', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">Leia mais</a>
+			{% else %}
+			{{t.conteudo|safe}}
+			{% endif %}
+			<br>
+			<div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #f39c12; padding-top:0.4em; margin-top:0.8em;">
+			</div>
+
+		</div>
+	</div>
 </br>
 {% endif %}
 {% endfor %}
 </div>
 
-{% if tutorial == 'nao' %}
 
-<div id="tutorial2" class="modal fade" role="dialog">
-  <div class="modal-dialog" id="modal-dialog-mob">
-    <div style="  text-align: center;" >
-      <img id="tutorial2img" class="tutorial-image" src="{% static "agora/images/tutorial/6.png" %}" alt="tutorial 1"/>
-    </div>
-    <div class="modal-footer" style="border-top:0px;">
-      <button style="display:block;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal">Navegar pela página inicial e continuar</button>
-    </div>
-  </div>
+
+
 </div>
-
-<script>
-$('#tutorial2').modal('show')
-</script>
-
-{% endif %}
-
-
-
-{% set x = 0 %}
-{% for question in not_answered %}
-{% if question.id|slugify == first_question %}
-  {% set x = 1 %}
-{% endif %}
-{% endfor %}
-
-{% if not_answered %}
-{% if x == 1 %}
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog" id="modal-dialog-mob">
-    <div class="modal-content">
-      <div style="color:black;padding:15px;font-size:16px;">Decida! Precisamos muito da sua participação:</div>
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
-        <button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        {{ message }}
-      </div></br>
-      {% endfor %}
-      {% for question in not_answered %}
-      {% if question.id|slugify == first_question %}
-      <div class="box-question" style="width:95%;">
-
-        <div class="box-question-header">
-          <p>
-            {% for tag in question.tags.all %}
-            <form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
-              <input style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
-            </form>
-            {% endfor %}
-            <strong>Publicado em:</strong> {{ question.publ_date }}&nbsp;&nbsp;&nbsp;
-            <strong>Expira em:</strong> {{ question.exp_date }}
-          </p>
-          <div class="plainlinks hlist" style="width:100%;border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;">
-          </div>
-          <div class="question-title">{{ question }}</div>
-          {% if question.image %}
-          <img src="{{ question.image.url }}" width="350px" height="250px" />  </br></br>
-          {% endif %}
-          <form action="{% url 'agoraunicamp:vote_initial' question.id %}" method="post">
-            {% csrf_token %}
-            {% if question.question_type == '1' %}
-            <ul class="list-group">
-              {% for choice in question.choice_set.all %}
-              <div class="list-group-item">
-                <input type="radio" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-              </div>
-              {% endfor %}
-            </ul>
-            {% elif question.question_type == '2' %}
-            <ul class="list-group">
-              {% for choice in question.choice_set.all %}
-              <div class="list-group-item">
-                <input type="checkbox" name="choice" id="choice{{ choice.id }}" value="{{ choice.id }}" />
-                <label class="question-choice" for="choice{{ choice.id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ choice.choice_text }}</label><br/>
-              </div>
-              {% endfor %}
-            </ul>
-            {% elif question.question_type == '3' %}
-            <textarea class="form-control" name="text" id="question_text{{ question.id }}" value="" rows="3"></textarea><br/>
-            {% endif %}
-            <br/><input class="btn btn-default btn-info" type="submit" value="Enviar" />
-          </form>
-          <div class="plainlinks hlist" style="width:100%;clear:both; border-top:1px solid #12d673; padding-top:0.4em; margin-top:0.8em;"></div>
-        </div>
-      </div>
-      <br />
-      {% endif %}
-      {% endfor %}
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Ir para a Página Inicial</button>
-      </div>
-    </div>
-  </div>
-</div>
-{%endif%}
-{%endif%}
-<script>
-$('#myModal').modal('show')
-</script>
-
-
 
 
 

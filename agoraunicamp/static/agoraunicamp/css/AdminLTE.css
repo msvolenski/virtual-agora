@@ -3372,7 +3372,7 @@ fieldset[disabled] .btn-vk.active {
   text-align: center;
 }
 
-.project-header {
+/* .project-header {
   position:relative;
   background: #f7f7f7;
   width: 100%;
@@ -3406,7 +3406,32 @@ fieldset[disabled] .btn-vk.active {
 
 .project-header li:first-child {
   width: 15%;
+} */
+
+.center-column {
+  position: relative;
+  min-height: 100vh;
+  width: 60%;
+  margin-left: 20%;
+  transition: all 0.3s; 
+  margin-top:50px;
 }
+
+.project-header {
+  position: relative;
+  padding: 20px;
+  margin: 10px 0;
+  background: #fff;    
+  justify-content: space-between; 
+}
+
+.project-name{
+  font-size:200%;
+  font-weight:bold;
+  text-align:center;
+  padding:15px;
+}
+
 
 #toogle-menu-check, .toogle-menu {
   display: none;
@@ -3468,7 +3493,6 @@ fieldset[disabled] .btn-vk.active {
 }
 
 .forum-section{
-
   width:70%;
   padding-top:100px;
   margin-bottom:10px;
@@ -3726,8 +3750,6 @@ fieldset[disabled] .btn-vk.active {
   margin:0 auto;
   padding:5px;
   font-weight:bold;
-
-
 }
 
 .mural-box{
@@ -3903,11 +3925,139 @@ fieldset[disabled] .btn-vk.active {
 .tutorial-image{
   width:400px;
   margin:0 auto;
-
 }
 
-@media (max-width: 765px) {
+.phases {
+  margin: 0 auto;
+  width:90%;
+  position: relative;
+  padding: 20px; 
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .phases:before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    left: 50px;
+    right: 50px;
+    top: 45px;
+    background: #ddd; }
+  .phases .phase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    color: #3c3c3c;
+    z-index: 2; }
+    .phases .phase .phase-number {
+      height: 50px;
+      width: 50px;
+      font-size: 2em;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+      background: #3c3c3c;
+      color: #fff; }
+    .phases .phase .phase-name {
+      line-height: .9em; }
+    .phases .phase.past-phase {
+      color: #ddd; }
+      .phases .phase.past-phase .phase-number {
+        background: #ddd; }
+      .phases .phase.past-phase .phase-name {
+        color: #ddd; }
+    .phases .phase.future-phase {
+      color: #ddd; }
+      .phases .phase.future-phase .phase-number {
+        background: #fff;
+        color: #ddd; }
+      .phases .phase.future-phase .phase-number {
+        color: #ddd;
+        border: 5px solid #ddd; }
 
+.etapa-content {
+  position: relative;
+  padding: 20px;
+  margin-bottom:10px;
+  background: #fff;    
+  justify-content: space-between; 
+}
+
+.etapa-text{
+  text-align:left;
+  padding:15px;
+}
+
+
+
+@media (max-width: 765px) {
+  
+  .etapa-content {  
+    font-size:80%;
+    padding: 10px;
+    margin-bottom:5px;    
+  }
+  
+  .etapa-text{
+    font-size:80%; 
+    padding:10px;
+  }
+  
+  .phases {   
+    width:100%;   
+    padding: 10px; 
+    }
+    .phases:before {   
+      height: 4px;
+      left: 30px;
+      right: 30px;
+      top: 25px;
+      }
+    .phases .phase {
+      width: 50px;
+      }
+      .phases .phase .phase-number {
+        height: 30px;
+        width: 30px;
+        font-size: 1em;
+        margin-bottom: 5px;
+       }
+      .phases .phase .phase-name {
+        font-size: 50%;
+        line-height: .9em; }  
+  
+  .center-column {
+    position: relative;    
+    width: 100%;    
+    transition: all 0.3s; 
+    margin-top:50px;
+    margin-left:0%;
+  }
+
+  .project-header {
+    font-size:80%;
+    padding: 10px;
+    margin: 5px 0;
+    text-align:center;     
+  }
+  
+  .project-name{
+    font-size:150%;
+    font-weight:bold;    
+    padding:10px;
+  }
+
+ 
+  
+  
+  
   .forum-topic-tm{
     position:relative;
     width:90%;
@@ -4287,44 +4437,5 @@ fieldset[disabled] .btn-vk.active {
   margin-right: 10px;
 
 }
-  .project-header {
-    min-height: 3.25em;
-    padding-top: 0.5em;
-
-
-  }
-
-  .toogle-menu {
-    display: inline-block;
-    width: 3em;
-    padding: 0.5em;
-    float: left;
-  }
-
-  #toogle-menu-check + ul {
-    display: none;
-    clear: both;
-  }
-
-  #toogle-menu-check:checked + ul {
-    display: block;
-  }
-
-  .hamburger {
-    display: inline-block;
-  }
-
-  .project-header li, .project-header li:first-child {
-    float: none;
-    width: 100%;
-  }
-
-  .project-header h1 {
-    font-size: 1em;
-    font-weight: bold;
-    padding: 0;
-    padding-top: 1em;
-    float: left;
-
-  }
+ 
 }

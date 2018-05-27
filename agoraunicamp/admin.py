@@ -19,33 +19,29 @@ class TopicAdmin(admin.ModelAdmin):
       if queryset.count() != 1:
         modeladmin.message_user(request, "Não é possível remover mais de um tópico por vez.")
         return
-      else:
-         
-        queryset.delete()
-                  
+      else:         
+        queryset.delete()                  
         return
       return
 
   def publicar_topico(modeladmin, request, queryset):
           queryset.update(published = 'Sim')
-          queryset.update(publ_date = timezone.now())
-         
+          queryset.update(publ_date = timezone.now())         
           return
 
   def get_project(self, obj):
       return obj.category.projeto.sigla
+  
   get_project.short_description = 'Projeto'
 
 
-
 class TopicAnswerAdmin(admin.ModelAdmin):
-  # fields = ['topic', 'text']
   list_filter = ['answer_date']
   list_display = ['user', 'topic', 'text', 'answer_date']
 
 
-
-
+class EtapaAdmin(admin.ModelAdmin):
+  list_display = ['project', 'etapa','name', 'header_txt', 'objetivo_txt','participar_txt','resultado_txt']
 
 
 class AnswerAdmin(admin.ModelAdmin):
@@ -64,15 +60,13 @@ class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
 
 
-
 class MeuEspacoAdmin(admin.ModelAdmin):
   list_filter = ['projeto']
   list_display = ['projeto','user', 'secao', 'categoria', 'publ_date','comentario','link','arquivo']
 
-class ProjetoAdmin(admin.ModelAdmin):
-          #actions = ['show_results']
-  list_display = ['projeto', 'sigla']
-  #list_filter = ['question', 'choice']
+
+class ProjetoAdmin(admin.ModelAdmin):        
+  list_display = ['projeto','etapa_prj', 'sigla']
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -83,20 +77,13 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ['projeto','tags']
     actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo','remover_artigo']
     fieldsets = [
-
         ('Selecione o Projeto',               {'fields': ['projeto']}),
         (None,               {'fields': ['title']}),
-
         ('Conteúdo', {'fields': ['article']}),
-        ('Tags', {'fields': ['tags']}),
-     
+        ('Tags', {'fields': ['tags']}),     
         ('Data de Pubicação:', {'fields': ['publ_date']}),
-
     ]
-
-
     list_display = ('projeto', 'title', 'id', 'publ_date', 'published','destaque', 'address')
-
 
     def remover_artigo(modeladmin, request, queryset):
         if queryset.count() != 1:
@@ -114,10 +101,6 @@ class ArticleAdmin(admin.ModelAdmin):
                     return
         return
 
-
-
-
-
     def destacar_artigo(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
@@ -125,21 +108,11 @@ class ArticleAdmin(admin.ModelAdmin):
         else:
             Article.objects.all().update(destaque = 'Não')
             queryset.update(destaque = 'Sim')
-
             return
 
     def publicar_na_pagina_principal(modeladmin, request, queryset):
             queryset.update(published = 'Sim')
-            queryset.update(publ_date = timezone.now())
-            x = Message(kind='1',message="Novo artigo inserido:{id}", published='Sim', publ_date=timezone.now())
-            for title in queryset:
-                t = title.title.encode('utf8')
-                a = title.address
-                p = title.projeto
-            x.message="Novo artigo inserido: {id}".format(id=t)
-            x.projeto = p
-            x.address = a
-            x.save()
+            queryset.update(publ_date = timezone.now()) 
             return
 
     def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):
@@ -156,12 +129,10 @@ class ArticleAdmin(admin.ModelAdmin):
              for article in queryset:
                  t = article.address
 
-
-admin.site.disable_action('delete_selected')
+#admin.site.disable_action('delete_selected')
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 0
-
 
 class QuestionAdmin(admin.ModelAdmin):
   fields = ['projeto','question_text', 'question_type', 'tags', 'days']
@@ -201,7 +172,6 @@ class QuestionAdmin(admin.ModelAdmin):
                   return
       return
 
-
   def unpublish_question(modeladmin, request, queryset):
     rows_updated = queryset.update(question_status='n')
     if queryset.count() != 1:
@@ -218,7 +188,6 @@ class QuestionAdmin(admin.ModelAdmin):
                 return
     return
 
-
   unpublish_question.short_description = "Despublicar questão"
 
 
@@ -234,10 +203,8 @@ class UserProfileInline2(admin.StackedInline):
   verbose_name_plural = 'perfil do fórum'
 
 
-class UserAdmin(UserAdmin):
-    """Define a new UserAdmin"""
+class UserAdmin(UserAdmin):  
     inlines = [UserProfileInline, UserProfileInline2]
-
 
 
 class Relatorio_geralAdmin(admin.ModelAdmin):
@@ -302,8 +269,6 @@ class RelatorioAdmin(admin.ModelAdmin):
                 return
     publicar.short_description = "Publicar relatório"
 
-
-
     def desfazer_publicacao(modeladmin, request, queryset):
         if queryset.count() != 1:
                 modeladmin.message_user(request, "Não é possível desfazer a publicação de mais de um relatório por vez.")
@@ -328,10 +293,7 @@ class RelatorioAdmin(admin.ModelAdmin):
 
 
 
-
-
-
-
+admin.site.register(Etapa, EtapaAdmin)
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Termo, TermoAdmin)
 admin.site.register(Article, ArticleAdmin)

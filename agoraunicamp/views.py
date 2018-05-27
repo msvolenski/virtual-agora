@@ -159,8 +159,10 @@ class PaginaInicialView(generic.ListView):
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
     user = User.objects.get(user=self.request.user)
     questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
+    
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
+    
     auth_user = self.request.user
     
     topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
@@ -172,19 +174,19 @@ class PaginaInicialView(generic.ListView):
         chain(relatorio, article, not_answered, topics),
         key=lambda instance: instance.publ_date, reverse=True)
 
-    projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
-   
-    try:
-        initial = InitialListQuestion.objects.filter(select=1,projeto__sigla=user.projeto).first() #pega a lista
-        initial_list = [c.name for c in initial.questions.all()]
-    except:
-        initial_list=[0]
-    not_answered_list=[str(f.id) for f in not_answered]
-    initial_list_user = list(set(initial_list).intersection(not_answered_list))
-    if not initial_list_user:
-        first_question = 'none'
-    else:
-        first_question = initial_list_user[0]
+    projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()   
+    not_answered_list = [str(f.id) for f in not_answered]
+    
+    #seleciona a etaoa corrente do projeto
+    etapas = []
+    for idx in range(1,6):
+        if int(projeto_nome.etapa_prj) == idx:
+            etapas.append("actual")
+        if int(projeto_nome.etapa_prj) > idx:            
+            etapas.append("past")        
+        if int(projeto_nome.etapa_prj) < idx:          
+            etapas.append("future")
+
 
     context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
     context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
@@ -197,11 +199,11 @@ class PaginaInicialView(generic.ListView):
     context['sigla'] = user.projeto
     context['categories'] = Topic.objects.filter(projeto__sigla=user.projeto)
     context['topic_user'] = User.objects.get(user=auth_user)
-    context['topic_users'] = TopicAnswer.objects.all()
-    context['initial_list'] = initial_list
+    context['topic_users'] = TopicAnswer.objects.all()   
     context['not_answered_list'] = not_answered_list
-    context['initial_list_user'] = initial_list_user
-    context['first_question'] = first_question
+    context['etapas'] = etapas
+    context['etapas_txt'] = get_object_or_404(projeto_nome.etapa_set , etapa=projeto_nome.etapa_prj)
+ 
 
     return context
 
