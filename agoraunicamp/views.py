@@ -155,56 +155,62 @@ class PaginaInicialView(generic.ListView):
   def get_queryset(self):
     return
 
-  def get_context_data(self, **kwargs):
+  def get_context_data(self, **kwargs):    
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
-    user = User.objects.get(user=self.request.user)
-    questions = Question.objects.filter(projeto__sigla=user.projeto, exp_date__gt=timezone.now(),question_status='p')
     
+    #busca usuário
+    user = User.objects.get(user=self.request.user)
+    answered = Answer.objects.filter(user=user)
+    #print user
+    
+    #busca o projeto do usuario
+    projeto_atual = user.projeto
+    #print projeto_atual
+    
+    #busca a etapa do projeto
+    projeto_obj = Projeto.objects.get(sigla__exact=projeto_atual)
+    etapa_atual = projeto_obj.etapa_prj
+    #print etapa_atual
+
+    #buscando as publicacoes validas
+    publicacoes = Publicacao.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+        
+    #1. Questoes
+    #busca as questões que o usuário já respondeu e define as nao respondidads    
+    questions = Question.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
-    
-    auth_user = self.request.user
-    
-    topics = Topic.objects.filter(projeto__sigla=user.projeto).order_by('-publ_date')
-    article = Article.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
-    relatorio = Relatorio.objects.filter(projeto__sigla=user.projeto, publ_date__lte=timezone.now()).order_by('-publ_date')
-    not_answered = list(set(questions) - set(answered_questions))
-    
-    result_list = sorted(
-        chain(relatorio, article, not_answered, topics),
-        key=lambda instance: instance.publ_date, reverse=True)
+    questions_not_answered = list(set(questions) - set(answered_questions))
 
-    projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()   
-    not_answered_list = [str(f.id) for f in not_answered]
+    #2. Artigos
+    artigos = Article.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+
+    #3. Relatorios
+    relatorios = Relatorio.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+
+    #4. Debates
+    debates = Topic.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     
     #seleciona a etaoa corrente do projeto
     etapas = []
     for idx in range(1,6):
-        if int(projeto_nome.etapa_prj) == idx:
+        if int(projeto_obj.etapa_prj) == idx:
             etapas.append("actual")
-        if int(projeto_nome.etapa_prj) > idx:            
+        if int(projeto_obj.etapa_prj) > idx:            
             etapas.append("past")        
-        if int(projeto_nome.etapa_prj) < idx:          
+        if int(projeto_obj.etapa_prj) < idx:          
             etapas.append("future")
 
-
-    context['article'] = Article.objects.filter(publ_date__lte=timezone.now(), projeto__sigla=user.projeto).order_by('-publ_date')
-    context['relatorio'] = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date')
-    context['question'] = Question.objects.filter(projeto__sigla=user.projeto)
-    context['not_answered'] = list(set(questions) - set(answered_questions))
-    context['not_answered'].reverse()
-    context['timeline'] = result_list
-    context['nickname'] = user.nickname
-    context['projeto'] = projeto_nome.projeto
+    context['artigos'] = artigos
+    context['questoes'] = questions_not_answered
+    context['relatorios'] = relatorios    
+    context['projeto'] = projeto_obj.projeto
     context['sigla'] = user.projeto
-    context['categories'] = Topic.objects.filter(projeto__sigla=user.projeto)
-    context['topic_user'] = User.objects.get(user=auth_user)
-    context['topic_users'] = TopicAnswer.objects.all()   
-    context['not_answered_list'] = not_answered_list
+    context['debates'] = debates
+    context['topic_user'] = User.objects.get(user=self.request.user)
+    context['topic_users'] = TopicAnswer.objects.all()      
     context['etapas'] = etapas
-    context['etapas_txt'] = get_object_or_404(projeto_nome.etapa_set , etapa=projeto_nome.etapa_prj)
- 
-
+    context['etapas_txt'] = get_object_or_404(projeto_obj.etapa_set , etapa=projeto_obj.etapa_prj)
     return context
 
 

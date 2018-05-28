@@ -8,12 +8,18 @@ from django.utils import timezone
 from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 
+class ChoiceInline(admin.TabularInline):
+    model = Choice
+    extra = 0
 
 class TopicAdmin(admin.ModelAdmin):
-  actions = ['publicar_topico','remover_topico']
-  fields = ['projeto', 'title', 'text', 'tags']
+  model = Topic
+    
+  def get_list_display(self, request):
+    return ('projeto','etapa_publ', 'pk','title','text', 'published','publ_date')  
+  
+  actions = ['publicar_topico', 'despublicar_topico', 'remover_topico']
   list_filter = ['projeto','publ_date']
-  list_display = ['projeto', 'title','text', 'published','publ_date']
 
   def remover_topico(modeladmin, request, queryset):
       if queryset.count() != 1:
@@ -22,13 +28,16 @@ class TopicAdmin(admin.ModelAdmin):
       else:         
         queryset.delete()                  
         return
-      return
 
   def publicar_topico(modeladmin, request, queryset):
-          queryset.update(published = 'Sim')
-          queryset.update(publ_date = timezone.now())         
-          return
+    queryset.update(published = 'sim')
+    queryset.update(publ_date = timezone.now())         
+    return
 
+  def despublicar_topico(modeladmin, request, queryset):
+    queryset.update(published = 'nao')                  
+    return  
+  
   def get_project(self, obj):
       return obj.category.projeto.sigla
   
@@ -69,54 +78,31 @@ class ProjetoAdmin(admin.ModelAdmin):
   list_display = ['projeto','etapa_prj', 'sigla']
 
 
-class ArticleAdmin(admin.ModelAdmin):
-        
-    def delete_selected(self, request):
-        return False
-
-    list_filter = ['projeto','tags']
-    actions = ['destacar_artigo','publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo','remover_artigo']
-    fieldsets = [
-        ('Selecione o Projeto',               {'fields': ['projeto']}),
-        (None,               {'fields': ['title']}),
-        ('Conteúdo', {'fields': ['article']}),
-        ('Tags', {'fields': ['tags']}),     
-        ('Data de Pubicação:', {'fields': ['publ_date']}),
-    ]
-    list_display = ('projeto', 'title', 'id', 'publ_date', 'published','destaque', 'address')
+class ArticleAdmin(admin.ModelAdmin):    
+    model = Article
+    
+    def get_list_display(self, request):
+        return ('projeto', 'etapa_publ', 'pk', 'title', 'publ_date', 'published', 'address')    
+   
+    list_filter = ['projeto']
+    actions = ['publicar_na_pagina_principal','desfazer_publicacao_na_pagina_principal','mostrar_o_artigo','remover_artigo']   
 
     def remover_artigo(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Não é possível remover mais de um artigo por vez.")
             return
-        else:
-            for title in queryset:
-                e = title.address
-            objs = Message.objects.filter(kind = '1')
-            for obj in objs:
-                if obj.address == e:
-                    queryset.delete()
-                    obj.delete()
-                    modeladmin.message_user(request, "Artigo removido com sucesso.")
-                    return
-        return
-
-    def destacar_artigo(modeladmin, request, queryset):
-        if queryset.count() != 1:
-            modeladmin.message_user(request, "Não é possível destacar mais de um artigo por vez.")
-            return
-        else:
-            Article.objects.all().update(destaque = 'Não')
-            queryset.update(destaque = 'Sim')
+        else:            
+            queryset.delete()
+            modeladmin.message_user(request, "Artigo removido com sucesso.")
             return
 
     def publicar_na_pagina_principal(modeladmin, request, queryset):
-            queryset.update(published = 'Sim')
+            queryset.update(published = 'sim')
             queryset.update(publ_date = timezone.now()) 
             return
 
     def desfazer_publicacao_na_pagina_principal(modeladmin, request, queryset):
-            queryset.update(published = 'Não')
+            queryset.update(published = 'nao')
             return
 
     def mostrar_o_artigo(modeladmin, request, queryset):
@@ -127,19 +113,19 @@ class ArticleAdmin(admin.ModelAdmin):
              selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
              ct = ContentType.objects.get_for_model(queryset.model)
              for article in queryset:
-                 t = article.address
-
-#admin.site.disable_action('delete_selected')
-class ChoiceInline(admin.TabularInline):
-    model = Choice
-    extra = 0
+                 t = article.address    
 
 class QuestionAdmin(admin.ModelAdmin):
-  fields = ['projeto','question_text', 'question_type', 'tags', 'days']
+  model = Question
+    
+  def get_list_display(self, request):        
+    return ('projeto', 'etapa_publ', 'pk', 'question_text', 'publ_date', 'exp_date','published','question_type','address')    
+  
+  #fields = ['projeto','question_text', 'question_type', 'tags','publ_date','exp_date']
   inlines = [ChoiceInline]
   list_filter = ['publ_date', 'exp_date', 'question_type']
   search_fields = ['question_text']
-  list_display = ['projeto', 'question_text', 'id', 'publ_date', 'exp_date', 'question_type', 'is_question_published', 'is_answer_published','address']
+  #list_display = ['projeto', 'question_text', 'id', 'publ_date', 'exp_date','published','question_type','address']
   actions = ['publish_question', 'unpublish_question','remover_questao']
 
   def publish_question(self, request, queryset):
@@ -148,10 +134,9 @@ class QuestionAdmin(admin.ModelAdmin):
         self.message_user(request, message_bit)
         return
     else:
-        queryset.update(question_status='p')
+        queryset.update(published='sim')
         message_bit = "Questão publicada"
-        queryset.update(publ_date = timezone.now())
-       
+        queryset.update(publ_date = timezone.now())       
         self.message_user(request, message_bit)
         return
   publish_question.short_description = "Publicar questão"
@@ -161,33 +146,18 @@ class QuestionAdmin(admin.ModelAdmin):
           modeladmin.message_user(request, "Não é possível remover mais de uma questão por vez.")
           return
       else:
-          for title in queryset:
-              e = title.address
-          objs = Message.objects.filter(kind = '4')
-          for obj in objs:
-              if obj.address == e:
-                  queryset.delete()
-                  obj.delete()
-                  modeladmin.message_user(request, "Questão removida com sucesso.")
-                  return
-      return
+          queryset.delete()
+          modeladmin.message_user(request, "Questão removida com sucesso.")
+          return    
 
-  def unpublish_question(modeladmin, request, queryset):
-    rows_updated = queryset.update(question_status='n')
+  def unpublish_question(modeladmin, request, queryset):    
     if queryset.count() != 1:
-        modeladmin.message_user(request, "Não é possível remover mais de uma questão por vez.")
+        modeladmin.message_user(request, "Não é despublicar mais de uma questão por vez.")
         return
     else:
-        for title in queryset:
-            e = title.address
-        objs = Message.objects.filter(kind = '4')
-        for obj in objs:
-            if obj.address == e:
-                obj.delete()
-                modeladmin.message_user(request, "Questão despublicada com sucesso.")
-                return
-    return
-
+        queryset.update(published='nao')
+        modeladmin.message_user(request, "Questão despublicada com sucesso.")
+        return
   unpublish_question.short_description = "Despublicar questão"
 
 
@@ -195,100 +165,49 @@ class UserProfileInline(admin.StackedInline):
   model = User
   can_delete = False
   verbose_name_plural = 'perfil pessoal'
-
-
-class UserProfileInline2(admin.StackedInline):
-  model = User
-  can_delete = False
-  verbose_name_plural = 'perfil do fórum'
-
+  
 
 class UserAdmin(UserAdmin):  
-    inlines = [UserProfileInline, UserProfileInline2]
+    inlines = [UserProfileInline]
 
-
-class Relatorio_geralAdmin(admin.ModelAdmin):
-    fieldsets = [
-        ('Selecione o projeto',               {'fields': ['projeto']}),
-        (None,               {'fields': ['title']}),
-        ('Conteúdo', {'fields': ['conteudo']}),
-        ('Tags', {'fields': ['tags']}),
-        ('Data de Pubicação:', {'fields': ['publ_date']}),
-        ('URL da página do Relatório:', {'fields': ['address']}),
-    ]
-
-    list_display = ['projeto','title', 'id', 'publ_date', 'published']
 
 class RelatorioAdmin(admin.ModelAdmin):
+    model = Relatorio
+    
+    def get_list_display(self, request):
+        return ('projeto', 'etapa_publ', 'pk', 'titulo','questao', 'publ_date', 'published','address') 
+    
     list_filter = ['projeto']
     actions = ['publicar','desfazer_publicacao','remover_relatorio']
-    fieldsets = [
-        ('Selecione o projeto',               {'fields': ['projeto']}),
-        ('Tipo',               {'fields': ['tipo']}),
-        (None,               {'fields': ['questao']}),
-        ('Tags', {'fields': ['tags']}),
-        ('Título', {'fields': ['titulo']}),
-        ('Conteúdo', {'fields': ['conteudo']}),
-    ]
-
-    list_display = ['projeto', 'titulo','questao','id','publ_date', 'published','address']
-
+    
     def remover_relatorio(modeladmin, request, queryset):
         if queryset.count() != 1:
             modeladmin.message_user(request, "Não é possível remover mais de um relatório por vez.")
             return
-        else:
-            for title in queryset:
-                e = title.address
-            objs = Message.objects.filter(kind = '2')
-            for obj in objs:
-                if obj.address == e:
-                    queryset.delete()
-                    obj.delete()
-                    modeladmin.message_user(request, "Relatório removido com sucesso.")
-                    return
-        return
+        else:            
+            queryset.delete()                    
+            modeladmin.message_user(request, "Relatório removido com sucesso.")
+            return      
 
     def publicar(modeladmin, request, queryset):
             if queryset.count() != 1:
                 modeladmin.message_user(request, "Não é possível publicar mais de um relatório por vez.")
                 return
             else:
-                queryset.update(published = 'Sim')
-                queryset.update(publ_date = timezone.now())
-                queryset.update(publhistorico = 'Sim')                
+                queryset.update(published = 'sim')
+                queryset.update(publ_date = timezone.now())                               
                 message_bit = "Relatório publicado"
-                modeladmin.message_user(request, message_bit)
-                for object in queryset:
-                    if object.tipo == '2':
-                        ids=object.questao.id
-                        a = Question.objects.get(id=ids)
-                        a.answer_status = 'p' #atualiza variaivel de question que indica se foi publicado
-                        a.save()
-                        return
+                modeladmin.message_user(request, message_bit)                
                 return
     publicar.short_description = "Publicar relatório"
 
     def desfazer_publicacao(modeladmin, request, queryset):
         if queryset.count() != 1:
-                modeladmin.message_user(request, "Não é possível desfazer a publicação de mais de um relatório por vez.")
-                return
+            modeladmin.message_user(request, "Não é possível desfazer a publicação de mais de um relatório por vez.")
+            return
         else:
-            queryset.update(published = 'Não')
-            for object in queryset:
-                if object.tipo == '2':
-                    ids=object.questao.id
-                    a = Question.objects.get(id=ids)
-                    a.answer_status = 'n' #atualiza variaivel de question que indica se foi publicado
-                    a.save()
-            for title in queryset:
-                e = title.address
-            objs = Message.objects.filter(kind = '2')
-            for obj in objs:
-                if obj.address == e:
-                    obj.delete()
-                    modeladmin.message_user(request, "Relatório despublicado com sucesso.")
-                    return
+            queryset.update(published = 'nao')
+            modeladmin.message_user(request, "Relatório despublicado com sucesso.")
             return
 
 
@@ -305,4 +224,5 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(Relatorio, RelatorioAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopicAnswer, TopicAnswerAdmin)
+
 

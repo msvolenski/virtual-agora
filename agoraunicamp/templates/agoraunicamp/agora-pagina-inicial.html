@@ -77,22 +77,30 @@
 		{{ message }}
 	</div></br>
 	{% endfor %}
-	{% for t in timeline %}
-	{% if t|to_class_name == 'Topic' %}
+	
+	
+	
+	
+	
+	
+	
+	
+	{% for debate in debates %}
 
-	<div class="forum-topic-tm" >
-		{% if t %}
+	<div class="forum-topic-tm" >		
 		<div id="area{{t.id}}" class="header-topic">
 			<div style="font-weight:bold;font-size:25px;">{{ t }}
 			</div>
+			
 			{% for tag in t.tags.all %}
 			<form style="float:left;" action="{% url 'agoraunicamp:search' tag.name %}" method="post">
 				<input id="tags" style="float:left;border:0px" class="btn-xs btn-default btn-info" type="submit" value="{{ tag.name }}"/> &nbsp
 			</form>
 			{% endfor %}
-			<div class="pub-style"><strong>Publicado em: </strong>{{ t.publ_date }}</div></br>
-			<p>{{ t.text|safe }}</p>
-			<center><input name="open{{t.id}}" id="open{{t.id}}" class="btn btn-default" type="submit" value="Abrir comentários" style="visibility:visible;margin:10px;" onClick="openc(this.name)" /></center>
+			
+			<div class="pub-style"><strong>Publicado em: </strong>{{ debate.publ_date }}</div></br>
+			<p>{{ debate.text|safe }}</p>
+			<center><input name="open{{debate.pk}}" id="open{{debate.pk}}" class="btn btn-default" type="submit" value="Abrir comentários" style="visibility:visible;margin:10px;" onClick="openc(this.name)" /></center>
 
 			<script>
 			function openc(el) {
@@ -106,8 +114,8 @@
 		<div class="plainlinks hlist">
 		</div>
 
-		<div style="display:none;" class="open{{t.id}}">
-			{% for answer in t.topicanswer_set.all %}
+		<div style="display:none;" class="open{{debate.pk}}">
+			{% for answer in debate.topicanswer_set.all %}
 			<div class="render-response">
 				<div class="forum-username">{{ answer.user}}{% if answer.user.nickname %}
 					({{answer.user.nickname}})
@@ -125,7 +133,7 @@
 
 
 				<div id="div{{answer.text}}{{answer.answer_date}}" style="display:none" class="response-area">
-					<form action="{% url 'agoraunicamp:answer_home_edit' t.id  %}" method="post">
+					<form action="{% url 'agoraunicamp:answer_home_edit' debate.pk  %}" method="post">
 						<textarea  name="text" rows='1' class="response-textarea">{% autoescape off %}{{ answer.text }}{% endautoescape %}
 						</textarea>
 						<center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder" /></center>
@@ -151,7 +159,7 @@
 			</div>
 
 			{% endfor %}
-			{% endif %}
+			
 			<br/><br/>
 
 			{% set flag = 0 %}
@@ -167,8 +175,8 @@
 
 			{% if flag == 0 %}
 
-			<div id="area{{t.id}}" class="response-area" >
-				<form action="{% url 'agoraunicamp:answer_home' t.id %}" method="post">
+			<div id="area{{debate.id}}" class="response-area" >
+				<form action="{% url 'agoraunicamp:answer_home' debate.pk %}" method="post">
 					<textarea  name="text" rows='1' placeholder='Comente aqui' class="response-textarea"></textarea>
 					<center><input id="button-forum" class="btn btn-default btn-info" type="submit" value="Responder"/></center>
 				</form>
@@ -189,15 +197,14 @@
 
 
 
-			{% endif %}
-
+			{% endif %}	
 		</div>
 	</div>
 
 
 
 </br>
-{% endif %}
+{% endfor %}
 
 
 
@@ -328,7 +335,7 @@
 	</div>
 </br>
 {% endif %}
-{% endfor %}
+
 </div>
 
 
