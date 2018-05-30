@@ -1,0 +1,60 @@
+<div class="post-comment">
+  <div class="comment-header">
+    <div class="comment-author">
+      <span>{{comment.user}}</span>
+    </div>
+    
+    {% if user == comment.user %}
+    
+    <button type="button" class="post-btn edit-comment-btn">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </button>
+    
+    <form class="comment-delete-form" method="POST" action="{% url 'agoraunicamp:delete_comment' comment.pk  %}">
+      <button type="submit" class="post-btn">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </form>
+    
+    {% endif %}
+    
+    <div class="comment-date">
+      <div>
+        {{comment.answer_date|date:'d-m-Y'}} <i class="fa fa-calendar" aria-hidden="true"></i>
+      </div>
+      <div>
+        {{comment.answer_date|date:'H:i'}} <i class="fa fa-clock-o" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  
+  <form class="edit-comment-form" action="{% url 'agoraunicamp:answer_home_edit' debate.pk  %}" method="POST">
+    <div class="comment-body">
+      <div class="comment-avatar">
+        <img class="avatar" src='{{comment.user.avatar.url}}' />
+      </div>
+      <div class="comment-text">
+        {{comment.text}}
+      </div>
+      <textarea name="text"></textarea>
+      <button type="submit" class="post-btn edit-comment-btn">Editar</button>
+    </div>
+  </form> 
+  
+  <div class="replies">  
+    {% for reply in comment.topicanswerreply.all %}
+      {% include 'agoraunicamp/debate/reply.html' %}
+    {% endfor %}
+    
+    <form class="reply-form" action="{% url 'agoraunicamp:answer_reply' comment.pk  %}" method="POST">
+      {% csrf_token %}
+      <div class="reply new-reply reply-collapse">
+        <div class="reply-avatar">
+          <img class="avatar avatar-small" src="{{user.avatar.url}}" />
+        </div>
+        <textarea name="text"></textarea>
+        <button type="button" class="post-btn post-btn-success reply-btn">Responder</button>
+      </div>
+    </form>
+  </div>
+</div>

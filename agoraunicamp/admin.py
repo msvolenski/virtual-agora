@@ -48,6 +48,10 @@ class TopicAnswerAdmin(admin.ModelAdmin):
   list_filter = ['answer_date']
   list_display = ['user', 'topic', 'text', 'answer_date']
 
+class TopicAnswerReplyAdmin(admin.ModelAdmin):
+  list_filter = ['answer_date']
+  list_display = ['user', 'text', 'answer_date']
+
 
 class EtapaAdmin(admin.ModelAdmin):
   list_display = ['project', 'etapa','name', 'header_txt', 'objetivo_txt','participar_txt','resultado_txt']
@@ -223,6 +227,7 @@ admin.site.register(AuthUser, UserAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Relatorio, RelatorioAdmin)
 admin.site.register(Topic, TopicAdmin)
+admin.site.register(TopicAnswerReply, TopicAnswerReplyAdmin)
 admin.site.register(TopicAnswer, TopicAnswerAdmin)
 
 

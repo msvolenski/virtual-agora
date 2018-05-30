@@ -26,8 +26,10 @@ urlpatterns = [
   url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
   url(r'^atprojeto/(?P<projeto_nome>[-\w]+)/$', views.atualizaProjeto, name='atualiza-projeto'),
   url(r'^forum/(?P<topic_id>[0-9]+)/answerhome/$', views.save_topic_answer_home, name='answer_home'),
+  url(r'^forum/(?P<comment_id>[0-9]+)/answerreply/$', views.save_reply_answer_home, name='answer_reply'),
+  url(r'^forum/(?P<reply_id>[0-9]+)/answerreplyedit/$', views.save_reply_answer_edit, name='answer_reply_edit'),
+  url(r'^forum/(?P<comment_id>[0-9]+)/comment/delete/$', views.delete_comment, name='delete_comment'),
+  url(r'^forum/(?P<reply_id>[0-9]+)/reply/delete/$', views.delete_reply, name='delete_reply'),
   url(r'^forum/(?P<topic_id>[0-9]+)/answerhomeedit/$', views.save_topic_answer_home_edit, name='answer_home_edit'),
-  url(r'^participe/(?P<question_id>[0-9]+)/vote/$', views.vote, name='vote'),
-  url(r'^participe/(?P<question_id>[0-9]+)/voteinitial/$', views.vote_initial, name='vote_initial'),
   url(r'^participe/(?P<question_id>[0-9]+)/votetimeline/$', views.vote_timeline, name='vote_timeline'),
 ]

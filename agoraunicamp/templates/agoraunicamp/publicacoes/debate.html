@@ -1,0 +1,41 @@
+<div id="p{{debate.pk}}" class="post comunidade">
+  <div class="post-content">
+    <div class="post-header">
+      <ul class="filters filters-post">
+      {% for tag in debate.tags.all %}
+        <li>{{tag.name}}</li>
+      {% endfor %}
+      </ul>
+      <h3>{{ debate.topic }}</h3>
+    </div>
+    <div class="post-text">
+      <div>
+        {{debate.text|safe}}
+      </div>
+      {% csrf_token %}
+      <button type="button" class="post-btn" id="add-proposal">Mostrar mais</button>
+    
+      {% for comment in debate.topicanswer.all %}        
+        {% include 'agoraunicamp/debate/comment.html' %}
+      {% endfor %}
+      
+      <form class="comment-form" action="{% url 'agoraunicamp:answer_home' debate.pk  %}" method="POST">
+        {% csrf_token %}
+        <div class="post-comment new-comment">
+          <div class="comment-body">
+            <div class="comment-avatar">
+              <img class="avatar" src="{{user.avatar.url}}" />
+            </div>
+            <textarea name="text"></textarea>
+            <button type="submit" class="post-btn comment-btn">Comentar</button>
+          </div>
+        </div>
+      </form>
+      <div class="post-about">
+        Publicado por {{ publication.author }}
+      </div>
+    </div>
+  </div>
+  <div class="post-right">
+  </div>
+</div>

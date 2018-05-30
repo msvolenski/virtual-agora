@@ -79,6 +79,50 @@
 	{% endfor %}
 	
 	
+	{% if artigos %}
+	{% for artigo in artigos %}
+		{% include 'agoraunicamp/publicacoes/article.html' %}
+	{% endfor %}	
+	{% endif %}
+
+	{% if relatorios %}
+	{% for relatorio in relatorios %}
+		{% include 'agoraunicamp/publicacoes/result.html' %}
+	{% endfor %}	
+	{% endif %}
+
+	{% if questoes %}
+	{% for questao in questoes %}
+		{% include 'agoraunicamp/publicacoes/question.html' %}
+	{% endfor %}	
+	{% endif %}
+
+	{% if debates %}
+	{% for debate in debates %}	
+		{% include 'agoraunicamp/publicacoes/debate.html' %}
+	{% endfor %}	
+	{% endif %}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -342,7 +386,9 @@
 
 
 </div>
-
+<script src="{% static 'agoraunicamp/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'agoraunicamp/js/d3.min.js' %}"></script>
+<script src="{% static 'agoraunicamp/js/scripts.js' %}"></script>
 
 
 

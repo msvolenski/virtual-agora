@@ -1,0 +1,31 @@
+<form class="question-form" action="{% url 'agoraunicamp:vote_timeline' questao.pk %}" method="post">
+  <div class="post-content">
+    <div class="post-header">
+      <ul class="filters filters-post">
+      {% for tag in questao.tags.all %}
+        <li>{{tag.name}}</li>
+      {% endfor %}
+      </ul>
+      <h3>{{ questao.question_text }}</h3>
+      <div style="padding-left:10px">Publicado em <b>{{questao.publ_date}}</b></div>
+      <div style="padding-left:10px">Expira em <b>{{questao.exp_date}}</b></div>
+    </div>
+    <div class="post-text">
+        {% csrf_token %}
+        <div class="question-choices">
+          <textarea class="form-control" name="text" id="question_text{{ questao.id }}" value="" rows="3"></textarea><br/>
+        </div>
+        <button type="submit" name="submit"class="post-btn post-btn-success">
+          Responder
+        </button>
+      <!-- <div class="post-about">
+        Publicado por {{ publication.author }}
+      </div> -->
+    </div>
+  </div>
+  <div class="post-right">
+    <div class="post-menu">
+
+    </div>
+  </div>
+</form>

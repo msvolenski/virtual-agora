@@ -9,7 +9,7 @@ from django.contrib.auth.models import User as AuthUser
 from .decorators import term_required
 from django.views import generic
 from .models import *
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render,render_to_response,redirect
 from django.core.urlresolvers import reverse
 from taggit.models import Tag
@@ -190,7 +190,8 @@ class PaginaInicialView(generic.ListView):
 
     #4. Debates
     debates = Topic.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
-    
+    #for d in debates:
+    #  print d.all()
     #seleciona a etaoa corrente do projeto
     etapas = []
     for idx in range(1,6):
@@ -209,6 +210,7 @@ class PaginaInicialView(generic.ListView):
     context['debates'] = debates
     context['topic_user'] = User.objects.get(user=self.request.user)
     context['topic_users'] = TopicAnswer.objects.all()      
+    context['user'] = User.objects.get(user=self.request.user)
     context['etapas'] = etapas
     context['etapas_txt'] = get_object_or_404(projeto_obj.etapa_set , etapa=projeto_obj.etapa_prj)
     return context
@@ -429,6 +431,7 @@ def tag_search(request, tag_name):
       'timeline': result_list,
       'tag' : tag_name,
       'topic_user' : User.objects.get(user=auth_user),
+      'user' : User.objects.get(user=auth_user),
       'topic_users' : TopicAnswer.objects.all(),
       'projeto' : projeto_nome.projeto,
       'sigla' : user.projeto,
@@ -441,179 +444,198 @@ def atualizaProjeto(request, projeto_nome):
 
 def save_topic_answer_home(request, topic_id):
   topic = get_object_or_404(Topic, pk=topic_id)
-  auth_user = AuthUser.objects.get(username=request.user)
-  topic_user = User.objects.get(user=auth_user)
-  answered_topic = TopicAnswer.objects.filter(user=topic_user, topic=topic).count()
+  user = User.objects.get(user=request.user) 
+  answered_topic = TopicAnswer.objects.filter(user=user, topic=topic).count()
   if answered_topic:
     error_message = 'Você já respondeu este tópico.'
     messages.error(request, error_message)
   else:
     answer = request.POST['text']
     if answer:
-      answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
+      answer_model = TopicAnswer(user=user, topic=topic, text=answer)
       answer_model.save()
+      return render(request, 'agoraunicamp/debate/comment.html', {
+          'user': user,
+          'comment': answer_model,
+          'debate':topic,
+      })
     else:
       messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
-    return redirect(request.META['HTTP_REFERER']+"#area%s"%(topic_id))
+
+
+def save_reply_answer_home(request, comment_id):
+  comentario = get_object_or_404(TopicAnswer, pk=comment_id)
+  user = User.objects.get(user=request.user)
+  
+  #testa se o usuário já replicou
+  comentario_respondido = TopicAnswerReply.objects.filter(user=user, comment=comentario).count()
+
+  if comentario_respondido:
+      error_message = 'Você já respondeu este comentario'
+      return HttpResponseForbidden(error_message)
+  
+  else:
+      text = request.POST['text']
+      print text
+      reply = TopicAnswerReply(user=user, comment=comentario, text=text, answer_date=timezone.now())
+      reply.save()
+      return render(request, 'agoraunicamp/debate/reply.html', {
+          'user':user,
+          'reply': reply,
+          'comment':comentario,
+      })
+
+def save_reply_answer_edit(request, reply_id):
+  reply = get_object_or_404(TopicAnswerReply, pk=reply_id)
+  user = User.objects.get(user=request.user) 
+  new_reply = request.POST['text']
+  if new_reply:
+      reply.text = new_reply
+      reply.answer_date = timezone.now()
+      reply.save() 
+      return render(request, 'agoraunicamp/debate/reply.html', {
+          'user':user,
+          'reply': reply,          
+      })  
+  else:
+      return HttpResponseForbidden('User does not own this reply to delete it.')
+     
+def delete_reply(request, reply_id):
+  reply = get_object_or_404(TopicAnswerReply, pk=reply_id)
+  user = User.objects.get(user=request.user)  
+  if user != reply.user:
+    return HttpResponseForbidden('User does not own this reply to delete it.')
+  else:
+    reply.delete()
+    return HttpResponse('Successfully deleted reply.')
+
+def delete_comment(request, comment_id):
+  comment = get_object_or_404(TopicAnswer, pk=comment_id)
+  user = User.objects.get(user=request.user)  
+  if user != comment.user:
+    return HttpResponseForbidden('User does not own this comment to delete it.')
+  else:
+    comment.delete()
+    return HttpResponse('Successfully deleted reply.')
 
 def save_topic_answer_home_edit(request, topic_id):
   topic = get_object_or_404(Topic, pk=topic_id)
-  auth_user = AuthUser.objects.get(username=request.user)
-  topic_user = User.objects.get(user=auth_user)
-  answered_topic = TopicAnswer.objects.filter(user=topic_user, topic=topic).delete()
+  user = User.objects.get(user=request.user)  
+  answered_topic = TopicAnswer.objects.filter(user=user, topic=topic).delete()
   answer = request.POST['text']
   if answer:
-      answer_model = TopicAnswer(user=topic_user, topic=topic, text=answer)
-      answer_model.save()
+      answer_model = TopicAnswer(user=user, topic=topic, text=answer)
+      answer_model.save()    
+      return render(request, 'agoraunicamp/debate/comment.html', {
+          'user': user,
+          'debate': topic,
+          'comment':answer_model,
+      })
   else:
-      messages.error(request, "Parece que você deixou o campo em branco. Por favor, tente novamente.")
+      return HttpResponseForbidden('User does not own this comment to edit it.')
 
-  return redirect(request.META['HTTP_REFERER'] + "#area%s"%(topic_id))
-  
-def vote(request, question_id):
-  question = get_object_or_404(Question, pk=question_id)
-  username = AuthUser.objects.get(username=request.user)
-  user = username.user
-  question_type = question.question_type
-  success = False
-  # Query over the voted questions
-  answered_question = Answer.objects.filter(user=user, question=question).count()
-  if answered_question:
-    error_message = 'Você já votou nesta questão.'
-    messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:participe'))
-  try:
-    # Save the answer
-    if question_type == '1':
-      answer = question.choice_set.get(pk=request.POST['choice'])
-      if answer:
-        answer_model = Answer(user=user, question=question, choice=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '2':
-      answer = request.POST.getlist('choice')
-      if answer:
-        for choice_id in answer:
-          choice = question.choice_set.get(pk=choice_id)
-          answer_model = Answer(user=user, question=question, choice=choice)
-          answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '3':
-      answer = request.POST['text']
-      if answer:
-        answer_model = Answer(user=user, question=question, text=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-    if success == True:
-      messages.success(request, "Obrigado por participar!")
-    else:
-      messages.error(request, error_message)
-    return HttpResponseRedirect(reverse('agora:participe'))
-  except (KeyError, Choice.DoesNotExist):
-    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return HttpResponseRedirect(reverse('agora:participe'))
-
-
-def vote_initial(request, question_id):
-  question = get_object_or_404(Question, pk=question_id)
-  username = AuthUser.objects.get(username=request.user)
-  user = username.user
-  question_type = question.question_type
-  success = False
-  # Query over the voted questions
-  answered_question = Answer.objects.filter(user=user, question=question).count()
-  if answered_question:
-    error_message = 'Você já votou nesta questão.'
-    messages.error(request, error_message)
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
-  try:
-    # Save the answer
-    if question_type == '1':
-      answer = question.choice_set.get(pk=request.POST['choice'])
-      if answer:
-        answer_model = Answer(user=user, question=question, choice=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '2':
-      answer = request.POST.getlist('choice')
-      if answer:
-        for choice_id in answer:
-          choice = question.choice_set.get(pk=choice_id)
-          answer_model = Answer(user=user, question=question, choice=choice)
-          answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '3':
-      answer = request.POST['text']
-      if answer:
-        answer_model = Answer(user=user, question=question, text=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-    if success == True:
-      messages.success(request, "Obrigado por participar!")
-    else:
-      messages.error(request, error_message)
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
-  except (KeyError, Choice.DoesNotExist):
-    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
 
 def vote_timeline(request, question_id):
+  #carrega usuario
+  user = User.objects.get(user=request.user)
+  
+  #carrega questao
   question = get_object_or_404(Question, pk=question_id)
-  username = AuthUser.objects.get(username=request.user)
-  user = username.user
-  question_type = question.question_type
-  success = False
-  # Query over the voted questions
-  answered_question = Answer.objects.filter(user=user, question=question).count()
-  if answered_question:
-    error_message = 'Você já votou nesta questão.'
-    messages.error(request, error_message)
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
-  try:
-    # Save the answer
-    if question_type == '1':
+  
+  #registra resposta de One Choice
+  if question.question_type == '1':    
+    if request.method == 'POST':
       answer = question.choice_set.get(pk=request.POST['choice'])
-      if answer:
-        answer_model = Answer(user=user, question=question, choice=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '2':
-      answer = request.POST.getlist('choice')
-      if answer:
-        for choice_id in answer:
-          choice = question.choice_set.get(pk=choice_id)
-          answer_model = Answer(user=user, question=question, choice=choice)
-          answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
-    elif question_type == '3':
-      answer = request.POST['text']
-      if answer:
-        answer_model = Answer(user=user, question=question, text=answer)
-        answer_model.save()
-        success = True
-      else:
-        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-    if success == True:
-      messages.success(request, "Obrigado por participar!")
+      answer_model = Answer(user=user, question=question, choice=answer)
+      answer_model.save() 
+      return HttpResponse('Sucesso')    
     else:
-      messages.error(request, error_message)
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
-  except (KeyError, Choice.DoesNotExist):
-    messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
-    return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+      error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+      return HttpResponse('error_message')
+
+  #registra resposta de multiple Choice
+  if question.question_type == '2':    
+    if request.method == 'POST':
+      answeru = request.POST.getlist('choice')
+      for c in answeru:
+        choice = question.choice_set.get(pk=c)
+        answer_model = Answer(user=user, question=question, choice=choice)
+        answer_model.save() 
+      return HttpResponse('Sucesso')    
+    else:
+      error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+      return HttpResponse('error_message')
+
+  #registra resposta de text
+  if question.question_type == '3':    
+    answer = request.POST['text']
+    if answer:
+      answer_model = Answer(user=user, question=question, text=answer)
+      answer_model.save()#       success = True     
+      return HttpResponse('Sucesso')
+    else:
+      error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+      return HttpResponse('error_message')
+  
+  #registra resposta de multiple Choice
+  if question.question_type == '4':    
+    if request.method == 'POST':     
+      print request.POST
+      for key, value in request.POST.items():            
+        if 'proposal' in key and value:     
+          answer_model = Answer(user=user, question=question, text=value)
+          answer_model.save() 
+      return HttpResponse('Sucesso')
+    else:
+      error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+      return HttpResponse('error_message')
+
+
+
+
+
+
+  # question_type = question.question_type
+  # success = False
+  # # Query over the voted questions
+  # answered_question = Answer.objects.filter(user=user, question=question).count()
+  # if answered_question:
+  #   error_message = 'Você já votou nesta questão.'
+  #   messages.error(request, error_message)
+  #   return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  # try:
+  #   # Save the answer
+  #   if question_type == '1':
+  #     answer = question.choice_set.get(pk=request.POST['choice'])
+  #     if answer:
+  #       answer_model = Answer(user=user, question=question, choice=answer)
+  #       answer_model.save()
+  #       success = True
+  #     else:
+  #       error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+  #   elif question_type == '2':
+  #     answer = request.POST.getlist('choice')
+  #     if answer:
+  #       for choice_id in answer:
+  #         choice = question.choice_set.get(pk=choice_id)
+  #         answer_model = Answer(user=user, question=question, choice=choice)
+  #         answer_model.save()
+  #       success = True
+  #     else:
+  #       error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
+  #   elif question_type == '3':
+  #     answer = request.POST['text']
+  #     if answer:
+  #       answer_model = Answer(user=user, question=question, text=answer)
+  #       answer_model.save()
+  #       success = True
+  #     else:
+  #       error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
+  #   if success == True:
+  #     messages.success(request, "Obrigado por participar!")
+  #   else:
+  #     messages.error(request, error_message)
+  #   return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))
+  # except (KeyError, Choice.DoesNotExist):
+  #   messages.error(request, "Parece que você não selecionou nenhuma opção. Por favor, tente novamente.")
+  #   return redirect(request.META['HTTP_REFERER']+"#question%s"%(question_id))

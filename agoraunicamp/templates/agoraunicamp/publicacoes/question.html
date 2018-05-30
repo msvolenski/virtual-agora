@@ -1,0 +1,11 @@
+<div id="p{{questao.pk}}" class="post participe">
+  {% if questao.question_type == '1' %}
+    {% include 'agoraunicamp/publicacoes/questoes/choicequestion.html' %}
+  {% elif questao.question_type == '2' %}
+    {% include 'agoraunicamp/publicacoes/questoes/multichoicequestion.html' %}
+  {% elif questao.question_type == '3' %}  
+    {% include 'agoraunicamp/publicacoes/questoes/textquestion.html' %}
+  {% elif questao.question_type == '4' %}
+    {% include 'agoraunicamp/publicacoes/questoes/proposalquestion.html' %}
+  {% endif %}
+</div>

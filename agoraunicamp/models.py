@@ -56,6 +56,7 @@ class Question(Publicacao):
         ('1', 'One choice'),
         ('2', 'Multipla Escolha'),
         ('3', 'Texto'),
+        ('4', 'Popostas'),
     )
   
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
@@ -94,8 +95,14 @@ class User(models.Model):
       ('8', 'outro'),
   )
 
+  avatar = models.ImageField(
+      upload_to = 'agoraunicamp/media/img/',
+      default = 'agoraunicamp/media/img/no-avatar.jpg',
+  )
+
   primeiro_nome =  models.CharField('Primeiro nome', max_length=40, blank=True)
-  ultimo_nome =  models.CharField('Sobrenome', max_length=100, blank=True)
+  ultimo_nome = models.CharField('Sobrenome', max_length=100, blank=True)
+  nome_completo = models.CharField('Nome Completo', max_length=200, blank=True)
   staff = models.CharField('Staff', max_length=1, blank=True, choices = STAFF_TYPE)  
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto') 
   email = models.EmailField('Email', blank=True)
@@ -120,6 +127,7 @@ class User(models.Model):
 
   def save(self, *args, **kwargs):
       super(User, self).save(*args, **kwargs)      
+      self.nome_completo = self.primeiro_nome + ' ' + self.ultimo_nome
       try:
          Termo.objects.get(user=self)
       except:
@@ -127,10 +135,20 @@ class User(models.Model):
          return super(User, self).save(*args, **kwargs)
       return super(User, self).save(*args, **kwargs)
 
+  def __str__(self):
+    return self.nome_completo
+
 
 class TopicAnswer(models.Model):        
-  user = models.ForeignKey(User)
-  topic = models.ForeignKey(Topic)
+  user = models.ForeignKey(
+      User,
+      on_delete = models.CASCADE,
+      related_name='topicanswer',
+  )
+  topic = models.ForeignKey(
+      Topic,
+      on_delete = models.CASCADE,
+      related_name = 'topicanswer',)
   text = RichTextUploadingField(config_name='full', verbose_name='')
   answer_date = models.DateTimeField(editable=False)
 
@@ -145,6 +163,32 @@ class TopicAnswer(models.Model):
   class Meta:
     verbose_name = 'comentario'
     verbose_name_plural = 'comentarios'
+
+class TopicAnswerReply(models.Model):        
+  user = models.ForeignKey(
+      User,
+      on_delete = models.CASCADE,
+      related_name='topicanswerreply',
+  )
+  comment = models.ForeignKey(
+      TopicAnswer,
+      on_delete = models.CASCADE,
+      related_name='topicanswerreply',
+  )
+  text = RichTextUploadingField(config_name='full', verbose_name='')
+  answer_date = models.DateTimeField(editable=False)
+
+  def __str__(self):
+    return self.text
+
+  def save(self, *args, **kwargs):
+    if not self.id:
+      self.answer_date = timezone.now()
+    return super(TopicAnswerReply, self).save(*args, **kwargs)
+
+  class Meta:
+    verbose_name = 'Réplica'
+    verbose_name_plural = 'Réplicas'
 
 
 class TopicAnswerForm(forms.ModelForm):
