@@ -7,11 +7,14 @@
       {% endfor %}
       </ul>
       <h3>{{ debate.topic }}</h3>
+  
     </div>
+    <div class="post-publdate">Publicado em <b>{{debate.publ_date}}</b></div>
     <div class="post-text">
-      <div>
-        {{debate.text|safe}}
+      <div style="text-align:center;padding:20px;">
+        {{debate.text|safe}}        
       </div>
+   
       {% csrf_token %}
       <button type="button" class="post-btn" id="add-proposal">Mostrar mais</button>
     
@@ -26,14 +29,12 @@
             <div class="comment-avatar">
               <img class="avatar" src="{{user.avatar.url}}" />
             </div>
-            <textarea name="text"></textarea>
+            <textarea name="text" class="form-control"></textarea>
             <button type="submit" class="post-btn comment-btn">Comentar</button>
           </div>
         </div>
       </form>
-      <div class="post-about">
-        Publicado por {{ publication.author }}
-      </div>
+
     </div>
   </div>
   <div class="post-right">

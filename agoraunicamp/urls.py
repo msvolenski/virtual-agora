@@ -24,6 +24,7 @@ urlpatterns = [
   url(r'^meuespacoquestao/envia/$', views.enviaDadosMeuEspacoQuestao, name='envia-espaco-questao'),
   url(r'^meuespacooutros/envia/$', views.enviaDadosMeuEspacoOutros, name='envia-espaco-outros'),
   url(r'^paginainicial/$', views.PaginaInicialView.as_view(), name='paginainicial'),
+  url(r'^configuracoes/enviafoto/$', views.simple_upload, name='simple-upload'),
   url(r'^atprojeto/(?P<projeto_nome>[-\w]+)/$', views.atualizaProjeto, name='atualiza-projeto'),
   url(r'^forum/(?P<topic_id>[0-9]+)/answerhome/$', views.save_topic_answer_home, name='answer_home'),
   url(r'^forum/(?P<comment_id>[0-9]+)/answerreply/$', views.save_reply_answer_home, name='answer_reply'),

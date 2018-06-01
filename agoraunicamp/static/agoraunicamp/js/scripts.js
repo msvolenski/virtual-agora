@@ -181,6 +181,35 @@ $(document).ready(function() {
     });
   });
 
+  $(document).on('click', 'form.xxx button[type="submit"]', function(e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var url = form.attr('action');
+    var data = form.serialize();
+    var method = form.attr('method');
+    var formData = new FormData();
+    formData.append( 'myfile', $( '#image_to_upload' )[0].files[0]);
+    console.log(formData)   
+
+    $.ajax({
+      type: method,
+      url: url,
+      data: formData,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function (response) {       
+        $("#avatar-configu").load('/agora/paginainicial/ #avatar-configu');
+      }
+ 
+    });
+  });
+
+
+
+
+
+
   $(document).on('click', 'form.reply-delete-form button[type="submit"]', function(e) {
     e.preventDefault();
     var form = $(this).closest('form');

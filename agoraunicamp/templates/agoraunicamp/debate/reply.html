@@ -1,4 +1,4 @@
-<div class="reply">
+<div class="reply" id="reply{{reply.pk}}">
 
   <div class="reply-header">
 
@@ -34,14 +34,13 @@
 
   <form class="edit-reply-form" action="{% url 'agoraunicamp:answer_reply_edit' reply.pk  %}" method="POST" style="display:inline">
     <div class="reply-body">
-
       <div class="reply-avatar">
-        <img class="avatar" src='{{reply.user.avatar.url}}' />
+        <img class="avatar avatar-small" src='{{reply.user.avatar.url}}' />
       </div>
       <div class="reply-text">
         {{reply.text}}
       </div>
-      <textarea name="text"></textarea>
+      <textarea name="text" class="form-control" ></textarea>
       <button type="submit" class="post-btn edit-reply-btn">Editar</button>
   </form>
 

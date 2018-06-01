@@ -447,8 +447,10 @@ def save_topic_answer_home(request, topic_id):
   user = User.objects.get(user=request.user) 
   answered_topic = TopicAnswer.objects.filter(user=user, topic=topic).count()
   if answered_topic:
-    error_message = 'Você já respondeu este tópico.'
-    messages.error(request, error_message)
+      error = 'Tópico já comentado. Você pode editar seu comentário.'
+      return render(request, 'agoraunicamp/debate/error.html', {
+          'menssagem':error
+      }) 
   else:
     answer = request.POST['text']
     if answer:
@@ -471,9 +473,12 @@ def save_reply_answer_home(request, comment_id):
   comentario_respondido = TopicAnswerReply.objects.filter(user=user, comment=comentario).count()
 
   if comentario_respondido:
-      error_message = 'Você já respondeu este comentario'
-      return HttpResponseForbidden(error_message)
-  
+      c =  get_object_or_404(TopicAnswerReply, user=user, comment=comentario) 
+      error = 'Comentário já respondondido. Você pode editar sua resposta.'
+      return render(request, 'agoraunicamp/debate/error.html', {
+          'menssagem':error
+      }) 
+     
   else:
       text = request.POST['text']
       print text
@@ -590,7 +595,15 @@ def vote_timeline(request, question_id):
       error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
       return HttpResponse('error_message')
 
+def simple_upload(request):
+    user = User.objects.get(user=request.user)
 
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        user.avatar = myfile
+        user.save()
+        return HttpResponse('error_message')
+    return redirect(request.META['HTTP_REFERER']+"#question%s")
 
 
 

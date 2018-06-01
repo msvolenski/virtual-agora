@@ -1,3 +1,5 @@
+{% load set_var %}
+
 <div class="post-comment">
   <div class="comment-header">
     <div class="comment-author">
@@ -36,25 +38,27 @@
       <div class="comment-text">
         {{comment.text}}
       </div>
-      <textarea name="text"></textarea>
+      <textarea name="text" class="form-control"></textarea>
       <button type="submit" class="post-btn edit-comment-btn">Editar</button>
     </div>
   </form> 
   
+  
   <div class="replies">  
     {% for reply in comment.topicanswerreply.all %}
-      {% include 'agoraunicamp/debate/reply.html' %}
-    {% endfor %}
-    
+      {% include 'agoraunicamp/debate/reply.html' %}    
+    {% endfor %}  
+
     <form class="reply-form" action="{% url 'agoraunicamp:answer_reply' comment.pk  %}" method="POST">
       {% csrf_token %}
       <div class="reply new-reply reply-collapse">
         <div class="reply-avatar">
           <img class="avatar avatar-small" src="{{user.avatar.url}}" />
         </div>
-        <textarea name="text"></textarea>
+        <textarea name="text" class="form-control"></textarea>
         <button type="button" class="post-btn post-btn-success reply-btn">Responder</button>
       </div>
-    </form>
+      </form>
   </div>
 </div>
+
