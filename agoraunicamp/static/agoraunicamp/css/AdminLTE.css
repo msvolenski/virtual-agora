@@ -3706,16 +3706,9 @@ Skin Black
   width: 40%;
   margin-left: 30%;
   transition: all 0.3s;
-  margin-top: 50px;
+  margin-top: 55px;
 }
 
-.project-header {
-  position: relative;
-  padding: 20px;
-  margin: 10px 0;
-  background: #fff;
-  justify-content: space-between;
-}
 
 .project-name {
   font-size: 200%;
@@ -4022,13 +4015,24 @@ Skin Black
 
 .box-project {
   font-weight: bold;
-  background: #ff7917;
+  background: #fb3d3d;
   font-size: 25px;
   margin: 0 auto;
   width: 70%;
   text-align: center;
   padding: 20px;
   margin-top: 50px;
+}
+
+.box-status {
+  font-weight: bold;
+  font-size: 18px;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
+  background: #f39696;
+  margin: 0 auto;
+  margin-top:5px;
 }
 
 .mural-pad {
@@ -4221,10 +4225,10 @@ Skin Black
 
 .phases {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   position: relative;
   padding: 20px;
-  background: #fff;
+  background: #9cb3bd;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -4286,7 +4290,7 @@ Skin Black
 }
 
 .phases .phase.future-phase .phase-number {
-  background: #fff;
+  background:  #9cb3bd;
   color: #ddd;
 }
 
@@ -4296,10 +4300,8 @@ Skin Black
 }
 
 .etapa-content {
-  position: relative;
-  padding: 20px;
+  position: relative; 
   margin-bottom: 10px;
-  background: #fff;
   justify-content: space-between;
 }
 
@@ -4805,6 +4807,131 @@ textarea:focus {
   background: #5d6062;
 }
 
+
+
+
+
+.post.projetos {
+  background: #5d6062;
+}
+
+.post.projetos .post-content, .post.projetos .post-about {
+  background: #9cb3bd;
+}
+
+.post.projetos .post-btn {
+  background:#9cb3bd ;
+  /* border: 1px solid #095e86; */
+  border-top-width: 4px;
+}
+
+.post.projetos .post-btn:hover, .post.projetos.post-btn-active {
+  border-top-width: 1px;
+  border-bottom-width: 4px;
+}
+
+.post.projetos .post-text {
+  background: #cedee6;
+}
+
+.post.projetos .post-about:before {
+  border-left-color: #9cb3bd;
+}
+
+.post.projetos .post-content:before {
+ 
+  color: #5d6062;
+  background: #9cb3bd;
+}
+
+.post.projetos .proposal:before {
+  background: #5d6062;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.post.project-header {
+  background: #5d6062;
+}
+
+.post.project-header .post-content, .post.project-headers .post-about {
+  background: #9cb3bd;
+}
+
+.post.project-header .post-btn {
+  background:#9cb3bd ;
+  /* border: 1px solid #095e86; */
+  border-top-width: 4px;
+}
+
+.post.project-header .post-btn:hover, .post.project-header.post-btn-active {
+  border-top-width: 1px;
+  border-bottom-width: 4px;
+}
+
+.post.project-header .post-text {
+  background: #cedee6;
+}
+
+.post.project-header .post-about:before {
+  border-left-color: #9cb3bd;
+}
+
+
+.post.project-header .proposal:before {
+  background: #5d6062;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .form-config-agora{
  margin-top:20px;
  padding:20px;
@@ -5062,11 +5189,12 @@ ul.filters li.filter-comunidade {
     line-height:20px;
   }
 
-  .etapa-content {
-    font-size: 80%;
-    padding: 10px;
-    margin-bottom: 5px;
-  }
+  .form-config-agora{
+    margin-top:20px;
+    padding:3px;
+   }
+
+
   .etapa-text {
     font-size: 80%;
     padding: 10px;
@@ -5089,6 +5217,7 @@ ul.filters li.filter-comunidade {
     width: 30px;
     font-size: 1em;
     margin-bottom: 5px;
+   
   }
   .phases .phase .phase-name {
     font-size: 50%;
@@ -5098,15 +5227,10 @@ ul.filters li.filter-comunidade {
     position: relative;
     width: 100%;
     transition: all 0.3s;
-    margin-top: 50px;
+    margin-top: 3px;
     margin-left: 0%;
   }
-  .project-header {
-    font-size: 80%;
-    padding: 10px;
-    margin: 5px 0;
-    text-align: center;
-  }
+
   .project-name {
     font-size: 150%;
     font-weight: bold;
@@ -5259,6 +5383,14 @@ ul.filters li.filter-comunidade {
     text-align: center;
     padding: 0px;
   }
+
+  .box-status {
+    font-size: 14px;
+    width: 85%;
+    text-align: center;
+    padding: 0px;
+  }
+
   .agora-subtitle {
     font-size: 14px;
     padding: 5px;

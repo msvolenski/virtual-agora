@@ -16,6 +16,7 @@ from taggit.models import Tag
 from .forms import DocumentForm
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
 from django.utils import timezone
 from itertools import chain
 
@@ -130,10 +131,12 @@ class AgoraView(generic.ListView):
 
   def get_context_data(self, **kwargs):
     context = super(AgoraView, self).get_context_data(**kwargs)
-    u = User.objects.get(user=self.request.user) 
-    context['user'] = User.objects.get(user=self.request.user)
-    context['nickname'] = u.nickname
+    user = User.objects.get(user=self.request.user) 
+    autent = self.request.user.is_authenticated
+    
+    context['user'] = User.objects.get(user=self.request.user) 
     context['projetos'] = Projeto.objects.all()
+    context['autenticado'] = autent
 
     return context
 
@@ -161,8 +164,9 @@ class PaginaInicialView(generic.ListView):
     #busca usuário
     user = User.objects.get(user=self.request.user)
     answered = Answer.objects.filter(user=user)
-    #print user
-    
+
+    autent = self.request.user.is_authenticated
+        
     #busca o projeto do usuario
     projeto_atual = user.projeto
     #print projeto_atual
@@ -208,6 +212,7 @@ class PaginaInicialView(generic.ListView):
     context['projeto'] = projeto_obj.projeto
     context['sigla'] = user.projeto
     context['debates'] = debates
+    context['autenticado'] = autent
     context['topic_user'] = User.objects.get(user=self.request.user)
     context['topic_users'] = TopicAnswer.objects.all()      
     context['user'] = User.objects.get(user=self.request.user)
@@ -225,42 +230,39 @@ def agoraconfiguracaoapelido(request):
         success = True
     else:
         error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-        return redirect(request.META['HTTP_REFERER'])
+        return HttpResponse('error_message')
     if success == True:
         messages.success(request, "Inclusão de apelido com sucesso")
-        return redirect(request.META['HTTP_REFERER'])
+        return HttpResponse('success')
     else:
         messages.error(request, error_message)
-        return redirect(request.META['HTTP_REFERER'])
+        return HttpResponse('error_message')
 
 def agoraconfiguracaoemail(request):
     user = User.objects.get(user=request.user)    
-    email = request.POST['text-email']
-    if email:        
+    email = request.POST['text-email']       
+    try:
+        validate_email(email)
+        valid_email = True
+    except ValidationError:
+        valid_email = False
+    
+    print valid_email
+    if valid_email == True:                
+        print email
         user.email = email
         user.save()
-        success = True
     else:
-        error_message = "Parece que você deixou o campo em branco. Por favor, tente novamente."
-        return redirect(request.META['HTTP_REFERER'])
-    if success == True:
-        messages.success(request, "Inclusão de email com sucesso")
-        return redirect(request.META['HTTP_REFERER'])
-    else:
-        messages.error(request, error_message)
-        return redirect(request.META['HTTP_REFERER'])
+        user.email = "Email inválido. Insira novamente"
+        user.save()
+    return HttpResponse('success')
+
 
 def agoraconfiguracaoapelidoremove(request):
     user = User.objects.get(user=request.user)   
     user.nickname = user.primeiro_nome
-    user.save()
-    success = True
-    if success == True:
-        messages.success(request, "Apelido excluido com sucesso")
-        return redirect(request.META['HTTP_REFERER'])
-    else:
-        messages.error(request, error_message)
-        return redirect(request.META['HTTP_REFERER'])
+    user.save()         
+    return HttpResponse('success')
 
 def term_accepted(request):
     username = AuthUser.objects.get(username=request.user)
@@ -602,7 +604,7 @@ def simple_upload(request):
         myfile = request.FILES['myfile']
         user.avatar = myfile
         user.save()
-        return HttpResponse('error_message')
+        return HttpResponse('Success')
     return redirect(request.META['HTTP_REFERER']+"#question%s")
 
 

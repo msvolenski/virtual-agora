@@ -3,64 +3,52 @@
 {% load set_var %}
 {% block content12 %}
 
+<div class="center-column">   
+       
+    <div class="post projetos">
+        <div class="post-content">
+            <center><Img src="{% static "agoraunicamp/images/agora-semfundo.png" %}" width="250" style="margin-top:50px"></Img></center>
+          <div class="post-header">
+              <center><h3>Seu espaço de conhecimento, debate, participação e decisão!</h3></center>
+          </div>         
+          <div class="post-text">
+          <h4>Escolha abaixo um dos  temas abertos para cosulta e participe! </h4>             
+          <ul class="nav">
+          {% for projeto in projetos %}
+          <li class="box-project"><a style="color:black;" href="{% url 'agoraunicamp:atualiza-projeto' projeto.sigla %}">{{projeto.projeto}}</a></li>
+          {% if projeto.etapa_prj == '1' %}
+          <div class="box-status"> Status - Etapa 1 de 5 - Conhecendo as ideias</div>
+          {% endif %}
+          {% if projeto.etapa_prj == '2' %}
+          <div class="box-status"> Status - Etapa 2 de 5 - Escolhendo os Temas</div>
+          {% endif %}
+          {% if projeto.etapa_prj == '3' %}
+          <div class="box-status"> Status - Etapa 3 de 5 - Debatendo os Temas</div>
+          {% endif %}
+          {% if projeto.etapa_prj == '4' %}
+          <div class="box-status"> Status - Etapa 4 de 5 - Selecionando as Propostas</div>
+          {% endif %}
+          {% if projeto.etapa_prj == '5' %}
+          <div class="box-status"> Status - Etapa 5 de 5 - Resultados e Deliberaçoes</div>
+          {% endif %}
 
-<div class="my-div" style="margin-bottom:50px;">
-  <div class="welcome-user"> Olá,
-    {% if nickname %}
-    {{nickname}}.
-    {% else %}
-    {{user.primeiro_nome}}.
-    {% endif %} Seja bem-vindx ao projeto
-  </div>
-  <div class="agora-title"><img id="unicamp6" class="agora-image" src="{% static "agoraunicamp/images/agora-unicamp-logo.png" %}" alt="logo agora"/></div>
-  <div class="agora-subtitle"> Um espaço de debate, consulta e participação política da comunidade. </div>
-  <div class="agora-subtitle"> Escolha um projeto, conheça, debata, vote e decida: </div>
-  <ul class="nav">
-    {% for proj in projetos %}
 
-    <li class="box-project" style="margin-bottom:50px"><a style="color:black;" href="{% url 'agoraunicamp:atualiza-projeto' proj.sigla %}">{{proj.projeto}} - {{proj.sigla}}</a></li>
 
-    {% endfor %}
-  </ul>
+
+          {% endfor %}
+        </ul>
+          
+          </div>
+        </div>
+        
+        <div class="post-right">
+        
+        </div>
+      </div>
 </div>
-
-
-{% if tutorial == 'nao' %}
-
-<div id="tutorial1" class="modal fade" role="dialog">
-  <div class="modal-dialog" id="modal-dialog-mob">
-    <div style="  text-align: center;" >
-    <img id="tutorial1img" class="tutorial-image" src="{% static "agoraunicamp/images/tutorial/1.png" %}" alt="tutorial 1"/>
-    </div>
-    <div class="modal-footer" style="border-top:0px;">
-      <button style="display:block;float:right;" id="tutorial1-button" type="button" class="btn-sm btn-default" onclick="proximo()">Próximo</button>
-      <button style="display:none;float:right;" id="tutorial2-button" type="button" class="btn-sm btn-default" data-dismiss="modal" >Escolha um projeto</button>
-    </div>
-  </div>
-</div>
-
-<script>
-$('#tutorial1').modal('show')
-</script>
-
-<script type="text/javascript">
-var i = 2;
-function proximo(){
-  var endp = '/static/agora/images/tutorial/' + i + '.png';
-  document.getElementById('tutorial1img').src=endp ;
-  if (i == 5) {
-    document.getElementById('tutorial1-button').style.display='none';
-    document.getElementById('tutorial2-button').style.display='block';
-  }
-  i++;
-}
-</script>
-
-{% endif %}
-
-
-
-
+<script src="{% static 'agoraunicamp/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'agoraunicamp/js/d3.min.js' %}"></script>
+<script src="{% static 'agoraunicamp/js/scripts.js' %}"></script>
 
 
 

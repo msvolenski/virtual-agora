@@ -48,14 +48,17 @@
             {{user.primeiro_nome}}{{user.primeiro_nome}}
             {% endif %}
           </span>
+          
+          {% if autenticado %}
           <a href="{% url 'agoraunicamp:logout' %}" style="color:black"><span class="glyphicon glyphicon-log-out" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></span>  </a>
           <div onClick="abreConfig()"  class="glyphicon glyphicon-wrench" style="float:right;margin-right:20px;font-size:20px;line-height:55px;"></div> 
-          
+          {% endif %}
        
         </div>
       </nav>
     </header>
-
+    
+    {% if autenticado %}
     <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;">
       <div class="container">
         <div class="dropup">
@@ -72,63 +75,9 @@
         </div>
       </div>
     </div>
-
+    {% endif %}
     <!-- Modal -->
-      <div class="modal fade" id="myModal1" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="100%" src="{% url 'agoraunicamp:meu-espaco-artigo' %}"></iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
-        </div>
-      </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="myModal2" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-debate' %}"></iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
-        </div>
-      </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="myModal3" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-questao' %}"></iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
-        </div>
-      </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="myModal4" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-body">
-          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-outros' %}"></iframe>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
-        </div>
-      </div>
-        </div>
-      </div>
+     
 
 
     <div style="background:#ddd;overflow:hidden;height:100%;">
@@ -139,11 +88,7 @@
       {% endblock %}
     </div>
 
-  </br>
-  <div id="footer" style="background:#ddd;width:100%;max-width:1000px;margin:0 auto;padding:20px;margin-bottom:20px">
-    <div class="plainlinks hlist" style="text-align:center;position:relative;width:100%;clear:both; border-top:1px solid #000000; padding:20px;font-size:85%; font-weight:bold;">Sobre o Projeto - Quem somos - Dúvidas
-    </div>
-  </div>
+  
 
   <script>
       function myFunction() {

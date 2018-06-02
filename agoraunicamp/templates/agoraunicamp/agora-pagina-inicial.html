@@ -4,88 +4,16 @@
 {% block content12 %}
 
 
-
-
 <div class="center-column">
 	
-	<div class="project-header">  
-		<div>Você está no projeto</div>
-		<div class="project-name">{{projeto}}</div>
-	</div>
+	{% include 'agoraunicamp/agora-projeto-header.html' %}	
 	
-	
-	<div id="post-config" style="display:block">
+	<div id="post-config" style="display:none">
 	{% include 'agoraunicamp/agora-configuracoes.html' %}
-	</div>
+	</div>	
 	
-	<div class="project-header" style="margin-bottom:0px">  
-			<div>Esta projeto está na etapa:</div>			
-	</div>
-	
-	<div style="width:100%;background:white;">
-		<div class="phases"> 		        
-			<div class="phase {{etapas.0}}-phase">
-				<div class="phase-number">
-					1
-				</div>
-				<div class="phase-name">
-					Ideias
-				</div>
-			</div>
-			<div class="phase {{etapas.1}}-phase">
-				<div class="phase-number">
-					2
-				</div>
-				<div class="phase-name">
-					Temáticas
-				</div>
-			</div>
-			<div class="phase {{etapas.2}}-phase">
-				<div class="phase-number">
-					3
-				</div>
-				<div class="phase-name">
-					Debates
-				</div>
-			</div>
-			<div class="phase {{etapas.3}}-phase">
-				<div class="phase-number">
-					4
-				</div>
-				<div class="phase-name">
-					Propostas
-				</div>
-			</div>
-			<div class="phase {{etapas.4}}-phase">
-				<div class="phase-number">
-					5
-				</div>
-				<div class="phase-name">
-					Resultados
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="etapa-content">         
-			<div style="text-align:center;font-size:150%;font-weight:bold">{{etapas_txt.name}}</div>
-			<div class="etapa-text" style="text-align:center">{{etapas_txt.header_txt}}</div>
-			<div class="etapa-text"><b>Objetivo</b>: {{etapas_txt.objetivo_txt}}</div>
-			<div class="etapa-text"><b>Como participar</b>: {{etapas_txt.participar_txt}}</div>
-			<div class="etapa-text"><b>Resultados</b>: {{etapas_txt.resultado_txt}}</div>
-	</div>
+	{% include 'agoraunicamp/agora-projeto-etapas.html' %}
 
-
-
-	<div class="time-line-page">
-	{% for message in messages %}
-	<div class="alert alert-{{ message.tags }} alert-dismissible fade in" style="text-align:center;width:60%;margin:0 auto;padding:5px;" role="alert">
-		<button type="button" style="width:60%:margin:0 auto;" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		{{ message }}
-	</div></br>
-	{% endfor %}
-	
-	
 	{% if artigos %}
 	{% for artigo in artigos %}
 		{% include 'agoraunicamp/publicacoes/article.html' %}
@@ -109,24 +37,6 @@
 		{% include 'agoraunicamp/publicacoes/debate.html' %}
 	{% endfor %}	
 	{% endif %}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 </div>
 

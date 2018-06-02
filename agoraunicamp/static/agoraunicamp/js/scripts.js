@@ -181,7 +181,69 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on('click', 'form.xxx button[type="submit"]', function(e) {
+  $(document).on('click', 'form.form-config-muda-apelido button[type="submit"]', function(e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var url = form.attr('action');
+    var data = form.serialize();
+    var method = form.attr('method');
+    $.ajax({
+      type: method,
+      url: url,
+      data: data,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+      },
+      success: function(response) {
+        $("#post-config").load('/agora/paginainicial/ #post-config');
+      }
+    });
+  });
+
+  $(document).on('click', 'form.form-config-remove-apelido button[type="submit"]', function(e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var url = form.attr('action');
+    var data = form.serialize();
+    var method = form.attr('method');
+    $.ajax({
+      type: method,
+      url: url,
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+      },
+      success: function(response) {
+        $("#post-config").load('/agora/paginainicial/ #post-config');
+      }
+    });
+  });
+
+  $(document).on('click', 'form.form-config-muda-email button[type="submit"]', function(e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var url = form.attr('action');
+    var data = form.serialize();
+    var method = form.attr('method');
+    $.ajax({
+      type: method,
+      url: url,
+      data: data,     
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+      },
+      success: function(response) {
+        $("#post-config").load('/agora/paginainicial/ #post-config');
+      }
+    });
+  });
+
+
+  
+  $(document).on('click', 'form.form-config-avatar button[type="submit"]', function (e) {
     e.preventDefault();
     var form = $(this).closest('form');
     var url = form.attr('action');
