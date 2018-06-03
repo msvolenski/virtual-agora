@@ -15,6 +15,7 @@ urlpatterns = [
   url(r'^configuracao/apelido/$', views.agoraconfiguracaoapelido, name='apelido-config'),
   url(r'^configuracao/apelido/remover/$', views.agoraconfiguracaoapelidoremove, name='apelido-remove'),
   url(r'^configuracao/email/$', views.agoraconfiguracaoemail, name='email-config'),
+  url(r'^post/curtir/(?P<proposta_pk>[-\w]+)/(?P<tipo>[-\w]+)$', views.curtir_proposta, name='curtir'),
   url(r'^meuespacoartigo/$', views.MeuEspacoArtigoView.as_view(), name='meu-espaco-artigo'),
   url(r'^meuespacodebate/$', views.MeuEspacoDebateView.as_view(), name='meu-espaco-debate'),
   url(r'^meuespacoquestao/$', views.MeuEspacoQuestaoView.as_view(), name='meu-espaco-questao'),

@@ -25,6 +25,13 @@ class Projeto(models.Model):
     sigla = models.CharField('Sigla', max_length=50, blank=True, null=True)
     etapa_prj = models.CharField("Etapa", max_length=1, default='1')
 
+    def save(self, *args, **kwargs):
+      super(Projeto, self).save(*args, **kwargs)      
+      cont = 1
+      for cont in range(1,6):
+        Etapa.objects.create(project=self, etapa=str(cont))          
+      return super(Projeto, self).save(*args, **kwargs)
+    
     def __str__(self):
         return '%s %s' % (self.sigla, self.projeto)
 
@@ -64,8 +71,11 @@ class Question(Publicacao):
     exp_date = models.DateTimeField('Data de expiração')  
     image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
 
+      
+    
     def __str__(self):
-        return self.question_text.encode('utf8')
+        nome = str(self.pk) + ' - ' + self.question_text 
+        return nome.encode('utf8')
 
     def save(self, *args, **kwargs):
         super(Question, self).save(*args, **kwargs)
@@ -239,7 +249,7 @@ class Termo(models.Model):
         return self.condition
 
     def userd(self):
-        return self.user.user
+        return self.user
 
 
 class MeuEspaco(models.Model):
@@ -285,14 +295,43 @@ class Article(Publicacao):
 
 class Relatorio(Publicacao):        
     TIPOS = (
-        ('1', 'Geral'),
-        ('2', 'Questão'),
+        ('1', 'Resultado Geral, sem gráfico'),
+        ('2', 'Questão - gera gráfico'),
     )
+
+    TIPOS_G = (
+        ('1', 'Barras'),
+        ('2', 'Pizza'),
+        ('3', 'Propostas'),
+    )
+
+    STAFF_TYPE = (
+      ('1', 'Professor'),
+      ('2', 'Funcionario'),
+      ('3', 'Aluno-Graduacao'),
+      ('4', 'Aluno-Mestrado'),
+      ('5', 'Aluno-Doutorado'),
+      ('6', 'Aluno-Especial'),
+      ('7', 'Aluno-Lato'),
+      ('8', 'outro'),
+      ('9', 'todos')
+    )
+
+    PROPOSTA_ORG = (
+      ('0', 'Não é resultado do tipo Propostas'),
+      ('1', 'Da Quetão'),
+      ('2', 'Dos campos abaixo'),
+    )
+
     questao = models.ForeignKey(Question,blank=True, null=True)
     tipo = models.CharField(max_length=10, choices=TIPOS, default='1')
     titulo =  models.CharField(max_length=100)
     conteudo = RichTextUploadingField(config_name='full', verbose_name=u'Resultado e Análise')
-
+    grafico = models.CharField(max_length=10, choices=TIPOS_G, default='1')
+    filtro_staff = models.CharField(max_length=3, choices=STAFF_TYPE, default='9')
+    arquivo = models.CharField(max_length=200, default='null')
+    propostas_org =  models.CharField('Caso tenha selecionado PROPOSTAS, escolha a origem', max_length=3, choices=PROPOSTA_ORG, default='0')
+   
     def __int__(self):
         return self.questao.pk
 
@@ -311,10 +350,38 @@ class Etapa(models.Model):
     participar_txt = models.TextField("Como participar", default='null')
     resultado_txt = models.TextField("Resultado", default='null')
 
+class Proposta(models.Model):
+    relatorio = models.ForeignKey(
+      Relatorio,
+      on_delete=models.CASCADE,
+      related_name = 'proposta',  
+    )
+    proposta_text = models.TextField('Proposta')
+    ranking = models.CharField("Ranking", max_length=5, default='1')
+    indice = models.CharField("Indice", max_length=10, default='1')
+    curtidas = models.IntegerField("Curtidas", default=0)
+    naocurtidas = models.IntegerField("Não Curtidas", default=0)
+    
+    def __str__(self):
+      return self.proposta_text.encode('utf8')
 
+    class Meta:
+      verbose_name = 'proposta'
+      verbose_name_plural = 'propostas'
 
+class Curtir(models.Model):
+    proposta = models.ForeignKey(
+      Proposta,
+      on_delete=models.CASCADE,
+      related_name = 'curtir',  
+    )
+    user = models.ForeignKey(
+      User,
+      on_delete = models.CASCADE,
+      related_name='curtir',
+    )
+    tipo = models.CharField("Curtir/Não Curtir", max_length=10)
 
-# class Publicacao(models.Model):
         
 
 

@@ -19,6 +19,9 @@ from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.utils import timezone
 from itertools import chain
+from collections import *
+import codecs
+import os
 
 
 
@@ -179,19 +182,38 @@ class PaginaInicialView(generic.ListView):
     #buscando as publicacoes validas
     publicacoes = Publicacao.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
         
-    #1. Questoes
+    #1. Questoe
     #busca as questões que o usuário já respondeu e define as nao respondidads    
     questions = Question.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     questions_not_answered = list(set(questions) - set(answered_questions))
 
+
+    
+    
+    
+    
     #2. Artigos
     artigos = Article.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
 
-    #3. Relatorios
+    #3. Relatorios - gera resultados
     relatorios = Relatorio.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    if relatorios:
+        for objeto in relatorios:
+            if objeto.tipo == '2':
+                gera_resultados(objeto)
 
+   
+    #3.1 Relatórios - prepara propostas de questoes
+    relatorios_prop_do_usuario = Relatorio.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual, propostas_org='1').order_by('-publ_date')
+    
+    for rel in relatorios_prop_do_usuario:
+        questao_associada = rel.questao
+        propostas = Answer.objects.filter(question=questao_associada)
+        for prop in propostas:
+            obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop)   
+   
     #4. Debates
     debates = Topic.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     #for d in debates:
@@ -247,9 +269,8 @@ def agoraconfiguracaoemail(request):
     except ValidationError:
         valid_email = False
     
-    print valid_email
     if valid_email == True:                
-        print email
+
         user.email = email
         user.save()
     else:
@@ -483,7 +504,7 @@ def save_reply_answer_home(request, comment_id):
      
   else:
       text = request.POST['text']
-      print text
+    
       reply = TopicAnswerReply(user=user, comment=comentario, text=text, answer_date=timezone.now())
       reply.save()
       return render(request, 'agoraunicamp/debate/reply.html', {
@@ -587,7 +608,7 @@ def vote_timeline(request, question_id):
   #registra resposta de multiple Choice
   if question.question_type == '4':    
     if request.method == 'POST':     
-      print request.POST
+      
       for key, value in request.POST.items():            
         if 'proposal' in key and value:     
           answer_model = Answer(user=user, question=question, text=value)
@@ -607,8 +628,71 @@ def simple_upload(request):
         return HttpResponse('Success')
     return redirect(request.META['HTTP_REFERER']+"#question%s")
 
+def gera_resultados(objeto):
+    #gera arquivo json
+    arq_json = codecs.open("agoraunicamp/static/agoraunicamp/arquivos/json/resultados_" + str(objeto.questao.pk) + "_" + str(objeto.filtro_staff) + ".json", 'w', 'utf-8') 
+    nome = "/static/agoraunicamp/arquivos/json/resultados_" + str(objeto.questao.pk) + "_" + str(objeto.filtro_staff) + ".json"
+    objeto.arquivo = nome
+    objeto.save()
+    print objeto.questao.pk
 
+##### Carrega ore relatorios OneCHoice e MultiplaEscolha ##########################################################
+    if objeto.questao.question_type == '1' or objeto.questao.question_type == '2': 
+        
+        #carrega e inicializa as escolhas da questao
+        choices = {}
+        choices_objs = Choice.objects.filter(question = objeto.questao)
+        for choice in choices_objs:
+            choices[choice.choice_text] = 0
 
+        #carrega os resultados
+        if objeto.filtro_staff == '9':
+            #sem filtro
+            resultados = Answer.objects.filter(question=objeto.questao)        
+        else:
+            #com filtro
+            resultados = Answer.objects.filter(question=objeto.questao).filter(user__staff = objeto.filtro_staff) 
+                      
+        #Computa resiltados
+        for k,v in choices.iteritems():            
+            for item in resultados:
+                if k == item.choice.choice_text:                    
+                    choices[k] = choices[k] + 1
+                
+      
+        #total de votos
+        total = 0
+        for k,v in choices.iteritems():
+            total = total + v
+      
+        
+        #gera JSON\
+        arq_json.write("[\n")
+        for k, v in choices.iteritems():
+         
+            perc = float(float(v)/float(total))*100         
+            arq_json.write("    {\"name\": \"" + k + "\", \"value\": " + str(perc)+ "},\n" )    
+        arq_json.seek(-2, os.SEEK_END)
+        arq_json.write("\n]")
+       
+        return
+
+def curtir_proposta(request, proposta_pk, tipo):
+    print tipo
+    user = User.objects.get(user=request.user)
+    prop = Proposta.objects.get(pk=proposta_pk)
+    obj, created = Curtir.objects.get_or_create(user=user, proposta=prop)
+    if created:
+        if tipo == 'curtir':
+            prop.curtidas = prop.curtidas + 1
+            prop.save()
+        if tipo == 'naocurtir':
+            prop.naocurtidas = prop.naocurtidas + 1
+            prop.save()
+    else:
+        print 'y'
+    
+    return redirect(request.META['HTTP_REFERER']+"#question%s")
 
   # question_type = question.question_type
   # success = False

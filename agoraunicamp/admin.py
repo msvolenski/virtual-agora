@@ -12,6 +12,10 @@ class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 0
 
+class PropostaInline(admin.TabularInline):
+    model = Proposta
+    extra = 0
+
 class TopicAdmin(admin.ModelAdmin):
   model = Topic
     
@@ -52,6 +56,10 @@ class TopicAnswerReplyAdmin(admin.ModelAdmin):
   list_filter = ['answer_date']
   list_display = ['user', 'text', 'answer_date']
 
+class CurtirAdmin(admin.ModelAdmin):
+  list_filter = ['proposta']
+  list_display = ['proposta', 'user']
+
 
 class EtapaAdmin(admin.ModelAdmin):
   list_display = ['project', 'etapa','name', 'header_txt', 'objetivo_txt','participar_txt','resultado_txt']
@@ -71,6 +79,9 @@ class AnswerAdmin(admin.ModelAdmin):
 
 class TermoAdmin(admin.ModelAdmin):
   list_display = ['userd', 'condition']
+
+class PropostaAdmin(admin.ModelAdmin):
+    list_display = ['relatorio', 'proposta_text']
 
 
 class MeuEspacoAdmin(admin.ModelAdmin):
@@ -179,8 +190,9 @@ class RelatorioAdmin(admin.ModelAdmin):
     model = Relatorio
     
     def get_list_display(self, request):
-        return ('projeto', 'etapa_publ', 'pk', 'titulo','questao', 'publ_date', 'published','address') 
+        return ('projeto', 'etapa_publ', 'pk', 'titulo','questao', 'publ_date', 'published','grafico','arquivo') 
     
+    inlines = [PropostaInline]
     list_filter = ['projeto']
     actions = ['publicar','desfazer_publicacao','remover_relatorio']
     
@@ -229,5 +241,7 @@ admin.site.register(Relatorio, RelatorioAdmin)
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(TopicAnswerReply, TopicAnswerReplyAdmin)
 admin.site.register(TopicAnswer, TopicAnswerAdmin)
+admin.site.register(Proposta, PropostaAdmin)
+admin.site.register(Curtir, CurtirAdmin)
 
 

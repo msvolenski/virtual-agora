@@ -3,21 +3,19 @@
 {% load set_var %}
 {% block content12 %}
 
-
-<div class="my-div" style="height:100%;">
-  <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto Ágora Virtual - Unicamp. </div>
-  <div class="agora-title" style="">Termo de Consentimento Livre e Esclarecido</div>
-  <div class="agora-subtitle"> termo </div>
-
-
-
-    <form action="{% url 'agoraunicamp:term_accepted' %}" method="post" >
-      <input style="margin:1 auto;float:left" id="button-forum" class="btn btn-default btn-info" type="submit" value="Aceito" /></center>
-    </form>
-    <form action="{% url 'agoraunicamp:term_not_accepted' %}" method="post">
-      <input style="margin:1 auto;float:left" id="button-forum" class="btn btn-default btn-info" type="submit" value="Não Aceito" /></center>
-    </form>
-
+<div class="center-column" style="background:white">   
+  <div class="my-div" style="height:100%;">
+    <div class="welcome-user"> Olá, {{user.username}}! Seja bem-vindx ao projeto Ágora. Antes de iniciarmos, leia com atenção ao termo abaixo e indique se concorda com os termos.</div>
+    <div class="agora-title" style="">Termo de Consentimento Livre e Esclarecido</div>
+    <div class="agora-subtitle"> termo </div>
+        
+      <form  style="text-align: center;" action="{% url 'agoraunicamp:term_accepted' %}" method="post" >
+        <input style="text-align:center;background:green;border:green" id="button-forum" class="btn btn-default btn-info" type="submit" value="Aceito" />
+      </form>
+      <form style="text-align: center;" action="{% url 'agoraunicamp:term_not_accepted' %}" method="post">
+        <input style="text-align:center" id="button-forum" class="btn btn-default btn-info" type="submit" value="Não Aceito" />
+      </form>
+    
+  </div>
 </div>
-
 {% endblock content12 %}

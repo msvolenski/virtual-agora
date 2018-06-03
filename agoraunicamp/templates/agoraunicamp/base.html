@@ -4,6 +4,7 @@
 <html style="height:100%;">
 <head>
   <meta charset="UTF-8">
+  
   <title>Ágora Virtual - Unicamp</title>
 
   <meta content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes" name="viewport">
@@ -27,6 +28,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
   <style>
     input[type='file'] {
       display: none
@@ -45,7 +47,7 @@
             {% if nickname %}
             {{nickname}}
             {% else %}
-            {{user.primeiro_nome}}{{user.primeiro_nome}}
+            {{user.primeiro_nome}}
             {% endif %}
           </span>
           
@@ -59,7 +61,7 @@
     </header>
     
     {% if autenticado %}
-    <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;">
+    <div style="position:fixed;z-index:10000000;bottom:0;margin:10px;margin-bottom:5px;float:right">
       <div class="container">
         <div class="dropup">
           <a id="menu1" data-toggle="dropdown"><img id="unicamp4" src="{% static "agoraunicamp/images/agora-icone-menu.png" %}" height="50" width="50"></img>
@@ -76,9 +78,66 @@
       </div>
     </div>
     {% endif %}
+    
+    {% if autenticado %}
     <!-- Modal -->
-     
+    <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" height="100%" src="{% url 'agoraunicamp:meu-espaco-artigo' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
 
+      <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-debate' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal3" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height2" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-questao' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="myModal4" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe class="iframe-height" margin="0" frameborder="0" width="100%" scrolling="no" style="scrolling:no;" src="{% url 'agoraunicamp:meu-espaco-outros' %}"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" style="font-weight:bold;">Fechar</button>
+        </div>
+      </div>
+        </div>
+      </div>
+     
+    {% endif %}
 
     <div style="background:#ddd;overflow:hidden;height:100%;">
       {% block content %}

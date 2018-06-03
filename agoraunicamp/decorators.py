@@ -16,8 +16,7 @@ def term_required(function):
             x = User(user=u, primeiro_nome="x", ultimo_nome="y", projeto="default")
             x.save()
             us = User.objects.get(user=request.user)
-        cond = Termo.objects.get(user=us)
-        print (cond.condition)
+        cond = Termo.objects.get(user=us)  
         if cond.condition == 'Sim':
             return function(request, *args, **kwargs)
         else:

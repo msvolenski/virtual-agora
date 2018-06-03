@@ -2705,14 +2705,7 @@ Page: 404 and 500 error pages
   }
 }
 
-.error-page:before, .error-page:after {
-  display: table;
-  content: " ";
-}
 
-.error-page:after {
-  clear: both;
-}
 
 /*
 Page: Invoice
@@ -3991,26 +3984,23 @@ Skin Black
 }
 
 .welcome-user {
-  margin-top: 10%;
-  width: 100%;
-  margin-left: 5%;
-  font-size: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 100%;
 }
 
 .agora-title {
-  font-size: 50px;
+  font-size: 150%;
   margin: 0 auto;
-  width: 70%;
   text-align: center;
-  padding: 35px;
+  padding: 20px;
 }
 
 .agora-subtitle {
-  font-size: 20px;
-  margin: 0 auto;
-  width: 100%;
+  font-size: 100%;
+  margin: 0 auto;  
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 }
 
 .box-project {
@@ -4812,15 +4802,15 @@ textarea:focus {
 
 
 .post.projetos {
-  background: #5d6062;
+  background: #888d90;
 }
 
 .post.projetos .post-content, .post.projetos .post-about {
-  background: #9cb3bd;
+  background: #b6c2c7;
 }
 
 .post.projetos .post-btn {
-  background:#9cb3bd ;
+  background:#b6c2c7 ;
   /* border: 1px solid #095e86; */
   border-top-width: 4px;
 }
@@ -4835,17 +4825,17 @@ textarea:focus {
 }
 
 .post.projetos .post-about:before {
-  border-left-color: #9cb3bd;
+  border-left-color: #b6c2c7;
 }
 
 .post.projetos .post-content:before {
  
-  color: #5d6062;
+  color: #888d90;
   background: #9cb3bd;
 }
 
 .post.projetos .proposal:before {
-  background: #5d6062;
+  background: #888d90;
 }
 
 
@@ -5174,11 +5164,52 @@ ul.filters li.filter-comunidade {
   background: #f56954;
 }
 
-#error-button{
-  margin:0 auto;
-  width:100%;
-  white-space: normal;
+.bar {
+  fill: #c24a00;
 }
+
+.bar:hover {
+  fill: brown;
+}
+
+.title {
+  font: bold 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.chart-container{
+  padding:25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 765px) {
   #error-button{
@@ -5227,7 +5258,7 @@ ul.filters li.filter-comunidade {
     position: relative;
     width: 100%;
     transition: all 0.3s;
-    margin-top: 3px;
+    margin-top: 55px;
     margin-left: 0%;
   }
 
@@ -5392,14 +5423,11 @@ ul.filters li.filter-comunidade {
   }
 
   .agora-subtitle {
-    font-size: 14px;
     padding: 5px;
   }
   .agora-title {
-    font-size: 25px;
-    width: 100%;
-    padding: 25px;
-    font-weight: bold;
+    padding: 10px;
+    
   }
   .welcome-user {
     margin-top: 65px;

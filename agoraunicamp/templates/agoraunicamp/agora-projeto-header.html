@@ -1,12 +1,13 @@
+{% load staticfiles %}
+
 <div class="post project-header">
     <div class="post-content">        
         <div class="post-header">
-            <center><h3><b>{{projeto}}</b></h3></center>
+            <center><div style="float-left;"><h3><b style="line-height:51px;">{{projeto}}<a href="{% url 'agoraunicamp:agora' %}"><Img src="{% static "agoraunicamp/images/agora-2-svg.svg" %}" width="50" style="float:right;"></Img></a></b></h3></div></center>
+            
+            
         </div>
-        
-
       </div>
-
 </div>
 
 

@@ -1,80 +1,370 @@
+{% load staticfiles %}
 <div id="p{{relatorio.pk}}" class="post resultado">
-  <div class="post-content">
-    <div class="post-header">
-      <ul class="filters filters-post">
-      {% for tag in relatorio.tags.all %}
-        <li>{{tag.name}}</li>
-      {% endfor %}
-      </ul>
-      <h3>{{ relatorio.titulo }}</h3>
-    </div>
-    <div class="post-publdate">Publicado em <b>{{relatorio.publ_date}}</b></div>
-    <div class="post-text">
-        <div>
-            {{relatorio.conteudo|safe}}
-          </div>
-      <div class="chart">
-        <svg></svg>
-      </div>
-      <script>
-        var votes{{publication.id}} = {
-          {% for choice in publication.result.choice_question.choice_set.all %}
-            {{choice}}: 0,
-          {% endfor %}
-        }
-        var total{{publication.id}} = 0;
-        {% for vote in publication.result.choice_question.vote_set.all %}
-          votes{{publication.id}}.{{vote}}++;
-          total{{publication.id}}++
-        {% endfor %}
-        var data{{publication.id}} = [];
-        for(var key in votes{{publication.id}}) {
-          if(votes{{publication.id}}.hasOwnProperty(key)) {
-            data{{publication.id}}.push(votes{{publication.id}}[key]);
-          }
-        }
+        <div class="post-content">
+                <div class="post-header">
+                        <ul class="filters filters-post">
+                                {% for tag in relatorio.tags.all %}
+                                <li>{{tag.name}}</li>
+                                {% endfor %}
+                        </ul>
+                        <h3>{{ relatorio.titulo }}</h3>
+                </div>
+                <div class="post-publdate">Publicado em
+                        <b>{{relatorio.publ_date}}</b>
+                </div>
+                <div class="post-text">
+                        <div>
+                                {{relatorio.conteudo|safe}}
+                        </div>
+                        <div style="width:100%" id="chart{{relatorio.pk}}">
+                        </div>
 
-        var x = d3.scaleLinear()
-          .domain([0, d3.max(data{{publication.id}})])
-          .range([0,$('#p{{publication.id}} .chart').width()]);
+                        <script src="//d3js.org/d3.v3.min.js"></script>
+                        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> {% if relatorio.grafico == '1' %}
+                        <script>
+                                d3.json("{{relatorio.arquivo}}", function (error, data) {
+                                        var chartDiv = document.getElementById("chart{{relatorio.pk}}")
 
-        var chart{{publication.id}} = d3.select('#p{{publication.id}} .chart svg')
-          .attr('width', $('#p{{publication.id}} .chart').width())
-          .attr('height', $('#p{{publication.id}} .chart').height());
+                                        var margin = { top: 30, right: 10, bottom: 100, left: 35 },
+                                                width = chartDiv.clientWidth - margin.left - margin.right,
+                                                height = 300 - margin.top - margin.bottom;
 
-        var bar{{publication.id}} = chart{{publication.id}}.selectAll('g')
-          .data(data{{publication.id}})
-        .enter().append('g')
-          .attr("transform", function(d, i) { return "translate(0," + i * 40 + ")"; });;
+                                        var x = d3.scale.ordinal()
+                                                .rangeRoundBands([0, width], .1, .3);
 
-        bar{{publication.id}}.append('rect')
-          .attr('width', x)
-          .attr('height', 30)
-          .style('fill','white');
+                                        var y = d3.scale.linear()
+                                                .range([height, 0]);
 
-        bar{{publication.id}}.append('text')
-          .text(function(d, i) {
-            var vote_label = '';
-            var j = 0;
-            for(var key in votes{{publication.id}}) {
-              if(j == i) {
-                vote_label = key;
-              }
-              if(votes{{publication.id}}.hasOwnProperty(key)) {
-                j++;
-              }
-            }
-            return vote_label + ' ' + d;
-          })
-          .attr('y', 20)
-          .attr('x', 20);
+                                        var test = d3.select("#chart{{relatorio.pk}}").append("div")
+                                                .text("{{relatorio.questao.question_text}}")
+                                                .style('text-align', 'center')
+                                                .style('font-weight', 'bold')
+                                                .style('margin-bottom', '15px');
 
-      </script>
-      {% comment %} <div class="post-about">
-        Publicado por {{ publication.author }}
-      </div> {% endcomment %}
-    </div>
-  </div>
-  <div class="post-right">
-  </div>
+
+                                        var svg = d3.select("#chart{{relatorio.pk}}").append("svg")
+                                                .attr("width", width + margin.left + margin.right)
+                                                .attr("height", height + margin.top + margin.bottom)
+                                                .style('display', 'block')
+                                                .style('margin', '0 auto')
+                                                .append("g")
+                                                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                                        var xAxis = d3.svg.axis()
+                                                .scale(x)
+                                                .orient("bottom");
+
+                                        var yAxis = d3.svg.axis()
+                                                .scale(y)
+                                                .orient("left")
+                                                .ticks(8, "%");
+
+                                        var tip = d3.tip()
+                                                .attr('class', 'd3-tip')
+                                                .offset([-10, 0])
+                                                .html(function (d) {
+                                                        return "<strong>" + d.value + "%</strong><span style='color:red'></span>";
+                                                })
+                                        svg.call(tip);
+
+                                        x.domain(data.map(function (d) { return d.name; }));
+                                        y.domain([0, d3.max(data, function (d) { return d.value; })]);
+
+
+                                        svg.append("g")
+                                                .attr("class", "x axis")
+                                                .attr("transform", "translate(0," + height + ")")
+                                                .style('font-size', '14px')
+                                                .call(xAxis)
+                                                .selectAll(".tick text")
+                                                .call(wrap, x.rangeBand());
+
+
+
+                                        svg.selectAll(".bar")
+                                                .data(data)
+                                                .enter().append("rect")
+                                                .attr("class", "bar")
+                                                .attr("x", function (d) { return x(d.name); })
+                                                .attr("width", x.rangeBand())
+                                                .attr("y", function (d) { return y(d.value); })
+                                                .on('mouseover', tip.show)
+                                                .on('mouseout', tip.hide)
+                                                .attr("height", function (d) { return height - y(d.value); });
+
+                                });
+
+                                function wrap(text, width) {
+                                        text.each(function () {
+                                                var text = d3.select(this),
+                                                        words = text.text().split(/\s+/).reverse(),
+                                                        word,
+                                                        line = [],
+                                                        lineNumber = 0,
+                                                        lineHeight = 1.1, // ems
+                                                        y = text.attr("y"),
+                                                        dy = parseFloat(text.attr("dy")),
+                                                        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                                                while (word = words.pop()) {
+                                                        line.push(word);
+                                                        tspan.text(line.join(" "));
+                                                        if (tspan.node().getComputedTextLength() > width) {
+                                                                line.pop();
+                                                                tspan.text(line.join(" "));
+                                                                line = [word];
+                                                                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                                                        }
+                                                }
+                                        });
+                                }
+                                function type(d) {
+                                        d.value = +d.value;
+                                        return d;
+                                }
+                        </script> {% endif %} {% if relatorio.grafico == '2' %}
+                        <script>
+                                d3.json("{{relatorio.arquivo}}", function (error, dataset) {
+
+                                        var test = d3.select("#chart{{relatorio.pk}}").append("div")
+                                                .text("{{relatorio.questao.question_text}}")
+                                                .style('text-align', 'center')
+                                                .style('font-weight', 'bold')
+                                                .style('margin-bottom', '15px');
+
+                                        var tam = (dataset.length) * 15
+
+
+                                        var chartDiv = document.getElementById("chart{{relatorio.pk}}")
+                                        var w = chartDiv.clientWidth, h = chartDiv.clientWidth / 2 + 20 + tam;
+                                        var outerRadius = w / 4;
+                                        var innerRadius = w / 8;
+                                        fix = (chartDiv.clientWidth / 2) / 2
+                                        var svg = d3.select("#chart{{relatorio.pk}}")
+                                                .append("svg")
+                                                .attr({
+                                                        width: w,
+                                                        height: h,
+                                                        class: 'shadow'
+                                                })
+                                                .append('g')
+                                                .attr({
+                                                        transform: 'translate(' + w / 2 + ',' + fix + ')'
+                                                });
+
+
+
+                                        var pie = d3.layout.pie()
+                                                .value(function (d) { return d.value })
+                                                .sort(null)
+                                                .padAngle(.03);
+
+                                        var color = d3.scale.category10();
+
+                                        var arc = d3.svg.arc()
+                                                .outerRadius(outerRadius)
+                                                .innerRadius(innerRadius);
+
+
+                                        var path = svg.selectAll('path')
+                                                .data(pie(dataset))
+                                                .enter()
+                                                .append('path')
+                                                .attr({
+                                                        d: arc,
+                                                        fill: function (d, i) {
+                                                                return color(d.data.name);
+                                                        }
+                                                });
+
+                                        path.transition()
+                                                .duration(1000)
+                                                .attrTween('d', function (d) {
+                                                        var interpolate = d3.interpolate({ startAngle: 0, endAngle: 0 }, d);
+                                                        return function (t) {
+                                                                return arc(interpolate(t));
+                                                        };
+                                                });
+
+
+                                        var restOfTheData = function () {
+                                                var text = svg.selectAll('text')
+                                                        .data(pie(dataset))
+                                                        .enter()
+                                                        .append("text")
+                                                        .transition()
+                                                        .duration(200)
+                                                        .attr("transform", function (d) {
+                                                                return "translate(" + arc.centroid(d) + ")";
+                                                        })
+                                                        .attr("dy", ".4em")
+                                                        .attr("text-anchor", "middle")
+                                                        .text(function (d) {
+                                                                return d.data.value + "%";
+                                                        })
+                                                        .style({
+                                                                fill: 'black',
+                                                                'font-size': '14px'
+                                                        });
+
+                                                var legendRectSize = 10;
+                                                var legendSpacing = 5;
+                                                var legendHeight = legendRectSize + legendSpacing;
+
+
+                                                var legend = svg.selectAll('.legend{{relatorio.pk}}')
+                                                        .data(color.domain())
+                                                        .enter()
+                                                        .append('g')
+                                                        .attr({
+                                                                class: 'legend{{relatorio.pk}}',
+                                                                transform: function (d, i) {
+                                                                        //Just a calculation for x & y position
+                                                                        return 'translate(-20,' + ((i * legendHeight) + (outerRadius + 10)) + ')';
+                                                                }
+                                                        });
+                                                legend.append('rect')
+                                                        .attr({
+                                                                width: legendRectSize,
+                                                                height: legendRectSize,
+                                                                rx: 20,
+                                                                ry: 20
+                                                        })
+                                                        .style({
+                                                                fill: color,
+                                                                stroke: color
+                                                        });
+
+                                                legend.append('text')
+                                                        .attr({
+                                                                x: 15,
+                                                                y: 10
+                                                        })
+                                                        .text(function (d) {
+                                                                return d;
+                                                        }).style({
+                                                                fill: 'black',
+                                                                'font-size': '12px'
+                                                        });
+                                        };
+
+                                        setTimeout(restOfTheData, 1000);
+                                });
+                        </script> {% endif %} 
+                        
+                        {% if relatorio.grafico == '3' %}
+                        <div class="table-responsive">
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                                <th>Ranking</th>
+                                                <th>Proposta</th>
+                                                <th>Curtir
+                                                       
+
+                                                </th>
+                                                <th>ìndice</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        {% for item in relatorio.proposta.all %}
+                                        <tr class="warning">
+                                                <td>Default</td>
+                                                <td> {{item.proposta_text}}</td>
+
+                                                <td> <div>{{item.curtidas}}</div>
+                                                    <div><a href="{% url 'agoraunicamp:curtir' item.pk 'curtir' %}"> curtir </a> </div>
+                                                    <div>{{item.naocurtidas}}</div>
+                                                    <div><a href="{% url 'agoraunicamp:curtir' item.pk 'naocurtir' %}"> não curtir </a> </div>
+                                                
+                                                </td>
+                                                <td>def@somemail.com</td>
+                                        </tr>
+                                        {% endfor %}                                       
+                                </tbody>
+                        </table>
+                </div>
+
+                        {% endif %}
+                </div>
+
+
+        </div>
+        <div class="post-right">
+        </div>
 </div>
+
+<!-- <script>
+                                
+
+                d3.json("{% static 'agoraunicamp/data.json' %}", function (data) {
+                        console.log(data)
+                        //sort bars based on value
+                        data = data.sort(function (a, b) {
+                                return d3.ascending(a.value, b.value);
+                        })
+                        //set up svg using margin conventions - we'll need plenty of room on the left for labels
+                        var margin = {
+                                top: 15,
+                                right: 25,
+                                bottom: 15,
+                                left: 60
+                        };
+                        var width = 960 - margin.left - margin.right,
+                                height = 500 - margin.top - margin.bottom;
+                        var svg = d3.select("#chart{{relatorio.pk}}").append("svg")
+                                .attr("width", width + margin.left + margin.right)
+                                .attr("height", height + margin.top + margin.bottom)
+                                .append("g")
+                                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                        var x = d3.scale.linear()
+                                .range([0, width])
+                                .domain([0, d3.max(data, function (d) {
+                                        return d.value;
+                                })]);
+                        var y = d3.scale.ordinal()
+                                .rangeRoundBands([height, 0], .1)
+                                .domain(data.map(function (d) {
+                                        return d.name;
+                                }));
+                        //make y axis to show bar names
+                        var yAxis = d3.svg.axis()
+                                .scale(y)
+                                //no tick marks
+                                .tickSize(0)
+                                .orient("left");
+                        var gy = svg.append("g")
+                                .attr("class", "y axis")
+                                .call(yAxis)
+                        var bars = svg.selectAll(".bar")
+                                .data(data)
+                                .enter()
+                                .append("g")
+                        //append rects
+                        bars.append("rect")
+                                .attr("class", "bar")
+                                .attr("y", function (d) {
+                                        return y(d.name);
+                                })
+                                .attr("height", y.rangeBand())
+                                .attr("x", 0)
+                                .attr("width", function (d) {
+                                        return x(d.value);
+                                });
+                        //add a value label to the right of each bar
+                        bars.append("text")
+                                .attr("class", "label")
+                                //y position of the label is halfway down the bar
+                                .attr("y", function (d) {
+                                        return y(d.name) + y.rangeBand() / 2 + 4;
+                                })
+                                //x position is 3 pixels to the right of the bar
+                                .attr("x", function (d) {
+                                        return x(d.value) + 3;
+                                })
+                                .text(function (d) {
+                                        return d.value;
+                                });
+
+                })
+
+        </script> -->
