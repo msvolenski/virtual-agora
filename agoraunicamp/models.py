@@ -358,7 +358,7 @@ class Proposta(models.Model):
     )
     proposta_text = models.TextField('Proposta')
     ranking = models.CharField("Ranking", max_length=5, default='1')
-    indice = models.CharField("Indice", max_length=10, default='1')
+    indice = models.IntegerField("Indice", default=1000)
     curtidas = models.IntegerField("Curtidas", default=0)
     naocurtidas = models.IntegerField("Não Curtidas", default=0)
     

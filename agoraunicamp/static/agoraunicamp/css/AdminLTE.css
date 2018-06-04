@@ -1236,9 +1236,7 @@ Compenent: Progress bars
 
 /* Remove margins from progress bars when put in a table */
 
-.table tr>td .progress {
-  margin: 0;
-}
+
 
 .progress-bar-light-blue, .progress-bar-primary {
   background-color: #3c8dbc;

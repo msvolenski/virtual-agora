@@ -200,6 +200,8 @@ $(document).ready(function() {
     });
   });
 
+  
+
   $(document).on('click', 'form.form-config-remove-apelido button[type="submit"]', function(e) {
     e.preventDefault();
     var form = $(this).closest('form');

@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load order_by %}
+
 <div id="p{{relatorio.pk}}" class="post resultado">
         <div class="post-content">
                 <div class="post-header">
@@ -249,42 +251,83 @@
 
                                         setTimeout(restOfTheData, 1000);
                                 });
-                        </script> {% endif %} 
-                        
-                        {% if relatorio.grafico == '3' %}
+                        </script> {% endif %} {% if relatorio.grafico == '3' %}
                         <div class="table-responsive">
-                        <table class="table">
-                                <thead>
-                                        <tr>
-                                                <th>Ranking</th>
-                                                <th>Proposta</th>
-                                                <th>Curtir
-                                                       
+                                <table class="table">
+                                        <thead>
+                                                <tr>
+                                                        <th>Ranking</th>
+                                                        <th>Proposta</th>
+                                                        <th>Curtir
 
-                                                </th>
-                                                <th>ìndice</th>
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                        {% for item in relatorio.proposta.all %}
-                                        <tr class="warning">
-                                                <td>Default</td>
-                                                <td> {{item.proposta_text}}</td>
 
-                                                <td> <div>{{item.curtidas}}</div>
-                                                    <div><a href="{% url 'agoraunicamp:curtir' item.pk 'curtir' %}"> curtir </a> </div>
-                                                    <div>{{item.naocurtidas}}</div>
-                                                    <div><a href="{% url 'agoraunicamp:curtir' item.pk 'naocurtir' %}"> não curtir </a> </div>
-                                                
-                                                </td>
-                                                <td>def@somemail.com</td>
-                                        </tr>
-                                        {% endfor %}                                       
-                                </tbody>
-                        </table>
-                </div>
+                                                        </th>
+                                                        <th>ìndice</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                {% for item in relatorio.proposta.all|order_by:"-indice" %}
+                                                <tr class="warning">
+                                                        <td style="text-align:center"><b>{{ forloop.counter }}</b></td>
+                                                        <td> {{item.proposta_text}}</td>
+
+                                                        <td id="caixa{{item.pk}}">
+                                                                <div style="display:inline-block;width:100%">
+                                                                        <div style="float:left;margin-right:3px">{{item.curtidas}}</div>
+                                                                        <a style="float:left;cursor: pointer;"  id="curtir{{item.pk}}" onclick="onclickCurtir{{item.pk}}(this)"><span class="fa fa-thumbs-up" style="color:green"></span></a>
+                                                                </div>   
+                                                              
+                                                                <div style="width:100%">
+                                                                        <div style="float:left;margin-right:3px">{{item.naocurtidas}}</div>                                                                
+                                                                        <a style="float:left;cursor: pointer;" id="naocurtir{{item.pk}}" onclick="onclickNaoCurtir{{item.pk}}(this)"><span class="fa fa-thumbs-down" style="color:red"></span>  </a>
+                                                                </div>           
+                                                             
+                                                                <script>
+                                                                        function onclickCurtir{{ item.pk }}(item){
+                                                                                $.ajax({
+                                                                                        type: "get",
+                                                                                        url: "/agora/post/curtir/{{item.pk}}/curtir",
+                                                                                        beforeSend: function (xhr) {
+                                                                                                xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+                                                                                        },
+                                                                                        success: function (response) {
+                                                                                                $("#caixa{{item.pk}}").load('/agora/paginainicial/ #caixa{{item.pk}}');
+                                                                                            
+                                                                                        }
+                                                                                });
+                                                                                return false;
+                                                                        }
+                                                                </script>
+                                                                <script>
+                                                                        function onclickNaoCurtir{{ item.pk }}(item){
+                                                                                $.ajax({
+                                                                                        type: "get",
+                                                                                        url: "/agora/post/curtir/{{item.pk}}/naocurtir",
+                                                                                        beforeSend: function (xhr) {
+                                                                                                xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+                                                                                        },
+                                                                                        success: function (response) {
+                                                                                                $("#caixa{{item.pk}}").load('/agora/paginainicial/ #caixa{{item.pk}}');
+                                                                                          
+                                                                                        }
+                                                                                });
+                                                                                return false;
+                                                                        }
+                                                                </script>
+                                                        </td>
+                                                        <td id="caixa_idx{{item.pk}}">{{item.indice}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                        </tbody>
+                                </table>
+                        </div>
 
                         {% endif %}
+
+
+
+
+
                 </div>
 
 

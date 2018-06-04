@@ -678,21 +678,20 @@ def gera_resultados(objeto):
         return
 
 def curtir_proposta(request, proposta_pk, tipo):
-    print tipo
+
     user = User.objects.get(user=request.user)
     prop = Proposta.objects.get(pk=proposta_pk)
     obj, created = Curtir.objects.get_or_create(user=user, proposta=prop)
     if created:
         if tipo == 'curtir':
-            prop.curtidas = prop.curtidas + 1
+            prop.curtidas = prop.curtidas + 1            
+            prop.indice = 1000 + prop.curtidas - prop.naocurtidas
             prop.save()
         if tipo == 'naocurtir':
             prop.naocurtidas = prop.naocurtidas + 1
-            prop.save()
-    else:
-        print 'y'
-    
-    return redirect(request.META['HTTP_REFERER']+"#question%s")
+            prop.indice = 1000 + prop.curtidas - prop.naocurtidas
+            prop.save()      
+    return HttpResponse('Sucesso')
 
   # question_type = question.question_type
   # success = False
