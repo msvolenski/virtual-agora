@@ -6,6 +6,8 @@ from django.core import serializers
 from django.shortcuts import render
 from django.utils import timezone
 from django.contrib.auth.admin import UserAdmin
+from django.contrib import messages
+import codecs
 # Register your models here.
 
 class ChoiceInline(admin.TabularInline):
@@ -22,9 +24,34 @@ class TopicAdmin(admin.ModelAdmin):
   def get_list_display(self, request):
     return ('projeto','etapa_publ', 'pk','title','text', 'published','publ_date')  
   
-  actions = ['publicar_topico', 'despublicar_topico', 'remover_topico']
+  actions = ['publicar_topico', 'despublicar_topico', 'remover_topico','gerar_arquivo_para_o_EOP']
   list_filter = ['projeto','publ_date']
 
+  def gerar_arquivo_para_o_EOP(modeladmin, request, queryset):
+    #colocar filtro de q nao pode selecionar mais q um
+    
+    for item in queryset:
+         debate = item.pk
+        
+    arq_name = 'arquivo_debate_' + str(debate) + '.txt' 
+    arq_rel = codecs.open("agoraunicamp/arquivos/EOP/" + arq_name, "w", "utf-8")
+        
+    for item in queryset:
+        for comentario in item.topicanswer.all():
+            arq_rel.write(comentario.text)
+            arq_rel.write('\n')  
+            for replica in comentario.topicanswerreply.all():
+                arq_rel.write(replica.text)
+                arq_rel.write('\n')
+    arq_rel.close()
+    modeladmin.message_user(request, "Arquivo gerado com sucesso!")        
+    return      
+  
+  
+  
+  
+  
+  
   def remover_topico(modeladmin, request, queryset):
       if queryset.count() != 1:
         modeladmin.message_user(request, "Não é possível remover mais de um tópico por vez.")
@@ -47,14 +74,13 @@ class TopicAdmin(admin.ModelAdmin):
   
   get_project.short_description = 'Projeto'
 
+# class TopicAnswerAdmin(admin.ModelAdmin):
+#   list_filter = ['answer_date']
+#   list_display = ['user', 'topic', 'text', 'answer_date']
 
-class TopicAnswerAdmin(admin.ModelAdmin):
-  list_filter = ['answer_date']
-  list_display = ['user', 'topic', 'text', 'answer_date']
-
-class TopicAnswerReplyAdmin(admin.ModelAdmin):
-  list_filter = ['answer_date']
-  list_display = ['user', 'text', 'answer_date']
+# class TopicAnswerReplyAdmin(admin.ModelAdmin):
+#   list_filter = ['answer_date']
+#   list_display = ['user', 'text', 'answer_date']
 
 class CurtirAdmin(admin.ModelAdmin):
   list_filter = ['proposta']
@@ -66,15 +92,37 @@ class EtapaAdmin(admin.ModelAdmin):
 
 
 class AnswerAdmin(admin.ModelAdmin):
-  actions = ['show_results']
+  actions = ['gerar_arquivo_para_o_EOP']
   list_display = ['userd','user_stf','user_inst','question', '__str__']
-  list_filter = ['question','user__institute','user__staff' ]
+  list_filter = ['question','user__institute','user__staff','question__question_type' ]
 
-  def show_results(self, request, queryset):
-    response = HttpResponse(content_type="application/json")
-    serializers.serialize("json", queryset, stream=response)
-    return render(request, 'admin/resultados_admin.html', {'objects': queryset} )
-  show_results.short_description = "Mostrar resultados"
+  def gerar_arquivo_para_o_EOP(modeladmin, request, queryset):
+    for item in queryset:
+        if item.question.question_type == '1' or item.question.question_type == '2':
+            modeladmin.message_user(request, "Não foi possível gerar o arquivo pois questões do tipo 1 e 2 estão selecionadas")            
+            return
+        else:        
+            atr1 = str(item.question.pk)
+            atr2 = item.question.get_question_type_display()        
+        
+    arq_name = 'arquivo_questao_' + atr1 + '_' + atr2 + '_' + timezone.now().strftime("%Y_%m_%d_%H_%M_%S") + '.txt' 
+    arq_rel = codecs.open("agoraunicamp/arquivos/EOP/" + arq_name, "w", "utf-8")
+    for item in queryset:
+        if item.choice:
+            arq_rel.write(item.choice)
+            arq_rel.write('\n')  
+    
+        if item.text:
+            arq_rel.write(item.text)
+            arq_rel.write('\n')
+    arq_rel.close()
+    modeladmin.message_user(request, "Arquivo gerado com sucesso!")        
+    return          
+            
+
+
+
+
 
 
 class TermoAdmin(admin.ModelAdmin):
@@ -192,6 +240,28 @@ class RelatorioAdmin(admin.ModelAdmin):
     def get_list_display(self, request):
         return ('projeto', 'etapa_publ', 'pk', 'titulo','questao', 'publ_date', 'published','grafico','arquivo') 
     
+    fieldsets = (
+        ('Dados Gerais', {
+            'fields': ('projeto', 'etapa_publ', 'publ_date', 'published',)
+        }),
+        ('Tipo - Selecione se o Relatório é um resultado geral ou resultado de uma questão', {
+            'fields': ('tipo',)
+        }),        
+        ('Questão associada - Preencha este campo APENAS para o caso "Relatório Específico"', {
+            'fields': ('questao',)
+        }),
+        ('Título e conteúdo', {
+            'fields': ('titulo','conteudo',)
+        }),
+        ('Deseja que gere um Gráfico ou Tabela?', {
+            'fields': ('grafico',)
+        }),
+        ('Caso tenha escolhido o gráfico "Propostas", selecione a origem das propostas', {
+            'fields': ('propostas_org',)
+        }),
+    ) 
+
+
     inlines = [PropostaInline]
     list_filter = ['projeto']
     actions = ['publicar','desfazer_publicacao','remover_relatorio']
@@ -239,8 +309,8 @@ admin.site.register(AuthUser, UserAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Relatorio, RelatorioAdmin)
 admin.site.register(Topic, TopicAdmin)
-admin.site.register(TopicAnswerReply, TopicAnswerReplyAdmin)
-admin.site.register(TopicAnswer, TopicAnswerAdmin)
+#admin.site.register(TopicAnswerReply, TopicAnswerReplyAdmin)
+#admin.site.register(TopicAnswer, TopicAnswerAdmin)
 admin.site.register(Proposta, PropostaAdmin)
 admin.site.register(Curtir, CurtirAdmin)
 

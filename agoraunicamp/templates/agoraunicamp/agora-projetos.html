@@ -17,7 +17,7 @@
           <h4>Escolha abaixo um dos  temas abertos para cosulta e participe! </h4>             
           <ul class="nav">
           {% for projeto in projetos %}
-          <li class="box-project"><a style="color:black;" href="{% url 'agoraunicamp:atualiza-projeto' projeto.sigla %}">{{projeto.projeto}}</a></li>
+          <li class="box-project"><a style="color:black;" href="{% url 'agoraunicamp:atualiza-projeto' projeto.projeto %}">{{projeto.projeto}}</a></li>
           {% if projeto.etapa_prj == '1' %}
           <div class="box-status"> Status - Etapa 1 de 5 - Conhecendo as ideias</div>
           {% endif %}

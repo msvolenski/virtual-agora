@@ -1,5 +1,4 @@
-{% load staticfiles %}
-{% load order_by %}
+{% load staticfiles %} {% load order_by %}
 
 <div id="p{{relatorio.pk}}" class="post resultado">
         <div class="post-content">
@@ -268,22 +267,29 @@
                                         <tbody>
                                                 {% for item in relatorio.proposta.all|order_by:"-indice" %}
                                                 <tr class="warning">
-                                                        <td style="text-align:center"><b>{{ forloop.counter }}</b></td>
+                                                        <td style="text-align:center">
+                                                                <b>{{ forloop.counter }}</b>
+                                                        </td>
                                                         <td> {{item.proposta_text}}</td>
 
                                                         <td id="caixa{{item.pk}}">
+                                                                {% if not hist %}
                                                                 <div style="display:inline-block;width:100%">
                                                                         <div style="float:left;margin-right:3px">{{item.curtidas}}</div>
-                                                                        <a style="float:left;cursor: pointer;"  id="curtir{{item.pk}}" onclick="onclickCurtir{{item.pk}}(this)"><span class="fa fa-thumbs-up" style="color:green"></span></a>
-                                                                </div>   
-                                                              
+                                                                        <a style="float:left;cursor: pointer;" id="curtir{{item.pk}}" onclick="onclickCurtir{{item.pk}}(this)">
+                                                                                <span class="fa fa-thumbs-up" style="color:green"></span>
+                                                                        </a>
+                                                                </div>
+
                                                                 <div style="width:100%">
-                                                                        <div style="float:left;margin-right:3px">{{item.naocurtidas}}</div>                                                                
-                                                                        <a style="float:left;cursor: pointer;" id="naocurtir{{item.pk}}" onclick="onclickNaoCurtir{{item.pk}}(this)"><span class="fa fa-thumbs-down" style="color:red"></span>  </a>
-                                                                </div>           
-                                                             
+                                                                        <div style="float:left;margin-right:3px">{{item.naocurtidas}}</div>
+                                                                        <a style="float:left;cursor: pointer;" id="naocurtir{{item.pk}}" onclick="onclickNaoCurtir{{item.pk}}(this)">
+                                                                                <span class="fa fa-thumbs-down" style="color:red"></span>
+                                                                        </a>
+                                                                </div>
+                                                                {% endif %}
                                                                 <script>
-                                                                        function onclickCurtir{{ item.pk }}(item){
+                                                                        function onclickCurtir{{item.pk}} (item){
                                                                                 $.ajax({
                                                                                         type: "get",
                                                                                         url: "/agora/post/curtir/{{item.pk}}/curtir",
@@ -292,14 +298,14 @@
                                                                                         },
                                                                                         success: function (response) {
                                                                                                 $("#caixa{{item.pk}}").load('/agora/paginainicial/ #caixa{{item.pk}}');
-                                                                                            
+
                                                                                         }
                                                                                 });
                                                                                 return false;
                                                                         }
                                                                 </script>
                                                                 <script>
-                                                                        function onclickNaoCurtir{{ item.pk }}(item){
+                                                                        function onclickNaoCurtir{{item.pk}} (item){
                                                                                 $.ajax({
                                                                                         type: "get",
                                                                                         url: "/agora/post/curtir/{{item.pk}}/naocurtir",
@@ -308,7 +314,7 @@
                                                                                         },
                                                                                         success: function (response) {
                                                                                                 $("#caixa{{item.pk}}").load('/agora/paginainicial/ #caixa{{item.pk}}');
-                                                                                          
+
                                                                                         }
                                                                                 });
                                                                                 return false;

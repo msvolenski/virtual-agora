@@ -21,7 +21,8 @@
       {% for comment in debate.topicanswer.all %}        
         {% include 'agoraunicamp/debate/comment.html' %}
       {% endfor %}
-      
+     
+      {% if not hist %} 
       <form class="comment-form" action="{% url 'agoraunicamp:answer_home' debate.pk  %}" method="POST">
         {% csrf_token %}
         <div class="post-comment new-comment">
@@ -34,6 +35,7 @@
           </div>
         </div>
       </form>
+      {% endif %}
 
     </div>
   </div>

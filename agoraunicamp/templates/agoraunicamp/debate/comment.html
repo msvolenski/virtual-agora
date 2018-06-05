@@ -56,7 +56,9 @@
           <img class="avatar avatar-small" src="{{user.avatar.url}}" />
         </div>
         <textarea name="text" class="form-control"></textarea>
+        {% if not hist %}
         <button type="button" class="post-btn post-btn-success reply-btn">Responder</button>
+        {% endif %}
       </div>
       </form>
   </div>

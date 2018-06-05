@@ -3,50 +3,67 @@
       
         <div class="post-header">         
                 <div class="phases">
-                    <div class="phase {{etapas.0}}-phase">
+                    <a style="text-decoration:none;" href="{% url 'agoraunicamp:muda_etapa' 1 %}"   class="phase {{etapas.0}}-phase" id={{id_hist.0}}>
                         <div class="phase-number">
                             1
                         </div>
                         <div class="phase-name">
                             Ideias
                         </div>
-                    </div>
-                    <div class="phase {{etapas.1}}-phase">
+                    </a>
+                    <a style="text-decoration:none;" href="{% url 'agoraunicamp:muda_etapa' 2 %}" class="phase {{etapas.1}}-phase" id={{id_hist.1}}>
                         <div class="phase-number">
                             2
                         </div>
                         <div class="phase-name">
                             Temáticas
                         </div>
-                    </div>
-                    <div class="phase {{etapas.2}}-phase">
+                    </a>
+                    <a style="text-decoration:none;" href="{% url 'agoraunicamp:muda_etapa' 3 %}" class="phase {{etapas.2}}-phase" id={{id_hist.2}}>
                         <div class="phase-number">
                             3
                         </div>
-                        <div class="phase-name">
+                        <div class="phase-name" id={{id_hist.3}}>
                             Debates
                         </div>
-                    </div>
-                    <div class="phase {{etapas.3}}-phase">
+                    </a>
+                    <a style="text-decoration:none;" href="{% url 'agoraunicamp:muda_etapa' 4 %}" class="phase {{etapas.3}}-phase" id={{id_hist.4}}>
                         <div class="phase-number">
                             4
                         </div>
                         <div class="phase-name">
                             Propostas
                         </div>
-                    </div>
-                    <div class="phase {{etapas.4}}-phase">
+                    </a>
+                    <a style="text-decoration:none;" href="{% url 'agoraunicamp:muda_etapa' 5 %}" class="phase {{etapas.4}}-phase">
                         <div class="phase-number">
                             5
                         </div>
                         <div class="phase-name">
                             Resultados
                         </div>
-                    </div>
+                    </a>
                 </div>
       
         </div>
         <div class="post-text">
+            {% if hist %}
+            <div class="etapa-content">
+                <div style="text-align:center;font-size:150%;font-weight:bold">Você está na Página da Etapa {{nova_etapa}}</div>
+                <div class="etapa-text" style="text-align:center;color:red"><b>ESTA ETAPA JÁ SE ENCERROU</b></div>               
+            </div>
+            
+            {% endif %}
+
+            {% if future == 'sim' %}
+            <div class="etapa-content">
+                <div style="text-align:center;font-size:150%;font-weight:bold">Etapa {{nova_etapa}}</div>
+                <div class="etapa-text" style="text-align:center;color:red"><b>ESTA ETAPA AINDA NÃO SE INICIOU</b></div>               
+            </div>
+            
+            {% endif %}
+            
+            {% if not hist and not future %}
             <div class="etapa-content">
                 <div style="text-align:center;font-size:150%;font-weight:bold">{{etapas_txt.name}}</div>
                 <div class="etapa-text" style="text-align:center">{{etapas_txt.header_txt}}</div>
@@ -57,6 +74,10 @@
                 <div class="etapa-text">
                     <b>Resultados</b>: {{etapas_txt.resultado_txt}}</div>
             </div>
+            {% endif %}
+
         </div>
     </div>
 </div>
+
+

@@ -175,16 +175,16 @@ class PaginaInicialView(generic.ListView):
     #print projeto_atual
     
     #busca a etapa do projeto
-    projeto_obj = Projeto.objects.get(sigla__exact=projeto_atual)
-    etapa_atual = projeto_obj.etapa_prj
+    user.projeto = user.projeto
+    etapa_atual = user.projeto.etapa_prj
     #print etapa_atual
 
     #buscando as publicacoes validas
-    publicacoes = Publicacao.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    publicacoes = Publicacao.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
         
     #1. Questoe
     #busca as questões que o usuário já respondeu e define as nao respondidads    
-    questions = Question.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    questions = Question.objects.filter(projeto=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     answered = Answer.objects.filter(user=user)
     answered_questions = [a.question for a in answered]
     questions_not_answered = list(set(questions) - set(answered_questions))
@@ -195,10 +195,10 @@ class PaginaInicialView(generic.ListView):
     
     
     #2. Artigos
-    artigos = Article.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    artigos = Article.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
 
     #3. Relatorios - gera resultados
-    relatorios = Relatorio.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    relatorios = Relatorio.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     if relatorios:
         for objeto in relatorios:
             if objeto.tipo == '2':
@@ -206,7 +206,7 @@ class PaginaInicialView(generic.ListView):
 
    
     #3.1 Relatórios - prepara propostas de questoes
-    relatorios_prop_do_usuario = Relatorio.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual, propostas_org='1').order_by('-publ_date')
+    relatorios_prop_do_usuario = Relatorio.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual, propostas_org='1').order_by('-publ_date')
     
     for rel in relatorios_prop_do_usuario:
         questao_associada = rel.questao
@@ -215,31 +215,34 @@ class PaginaInicialView(generic.ListView):
             obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop)   
    
     #4. Debates
-    debates = Topic.objects.filter(projeto__sigla=projeto_atual, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
+    debates = Topic.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
     #for d in debates:
     #  print d.all()
     #seleciona a etaoa corrente do projeto
     etapas = []
+    id_hist = []
     for idx in range(1,6):
-        if int(projeto_obj.etapa_prj) == idx:
-            etapas.append("actual")
-        if int(projeto_obj.etapa_prj) > idx:            
-            etapas.append("past")        
-        if int(projeto_obj.etapa_prj) < idx:          
+        if int(user.projeto.etapa_prj) == idx:
+            etapas.append("actual")            
+        if int(user.projeto.etapa_prj) > idx:            
+            etapas.append("past")
+            id_hist.append('etapa_hist_' + str(idx))       
+        if int(user.projeto.etapa_prj) < idx:          
             etapas.append("future")
 
     context['artigos'] = artigos
     context['questoes'] = questions_not_answered
     context['relatorios'] = relatorios    
-    context['projeto'] = projeto_obj.projeto
-    context['sigla'] = user.projeto
+    context['projeto'] = user.projeto.projeto
+    context['sigla'] = user.projeto.sigla
     context['debates'] = debates
+    context['id_hist'] = id_hist
     context['autenticado'] = autent
     context['topic_user'] = User.objects.get(user=self.request.user)
     context['topic_users'] = TopicAnswer.objects.all()      
     context['user'] = User.objects.get(user=self.request.user)
     context['etapas'] = etapas
-    context['etapas_txt'] = get_object_or_404(projeto_obj.etapa_set , etapa=projeto_obj.etapa_prj)
+    context['etapas_txt'] = get_object_or_404(user.projeto.etapa_set , etapa=user.projeto.etapa_prj)
     return context
 
 
@@ -313,18 +316,27 @@ def enviaDadosMeuEspaco(request):
                 messages.error(request, "URL incorreta. Envie novamente.")
                 return redirect(request.META['HTTP_REFERER'])
         form = DocumentForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo= request.FILES['arquivo'], projeto=projeto)
-                x.save()
-                success = True
-                if success == True:
-                    messages.success(request, "Arquivo enviado com sucesso")
+        
+        try:
+            request.FILES['arquivo']
+            test = 'success'
+        except:
+            test  ='fail'
+        if test == 'success':
+            if form.is_valid():
+                if request.FILES['arquivo'].name.endswith('.pdf'):
+                    x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', arquivo=request.FILES['arquivo'], projeto=projeto)
+                    x.save()
+                    success = True
+                    if success == True:
+                        messages.success(request, "Arquivo enviado com sucesso")
+                        return redirect(request.META['HTTP_REFERER'])
+                else:
+                    messages.error(request, "Arquivo não enviado. Apenas arquivos PDF são aceitos.")
                     return redirect(request.META['HTTP_REFERER'])
-            else:
-                messages.error(request, "Arquivo não enviado. Apenas arquivos PDF são aceitos.")
-                return redirect(request.META['HTTP_REFERER'])
+        else:
+            x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Artigo', projeto=projeto)
+
         
         if link !='':
             form = DocumentForm() #A empty, unbound form
@@ -367,7 +379,7 @@ def enviaDadosMeuEspacoDebate(request):
             return redirect(request.META['HTTP_REFERER'])
 
 def enviaDadosMeuEspacoQuestao(request):
-        us = User.objects.get(user=request.user)
+        user = User.objects.get(user=request.user)
         nome = user.primeiro_nome + ' ' + user.ultimo_nome
         if request.method == 'POST':
             projeto = request.POST['categoriaproj']
@@ -409,14 +421,20 @@ def enviaDadosMeuEspacoOutros(request):
                 messages.error(request, "URL incorreta. Envie novamente.")
                 return redirect(request.META['HTTP_REFERER'])
         form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
-            if request.FILES['arquivo'].name.endswith('.pdf'):
-                x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'], projeto=projeto)
-                x.save()
-                success = True
-                if success == True:
-                    messages.success(request, "Dados enviados com sucesso.")
-                    return redirect(request.META['HTTP_REFERER'])
+        try:
+            request.FILES['arquivo']
+            test = 'success'
+        except:
+            test  ='fail'
+        if test == 'success':            
+            if form.is_valid():
+                if request.FILES['arquivo'].name.endswith('.pdf'):
+                    x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', arquivo= request.FILES['arquivo'], projeto=projeto)
+                    x.save()
+                    success = True
+                    if success == True:
+                        messages.success(request, "Dados enviados com sucesso.")
+                        return redirect(request.META['HTTP_REFERER'])
 
         else:
             x = MeuEspaco(user=nome, categoria=categoria, publ_date=timezone.now(), link=link, comentario=comentario, secao='Outros', projeto=projeto)
@@ -427,43 +445,13 @@ def enviaDadosMeuEspacoOutros(request):
         return redirect(request.META['HTTP_REFERER'])
 
 
-def tag_search(request, tag_name):
-  answered_questions_tag = []
-  username = AuthUser.objects.get(username=request.user)
-  user = username.user
-  questions = Question.objects.filter(exp_date__gt=timezone.now())
-  answered = Answer.objects.filter(user=user)
-  answered_questions = [a.question for a in answered]
-  auth_user = request.user
-  topics = Topic.objects.filter(projeto__sigla=user.projeto, tags__name__in=[tag_name]).order_by('-publ_date')
-  questions_tag = Question.objects.filter(tags__name__in=[tag_name],projeto__sigla=user.projeto).distinct()
-  article = Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
-  relatorio = Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto,tags__name__in=[tag_name]).order_by('-publ_date').distinct()
-  not_answered = list(set(questions) - set(answered_questions))
-  not_answered_tag = list(set(questions_tag) - set(answered_questions))
-  projeto_nome = Projeto.objects.filter(sigla=user.projeto).first()
-  result_list = sorted(
-        chain(relatorio, article, not_answered_tag, topics),
-        key=lambda instance: instance.publ_date, reverse=True)
-  return render(request, 'agoraunicamp/agora-search.html',
-    { 'article' : Article.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date'),
-      'relatorio': Relatorio.objects.filter(publ_date__lte=timezone.now(),projeto__sigla=user.projeto).order_by('-publ_date'),
-      'question' : Question.objects.filter(projeto__sigla=user.projeto),
-      'not_answered': not_answered,
-      'not_answered_tag': answered_questions_tag,
-      'timeline': result_list,
-      'tag' : tag_name,
-      'topic_user' : User.objects.get(user=auth_user),
-      'user' : User.objects.get(user=auth_user),
-      'topic_users' : TopicAnswer.objects.all(),
-      'projeto' : projeto_nome.projeto,
-      'sigla' : user.projeto,
 
-    })
 
 def atualizaProjeto(request, projeto_nome):
-    User.objects.filter(user=request.user).update(projeto=projeto_nome)
+    novo_projeto = Projeto.objects.get(projeto=projeto_nome)
+    User.objects.filter(user=request.user).update(projeto=novo_projeto)    
     return redirect('agoraunicamp:paginainicial')
+    
 
 def save_topic_answer_home(request, topic_id):
   topic = get_object_or_404(Topic, pk=topic_id)
@@ -692,6 +680,87 @@ def curtir_proposta(request, proposta_pk, tipo):
             prop.indice = 1000 + prop.curtidas - prop.naocurtidas
             prop.save()      
     return HttpResponse('Sucesso')
+
+def mudaEtapa(request, etapa_nova):
+    user = User.objects.get(user=request.user)
+    etapa_do_projeto = user.projeto.etapa_prj
+    autent = request.user.is_authenticated
+    
+    if etapa_nova > etapa_do_projeto:
+                #seleciona a etaoa corrente do projeto
+        etapas = []
+        id_hist = []
+        for idx in range(1,6):
+            if int(user.projeto.etapa_prj) == idx:
+                etapas.append("actual")            
+            if int(user.projeto.etapa_prj) > idx:            
+                etapas.append("past")
+                id_hist.append('etapa_hist_' + str(idx))       
+            if int(user.projeto.etapa_prj) < idx:          
+                etapas.append("future")
+                
+        return render(request, 'agoraunicamp/agora-pagina-inicial.html', {
+            'projeto': user.projeto.projeto,
+            'future': 'sim',
+            'user': user,
+            'autenticado': autent,
+            'nova_etapa': etapa_nova,
+            'etapas': etapas,
+            'etapas_txt': get_object_or_404(user.projeto.etapa_set, etapa=user.projeto.etapa_prj),
+        })
+        
+    if etapa_nova == etapa_do_projeto:
+        return HttpResponseRedirect("/agora/paginainicial/")
+        
+    if etapa_nova < etapa_do_projeto:
+            #2. Artigos
+        artigos = Article.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_nova).order_by('-publ_date')
+
+        #3. Relatorios - gera resultados
+        relatorios = Relatorio.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_nova).order_by('-publ_date')
+        if relatorios:
+            for objeto in relatorios:
+                if objeto.tipo == '2':
+                    gera_resultados(objeto)
+
+        #3.1 Relatórios - prepara propostas de questoes
+        relatorios_prop_do_usuario = Relatorio.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_nova, propostas_org='1').order_by('-publ_date')
+
+        for rel in relatorios_prop_do_usuario:
+            questao_associada = rel.questao
+            propostas = Answer.objects.filter(question=questao_associada)
+            for prop in propostas:
+                obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop)   
+
+        #4. Debates
+        debates = Topic.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_nova).order_by('-publ_date')
+    
+        #seleciona a etaoa corrente do projeto
+        etapas = []
+        id_hist = []
+        for idx in range(1,6):
+            if int(user.projeto.etapa_prj) == idx:
+                etapas.append("actual")            
+            if int(user.projeto.etapa_prj) > idx:            
+                etapas.append("past")
+                id_hist.append('etapa_hist_' + str(idx))       
+            if int(user.projeto.etapa_prj) < idx:          
+                etapas.append("future")
+        
+        return render(request, 'agoraunicamp/agora-pagina-inicial.html', {
+          'projeto': user.projeto.projeto,
+          'artigos':artigos,
+          'relatorios': relatorios, 
+          'debates': debates,
+          'etapas': etapas,
+          'etapas_txt': get_object_or_404(user.projeto.etapa_set, etapa=user.projeto.etapa_prj),
+          'nova_etapa': etapa_nova,
+          'hist': 'hist',
+          'user': user,
+          'autenticado': autent,
+        })
+
+    
 
   # question_type = question.question_type
   # success = False

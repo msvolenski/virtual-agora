@@ -12,11 +12,26 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Publicacao(models.Model):
+    PUBLICADO = (
+      ('sim', 'sim'),
+      ('nao', 'nao'),
+    )
+
+    ETAPA = (
+      ('1', '1'),
+      ('2', '2'),
+      ('3', '3'),
+      ('4', '4'),
+      ('5', '5'),
+      
+    )
+    
+    
     projeto = models.ForeignKey('Projeto')
     publ_date = models.DateTimeField('Data de publicação', blank=True)
     tags = TaggableManager()
-    published = models.CharField('Publicado?',max_length=3, default='nao')
-    etapa_publ = models.CharField("Etapa", max_length=1, default='1')
+    published = models.CharField('Publicar imediatamente?',max_length=3, choices = PUBLICADO, default='nao')
+    etapa_publ = models.CharField("Etapa que será publicado", choices = ETAPA, max_length=1, default='1')
     address = models.CharField('Endereço',max_length=200, default='Preenchimento automatico')
 
 
@@ -29,7 +44,7 @@ class Projeto(models.Model):
       super(Projeto, self).save(*args, **kwargs)      
       cont = 1
       for cont in range(1,6):
-        Etapa.objects.create(project=self, etapa=str(cont))          
+        Etapa.objects.get_or_create(project=self, etapa=str(cont))          
       return super(Projeto, self).save(*args, **kwargs)
     
     def __str__(self):
@@ -117,7 +132,7 @@ class User(models.Model):
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto') 
   email = models.EmailField('Email', blank=True)
   nickname = models.CharField('Apelido',max_length=40, blank=True)
-  projeto = models.CharField('Projeto',max_length=40, blank=True)
+  projeto = models.ForeignKey('Projeto')
   question_answer = models.ManyToManyField(
     Question,   
     through='Answer',
@@ -255,12 +270,12 @@ class Termo(models.Model):
 class MeuEspaco(models.Model):
     projeto = models.CharField('Projeto',max_length=100, blank=False)
     user = models.CharField('Usuario',max_length=200, blank=True)
-    categoria = models.CharField('Categoria',max_length=50, blank=True)
+    categoria = models.CharField('Categoria',max_length=50, blank=True, null=True)
     publ_date = models.DateTimeField('Data de publicação')
-    link =  models.URLField(max_length=1000, blank=True)
-    comentario =  models.CharField('Comentário',max_length=1000, blank=True)
-    secao = models.CharField('Seção',max_length=30, blank=True)
-    arquivo = models.FileField(upload_to=settings.MEDIA_ROOT, max_length=2000000, blank=True)
+    link =  models.URLField(max_length=1000, blank=True, null=True)
+    comentario =  models.CharField('Comentário',max_length=1000)
+    secao = models.CharField('Seção',max_length=30, blank=True, null=True)
+    arquivo = models.FileField(upload_to=settings.MEDIA_ROOT, max_length=2000000, blank=True, null=True)
     
 
 
@@ -294,15 +309,18 @@ class Article(Publicacao):
 
 
 class Relatorio(Publicacao):        
+
+    
     TIPOS = (
-        ('1', 'Resultado Geral, sem gráfico'),
-        ('2', 'Questão - gera gráfico'),
+        ('1', 'Resultado Geral (não associado a alguma questão)'),
+        ('2', 'Resultado Específico (assciado a uma questão)'),
     )
 
     TIPOS_G = (
-        ('1', 'Barras'),
-        ('2', 'Pizza'),
-        ('3', 'Propostas'),
+        ('0', 'Sem Gráfico ou Tabela'),
+        ('1', 'Gráfico de  Barras'),
+        ('2', 'Gráfico de Pizza'),
+        ('3', 'Tabela de Propostas'),
     )
 
     STAFF_TYPE = (
@@ -319,22 +337,29 @@ class Relatorio(Publicacao):
 
     PROPOSTA_ORG = (
       ('0', 'Não é resultado do tipo Propostas'),
-      ('1', 'Da Quetão'),
-      ('2', 'Dos campos abaixo'),
+      ('1', 'Da Questão Associada (certifique-se que a Questão é do tipo "Propostas"'),
+      ('2', 'Do Campo "PROPOSTAS" abaixo'),
     )
 
-    questao = models.ForeignKey(Question,blank=True, null=True)
-    tipo = models.CharField(max_length=10, choices=TIPOS, default='1')
+    questao = models.ForeignKey(Question, blank=True, null=True)
+    tipo = models.CharField(max_length=10, choices=TIPOS, default='0')
     titulo =  models.CharField(max_length=100)
     conteudo = RichTextUploadingField(config_name='full', verbose_name=u'Resultado e Análise')
     grafico = models.CharField(max_length=10, choices=TIPOS_G, default='1')
     filtro_staff = models.CharField(max_length=3, choices=STAFF_TYPE, default='9')
     arquivo = models.CharField(max_length=200, default='null')
-    propostas_org =  models.CharField('Caso tenha selecionado PROPOSTAS, escolha a origem', max_length=3, choices=PROPOSTA_ORG, default='0')
+    propostas_org =  models.CharField('Origem', max_length=3, choices=PROPOSTA_ORG, default='0')
    
     def __int__(self):
-        return self.questao.pk
-
+      return self.questao.pk
+    
+    def __str__(self):
+      if self.questao is None:      
+        return 'Relatorio Geral (n. ' + str(self.pk) + ')'
+      else:
+        return 'Relatorio (n. ' + str(self.id) + '): Questao -  ' + str(self.questao.pk)      
+       
+       
     def save(self, *args, **kwargs):
         super(Relatorio, self).save(*args, **kwargs)
         self.address = "{SITE_URL}agora/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)

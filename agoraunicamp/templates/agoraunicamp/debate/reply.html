@@ -8,12 +8,16 @@
 
     {% if user == reply.user %}
     <button type="button" class="post-btn edit-reply-btn">
+      {% if not hist %}
       <i class="fa fa-pencil" aria-hidden="true"></i>
+      {% endif %}
     </button>
 
     <form class="reply-delete-form" method="POST" action="{% url 'agoraunicamp:delete_reply' reply.pk  %}">
       <button type="submit" class="post-btn">
+        {% if not hist %}
         <i class="fa fa-trash" aria-hidden="true"></i>
+        {% endif %}
       </button>
     </form>
     {% endif %}
