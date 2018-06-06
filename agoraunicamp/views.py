@@ -22,6 +22,7 @@ from itertools import chain
 from collections import *
 import codecs
 import os
+import ldap
 
 
 
@@ -164,6 +165,34 @@ class PaginaInicialView(generic.ListView):
   def get_context_data(self, **kwargs):    
     context = super(PaginaInicialView, self).get_context_data(**kwargs)
     
+    #teste LDAP
+
+    # l = ldap.initialize("ldaps://ldap1.unicamp.br ldaps://ldap2.unicamp.br")
+    # baseDN = "ou=people,dc=unicamp,dc=br"
+    # searchScope = ldap.SCOPE_SUBTREE
+    # retrieveAttributes = None
+    # searchFilter = "uid=william"
+    # ldap_result_id = l.search(baseDN, searchScope, searchFilter, retrieveAttributes)
+    # result_type, result_data = l.result(ldap_result_id, 0)
+    # l.unbind_s()
+
+    # print result_data[0][1]['shadowFlag']
+    # print result_data[0][1]['departmentNumber']
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     #busca usuário
     user = User.objects.get(user=self.request.user)
     answered = Answer.objects.filter(user=user)
@@ -212,7 +241,7 @@ class PaginaInicialView(generic.ListView):
         questao_associada = rel.questao
         propostas = Answer.objects.filter(question=questao_associada)
         for prop in propostas:
-            obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop)   
+            obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop.text)   
    
     #4. Debates
     debates = Topic.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_atual).order_by('-publ_date')
@@ -593,13 +622,18 @@ def vote_timeline(request, question_id):
       error_message = "Parece que você não selecionou nenhuma opção. Por favor, tente novamente."
       return HttpResponse('error_message')
   
-  #registra resposta de multiple Choice
+  #registra resposta de Propostas
   if question.question_type == '4':    
     if request.method == 'POST':     
       
       for key, value in request.POST.items():            
         if 'proposal' in key and value:     
           answer_model = Answer(user=user, question=question, text=value)
+          try:
+            proposta = Proposta.objects.get_or_create(relatorio=question.relatorio, user=user, proposta_text=value.encode('utf-8'), ranking='0', indice=1000, curtidas=0, naocurtidas=0)            
+            proposta.save()
+          except:
+            print 'A Questão Proposta ainda nao está ligada a uma Tabela de Resultados'  
           answer_model.save() 
       return HttpResponse('Sucesso')
     else:
@@ -730,7 +764,7 @@ def mudaEtapa(request, etapa_nova):
             questao_associada = rel.questao
             propostas = Answer.objects.filter(question=questao_associada)
             for prop in propostas:
-                obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop)   
+                obj, created = Proposta.objects.get_or_create(relatorio=rel,proposta_text=prop.text)   
 
         #4. Debates
         debates = Topic.objects.filter(projeto=user.projeto, published='sim', etapa_publ=etapa_nova).order_by('-publ_date')

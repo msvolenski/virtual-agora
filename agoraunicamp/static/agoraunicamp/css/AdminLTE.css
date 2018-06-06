@@ -4445,7 +4445,7 @@ textarea:focus {
 }
 
 .post .question-choices {
-  display: flex;
+  display: in-line block;
   flex-direction: row;
 }
 
@@ -4453,16 +4453,16 @@ textarea:focus {
   cursor: pointer;
   flex-grow: 1;
   flex-basis: 1px;
-  height: 100px;
   text-align: center;
-  line-height: 90px;
   transition: all .3s linear;
   border: 5px solid #12d673;
-  margin-left: 15px;
+  margin-left: 0px;
+  width:100%;
+  padding:5px;
 }
 
 .post .question-choices label:nth-child(2) {
-  margin-left: 0;
+ 
 }
 
 .post .question-choices input[type="radio"] {

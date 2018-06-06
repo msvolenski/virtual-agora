@@ -13,7 +13,7 @@ def term_required(function):
             us = User.objects.get(user=request.user)
         except:
             u = UserSys.objects.get(username=request.user)
-            x = User(user=u, primeiro_nome="x", ultimo_nome="y", projeto="default")
+            x = User(user=u, primeiro_nome="x", ultimo_nome="y")
             x.save()
             us = User.objects.get(user=request.user)
         cond = Termo.objects.get(user=us)  

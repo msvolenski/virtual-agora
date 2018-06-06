@@ -36,9 +36,17 @@ class Publicacao(models.Model):
 
 
 class Projeto(models.Model):
+    ETAPA = (
+      ('1', '1'),
+      ('2', '2'),
+      ('3', '3'),
+      ('4', '4'),
+      ('5', '5'),      
+    )
+
     projeto = models.CharField('Projeto',max_length=100,blank=True, null=True)
     sigla = models.CharField('Sigla', max_length=50, blank=True, null=True)
-    etapa_prj = models.CharField("Etapa", max_length=1, default='1')
+    etapa_prj = models.CharField("Etapa", choices = ETAPA, max_length=1, default='1')
 
     def save(self, *args, **kwargs):
       super(Projeto, self).save(*args, **kwargs)      
@@ -48,7 +56,7 @@ class Projeto(models.Model):
       return super(Projeto, self).save(*args, **kwargs)
     
     def __str__(self):
-        return '%s %s' % (self.sigla, self.projeto)
+        return self.projeto.encode('utf8')
 
 
 class Topic(Publicacao):
@@ -132,7 +140,7 @@ class User(models.Model):
   institute = models.CharField('Instituto', max_length=40, blank=True, default='instituto') 
   email = models.EmailField('Email', blank=True)
   nickname = models.CharField('Apelido',max_length=40, blank=True)
-  projeto = models.ForeignKey('Projeto')
+  projeto = models.ForeignKey('Projeto', blank=True, null=True)
   question_answer = models.ManyToManyField(
     Question,   
     through='Answer',
@@ -374,6 +382,7 @@ class Etapa(models.Model):
     objetivo_txt = models.TextField("Objetivo", default='null')
     participar_txt = models.TextField("Como participar", default='null')
     resultado_txt = models.TextField("Resultado", default='null')
+    termino = models.TextField("Termino", default='null')
 
 class Proposta(models.Model):
     relatorio = models.ForeignKey(
