@@ -10,6 +10,35 @@ from taggit.managers import TaggableManager
 from django.core.exceptions import ObjectDoesNotExist
 from ckeditor_uploader.fields import RichTextUploadingField
 
+################# DEFAULT #################################################################
+
+defaults = {}
+
+defaults['default_etapa_1_nome'] = 'Conhecendo as Ideias' 
+defaults['default_etapa_2_nome'] = 'Temáticas'
+defaults['default_etapa_3_nome'] = 'Debates'
+defaults['default_etapa_4_nome'] = 'Propostas'
+defaults['default_etapa_5_nome'] = 'Resultados'
+
+defaults['default_etapa_1_header_txt'] = 'Esta é a primeira etapa da pauta <tema>. Aqui vamos fornecer algumas informações sobre o assunto e conhecer as ideias que a comunidade deseja discutir e propor soluções.' 
+defaults['default_etapa_2_header_txt'] = 'Nesta etapa apresentamos as temáticas extraídas pelo algoritmo de Inteligência Artificial a partir do processamento dos resultados das enquetes da etapa anterior.'
+defaults['default_etapa_3_header_txt'] = 'Nesta etapa os temas selecionados estão colocados para debate. O debate deve ser orientado para apresentação de propostas/soluções para o problema <do tema>.'
+defaults['default_etapa_4_header_txt'] = 'Esta etapa apresenta o resultado do processamento dos debates pelo algoritmo de Inteligência Artficial em forma de propostas/soluções par as temáticas. Estas propostas estão colocadas para votação, inclusive com possibilidade de adição de novas propostas. Uma técnica de crowdsourcing é utilizada para ranquear as propostas conforme a aceitação e consenso da comunidade.'
+defaults['default_etapa_5_header_txt'] = 'Aquis são apresentadas as propostas e soluções mais representativas da comunidade para os temas debatidos e seus encaminhamentos. Resultado obtido a partir do feedback da própria comunidade e do uso de algoritmos de Inteligência Artificial para extração do conteúdo representativo.'
+
+defaults['default_etapa_1_participar_txt'] = 'Informe-se sobre a temática através do material postado nesta página. Sugira materiais e responda à(s) enquete(s) sobre quais temas deseja discutir.' 
+defaults['default_etapa_2_participar_txt'] = 'Leia os resultados apresentados e escolha qual(ais) tema(s) deseja debater na próxima etapa.'
+defaults['default_etapa_3_participar_txt'] = 'Apresente ideias, propostas e soluções no debate de ideias.'
+defaults['default_etapa_4_participar_txt'] = 'Avalie se concorda ou não com as propostas levantadas e/ou apresente novas propostas.'
+defaults['default_etapa_5_participar_txt'] = 'Leia e acompanhe os resultados, relatórios e deliberações.'
+
+defaults['default_etapa_1_objetivo_txt'] = 'Informar sobre a pauta e conhecer os temas que a comunidade deseja discutir.'
+defaults['default_etapa_2_objetivo_txt'] = 'Apresentar as temáticas extraídas e colocá-las para votação.'
+defaults['default_etapa_3_objetivo_txt'] = 'Debater ideias e apresentar soluções para os temas escolhidos.'
+defaults['default_etapa_4_objetivo_txt'] = 'Gerar propostas baseadas no debate e elencá-las em ordem de aceitação e consenso.'
+defaults['default_etapa_5_objetivo_txt'] = 'Apresentar as ideias e propostas finais e deliberações para o tema o tema debatido.'
+
+defaults['default_etapas_termino'] = 'Esta etapa termina em <data>'
 
 class Publicacao(models.Model):
     PUBLICADO = (
@@ -51,8 +80,18 @@ class Projeto(models.Model):
     def save(self, *args, **kwargs):
       super(Projeto, self).save(*args, **kwargs)      
       cont = 1
-      for cont in range(1,6):
-        Etapa.objects.get_or_create(project=self, etapa=str(cont))          
+      objs = Etapa.objects.filter(project=self)
+      if len(objs) < 1:     
+        for cont in range(1,6):
+          nome = 'default_etapa_' + str(cont) + '_nome'        
+          header_txt = 'default_etapa_' + str(cont) + '_header_txt'
+          participar_txt = 'default_etapa_' + str(cont) + '_participar_txt'
+          objetivo_txt = 'default_etapa_' + str(cont) + '_objetivo_txt'
+          termino = 'default_etapas_termino'       
+          Etapa.objects.get_or_create(project=self, etapa=str(cont), name=defaults[nome], header_txt=defaults[header_txt], objetivo_txt=defaults[objetivo_txt], participar_txt=defaults[participar_txt],termino=defaults[termino])          
+
+      
+      
       return super(Projeto, self).save(*args, **kwargs)
     
     def __str__(self):
@@ -68,7 +107,7 @@ class Topic(Publicacao):
 
   def save(self, *args, **kwargs):
     super(Topic, self).save(*args, **kwargs)
-    self.address = "{SITE_URL}agora/debate/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
+    self.address = "{SITE_URL}agora/publicacao/{projeto}/{id}".format(id=self.id,SITE_URL=settings.SITE_URL,projeto=self.projeto.projeto)
     return super(Topic, self).save(*args, **kwargs)  
   
   class Meta:
@@ -92,9 +131,7 @@ class Question(Publicacao):
     question_type = models.CharField('Tipo', max_length=1, choices = QUESTION_TYPE)
     question_text = models.CharField('Título da Questão',max_length=200)   
     exp_date = models.DateTimeField('Data de expiração')  
-    image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)
-
-      
+    image = models.ImageField('Imagem', upload_to='question_images', blank=True, null=True)      
     
     def __str__(self):
         nome = str(self.pk) + ' - ' + self.question_text 
@@ -102,7 +139,7 @@ class Question(Publicacao):
 
     def save(self, *args, **kwargs):
         super(Question, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/participe/{id}".format(id=self.id,SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/publicacao/{projeto}/{id}".format(id=self.id,SITE_URL=settings.SITE_URL,projeto=self.projeto.projeto)
         return super(Question, self).save(*args, **kwargs)
 
     class Meta:
@@ -308,7 +345,7 @@ class Article(Publicacao):
 
     def save(self, *args, **kwargs):
         super(Article, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/conheca/artigos/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/publicacao/{projeto}/{id}".format(id=self.id,SITE_URL=settings.SITE_URL,projeto=self.projeto.projeto)
         return super(Article, self).save(*args, **kwargs)
 
     class Meta:
@@ -316,9 +353,7 @@ class Article(Publicacao):
         verbose_name_plural = 'Artigos'
 
 
-class Relatorio(Publicacao):        
-
-    
+class Relatorio(Publicacao):   
     TIPOS = (
         ('1', 'Resultado Geral (não associado a alguma questão)'),
         ('2', 'Resultado Específico (assciado a uma questão)'),
@@ -365,12 +400,11 @@ class Relatorio(Publicacao):
       if self.questao is None:      
         return 'Relatorio Geral (n. ' + str(self.pk) + ')'
       else:
-        return 'Relatorio (n. ' + str(self.id) + '): Questao -  ' + str(self.questao.pk)      
-       
+        return 'Relatorio (n. ' + str(self.id) + '): Questao -  ' + str(self.questao.pk)        
        
     def save(self, *args, **kwargs):
         super(Relatorio, self).save(*args, **kwargs)
-        self.address = "{SITE_URL}agora/resultados/relatorio/{id}".format(id=self.id, SITE_URL=settings.SITE_URL)
+        self.address = "{SITE_URL}agora/publicacao/{projeto}/{id}".format(id=self.id,SITE_URL=settings.SITE_URL,projeto=self.projeto.projeto)
         return super(Relatorio, self).save(*args, **kwargs)
 
 
@@ -416,8 +450,17 @@ class Curtir(models.Model):
     )
     tipo = models.CharField("Curtir/Não Curtir", max_length=10)
 
-        
+class Email(models.Model):
+    USUARIOS = (
+      ('1', 'TODOS'),
+      ('2', 'ESPECÍFICO'),
+    )
+    assunto = models.TextField("Assunto")
+    text = RichTextUploadingField(config_name='full', verbose_name=u'Mensagem')
+    opcoes = models.CharField('Destinatário', max_length=15, choices=USUARIOS, default='1')
+    user = models.ForeignKey(User, related_name='user_email', blank=True, null=True) 
 
+ 
 
 # class Projeto(models.Model):
 #     projeto = models.CharField('Projeto',max_length=100,blank=True, null=True)

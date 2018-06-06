@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 from django.contrib import messages
+from django.core.mail import send_mail
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,6 +33,7 @@ SITE_URL = 'http://127.0.0.1:8000/'
 
 # Application definition
 INSTALLED_APPS = [
+    'django.core.mail',
     'agoraunicamp.templatetags',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +45,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',  
     'smart_selects',
-    'agoraunicamp',   
+    'agoraunicamp',     
 ]
 
 
@@ -113,6 +115,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'agoraunicamp@gmail.com'
+EMAIL_HOST_PASSWORD = '23thingol'
+DEFAULT_FROM_EMAIL = 'Tiago Novaes'
+DEFAULT_TO_EMAIL = 'agoraunicamp@gmail.com'
 
 
 

@@ -7,6 +7,9 @@ from django.shortcuts import render
 from django.utils import timezone
 from django.contrib.auth.admin import UserAdmin
 from django.contrib import messages
+from django.core import mail
+from django.core.mail import send_mail, EmailMessage, send_mass_mail
+
 import codecs
 # Register your models here.
 
@@ -261,7 +264,6 @@ class RelatorioAdmin(admin.ModelAdmin):
         }),
     ) 
 
-
     inlines = [PropostaInline]
     list_filter = ['projeto']
     actions = ['publicar','desfazer_publicacao','remover_relatorio']
@@ -296,6 +298,46 @@ class RelatorioAdmin(admin.ModelAdmin):
             modeladmin.message_user(request, "Relatório despublicado com sucesso.")
             return
 
+class EmailAdmin(admin.ModelAdmin):
+    model = Email
+
+    actions = ['enviar_email']
+    
+    def get_list_display(self, request):
+        return ('opcoes','user','text') 
+    
+    fieldsets = (
+        ('Qual(is) o(s) destinatário(s)', {
+            'fields': ('opcoes',)
+        }),
+        ('No caso de selecionar "específico", informe o usuário', {
+            'fields': ('user',)
+        }),        
+        ('Escreva o email aqui', {
+            'fields': ('assunto','text',)
+        }), 
+    )
+    
+    def enviar_email(modeladmin, request, queryset):
+        connection = mail.get_connection()
+        lista = User.objects.all().values_list('email', flat=True)
+        print lista
+        for item in queryset:            
+            if item.opcoes == '1':             
+                connection.open()
+                for email in lista:  
+                    msg = EmailMessage(item.assunto, item.text, to=[email], connection=connection)
+                    msg.content_subtype = 'html'              
+                    msg.send()
+                connection.close()        
+                #send_mass_mail([msg],fail_silently=True)   
+            if item.opcoes == '2':
+                msg = EmailMessage(item.assunto, item.text, to=[item.user.email])
+                msg.content_subtype = 'html'              
+                msg.send()                        
+        return
+
+
 
 
 admin.site.register(Etapa, EtapaAdmin)
@@ -310,7 +352,7 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(Relatorio, RelatorioAdmin)
 admin.site.register(Topic, TopicAdmin)
 #admin.site.register(TopicAnswerReply, TopicAnswerReplyAdmin)
-#admin.site.register(TopicAnswer, TopicAnswerAdmin)
+admin.site.register(Email, EmailAdmin)
 admin.site.register(Proposta, PropostaAdmin)
 admin.site.register(Curtir, CurtirAdmin)
 

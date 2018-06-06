@@ -34,4 +34,6 @@ urlpatterns = [
   url(r'^forum/(?P<reply_id>[0-9]+)/reply/delete/$', views.delete_reply, name='delete_reply'),
   url(r'^forum/(?P<topic_id>[0-9]+)/answerhomeedit/$', views.save_topic_answer_home_edit, name='answer_home_edit'),
   url(r'^participe/(?P<question_id>[0-9]+)/votetimeline/$', views.vote_timeline, name='vote_timeline'),
+  url(r'^publicacao/(?P<projeto_nome>[\w ]+)/(?P<pub_id>[\w ]+)/$', views.carrega_publicacao, name='carrega_pbl'),
+  
 ]

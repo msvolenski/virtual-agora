@@ -690,9 +690,9 @@ def gera_resultados(objeto):
         
         #gera JSON\
         arq_json.write("[\n")
-        for k, v in choices.iteritems():
-         
-            perc = float(float(v)/float(total))*100         
+        for k, v in choices.iteritems():         
+            perc = float(float(v) / float(total)) * 100
+            perc = round(perc, 1)            
             arq_json.write("    {\"name\": \"" + k + "\", \"value\": " + str(perc)+ "},\n" )    
         arq_json.seek(-2, os.SEEK_END)
         arq_json.write("\n]")
@@ -794,7 +794,22 @@ def mudaEtapa(request, etapa_nova):
           'autenticado': autent,
         })
 
-    
+
+def carrega_publicacao(request, projeto_nome, pub_id):
+    novo_projeto = Projeto.objects.get(projeto=projeto_nome)
+    User.objects.filter(user=request.user).update(projeto=novo_projeto) 
+
+
+    return HttpResponseRedirect("/agora/paginainicial/#p" + pub_id)
+      
+        #'artigos':artigos,
+          #'relatorios': relatorios, 
+          #'debates': debates,
+          #'etapas': etapas,
+          #'etapas_txt': get_object_or_404(user.projeto.etapa_set, etapa=user.projeto.etapa_prj),
+          #'nova_etapa': etapa_nova,
+          #'hist': 'hist',
+          #'user': user,
 
   # question_type = question.question_type
   # success = False

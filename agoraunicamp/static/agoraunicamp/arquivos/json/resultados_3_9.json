@@ -1,6 +1,6 @@
 [
-    {"name": "Seguro", "value": 22.2222222222},
-    {"name": "Nada Seguro", "value": 33.3333333333},
-    {"name": "Muito seguro", "value": 11.1111111111},
-    {"name": "Pouco Seguro", "value": 33.3333333333}
+    {"name": "Seguro", "value": 22.2},
+    {"name": "Nada Seguro", "value": 33.3},
+    {"name": "Muito seguro", "value": 11.1},
+    {"name": "Pouco Seguro", "value": 33.3}
 ]
